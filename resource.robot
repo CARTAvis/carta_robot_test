@@ -1,0 +1,159 @@
+*** Settings ***
+Documentation     A resource file with reusable keywords and variables.
+...
+...               The system specific keywords created here form our own
+...               domain specific language. They utilize keywords provided
+...               by the imported SeleniumLibrary.
+Library           SeleniumLibrary
+Library           Process
+Library           OperatingSystem
+Library           String
+
+*** Variables ***
+${CARTA_BACKEND_PROCESS}    /Users/kswang/carta_build/carta-backend/build/carta_backend /Users/kswang/set_QA_e2e_v2 --frontend_folder /Users/kswang/carta_build/carta-frontend/build --port 3003 --debug_no_auth --no_browser
+${SERVER}         localhost:3003
+${BROWSER}        headlesschrome
+${DELAY}          0.05
+${LOGIN URL}      http://${SERVER}/
+${TITLE}          CARTA
+${WINDOW_SIZE_X}    1280
+${WINDOW_SIZE_Y}    800
+
+${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
+${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
+
+${FILE_LIST}    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]/div/div[1]/div[1]/div/div[2]/div/div/div
+${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
+${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
+
+
+${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
+${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
+${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
+${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
+
+${VIEWER_CURSOR_INFO_BAR}    //*[@id="root"]/div/div[11]/div[2]/div/div[1]/div[1]/div[2]/div/div/div/div[3]
+${VIEWER_DIV}    //*[@id="root"]/div/div[12]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
+
+${CLIP_BUTTON_90}    //*[@id="root"]/div/div[12]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
+
+# image comparsion
+${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
+
+# test images
+${FITS_hugeGaussian40k}    xpath://*[contains(text(), "hugeGaussian40k.fits")]
+${FITS_hugeGaussian20k}    xpath://*[contains(text(), "hugeGaussian20k.fits")]
+${FITS_hugeGaussian10k}    xpath://*[contains(text(), "hugeGaussian10k.fits")]
+${FITS_h_m51_b}    xpath://*[contains(text(), "h_m51_b_s05_drz_sci.fits")]
+${FITS_supermosaic}    xpath://*[contains(text(), "supermosaic.10.fits")]
+${FITS_HD163296_CO_2_1}    xpath://*[contains(text(), "HD163296_CO_2_1.fits")]
+${FITS_cosmos_spitzer3.6micro}    xpath://*[contains(text(), "cosmos_spitzer3.6micron.fits")]
+${VOTABLE_COSMOSOPTCAT}    xpath://*[contains(text(), "COSMOSOPTCAT.vot")]
+${FITS_COSMOSOPTCAT}    xpath://*[contains(text(), "COSMOSOPTCAT.fits")]
+${FITS_S255_IR}    xpath://*[contains(text(), "S255_IR_sci.spw29.cube.I.pbcor.fits")]
+
+${FITS_M17_SWex}    xpath://*[contains(text(), "M17_SWex.fits")]
+${CASA_M17_SWex}    xpath://*[contains(text(), "M17_SWex.image")]
+${HDF5_M17_SWex}    xpath://*[contains(text(), "M17_SWex.hdf5")]
+${MIRIAD_M17_SWex}    xpath://*[contains(text(), "M17_SWex.miriad")]
+
+
+
+
+
+*** Keywords ***
+Setup carta_backend And Open Browser To CARTA
+    Run carta_backend
+    Set Selenium Speed    ${DELAY}
+    Open Browser    browser=${BROWSER}
+    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
+    Go To    ${LOGIN URL}
+    Title Should Be    ${TITLE}
+    Wait Until Page Contains    No file selected.
+
+
+Kill carta_backend And Close Browser
+    Close Browser
+    Terminate carta_backend
+
+
+Go To E2E QA Folder
+    Wait Until Page Contains    No file selected.
+    Table Should Contain    ${FILE_LIST}    set_QA_e2e_v2
+    Scroll Element Into View    ${QA_FOLDER}
+    Click Element    ${QA_FOLDER}
+    Wait Until Page Contains    No file selected.
+    Sleep    0.5
+
+Load Initial Image 
+    [Arguments]    ${IMAGE_TO_LOAD}
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD}
+    Click Element    ${IMAGE_TO_LOAD}
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+
+
+
+Append Image
+    [Arguments]    ${IMAGE_TO_APPEND}
+    Click Element    xpath://*[contains(text(), "File")]
+    Click Element    xpath://*[contains(text(), "Append image")]
+    Wait Until Page Contains Element    ${IMAGE_TO_APPEND}
+    Click Element    ${IMAGE_TO_APPEND}
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
+    Click Element    ${APPEND_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+
+
+Close Image
+    Click Element    xpath://*[contains(text(), "File")]
+    Click Element    xpath://*[contains(text(), "Close image")]
+
+
+Run carta_backend
+    Start Process    ${CARTA_BACKEND_PROCESS}    shell=yes    alias=carta
+    Wait For Process    handle=carta    timeout=3
+    Process Should Be Running    handle=carta
+
+Terminate carta_backend
+    Terminate Process    handle=carta
+
+
+Run psrecord
+    [Arguments]    ${PSRECORD_OUTPUT_PNG_FILENAME}
+    Start Process    psrecord $(pgrep carta_backend) --interval 0.02 --plot ${PSRECORD_OUTPUT_PNG_FILENAME}    shell=yes    alias=psrecord
+    Process Should Be Running    handle=psrecord
+        
+    
+Terminate psrecord
+    Send Signal To Process    SIGINT    handle=psrecord
+
+
+Compare Images To Be Identical
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Allowed_Threshold}
+   ${TEMP}=         Replace String     ${IMAGE_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output     ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}
+   ${RESULT}        Evaluate    ${OUTPUT} < ${Allowed_Threshold}
+   Should be True   ${RESULT}
+
+Compare Images To Be Different
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Allowed_Threshold}
+   ${TEMP}=         Replace String     ${IMAGE_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output     ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}
+   ${RESULT}        Evaluate    ${OUTPUT} > ${Allowed_Threshold}
+   Should be True   ${RESULT}
+
+
