@@ -10,6 +10,7 @@ The following packages/libraries/modules need to be installed in your test envir
 * Pillow (https://pypi.org/project/Pillow/)
 * convert (ImageMagick; https://imagemagick.org/index.php)
 * (optional) psrecord (https://github.com/astrofrog/psrecord)
+* a set of test image data (upon request)
 
 It is recommended to install "robotframework", "robotframework-seleniumlibrary" and "webdrivermanager" via `conda`. "webdrivermanager" is a handy tool to install webdrivers such as chromedriver or geckodriver (Firefox).
 
