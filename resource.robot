@@ -3,7 +3,8 @@ Documentation     A resource file with reusable keywords and variables.
 ...
 ...               The system specific keywords created here form our own
 ...               domain specific language. They utilize keywords provided
-...               by the imported SeleniumLibrary.
+...               by the imported SeleniumLibrary, Process, OperatingSystem,
+...               and String.
 Library           SeleniumLibrary
 Library           Process
 Library           OperatingSystem
@@ -13,8 +14,9 @@ Library           String
 ${CARTA_BACKEND_EXECUTABLE}    /Users/kswang/carta_build/carta-backend/build/carta_backend
 ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
-${CARTA_EXECUTABLE}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port 3003 --debug_no_auth --no_browser
-${SERVER}         localhost:3003
+${CARTA_PORT}    3003
+${CARTA_EXECUTABLE}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
+${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 ${DELAY}          0.05
 ${LOGIN URL}      http://${SERVER}/
