@@ -16,6 +16,7 @@ ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
 ${CARTA_PORT}    3003
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
+${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 ${DELAY}          0.05
@@ -47,7 +48,7 @@ ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -met
 
 
 # image rgba comparsion
-${IMAGE_RGBA_COMPARATOR_COMMAND}   python utilities/match_png.py __REFERENCE__ __TEST__
+${IMAGE_RGBA_COMPARATOR_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/match_png.py __REFERENCE__ __TEST__
 
 
 # test images
