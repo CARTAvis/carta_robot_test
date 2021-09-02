@@ -19,7 +19,9 @@ Load FITS image
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
     Sleep    1
-    Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Sleep    1
+    PNG Images Should Be Different    initial.png    rerendered.png
     Sleep    1
     Remove Files    initial.png    rerendered.png
     [Teardown]    Kill carta_backend And Close Browser
@@ -41,7 +43,9 @@ Load CASA image
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
     Sleep    1
-    Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Sleep    1
+    PNG Images Should Be Different    initial.png    rerendered.png
     Sleep    1
     Remove Files    initial.png    rerendered.png
     [Teardown]    Kill carta_backend And Close Browser
@@ -63,7 +67,9 @@ Load HDF5 image
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
     Sleep    1
-    Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Sleep    1
+    PNG Images Should Be Different    initial.png    rerendered.png
     Sleep    1
     Remove Files    initial.png    rerendered.png
     [Teardown]    Kill carta_backend And Close Browser
@@ -85,7 +91,9 @@ Load MIRIAD image
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
     Sleep    1
-    Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Compare Images To Be Different    initial.png    rerendered.png    0.0748111
+    #Sleep    1
+    PNG Images Should Be Different    initial.png    rerendered.png
     Sleep    1
     Remove Files    initial.png    rerendered.png
     [Teardown]    Kill carta_backend And Close Browser

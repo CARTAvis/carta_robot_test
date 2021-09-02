@@ -45,6 +45,11 @@ ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[12]/div[2]/div/div[1]/div[3]/div[2]
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
 
+
+# image rgba comparsion
+${IMAGE_RGBA_COMPARATOR_COMMAND}   ../utilities/match_png.py __REFERENCE__ __TEST__
+
+
 # test images
 ${FITS_hugeGaussian40k}    xpath://*[contains(text(), "hugeGaussian40k.fits")]
 ${FITS_hugeGaussian20k}    xpath://*[contains(text(), "hugeGaussian20k.fits")]
@@ -161,4 +166,24 @@ Compare Images To Be Different
    ${RESULT}        Evaluate    ${OUTPUT} > ${Allowed_Threshold}
    Should be True   ${RESULT}
 
+PNG Images Should Be Different
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
+   ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}       
+   Should Contain   ${OUTPUT}    different
 
+
+
+PNG Images Should Be Identical
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
+   ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}       
+   Should Contain   ${OUTPUT}    identical
