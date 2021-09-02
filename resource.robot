@@ -11,12 +11,14 @@ Library           OperatingSystem
 Library           String
 
 *** Variables ***
+############ edit the following only to fit your env ######################
 ${CARTA_BACKEND_EXECUTABLE}    /Users/kswang/carta_build/carta-backend/build/carta_backend
 ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
 ${CARTA_PORT}    3003
-${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
+###########################################################################
+${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 ${DELAY}          0.05
