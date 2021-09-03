@@ -3,7 +3,7 @@ Documentation     Check availability of ilifu-carta
 Resource          ./resource.robot
 
 *** Test Cases ***
-Login ILIFU CARTA With Wrong Credentials
+Login ILIFU CARTA With Invalid Credentials
     [Setup]    Open Browser To CARTA
     Wait Until Page Contains    Welcome to the IDIA CARTA server.
     Location should be    ${LOGIN URL}dashboard?redirectParams=

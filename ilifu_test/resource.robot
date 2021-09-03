@@ -15,7 +15,7 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ${SERVER}         carta.idia.ac.za
 ${USERNAME}       ${EMPTY}
 ${PASSWORD}       ${EMPTY}
-${BROWSER}        chrome
+${BROWSER}        headlesschrome
 ${DELAY}          0.05
 ${LOGIN URL}      https://${SERVER}/
 ${TITLE}          CARTA Dashboard
@@ -36,3 +36,4 @@ Open Browser To CARTA
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     
+
