@@ -21,7 +21,7 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
-${DELAY}          0.05
+${DELAY}          0.02
 ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
@@ -30,7 +30,7 @@ ${WINDOW_SIZE_Y}    800
 ${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
 ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 
-${FILE_LIST}    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]/div/div[1]/div[1]/div/div[2]/div/div/div
+${FILE_LIST}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]
 ${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
 
@@ -40,10 +40,22 @@ ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
 ${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
 ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
 
-${VIEWER_CURSOR_INFO_BAR}    //*[@id="root"]/div/div[11]/div[2]/div/div[1]/div[1]/div[2]/div/div/div/div[3]
+${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[3]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[12]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[12]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
+
+${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
+${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
+${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
+${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
+${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
+
+${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
+${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
+${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
+${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
+${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
 
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
@@ -73,12 +85,15 @@ ${MIRIAD_M17_SWex}    xpath://*[contains(text(), "M17_SWex.miriad")]
 
 
 
-
 *** Keywords ***
 Setup carta_backend And Open Browser To CARTA
     Run carta_backend
     Set Selenium Speed    ${DELAY}
+    IF    '${BROWSER}' == 'headlesschrome'
+    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl")
+    ELSE
     Open Browser    browser=${BROWSER}
+    END
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}

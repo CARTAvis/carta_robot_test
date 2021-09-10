@@ -2,3 +2,4 @@
 *.xml
 *.png
 .DS_Store
+*.log
