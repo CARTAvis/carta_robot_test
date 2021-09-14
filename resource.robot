@@ -9,6 +9,7 @@ Library           SeleniumLibrary
 Library           Process
 Library           OperatingSystem
 Library           String
+Library           Collections
 
 *** Variables ***
 ############ edit the following only to fit your env ######################

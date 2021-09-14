@@ -17,8 +17,8 @@ File Info Of A Regular FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [321, 401]
-    #Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
-    #Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.4", 0.4"
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/beam
     Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= ICRS
@@ -65,13 +65,13 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [321, 401]
-    #Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
-    #Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.4", 0.4"
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/beam
     Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= ICRS
     Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
-    #Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
     Element Should Contain    ${FILE_INFO_TEXT}    Has mipmaps \= T
     Sleep    1

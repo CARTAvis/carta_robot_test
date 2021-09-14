@@ -55,7 +55,7 @@ Match Images Spatially And Spectrally
     Capture Element Screenshot    ${VIEWER_DIV}    fits_new_channel.png
     Sleep    1
     PNG Images Should Be Identical    casa_new_channel.png    fits_new_channel.png
-    Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
+    #Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
     Sleep    1
     [Teardown]    Kill carta_backend And Close Browser
 
