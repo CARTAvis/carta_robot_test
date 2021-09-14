@@ -158,7 +158,61 @@ Channel Navigation
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Animation Playback Channel Range
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   ${FITS_M17_SWex}
+    Sleep    1
+    Capture Element Screenshot    ${VIEWER_DIV}    initial.png
+    Sleep    1
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Sleep    1
+    #Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Sleep    1
+    Drag And Drop By Offset    ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    50    0
+    Sleep    1
+    Drag And Drop By Offset    ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    -100    0
+    Sleep    1
+    ${range_from_index}=    Get Text    ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}
+    ${range_to_index}=    Get Text    ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}
+    ${range_from_index_int}=    Convert To Integer    ${range_from_index}
+    ${range_to_index_int}=    Convert To Integer    ${range_to_index}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1
+    Capture Element Screenshot    ${VIEWER_DIV}    final.png
+    Sleep    1
+    PNG Images Should Be Different    initial.png    final.png
+    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} >= ${range_from_index_int} and ${result} <= ${range_to_index_int}
+    Remove Files    initial.png    final.png 
+    [Teardown]    Kill carta_backend And Close Browser
 
 
-
-
+Animation Playback Channel Step
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   ${FITS_M17_SWex}
+    Sleep    1
+    Capture Element Screenshot    ${VIEWER_DIV}    initial.png
+    Sleep    1
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Sleep    1
+    Click Element    xpath://*[contains(text(), "Frame Rate")]
+    Sleep    1
+    Click Element    xpath://*[contains(text(), "Step")]
+    Sleep    1
+    Click Element    ${ANIMATOR_SPINBOX_UP}
+    Sleep    1
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    2
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1
+    Capture Element Screenshot    ${VIEWER_DIV}    final.png
+    Sleep    1
+    PNG Images Should Be Different    initial.png    final.png
+    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result}%2 == 0
+    Remove Files    initial.png    final.png 
+    [Teardown]    Kill carta_backend And Close Browser

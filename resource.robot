@@ -54,8 +54,12 @@ ${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/
 ${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
 ${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
 ${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
+${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
 ${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
 ${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
+${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
+${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
+
 
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
