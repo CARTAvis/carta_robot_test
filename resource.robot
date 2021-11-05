@@ -42,7 +42,7 @@ ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
 
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[3]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
-${CLIP_BUTTON_90}    //*[@id="root"]/div/div[12]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
+${CLIP_BUTTON_90}    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
 ${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
 ${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
