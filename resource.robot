@@ -33,8 +33,7 @@ ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 
 ${FILE_LIST}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]
 ${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
-${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
-
+${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
 
 ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
