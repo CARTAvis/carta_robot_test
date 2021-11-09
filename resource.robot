@@ -21,8 +21,8 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
-${BROWSER}        headlesschrome
-#${BROWSER}        chrome
+#${BROWSER}        headlesschrome
+${BROWSER}        chrome
 ${DELAY}          0.02
 ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
