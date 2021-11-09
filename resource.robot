@@ -22,6 +22,7 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
+#${BROWSER}        chrome
 ${DELAY}          0.02
 ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
@@ -44,20 +45,23 @@ ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[3]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
-${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
-${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
-${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
-${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
-${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
+${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
 
-${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
-${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
-${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
-${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
-${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
-${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
-${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
-${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[12]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
+
+${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
+${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
+${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
+${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
+${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
+
+${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
+${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
+${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
+${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
+${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
+${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
+${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
+${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
 
 
 # image comparsion

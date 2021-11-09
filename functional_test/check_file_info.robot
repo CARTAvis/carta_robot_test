@@ -23,7 +23,7 @@ File Info Of A Regular FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/beam
     Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= ICRS
     Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
-    #Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
     Sleep    1
     [Teardown]    Kill carta_backend And Close Browser
