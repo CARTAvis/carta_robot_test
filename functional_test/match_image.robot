@@ -61,7 +61,7 @@ Match Images Spatially And Spectrally
     Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
     Sleep    1
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    1
+    Sleep    3
     [Teardown]    Kill carta_backend And Close Browser
 
 
