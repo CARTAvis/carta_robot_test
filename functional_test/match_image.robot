@@ -8,7 +8,7 @@ Match Images Spatially And Spectrally
     Load Initial Image   ${FITS_M17_SWex}
     Sleep    1
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    1
+    Sleep    3
     Append Image  ${CASA_M17_SWex}
     Sleep    1
     Mouse Over    ${VIEWER_DIV}
@@ -58,7 +58,7 @@ Match Images Spatially And Spectrally
     Capture Element Screenshot    ${VIEWER_DIV}    fits_new_channel.png
     Sleep    1
     PNG Images Should Be Identical    casa_new_channel.png    fits_new_channel.png
-    #Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
+    Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
     Sleep    1
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Sleep    1
