@@ -12,16 +12,16 @@ Check Raster Rendering With WebGL
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Page Does Not Contain    File Browser    timeout=10
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Sleep    1
+    #Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
-    Sleep    1
+    #Sleep    1
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
-    Sleep    1
+    #Sleep    1
     PNG Images Should Be Different    initial.png    rerendered.png
-    Sleep    1
+    #Sleep    1
     Remove Files    initial.png    rerendered.png
     [Teardown]    Kill carta_backend And Close Browser
 
