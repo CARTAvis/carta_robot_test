@@ -58,7 +58,7 @@ Animation Playback Bouncing
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 19 or ${result} == 20 or ${result} == 21
+    Should Be True    ${result} == 18 or ${result} == 19 or ${result} == 20
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
