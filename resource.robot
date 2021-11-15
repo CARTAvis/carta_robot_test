@@ -23,7 +23,7 @@ ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --fronte
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 #${BROWSER}        chrome
-${DELAY}          0.02
+${DELAY}          0.2
 ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
