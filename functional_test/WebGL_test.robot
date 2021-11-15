@@ -7,7 +7,7 @@ Check Raster Rendering With WebGL
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Sleep     3
     Page Should Not Contain    'Could not load WebGL. Images will not be displayed properly.'
-    Wait Until Page Contains Element    $xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
     Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
