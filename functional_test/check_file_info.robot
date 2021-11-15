@@ -5,10 +5,10 @@ Resource          ../resource.robot
 *** Test Cases ***
 File Info Of A Regular FITS Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    ${FITS_M17_SWex}    timeout=2
-    Click Element    ${FITS_M17_SWex}
+    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
+    Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Sleep    1
+    Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
@@ -25,15 +25,14 @@ File Info Of A Regular FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
-    Sleep    1
     [Teardown]    Kill carta_backend And Close Browser
 
 File Info Of A Regular CASA Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    ${CASA_M17_SWex}    timeout=2
-    Click Element    ${CASA_M17_SWex}
+    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.image")]    timeout=2
+    Click Element    xpath://*[contains(text(), "M17_SWex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Sleep    1
+    Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.image
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
@@ -49,15 +48,14 @@ File Info Of A Regular CASA Image
     Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
-    Sleep    1
     [Teardown]    Kill carta_backend And Close Browser
 
 File Info Of A Regular HDF5 Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    ${HDF5_M17_SWex}    timeout=2
-    Click Element    ${HDF5_M17_SWex}
+    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.hdf5")]    timeout=2
+    Click Element    xpath://*[contains(text(), "M17_SWex.hdf5")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Sleep    1
+    Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.hdf5
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
@@ -74,15 +72,14 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
     Element Should Contain    ${FILE_INFO_TEXT}    Has mipmaps \= T
-    Sleep    1
     [Teardown]    Kill carta_backend And Close Browser
 
 File Info Of A Regular MIRIAD Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    ${MIRIAD_M17_SWex}    timeout=2
-    Click Element    ${MIRIAD_M17_SWex}
+    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.miriad")]    timeout=2
+    Click Element    xpath://*[contains(text(), "M17_SWex.miriad")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Sleep    1
+    Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.miriad
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
@@ -98,7 +95,6 @@ File Info Of A Regular MIRIAD Image
     Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= BARY
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
-    Sleep    1
     [Teardown]    Kill carta_backend And Close Browser
 
 # TODO: add tests for PV and UV images and other CASA varients
