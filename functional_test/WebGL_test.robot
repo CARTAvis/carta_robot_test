@@ -31,8 +31,10 @@ Webglreport Test
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     Go To    https://webglreport.com/?v\=1
     Wait Until Page Contains    WebGL
+    Page Should Contain    This browser supports WebGL 1
     Capture Page Screenshot    WebGL1.png
     Go To    https://webglreport.com/?v\=2
     Wait Until Page Contains    WebGL
+    Page Should Contain    This browser supports WebGL 2
     Capture Page Screenshot    WebGL2.png
     Close Browser
