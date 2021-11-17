@@ -105,7 +105,7 @@ Load FITS fz image
     [Teardown]    Kill carta_backend And Close Browser
 
 
-Load FITS PV image
+Load FITS pv image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "carta_pv.fits")]    timeout=2
     Click Element    xpath://*[contains(text(), "carta_pv.fits")]
@@ -122,7 +122,7 @@ Load FITS PV image
     [Teardown]    Kill carta_backend And Close Browser
 
 
-Load CASA PV image
+Load CASA pv image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "casa_pv.image")]    timeout=2
     Click Element    xpath://*[contains(text(), "casa_pv.image")]
