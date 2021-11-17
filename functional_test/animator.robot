@@ -65,8 +65,8 @@ Animation Playback Bouncing
 
 
 Animation Playback Blink
-    [Setup]    Setup carta_backend And Open Browser To CARTA
     Pass Execution    Skip for now: blink element cannot be located for unknown reasons...
+    [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
