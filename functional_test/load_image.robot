@@ -72,7 +72,6 @@ Load MIRIAD image
 
 
 Load FITS gz image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "tu2310418.fits.gz")]    timeout=2
     Click Element    xpath://*[contains(text(), "tu2310418.fits.gz")]
@@ -90,7 +89,6 @@ Load FITS gz image
 
 
 Load FITS fz image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "tu2310418.fits.fz")]    timeout=2
     Click Element    xpath://*[contains(text(), "tu2310418.fits.fz")]
@@ -108,7 +106,6 @@ Load FITS fz image
 
 
 Load FITS pv image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "carta_pv.fits")]    timeout=2
     Click Element    xpath://*[contains(text(), "carta_pv.fits")]
@@ -126,7 +123,6 @@ Load FITS pv image
 
 
 Load CASA pv image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "casa_pv.image")]    timeout=2
     Click Element    xpath://*[contains(text(), "casa_pv.image")]
@@ -144,7 +140,6 @@ Load CASA pv image
 
 
 Load CASA uv image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "UVamp.image")]    timeout=2
     Click Element    xpath://*[contains(text(), "UVamp.image")]
@@ -217,7 +212,6 @@ Load CASA integer image
 
 
 Load CASA componentlist image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "componentlist.image")]    timeout=2
     Click Element    xpath://*[contains(text(), "componentlist.image")]
@@ -235,7 +229,6 @@ Load CASA componentlist image
 
 
 Load CASA concatenated image
-    Pass Execution    test data not uploaded yet...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains Element    xpath://*[contains(text(), "concatenated.image")]    timeout=2
     Click Element    xpath://*[contains(text(), "concatenated.image")]
