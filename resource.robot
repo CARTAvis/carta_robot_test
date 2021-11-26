@@ -45,6 +45,9 @@ ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[3]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
+${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
+
+
 ${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
 
 
@@ -70,6 +73,12 @@ ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -met
 
 # image rgba comparsion
 ${IMAGE_RGBA_COMPARATOR_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/match_png.py __REFERENCE__ __TEST__
+
+
+# image pixel rgba check
+${IMAGE_PIXEL_RGBA_CHECK_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/png_rgba_check.py __REFERENCE__ __TEST__
+
+
 
 
 # test images
@@ -201,12 +210,20 @@ PNG Images Should Be Different
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    different
 
-
-
 PNG Images Should Be Identical
    [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}       
+   Should Contain   ${OUTPUT}    identical
+
+PNG Pixel XY Should Match RGBA
+   [Arguments]      ${Reference_Image_Path}    ${Test_XYRGBA}
+   ${TEMP}=         Replace String     ${IMAGE_PIXEL_RGBA_CHECK_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_XYRGBA}
    Log              Executing: ${COMMAND}
    ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
    Log              Return Code: ${RC}
