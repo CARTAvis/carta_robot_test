@@ -29,6 +29,7 @@ ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
 ${WINDOW_SIZE_Y}    800
 
+
 ${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
 ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 
