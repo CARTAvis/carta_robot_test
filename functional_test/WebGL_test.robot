@@ -25,10 +25,11 @@ Webglreport Test
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
     Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl")
+    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     ELSE
     Open Browser    browser=${BROWSER}
+    Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
-    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     Go To    https://webglreport.com/?v\=1
     Wait Until Page Contains    WebGL
     Page Should Contain    This browser supports WebGL 1

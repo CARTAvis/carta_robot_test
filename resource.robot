@@ -28,7 +28,7 @@ ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
 ${WINDOW_SIZE_Y}    800
-
+${WINDOW_SIZE_dY}    124
 
 ${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
 ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
@@ -108,10 +108,11 @@ Setup carta_backend And Open Browser To CARTA
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
     Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl")
+    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     ELSE
     Open Browser    browser=${BROWSER}
+    Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
-    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
