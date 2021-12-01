@@ -113,6 +113,7 @@ Setup carta_backend And Open Browser To CARTA
     Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb")
     Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
+    Sleep    1
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
