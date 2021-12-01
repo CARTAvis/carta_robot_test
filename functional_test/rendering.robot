@@ -13,7 +13,7 @@ Raster Image Rendering
     Wait Until Page Does Not Contain    File Browser    timeout=10
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Click Element    ${COLORMAP_DROPDOWN}
-    Click Element    xpath://*[contains(text(), "gray")]
+    Click Element    xpath://*[contains(text(), "tab10")]
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     # test pixel shader
@@ -28,7 +28,7 @@ Raster Image Rendering
     PNG Pixel XY Should Match RGBA    check.png    502,222,199,199,199,255
     PNG Pixel XY Should Match RGBA    check.png    562,222,227,227,227,255
     PNG Pixel XY Should Match RGBA    check.png    626,222,255,255,255,255
-    Remove Files    check.png
+    #Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Contour Image Rendering
