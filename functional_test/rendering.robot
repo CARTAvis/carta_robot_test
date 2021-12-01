@@ -18,17 +18,18 @@ Raster Image Rendering
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     # test pixel shader
     Set Selenium Speed    0.02
-    PNG Pixel XY Should Match RGBA    check.png    76,222,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    136,222,28,28,28,255
-    PNG Pixel XY Should Match RGBA    check.png    196,222,56,56,56,255
-    PNG Pixel XY Should Match RGBA    check.png    256,222,85,85,85,255
-    PNG Pixel XY Should Match RGBA    check.png    318,222,113,113,113,255
-    PNG Pixel XY Should Match RGBA    check.png    380,222,142,142,142,255
-    PNG Pixel XY Should Match RGBA    check.png    440,222,170,170,170,255
-    PNG Pixel XY Should Match RGBA    check.png    502,222,199,199,199,255
-    PNG Pixel XY Should Match RGBA    check.png    562,222,227,227,227,255
-    PNG Pixel XY Should Match RGBA    check.png    626,222,255,255,255,255
-    #Remove Files    check.png
+    PNG Pixel XY Should Match RGBA    check.png    76,222,31,119,180,255
+    PNG Pixel XY Should Match RGBA    check.png    136,222,255,127,14,255
+    PNG Pixel XY Should Match RGBA    check.png    196,222,44,160,44,255
+    PNG Pixel XY Should Match RGBA    check.png    256,222,214,39,40,255
+    PNG Pixel XY Should Match RGBA    check.png    318,222,148,103,189,255
+    PNG Pixel XY Should Match RGBA    check.png    380,222,140,86,75,255
+    PNG Pixel XY Should Match RGBA    check.png    440,222,227,119,194,255
+    PNG Pixel XY Should Match RGBA    check.png    502,222,127,127,127,255
+    PNG Pixel XY Should Match RGBA    check.png    562,222,188,189,34,255
+    PNG Pixel XY Should Match RGBA    check.png    626,222,23,190,207,255
+    PNG Pixel XY Should Match RGBA    check.png    688,222,19,124,189,255
+    Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Contour Image Rendering
@@ -46,26 +47,23 @@ Contour Image Rendering
     Input Text    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/div/div/div/input    0.6
     Click Element    xpath://*[contains(text(), "Styling")]
     Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
-    Click Element    //*[@id="bp3-tab-panel_undefined_2"]/div/div[7]/div/span/button
-    Clear Element Text    //*[@id="rc-editable-input-1"]
-    Input Text    //*[@id="rc-editable-input-1"]    000000
     Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     # test contour shader
     Set Selenium Speed    0.02
-    PNG Pixel XY Should Match RGBA    check.png    379,196,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    367,200,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    362,205,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    358,217,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    362,229,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    367,234,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    379,238,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    391,234,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    396,229,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    400,217,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    396,205,0,0,0,255
-    PNG Pixel XY Should Match RGBA    check.png    392,200,0,0,0,255
+    PNG Pixel XY Should Match RGBA    check.png    379,196,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    367,200,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    362,205,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    358,217,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    362,229,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    367,234,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    379,238,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    391,234,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    396,229,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    400,217,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    396,205,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check.png    392,200,15,153,96,255
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
