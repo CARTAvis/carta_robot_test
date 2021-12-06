@@ -88,7 +88,7 @@ Match Wide-Field Images Spatially
     #PNG Pixel XY Should Match RGBA    matched_2nd_image.png    379,217,252,254,164,255
     #PNG Pixel XY Should Match RGBA    matched_multipanel.png    190,217,252,254,164,255
     #PNG Pixel XY Should Match RGBA    matched_multipanel.png    570,217,252,254,164,255
-    #Remove Files    matched_multipanel.png    matched_2nd_image.png    matched_1st_image.png
+    Remove Files    matched_multipanel.png    matched_2nd_image.png    matched_1st_image.png
     [Teardown]    Kill carta_backend And Close Browser    
 
 
