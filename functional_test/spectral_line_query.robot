@@ -173,9 +173,9 @@ Line ID Overlay On Spectral Profiler
     # with line ID label (note the rgba inconsistency due to anti-aliasing)
     IF    '${BROWSER}' == 'headlesschrome'
     PNG Pixel XY Should Match RGBA    check.png    199,15,129,188,165,255
-    PNG Pixel XY Should Match RGBA    check.png    415,15,128,187,164,255
-    PNG Pixel XY Should Match RGBA    check.png    544,15,128,187,164,255
-    PNG Pixel XY Should Match RGBA    check.png    588,15,128,188,164,255
+    PNG Pixel XY Should Match RGBA    check.png    415,15,129,188,165,255
+    PNG Pixel XY Should Match RGBA    check.png    544,15,129,188,165,255
+    PNG Pixel XY Should Match RGBA    check.png    588,15,129,188,165,255
     END
     IF    '${BROWSER}' == 'chrome'
     PNG Pixel XY Should Match RGBA    check.png    199,15,13,128,80,255
