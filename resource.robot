@@ -107,10 +107,10 @@ Setup carta_backend And Open Browser To CARTA
     Run carta_backend
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl");add_argument("--force-color-profile=srgb")
+    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl");add_argument("--force-color-profile=srgb");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage")
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     ELSE
-    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb")
+    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage")
     Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
     Sleep    1
