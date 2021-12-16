@@ -21,8 +21,8 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
-#${BROWSER}        headlesschrome
-${BROWSER}        chrome
+${BROWSER}        headlesschrome
+#${BROWSER}        chrome
 ${DELAY}          0.2
 ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
@@ -107,10 +107,10 @@ Setup carta_backend And Open Browser To CARTA
     Run carta_backend
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl");add_argument("--force-color-profile=srgb");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage")
+    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl");add_argument("--force-color-profile=srgb")
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     ELSE
-    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb");add_argument("--no-sandbox");add_argument("--disable-dev-shm-usage")
+    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb")
     Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
     Sleep    1
