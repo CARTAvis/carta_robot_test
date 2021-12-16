@@ -42,7 +42,7 @@ Spectral Profile Fitting Guess Then Fit
     PNG Pixel XY Should Match RGBA    check2.png    413,80,223,231,208,255
     PNG Pixel XY Should Match RGBA    check2.png    545,80,223,231,208,255
     PNG Pixel XY Should Match RGBA    check2.png    589,80,223,231,208,255
-    PNG Pixel XY Should Match RGBA    check2.png    747,80,190,207,146,255
+    PNG Pixel XY Should Match RGBA    check2.png    747,80,190,207,145,255
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
