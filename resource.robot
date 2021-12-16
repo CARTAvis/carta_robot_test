@@ -21,8 +21,8 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
-${BROWSER}        headlesschrome
-#${BROWSER}        chrome
+#${BROWSER}        headlesschrome
+${BROWSER}        chrome
 ${DELAY}          0.2
 ${LOGIN URL}      http://${SERVER}/
 ${TITLE}          CARTA
@@ -117,7 +117,10 @@ Setup carta_backend And Open Browser To CARTA
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
-
+    ${VIEWER_MODE}=    Get Element Attribute    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]    title
+    IF    '${VIEWER_MODE}' != 'switch to single panel'
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    END
 
 Kill carta_backend And Close Browser
     Close Browser
