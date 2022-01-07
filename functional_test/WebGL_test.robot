@@ -24,10 +24,11 @@ Check Raster Rendering With WebGL
 Webglreport Test
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl")
+    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=egl");add_argument("--force-color-profile=srgb")
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
-    ELSE
-    Open Browser    browser=${BROWSER}
+    END
+    IF    '${BROWSER}' == 'chrome'
+    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb")
     Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
     Go To    https://webglreport.com/?v\=1

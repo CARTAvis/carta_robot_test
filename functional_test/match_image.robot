@@ -43,7 +43,7 @@ Match Images Spatially And Spectrally
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    fits_new_channel.png
     PNG Images Should Be Identical    casa_new_channel.png    fits_new_channel.png
-    #Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
+    Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Sleep    0.5
     [Teardown]    Kill carta_backend And Close Browser
@@ -67,6 +67,7 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]/td[2]
     Append Image  xpath://*[contains(text(), "Gaussian_SE2.fits")]
     Mouse Over    ${VIEWER_DIV}
+    Sleep    0.5
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
     Mouse Out    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
     Sleep    0.5
@@ -90,7 +91,7 @@ Match Wide-Field Images Spatially
     PNG Pixel XY Should Match RGBA    matched_2nd_image.png    379,217,252,254,164,255
     PNG Pixel XY Should Match RGBA    matched_multipanel.png    190,217,252,254,164,255
     PNG Pixel XY Should Match RGBA    matched_multipanel.png    570,217,252,254,164,255
-    #Remove Files    matched_multipanel.png    matched_2nd_image.png    matched_1st_image.png
+    Remove Files    matched_multipanel.png    matched_2nd_image.png    matched_1st_image.png
     [Teardown]    Kill carta_backend And Close Browser    
 
 
