@@ -48,17 +48,19 @@ Animation Playback Bouncing
     Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Repeat Keyword    20    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    6
+    Sleep    4
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final.png
     PNG Images Should Be Different    initial.png    final.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 18 or ${result} == 19 or ${result} == 20
+    Should Be True    ${result} == 20 or ${result} == 21 or ${result} == 22
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
