@@ -18,8 +18,9 @@ ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
 ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
+${N_OMP_THREADS}    8
 ###########################################################################
-${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --debug_no_auth --no_browser
+${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 #${BROWSER}        chrome
