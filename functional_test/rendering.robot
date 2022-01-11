@@ -315,7 +315,7 @@ Matched Region Canvas Rendering Multiple Panel View
     PNG Pixel XY Should Match RGBA    check4.png    599,201,46,230,214,255
     PNG Pixel XY Should Match RGBA    check4.png    584,186,46,230,214,255
     PNG Pixel XY Should Match RGBA    check4.png    553,186,46,230,214,255
-    #Remove Files    check.png    check2.png    check3.png    check4.png
+    Remove Files    check.png    check2.png    check3.png    check4.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -430,5 +430,5 @@ Matched Region Canvas Rendering Single Panel View
     PNG Pixel XY Should Match RGBA    check3.png    364,248,46,230,214,255
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
-    #Remove Files    check.png    check2.png    check3.png
+    Remove Files    check.png    check2.png    check3.png
     [Teardown]    Kill carta_backend And Close Browser

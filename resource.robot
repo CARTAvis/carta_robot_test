@@ -42,6 +42,7 @@ ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
 ${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
 ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
+${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
 
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[3]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
@@ -165,6 +166,15 @@ Append Image
 Close Image
     Click Element    xpath://*[contains(text(), "File")]
     Click Element    xpath://*[contains(text(), "Close image")]
+
+
+Load Region File
+    [Arguments]    ${REGION_TO_LOAD}
+    Click Element    xpath://*[contains(text(), "File")]
+    Click Element    xpath://*[contains(text(), "Import regions")]
+    Click Element    ${REGION_TO_LOAD}
+    Click Element    ${LOAD_REGION_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
 
 
 Run carta_backend
