@@ -23,10 +23,10 @@ Region Spectral Profile
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]
     Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    point_profile.png
     Set Selenium Speed    0.02
-    PNG Pixel XY Should Match RGBA    polygon_profile.png    476,61,16,107,163,255
-    PNG Pixel XY Should Match RGBA    ellipse_profile.png    477,153,16,107,163,255
-    PNG Pixel XY Should Match RGBA    point_profile.png    477,90,16,107,163,255
-    PNG Pixel XY Should Match RGBA    rectangle_profile.png    477,58,16,107,163,255
+    #PNG Pixel XY Should Match RGBA    polygon_profile.png    476,61,16,107,163,255
+    #PNG Pixel XY Should Match RGBA    ellipse_profile.png    477,153,16,107,163,255
+    #PNG Pixel XY Should Match RGBA    point_profile.png    477,90,16,107,163,255
+    #PNG Pixel XY Should Match RGBA    rectangle_profile.png    477,58,16,107,163,255
     PNG Images Should Be Different    polygon_profile.png    ellipse_profile.png
     PNG Images Should Be Different    polygon_profile.png    point_profile.png
     PNG Images Should Be Different    polygon_profile.png    rectangle_profile.png
