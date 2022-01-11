@@ -32,14 +32,10 @@ Match Images Spatially And Spectrally
     Capture Element Screenshot    ${VIEWER_DIV}    fits_zoomed_matched.png
     Sleep    0.5
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    2
-    Capture Element Screenshot    ${VIEWER_DIV}    multipanel_zoomed_matched.png
     Sleep    0.5
     Set Selenium Speed    0.02
     PNG Images Should Be Identical    fits_zoomed_matched.png    casa_zoomed_matched.png
-    PNG Pixel XY Should Match RGBA    multipanel_zoomed_matched.png    128,129,248,237,122,255
-    PNG Pixel XY Should Match RGBA    multipanel_zoomed_matched.png    507,129,248,237,122,255
-    Remove Files    fits_zoomed_matched.png    casa_zoomed_matched.png    multipanel_zoomed_matched.png
+    Remove Files    fits_zoomed_matched.png    casa_zoomed_matched.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
