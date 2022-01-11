@@ -4,48 +4,42 @@ Resource          ../resource.robot
 
 *** Test Cases ***
 Match Images Spatially And Spectrally
-    Pass Execution    Need to reimplement this test...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   xpath://*[contains(text(), "M17_SWex.fits")]
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Mouse Over    ${VIEWER_DIV}
+    Sleep    1
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[5]/a
     Append Image  xpath://*[contains(text(), "M17_SWex.image")]
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[5]/a
-    Mouse Over    ${VIEWER_DIV}
-    Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_unmatched.png
-    Click Element    xpath://*[contains(text(), "Animator")]
-    Click Element At Coordinates    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]    -50    0
-    Mouse Over    ${VIEWER_DIV}
-    Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    fits_initial_unmatched.png
-    Click Element At Coordinates    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]    50    0
-    Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[9]/span/a  
+    Sleep    1
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[9]/span/a
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
-    Sleep    0.5
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Mouse Over    ${VIEWER_DIV}
+    Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    matched.png
-    PNG Images Should Be Identical    fits_initial_unmatched.png    matched.png
-    PNG Images Should Be Different    casa_zoomed_unmatched.png    fits_initial_unmatched.png
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]
+    Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched.png
+    Sleep    0.5
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
+    Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Mouse Over    ${VIEWER_DIV}
+    Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    casa_new_channel.png
-    Click Element At Coordinates    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]    -50    0
-    Mouse Over    ${VIEWER_DIV}
-    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    fits_zoomed_matched.png
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    fits_new_channel.png
-    PNG Images Should Be Identical    casa_new_channel.png    fits_new_channel.png
-    Remove Files    casa_zoomed_unmatched.png    fits_initial_unmatched.png    matched.png    casa_new_channel.png    fits_new_channel.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Sleep    2
+    Capture Element Screenshot    ${VIEWER_DIV}    multipanel_zoomed_matched.png
     Sleep    0.5
+    Set Selenium Speed    0.02
+    PNG Images Should Be Identical    fits_zoomed_matched.png    casa_zoomed_matched.png
+    PNG Pixel XY Should Match RGBA    multipanel_zoomed_matched.png    128,129,248,237,122,255
+    PNG Pixel XY Should Match RGBA    multipanel_zoomed_matched.png    507,129,248,237,122,255
+    Remove Files    fits_zoomed_matched.png    casa_zoomed_matched.png    multipanel_zoomed_matched.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
