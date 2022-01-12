@@ -57,7 +57,7 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]/td[2]
     Append Image  xpath://*[contains(text(), "Gaussian_SE2.fits")]
     Mouse Over    ${VIEWER_DIV}
-    Sleep    0.5
+    Sleep    1
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
     Mouse Out    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
     Sleep    0.5
