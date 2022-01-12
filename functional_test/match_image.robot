@@ -59,6 +59,7 @@ Match Wide-Field Images Spatially
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
+    Sleep    0.5
     Mouse Out    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
