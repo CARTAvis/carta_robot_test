@@ -24,8 +24,12 @@ pix = im.load()
 #print(pix[0,0])
 
 
+
 if pix[ref_x1, ref_y1] == pix[ref_x2, ref_y2]:
     print("identical")
+elif np.sum(np.abs((np.abs(np.array(pix[ref_x1, ref_y1])) - np.abs(np.array(pix[ref_x2, ref_y2]))))) <= 3:
+    # this is to conpensate the error from anti-aliasing
+    print("identical, almost")
 else:
     print("different,", (ref_x1, ref_y1), "should be", pix[ref_x1, ref_y1],",", (ref_x2, ref_y2), "should be", pix[ref_x2, ref_y2])
 
