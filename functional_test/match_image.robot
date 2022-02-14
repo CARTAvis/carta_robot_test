@@ -5,12 +5,12 @@ Resource          ../resource.robot
 *** Test Cases ***
 Match Images Spatially And Spectrally
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image   xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[5]/a
-    Append Image  xpath://*[contains(text(), "M17_SWex.image")]
+    Append Image    M17_SWex.image
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[9]/span/a
@@ -42,7 +42,7 @@ Match Images Spatially And Spectrally
 
 Match Wide-Field Images Spatially
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image   xpath://*[contains(text(), "Gaussian2.fits")]
+    Load Initial Image    Gaussian2.fits
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
@@ -55,7 +55,7 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]/td[2]
-    Append Image  xpath://*[contains(text(), "Gaussian_SE2.fits")]
+    Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
@@ -80,8 +80,7 @@ Match Wide-Field Images Spatially
     Set Selenium Speed    0.02
     PNG Pixel XY Should Match RGBA    matched_1st_image.png    379,217,252,254,164,255
     PNG Pixel XY Should Match RGBA    matched_2nd_image.png    379,217,252,254,164,255
-    PNG Pixel XY Should Match RGBA    matched_multipanel.png    190,217,252,254,164,255
-    PNG Pixel XY Should Match RGBA    matched_multipanel.png    570,217,252,254,164,255
+    PNG Two Pixels Should Have Matched RGBA    matched_multipanel.png    190,217,570,217
     Remove Files    matched_multipanel.png    matched_2nd_image.png    matched_1st_image.png
     [Teardown]    Kill carta_backend And Close Browser    
 

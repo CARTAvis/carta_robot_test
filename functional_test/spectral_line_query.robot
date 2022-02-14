@@ -5,13 +5,7 @@ Resource          ../resource.robot
 *** Test Cases ***
 Query Splatalogue
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity Limit
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input    349370    True
@@ -73,13 +67,7 @@ Query Splatalogue
 
 Line Table Filtering And Shifting
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity Limit
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input    349370    True
@@ -109,13 +97,7 @@ Line Table Filtering And Shifting
 
 Line Table Column Configuration
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity Limit
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input    349370    True
@@ -133,13 +115,7 @@ Line Table Column Configuration
 
 Line ID Overlay On Spectral Profiler
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
@@ -192,5 +168,6 @@ Line ID Overlay On Spectral Profiler
     #PNG Pixel XY Should Match RGBA    check2.png    415,15,245,248,250,255
     #PNG Pixel XY Should Match RGBA    check2.png    544,15,245,248,250,255
     #PNG Pixel XY Should Match RGBA    check2.png    588,15,245,248,250,255    
+    
     Remove Files    check.png    check2.png
     [Teardown]    Kill carta_backend And Close Browser

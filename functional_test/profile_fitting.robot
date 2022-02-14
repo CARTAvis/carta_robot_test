@@ -5,13 +5,7 @@ Resource          ../resource.robot
 *** Test Cases ***
 Spectral Profile Fitting Guess Then Fit
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "S255_CH3CN_subcube.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
@@ -38,17 +32,13 @@ Spectral Profile Fitting Guess Then Fit
     Sleep    0.5
     Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
     Set Selenium Speed    0.02
-    
     PNG Images Should Be Different    check.png    check2.png
-
-    # NEED A MORE ROBUST WAY TO TEST THIS
-
-    #PNG Pixel XY Should Match RGBA    check2.png    200,80,223,231,208,255
-    #PNG Pixel XY Should Match RGBA    check2.png    413,80,223,231,208,255
-    #PNG Pixel XY Should Match RGBA    check2.png    545,80,223,231,208,255
-    #PNG Pixel XY Should Match RGBA    check2.png    589,80,223,231,208,255
-    #PNG Pixel XY Should Match RGBA    check2.png    747,80,190,207,145,255
-    
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    100,80,200,80
+    PNG Two Pixels Should Have Matched RGBA    check2.png    200,80,413,80
+    PNG Two Pixels Should Have Matched RGBA    check2.png    413,80,545,80
+    PNG Two Pixels Should Have Matched RGBA    check2.png    545,80,589,80
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    589,80,747,80
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    747,80,100,80    
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
@@ -108,20 +98,15 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    //*[@id="root"]/div/div[14]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
     Sleep    0.5
     Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check3.png
-    Set Selenium Speed    0.02
-    
+    Set Selenium Speed    0.02    
     PNG Images Should Be Different    check.png    check3.png
     PNG Images Should Be Different    check2.png    check3.png
-
-    # NEED A MORE ROBUST WAY TO TEST THIS
-
-    #PNG Pixel XY Should Match RGBA    check3.png    195,32,191,115,38,255
-    #PNG Pixel XY Should Match RGBA    check3.png    413,21,191,115,38,255
-    #PNG Pixel XY Should Match RGBA    check3.png    542,16,191,115,38,255
-    #PNG Pixel XY Should Match RGBA    check3.png    587,16,191,115,38,255
-    #PNG Pixel XY Should Match RGBA    check3.png    746,23,191,115,38,255
-    #PNG Pixel XY Should Match RGBA    check3.png    207,143,191,115,38,255
-    
+    PNG Two Pixels Should Not Have Matched RGBA    check3.png    180,32,195,32
+    PNG Two Pixels Should Have Matched RGBA    check3.png    195,32,413,21
+    PNG Two Pixels Should Have Matched RGBA    check3.png    413,21,542,16
+    PNG Two Pixels Should Have Matched RGBA    check3.png    542,16,587,16
+    PNG Two Pixels Should Have Matched RGBA    check3.png    587,16,746,23
+    PNG Two Pixels Should Have Matched RGBA    check3.png    746,23,207,143
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
     Scroll Element Into View    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]

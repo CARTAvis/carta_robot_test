@@ -5,7 +5,7 @@ Resource          ../resource.robot
 *** Test Cases ***
 Animation Playback
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
@@ -24,7 +24,7 @@ Animation Playback
 
 Animation Playback Backwards
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
@@ -45,7 +45,7 @@ Animation Playback Backwards
 
 Animation Playback Bouncing
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
@@ -69,7 +69,7 @@ Animation Playback Bouncing
 Animation Playback Blink
     Pass Execution    Skip for now: blink element cannot be located for unknown reasons...
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
@@ -94,7 +94,7 @@ Animation Playback Blink
 
 Channel Navigation
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
@@ -126,7 +126,7 @@ Channel Navigation
 
 Animation Playback Channel Range
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
@@ -151,7 +151,7 @@ Animation Playback Channel Range
 
 Animation Playback Channel Step
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    xpath://*[contains(text(), "M17_SWex.fits")]
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    xpath://*[contains(text(), "Frame Rate")]

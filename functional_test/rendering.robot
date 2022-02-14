@@ -5,13 +5,7 @@ Resource          ../resource.robot
 *** Test Cases ***
 Raster Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "pixel_shader_test.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "pixel_shader_test.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    pixel_shader_test.fits
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Sleep    0.5
@@ -34,13 +28,7 @@ Raster Image Rendering
 
 Contour Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "small_gaussian.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "small_gaussian.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    small_gaussian.fits
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "nipy_spectral")]
     Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]/a
@@ -71,13 +59,7 @@ Contour Image Rendering
 
 Region Canvas Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "pixel_shader_test.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "pixel_shader_test.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    pixel_shader_test.fits
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
@@ -152,13 +134,7 @@ Region Canvas Rendering
 
 Matched Region Canvas Rendering Multiple Panel View
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "pixel_shader_test.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "pixel_shader_test.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    pixel_shader_test.fits
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
@@ -175,7 +151,7 @@ Matched Region Canvas Rendering Multiple Panel View
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    3
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Append Image    xpath://*[contains(text(), "pixel_shader_test.fits")]
+    Append Image    pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-1-0"]/div[7]/span[9]/span/a
     Mouse Out    //*[@id="image-panel-1-0"]/div[7]/span[9]/span/a
@@ -323,13 +299,7 @@ Matched Region Canvas Rendering Multiple Panel View
 
 Matched Region Canvas Rendering Single Panel View
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "pixel_shader_test.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "pixel_shader_test.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    pixel_shader_test.fits
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
@@ -346,7 +316,7 @@ Matched Region Canvas Rendering Single Panel View
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    3
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Append Image    xpath://*[contains(text(), "pixel_shader_test.fits")]
+    Append Image    pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-1-0"]/div[7]/span[9]/span/a
     Mouse Out    //*[@id="image-panel-1-0"]/div[7]/span[9]/span/a

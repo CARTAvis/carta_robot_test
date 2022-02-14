@@ -5,13 +5,7 @@ Resource          ../resource.robot
 *** Test Cases ***
 Cursor Spatial Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=20
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}   
     ${viewer_cursor_info_1}=    Get Text    ${VIEWER_CURSOR_INFO_BAR}
     ${spatial_profiler_info_1}=    Get Text    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div

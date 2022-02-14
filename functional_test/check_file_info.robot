@@ -5,6 +5,8 @@ Resource          ../resource.robot
 *** Test Cases ***
 File Info Of A Regular FITS Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    M17_SWex.fits
+    Sleep    0.2
     Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
     Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
@@ -29,6 +31,8 @@ File Info Of A Regular FITS Image
 
 File Info Of A Regular CASA Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    M17_SWex.image
+    Sleep    0.2
     Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.image")]    timeout=2
     Click Element    xpath://*[contains(text(), "M17_SWex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
@@ -52,6 +56,8 @@ File Info Of A Regular CASA Image
 
 File Info Of A Regular HDF5 Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    M17_SWex.hdf5
+    Sleep    0.2
     Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.hdf5")]    timeout=2
     Click Element    xpath://*[contains(text(), "M17_SWex.hdf5")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
@@ -76,6 +82,8 @@ File Info Of A Regular HDF5 Image
 
 File Info Of A Regular MIRIAD Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    M17_SWex.miriad
+    Sleep    0.2
     Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.miriad")]    timeout=2
     Click Element    xpath://*[contains(text(), "M17_SWex.miriad")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name

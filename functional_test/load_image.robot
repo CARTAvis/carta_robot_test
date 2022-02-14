@@ -5,13 +5,7 @@ Resource          ../resource.robot
 *** Test Cases ***
 Load FITS image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -22,13 +16,7 @@ Load FITS image
 
 Load CASA image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "M17_SWex.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    M17_SWex.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -39,13 +27,7 @@ Load CASA image
 
 Load HDF5 image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.hdf5")]    timeout=2
-    Click Element    xpath://*[contains(text(), "M17_SWex.hdf5")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    M17_SWex.hdf5
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -56,13 +38,7 @@ Load HDF5 image
 
 Load MIRIAD image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.miriad")]    timeout=2
-    Click Element    xpath://*[contains(text(), "M17_SWex.miriad")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    M17_SWex.miriad
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -73,13 +49,7 @@ Load MIRIAD image
 
 Load FITS gz image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "tu2310418.fits.gz")]    timeout=2
-    Click Element    xpath://*[contains(text(), "tu2310418.fits.gz")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    tu2310418.fits.gz
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -90,13 +60,7 @@ Load FITS gz image
 
 Load FITS fz image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "tu2310418.fits.fz")]    timeout=2
-    Click Element    xpath://*[contains(text(), "tu2310418.fits.fz")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    tu2310418.fits.fz
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -107,13 +71,7 @@ Load FITS fz image
 
 Load FITS pv image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "carta_pv.fits")]    timeout=2
-    Click Element    xpath://*[contains(text(), "carta_pv.fits")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    carta_pv.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -124,13 +82,7 @@ Load FITS pv image
 
 Load CASA pv image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "casa_pv.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "casa_pv.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    casa_pv.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -141,13 +93,7 @@ Load CASA pv image
 
 Load CASA uv image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "UVamp.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "UVamp.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    UVamp.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -160,13 +106,7 @@ Load CASA uv image
 Load CASA boolean image
     Pass Execution    Not yet supported...
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "boolean.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "boolean.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    boolean.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -178,13 +118,7 @@ Load CASA boolean image
 Load CASA complex image
     Pass Execution    Not yet supported...
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "complex.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    complex.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -196,13 +130,7 @@ Load CASA complex image
 Load CASA integer image
     Pass Execution    Not yet supported...
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "integer.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "integer.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    integer.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -213,13 +141,7 @@ Load CASA integer image
 
 Load CASA componentlist image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "componentlist.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "componentlist.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    componentlist.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -230,13 +152,7 @@ Load CASA componentlist image
 
 Load CASA concatenated image
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Wait Until Page Contains Element    xpath://*[contains(text(), "concatenated.image")]    timeout=2
-    Click Element    xpath://*[contains(text(), "concatenated.image")]
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
-    Wait Until Page Does Not Contain    File Browser    timeout=10
-    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Load Initial Image    concatenated.image
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png

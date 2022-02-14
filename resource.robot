@@ -37,6 +37,7 @@ ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 ${FILE_LIST}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]
 ${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
+${FILE_FILTER}    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[3]/div[2]/input
 
 ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
@@ -81,8 +82,8 @@ ${IMAGE_RGBA_COMPARATOR_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/match_png.py 
 # image pixel rgba check
 ${IMAGE_PIXEL_RGBA_CHECK_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/png_rgba_check.py __REFERENCE__ __TEST__
 
-
-
+# image two pixels rgba check
+${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/match_png_rgba.py __REFERENCE__ __TEST__
 
 # test images
 ${FITS_hugeGaussian40k}    xpath://*[contains(text(), "hugeGaussian40k.fits")]
@@ -140,22 +141,26 @@ Go To E2E QA Folder
 
 Load Initial Image 
     [Arguments]    ${IMAGE_TO_LOAD}
-    Wait Until Page Contains Element    ${IMAGE_TO_LOAD}
-    Click Element    ${IMAGE_TO_LOAD}
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
+    Sleep    0.2
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
+    Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     Click Element    ${LOAD_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
-
-
 Append Image
     [Arguments]    ${IMAGE_TO_APPEND}
+    ${IMAGE_TO_APPEND_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
     Click Element    xpath://*[contains(text(), "File")]
     Click Element    xpath://*[contains(text(), "Append image")]
-    Wait Until Page Contains Element    ${IMAGE_TO_APPEND}
-    Click Element    ${IMAGE_TO_APPEND}
+    Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
+    Sleep    0.2
+    Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
+    Click Element    ${IMAGE_TO_APPEND_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
     Click Element    ${APPEND_BUTTON}
@@ -170,9 +175,12 @@ Close Image
 
 Load Region File
     [Arguments]    ${REGION_TO_LOAD}
+    ${REGION_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
     Click Element    xpath://*[contains(text(), "File")]
     Click Element    xpath://*[contains(text(), "Import regions")]
-    Click Element    ${REGION_TO_LOAD}
+    Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
+    Sleep    0.3
+    Click Element    ${REGION_TO_LOAD_XPATH}
     Click Element    ${LOAD_REGION_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
 
@@ -247,3 +255,25 @@ PNG Pixel XY Should Match RGBA
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    identical
+
+
+PNG Two Pixels Should Have Matched RGBA
+   [Arguments]      ${Reference_Image_Path}    ${Test_P1P2RGBA}
+   ${TEMP}=         Replace String     ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_P1P2RGBA}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}       
+   Should Contain   ${OUTPUT}    identical
+
+
+PNG Two Pixels Should Not Have Matched RGBA
+   [Arguments]      ${Reference_Image_Path}    ${Test_P1P2RGBA}
+   ${TEMP}=         Replace String     ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_P1P2RGBA}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}       
+   Should Contain   ${OUTPUT}    different
