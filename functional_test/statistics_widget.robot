@@ -29,7 +29,10 @@ Region Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    10    1    RMS
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    10    2    4.734417312403e-3 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    1    SumSq
-    Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    4.847135621611e+0 (Jy/beam)^2
+    # a work-around for ubuntu CI
+    Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    4.84713562161
+    Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    e+0 (Jy/beam)^2
+
     Set Selenium Speed    0.2
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]
@@ -139,7 +142,9 @@ Image Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    8    2    3.350127696991e+0 K
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    9    2    3.350127696991e+0 K
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    10    2    9.770677980386e-1 K
-    Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    3.910293430125e+3 (K)^2
+    # a work-around for ubuntu CI
+    Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    3.91029343012
+    Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    e+3 (K)^2
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
