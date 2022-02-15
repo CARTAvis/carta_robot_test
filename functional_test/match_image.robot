@@ -54,7 +54,7 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]/td[2]
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
     Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
@@ -64,8 +64,8 @@ Match Wide-Field Images Spatially
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Repeat Keyword    3    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[5]/a
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]/td[4]
-    Press Keys    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]/td[4]    DELETE
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Press Keys    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    matched_multipanel.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}

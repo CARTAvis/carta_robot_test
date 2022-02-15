@@ -35,7 +35,7 @@ Region Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    e+0 (Jy/beam)^2
     Set Selenium Speed    0.2
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[2]
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    2    2    2.162480000000e+5 pixel(s)
@@ -52,7 +52,7 @@ Region Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    4.84713562161
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    e+0 (Jy/beam)^2    
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[3]
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    2    2    2.809000000000e+3 pixel(s)
@@ -66,7 +66,7 @@ Region Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    10    2    2.377338187395e-3 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    1.587572883201e-2 (Jy/beam)^2          
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[4]
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    2    2    2.159000000000e+3 pixel(s)
@@ -80,7 +80,7 @@ Region Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    10    2    2.470648700646e-3 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    11    2    1.317876269933e-2 (Jy/beam)^2
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/table/tbody/tr[5]
+    Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/table    2    2    7.434000000000e+3 pixel(s)
