@@ -7,7 +7,7 @@ Query Splatalogue
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit
+    Wait Until Page Contains    Intensity Limit    timeout=10
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input    349370    True
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input    349500    True
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
@@ -99,7 +99,7 @@ Line Table Column Configuration
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit
+    Wait Until Page Contains    Intensity Limit    timeout=10
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input    349370    True
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input    349500    True
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
@@ -127,7 +127,7 @@ Line ID Overlay On Spectral Profiler
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit
+    Wait Until Page Contains    Intensity Limit    timeout=10
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input    349370    True
     Input Text    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input    349500    True
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
