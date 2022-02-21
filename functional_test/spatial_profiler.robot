@@ -6,7 +6,6 @@ Resource          ../resource.robot
 Cursor Spatial Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
-    Set Selenium Speed    1
     Mouse Over    ${VIEWER_DIV}   
     ${viewer_cursor_info_1}=    Get Text    ${VIEWER_CURSOR_INFO_BAR}
     ${spatial_profiler_info_1}=    Get Text    //*[@id="root"]/div/div[13]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
