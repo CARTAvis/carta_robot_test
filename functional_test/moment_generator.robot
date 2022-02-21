@@ -304,8 +304,8 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[1]/div[5]
     Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_polygon_mask.png
-    PNG Two Pixels Should Have Matched RGBA    moment_polygon_mask.png    252,137,259,134
-    PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask.png    250,137,260,137
+    PNG Two Pixels Should Have Matched RGBA    moment_polygon_mask.png    451,102,451,103
+    PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask.png    451,102,200,102
     Remove Files    moment_rectangle_mask.png    moment_ellipse_mask.png    moment_polygon_mask.png
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
     Sleep    2
@@ -357,8 +357,8 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[1]/div[5]
     Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_polygon_mask.png
-    PNG Two Pixels Should Have Matched RGBA    moment_polygon_mask.png    252,137,259,134
-    PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask.png    250,137,260,137
+    PNG Two Pixels Should Have Matched RGBA    moment_polygon_mask.png    451,102,451,103
+    PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask.png    451,102,200,102
     Remove Files    moment_rectangle_mask.png    moment_ellipse_mask.png    moment_polygon_mask.png
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
     Sleep    2
