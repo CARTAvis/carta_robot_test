@@ -6,7 +6,7 @@ Resource          ./resource.robot
 
 Access ASIAA CARTA MixNMatch And Load An Image With Dev+Dev
     [Setup]    Open Browser To CARTA
-    Wait Until Page Contains    Welcome to CARTA mix 'n match Test
+    Wait Until Page Contains    Welcome to CARTA mix 'n match
     Click Element    xpath:/html/body/div[1]/div/a
     Switch Window    NEW
     Location Should Be    https://carta.asiaa.sinica.edu.tw/frontend/dev/?socketUrl=wss://carta.asiaa.sinica.edu.tw/socketdev&skipTelemetry=1
