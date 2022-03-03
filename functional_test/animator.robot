@@ -17,7 +17,7 @@ Animation Playback
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 14 or ${result} == 15 or ${result} == 16
+    Should Be True    ${result} == 13 or ${result} == 14 or ${result} == 15 or ${result} == 16
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -38,7 +38,7 @@ Animation Playback Backwards
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 11 or ${result} == 10 or ${result} == 9
+    Should Be True    ${result} == 12 or ${result} == 11 or ${result} == 10 or ${result} == 9
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -60,7 +60,7 @@ Animation Playback Bouncing
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 20 or ${result} == 21 or ${result} == 22
+    Should Be True    ${result} == 20 or ${result} == 21 or ${result} == 22 or ${result} == 23
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
