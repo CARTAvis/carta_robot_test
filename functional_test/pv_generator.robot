@@ -104,7 +104,7 @@ PV Image Generation Cancellation And Rerequest
     Click Element    //*[@id="PVGeneratorButton"]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
     Wait Until Page Contains    Generating PV    timeout=5
-    Sleep    5
+    Sleep    2.5
     Click Element    xpath://*[contains(text(), "Cancel")]
     Sleep    1
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
