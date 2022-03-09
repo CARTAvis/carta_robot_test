@@ -174,4 +174,58 @@ PV Image Generation Repeat
     [Teardown]    Kill carta_backend And Close Browser
 
 
-# TODO: request pv map generation using a matched image as the input
+
+PV Image Generation With Matched Cubes
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    M17_SWex.fits
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
+    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    245
+    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
+    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    506
+    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
+    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    141
+    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
+    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    124
+    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
+    Append Image    M17_SWex.hdf5
+    Mouse Over    //*[@id="image-panel-1-0"]/div[7]/div/div/canvas
+    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
+    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
+    Mouse Out    ${VIEWER_DIV}
+    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Wait Until Page Does Not Contain    Generating PV    timeout=5
+    Mouse Over    //*[@id="image-panel-0-1"]/div[6]/div/div/canvas
+    Click Element    //*[@id="image-panel-0-1"]/div[7]/span[8]/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select/option[2]
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Wait Until Page Does Not Contain    Generating PV    timeout=5
+    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[1]/div[4]
+    Mouse Out    ${VIEWER_DIV}
+    Sleep    0.5
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    PNG Two Pixels Should Have Matched RGBA    check.png    186,335,565,335
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    M17_SWex_pv.fits
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    M17_SWex.fits
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    M17_SWex.hdf5
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    M17_SWex_pv.hdf5
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    M17_SWex_pv.fits
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+    
+
+
+
