@@ -89,9 +89,8 @@ Line Table Filtering And Shifting
     Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/div[2]/span[1]/a
     Element Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div    349388.63532873924
     Sleep    5
-    # comment out the following due to a regression
-    #Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
-    #Element Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/div[1]    Showing 419 line(s).
+    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
+    Element Should Contain    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[2]/div[1]    Showing 419 line(s).
     [Teardown]    Kill carta_backend And Close Browser
 
 

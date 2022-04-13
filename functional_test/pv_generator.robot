@@ -27,6 +27,11 @@ Narrow-field PV Image Generation
     Click Element    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
     Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    S255_CH3CN_subcube_pv.fits
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
+    Click Element    //*[@id="bp3-tab-title_file-info-tabs_image-file"]
+    Element Should Contain    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    S255_CH3CN_subcube_pv.fits
+    Element Should Contain    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    [63, 251, 1]
+    Click Element    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[1]/button
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02

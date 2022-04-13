@@ -45,6 +45,7 @@ ${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
 ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
 ${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
 
+
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[3]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
@@ -183,6 +184,19 @@ Load Region File
     Click Element    ${REGION_TO_LOAD_XPATH}
     Click Element    ${LOAD_REGION_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
+
+Load Catalog File
+    [Arguments]    ${CATALOG_TO_LOAD}
+    ${CATALOG_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
+    Click Element    xpath://*[contains(text(), "File")]
+    Click Element    xpath://*[contains(text(), "Import catalog")]
+    Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
+    Sleep    0.3
+    Click Element    ${CATALOG_TO_LOAD_XPATH}
+    Click Element    ${LOAD_CATALOG_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+
+
 
 
 Run carta_backend
