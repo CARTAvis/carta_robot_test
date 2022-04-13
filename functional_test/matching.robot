@@ -413,7 +413,7 @@ Match Contours Spatially
     PNG Two Pixels Should Have Matched RGBA    check3.png    162,247,541,247
     PNG Two Pixels Should Have Matched RGBA    check3.png    190,258,569,258
     PNG Two Pixels Should Have Matched RGBA    check3.png    218,247,597,247
-    PNG Two Pixels Should Have Matched RGBA    check3.png    231,218,610,218
+    PNG Two Pixels Should Have Matched RGBA    check3.png    230,218,609,218
     PNG Two Pixels Should Have Matched RGBA    check3.png    218,188,597,188
     PNG Two Pixels Should Have Matched RGBA    check4.png    108,148,489,148
     PNG Two Pixels Should Have Matched RGBA    check4.png    108,148,248,298
