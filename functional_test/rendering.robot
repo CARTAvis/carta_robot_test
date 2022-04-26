@@ -133,16 +133,16 @@ Catalog Image Overlay Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    model.fits
     Load Catalog File  model_fits_fk4.xml
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
     Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[4]
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
     Click Element    xpath:/html/body/div[12]/div/div/div/div/div/ul/li[2]
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div[1]/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[1]/div[5]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[1]/div[5]
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
     # catalog points

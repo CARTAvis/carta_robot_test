@@ -18,8 +18,8 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    //*[@id="SpectralProfilerButton"]
     Sleep    0.5
-    Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a    # auto detect button
     Set Selenium Speed    0.02
     Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div    detected 5 components.
@@ -28,9 +28,9 @@ Spectral Profile Fitting Guess Then Fit
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0.17664572759531438
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[8]/div/div/div/div/input    value    0.004394980985239272
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
     Sleep    0.5
-    Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
     Set Selenium Speed    0.02
     PNG Images Should Be Different    check.png    check2.png
     PNG Two Pixels Should Not Have Matched RGBA    check2.png    100,80,200,80
@@ -40,7 +40,7 @@ Spectral Profile Fitting Guess Then Fit
     PNG Two Pixels Should Not Have Matched RGBA    check2.png    589,80,747,80
     PNG Two Pixels Should Not Have Matched RGBA    check2.png    747,80,100,80    
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
     Scroll Element Into View    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]    # fit button
@@ -95,9 +95,9 @@ Spectral Profile Fitting Guess Then Fit
     Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral \= 0.000897 (Jy/beam * GHz)
     Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral Error ~\= 0.000030 (3.392%)
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
     Sleep    0.5
-    Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check3.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check3.png
     Set Selenium Speed    0.02    
     PNG Images Should Be Different    check.png    check3.png
     PNG Images Should Be Different    check2.png    check3.png
@@ -108,7 +108,7 @@ Spectral Profile Fitting Guess Then Fit
     PNG Two Pixels Should Have Matched RGBA    check3.png    587,16,746,23
     PNG Two Pixels Should Have Matched RGBA    check3.png    746,23,207,143
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
     Scroll Element Into View    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]    # reset button
     Set Selenium Speed    0.02
@@ -118,9 +118,9 @@ Spectral Profile Fitting Guess Then Fit
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0
     Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[9]/div/div/div[1]/pre/div    ${EMPTY}
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
     Sleep    0.5
-    Capture Element Screenshot    //*[@id="root"]/div/div[14]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check4.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check4.png
     Sleep    5
     PNG Images Should Be Identical    check.png    check4.png
     Remove Files    check.png    check2.png    check3.png    check4.png

@@ -17,6 +17,6 @@ Access ASIAA CARTA MixNMatch And Load An Image With Dev+Dev
     Wait Until Element Contains    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div    HD163296_CO_2_1.fits
     Click Element    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[4]/div/div/span/a
     Wait Until Page Does Not Contain    File Browser
-    Element Should Contain    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    HD163296_CO_2_1.fits
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[13]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input    Value    -0.020490288427972802
+    Element Should Contain    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    HD163296_CO_2_1.fits
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[14]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input    Value    -0.020490288427972802
     [Teardown]    Close Browser
