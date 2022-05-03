@@ -1,0 +1,129 @@
+*** Settings ***
+Documentation     Test fitting function to spectral, spatial and histogram profiles
+Resource          ../resource.robot
+
+*** Test Cases ***
+Spectral Profile Fitting Guess Then Fit
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    S255_CH3CN_subcube.fits
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
+    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    63
+    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    DELETE
+    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    43
+    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Sleep    0.5
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a    # auto detect button
+    Set Selenium Speed    0.02
+    Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div    detected 5 components.
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[5]/div/div/div[1]/div[1]/input    value    5
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[6]/div/div/div/div/input    value    349.47310991224464
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0.17664572759531438
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[8]/div/div/div/div/input    value    0.004394980985239272
+    Set Selenium Speed    0.2
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
+    Sleep    0.5
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
+    Set Selenium Speed    0.02
+    PNG Images Should Be Different    check.png    check2.png
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    100,80,200,80
+    PNG Two Pixels Should Have Matched RGBA    check2.png    200,80,413,80
+    PNG Two Pixels Should Have Matched RGBA    check2.png    413,80,545,80
+    PNG Two Pixels Should Have Matched RGBA    check2.png    545,80,589,80
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    589,80,747,80
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    747,80,100,80    
+    Set Selenium Speed    0.2
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
+    Scroll Element Into View    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]    # fit button
+    Set Selenium Speed    0.02
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Component #1
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center \= 349.387533 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center Error \= 0.000084 (0.000%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude \= 0.190430 (Jy/beam)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude Error \= 0.006077 (3.191%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM \= 0.005394 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM Error \= 0.000199 (3.685%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral \= 0.001093 (Jy/beam * GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral Error ~\= 0.000035 (3.191%)
+
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Component #2
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center \= 349.421432 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center Error \= 0.000071 (0.000%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude \= 0.208667 (Jy/beam)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude Error \= 0.006609 (3.167%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM \= 0.004561 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM Error \= 0.000167 (3.657%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral \= 0.001013 (Jy/beam * GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral Error ~\= 0.000032 (3.167%)
+
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Component #3
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center \= 349.441466 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center Error \= 0.000090 (0.000%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude \= 0.215326 (Jy/beam)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude Error \= 0.005998 (2.786%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM \= 0.005877 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM Error \= 0.000233 (3.967%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral \= 0.001347 (Jy/beam * GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral Error ~\= 0.000044 (3.248%)
+
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Component #4
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center \= 349.448644 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center Error \= 0.000075 (0.000%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude \= 0.212583 (Jy/beam)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude Error \= 0.007165 (3.371%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM \= 0.003906 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM Error \= 0.000181 (4.622%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral \= 0.000884 (Jy/beam * GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral Error ~\= 0.000037 (4.206%)
+
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Component #5
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center \= 349.473138 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Center Error \= 0.000068 (0.000%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude \= 0.205475 (Jy/beam)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Amplitude Error \= 0.006969 (3.392%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM \= 0.004102 (GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    FWHM Error \= 0.000161 (3.916%)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral \= 0.000897 (Jy/beam * GHz)
+    Element Should Contain    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div    Integral Error ~\= 0.000030 (3.392%)
+    Set Selenium Speed    0.2
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
+    Sleep    0.5
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check3.png
+    Set Selenium Speed    0.02    
+    PNG Images Should Be Different    check.png    check3.png
+    PNG Images Should Be Different    check2.png    check3.png
+    PNG Two Pixels Should Not Have Matched RGBA    check3.png    180,32,195,32
+    PNG Two Pixels Should Have Matched RGBA    check3.png    195,32,413,21
+    PNG Two Pixels Should Have Matched RGBA    check3.png    413,21,542,16
+    PNG Two Pixels Should Have Matched RGBA    check3.png    542,16,587,16
+    PNG Two Pixels Should Have Matched RGBA    check3.png    587,16,746,23
+    PNG Two Pixels Should Have Matched RGBA    check3.png    746,23,207,143
+    Set Selenium Speed    0.2
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a    # profile fitting button
+    Scroll Element Into View    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]    # reset button
+    Set Selenium Speed    0.02
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div/div/div[1]/input    value    1
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[5]/div/div/div/div/input    value    0
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[6]/div/div/div/div/input    value    0
+    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0
+    Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[9]/div/div/div[1]/pre/div    ${EMPTY}
+    Set Selenium Speed    0.2
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]    # close fitting dialog
+    Sleep    0.5
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check4.png
+    Sleep    5
+    PNG Images Should Be Identical    check.png    check4.png
+    Remove Files    check.png    check2.png    check3.png    check4.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
