@@ -9,19 +9,19 @@ Region Spectral Profile
     Load Region File    region_001.crtf
     Sleep    5
     Click Element    //*[@id="SpectralProfilerButton"]
-    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[1]/div[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
     Click Element    xpath://*[contains(text(), "Styling")]
     Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div[1]/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
-    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    polygon_profile.png
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
-    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    ellipse_profile.png
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
-    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    rectangle_profile.png
-    Click Element    //*[@id="root"]/div/div[14]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    point_profile.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    polygon_profile.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    ellipse_profile.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    rectangle_profile.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    point_profile.png
     Set Selenium Speed    0.02
     PNG Two Pixels Should Have Matched RGBA    polygon_profile.png    476,61,509,18
     PNG Two Pixels Should Not Have Matched RGBA    polygon_profile.png    476,61,476,30
