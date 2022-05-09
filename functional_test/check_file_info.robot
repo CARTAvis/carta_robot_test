@@ -77,7 +77,7 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
     Element Should Contain    ${FILE_INFO_TEXT}    Restoring beam \= 2.06105" X 1.49126", -74.6267 deg
-    Scroll Element Into View    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div/div[22]
+    Scroll Element Into View    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div/div[22]
     Element Should Contain    ${FILE_INFO_TEXT}    Has mipmaps \= T
     [Teardown]    Kill carta_backend And Close Browser
 
