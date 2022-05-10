@@ -275,13 +275,13 @@ PV Image Generation With Matched Wide-field Cubes
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    88,400,467,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    134,400,513,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    180,400,559,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    226,400,605,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    272,400,651,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    318,400,697,400
-    #Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check.png    96,400,475,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    143,400,522,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    189,400,568,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    235,400,614,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    281,400,660,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    327,400,706,400
+    Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
