@@ -35,16 +35,16 @@ Narrow-field PV Image Generation
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,71,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,155,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,180,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,248,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    564,69,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,71,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,155,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,180,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,248,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    573,69,729,25
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 0.02785714, Image: 33 px, 7.17324e-2)
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: -288.7972, Image: 115 px, 7.17324e-2)
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 0.02785714, Image: 33 px, 6.28957e-2)
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: -288.7972, Image: 115 px, 6.28957e-2)
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -75,16 +75,16 @@ Wide-field PV Image Generation
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    453,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    524,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    594,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    665,215,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    437,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    475,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    546,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    617,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    687,215,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    463,215,729,25
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 1.089626, Image: 334 px, 8.10033e-3)
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 123.5346, Image: 58 px, 8.10033e-3)
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -120,16 +120,16 @@ PV Image Generation Cancellation And Rerequest
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    453,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    524,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    594,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    665,215,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    437,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    475,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    546,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    617,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    687,215,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    463,215,729,25
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 1.089626, Image: 334 px, 8.10033e-3)
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 123.5346, Image: 58 px, 8.10033e-3)
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -162,11 +162,11 @@ PV Image Generation Repeat
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,71,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,155,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,180,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    530,248,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    564,69,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,71,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,155,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,180,729,25
+    PNG Two Pixels Should Have Matched RGBA    check.png    604,248,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    573,69,729,25
     Set Selenium Speed    0.2
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
@@ -217,7 +217,7 @@ PV Image Generation With Matched Cubes
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
-    PNG Two Pixels Should Have Matched RGBA    check.png    186,335,565,335
+    PNG Two Pixels Should Have Matched RGBA    check.png    194,335,573,335
     Click Element    xpath://*[contains(text(), "Animator")]
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    M17_SWex_pv.fits
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -275,12 +275,12 @@ PV Image Generation With Matched Wide-field Cubes
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    88,400,467,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    134,400,513,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    180,400,559,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    226,400,605,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    272,400,651,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    318,400,697,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    96,400,475,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    143,400,522,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    189,400,568,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    235,400,614,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    281,400,660,400
+    PNG Two Pixels Should Have Matched RGBA    check.png    327,400,706,400
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
