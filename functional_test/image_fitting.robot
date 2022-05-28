@@ -50,33 +50,19 @@ Single Gaussian Fitting 512x512
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    P.A.${SPACE*12}\= -1.723297201095e-1 +/- 0.000000000000e+0 (deg)
     [Teardown]    Kill carta_backend And Close Browser
 
-Single Gaussian Fitting 1024x1024
+Single Gaussian Fitting Smart Angular Unit
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    cluster_01024.fits
+    Load Initial Image    small_gaussian.fits
     Click Element    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[1]/div/input    500
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/input    500
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div/div/input    20
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[1]/div/input    200
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[2]/div/input    200
+    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[1]/div/input    11.42
+    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/input    12.46
+    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div/div/input    0.5
+    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[1]/div/input    4
+    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[2]/div/input    5
     Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div/div/input    0
     Click Element    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/span[2]/a
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=15
-    [Teardown]    Kill carta_backend And Close Browser
-
-
-Single Gaussian Fitting 2048x2048
-    [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    cluster_02048.fits
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[1]/div/input    1000
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/input    1000
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div/div/input    20
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[1]/div/input    400
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[2]/div/input    400
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div/div/input    0
-    Click Element    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/span[2]/a
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=45
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=5
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Major Axis \= 9.999994 +/- 0.000000 (arcmin)
     [Teardown]    Kill carta_backend And Close Browser
 
 
