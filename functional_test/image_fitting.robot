@@ -50,6 +50,7 @@ Single Gaussian Fitting 512x512
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    P.A.${SPACE*12}\= -1.723297201095e-1 +/- 0.000000000000e+0 (deg)
     [Teardown]    Kill carta_backend And Close Browser
 
+
 Single Gaussian Fitting Smart Angular Unit
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
