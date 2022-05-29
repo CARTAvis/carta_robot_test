@@ -36,7 +36,7 @@ Single Gaussian Fitting 512x512
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    initial cost${SPACE*9}\= 7.220275025714e+06
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cost${SPACE*11}\= 6.896061416934e+05
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    residual variance${SPACE*4}\= 2.630698874995e+00
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cond(J)${SPACE*8}\= inf
+    #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cond(J)${SPACE*8}\= inf
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Component #1:
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center X${SPACE*8}\= 0:00:00.0007240400 +/- 1.972849694180e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 2.559706076396e+2 +/- 6.165155294314e-2 (px)
@@ -127,7 +127,7 @@ Triple Gaussian Fitting
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    initial cost${SPACE*9}\= 1.456787773528e-02
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cost${SPACE*11}\= 6.642554576599e-03
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    residual variance${SPACE*4}\= 1.013851853933e-07
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cond(J)${SPACE*8}\= inf
+    #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cond(J)${SPACE*8}\= inf
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Component #1:
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center X${SPACE*8}\= 10:00:00.0422417276 +/- 1.325941463697e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.267327481724e+2 +/- 2.651882927394e-2 (px)
