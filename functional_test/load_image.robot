@@ -102,7 +102,6 @@ Load CASA uv image
     [Teardown]    Kill carta_backend And Close Browser
 
 
-
 Load CASA boolean image
     Pass Execution    Not yet supported...
     [Setup]    Setup carta_backend And Open Browser To CARTA
@@ -115,10 +114,82 @@ Load CASA boolean image
     [Teardown]    Kill carta_backend And Close Browser
 
 
-Load CASA complex image
-    Pass Execution    Not yet supported...
+Load CASA complex image as amplitude
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    complex.image
+    Input Text    ${FILE_FILTER}    complex.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Click Element    xpath://*[contains(text(), "Amplitude")]
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    AMPLITUDE("complex.image")
+    Capture Element Screenshot    ${VIEWER_DIV}    initial.png
+    Click Element    ${CLIP_BUTTON_90}
+    Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
+    PNG Images Should Be Different    initial.png    rerendered.png
+    Remove Files    initial.png    rerendered.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Load CASA complex image as phase
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    complex.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Click Element    xpath://*[contains(text(), "Phase")]
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    PHASE("complex.image")
+    Capture Element Screenshot    ${VIEWER_DIV}    initial.png
+    Click Element    ${CLIP_BUTTON_90}
+    Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
+    PNG Images Should Be Different    initial.png    rerendered.png
+    Remove Files    initial.png    rerendered.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Load CASA complex image as real
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    complex.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Click Element    xpath://*[contains(text(), "Real")]
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    REAL("complex.image")
+    Capture Element Screenshot    ${VIEWER_DIV}    initial.png
+    Click Element    ${CLIP_BUTTON_90}
+    Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
+    PNG Images Should Be Different    initial.png    rerendered.png
+    Remove Files    initial.png    rerendered.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Load CASA complex image as imaginary
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    complex.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Click Element    xpath://*[contains(text(), "Imaginary")]
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IMAG("complex.image")
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
