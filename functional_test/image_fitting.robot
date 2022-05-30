@@ -89,15 +89,18 @@ Triple Gaussian Fitting
     # Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.287450945003e+2 +/- 3.587149417148e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.287450945003e+2 +/- 3.58714941714
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e-2 (px)
+
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Amplitude${SPACE*7}\= 9.266824141717e-3 +/- 1.234335606817e-5 (Jy/pixel)
     # workaround due to numerical errors on different CI servers
     #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 9.431037235337e+0 +/- 1.781215060996e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 9.43103723533
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e+0 +/- 1.781215060996e-2 (arcsec)
+
     # workaround due to numerical errors on different CI servers
     #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.886207447067e+1 +/- 3.562430121991e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.88620744706
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e+1 +/- 3.562430121991e-2 (px)
+
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Minor Axis \= 6.410023126954e+0 +/- 1.111166667314e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.282004625391e+1 +/- 2.222333334627e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    P.A.${SPACE*12}\= 1.219839181423e+1 +/- 9.567368095894e-2 (deg)
@@ -113,7 +116,11 @@ Triple Gaussian Fitting
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.108016500709e+1 +/- 4.534817288607e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    P.A.${SPACE*12}\= 3.511087991605e+1 +/- 2.391421892522e-1 (deg)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Component #3:
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center X${SPACE*8}\= 9:59:59.6428400999 +/- 1.817258511957e-2 (arcsec)
+    # workaround due to numerical errors on different CI servers
+    #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center X${SPACE*8}\= 9:59:59.6428400999 +/- 1.817258511957e-2 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center X${SPACE*8}\= 9:59:59.6428400999 +/- 1.81725851195
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e-2 (arcsec)
+
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.387147970013e+2 +/- 3.634517023915e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center Y${SPACE*8}\= -0:00:03.8037922663 +/- 1.587507734839e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.203924154677e+2 +/- 3.175015469677e-2 (px)
