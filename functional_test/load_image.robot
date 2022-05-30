@@ -230,3 +230,5 @@ Load CASA concatenated image
     PNG Images Should Be Different    initial.png    rerendered.png
     Remove Files    initial.png    rerendered.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
