@@ -128,8 +128,8 @@ Triple Gaussian Fitting
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 5.620326429237e+0 +/- 1.734128786904e-2 (arcsec)
     # workaround due to numerical errors on different CI servers
     #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.124065285847e+1 +/- 3.468257573808e-2 (px)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.12406528584
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e+1 +/- 3.468257573808e-2 (px)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.124065285847e+1 +/- 3.46825757380
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e-2 (px)
     
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Minor Axis \= 5.905529259142e+0 +/- 2.081959537077e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.181105851828e+1 +/- 4.163919074153e-2 (px)
