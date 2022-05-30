@@ -4,53 +4,6 @@ Resource          ../resource.robot
 
 
 *** Test Cases ***
-Single Gaussian Fitting
-    [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    Gaussian_triple.fits
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[1]/div/input    128
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/input    129
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div/div/input    0.01
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[1]/div/input    10
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div[2]/div/input    6
-    Input Text    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div/div/input    36
-    Click Element    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/span[2]/a
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=5
-    Set Selenium Speed    0.02
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Component #1:
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center X${SPACE*8}\= 9:59:59.8918351377 +/- 0.013342 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center Y${SPACE*8}\= -0:00:00.1947421448 +/- 0.016095 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Amplitude${SPACE*7}\= 0.009904 +/- 0.000014 (Jy/pixel)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Major Axis \= 11.530474 +/- 0.020066 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Minor Axis \= 9.087761 +/- 0.016106 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    P.A.${SPACE*12}\= 19.685095 +/- 0.080594 (deg)
-    Click Element    //*[@id="bp3-tab-title_fittingResultTabs_1"]
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Gaussian fitting with 1 component(s)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    summary from method 'trust-region/levenberg-marquardt':
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    number of iterations \= 20
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    function evaluations \= 156
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Jacobian evaluations \= 0
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    reason for stopping  \= small step size
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    initial |f(x)|${SPACE*7}\= 1.577375810740e-01
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final |f(x)|${SPACE*9}\= 9.403815449787e-02
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    initial cost${SPACE*9}\= 2.488114448308e-02
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cost${SPACE*11}\= 8.843174501366e-03
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    residual variance${SPACE*4}\= 1.349484892624e-07
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    final cond(J)${SPACE*8}\= 8.048936289720e+03
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Component #1:
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center X${SPACE*8}\= 9:59:59.8918351377 +/- 1.334152310430e-2 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.312449458703e+2 +/- 2.668304620860e-2 (px)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center Y${SPACE*8}\= -0:00:00.1947421448 +/- 1.609474778523e-2 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.276105157104e+2 +/- 3.218949557046e-2 (px)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Amplitude${SPACE*7}\= 9.904224797996e-3 +/- 1.385035064508e-5 (Jy/pixel)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 1.153047374654e+1 +/- 2.006591131593e-2 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 2.306094749308e+1 +/- 4.013182263186e-2 (px)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Minor Axis \= 9.087760532549e+0 +/- 1.610591391667e-2 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.817552106510e+1 +/- 3.221182783334e-2 (px)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    P.A.${SPACE*12}\= 1.968509537255e+1 +/- 8.059397640067e-2 (deg)
-    [Teardown]    Kill carta_backend And Close Browser
-
-
 Single Gaussian Fitting Smart Angular Unit
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
