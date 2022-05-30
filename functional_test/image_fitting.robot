@@ -86,13 +86,14 @@ Triple Gaussian Fitting
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.267327481724e+2 +/- 2.651882927394e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Center Y${SPACE*8}\= 0:00:00.3725472501 +/- 1.793574708574e-2 (arcsec)
     # workaround due to numerical errors on different CI servers
+    # Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.287450945003e+2 +/- 3.587149417148e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.287450945003e+2 +/- 3.58714941714
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Amplitude${SPACE*7}\= 9.266824141717e-3 +/- 1.234335606817e-5 (Jy/pixel)
     # workaround due to numerical errors on different CI servers
     #Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 9.431037235337e+0 +/- 1.781215060996e-2 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 9.431037235337e+0 +/- 1.78121506099
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e-2 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Major Axis \= 9.43103723533
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    e+0 +/- 1.781215060996e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.886207447067e+1 +/- 3.562430121991e-2 (px)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    FWHM Minor Axis \= 6.410023126954e+0 +/- 1.111166667314e-2 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    ${SPACE*16}\= 1.282004625391e+1 +/- 2.222333334627e-2 (px)
