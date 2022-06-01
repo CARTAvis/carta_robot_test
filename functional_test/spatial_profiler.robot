@@ -31,6 +31,46 @@ Cursor Spatial Profile
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Line Spatial Profile Fixed Pixel Width
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    Gaussian_array_wide.fits
+    Load Region File    region_002.crtf
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Sleep    1
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas    check.png
+    PNG Two Pixels Should Have Matched RGBA    check.png    127,100,210,55
+    PNG Two Pixels Should Have Matched RGBA    check.png    127,100,302,17
+    PNG Two Pixels Should Have Matched RGBA    check.png    127,100,376,66
+    PNG Two Pixels Should Have Matched RGBA    check.png    127,100,459,101
+    Mouse Over    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Cursor: (Offset: -5.00159e-1 deg, 4.58767e-2)
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
 
+
+Line Spatial Profile Fixed Angular Width
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    Gaussian_array_wide.fits
+    Load Region File    region_002.crtf
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Sleep    5
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas    check.png
+    PNG Two Pixels Should Have Matched RGBA    check.png    111,104,174,104
+    PNG Two Pixels Should Have Matched RGBA    check.png    111,104,230,104
+    PNG Two Pixels Should Have Matched RGBA    check.png    111,104,295,18
+    PNG Two Pixels Should Have Matched RGBA    check.png    111,104,385,17
+    PNG Two Pixels Should Have Matched RGBA    check.png    111,104,477,16
+    Mouse Over    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div    Cursor: (Offset: -3.3 deg, 2.6148e-4)
+    #Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
 
 
