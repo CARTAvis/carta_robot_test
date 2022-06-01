@@ -315,3 +315,20 @@ Load Multiple Images In One Shot
     PNG Images Should Be Different    initial.png    rerendered.png
     Remove Files    initial.png    rerendered.png  
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Images With LEL
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Click Element    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/span[1]/span/button
+    Click Element    xpath://*[contains(text(), "Image arithmetic")]
+    Input text    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/input    "dice_one.fits"+"dice_four.fits"
+    Click Element    xpath://*[contains(text(), "Load expression")]
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    "dice_one.fits"+"dice_four.fits"
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    xpath://*[contains(text(), "tab10")]
+    Sleep    0.5
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    PNG Two Pixels Should Have Matched RGBA    check.png    380,217,274,110
+    [Teardown]    Kill carta_backend And Close Browser
