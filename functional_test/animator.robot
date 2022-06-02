@@ -34,6 +34,7 @@ Animation Playback Backwards
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Play Backwards")]
+    ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
     Sleep    3
     END
