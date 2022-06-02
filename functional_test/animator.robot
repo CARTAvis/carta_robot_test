@@ -9,6 +9,10 @@ Animation Playback
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Sleep    3
+    END
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    8
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
@@ -30,6 +34,9 @@ Animation Playback Backwards
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Play Backwards")]
+    IF    '${platform}' == 'darwin'
+    Sleep    3
+    END
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    8
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
