@@ -288,7 +288,47 @@ Polarization Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    8    2    1.110765337944e+0 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    9    2    1.110765337944e+0 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    5.370073400759e-2 Jy/beam
-    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    4.488586188493e+1 (Jy/beam)^2         
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    4.488586188493e+1 (Jy/beam)^2
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Compressed FITS fz statistics
+    Pass Execution    Skip until a bug is fixed...
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    tu2310418.fits.fz
+    Click Element    //*[@id="StatisticsWidgetButton"]
+    Sleep    0.5
+    Set Selenium Speed    0.02
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    2    2    2.238062400000e+7 pixel(s)
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    3    2    -8.547324334957e+5 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    4    2    NaN  
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    5    2    -3.819073290788e-2 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    6    2    2.319088077544e+0 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    7    2    -3.041755104065e+1 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    8    2    7.419943847656e+2 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    9    2    7.419943847656e+2 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    2.319402466841e+0 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.203994271231e+8 (counts/s)^2
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Compressed FITS gz statistics
+    Pass Execution    Skip until a bug is fixed...
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    tu2310418.fits.gz
+    Click Element    //*[@id="StatisticsWidgetButton"]
+    Sleep    0.5
+    Set Selenium Speed    0.02
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    2    2    2.238062400000e+7 pixel(s)
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    3    2    -8.547324334957e+5 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    4    2    NaN  
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    5    2    -3.819073290788e-2 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    6    2    2.319088077544e+0 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    7    2    -3.041755104065e+1 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    8    2    7.419943847656e+2 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    9    2    7.419943847656e+2 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    2.319402466841e+0 counts/s
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.203994271231e+8 (counts/s)^2
     [Teardown]    Kill carta_backend And Close Browser
 
 
