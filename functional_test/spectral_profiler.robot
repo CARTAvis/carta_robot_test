@@ -48,7 +48,7 @@ Spectral Profile Visualization From Multiple Regions
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
     Click Element    xpath://*[contains(text(), "Styling")]
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    8    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
     Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[1]/label
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
@@ -73,3 +73,5 @@ Spectral Profile Visualization From Multiple Regions
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
