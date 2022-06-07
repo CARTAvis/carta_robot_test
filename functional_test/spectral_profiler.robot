@@ -7,7 +7,6 @@ Region Spectral Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Sleep    5
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
     Click Element    xpath://*[contains(text(), "Styling")]
@@ -42,3 +41,35 @@ Region Spectral Profile
 
 
 
+Spectral Profile Visualization From Multiple Regions
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   M17_SWex.fits
+    Load Region File    region_001.crtf
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
+    Click Element    xpath://*[contains(text(), "Styling")]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[1]/label
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
+    # this is a hacky way to click elements that cannot be located...
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    -30
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    0
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    30
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
+    
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
+    Sleep    1
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    Set Selenium Speed    0.02
+    PNG Pixel XY Should Match RGBA    check.png    476,63,194,48,48,255
+    PNG Pixel XY Should Match RGBA    check.png    476,75,99,77,191,255
+    PNG Pixel XY Should Match RGBA    check.png    476,90,117,47,117,255
+    PNG Pixel XY Should Match RGBA    check.png    476,101,125,81,37,255
+    Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
