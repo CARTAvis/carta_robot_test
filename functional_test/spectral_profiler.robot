@@ -42,7 +42,6 @@ Region Spectral Profile
 
 
 Spectral Profile Visualization From Multiple Regions
-    Pass Execution    Skip until a CI bug is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
