@@ -42,13 +42,14 @@ Region Spectral Profile
 
 
 Spectral Profile Visualization From Multiple Regions
+    Pass Execution    Skip until a CI bug is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
     Click Element    xpath://*[contains(text(), "Styling")]
-    Repeat Keyword    8    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
     Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[1]/label
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
