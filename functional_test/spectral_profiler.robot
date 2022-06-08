@@ -42,7 +42,6 @@ Region Spectral Profile
 
 
 Spectral Profile Visualization From Multiple Regions
-    Pass Execution    Skip until a CI issue is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
@@ -63,10 +62,14 @@ Spectral Profile Visualization From Multiple Regions
     Sleep    1
     Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
     Set Selenium Speed    0.02
-    PNG Pixel XY Should Match RGBA    check.png    476,63,194,48,48,255
-    PNG Pixel XY Should Match RGBA    check.png    476,75,99,77,191,255
-    PNG Pixel XY Should Match RGBA    check.png    476,90,117,47,117,255
-    PNG Pixel XY Should Match RGBA    check.png    476,101,125,81,37,255
+    PNG Two Pixels Should Have Matched RGBA    check.png    373,108,473,63
+    PNG Two Pixels Should Have Matched RGBA    check.png    378,100,476,90
+    PNG Two Pixels Should Have Matched RGBA    check.png    378,87,476,101
+    PNG Two Pixels Should Have Matched RGBA    check.png    476,76,542,67
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    373,108,538,33
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    378,100,538,33
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    378,87,538,33
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    476,76,538,33
     Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Cooridnate Current
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Cooridnate Current
