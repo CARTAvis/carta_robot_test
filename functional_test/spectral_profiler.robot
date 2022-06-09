@@ -118,3 +118,42 @@ Spectral Profile Visualization From Multiple Statistics
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Cooridnate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Spectral Profile Visualization From Multiple Images
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   HD163296_13CO_2-1_subimage.fits
+    Append Image    HD163296_C18O_2-1_subimage.fits
+    Append Image    HD163296_CO_2_1_subimage.fits
+    Load Region File    region_003.crtf
+    # matching cubes
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
+    Click Element    xpath://*[contains(text(), "Styling")]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
+    Sleep    1
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    568,19,593,46
+    PNG Two Pixels Should Have Matched RGBA    check.png    567,77,595,86
+    PNG Two Pixels Should Have Matched RGBA    check.png    564,108,599,110
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    568,19,585,68
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    567,77,585,68
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    564,108,585,68
+    Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+# TODO: add multi-profile test for polarization when the bug is fixed.
