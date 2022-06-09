@@ -79,3 +79,42 @@ Spectral Profile Visualization From Multiple Regions
     [Teardown]    Kill carta_backend And Close Browser
 
 
+
+
+Spectral Profile Visualization From Multiple Statistics
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   M17_SWex.fits
+    Load Region File    region_001.crtf
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
+    Click Element    xpath://*[contains(text(), "Styling")]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[1]/label
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
+    # this is a hacky way to click elements that cannot be located...
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    90
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    30
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    0
+    
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
+    Sleep    1
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    511,16,545,20
+    PNG Two Pixels Should Have Matched RGBA    check.png    511,25,545,29
+    PNG Two Pixels Should Have Matched RGBA    check.png    511,36,545,38
+    PNG Two Pixels Should Have Matched RGBA    check.png    511,110,545,101
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    511,16,511,75
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    511,25,511,75
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    511,36,511,75
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    511,110,511,75
+    Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Cooridnate Current
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
