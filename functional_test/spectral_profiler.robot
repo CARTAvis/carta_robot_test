@@ -156,4 +156,51 @@ Spectral Profile Visualization From Multiple Images
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
+
+Single Spectral Profile Intensity Unit Conversion
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   M17_SWex.fits
+    Mouse Over    ${VIEWER_DIV}
+    Drag And Drop    //*[@id="SpectralProfilerButton"]    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[1]/div/div/div[2]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[1]/ul[2]/li[4]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.09e-2)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "mJy/beam")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.09e+1)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "uJy/beam")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.09e+4)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "MJy/sr")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.34e+2)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "Jy/arcsec^2")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -3.14e-3)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "mJy/arcsec^2")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -3.14e+0)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "uJy/arcsec^2")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -3.14e+3)
+
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
+    Click Element    xpath://*[contains(text(), "mK")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -5.77e+2)
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+
+
+
+
+
+
 # TODO: add multi-profile test for polarization when the bug is fixed.
