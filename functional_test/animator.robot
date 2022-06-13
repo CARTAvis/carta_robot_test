@@ -176,3 +176,69 @@ Animation Playback Channel Step
     Should Be True    ${result}%2 == 0
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Polarization Slider And Computed Components
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
+    # zoom in
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[9]/span[5]/a
+    # change to tab10 colormap
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button
+    Click Element    xpath://*[contains(text(), "tab10")]
+    # use animator and the polarization slider to switch to different components
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label/span
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_I.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_Q.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_U.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_V.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Ptotal.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Plinear.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_PFtotal.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_PFlinear.png
+    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Capture Element Screenshot    ${VIEWER_DIV}    check_Pangle.png
+
+    Set Selenium Speed    0.02
+    # Stokes I
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_I.png     390,216,394,219
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_I.png     390,192,391,245
+    PNG Two Pixels Should Not Have Matched RGBA    check_Stokes_I.png     390,216,390,192
+    # Stokes Q
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_Q.png     390,218,313,205
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_Q.png     370,174,350,256
+    PNG Two Pixels Should Not Have Matched RGBA    check_Stokes_Q.png     390,218,370,174   
+    # Stokes U
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_U.png     383,219,393,214
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_U.png     381,187,364,210
+    PNG Two Pixels Should Not Have Matched RGBA    check_Stokes_U.png     383,219,381,187      
+    # Stokes V
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_V.png     373,208,351,158
+    PNG Two Pixels Should Have Matched RGBA    check_Stokes_V.png     362,194,351,236
+    PNG Two Pixels Should Not Have Matched RGBA    check_Stokes_V.png     373,208,362,194          
+    # Ptotal
+    PNG Two Pixels Should Have Matched RGBA    check_Ptotal.png    383,210,393,219
+    PNG Two Pixels Should Have Matched RGBA    check_Ptotal.png    389,175,448,266
+    PNG Two Pixels Should Not Have Matched RGBA    check_Ptotal.png    383,210,389,175
+    # Plinear
+    PNG Two Pixels Should Have Matched RGBA    check_Plinear.png    394,213,394,222
+    PNG Two Pixels Should Have Matched RGBA    check_Plinear.png    379,173,415,224
+    PNG Two Pixels Should Not Have Matched RGBA    check_Plinear.png    394,213,379,173          
+    # PFtotal (skipped for now)
+    # PFlinar (skipped for now)
+    # Pangle
+    PNG Two Pixels Should Have Matched RGBA    check_Pangle.png    384,220,397,211
+    PNG Two Pixels Should Have Matched RGBA    check_Pangle.png    374,172,515,248
+    PNG Two Pixels Should Not Have Matched RGBA    check_Pangle.png    384,220,374,172    
+
+    Remove Files    check_Stokes_I.png    check_Stokes_Q.png    check_Stokes_U.png    check_Stokes_V.png    check_Ptotal.png    check_Plinear.png    check_PFtotal.png    check_PFlinear.png    check_Pangle.png
+    [Teardown]    Kill carta_backend And Close Browser
