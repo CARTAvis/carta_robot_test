@@ -219,6 +219,7 @@ Polarization Statistics
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
+    # Stokes I
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    2    2    1.556500000000e+4 pixel(s)
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    3    2    2.190448685885e+1 Jy/beam
@@ -235,6 +236,7 @@ Polarization Statistics
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Sleep    0.5
+    # Stokes Q
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    2    2    1.556500000000e+4 pixel(s)
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    3    2    -5.825449282802e-1 Jy/beam
@@ -249,6 +251,7 @@ Polarization Statistics
     Set Selenium Speed    0.2
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Sleep    0.5
+    # Stokes U
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    2    2    1.556500000000e+4 pixel(s)
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    3    2    1.881971077550e+0 Jy/beam
@@ -263,6 +266,7 @@ Polarization Statistics
     Set Selenium Speed    0.2
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Sleep    0.5
+    # Stokes V
     Set Selenium Speed    0.02
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    2    2    1.556500000000e+4 pixel(s)
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    3    2    2.770419208304e-1 Jy/beam
@@ -274,6 +278,7 @@ Polarization Statistics
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    9    2    2.312266640365e-2 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    3.931302178691e-3 Jy/beam
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    2.405592046061e-1 (Jy/beam)^2
+    
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select/option[2]
