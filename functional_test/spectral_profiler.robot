@@ -196,10 +196,136 @@ Single Spectral Profile Intensity Unit Conversion
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Single Spectral Profile Smoothing
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   M17_SWex.fits
+    Load Region File    region_001.crtf
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
+    Click Element    xpath://*[contains(text(), "Styling")]
+    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    # click the smoothing button
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[2]
+    Repeat Keyword    3    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[4]/div/div/div[2]/button[1]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[6]/div/label
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_boxcar.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[3]
+    Repeat Keyword    3    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_gaussian.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[4]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_hanning.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[5]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_binning.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[6]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[8]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_Savitzky-Golay.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[7]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_decimation.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_original.png
+
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check_boxcar.png    410,40,544,17
+    PNG Two Pixels Should Have Matched RGBA    check_boxcar.png    410,74,544,61
+    PNG Two Pixels Should Not Have Matched RGBA    check_boxcar.png    410,40,410,74
+    PNG Two Pixels Should Have Matched RGBA    check_gaussian.png    410,40,544,17
+    PNG Two Pixels Should Have Matched RGBA    check_gaussian.png    410,101,544,90
+    PNG Two Pixels Should Not Have Matched RGBA    check_gaussian.png    410,40,410,101
+    PNG Two Pixels Should Have Matched RGBA    check_hanning.png    410,40,544,17
+    PNG Two Pixels Should Have Matched RGBA    check_hanning.png    410,83,544,70
+    PNG Two Pixels Should Not Have Matched RGBA    check_hanning.png    410,40,410,83
+    PNG Two Pixels Should Have Matched RGBA    check_binning.png    410,40,544,17
+    PNG Two Pixels Should Have Matched RGBA    check_binning.png    410,108,510,61
+    PNG Two Pixels Should Not Have Matched RGBA    check_binning.png    410,40,410,108
+    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay.png    410,40,544,17
+    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay.png    410,81,544,67
+    PNG Two Pixels Should Not Have Matched RGBA    check_Savitzky-Golay.png    410,40,410,81
+    PNG Two Pixels Should Have Matched RGBA    check_decimation.png    394,50,558,53
+    PNG Two Pixels Should Have Matched RGBA    check_decimation.png    443,40,509,18
+    PNG Two Pixels Should Not Have Matched RGBA    check_decimation.png    394,50,443,40
+    PNG Two Pixels Should Have Matched RGBA    check_original.png    410,40,544,17
+    PNG Two Pixels Should Not Have Matched RGBA    check_original.png    410,40,480,58
+    Remove Files    check_boxcar.png    check_gaussian.png    check_hanning.png    check_binning.png    check_Savitzky-Golay.png    check_decimation.png    check_original.png
+    [Teardown]    Kill carta_backend And Close Browser
 
 
 
+Multiple Spectral Profiles Smoothing
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   HD163296_13CO_2-1_subimage.fits
+    Append Image    HD163296_C18O_2-1_subimage.fits
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
+    Load Region File    region_003.crtf
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[2]
+    Click Element    xpath://*[contains(text(), "Styling")]
+    Repeat Keyword    4    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[3]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    # apply smoothing
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[5]
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[4]/div/label
+    Repeat Keyword    2  Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[5]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
 
+    Set Selenium Speed    0.02
+    PNG Images Should Be Different    check.png    check2.png
+    PNG Two Pixels Should Have Matched RGBA    check2.png    381,17,428,44
+    PNG Two Pixels Should Have Matched RGBA    check2.png    365,35,407,57
+    PNG Two Pixels Should Have Matched RGBA    check2.png    381,17,365,35
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    381,17,406,98
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    365,35,406,98
+    PNG Two Pixels Should Have Matched RGBA    check2.png    361,120,392,121
+    PNG Two Pixels Should Have Matched RGBA    check2.png    355,137,397,113
+    PNG Two Pixels Should Have Matched RGBA    check2.png    361,120,355,137
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    361,120,406,98
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    355,137,406,98
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    381,17,361,120
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    365,35,355,137
+    Remove Files    check.png    check2.png
+    [Teardown]    Kill carta_backend And Close Browser
 
 
 
