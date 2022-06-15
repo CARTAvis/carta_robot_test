@@ -431,5 +431,39 @@ Linked Catalog Visualization
     [Teardown]    Kill carta_backend And Close Browser
 
 
-# TODO: load two catalog files and close them one by one
+Load And Manage Two Catalog Files
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cosmos_spitzer3.6micron.fits
+    Load Catalog File    cosmos_mega_simbad.xml
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]    -200    0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span    Catalog : cosmos_mega_simbad.xml 
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button    1
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button    ICRS
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody/tr/td/pre    Showing 1 to 50 of total 100000 entries
+    
+    Load Catalog File    cosmos_0_simbad.xml
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span    Catalog : cosmos_0_simbad.xml 
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button    2
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button    ICRS
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody/tr/td/pre    Showing 1 to 50 of total 20000 entries    
+
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+    Click Element At Coordinates    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button    0    30
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span    Catalog : cosmos_mega_simbad.xml
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody/tr/td/pre    Showing 1 to 50 of total 100000 entries
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span    Catalog : cosmos_0_simbad.xml
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button    2
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody/tr/td/pre    Showing 1 to 50 of total 20000 entries    
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div/h4    No catalog file loaded
+    [Teardown]    Kill carta_backend And Close Browser
+
 
