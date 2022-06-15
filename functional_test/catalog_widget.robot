@@ -431,14 +431,5 @@ Linked Catalog Visualization
     [Teardown]    Kill carta_backend And Close Browser
 
 
-
-
-
-
-
-
-
-
-# TODO: linked data visualization
 # TODO: load two catalog files and close them one by one
 
