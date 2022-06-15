@@ -236,7 +236,6 @@ Catalog Rendering As Image Overlay With Column Mapping
 
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
     Mouse Over    ${VIEWER_DIV}
-    #Click Element    //*[@id="image-panel-0-0"]/div[8]/span[7]/a
     Repeat Keyword    4    Click Element   //*[@id="image-panel-0-0"]/div[8]/span[5]/a
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
@@ -267,4 +266,109 @@ Catalog Rendering As Image Overlay With Column Mapping
     Remove Files    check.png    check2.png
     [Teardown]    Kill carta_backend And Close Browser
 
+
+Catalog Rendering As Scatter Plot
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cosmos_spitzer3.6micron.fits
+    Load Catalog File    cosmos_0_simbad.xml
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]    -200    0
+
+    # enable scatter plot
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+    
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check.png
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/a[2]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check2.png
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button    0    150
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check3.png
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[4]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[12]/div/div/div/div/div/ul/li[2]
+    Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.21891547, RA_d: 150.0963135
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    ANG_DIST - count: 20000, valid count: 20000, mean: 2.9599e+2, rms: 3.1643e+2, stddev: 1.1191e+2, min: 1.2400e+0, max: 4.6845e+2
+
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check4.png
+
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    229,101,576,127
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    229,101,320,140
+    PNG Images Should Be Different    check.png    check2.png
+    PNG Images Should Be Different    check.png    check3.png
+    PNG Images Should Be Different    check.png    check4.png
+    PNG Images Should Be Different    check2.png    check3.png
+    PNG Images Should Be Different    check2.png    check4.png
+    PNG Images Should Be Different    check3.png    check4.png
+
+    Remove Files    check.png    check2.png    check3.png    check4.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Catalog Rendering As Histogram Plot
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cosmos_spitzer3.6micron.fits
+    Load Catalog File    cosmos_0_simbad.xml
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]    -200    0
+
+    # enable histogram plot
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check.png
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/a
+    Input Text    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/div/input    0
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check2.png
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button
+    Click Element At Coordinates    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button    0    150
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check3.png
+    
+    Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[5]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[11]/div/div/div/div/div/ul/li[4]
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.2173962542500005, Count: 408
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
+
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    228,185,377,74
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    228,185,340,140
+    PNG Two Pixels Should Have Matched RGBA    check2.png    154,133,303,54
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    154,133,150,70
+    PNG Two Pixels Should Have Matched RGBA    check3.png    102,165,518,26
+    PNG Two Pixels Should Not Have Matched RGBA    check3.png    102,165,190,80
+    
+    PNG Images Should Be Different    check.png    check2.png
+    PNG Images Should Be Different    check.png    check2.png
+    PNG Images Should Be Different    check.png    check3.png
+    PNG Images Should Be Different    check2.png    check3.png
+
+    Remove Files    check.png    check2.png    check3.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+# TODO: linked data visualization
 # TODO: load two catalog files and close them one by one
+
