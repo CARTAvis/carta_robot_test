@@ -75,13 +75,12 @@ Animation Playback Bouncing
 
 
 Animation Playback Blink
-    Pass Execution    Skip for now: blink element cannot be located for unknown reasons...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Blink")]
+    Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    3
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
