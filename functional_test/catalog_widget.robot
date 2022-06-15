@@ -369,6 +369,76 @@ Catalog Rendering As Histogram Plot
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Linked Catalog Visualization
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cosmos_spitzer3.6micron.fits
+    Load Catalog File    cosmos_0_simbad.xml
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]    -200    0
+
+    # set up image overlay, scatter plot and histogram plot
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[4]/a/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+    Click Element At Coordinates    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button    0    -30
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check_scatter.png
+
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+    Click Element At Coordinates    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button    0    -60
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]    check_histogram.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]    check_histogram_selected.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[4]
+
+    Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check_scatter_selected.png
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
+
+    Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected.png
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[17]/div    61.119998931884766
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_selected.png
+    
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
+
+    Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_reset.png
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[12]/div    9.220000267028809
+    Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset.png
+
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected.png    335,25,335,247
+    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected.png    335,25,320,40
+    PNG Images Should Be Different    check_histogram_selected.png    check_histogram.png
+    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected.png    337,24,337,216
+    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected.png    337,24,237,64
+    PNG Images Should Be Different    check_scatter_selected.png    check_scatter.png
+    PNG Images Should Be Different    check_image_overlay_selected.png    check_image_overlay_reset.png
+    PNG Two Pixels Should Have Matched RGBA    check_table_selected.png    120,70,580,70
+    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected.png    120,70,120,90
+    PNG Images Should Be Different    check_table_selected.png    check_table_reset.png
+
+    Remove Files    check_scatter.png    check_scatter_selected.png    check_histogram.png    check_histogram_selected.png    check_image_overlay_selected.png    check_image_overlay_reset.png    check_table_selected.png    check_table_reset.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+
+
+
+
+
+
+
 # TODO: linked data visualization
 # TODO: load two catalog files and close them one by one
 
