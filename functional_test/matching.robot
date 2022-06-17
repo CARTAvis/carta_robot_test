@@ -429,11 +429,11 @@ Match Catalog Image Overlay Spatially
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[4]
+    Click Element At Coordinates   //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
     Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[12]/div/div/div/div/div/ul/li[2]
+    Click Element At Coordinates   //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
     Input Text    //*[@id="bp3-tab-panel_catalogSettings_3"]/div/div[1]/div/span/div/div[1]/input    5
     Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[5]
