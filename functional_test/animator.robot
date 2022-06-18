@@ -8,20 +8,16 @@ Animation Playback
     Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
-    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
-    ${platform}=    Evaluate    sys.platform    sys
-    IF    '${platform}' == 'darwin'
-    Sleep    3
-    END
+    Repeat Keyword    4    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    8
+    Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final.png
     PNG Images Should Be Different    initial.png    final.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 13 or ${result} == 14 or ${result} == 15 or ${result} == 16
+    Should Be True    ${result} >= 3 and ${result} <= 7
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -31,22 +27,18 @@ Animation Playback Backwards
     Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
-    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Repeat Keyword    4    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Play Backwards")]
-    ${platform}=    Evaluate    sys.platform    sys
-    IF    '${platform}' == 'darwin'
-    Sleep    3
-    END
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    8
+    Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final.png
     PNG Images Should Be Different    initial.png    final.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 12 or ${result} == 11 or ${result} == 10 or ${result} == 9
+    Should Be True    ${result} <= 22 and ${result} >= 18
     Remove Files    initial.png    final.png 
     [Teardown]    Kill carta_backend And Close Browser
 
