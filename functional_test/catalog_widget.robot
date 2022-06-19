@@ -410,7 +410,7 @@ Linked Catalog Visualization
     Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_selected.png
     
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
-
+    Sleep    1
     Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_reset.png
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[12]/div    9.220000267028809
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset.png
