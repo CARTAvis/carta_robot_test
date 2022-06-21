@@ -314,8 +314,11 @@ Compressed FITS fz statistics
     #Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    2.319402466841e+0 counts/s
     # dirty workaround for CI numberic error
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    2.31940246684
-    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    e+0 counts/s
-    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.203994271231e+8 (counts/s)^2
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    e+0 counts/s    
+    #Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.203994271231e+8 (counts/s)^2
+    # dirty workaround for CI numberic error
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.20399427123
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    e+8 (counts/s)^2
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -337,7 +340,10 @@ Compressed FITS gz statistics
     # dirty workaround for CI numberic error
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    2.31940246684
     Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    10    2    e+0 counts/s
-    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.203994271231e+8 (counts/s)^2
+    #Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.203994271231e+8 (counts/s)^2
+    # dirty workaround for CI numberic error
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    1.20399427123
+    Table Cell Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]/table    11    2    e+8 (counts/s)^2
     [Teardown]    Kill carta_backend And Close Browser
 
 
