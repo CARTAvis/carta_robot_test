@@ -298,7 +298,6 @@ Polarization Statistics
 
 
 Compressed FITS fz statistics
-    Pass Execution    Skip until a bug is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.fz
     Click Element    //*[@id="StatisticsWidgetButton"]
@@ -318,7 +317,6 @@ Compressed FITS fz statistics
 
 
 Compressed FITS gz statistics
-    Pass Execution    Skip until a bug is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.gz
     Click Element    //*[@id="StatisticsWidgetButton"]
