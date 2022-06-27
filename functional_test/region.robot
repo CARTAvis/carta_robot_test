@@ -727,3 +727,58 @@ Import Image Coordinate ds9 Region Made In CARTA
 
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Region selecting, centering, locking, and deleting
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Region File    all_region_generated_with_carta.crtf
+    
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]/div    -200    0
+    Click Element At Coordinates    ${VIEWER_DIV}    50    -150
+    Mouse Out    ${VIEWER_DIV}
+    Sleep    1
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_selected_from_viewer.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[4]
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polyline_selected_from_list.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[2]
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[1]
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked.png
+    Press Keys    None    DELETE
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]    Region 5
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Polygon
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_tried_delete.png
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[1]
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
+    Press Keys    None    DELETE
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]    Region 6
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Polyline
+    
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,259,130
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,323,144
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,377,129
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,341,67
+    PNG Two Pixels Should Not Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,316,67
+
+    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list.png    256,220,310,168
+    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list.png    256,220,364,224
+    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list.png    256,220,413,179
+    PNG Two Pixels Should Not Have Matched RGBA    check_polyline_selected_from_list.png    256,220,283,195
+
+    PNG Images Should Be Different    check_polyline_selected_from_list.png    check_polygon_center_fov.png    
+    PNG Images Should Be Identical    check_polygon_center_fov_selected_locked.png    check_polygon_center_fov_selected_locked_tried_delete.png
+    PNG Images Should Be Identical    check_polygon_center_fov_selected.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
+
+    Remove Files    check_polygon_selected_from_viewer.png    check_polyline_selected_from_list.png    check_polygon_center_fov.png
+    Remove Files    check_polygon_center_fov_selected.png    check_polygon_center_fov_selected_locked.png
+    Remove Files    check_polygon_center_fov_selected_locked_tried_delete.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
+    [Teardown]    Kill carta_backend And Close Browser
+
