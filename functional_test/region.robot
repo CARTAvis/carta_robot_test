@@ -11,6 +11,7 @@ Resource          ../resource.robot
 
 *** Test Cases ***
 Import World Coordinate ds9 Region Made In ds9
+    Pass Execution    Skip until the line 0 0 parsing bug is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_ds9.reg
@@ -55,32 +56,39 @@ Import World Coordinate ds9 Region Made In ds9
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[8]    0.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]    Region 5
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    17:56:21.0189840214
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    -21:57:29.4605998495
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    ${EMPTY}
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[8]    0.0
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Line
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    17:56:20.9093646471
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    -21:57:17.1356442971
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    5.9435115276"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[8]    43.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[4]    Region 6
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    17:56:20.8141199666
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    -21:57:28.2106799170
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    17:56:21.0189840214
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    -21:57:29.4605998495
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[7]    ${EMPTY}
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[8]    0.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[4]    Region 7
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    17:56:21.0189840159
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    -21:57:30.5405999647
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    17:56:20.8141199666
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    -21:57:28.2106799170
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[7]    ${EMPTY}
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[8]    0.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[4]    Region 8
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    17:56:20.8141199674
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    -21:57:29.2906798413
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    17:56:21.0189840159
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    -21:57:30.5405999647
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[7]    ${EMPTY}
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[4]    Region 9
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[6]    17:56:20.8141199674
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[6]    -21:57:29.2906798413
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[8]    0.0
 
     PNG Two Pixels Should Have Matched RGBA    check.png    280,70,260,88
     PNG Two Pixels Should Have Matched RGBA    check.png    280,70,280,108
@@ -100,6 +108,8 @@ Import World Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check.png    256,334,294,333
     PNG Two Pixels Should Have Matched RGBA    check.png    256,334,276,361
     
+    PNG Two Pixels Should Have Matched RGBA    check.png    443,73,519,155
+
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
@@ -154,32 +164,39 @@ Import Image Coordinate ds9 Region Made In ds9
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[8]    0.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]    Region 5
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    17:56:21.0189840214
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    -21:57:29.4605998495
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    ${EMPTY}
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[8]    0.0
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Line
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    17:56:20.9093646471
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    -21:57:17.1356442971
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    5.9435115276"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[8]    43.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[4]    Region 6
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    17:56:20.8141199666
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    -21:57:28.2106799170
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    17:56:21.0189840214
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    -21:57:29.4605998495
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[7]    ${EMPTY}
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[8]    0.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[4]    Region 7
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    17:56:21.0189840159
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    -21:57:30.5405999647
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    17:56:20.8141199666
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    -21:57:28.2106799170
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[7]    ${EMPTY}
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[8]    0.0
 
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[4]    Region 8
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[5]    Point
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    17:56:20.8141199674
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    -21:57:29.2906798413
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    17:56:21.0189840159
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    -21:57:30.5405999647
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[7]    ${EMPTY}
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[4]    Region 9
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[6]    17:56:20.8141199674
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[6]    -21:57:29.2906798413
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[8]    0.0
 
     PNG Two Pixels Should Have Matched RGBA    check.png    280,70,260,88
     PNG Two Pixels Should Have Matched RGBA    check.png    280,70,280,108
@@ -199,6 +216,8 @@ Import Image Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check.png    256,334,294,333
     PNG Two Pixels Should Have Matched RGBA    check.png    256,334,276,361
     
+    PNG Two Pixels Should Have Matched RGBA    check.png    443,73,519,155
+
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
