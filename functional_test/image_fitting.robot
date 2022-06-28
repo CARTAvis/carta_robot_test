@@ -210,19 +210,19 @@ FOV Matched Image Fitting
     Wait Until Page Does Not Contain    Image fitting processing    timeout=2
     Set Selenium Speed    0.02
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Component #1:
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center X${SPACE*8}\= 109.8614639969 (deg) +/- 0.018178 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center Y${SPACE*8}\= -31.5622660294 (deg) +/- 0.020549 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Amplitude${SPACE*7}\= 6.904454 +/- 0.017502 (Jy/pixel)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Major Axis \= 5.977581 +/- 0.021686 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Minor Axis \= 5.166714 +/- 0.014062 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center X${SPACE*8}\= 109.8614639969 (deg) +/- 0.021299 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center Y${SPACE*8}\= -31.5622660294 (deg) +/- 0.024076 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Amplitude${SPACE*7}\= 6.904454 +/- 0.020506 (Jy/pixel)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Major Axis \= 5.977581 +/- 0.025409 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Minor Axis \= 5.166714 +/- 0.016476 (arcsec)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    P.A.${SPACE*12}\= -0.029152 +/- 0.000000 (deg)
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Component #2:
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center X${SPACE*8}\= 109.8601160759 (deg) +/- 0.016847 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center Y${SPACE*8}\= -31.5611281038 (deg) +/- 0.016063 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Amplitude${SPACE*7}\= 9.698995 +/- 0.046452 (Jy/pixel)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Major Axis \= 7.057775 +/- 0.034982 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Minor Axis \= 2.969172 +/- 0.010649 (arcsec)
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    P.A.${SPACE*12}\= 47.074927 +/- 0.112207 (deg)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center X${SPACE*8}\= 109.8601160759 (deg) +/- 0.019739 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Center Y${SPACE*8}\= -31.5611281038 (deg) +/- 0.018820 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    Amplitude${SPACE*7}\= 9.698995 +/- 0.054426 (Jy/pixel)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Major Axis \= 7.057775 +/- 0.040988 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    FWHM Minor Axis \= 2.969172 +/- 0.012477 (arcsec)
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div    P.A.${SPACE*12}\= 47.074927 +/- 0.131470 (deg)
     Click Element    //*[@id="bp3-tab-title_fittingResultTabs_1"]
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Image: double_bin2_gal.miriad
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Region: field of view
