@@ -881,3 +881,91 @@ Creating regions
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[7]    5.1063829787"
     Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[8]    0.0
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Shared Region And Region Inheritance
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]/div    -200    0
+    Click Element At Coordinates    ${VIEWER_DIV}    50    -150
+
+    # point
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element At Coordinates    ${VIEWER_DIV}    -50    -50
+
+    Append Image    HD163296_CO_2_1.mom1.fits
+    Page Should Not Contain Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    # match image
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+
+    # unmatch image
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 2
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+
+    # create a new region on the unmatched 2nd image
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element At Coordinates    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas    20    -50
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 3
+
+    # match the 2nd image
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 4
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 4
+
+    # unmatch again
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 4
+    Click Element    xpath://*[contains(text(), "Image List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 5
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 6
+
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Loading 4000 Regions From A File
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]/div    -200    0
+    Click Element At Coordinates    ${VIEWER_DIV}    50    -150
+
+    Load Region File    box_region_n_4000.crtf
+    Wait Until Page Does Not Contain    Importing regions    timeout=10
+    Sleep    1
+
+    # scroll the region list to the very bottom
+    Assign Id To Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
+    Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, 200000)
+
+    Page Should Contain    Region 4000
+    [Teardown]    Kill carta_backend And Close Browser
