@@ -800,3 +800,84 @@ Region selecting, centering, locking, and deleting
     Remove Files    check_polygon_center_fov_selected_locked_tried_delete.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
     [Teardown]    Kill carta_backend And Close Browser
 
+
+Creating regions
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    # point
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element At Coordinates    ${VIEWER_DIV}    -100    -100
+    # line
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+    Drag And Drop By Offset    ${VIEWER_DIV}    -65    50
+    # rectangle
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+    Drag And Drop By Offset    ${VIEWER_DIV}    -60    80
+    # ellipse
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
+    Drag And Drop By Offset    ${VIEWER_DIV}    -100    50
+    # polygon
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
+    Click Element At Coordinates    ${VIEWER_DIV}    75    -75
+    Click Element At Coordinates    ${VIEWER_DIV}    50    120
+    Double Click Element    ${VIEWER_DIV}
+    # polyline
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
+    Click Element At Coordinates    ${VIEWER_DIV}    0    100
+    Click Element At Coordinates    ${VIEWER_DIV}    -80    80
+    Click Element At Coordinates    ${VIEWER_DIV}    80    60
+    Double Click Element    ${VIEWER_DIV} 
+    
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]/div    -200    0
+    Click Element At Coordinates    ${VIEWER_DIV}    50    -150
+
+    Set Selenium Speed    0.02
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[6]    17:56:21.6556900185
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[6]    -21:57:18.1728612209
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[8]    0.0
+    
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 2
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[5]    Line
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[6]    17:56:21.2886455617
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[6]    -21:57:23.2792706952
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    8.3750907916"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[8]    307.6
+    
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]    Region 3
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[5]    Rectangle
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[6]    17:56:21.2886455617
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[6]    -21:57:23.2792706952
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    6.1276595745"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    8.1702127660"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]    Region 4
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[5]    Ellipse
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[6]    17:56:21.2886455617
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[6]    -21:57:23.2792706952
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[7]    2.5531914894"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[7]    5.1063829787"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]    Region 5
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Polygon
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    17:56:21.1510021967
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    -21:57:24.4282036623
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    3.8297872340"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    9.9574468085"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[4]    Region 6
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[5]    Polyline
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    17:56:21.2886455981
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    -21:57:25.8324621846
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[7]    8.1702127660"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[7]    5.1063829787"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[8]    0.0
+    [Teardown]    Kill carta_backend And Close Browser
