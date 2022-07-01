@@ -969,3 +969,6 @@ Loading 4000 Regions From A File
 
     Page Should Contain    Region 4000
     [Teardown]    Kill carta_backend And Close Browser
+
+
+# add a test to have two image matched and load a region file when the 2nd image is active 
