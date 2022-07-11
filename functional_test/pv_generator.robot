@@ -257,7 +257,7 @@ PV Image Generation With Matched Wide-field Cubes
     Mouse Out    ${VIEWER_DIV}
     Click Element    //*[@id="PVGeneratorButton"]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
-    Wait Until Page Does Not Contain    Generating PV    timeout=20
+    Wait Until Page Does Not Contain    Generating PV    timeout=30
     Mouse Over    //*[@id="image-panel-0-1"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-0-1"]/div[8]/span[8]/a
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
@@ -267,7 +267,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
-    Wait Until Page Does Not Contain    Generating PV    timeout=20
+    Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
