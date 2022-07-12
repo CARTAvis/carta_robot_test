@@ -3,12 +3,6 @@ Documentation     Test region of interest support in CARTA
 Resource          ../resource.robot
 
 
-# switch to the following ds9 region def when the bug is fixed
-# point(269.0875791,-21.9581835) # point=circle 5
-# point(269.0867255,-21.9578363) # point=cross 5
-# point(269.0875791,-21.9584835) # point=circle
-# point(269.0867255,-21.9581363) # point=cross
-
 *** Test Cases ***
 Import World Coordinate ds9 Region Made In ds9
     [Setup]    Setup carta_backend And Open Browser To CARTA
@@ -969,6 +963,43 @@ Loading 4000 Regions From A File
 
     Page Should Contain    Region 4000
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Loading Regions on Active Matched Image
+    Pass Execution    Waiting for frontend #1910...
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51cm3i_8_small.fits
+    Append Image    m51_151_MHz.fits
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Load Region File    region_004.crtf
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    118,72,497,72
+    PNG Two Pixels Should Have Matched RGBA    check.png    139,149,518,149
+    PNG Two Pixels Should Have Matched RGBA    check.png    163,120,542,120
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Loading Regions on Active Reference Image
+    Pass Execution    Waiting for frontend #1910...
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51cm3i_8_small.fits
+    Append Image    m51_151_MHz.fits
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
+    Load Region File    region_004.crtf
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    118,72,497,72
+    PNG Two Pixels Should Have Matched RGBA    check.png    139,149,518,149
+    PNG Two Pixels Should Have Matched RGBA    check.png    163,120,542,120
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
 
 
 # add a test to have two image matched and load a region file when the 2nd image is active 
