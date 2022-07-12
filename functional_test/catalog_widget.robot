@@ -51,7 +51,6 @@ Load Catalog File In VOTable Format
 
 
 Load Catalog File In FITS Format
-    Pass Execution    Skip until the crash issue is fixed...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.fits
