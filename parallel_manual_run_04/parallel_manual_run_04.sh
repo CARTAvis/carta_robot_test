@@ -7,3 +7,4 @@ robot --variable CARTA_PORT:3014 \
       ../functional_test/region.robot \
       ../functional_test/spectral_profiler.robot \
       ../functional_test/statistics_widget.robot
+rm -rf utilities

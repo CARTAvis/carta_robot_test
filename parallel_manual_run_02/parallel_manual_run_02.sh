@@ -8,3 +8,4 @@ robot --variable CARTA_PORT:3012 \
       ../functional_test/spatial_profiler.robot \
       ../functional_test/load_image.robot \
       ../functional_test/moment_generator.robot
+rm -rf utilities 

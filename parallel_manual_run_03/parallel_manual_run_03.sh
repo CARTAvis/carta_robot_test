@@ -8,4 +8,4 @@ robot --variable CARTA_PORT:3013 \
       ../functional_test/matching.robot \
       ../functional_test/rendering.robot \
       ../functional_test/cube_histogram.robot
-
+rm -rf utilities 

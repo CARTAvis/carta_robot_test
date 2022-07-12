@@ -10,3 +10,4 @@ robot --variable CARTA_PORT:3011 \
       ../functional_test/catalog_widget.robot \
       ../functional_test/spectral_line_query.robot \
       ../functional_test/WebGL_test.robot
+rm -rf utilities
