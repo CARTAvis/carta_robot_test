@@ -110,6 +110,113 @@ Import World Coordinate ds9 Region Made In ds9
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Import World Coordinate ds9 Region Made In ds9 Without Header
+    Pass Execution    Waiting for backend #1142...
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Region File    all_region_generated_with_ds9_no_header.reg
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
+    Drag And Drop By Offset    //*[@id="root"]/div/div[15]/div[2]/div/div[2]/div    -200    0
+
+    Set Selenium Speed    0.02
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[5]    Ellipse
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[6]    17:56:21.6479279877
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[6]    -21:57:15.8104802550
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[7]    1.0000000000"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[7]    1.0000000000"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[8]    0.0
+    
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 2
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[5]    Ellipse
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[6]    17:56:21.7054319929
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[6]    -21:57:19.7107203749
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    0.9000000000"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    2.4500000000"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[8]    270.0
+    
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]    Region 3
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[5]    Rectangle
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[6]    17:56:21.5293200005
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[6]    -21:57:26.2105199833
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    4.9000000000"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    2.7000000000"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[8]    360.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]    Region 4
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[5]    Polygon
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[6]    17:56:21.6659046396
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[6]    -21:57:29.9356134124
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[7]    1.9999904633"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[7]    3.3498060226"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[4]    Region 5
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[5]    Line
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    17:56:20.9093646471
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[6]    -21:57:17.1356442971
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[7]    5.9435115276"
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[6]/div[8]    43.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[4]    Region 6
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    17:56:21.0189840214
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[6]    -21:57:29.4605998495
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[7]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[4]    Region 7
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    17:56:20.8141199666
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[6]    -21:57:28.2106799170
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[8]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[4]    Region 8
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    17:56:21.0189840159
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[6]    -21:57:30.5405999647
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[9]/div[8]    0.0
+
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[4]    Region 9
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[5]    Point
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[6]    17:56:20.8141199674
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[6]    -21:57:29.2906798413
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[7]    ${EMPTY}
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[10]/div[8]    0.0
+
+    PNG Two Pixels Should Have Matched RGBA    check.png    280,70,260,88
+    PNG Two Pixels Should Have Matched RGBA    check.png    280,70,280,108
+    PNG Two Pixels Should Have Matched RGBA    check.png    280,70,299,88
+
+    PNG Two Pixels Should Have Matched RGBA    check.png    265,118,247,165
+    PNG Two Pixels Should Have Matched RGBA    check.png    265,118,265,213
+    PNG Two Pixels Should Have Matched RGBA    check.png    265,118,282,165
+
+    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,264,318
+    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,318
+    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,266
+
+    PNG Two Pixels Should Have Matched RGBA    check.png    256,334,256,372
+    PNG Two Pixels Should Have Matched RGBA    check.png    256,334,282,397
+    PNG Two Pixels Should Have Matched RGBA    check.png    256,334,294,372
+    PNG Two Pixels Should Have Matched RGBA    check.png    256,334,294,333
+    PNG Two Pixels Should Have Matched RGBA    check.png    256,334,276,361
+    
+    PNG Two Pixels Should Have Matched RGBA    check.png    443,73,519,155
+
+    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
+    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
+    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
 
 Import Image Coordinate ds9 Region Made In ds9
     Pass Execution    Skip until the off by 1 pixel bug is fixed...
