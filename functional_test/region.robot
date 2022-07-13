@@ -966,7 +966,6 @@ Loading 4000 Regions From A File
 
 
 Loading Regions on Active Matched Image
-    Pass Execution    Waiting for frontend #1910...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
@@ -983,7 +982,6 @@ Loading Regions on Active Matched Image
 
 
 Loading Regions on Active Reference Image
-    Pass Execution    Waiting for frontend #1910...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
