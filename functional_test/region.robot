@@ -111,7 +111,6 @@ Import World Coordinate ds9 Region Made In ds9
 
 
 Import World Coordinate ds9 Region Made In ds9 Without Header
-    Pass Execution    Waiting for backend #1142...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_ds9_no_header.reg
