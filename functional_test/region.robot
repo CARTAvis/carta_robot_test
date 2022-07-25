@@ -218,7 +218,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
 
 
 Import Image Coordinate ds9 Region Made In ds9
-    Pass Execution    Skip until the off by 1 pixel bug is fixed...
+    Pass Execution    Skip until the off by 1 pixel backend bug #1138 is fixed ...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_ds9.reg
@@ -765,6 +765,7 @@ Import World Coordinate ds9 Region Made In CARTA
 
 
 Import Image Coordinate ds9 Region Made In CARTA
+    Pass Execution    Skip until PR #1155 is merged. all_region_generated_with_carta_pix.reg needs to be regenerated...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_carta_pix.reg
