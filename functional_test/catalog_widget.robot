@@ -297,22 +297,22 @@ Catalog Rendering As Scatter Plot
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[4]/div/span/span/div/button
     Click Element    xpath:/html/body/div[12]/div/div/div/div/div/ul/li[2]
     Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.21891547, RA_d: 150.0963135
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.21421, RA_d: 150.08293
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    ANG_DIST - count: 20000, valid count: 20000, mean: 2.9599e+2, rms: 3.1643e+2, stddev: 1.1191e+2, min: 1.2400e+0, max: 4.6845e+2
+
 
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
     Capture Element Screenshot    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    check4.png
 
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    229,101,576,127
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    229,101,320,140
+    PNG Two Pixels Should Have Matched RGBA    check.png    243,93,579,117
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    243,93,300,155
     PNG Images Should Be Different    check.png    check2.png
     PNG Images Should Be Different    check.png    check3.png
     PNG Images Should Be Different    check.png    check4.png
     PNG Images Should Be Different    check2.png    check3.png
     PNG Images Should Be Different    check2.png    check4.png
     PNG Images Should Be Different    check3.png    check4.png
-
     Remove Files    check.png    check2.png    check3.png    check4.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -348,16 +348,16 @@ Catalog Rendering As Histogram Plot
     Mouse Over    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[5]/div/span/span/div/button
     Click Element    xpath:/html/body/div[11]/div/div/div/div/div/ul/li[4]
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.2173962542500005, Count: 408
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.2141465077500007, Count: 378
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
 
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    228,185,377,74
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    228,185,340,140
-    PNG Two Pixels Should Have Matched RGBA    check2.png    154,133,303,54
-    PNG Two Pixels Should Not Have Matched RGBA    check2.png    154,133,150,70
-    PNG Two Pixels Should Have Matched RGBA    check3.png    102,165,518,26
-    PNG Two Pixels Should Not Have Matched RGBA    check3.png    102,165,190,80
+    PNG Two Pixels Should Have Matched RGBA    check.png    243,170,602,16
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    243,170,115,22
+    PNG Two Pixels Should Have Matched RGBA    check2.png    172,122,602,16
+    PNG Two Pixels Should Not Have Matched RGBA    check2.png    172,122,115,22
+    PNG Two Pixels Should Have Matched RGBA    check3.png    186,119,665,123
+    PNG Two Pixels Should Not Have Matched RGBA    check3.png    186,119,115,22
     
     PNG Images Should Be Different    check.png    check2.png
     PNG Images Should Be Different    check.png    check2.png
@@ -405,7 +405,7 @@ Linked Catalog Visualization
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
 
     Sleep    1
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[17]/div    61.119998931884766
+    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[17]/div    73.06999969482422
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected.png
     Capture Element Screenshot    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_selected.png
     
@@ -417,11 +417,11 @@ Linked Catalog Visualization
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset.png
 
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected.png    335,25,335,247
-    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected.png    335,25,320,40
+    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected.png    338,20,338,227
+    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected.png    338,20,342,16
     PNG Images Should Be Different    check_histogram_selected.png    check_histogram.png
-    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected.png    337,24,337,216
-    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected.png    337,24,237,64
+    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected.png    340,16,340,225
+    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected.png    340,16,350,142
     PNG Images Should Be Different    check_scatter_selected.png    check_scatter.png
     PNG Images Should Be Different    check_image_overlay_selected.png    check_image_overlay_reset.png
     PNG Two Pixels Should Have Matched RGBA    check_table_selected.png    120,70,580,70
