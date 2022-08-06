@@ -352,9 +352,9 @@ Catalog Rendering As Histogram Plot
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
 
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    243,170,602,16
+    PNG Two Pixels Should Have Matched RGBA    check.png    243,170,530,68
     PNG Two Pixels Should Not Have Matched RGBA    check.png    243,170,115,22
-    PNG Two Pixels Should Have Matched RGBA    check2.png    172,122,602,16
+    PNG Two Pixels Should Have Matched RGBA    check2.png    172,122,458,25
     PNG Two Pixels Should Not Have Matched RGBA    check2.png    172,122,115,22
     PNG Two Pixels Should Have Matched RGBA    check3.png    186,119,665,123
     PNG Two Pixels Should Not Have Matched RGBA    check3.png    186,119,115,22
