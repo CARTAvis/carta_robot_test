@@ -19,7 +19,7 @@ ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
 ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ${N_OMP_THREADS}    8
-${PACKAGE_TESTING}    True
+${PACKAGE_TESTING}    False
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser
 ${SERVER}         localhost:${CARTA_PORT}
@@ -109,7 +109,7 @@ ${MIRIAD_M17_SWex}    xpath://*[contains(text(), "M17_SWex.miriad")]
 
 *** Keywords ***
 Setup carta_backend And Open Browser To CARTA
-    IF    '${PACKAGE_TESTING}' == False
+    IF    '${PACKAGE_TESTING}' == 'False'
     Run carta_backend
     ELSE
     Log To Console    Package testing mode. carta_backend should be started manually.
