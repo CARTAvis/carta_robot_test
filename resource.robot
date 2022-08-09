@@ -133,7 +133,7 @@ Setup carta_backend And Open Browser To CARTA
     END
 
 Kill carta_backend And Close Browser
-    IF    '${PACKAGE_TESTING}' == False
+    IF    '${PACKAGE_TESTING}' == 'False'
     Close Browser
     Terminate carta_backend
     ELSE
