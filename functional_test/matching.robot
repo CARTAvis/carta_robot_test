@@ -23,7 +23,7 @@ Match Images Spatially And Spectrally
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched.png
     Sleep    0.5
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Mouse Over    ${VIEWER_DIV}
     Sleep    0.5
@@ -54,7 +54,7 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
     Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
@@ -64,8 +64,8 @@ Match Wide-Field Images Spatially
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Repeat Keyword    3    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Press Keys    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Press Keys    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    matched_multipanel.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
@@ -275,7 +275,7 @@ Matched Region Canvas Rendering Single Panel View
     Mouse Out    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
@@ -352,7 +352,7 @@ Matched Region Canvas Rendering Single Panel View
     PNG Pixel XY Should Match RGBA    check3.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check3.png    364,248,46,230,214,255
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
     Remove Files    check.png    check2.png    check3.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -426,17 +426,17 @@ Match Catalog Image Overlay Spatially
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    model.fits
     Load Catalog File  model_fits_fk4.xml
-    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
-    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
-    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
-    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[16]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
+    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element At Coordinates   //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
+    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
+    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element At Coordinates   //*[@id="root"]/div/div[17]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
     Input Text    //*[@id="bp3-tab-panel_catalogSettings_3"]/div/div[1]/div/span/div/div[1]/input    5
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div[1]/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[5]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
     Append Image    model_imregrid_galactic.fits
     Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
