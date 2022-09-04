@@ -180,8 +180,8 @@ FOV Image Fitting
     Click Element    //*[@id="bp3-tab-title_fittingResultTabs_1"]
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Image: double.miriad
     Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    Region: field of view
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    rotbox[[511.500000pix, 511.500000pix], [203.650118pix, 128.000000pix], 0deg]
-    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    rotbox(wcs:FK5)[[0:00:00.0153959990, 29:59:59.7999999385], [81.4600472813", 51.2000000000"], 0deg]
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    rotbox[[511.500000pix, 511.500000pix], [203.650118pix, 128.000000pix], 0.000000deg]
+    Element Should Contain    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div    rotbox(wcs:FK5)[[0:00:00.0153959990, 29:59:59.7999999385], [81.4600472813", 51.2000000000"], 0.000000deg]
     [Teardown]    Kill carta_backend And Close Browser
 
 

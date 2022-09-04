@@ -999,23 +999,23 @@ Shared Region And Region Inheritance
     Page Should Not Contain Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     # match image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
 
     # unmatch image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 2
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
 
     # create a new region on the unmatched 2nd image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element At Coordinates    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas    20    -50
     Click Element    xpath://*[contains(text(), "Region List")]
@@ -1023,24 +1023,24 @@ Shared Region And Region Inheritance
 
     # match the 2nd image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 4
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 4
 
     # unmatch again
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 1
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 4
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    Region 5
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]    Region 6
@@ -1063,7 +1063,7 @@ Loading 4000 Regions From A File
     Sleep    1
 
     # scroll the region list to the very bottom
-    Assign Id To Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
+    Assign Id To Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
     Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, 200000)
 
     Page Should Contain    Region 4000
@@ -1074,7 +1074,7 @@ Loading Regions on Active Matched Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Load Region File    region_004.crtf
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
 
@@ -1090,8 +1090,8 @@ Loading Regions on Active Reference Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
     Load Region File    region_004.crtf
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
 
