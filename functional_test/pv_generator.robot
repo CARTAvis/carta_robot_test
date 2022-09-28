@@ -21,7 +21,7 @@ Narrow-field PV Image Generation
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVGeneratorButton"]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
@@ -67,7 +67,7 @@ Wide-field PV Image Generation
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVGeneratorButton"]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
@@ -107,12 +107,12 @@ PV Image Generation Cancellation And Rerequest
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVGeneratorButton"]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Contains    Generating PV    timeout=5
     Sleep    2.5
     Click Element    xpath://*[contains(text(), "Cancel")]
     Sleep    1
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
@@ -152,9 +152,9 @@ PV Image Generation Repeat
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVGeneratorButton"]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=5
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
@@ -203,15 +203,17 @@ PV Image Generation With Matched Cubes
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
     Mouse Out    ${VIEWER_DIV}
     Click Element    //*[@id="PVGeneratorButton"]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=5
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Mouse Over    //*[@id="image-panel-0-1"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-0-1"]/div[8]/span[8]/a
+    Click Element    //*[@id="PVGeneratorButton"]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select/option[2]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Mouse Out    ${VIEWER_DIV}
@@ -256,17 +258,19 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
     Mouse Out    ${VIEWER_DIV}
     Click Element    //*[@id="PVGeneratorButton"]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=30
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Mouse Over    //*[@id="image-panel-0-1"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-0-1"]/div[8]/span[8]/a
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
+    Click Element    //*[@id="PVGeneratorButton"]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[2]/div/div/select/option[2]
-    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[4]/span/a
+    Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[4]
     Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
