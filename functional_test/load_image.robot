@@ -126,7 +126,7 @@ Load CASA complex image as amplitude
     Click Element    xpath://*[contains(text(), "Amplitude")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    AMPLITUDE("complex.image")
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    AMPLITUDE("complex.image")
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -147,7 +147,7 @@ Load CASA complex image as phase
     Click Element    xpath://*[contains(text(), "Phase")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    PHASE("complex.image")
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    PHASE("complex.image")
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -168,7 +168,7 @@ Load CASA complex image as real
     Click Element    xpath://*[contains(text(), "Real")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    REAL("complex.image")
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    REAL("complex.image")
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -189,7 +189,7 @@ Load CASA complex image as imaginary
     Click Element    xpath://*[contains(text(), "Imaginary")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IMAG("complex.image")
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IMAG("complex.image")
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -266,18 +266,18 @@ Load Images As A Stokes Hypercube
     Click Element    //*[@id="root"]/div/div[13]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IRCp10216_sci.spw0.cube.hypercube_IQUV.manual.pbcor.fits
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IRCp10216_sci.spw0.cube.hypercube_IQUV.manual.pbcor.fits
     Click Element    xpath://*[contains(text(), "Animator")]
     Set Selenium Speed    0.02
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes I
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes Q
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes U
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes V
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Ptotal
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Plinear
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFtotal
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFlinear
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Pangle
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes I
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes Q
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes U
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes V
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Ptotal
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Plinear
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFtotal
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFlinear
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Pangle
     Set Selenium Speed    0.2
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
@@ -308,7 +308,7 @@ Load Multiple Images In One Shot
     Click Element    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[4]/div/div/span[1]/a
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IRCp10216_sci.spw0.cube.V.manual.pbcor.fits
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    IRCp10216_sci.spw0.cube.V.manual.pbcor.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
@@ -325,7 +325,7 @@ Load Images With LEL
     Click Element    xpath://*[contains(text(), "Load expression")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Element Should Contain    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    "dice_one.fits"+"dice_four.fits"
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span    "dice_one.fits"+"dice_four.fits"
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Sleep    0.5

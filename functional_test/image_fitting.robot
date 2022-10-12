@@ -141,7 +141,7 @@ Triple Gaussian Fitting
 
 
 FOV Image Fitting
-    #ass Execution    Skip for now due to CI numeric error...
+    #pass Execution    Skip for now due to CI numeric error...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    double.miriad
     Mouse Over    ${VIEWER_DIV}
@@ -189,7 +189,7 @@ FOV Matched Image Fitting
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    double.miriad
     Append Image    double_bin2_gal.miriad
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Mouse Over    //*[@id="image-panel-1-0"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[8]/a
     Repeat Keyword    3    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[5]/a

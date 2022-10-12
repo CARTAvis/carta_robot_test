@@ -176,11 +176,11 @@ Polarization Slider And Computed Components
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-0-0"]/div[9]/span[5]/a
     # change to tab10 colormap
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
     # use animator and the polarization slider to switch to different components
     Click Element    xpath://*[contains(text(), "Animator")]
-    Click Element    //*[@id="root"]/div/div[15]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label/span
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label/span
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_I.png
     Click Element    ${ANIMATOR_NEXT_BUTTON} 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_Q.png
