@@ -49,10 +49,12 @@ ${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
 
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
+${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
+
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
 ${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
-
+${COLORMAP_DROPDOWN_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button     
 
 ${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
 
@@ -70,7 +72,7 @@ ${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]
 ${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
 ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
-
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label/span   
 
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:

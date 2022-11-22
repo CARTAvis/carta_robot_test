@@ -174,13 +174,13 @@ Polarization Slider And Computed Components
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     # zoom in
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[9]/span[5]/a
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     # change to tab10 colormap
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button
+    Click Element    ${COLORMAP_DROPDOWN_CUBE}
     Click Element    xpath://*[contains(text(), "tab10")]
     # use animator and the polarization slider to switch to different components
     Click Element    xpath://*[contains(text(), "Animator")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label/span
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_I.png
     Click Element    ${ANIMATOR_NEXT_BUTTON} 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_Q.png
