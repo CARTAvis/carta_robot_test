@@ -74,6 +74,26 @@ ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[16]/div[2]/div/d
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
 ${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label/span   
 
+${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
+${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
+${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div[2]/div/div[2]
+
+${CATALOG_WIDGET_DOCK_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
+${CATALOG_WIDGET_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span
+${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button/span[1]
+${CATALOG_WIDGET_FILTER_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[1]
+${CATALOG_WIDGET_RESET_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
+${CATALOG_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+${CATALOG_WIDGET_PLOT_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+${CATALOG_WIDGET_TABLE_FILTERING_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody
+${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
+${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+
+
+
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
 
