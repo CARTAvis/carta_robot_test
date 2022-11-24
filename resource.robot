@@ -47,6 +47,7 @@ ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
 ${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
 
 
+${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 ${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
