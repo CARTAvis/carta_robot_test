@@ -47,12 +47,15 @@ ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
 ${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
 
 
+${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
+${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
+
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
 ${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
-
+${COLORMAP_DROPDOWN_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button     
 
 ${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
 
@@ -70,6 +73,48 @@ ${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]
 ${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
 ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
+${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label   
+
+
+${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
+${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
+${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div[2]/div/div[2]
+
+${CATALOG_WIDGET_DOCK_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
+${CATALOG_WIDGET_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span
+${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button/span[1]
+${CATALOG_WIDGET_FILTER_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[1]
+${CATALOG_WIDGET_RESET_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
+${CATALOG_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+${CATALOG_WIDGET_PLOT_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+${CATALOG_WIDGET_TABLE_FILTERING_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody
+${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
+${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+
+${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input
+${RENDER_CONFIG_CLIP_MAX_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[3]/div/div/div/input
+${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[1]/div/span/span/div/button
+
+
+${IMAGE_FITTING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
+${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[7]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/span[2]/a
+${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div
+${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
+${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div/div[2]/button[1]
+
+
+${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
 
 
 # image comparsion
@@ -106,6 +151,9 @@ ${MIRIAD_M17_SWex}    xpath://*[contains(text(), "M17_SWex.miriad")]
 
 
 
+
+
+
 *** Keywords ***
 Setup carta_backend And Open Browser To CARTA
     IF    '${PACKAGE_TESTING}' == 'False'
@@ -126,9 +174,9 @@ Setup carta_backend And Open Browser To CARTA
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
-    ${VIEWER_MODE}=    Get Element Attribute    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]    title
+    ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
 
 Kill carta_backend And Close Browser
