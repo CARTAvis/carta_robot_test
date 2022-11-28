@@ -174,9 +174,9 @@ Setup carta_backend And Open Browser To CARTA
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
-    ${VIEWER_MODE}=    Get Element Attribute    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]    title
+    ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
 
 Kill carta_backend And Close Browser
