@@ -430,16 +430,16 @@ Import Image Coordinate CASA Region Made Manually
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[5]    Rectangle
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[6]    17:56:21.7629351528
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[6]    -21:57:17.4406101211
-    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    3.8750000000"
-    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    1.6600000381"
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    3.8764999390"
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[7]    1.6614999771"
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[8]    0.0
     
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]    Region 3
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[5]    Rectangle
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[6]    17:56:21.8021146141
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[6]    -21:57:22.5056020838
-    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    1.4250000000"
-    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    4.5900001526"
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    1.4239999771"
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[7]    4.5889999390"
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[8]    22.0
 
     Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]    Region 4
