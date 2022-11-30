@@ -117,6 +117,18 @@ ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[
 ${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
 
 
+${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[2]
+${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
+${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
+
+
+${PROFILE_FITTING_RESULT_TAB}    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div
+${PROFILE_FITTING_FIT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
+${PROFILE_FITTING_RESET_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
+${PROFILE_FITTING_AUTO_DETECT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
+${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
+
+
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
 
