@@ -9,7 +9,7 @@ Generate A Moment Image From FITS Cube
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -26,7 +26,7 @@ Generate A Moment Image From CASA Cube
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -43,7 +43,7 @@ Generate A Moment Image From MIRIAD Cube
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -60,7 +60,7 @@ Generate A Moment Image From HDF5 Cube
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -96,7 +96,7 @@ Generate All Moment Images
     Click Element    xpath://*[contains(text(), "9: Coordinate of the maximum value of the spectrum")]
     Click Element    xpath://*[contains(text(), "10: Minimum value of the spectrum")]
     Click Element    xpath://*[contains(text(), "11: Coordinate of the minimum value of the spectrum")]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=10
     Sleep    5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
@@ -194,7 +194,7 @@ Generate A Moment Image With Custom Parameters
     Input Text    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[1]/div/div/div/input    15
     Press Keys    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[2]/div/div/div/input    DELETE
     Input Text    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[2]/div/div/div/input    25
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Sleep    2
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
@@ -212,13 +212,13 @@ Generate Moment Images From Unmatched Cubes
     Append Image    M17_SWex.hdf5
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Sleep    2
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
-    Element Should Be Enabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Element Should Be Enabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Sleep    2
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
@@ -241,13 +241,13 @@ Generate Moment Images From Matched Cubes
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Sleep    2
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
-    Element Should Be Enabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Element Should Be Enabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Sleep    2
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
@@ -270,7 +270,7 @@ Generate A Moment Image With A Region Mask FITS
     Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[3]
     Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[4]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[5]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -284,7 +284,9 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[6]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    # move the dialog so that the generate button is clickable in the view
+    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -298,7 +300,9 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    # move the dialog so that the generate button is clickable in the view
+    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -323,7 +327,7 @@ Generate A Moment Image With A Region Mask HDF5
     Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[3]
     Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[4]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[5]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -337,7 +341,9 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[6]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    # move the dialog so that the generate button is clickable in the view
+    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
@@ -351,7 +357,9 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[12]/span/a
+    # move the dialog so that the generate button is clickable in the view
+    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
     Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
