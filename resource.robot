@@ -143,6 +143,11 @@ ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[1]/div[1]/
 ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[4]/a
 
 
+${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
+${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
+${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
+${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
+
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
 
