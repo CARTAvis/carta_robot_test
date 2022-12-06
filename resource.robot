@@ -116,12 +116,12 @@ ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[
 
 
 ${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
-
+${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
 
 ${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[2]
 ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
 ${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
-
+${SPECTRAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
 
 ${PROFILE_FITTING_RESULT_TAB}    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div
 ${PROFILE_FITTING_FIT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
@@ -152,8 +152,11 @@ ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/
 
 ${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
 
+${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
+${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
+${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
 
-
+${FILE_HEADER_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
 
 
 
