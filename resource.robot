@@ -129,6 +129,20 @@ ${PROFILE_FITTING_AUTO_DETECT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingT
 ${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
 
 
+${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
+${SPECTRAL_LINE_QUERY_TO_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input
+${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
+${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[1]
+${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
+${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
+${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[1]/a
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
+${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
+${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[1]/div[1]/div[2]/div/div[2]/div[2]/span[3]/a
+${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[4]/a
+
+
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
 
