@@ -151,6 +151,7 @@ ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/di
 
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
+${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
 ${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
@@ -163,10 +164,23 @@ ${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTab
 ${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
 
 ${FILE_HEADER_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
+${FILE_HEADER_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[1]/button
+
 
 ${CONTOUR_CONFIG_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[3]
 ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
 ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
+
+${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
+${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
+
+
+${POINT_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+${LINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+${RECTANGLE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+${ELLIPSE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
+${POLYGON_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
+${POLYLINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
 
 
 # image comparsion
@@ -182,25 +196,6 @@ ${IMAGE_PIXEL_RGBA_CHECK_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/png_rgba_che
 
 # image two pixels rgba check
 ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/match_png_rgba.py __REFERENCE__ __TEST__
-
-# test images
-${FITS_hugeGaussian40k}    xpath://*[contains(text(), "hugeGaussian40k.fits")]
-${FITS_hugeGaussian20k}    xpath://*[contains(text(), "hugeGaussian20k.fits")]
-${FITS_hugeGaussian10k}    xpath://*[contains(text(), "hugeGaussian10k.fits")]
-${FITS_h_m51_b}    xpath://*[contains(text(), "h_m51_b_s05_drz_sci.fits")]
-${FITS_supermosaic}    xpath://*[contains(text(), "supermosaic.10.fits")]
-${FITS_HD163296_CO_2_1}    xpath://*[contains(text(), "HD163296_CO_2_1.fits")]
-${FITS_cosmos_spitzer3.6micro}    xpath://*[contains(text(), "cosmos_spitzer3.6micron.fits")]
-${VOTABLE_COSMOSOPTCAT}    xpath://*[contains(text(), "COSMOSOPTCAT.vot")]
-${FITS_COSMOSOPTCAT}    xpath://*[contains(text(), "COSMOSOPTCAT.fits")]
-${FITS_S255_IR}    xpath://*[contains(text(), "S255_IR_sci.spw29.cube.I.pbcor.fits")]
-
-${FITS_M17_SWex}    xpath://*[contains(text(), "M17_SWex.fits")]
-${CASA_M17_SWex}    xpath://*[contains(text(), "M17_SWex.image")]
-${HDF5_M17_SWex}    xpath://*[contains(text(), "M17_SWex.hdf5")]
-${MIRIAD_M17_SWex}    xpath://*[contains(text(), "M17_SWex.miriad")]
-
-
 
 
 
