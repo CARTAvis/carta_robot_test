@@ -51,6 +51,11 @@ ${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
 ${VIEWER_DIV}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 ${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
+${VIEWER_10_ZOOM_IN_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
+${VIEWER_10_MATCH_BUTTON}    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
+${VIEWER_10_CANVAS}    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
+${VIEWER_10_ZOOM_TO_FIT_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
+
 
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
@@ -79,6 +84,7 @@ ${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/
 
 ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
 ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
 ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
 ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div[2]/div/div[2]
 
@@ -94,6 +100,7 @@ ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/
 ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
 ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
 ${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+
 
 ${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input
 ${RENDER_CONFIG_CLIP_MAX_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[3]/div/div/div/input
@@ -115,6 +122,65 @@ ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[
 
 
 ${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
+${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
+
+${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[2]
+${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
+${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
+${SPECTRAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
+
+${PROFILE_FITTING_RESULT_TAB}    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div
+${PROFILE_FITTING_FIT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
+${PROFILE_FITTING_RESET_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
+${PROFILE_FITTING_AUTO_DETECT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
+${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
+
+
+${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
+${SPECTRAL_LINE_QUERY_TO_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input
+${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
+${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[1]
+${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
+${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
+${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[1]/a
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
+${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
+${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[1]/div[1]/div[2]/div/div[2]/div[2]/span[3]/a
+${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[4]/a
+
+
+${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
+${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
+${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
+${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
+${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
+
+
+${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
+
+${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
+${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
+${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
+
+${FILE_HEADER_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
+${FILE_HEADER_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[1]/button
+
+
+${CONTOUR_CONFIG_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[3]
+${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
+${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
+
+${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
+${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
+
+
+${POINT_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+${LINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+${RECTANGLE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+${ELLIPSE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
+${POLYGON_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
+${POLYLINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
 
 
 # image comparsion
@@ -130,25 +196,6 @@ ${IMAGE_PIXEL_RGBA_CHECK_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/png_rgba_che
 
 # image two pixels rgba check
 ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/match_png_rgba.py __REFERENCE__ __TEST__
-
-# test images
-${FITS_hugeGaussian40k}    xpath://*[contains(text(), "hugeGaussian40k.fits")]
-${FITS_hugeGaussian20k}    xpath://*[contains(text(), "hugeGaussian20k.fits")]
-${FITS_hugeGaussian10k}    xpath://*[contains(text(), "hugeGaussian10k.fits")]
-${FITS_h_m51_b}    xpath://*[contains(text(), "h_m51_b_s05_drz_sci.fits")]
-${FITS_supermosaic}    xpath://*[contains(text(), "supermosaic.10.fits")]
-${FITS_HD163296_CO_2_1}    xpath://*[contains(text(), "HD163296_CO_2_1.fits")]
-${FITS_cosmos_spitzer3.6micro}    xpath://*[contains(text(), "cosmos_spitzer3.6micron.fits")]
-${VOTABLE_COSMOSOPTCAT}    xpath://*[contains(text(), "COSMOSOPTCAT.vot")]
-${FITS_COSMOSOPTCAT}    xpath://*[contains(text(), "COSMOSOPTCAT.fits")]
-${FITS_S255_IR}    xpath://*[contains(text(), "S255_IR_sci.spw29.cube.I.pbcor.fits")]
-
-${FITS_M17_SWex}    xpath://*[contains(text(), "M17_SWex.fits")]
-${CASA_M17_SWex}    xpath://*[contains(text(), "M17_SWex.image")]
-${HDF5_M17_SWex}    xpath://*[contains(text(), "M17_SWex.hdf5")]
-${MIRIAD_M17_SWex}    xpath://*[contains(text(), "M17_SWex.miriad")]
-
-
 
 
 

@@ -2,6 +2,11 @@
 Documentation     Load multiple images and match them
 Resource          ../resource.robot
 
+
+*** Variables ***
+${MAGIC_INDEX}    17
+
+
 *** Test Cases ***
 Match Images Spatially And Spectrally
     [Setup]    Setup carta_backend And Open Browser To CARTA
@@ -9,10 +14,11 @@ Match Images Spatially And Spectrally
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
-    Click Element    //*[@id="image-panel-0-0"]/div[9]/span[5]/a
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Append Image    M17_SWex.image
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
+    # match M17_SWex.image to M17_SWex.fits
     Click Element    //*[@id="image-panel-0-0"]/div[9]/span[9]/span/a
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
     Click Element    xpath://*[contains(text(), "Animator")]
@@ -23,7 +29,7 @@ Match Images Spatially And Spectrally
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched.png
     Sleep    0.5
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
+    Click Element    ${ANIMATOR_IMAGE_RADIO_BUTTON}
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Mouse Over    ${VIEWER_DIV}
     Sleep    0.5
@@ -43,8 +49,10 @@ Match Images Spatially And Spectrally
 Match Wide-Field Images Spatially
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian2.fits
+    # create a point region at the view center via the region shortcut button
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element    ${VIEWER_DIV}
+    # edit the position of the point region in image coordinate in the region config dialog
     Double Click Element    ${VIEWER_DIV}
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
@@ -53,17 +61,21 @@ Match Wide-Field Images Spatially
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    483
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    # center the point region in the view by clicking the center button in the region list widget
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
     Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
+    # match Gaussian_SE2.fits to Gaussian2.fits
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
     Sleep    0.5
     Mouse Out    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
-    Repeat Keyword    3    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
+    # zoom in the image with the zoom-in button
+    Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
+    # select the point region in the region list and delete it
     Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     Press Keys    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
     Sleep    0.5
@@ -88,8 +100,10 @@ Match Wide-Field Images Spatially
 Matched Region Canvas Rendering Multiple Panel View
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
+    # create a rectangle region at view center via the shortcut button
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
     Click Element    ${VIEWER_DIV}
+    # enable region config dialog and set a new size and a new styling
     Double Click Element    ${VIEWER_DIV}
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
@@ -105,9 +119,10 @@ Matched Region Canvas Rendering Multiple Panel View
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Append Image    pixel_shader_test.fits
+    # match the 2nd pixel_shader_test.fits to the 1st pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
-    Mouse Out    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Mouse Out    ${VIEWER_10_MATCH_BUTTON}
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
@@ -201,6 +216,7 @@ Matched Region Canvas Rendering Multiple Panel View
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check3.png
     PNG Images Should Be Identical    check.png    check3.png
+    # de-select the region
     Press Keys    ${VIEWER_DIV}    ESCAPE
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
@@ -253,8 +269,10 @@ Matched Region Canvas Rendering Multiple Panel View
 Matched Region Canvas Rendering Single Panel View
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
+    # create a rectangle region at view center via the shortcut button
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
     Click Element    ${VIEWER_DIV}
+    # enable region config dialog and set a new size and a new styling
     Double Click Element    ${VIEWER_DIV}
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
@@ -271,11 +289,11 @@ Matched Region Canvas Rendering Single Panel View
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Append Image    pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
-    Mouse Out    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Mouse Out    ${VIEWER_10_MATCH_BUTTON}
     Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
@@ -352,7 +370,7 @@ Matched Region Canvas Rendering Single Panel View
     PNG Pixel XY Should Match RGBA    check3.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check3.png    364,248,46,230,214,255
     Set Selenium Speed    0.2
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Remove Files    check.png    check2.png    check3.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -364,32 +382,37 @@ Match Contours Spatially
     Append Image    Gaussian2.fits
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]
+    Click Element    ${CONTOUR_CONFIG_DIALOG_BUTTON}
+    # set a contour level of 0.5
     Input Text    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/div/div/div/input    0.5
+    # go to the styling tab and set the thickness to 5
     Click Element    //*[@id="bp3-tab-title_undefined_2"]
     Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
-    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Click Element    ${ANIMATOR_NEXT_BUTTON}
-    Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
+    # use the match button in the Gaussian2.fits panel to match to small_gaussian.fits
+    Mouse Over    ${VIEWER_10_CANVAS}
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
     Mouse Over    xpath://*[contains(text(), "Spatial only")]
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check2.png
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]
+    Click Element    ${CONTOUR_CONFIG_DIALOG_BUTTON}
+    # set a contour level of 0.5
     Input Text    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/div/div/div/input    0.5
+    # go to the styling tab and set the thickness to 5
     Click Element    //*[@id="bp3-tab-title_undefined_2"]
     Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
-    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check3.png
-    Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
-    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check4.png
@@ -426,24 +449,32 @@ Match Catalog Image Overlay Spatially
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    model.fits
     Load Catalog File  model_fits_fk4.xml
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    # click the RA dropdown and select RA_d column
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[17]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
+    # click the DEC dropdown and select DEC_d column (tricky to select it so a work-around is applied)
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element At Coordinates   //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
+    # render catalog overlay by clicking the Plot button
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[3]/a[1] 
+    # change mark shape to filled circle
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element At Coordinates   //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
+    # change marker size to 5
     Input Text    //*[@id="bp3-tab-panel_catalogSettings_3"]/div/div[1]/div/span/div/div[1]/input    5
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
+    # close the catalog settings dialog
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[1]/div[3]
+    # close the catalog widget
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[1]/div[5]
     Append Image    model_imregrid_galactic.fits
-    Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
+    Mouse Over    ${VIEWER_10_CANVAS}
+    # match model_imregrid_galactic.fits to model_fits_fk4.xml
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
     Mouse Over    xpath://*[contains(text(), "Spatial only")]
     Click Element    xpath://*[contains(text(), "Spatial only")]
-    Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
-    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
