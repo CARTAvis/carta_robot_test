@@ -248,6 +248,7 @@ Vector Field Rendering With A Stokes Continuum Cube
     PNG Two Pixels Should Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,359,223
     PNG Two Pixels Should Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,395,121
     PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,395,124
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,356,180
 
     Remove Files    check_computed_PI_PA.png    check_computed_PI_PA_with_threshold.png    check_computed_PI_PA_with_threshold_with_debiasing.png    
     Remove Files    check_computed_PA_with_threshold_with_debiasing.png    check_computed_PI_with_threshold_with_debiasing.png    check_cleared.png
