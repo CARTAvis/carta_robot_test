@@ -183,6 +183,26 @@ ${POLYGON_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
 ${POLYLINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
 
 
+
+${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[4]/a
+${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[2]
+${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[4]/div/div/div[1]/input
+${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}    //*[@id="bp3-tab-title_undefined_0"]
+${VECTOR_FIELD_RENDERING_STYLING_TAB}    //*[@id="bp3-tab-title_undefined_1"]
+${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[1]/div/div/div[1]/input
+${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}     //*[@id="bp3-tab-panel_undefined_1"]/div/div[3]/div/div/div/div[2]/div/div/div[1]/input
+${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[4]/div/div/div/input
+${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[3]
+${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[6]/div/label
+${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[7]/div/div/div/input
+${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[8]/div/label
+${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[9]/div/div/div/input
+${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[10]/div/div/div/input
+${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[1]
+
+
+
+
 # image comparsion
 ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -metric RMSE -compare -format  "%[distortion]" info:
 

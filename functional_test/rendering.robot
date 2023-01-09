@@ -154,3 +154,96 @@ Catalog Image Overlay Rendering
     PNG Pixel XY Should Match RGBA    check.png    691,234,0,179,164,255
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Vector Field Rendering With A Stokes Continuum Cube
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HL_Tau_StokesIQUV_clean.pbcor.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    # with pixel averaging toggle enabled, set averaging width (px) to 2
+    Input Text    ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    6
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}    40
+    # apply a 90 degree offset
+    Press Keys    ${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    ARROW_LEFT+9
+    Click Element    ${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_computed_PI_PA.png
+    # enable and apply a threshold then re-render
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.005
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_computed_PI_PA_with_threshold.png
+    # enable and apply debiasing then re-render
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    0.0001
+    Press Keys    ${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    0.0001
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_computed_PI_PA_with_threshold_with_debiasing.png
+    # clear vector field rendering
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_cleared.png
+    # verify screenshots
+    Set Selenium Speed    0.02
+    PNG Images Should Be Different    check_cleared.png    check_computed_PI_PA.png
+    PNG Images Should Be Different    check_computed_PI_PA.png    check_computed_PI_PA_with_threshold.png
+    #PNG Images Should Be Different    check_computed_PI_PA_with_threshold.png    check_computed_PI_PA_with_threshold_with_debiasing.png
+    PNG Images Should Be Different    check_computed_PI_PA_with_threshold_with_debiasing.png    check_cleared.png
+
+    # check check_computed_PI_PA.png
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA.png    421,211,410,230
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA.png    421,211,351,306
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA.png    421,211,376,200
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA.png    421,211,217,359
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA.png    421,211,214,362
+    
+    # check check_computed_PI_PA_with_threshold.png
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA_with_threshold.png    421,211,410,230
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA_with_threshold.png    421,211,351,306
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA_with_threshold.png    421,211,376,200
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold.png    421,211,217,359
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold.png   421,211,214,362
+
+    # check check_computed_PI_PA_with_threshold_with_debiasing.png
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png    421,211,410,230
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png    421,211,351,306
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png    421,211,376,200
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png    421,211,217,359
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png   421,211,214,362
+
+    Remove Files    check_computed_PI_PA.png    check_computed_PI_PA_with_threshold.png    check_computed_PI_PA_with_threshold_with_debiasing.png    check_cleared.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Vector Field Rendering With A POLI Image
+    Pass Execution    skip for now
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HL_Tau.POLI.fits
+
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Vector Field Rendering With A POLA Image
+    Pass Execution    skip for now
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HL_Tau.POLA.fits
+
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Vector Field Rendering With A Stokes Line Cube
+    Pass Execution    skip for now
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.subimage.fits
+
+    [Teardown]    Kill carta_backend And Close Browser
