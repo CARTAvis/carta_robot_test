@@ -199,8 +199,11 @@ ${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0
 ${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[9]/div/div/div/input
 ${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[10]/div/div/div/input
 ${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[1]
-
-
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[1]
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[3]
+${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select
+${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select/option[1]
 
 
 # image comparsion

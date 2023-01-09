@@ -188,6 +188,22 @@ Vector Field Rendering With A Stokes Continuum Cube
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    check_computed_PI_PA_with_threshold_with_debiasing.png
+    # render computed angle-only field
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_computed_PA_with_threshold_with_debiasing.png
+    # render computed intensity-only field
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON} 
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}
+    Click Element    ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_computed_PI_with_threshold_with_debiasing.png
     # clear vector field rendering
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}
@@ -198,7 +214,9 @@ Vector Field Rendering With A Stokes Continuum Cube
     PNG Images Should Be Different    check_cleared.png    check_computed_PI_PA.png
     PNG Images Should Be Different    check_computed_PI_PA.png    check_computed_PI_PA_with_threshold.png
     #PNG Images Should Be Different    check_computed_PI_PA_with_threshold.png    check_computed_PI_PA_with_threshold_with_debiasing.png
-    PNG Images Should Be Different    check_computed_PI_PA_with_threshold_with_debiasing.png    check_cleared.png
+    PNG Images Should Be Different    check_computed_PI_PA_with_threshold_with_debiasing.png    check_computed_PA_with_threshold_with_debiasing.png
+    PNG Images Should Be Different    check_computed_PA_with_threshold_with_debiasing.png    check_computed_PI_with_threshold_with_debiasing.png
+    PNG Images Should Be Different    check_computed_PI_with_threshold_with_debiasing.png    check_cleared.png
 
     # check check_computed_PI_PA.png
     PNG Two Pixels Should Have Matched RGBA    check_computed_PI_PA.png    421,211,410,230
@@ -221,7 +239,18 @@ Vector Field Rendering With A Stokes Continuum Cube
     PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png    421,211,217,359
     PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_PA_with_threshold_with_debiasing.png   421,211,214,362
 
-    Remove Files    check_computed_PI_PA.png    check_computed_PI_PA_with_threshold.png    check_computed_PI_PA_with_threshold_with_debiasing.png    check_cleared.png
+    # check check_computed_PA_with_threshold_with_debiasing.png
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PA_with_threshold_with_debiasing.png    426,224,405,256
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PA_with_threshold_with_debiasing.png    426,224,303,353
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PA_with_threshold_with_debiasing.png    426,224,214,362
+    
+    # check check_computed_PI_with_threshold_with_debiasing.png
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,359,223
+    PNG Two Pixels Should Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,395,121
+    PNG Two Pixels Should Not Have Matched RGBA    check_computed_PI_with_threshold_with_debiasing.png    353,217,395,124
+
+    Remove Files    check_computed_PI_PA.png    check_computed_PI_PA_with_threshold.png    check_computed_PI_PA_with_threshold_with_debiasing.png    
+    Remove Files    check_computed_PA_with_threshold_with_debiasing.png    check_computed_PI_with_threshold_with_debiasing.png    check_cleared.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
