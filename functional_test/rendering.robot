@@ -256,24 +256,66 @@ Vector Field Rendering With A Stokes Continuum Cube
 
 
 Vector Field Rendering With A POLI Image
-    Pass Execution    skip for now
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HL_Tau.POLI.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.0001
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_pixel_as_PI_with_threshold.png
+    # verify screenshots
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PI_with_threshold.png    383,221,388,226
+    PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PI_with_threshold.png    383,221,398,198
+    PNG Two Pixels Should Not Have Matched RGBA    check_pixel_as_PI_with_threshold.png    383,221,383,198
 
+    Remove files    check_pixel_as_PI_with_threshold.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Vector Field Rendering With A POLA Image
-    Pass Execution    skip for now
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HL_Tau.POLA.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_pixel_as_PA_with_threshold.png
+    # verify screenshots
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PA_with_threshold.png    417,232,433,242
+    PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PA_with_threshold.png    417,232,341,229
+    PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PA_with_threshold.png    417,232,350,245
+    PNG Two Pixels Should Not Have Matched RGBA    check_pixel_as_PA_with_threshold.png    417,232,328,229
 
+    Remove files    check_pixel_as_PA_with_threshold.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Vector Field Rendering With A Stokes Line Cube
-    Pass Execution    skip for now
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.subimage.fits
-
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    # disable pixel averaging
+    Click Element    ${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_channel_0.png
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_channel_5.png
+    PNG Images Should Be Different    check_channel_0.png    check_channel_5.png
+    Remove files    check_channel_0.png    check_channel_5.png
     [Teardown]    Kill carta_backend And Close Browser

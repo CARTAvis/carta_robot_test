@@ -186,6 +186,7 @@ ${POLYLINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[6]/
 
 ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[4]/a
 ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[2]
+${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/label
 ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[4]/div/div/div[1]/input
 ${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}    //*[@id="bp3-tab-title_undefined_0"]
 ${VECTOR_FIELD_RENDERING_STYLING_TAB}    //*[@id="bp3-tab-title_undefined_1"]
@@ -204,6 +205,7 @@ ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-pan
 ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[3]
 ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select
 ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select/option[1]
+
 
 
 # image comparsion
