@@ -488,3 +488,44 @@ Match Catalog Image Overlay Spatially
     PNG Two Pixels Should Have Matched RGBA    check.png    298,224,677,224
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Match Vector Field Overlay Spatially
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HL_Tau_StokesIQUV_clean.pbcor.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.01
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
+    Click Element    ${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Append Image    HL_tau_Stokes_hypercube_IQU.pbcor.fits
+    # match HL_tau_Stokes_hypercube_IQU.pbcor.fits to the referene image HL_Tau_StokesIQUV_clean.pbcor.fits
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
+    Click Element     xpath://*[contains(text(), "Spatial only")]
+    # rendering a vector field from the 2nd image
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.001
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}    40
+    # change the color from the default to white
+    Click Element    ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    # verify screenshot
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    check.png    230,220,609,220
+    PNG Two Pixels Should Have Matched RGBA    check.png    222,216,601,216
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    230,220,601,216
+
+    Remove files    check.png
+    [Teardown]    Kill carta_backend And Close Browser

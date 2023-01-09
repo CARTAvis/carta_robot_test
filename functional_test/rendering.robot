@@ -162,7 +162,7 @@ Vector Field Rendering With A Stokes Continuum Cube
     Mouse Over    ${VIEWER_DIV}
     Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
-    # with pixel averaging toggle enabled, set averaging width (px) to 2
+    # with pixel averaging toggle enabled, set averaging width (px) to 6
     Input Text    ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    6
     Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
