@@ -515,7 +515,7 @@ Match Vector Field Overlay Spatially
     Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}    40
-    # change the color from the default to white
+    # apply color-mapped rendering
     Click Element    ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}
     Click Element    ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
