@@ -119,6 +119,9 @@ ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResu
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
 ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div/div[2]/button[1]
+${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[1]/button
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[1]
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[2]
 
 
 ${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
@@ -207,6 +210,10 @@ ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_unde
 ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select/option[1]
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select/option[2]
+
+
+${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
+${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
 
 
 # image comparsion

@@ -234,3 +234,63 @@ FOV Matched Image Fitting
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox(wcs:GALACTIC)[[109.8581469935, -31.5624932445], [61.6995858807", 88.7718531549"], 13.442261deg]
     [Teardown]    Kill carta_backend And Close Browser
 
+
+Generation Of Model And Residual Images After Fitting
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cluster_00512.fits
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    256
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    256
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    100
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    100
+    Input Text    ${IMAGE_FITTING_DIALOG_PA}    0
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filenames of appended model and residule images
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]    cluster_00512.fits
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]    cluster_00512_model.fits
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]    cluster_00512_residual.fits
+    # match model and residual images to the reference image
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Mouse Over    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]/a
+    # mouse over the top-left panel
+    Mouse Over    //*[@id="image-panel-0-0"]/div[7]/div/div/canvas
+    Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
+    # check pixel values of the three images in the cursor info widget
+    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    1.95008e+1
+    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.20803e+1
+    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.27992
+    Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
+    # with a model image only
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filename of the appended model image
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]    cluster_00512_model.fits
+    Page Should Not Contain Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
+    # with a residual image only
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filename of the appended residual image
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]    cluster_00512_residual.fits
+    Page Should Not Contain Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
+    # without generated model and residual images
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filename of loaded images
+    Element Should Contain    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]    cluster_00512.fits
+    Page Should Not Contain Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]
+    Page Should Not Contain Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
+    [Teardown]    Kill carta_backend And Close Browser
