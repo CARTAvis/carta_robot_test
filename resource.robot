@@ -122,6 +122,13 @@ ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[1]/button
 ${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[1]
 ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[2]
+${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/a[1]
+${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/a[2]
+${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/a
+${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/a[1]
+${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/a[2]
+${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[7]/div/a
+
 
 
 ${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
@@ -220,8 +227,6 @@ ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div
 ${IMAGE_LIST_FIRST_IMAGE_NAME}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
 ${IMAGE_LIST_SECOND_IMAGE_NAME}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]
 ${IMAGE_LIST_THIRD_IMAGE_NAME}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
-
-
 ${IMAGE_LIST_SECOND_MATCHING_XY}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
 ${IMAGE_LIST_THIRD_MATCHING_XY}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]/a
 
