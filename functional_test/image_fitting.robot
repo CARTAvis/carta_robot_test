@@ -141,7 +141,6 @@ Triple Gaussian Fitting
 
 
 FOV Image Fitting
-    #pass Execution    Skip for now due to CI numeric error...
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    double.miriad
     # zoom in the image with the zoom in button
@@ -164,20 +163,20 @@ FOV Image Fitting
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=2
     Set Selenium Speed    0.02
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.7674541034 ± 0.020886 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:02.9902688779 ± 0.024512 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 6.862851 ± 0.026402 (Jy/pixel)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 6.042711 ± 0.028096 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 5.084747 ± 0.021816 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.034082 ± 0.000000 (deg)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #2:
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.3843194346 ± 0.016821 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:06.0294111758 ± 0.021364 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 9.895733 ± 0.035980 (Jy/pixel)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 7.041275 ± 0.034280 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 2.962661 ± 0.013796 (arcsec)
-    #Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 34.365148 ± 0.165045 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.7674541034 ± 0.020886 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:02.9902688779 ± 0.024512 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 6.862851 ± 0.026402 (Jy/pixel)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 6.042711 ± 0.028096 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 5.084747 ± 0.021816 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.034082 ± 0.000000 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #2:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.3843194346 ± 0.016821 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:06.0294111758 ± 0.021364 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 9.895733 ± 0.035980 (Jy/pixel)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 7.041275 ± 0.034280 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 2.962661 ± 0.013796 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 34.365148 ± 0.165045 (deg)
     Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: double.miriad
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: field of view
@@ -191,7 +190,7 @@ FOV Matched Image Fitting
     Load Initial Image    double.miriad
     Append Image    double_bin2_gal.miriad
     # match double_bin2_gal.miriad to double.miriad with the XY button in the image list widget
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     # zoom in the image with the zoom in button
     Mouse Over    //*[@id="image-panel-1-0"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[8]/a
@@ -234,3 +233,375 @@ FOV Matched Image Fitting
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox(wcs:GALACTIC)[[109.8581469935, -31.5624932445], [61.6995858807", 88.7718531549"], 13.442261deg]
     [Teardown]    Kill carta_backend And Close Browser
 
+
+Generation Of Model And Residual Images After Fitting
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cluster_00512.fits
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    256
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    256
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    100
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    100
+    Input Text    ${IMAGE_FITTING_DIALOG_PA}    0
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filenames of appended model and residule images
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
+    Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_model.fits
+    Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    cluster_00512_residual.fits
+    # match model and residual images to the reference image
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Mouse Over    ${IMAGE_LIST_THIRD_IMAGE_NAME}
+    Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
+    # mouse over the top-left panel
+    Mouse Over    //*[@id="image-panel-0-0"]/div[7]/div/div/canvas
+    Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
+    # check pixel values of the three images in the cursor info widget
+    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    1.95008e+1
+    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.20803e+1
+    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.27992
+    Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
+    # with a model image only
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filename of the appended model image
+    Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_model.fits
+    Page Should Not Contain Element    ${IMAGE_LIST_THIRD_IMAGE_NAME}
+    # with a residual image only
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filename of the appended residual image
+    Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_residual.fits
+    Page Should Not Contain Element    ${IMAGE_LIST_THIRD_IMAGE_NAME}
+    # without generated model and residual images
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filename of loaded images
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
+    Page Should Not Contain Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
+    Page Should Not Contain Element    ${IMAGE_LIST_THIRD_IMAGE_NAME}
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Fitting With Cancellation
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    cluster_00512.fits
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    256
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    256
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    100
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    100
+    Input Text    ${IMAGE_FITTING_DIALOG_PA}    0
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Contains    Image fitting processing
+    Sleep    1
+    Click Element    xpath://*[contains(text(), "Cancel")]
+    Element Should Be Enabled    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    # try to fit again and cancel again
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Contains    Image fitting processing
+    Sleep    1
+    Click Element    xpath://*[contains(text(), "Cancel")]
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check entries in the image list widget
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
+    Page Should Not Contain Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
+    # try to fit again and let it finish
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    # check the filenames of appended model and residule images
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
+    Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_model.fits
+    Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    cluster_00512_residual.fits
+    [Teardown]    Kill carta_backend And Close Browser
+
+Fitting With One Gaussian Having Fixed Parameters
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    dice_one.fits
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    45
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    55
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    15
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    20
+    Input Text    ${IMAGE_FITTING_DIALOG_PA}    45
+    # with center locked, amplitude free, FWHM free, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.396862 ± 0.014742 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.732255 ± 0.005113 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.358689 ± 0.002603 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 43.048489 ± 0.316942 (deg)
+    # zoom the reference image to fix the new FOV in the multi-panel view
+    Set Selenium Speed    0.2
+    Mouse Over    //*[@id="image-panel-0-0"]/div[8]/div/div/canvas
+    Click Element    //*[@id="image-panel-0-0"]/div[9]/span[8]/a
+    # with center free, amplitude locked, FWHM free, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3670885221 ± 0.005992 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0102221811 ± 0.005899 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.579325 ± 0.006861 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.620808 ± 0.009385 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 48.174964 ± 3.699548 (deg)
+    Set Selenium Speed    0.2
+    # with center free, amplitude free, FWHM locked, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3673569199 ± 0.001502 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0059604765 ± 0.001253 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 3.094468 ± 0.007325 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 23.636303 ± 0.130002 (deg)
+    Set Selenium Speed    0.2
+    # with center free, amplitude free, FWHM free, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3672277270 ± 0.000457 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0069885889 ± 0.000455 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 4.934469 ± 0.005678 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.355402 ± 0.000609 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.354823 ± 0.000602 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude locked, FWHM free, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.916390 ± 0.011358 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.529050 ± 0.005983 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 38.897183 ± 0.641272 (deg)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude free, FWHM locked, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.852282 ± 0.009645 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 32.597959 ± 0.947205 (deg)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude free, FWHM free, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.461352 ± 0.013435 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.740900 ± 0.004405 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.365451 ± 0.002360 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center free, amplitude locked, FWHM locked, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3670611641 ± 0.005546 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0046977546 ± 0.005162 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 42.885192 ± 1.042101 (deg)
+    Set Selenium Speed    0.2
+    # with center free, amplitude locked, FWHM free, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3672949860 ± 0.005665 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0118272426 ± 0.005743 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.633531 ± 0.007985 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.609080 ± 0.005982 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center free, amplitude free, FWHM locked, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3671816474 ± 0.001390 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0087374674 ± 0.001373 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 3.039493 ± 0.006581 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude locked, FWHM locked, and PA free
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 50.028899 ± 1.190555 (deg)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude free, FWHM locked, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.802339 ± 0.011542 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude locked, FWHM free, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.820491 ± 0.011958 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.495590 ± 0.008130 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center free, amplitude locked, FWHM locked, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3669180189 ± 0.006089 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0048522493 ± 0.005551 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.450000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
+    Set Selenium Speed    0.2
+    # with center locked, amplitude locked, FWHM locked, and PA locked
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
+    Mouse Over   ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Sleep    1
+    Page Should Not Contain    Clear existing fitting results and fit the current channel of the image
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Fitting With Multiple Gaussians Having Fixed Parameters
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    dice_four.fits
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    35
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    75
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    10
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    15
+    Input Text    ${IMAGE_FITTING_DIALOG_PA}    0
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    
+    Click Element    ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    75
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    75
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    20
+    Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    25
+    Input Text    ${IMAGE_FITTING_DIALOG_PA}    10
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=2
+    Set Selenium Speed    0.02
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3987650670 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.7574425865 (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.280409 ± 0.020351 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.401706 ± 0.008626 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.921462 ± 0.018903 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 0.047935 ± 0.000000 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #2:
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3135244883 ± 0.009761 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.7556688840 ± 0.007830 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.007585 ± 0.019870 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.600000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.750000 (arcsec) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 5.451816 ± 0.421898 (deg)
+    [Teardown]    Kill carta_backend And Close Browser

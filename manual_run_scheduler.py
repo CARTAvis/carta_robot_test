@@ -13,23 +13,23 @@ screen may be copied and pasted to the shell script per executor.
 n_executor = 4
 
 # execution time per suite from actual e2e test run
-test_suites_dict = {'../functional_test/animator.robot':'3:36', 
-                    '../functional_test/check_file_info.robot':'2:15',
-                    '../functional_test/cursor_info.robot':'0:30',
-                    './functional_test/catalog_widget.robot':'5:20',
-                    '../functional_test/spectral_line_query.robot':'2:52',
+test_suites_dict = {'../functional_test/animator.robot':'3:39', 
+                    '../functional_test/check_file_info.robot':'2:17',
+                    '../functional_test/cursor_info.robot':'0:33',
+                    '../functional_test/catalog_widget.robot':'6:01',
+                    '../functional_test/spectral_line_query.robot':'2:56',
                     '../functional_test/WebGL_test.robot':'0:25',
-                    '../functional_test/image_fitting.robot':'1:49',
-                    '../functional_test/spatial_profiler.robot':'2:15',
-                    '../functional_test/load_image.robot':'5:05',
-                    '../functional_test/moment_generator.robot':'5:45',
-                    '../functional_test/pv_generator.robot':'4:43',
-                    '../functional_test/matching.robot':'6:21',
-                    '../functional_test/rendering.robot':'2:14',
+                    '../functional_test/image_fitting.robot':'5:05',
+                    '../functional_test/spatial_profiler.robot':'2:23',
+                    '../functional_test/load_image.robot':'5:11',
+                    '../functional_test/moment_generator.robot':'6:02',
+                    '../functional_test/pv_generator.robot':'4:54',
+                    '../functional_test/matching.robot':'7:24',
+                    '../functional_test/rendering.robot':'4:35',
                     '../functional_test/cube_histogram.robot':'1:34',
-                    '../functional_test/region.robot':'8:15',
-                    '../functional_test/spectral_profiler.robot':'5:23',
-                    '../functional_test/statistics_widget.robot':'2:29'
+                    '../functional_test/region.robot':'9:15',
+                    '../functional_test/spectral_profiler.robot':'5:44',
+                    '../functional_test/statistics_widget.robot':'2:38'
 }
 
 ##########################################################################
