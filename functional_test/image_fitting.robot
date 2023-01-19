@@ -307,13 +307,13 @@ Fitting With Cancellation
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    0
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Contains    Image fitting processing
-    Sleep    0.5
+    Sleep    0.1
     Click Element    xpath://*[contains(text(), "Cancel")]
     Element Should Be Enabled    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     # try to fit again and cancel again
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Contains    Image fitting processing
-    Sleep    0.5
+    Sleep    0.1
     Click Element    xpath://*[contains(text(), "Cancel")]
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check entries in the image list widget
