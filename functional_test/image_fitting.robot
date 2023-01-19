@@ -605,3 +605,4 @@ Fitting With Multiple Gaussians Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.750000 (arcsec) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 5.451816 ± 0.421898 (deg)
     [Teardown]    Kill carta_backend And Close Browser
+
