@@ -1994,4 +1994,213 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
+
+
+Import Image Coordinate ds9 Annotation Made In CARTA
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Region File    all_annotation_generated_with_carta_pix.reg
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    
+    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
+
+    Set Selenium Speed    0.02
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Annotation 1
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8622692350
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    -21:57:14.5190905229
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[4]    Annotation 2
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[6]    17:56:21.8622710077
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[6]    -21:57:16.0805895470
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[4]/div[4]    Annotation 3
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[4]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[4]/div[6]    17:56:21.8622726948
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[4]/div[6]    -21:57:17.5665896084
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[4]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[4]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[5]/div[4]    Annotation 4
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[5]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[5]/div[6]    17:56:21.8650058607
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[5]/div[6]    -21:57:19.0905895562
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[5]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[5]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[4]    Annotation 5
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[6]    17:56:21.8677749625
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[6]    -21:57:20.6140890047
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[4]    Annotation 6
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    17:56:21.8705081611
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    -21:57:22.1380881836
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[4]    Annotation 7
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[6]    17:56:21.8677785867
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[6]    -21:57:23.7760885160
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[4]    Annotation 8
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[5]    Point - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    17:56:21.8705118898
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    -21:57:25.3760879086
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    ${EMPTY}
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[4]    Annotation 9
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[5]    Line - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    17:56:21.8321675415
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    -21:57:29.0330963379
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.5050000191"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.2759998322"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[8]    313.1
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[4]    Annotation 10
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[5]    Rectangle - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[6]    17:56:21.5419044118
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[6]    -21:57:14.6331414513
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[7]    3.5049999237"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[7]    1.3715000153"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[8]    331.9
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[4]    Annotation 11
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[5]    Ellipse - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[6]    17:56:21.5419066233
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[6]    -21:57:18.9761407204
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[7]    1.6760000229"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[7]    0.7239999771"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[12]/div[8]    320.8
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[4]    Annotation 12
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[5]    Polygon - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[6]    17:56:21.5405439550
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[6]    -21:57:24.9951409081
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[7]    2.4000003815"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[7]    6.0189998627"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[13]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[4]    Annotation 13
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[5]    Polyline - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.1037833185
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:15.3571481162
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    4.4194999695"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    2.6669998169"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Vector - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    17:56:21.0298367128
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    -21:57:19.3187410850
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.2570266724"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    2.5901977539"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    296.2
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[4]    Annotation 15
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[5]    Text - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[6]    17:56:21.1174558769
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[6]    -21:57:23.0141489702
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[7]    7.8474998474"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[7]    0.9904999733"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[4]    Annotation 16
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[5]    Compass - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[6]    17:56:21.0654483531
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[6]    -21:57:28.1571448843
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[7]    2.5809999466"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[7]    2.5809999466"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[17]/div[8]    0.0
+
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[4]    Annotation 17
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[5]    Ruler - Ann
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231534976
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1188447995
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -2.7429992676"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -4.1525001526"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
+
+    # annotation 1, 2: filled square point and open square point
+    PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    222,63,221,94
+
+    # annotation 3, 4: filled circle point and open circle point
+    PNG Two Pixels Should Have Matched RGBA    check.png    221,120,220,150
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    221,123,220,152
+
+    # annotation 5, 6: filled diamond point and open diamond point
+    PNG Two Pixels Should Have Matched RGBA    check.png    220,180,219,209
+    PNG Two Pixels Should Not Have Matched RGBA    check.png    220,182,219,212   
+
+    # annotation 7, 8: plus point and cross point 
+    PNG Two Pixels Should Have Matched RGBA    check.png    220,244,219,275
+
+    # annotation 9: line
+    PNG Two Pixels Should Have Matched RGBA    check.png    196,378,263,316
+
+    # annotation 10: rectangle
+    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,272,61
+    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,332,93
+    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,345,69
+
+    # annotation 11: ellipse
+    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,296,143
+    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,287,175
+    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,319,160
+
+    # annotation 12: polygon
+    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,286,326
+    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,332,313
+
+    # annotation 13: polyline
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,394,105
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,438,60
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,470,103
+
+    # annotation 14: vector
+    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,397,182
+    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,403,174
+    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
+
+    # annotation 15: text
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
+    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+
+    # annotation 16: compass
+    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
+    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,388,330
+    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,442,257
+    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,380,335
+
+    # annotation 17: ruler
+    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
+    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
+    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,494,291
+    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,573,284
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
 # add a test to have two image matched and load a region file when the 2nd image is active 
