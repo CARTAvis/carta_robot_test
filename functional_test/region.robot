@@ -1366,16 +1366,6 @@ Loading Regions on Active Reference Image
     [Teardown]    Kill carta_backend And Close Browser
 
 
-
-Creating annotations
-    [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
-
-
-    Remove Files    check.png
-    [Teardown]    Kill carta_backend And Close Browser
-
-
 Import World Coordinate CASA Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
@@ -2200,6 +2190,18 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check.png    558,250,573,284
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Creating annotations
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    
+
+    Sleep    5
+    #Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
 
 
 
