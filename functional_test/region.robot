@@ -59,8 +59,7 @@ Import World Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    17:56:21.2651633747
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    -21:57:15.7105185930
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    -0.5499404907"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    4.4995162964"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    4.5329991666"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    7.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[4]    Annotation 7
@@ -111,8 +110,7 @@ Import World Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.2615758083
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:29.0606406413
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    1.6500610352"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.3998390198"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.7791013191"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
@@ -238,8 +236,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    17:56:21.2651633747
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    -21:57:15.7105185930
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    -0.5499404907"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    4.4995162964"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    4.5329991666"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    7.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[4]    Annotation 7
@@ -290,8 +287,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.2615758083
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:29.0606406413
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    1.6500610352"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.3998390198"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.7791013191"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
@@ -418,8 +414,7 @@ Import Image Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    17:56:21.2651633472
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[6]    -21:57:15.7105185931
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    -0.5499412537"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    4.4995162964"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    4.5329992592"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    7.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[8]/div[4]    Annotation 7
@@ -470,8 +465,7 @@ Import Image Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.2615758083
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:29.0606406413
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    1.6500610352"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.3998390198"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.7791013191"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
@@ -696,8 +690,7 @@ Import Image Coordinate CASA Region Made Manually
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    17:56:20.8324545031
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    -21:57:18.7858658161
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    -6.2500000000"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    1.7404998779"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    6.4878224255"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[8]    74.4
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[4]    Annotation 9
@@ -1438,8 +1431,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[5]    Line - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    17:56:21.8321745956
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    -21:57:29.0332029572
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.5047675133"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.2762527466"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    4.7976272658"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[8]    313.1
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[4]    Annotation 10
@@ -1478,8 +1470,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    17:56:21.0298495452
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    -21:57:19.3189566166
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.2571334839"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    2.5904640198"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.8607129519"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    296.2
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[4]    Annotation 15
@@ -1502,8 +1493,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231545943
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1189020202
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -2.7428039551"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -4.1523582458"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9764497926"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
@@ -1644,8 +1634,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[5]    Line - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    17:56:21.8321743762
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    -21:57:29.0332162133
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.5047598839"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.2761899948"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    4.7975788400"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[8]    313.1
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[4]    Annotation 10
@@ -1684,8 +1673,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    17:56:21.0298493532
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    -21:57:19.3189741642
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.2571403503"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    2.5904747009"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.8607238324"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    296.2
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[4]    Annotation 15
@@ -1708,8 +1696,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231550878
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1189296768
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -2.7428543091"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -4.1523799896"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9764956886"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
@@ -1851,8 +1838,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[5]    Line - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    17:56:21.8321743968
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    -21:57:29.0332146874
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.5047596931"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.2761892319"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    4.7975781796"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[8]    313.1
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[4]    Annotation 10
@@ -1891,8 +1877,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    17:56:21.0298485581
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    -21:57:19.3189684421
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.2571212769"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    2.5904602051"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.8607003160"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    296.2
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[4]    Annotation 15
@@ -1915,8 +1900,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231551427
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1189289139
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -2.7428588867"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -4.1523815155"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9764994849"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
@@ -2058,8 +2042,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[5]    Line - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    17:56:21.8321675415
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    -21:57:29.0330963379
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.5050000191"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.2759998322"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    4.7976244157"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[8]    313.1
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[4]    Annotation 10
@@ -2098,8 +2081,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Vector - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    17:56:21.0298367128
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[6]    -21:57:19.3187410850
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.2570266724"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    2.5901977539"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[7]    5.8604994530"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    296.2
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[16]/div[4]    Annotation 15
@@ -2122,8 +2104,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[5]    Ruler - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231534976
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1188447995
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -2.7429992676"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    -4.1525001526"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9766758483"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
