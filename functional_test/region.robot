@@ -74,8 +74,8 @@ Import World Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[5]    Text - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    17:56:21.0261599764
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    -21:57:25.9106398420
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    2.6677734375"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    0.0000000000"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    1.1337982178"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    0.5106382979"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[4]    Region 9
@@ -156,10 +156,10 @@ Import World Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
 
     # annotation 8: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,438,286
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,448,282
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,454,291
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,463,286
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
@@ -169,14 +169,13 @@ Import World Coordinate ds9 Region Made In ds9
     # annotation 13: ruler
     PNG Two Pixels Should Have Matched RGBA    check.png    369,315,369,380
     PNG Two Pixels Should Have Matched RGBA    check.png    369,315,400,315
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,334,341
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,409,353
+    PNG Two Pixels Should Have Matched RGBA    check.png    366,352,390,350
 
     # annotation 14: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    538,67,538,31
     PNG Two Pixels Should Have Matched RGBA    check.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,531,36
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,493,73
+    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,536,27
+    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,490,64
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -251,8 +250,8 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[5]    Text - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    17:56:21.0261599764
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    -21:57:25.9106398420
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    2.6677734375"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    0.0000000000"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    1.1337982178"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    0.5106382979"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[4]    Region 9
@@ -333,10 +332,10 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
 
     # annotation 8: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,438,286
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,448,282
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,454,291
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,463,286
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
@@ -346,14 +345,13 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     # annotation 13: ruler
     PNG Two Pixels Should Have Matched RGBA    check.png    369,315,369,380
     PNG Two Pixels Should Have Matched RGBA    check.png    369,315,400,315
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,334,341
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,409,353
+    PNG Two Pixels Should Have Matched RGBA    check.png    366,352,390,350
 
     # annotation 14: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    538,67,538,31
     PNG Two Pixels Should Have Matched RGBA    check.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,531,36
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,493,73
+    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,536,27
+    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,490,64
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -429,8 +427,8 @@ Import Image Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[5]    Text - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    17:56:21.0261599764
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[6]    -21:57:25.9106398420
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    2.6677734375"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    0.0000000000"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    1.1337982178"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[7]    0.5106382979"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[9]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[4]    Region 9
@@ -511,27 +509,26 @@ Import Image Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
 
     # annotation 8: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,438,286
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,448,282
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,454,291
-    PNG Two Pixels Should Have Matched RGBA    check.png    425,286,463,286
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
+    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
 
-    # region 9 ,10, 11, 12: point
+    # region 9, 10 ,11, 12: point
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
 
-    # annotation 12: ruler
+    # annotation 13: ruler
     PNG Two Pixels Should Have Matched RGBA    check.png    369,315,369,380
     PNG Two Pixels Should Have Matched RGBA    check.png    369,315,400,315
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,334,341
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,409,353
+    PNG Two Pixels Should Have Matched RGBA    check.png    366,352,390,350
 
-    # annotation 13: compass
+    # annotation 14: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    538,67,538,31
     PNG Two Pixels Should Have Matched RGBA    check.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,531,36
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,493,73
+    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,536,27
+    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,490,64
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -1963,8 +1960,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     # annotation 17: ruler
     PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
     PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,494,291
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,573,284
+    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,513,296
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -2167,14 +2163,14 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     # annotation 17: ruler
     PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
     PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,494,291
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,573,284
+    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,513,296
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Creating annotations
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    to be implemented...
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     
 
