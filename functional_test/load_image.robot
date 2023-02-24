@@ -345,3 +345,30 @@ Load Images With LEL
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     PNG Two Pixels Should Have Matched RGBA    check.png    380,217,274,110
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Axes-Swapped Cubes
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    gaussian_array_large_1032.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    # check slider label in the animator
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    Capture Element Screenshot    ${VIEWER_DIV}    check_1032.png
+    Set Selenium Speed    0.02
+    # check source locations
+    PNG Two Pixels Should Have Matched RGBA    check_1032.png    498,370,570,355
+    PNG Two Pixels Should Not Have Matched RGBA    check_1032.png    498,370,539,407
+    Set Selenium Speed    0.2
+
+    Load Image    gaussian_array_large_GALACTIC_0213.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+
+
+    Sleep    5
+    #Remove File    check_1032.png
+    [Teardown]    Kill carta_backend And Close Browser
