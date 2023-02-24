@@ -14,7 +14,7 @@ File Info Of A Regular FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1] (RA, DEC, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
@@ -45,7 +45,7 @@ File Info Of A Regular CASA Image
     Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1] (RA, DEC, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
@@ -77,7 +77,7 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.hdf5
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1] (RA, DEC, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
@@ -110,7 +110,7 @@ File Info Of A Regular MIRIAD Image
     Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.miriad
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1] (RA, DEC, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 25
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
@@ -142,7 +142,7 @@ File Info Of A CASA Complex Image
     Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= complex.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= Complex
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [100, 100, 1, 10]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [100, 100, 1, 10] (RA, DEC, STOKES, FREQ)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 10
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
@@ -172,7 +172,7 @@ File Info Of A CASA PV Image
     Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= casa_pv.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [201, 250, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [201, 250, 1] (OFFSET, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 250
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Offset, Frequency
@@ -201,7 +201,7 @@ File Info Of A FITS PV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= carta_pv.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [199, 250, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [199, 250, 1] (OFFSET, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 250
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= OFFSET, FREQ
@@ -230,7 +230,7 @@ File Info Of A fz FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= tu2310418.fits.fz
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4536, 4934]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4536, 4934] (RA, DEC)
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= TAN
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [4820, 1107]
@@ -255,7 +255,7 @@ File Info Of A gz FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= tu2310418.fits.gz
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4536, 4934]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4536, 4934] (RA, DEC)
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= TAN
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [4820, 1107]
@@ -279,7 +279,7 @@ File Info Of A CASA UV Image
     Set Selenium Speed    0.02
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= UVamp.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [300, 300, 5]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [300, 300, 5] (UU, VV, FREQ)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 5
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= UU, VV
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [151, 151]
@@ -305,7 +305,7 @@ File Info Of A Stokes Image
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
-    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [256, 256, 480, 4]
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [256, 256, 480, 4] (RA, DEC, FREQ, STOKES)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 480
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
@@ -325,3 +325,5 @@ File Info Of A Stokes Image
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [789.6327, -836.4766] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
     [Teardown]    Kill carta_backend And Close Browser
+
+
