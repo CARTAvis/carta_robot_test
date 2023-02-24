@@ -327,3 +327,118 @@ File Info Of A Stokes Image
     [Teardown]    Kill carta_backend And Close Browser
 
 
+File Info Of Swapped-Axes Cubes
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # case 1: STOKES-GLON-FREQ-GLAT
+    Input Text    ${FILE_FILTER}    gaussian_array_large_GALACTIC_2031.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_2031.image")]    timeout=2    
+    Click Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_2031.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Set Selenium Speed    0.02
+    Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_GALACTIC_2031.image
+    Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4, 746, 10, 746] (STOKES, GLON, FREQ, GLAT)
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 10
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
+    Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Longitude, Frequency
+    Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [374, 6]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [-132.27.25.3488, 1.4204e+09 Hz]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [-132.457 deg, 1.4204e+09 Hz]
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -360", 100000 Hz
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/pixel
+    Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= GALACTIC
+    Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
+    Element Should Contain    ${FILE_INFO_TEXT}    LON range \= [120.617836, 334.586718]
+    Element Should Contain    ${FILE_INFO_TEXT}    LAT range \= [-9.535745, 47.261148]
+    Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
+    Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
+    Set Selenium Speed    0.2
+    # case 2: DEC-STOKES-FREQ-RA
+    Input Text    ${FILE_FILTER}    gaussian_array_large_1230.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_1230.image")]    timeout=2    
+    Click Element    xpath://*[contains(text(), "gaussian_array_large_1230.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Set Selenium Speed    0.02
+    Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_1230.image
+    Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [550, 4, 10, 550] (DEC, STOKES, FREQ, RA)
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 10
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
+    Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Declination, Frequency
+    Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [276, 6]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [+010.00.00.0000, 1.4204e+09 Hz]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [10 deg, 1.4204e+09 Hz]
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 360", 100000 Hz
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/pixel
+    Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= FK5, J2000
+    Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
+    Element Should Contain    ${FILE_INFO_TEXT}    RA range \= [07:33:20.277, 12:27:15.226]
+    Element Should Contain    ${FILE_INFO_TEXT}    DEC range \= [-20.11.28.681, +36.47.19.899]
+    Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
+    Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
+    Set Selenium Speed    0.2    
+    # case 3: FREQ-RA-STOKES-DEC
+    Input Text    ${FILE_FILTER}    gaussian_array_large_3021.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_3021.image")]    timeout=2    
+    Click Element    xpath://*[contains(text(), "gaussian_array_large_3021.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Set Selenium Speed    0.02
+    Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_3021.image
+    Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [10, 550, 4, 550] (FREQ, RA, STOKES, DEC)
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 10
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
+    Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Frequency, Right Ascension
+    Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [6, 276]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [1.4204e+09 Hz, 10:00:00.0000]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [1.4204e+09 Hz, 150 deg]
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 100000 Hz, -360"
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/pixel
+    Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= FK5, J2000
+    Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
+    Element Should Contain    ${FILE_INFO_TEXT}    RA range \= [07:33:20.277, 12:27:15.226]
+    Element Should Contain    ${FILE_INFO_TEXT}    DEC range \= [-20.11.28.681, +36.47.19.899]
+    Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
+    Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
+    Set Selenium Speed    0.2        
+    # case 4: FREQ-GLAT-GLON-STOKES
+    Input Text    ${FILE_FILTER}    gaussian_array_large_GALACTIC_3102.image
+    Sleep    0.2
+    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_3102.image")]    timeout=2    
+    Click Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_3102.image")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Set Selenium Speed    0.02
+    Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_GALACTIC_3102.image
+    Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
+    Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [10, 746, 746, 4] (FREQ, GLAT, GLON, STOKES)
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 10
+    Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
+    Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Frequency, Latitude
+    Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [6, 373]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [1.4204e+09 Hz, +046.11.28.2950]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [1.4204e+09 Hz, 46.1912 deg]
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 100000 Hz, 360"
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/pixel
+    Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= GALACTIC
+    Element Should Contain    ${FILE_INFO_TEXT}    Spectral frame \= LSRK
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity definition \= RADIO
+    Element Should Contain    ${FILE_INFO_TEXT}    LON range \= [120.617836, 334.586718]
+    Element Should Contain    ${FILE_INFO_TEXT}    LAT range \= [-9.535745, 47.261148]
+    Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
+    Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
+    Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
+    Set Selenium Speed    0.2
+    [Teardown]    Kill carta_backend And Close Browser
