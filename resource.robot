@@ -108,26 +108,26 @@ ${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/d
 
 
 ${IMAGE_FITTING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[7]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/span[2]/a
+${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/span[2]/a
 ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div/div[2]/button[1]
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[1]/button
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[1]
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[2]
-${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/a[1]
-${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/a[2]
-${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/a
-${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/a[1]
-${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/a[2]
-${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[7]/div/a
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[1]
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[2]
+${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[1]
+${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[2]
+${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/a
+${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[1]
+${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[2]
+${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/a
 
 
 
