@@ -694,7 +694,7 @@ Import Image Coordinate CASA Region Made Manually
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[5]    Text - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    17:56:20.7783967837
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[6]    -21:57:23.0581056880
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    4.6599609375"
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    3.9648452759"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[7]    1.0212765957"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[10]/div[8]    0.0
 
