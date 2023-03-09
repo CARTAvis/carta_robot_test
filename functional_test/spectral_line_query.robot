@@ -163,7 +163,7 @@ Line ID Overlay On Spectral Profiler
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # select all filtered lines in the table
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/label
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    //*[@id="SpectralprofilerButton"]
     Click Element    ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}
     # capture a screenshot of the spectral profile plot
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
