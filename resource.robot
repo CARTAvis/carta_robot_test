@@ -43,8 +43,8 @@ ${FILE_FILTER}    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]
 ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
 ${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
-${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
-${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
+${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load catalog")]
+${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load region")]
 
 
 ${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
@@ -219,7 +219,7 @@ ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    //*[@id="bp3-tab-panel_undefine
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select/option[2]
 
 
-${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
+${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorinfowidgetButton"]
 ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
 
 
@@ -316,7 +316,7 @@ Append Image
     [Arguments]    ${IMAGE_TO_APPEND}
     ${IMAGE_TO_APPEND_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Append image")]
+    Click Element    xpath://*[contains(text(), "Append Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Sleep    0.2
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
@@ -330,14 +330,14 @@ Append Image
 
 Close Image
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Close image")]
+    Click Element    xpath://*[contains(text(), "Close Image")]
 
 
 Load Region File
     [Arguments]    ${REGION_TO_LOAD}
     ${REGION_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import regions")]
+    Click Element    xpath://*[contains(text(), "Import Regions")]
     Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
     Sleep    0.3
     Click Element    ${REGION_TO_LOAD_XPATH}
@@ -348,7 +348,7 @@ Load Catalog File
     [Arguments]    ${CATALOG_TO_LOAD}
     ${CATALOG_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import catalog")]
+    Click Element    xpath://*[contains(text(), "Import Catalog")]
     Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
     Sleep    0.3
     Click Element    ${CATALOG_TO_LOAD_XPATH}

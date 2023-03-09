@@ -10,8 +10,8 @@ ${MAGIC_INDEX}    17
 Query Splatalogue
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit    timeout=10
+    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
@@ -76,8 +76,8 @@ Query Splatalogue
 Line Table Filtering And Shifting
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit    timeout=10
+    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
@@ -111,8 +111,8 @@ Line Table Filtering And Shifting
 Line Table Column Configuration
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit    timeout=10
+    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
@@ -147,8 +147,8 @@ Line ID Overlay On Spectral Profiler
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     # close the region config dialog
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Wait Until Page Contains    Intensity Limit    timeout=10
+    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}

@@ -20,7 +20,7 @@ Match Images Spatially And Spectrally
     Sleep    1
     # match M17_SWex.image to M17_SWex.fits
     Click Element    //*[@id="image-panel-0-0"]/div[9]/span[9]/span/a
-    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
+    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Mouse Over    ${VIEWER_DIV}
