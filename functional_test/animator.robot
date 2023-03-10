@@ -29,7 +29,7 @@ Animation Playback Backwards
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    4    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Play Backwards")]
+    Click Element    xpath://*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
@@ -153,7 +153,7 @@ Animation Playback Channel Step
     Load Initial Image    M17_SWex.fits
     Capture Element Screenshot    ${VIEWER_DIV}    initial.png
     Click Element    xpath://*[contains(text(), "Animator")]
-    Click Element    xpath://*[contains(text(), "Frame Rate")]
+    Click Element    xpath://*[contains(text(), "Frame rate")]
     Click Element    xpath://*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
