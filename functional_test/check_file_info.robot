@@ -344,8 +344,8 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Longitude, Frequency
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [374, 6]
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [-132.27.25.3488, 1.4204e+09 Hz]
-    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [-132.457 deg, 1.4204e+09 Hz]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [+227.32.34.6512, 1.4204e+09 Hz]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [227.543 deg, 1.4204e+09 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -360", 100000 Hz
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/pixel
     Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= GALACTIC
