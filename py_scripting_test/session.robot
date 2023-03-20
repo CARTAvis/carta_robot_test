@@ -13,3 +13,11 @@ Create A Session From Existing CARTA backend
     PNG Two Pixels Should Not Have Matched RGBA    create_session.png    683,808,657,773
     Remove File    create_session.png
     [Teardown]    Terminate carta_backend
+
+Start And Create A Session Directly With CARTA-PYTHON
+    ${result}=    test_session.start_and_create_session
+    Should Be Equal    ${result}    Done
+    PNG Two Pixels Should Have Matched RGBA    start_and_create_session.png    683,808,751,881
+    PNG Two Pixels Should Have Matched RGBA    start_and_create_session.png    657,773,773,884
+    PNG Two Pixels Should Not Have Matched RGBA    start_and_create_session.png    683,808,657,773
+    Remove File    start_and_create_session.png
