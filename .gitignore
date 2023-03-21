@@ -4,3 +4,4 @@
 .DS_Store
 *.log
 __pycache__
+py_scripting_test/__pycache__
