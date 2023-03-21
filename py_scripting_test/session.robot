@@ -21,3 +21,11 @@ Start And Create A Session Directly With CARTA-PYTHON
     PNG Two Pixels Should Have Matched RGBA    start_and_create_session.png    657,773,773,884
     PNG Two Pixels Should Not Have Matched RGBA    start_and_create_session.png    683,808,657,773
     Remove File    start_and_create_session.png
+
+Interact With An Existing Session
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    ${session_id}=    Get Element Attribute   //*[@id="info-session-id"]    innerHTML
+    ${result}=    test_session.interact_session    ${session_id} 
+    @{image_dimension_list}=    Create List    ${1}    ${250}    ${273}    ${324}
+    Should Be Equal   ${result}    ${image_dimension_list}
+    [Teardown]    Kill carta_backend And Close Browser
