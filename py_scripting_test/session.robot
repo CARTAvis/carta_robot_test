@@ -29,3 +29,11 @@ Interact With An Existing Session
     @{image_dimension_list}=    Create List    ${1}    ${250}    ${273}    ${324}
     Should Be Equal   ${result}    ${image_dimension_list}
     [Teardown]    Kill carta_backend And Close Browser
+
+Start And Interact With A New Session
+    Log To Console    NOTE
+    Log To Console    A CARTA session will be launched in a REAL browser
+    Log To Console    Need to close the browser manaully after the test finishes
+    ${result}=    test_session.start_and_interact_session
+    @{image_dimension_list}=    Create List    ${1}    ${250}    ${273}    ${324}
+    Should Be Equal   ${result}    ${image_dimension_list}

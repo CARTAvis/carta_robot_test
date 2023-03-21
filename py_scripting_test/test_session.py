@@ -27,4 +27,12 @@ def start_and_create_session():
 def interact_session(session_id):
     session = Session.interact(url_without_token, session_id, debug_no_auth=True)
     img0 = session.open_image(image_file_0)
+    
+    return img0.shape
+
+def start_and_interact_session():
+    # note that a new carta session will be opened in a REAL browser
+    session = Session.start_and_interact("/Users/kswang/carta_build/carta-backend/build/carta_backend", params=("/Users/kswang/set_QA_e2e_v2", "--frontend_folder", "/Users/kswang/carta_build/carta-frontend/build", "--port", "3003", "--debug_no_auth"))
+    img0 = session.open_image(image_file_0)
+
     return img0.shape
