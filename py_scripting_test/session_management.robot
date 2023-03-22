@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Test session with the python scripting interface
+Documentation     Test session management with the python scripting interface
 Resource          ../resource.robot
 Library          test_session_management.py
 
