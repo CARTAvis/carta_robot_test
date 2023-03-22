@@ -55,7 +55,8 @@ ${VIEWER_10_ZOOM_IN_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
 ${VIEWER_10_MATCH_BUTTON}    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
 ${VIEWER_10_CANVAS}    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
-
+${VIEWER_SETTINGS_DIALOG}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[4]
+${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[3]
 
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
@@ -311,6 +312,23 @@ Load Initial Image
     Click Element    ${LOAD_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+
+
+Load Image 
+    [Arguments]    ${IMAGE_TO_LOAD}
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    Click Element    xpath://*[contains(text(), "File")]
+    Click Element    xpath://*[contains(text(), "Open Image")]
+    Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
+    Sleep    0.2
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
+    Click Element    ${IMAGE_TO_LOAD_XPATH}
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+
 
 Append Image
     [Arguments]    ${IMAGE_TO_APPEND}
