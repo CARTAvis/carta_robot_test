@@ -21,7 +21,7 @@ ${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
 ${N_OMP_THREADS}    8
 ${PACKAGE_TESTING}    False
 ###########################################################################
-${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser
+${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser --enable_scripting
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 #${BROWSER}        chrome
@@ -43,8 +43,8 @@ ${FILE_FILTER}    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]
 ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
 ${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
-${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load Catalog")]
-${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load Region")]
+${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load catalog")]
+${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load region")]
 
 
 ${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
@@ -55,7 +55,8 @@ ${VIEWER_10_ZOOM_IN_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
 ${VIEWER_10_MATCH_BUTTON}    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
 ${VIEWER_10_CANVAS}    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
-
+${VIEWER_SETTINGS_DIALOG}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[4]
+${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[3]
 
 ${CLIP_BUTTON_90}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
@@ -108,26 +109,26 @@ ${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/d
 
 
 ${IMAGE_FITTING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[7]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/span[2]/a
+${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/span[2]/a
 ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[3]/div/div/div[2]/button[1]
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[1]/button
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[1]
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div/label[2]
-${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/a[1]
-${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[4]/div/a[2]
-${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[5]/div/a
-${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/a[1]
-${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[6]/div/a[2]
-${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[2]/div[7]/div/a
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[1]
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[2]
+${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[1]
+${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[2]
+${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/a
+${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[1]
+${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[2]
+${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/a
 
 
 
@@ -219,7 +220,7 @@ ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    //*[@id="bp3-tab-panel_undefine
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select/option[2]
 
 
-${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
+${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorinfowidgetButton"]
 ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
 
 
@@ -312,11 +313,28 @@ Load Initial Image
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
+
+Load Image 
+    [Arguments]    ${IMAGE_TO_LOAD}
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    Click Element    xpath://*[contains(text(), "File")]
+    Click Element    xpath://*[contains(text(), "Open Image")]
+    Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
+    Sleep    0.2
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
+    Click Element    ${IMAGE_TO_LOAD_XPATH}
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    Click Element    ${LOAD_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+
+
 Append Image
     [Arguments]    ${IMAGE_TO_APPEND}
     ${IMAGE_TO_APPEND_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Append image")]
+    Click Element    xpath://*[contains(text(), "Append Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Sleep    0.2
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
@@ -330,14 +348,14 @@ Append Image
 
 Close Image
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Close image")]
+    Click Element    xpath://*[contains(text(), "Close Image")]
 
 
 Load Region File
     [Arguments]    ${REGION_TO_LOAD}
     ${REGION_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import regions")]
+    Click Element    xpath://*[contains(text(), "Import Regions")]
     Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
     Sleep    0.3
     Click Element    ${REGION_TO_LOAD_XPATH}
@@ -348,7 +366,7 @@ Load Catalog File
     [Arguments]    ${CATALOG_TO_LOAD}
     ${CATALOG_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
     Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import catalog")]
+    Click Element    xpath://*[contains(text(), "Import Catalog")]
     Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
     Sleep    0.3
     Click Element    ${CATALOG_TO_LOAD_XPATH}

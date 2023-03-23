@@ -22,7 +22,7 @@ Narrow-field PV Image Generation
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    315
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -72,7 +72,7 @@ Wide-field PV Image Generation
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    90
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -114,7 +114,7 @@ PV Image Generation Cancellation And Rerequest
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    90
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Contains    Generating PV    timeout=5
     Sleep    2.5
@@ -159,7 +159,7 @@ PV Image Generation Repeat
     Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    315
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -209,16 +209,16 @@ PV Image Generation With Matched Cubes
     Mouse Over    ${VIEWER_10_CANVAS}
     # match M17_SWex.hdf5 to M17_SWex.fits via the matching button in the viewer
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
-    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
+    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
     Mouse Out    ${VIEWER_DIV}
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     # mouse over the generated pv image panel and click the zoom-to-fit button
     Mouse Over    //*[@id="image-panel-0-1"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-0-1"]/div[8]/span[8]/a
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     # use the image dropdown to select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select/option[2]
@@ -268,9 +268,9 @@ PV Image Generation With Matched Wide-field Cubes
     # match Gaussian_array_wide2.fits to Gaussian_array_wide.fits via the matching button in the viewer
     Mouse Over    //*[@id="image-panel-1-0"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
-    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and Spatial")]
+    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
     Mouse Out    ${VIEWER_DIV}
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -279,7 +279,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    //*[@id="image-panel-0-1"]/div[8]/span[8]/a
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
-    Click Element    //*[@id="PVGeneratorButton"]
+    Click Element    //*[@id="PVgeneratorButton"]
     # use the image dropdown to select Gaussian_array_wide.fits
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[1]/div/div/select/option[2]
