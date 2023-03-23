@@ -345,3 +345,143 @@ Load Images With LEL
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     PNG Two Pixels Should Have Matched RGBA    check.png    380,217,274,110
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Axes-Swapped Cubes
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    gaussian_array_large_1032.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    # make grid line thicker
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    //*[@id="bp3-tab-title_imageViewSettingsTabs_Grids"]
+    Repeat Keyword    3    Click Element    //*[@id="bp3-tab-panel_imageViewSettingsTabs_Grids"]/div/div[4]/div/div/div[2]/button[1]
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    # check slider label in the animator
+    Click Element    xpath://*[contains(text(), "Animator")]
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    # switch to a different Stokes (Q)
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.02925218516611667
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030942637323668337
+    Capture Element Screenshot    ${VIEWER_DIV}    check_1032.png
+    # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:44:48, 10:09:26); Image: (273, 252); Value: -2.84779e-4 Jy/pixel ; Frequency (LSRK): 1419.9000 MHz; Velocity: 106.7445 km/s; Polarization: Stokes Q
+    Set Selenium Speed    0.02
+    # check source locations
+    PNG Two Pixels Should Have Matched RGBA    check_1032.png    498,370,570,355
+    PNG Two Pixels Should Not Have Matched RGBA    check_1032.png    498,370,539,407
+    Set Selenium Speed    0.2
+
+    Load Image    gaussian_array_large_GALACTIC_0213.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    # switch to a different Stokes (Q)
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.029219418991124884
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022093053485489067
+    Capture Element Screenshot    ${VIEWER_DIV}    check_g_0213.png
+    # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (228.0, 43.2); Image: (370, 342); Value:  2.16926e-5 Jy/pixel ; Frequency (LSRK): 1419.9000 MHz; Velocity: 106.7445 km/s; Polarization: Stokes Q
+    Set Selenium Speed    0.02
+    # check source locations
+    PNG Two Pixels Should Have Matched RGBA    check_g_0213.png        379,218,402,77
+    Set Selenium Speed    0.2
+
+    Load Image    gaussian_array_large_1230.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    RA
+    # switch to a different RA
+    Click Element    ${ANIMATOR_SLIDER}
+    # switch to a different Stokes (Q)
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.039907573853270185
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030997400288470325
+    Capture Element Screenshot    ${VIEWER_DIV}    check_1230.png
+    # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:38, 1.420309E+09); Image: (273, 4); Value: -3.61129e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Set Selenium Speed    0.02
+    # check grid line locations
+    PNG Two Pixels Should Have Matched RGBA    check_1230.png        83,69,676,407
+    Set Selenium Speed    0.2
+
+    Load Image    gaussian_array_large_3021.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    DEC
+    # switch to a different DEC
+    Click Element    ${ANIMATOR_SLIDER}
+    # switch to a different Stokes (Q)
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04001756319485144
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0031459159769216052
+    Capture Element Screenshot    ${VIEWER_DIV}    check_3021.png
+    # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 10:09:26.5); Image: (4, 252); Value: -7.21823e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Set Selenium Speed    0.02
+    # check grid line locations
+    PNG Two Pixels Should Have Matched RGBA    check_3021.png        76,50,682,383
+    Set Selenium Speed    0.2
+
+    Load Image    gaussian_array_large_GALACTIC_2031.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLAT
+    # switch to a different GLAT
+    Click Element    ${ANIMATOR_SLIDER}
+    # switch to a different Stokes (Q)
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.03939278678037231
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.002182948510162576
+    Capture Element Screenshot    ${VIEWER_DIV}    check_g_2031.png
+    # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (15:11:25.0, 1.420309E+09); Image: (371, 4); Value: -3.54482e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Set Selenium Speed    0.02
+    # check grid line locations
+    PNG Two Pixels Should Have Matched RGBA    check_g_2031.png        102,69,589,407
+    Set Selenium Speed    0.2
+
+    Load Image    gaussian_array_large_GALACTIC_3102.image
+    # enable gridline rendering
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLON
+    # switch to a different GLON
+    Click Element    ${ANIMATOR_SLIDER}
+    # switch to a different Stokes (Q)
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.034293831676934936
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022011746039559063
+    Capture Element Screenshot    ${VIEWER_DIV}    check_g_3102.png
+    # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 43.1527); Image: (4, 342); Value:  8.33026e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Set Selenium Speed    0.02
+    # check grid line locations
+    PNG Two Pixels Should Have Matched RGBA    check_g_3102.png        76,86,682,361
+    Remove Files    check_1032.png    check_g_0213.png    check_1230.png    check_3021.png    check_g_2031.png    check_g_3102.png
+    [Teardown]    Kill carta_backend And Close Browser
