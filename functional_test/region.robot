@@ -743,17 +743,18 @@ Import Image Coordinate CASA Region Made Manually
     PNG Two Pixels Should Have Matched RGBA    check.png    442,130,551,167
 
     # annotation 9: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,476,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,502,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,510,239
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,517,225
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,531,231
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,539,222
-    PNG Two Pixels Should Have Matched RGBA    check.png    472,222,545,226
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,484,229
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,498,229
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,510,229
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,517,239
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,530,229
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,537,231
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,547,230
+    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,554,226
 
     # region 10: point
     PNG Two Pixels Should Have Matched RGBA    check.png    455,92,515,343
-    Remove Files    check.png
+    #Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
