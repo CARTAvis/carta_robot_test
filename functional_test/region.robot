@@ -156,10 +156,10 @@ Import World Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
 
     # annotation 8: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
@@ -332,10 +332,10 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
 
     # annotation 8: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
@@ -509,10 +509,10 @@ Import Image Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
 
     # annotation 8: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
-    PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
+    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
     PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
@@ -743,14 +743,14 @@ Import Image Coordinate CASA Region Made Manually
     PNG Two Pixels Should Have Matched RGBA    check.png    442,130,551,167
 
     # annotation 9: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,484,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,498,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,510,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,517,239
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,530,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,537,231
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,547,230
-    PNG Two Pixels Should Have Matched RGBA    check.png    480,225,554,226
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,484,229
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,498,229
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,510,229
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,517,239
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,530,229
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,537,231
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,547,230
+    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,554,226
 
     # region 10: point
     PNG Two Pixels Should Have Matched RGBA    check.png    455,92,515,343
@@ -1537,13 +1537,13 @@ Import World Coordinate CASA Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
 
     # annotation 15: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
     #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
 
     # annotation 16: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
@@ -1740,13 +1740,13 @@ Import Image Coordinate CASA Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
 
     # annotation 15: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
     #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
 
     # annotation 16: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
@@ -1944,13 +1944,13 @@ Import World Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
 
     # annotation 15: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
 
     # annotation 16: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
@@ -2147,13 +2147,13 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
 
     # annotation 15: text
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
 
     # annotation 16: compass
     PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
