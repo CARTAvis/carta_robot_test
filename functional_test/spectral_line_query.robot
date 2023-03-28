@@ -84,7 +84,7 @@ Line Table Filtering And Shifting
     Sleep    5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     # apply a filter to the Species field
-    Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CNv\=0
+    Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 4 filtered line(s) of total 419 line(s). Applied 1 filter(s).
@@ -155,7 +155,7 @@ Line ID Overlay On Spectral Profiler
     Sleep    5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     # apply a filter to the Species field
-    Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CNv\=0
+    Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 4 filtered line(s) of total 419 line(s). Applied 1 filter(s).
