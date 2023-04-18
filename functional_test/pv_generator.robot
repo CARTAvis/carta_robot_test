@@ -11,16 +11,16 @@ Narrow-field PV Image Generation
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set up the line region
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    54
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    33
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    62
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    315
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    54
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    33
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    62
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    315
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -61,16 +61,16 @@ Wide-field PV Image Generation
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set up the line region
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    268
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    192
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    400
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    90
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    268
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    192
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    400
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    90
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -103,16 +103,16 @@ PV Image Generation Cancellation And Rerequest
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set up the line region
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    268
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    192
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    400
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    90
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    268
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    192
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    400
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    90
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -148,16 +148,16 @@ PV Image Generation Repeat
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    54
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    33
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    62
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    315
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    54
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    33
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    62
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    315
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Click Element    //*[@id="PVgeneratorButton"]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -194,16 +194,16 @@ PV Image Generation With Matched Cubes
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    245
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    506
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    141
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    124
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    245
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    506
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    141
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    124
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Append Image    M17_SWex.hdf5
     Mouse Over    ${VIEWER_10_CANVAS}
@@ -252,16 +252,16 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[2]/div/div/input    813
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[5]/td[3]/div/div/input    192
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[6]/td[2]/div/div/input    888
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[7]/td[2]/div/div/input    90
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[1]/div/input    813
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[5]/div/div[2]/div/input    192
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    888
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[7]/div/div/div/input    90
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Append Image    Gaussian_array_wide2.fits
     Sleep    1
