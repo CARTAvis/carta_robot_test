@@ -63,19 +63,20 @@ Region Canvas Rendering
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    5
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[3]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    3
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    5
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    1
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    1
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    1
+    Click Element    //*[@id="bp3-tab-title_regionDialogTabs_1"]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    3
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/label
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     # test region canvas rendering
