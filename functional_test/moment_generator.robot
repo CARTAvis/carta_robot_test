@@ -7,7 +7,7 @@ Generate A Moment Image From FITS Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -24,7 +24,7 @@ Generate A Moment Image From CASA Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.image
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -41,7 +41,7 @@ Generate A Moment Image From MIRIAD Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.miriad
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -58,7 +58,7 @@ Generate A Moment Image From HDF5 Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.hdf5
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -77,7 +77,7 @@ Generate All Moment Images
     Load Initial Image    M17_SWex.fits
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # set mask mode to include
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[8]/div/div/select
@@ -106,7 +106,7 @@ Generate All Moment Images
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     # create a statistics widget and dock it to the panel with the X spatial profiler
-    Drag And Drop    //*[@id="StatisticswidgetButton"]    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
+    Drag And Drop    //*[@id="StatisticsWidgetButton"]    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum_coord
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    3.025600051880e+1 km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_11.png
@@ -185,7 +185,7 @@ Generate A Moment Image With Custom Parameters
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
     Append Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to explicitly select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
@@ -221,7 +221,7 @@ Generate Moment Images From Unmatched Cubes
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Append Image    M17_SWex.hdf5
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -253,7 +253,7 @@ Generate Moment Images From Matched Cubes
     Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -279,7 +279,7 @@ Generate A Moment Image With A Region Mask FITS
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the region dropdown to select Region 2
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
@@ -296,7 +296,7 @@ Generate A Moment Image With A Region Mask FITS
     Capture Element Screenshot    ${VIEWER_DIV}    moment_rectangle_mask.png
     PNG Two Pixels Should Have Matched RGBA    moment_rectangle_mask.png    403,186,410,186
     PNG Two Pixels Should Not Have Matched RGBA    moment_rectangle_mask.png    403,178,410,186
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
@@ -314,7 +314,7 @@ Generate A Moment Image With A Region Mask FITS
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask.png
     PNG Two Pixels Should Have Matched RGBA    moment_ellipse_mask.png    228,74,236,66
     PNG Two Pixels Should Not Have Matched RGBA    moment_ellipse_mask.png    228,74,236,74
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
@@ -343,7 +343,7 @@ Generate A Moment Image With A Region Mask HDF5
     Load Initial Image    M17_SWex.hdf5
     Load Region File    region_001.crtf
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the region dropdown to select Region 2
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
@@ -360,7 +360,7 @@ Generate A Moment Image With A Region Mask HDF5
     Capture Element Screenshot    ${VIEWER_DIV}    moment_rectangle_mask.png
     PNG Two Pixels Should Have Matched RGBA    moment_rectangle_mask.png    403,186,410,186
     PNG Two Pixels Should Not Have Matched RGBA    moment_rectangle_mask.png    403,178,410,186
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
@@ -378,7 +378,7 @@ Generate A Moment Image With A Region Mask HDF5
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask.png
     PNG Two Pixels Should Have Matched RGBA    moment_ellipse_mask.png    228,74,236,66
     PNG Two Pixels Should Not Have Matched RGBA    moment_ellipse_mask.png    228,74,236,74
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select

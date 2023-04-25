@@ -15,7 +15,7 @@ Generate single moment image FITS With Psrecord
     Click Element    ${LOAD_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Click Element    xpath://*[@id="spectralProfilerButton"]
+    Click Element    xpath://*[@id="SpectralProfilerButton"]
     Wait Until Element Does Not Contain    //*[@id="root"]/div/div[12]/div/div[1]/div[1]    complete    timeout=10
     # enable moment generator configration dialog
     Click Element    xpath://*[@id="root"]/div/div[12]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/span[2]/span/button
@@ -47,7 +47,7 @@ Generate multiple moment images FITS With Psrecord
     Click Element    ${LOAD_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
-    Click Element    xpath://*[@id="spectralProfilerButton"]
+    Click Element    xpath://*[@id="SpectralProfilerButton"]
     Wait Until Element Does Not Contain    //*[@id="root"]/div/div[12]/div/div[1]/div[1]    complete    timeout=10
     # enable moment generator configration dialog
     Click Element    xpath://*[@id="root"]/div/div[12]/div/div[1]/div[2]/div/div[1]/div[1]/div[5]/span[2]/span/button

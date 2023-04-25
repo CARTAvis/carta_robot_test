@@ -11,7 +11,7 @@ Region Spectral Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -54,7 +54,7 @@ Spectral Profile Visualization From Multiple Regions
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -99,7 +99,7 @@ Spectral Profile Visualization From Multiple Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -158,7 +158,7 @@ Spectral Profile Visualization From Multiple Images
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the rectangle region
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -189,7 +189,7 @@ Single Spectral Profile Intensity Unit Conversion
     Load Initial Image   M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}
     # launch a spectral profiler widget and dock it to the panel with the render config widget
-    Drag And Drop    //*[@id="SpectralprofilerButton"]    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]
+    Drag And Drop    //*[@id="SpectralProfilerButton"]    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]
     # click the spectral profile plot
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[1]/div/div/div[2]/div
     # launch the spectral profiler settings dialog
@@ -238,7 +238,7 @@ Single Spectral Profile Smoothing
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -336,7 +336,7 @@ Multiple Spectral Profiles Smoothing
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the rectangle region
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     # select the image checkbox to enable image multi-plot mode
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -392,7 +392,7 @@ Spectral Profile Fitting Guess Then Fit
     # close the region config dialog
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
     # launch a spectral profiler widget
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Sleep    0.5
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check.png
     # click the profile fitting button

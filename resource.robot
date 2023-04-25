@@ -220,7 +220,7 @@ ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    //*[@id="bp3-tab-panel_undefine
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select/option[2]
 
 
-${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorinfowidgetButton"]
+${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
 ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
 
 

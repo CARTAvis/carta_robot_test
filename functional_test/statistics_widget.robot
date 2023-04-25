@@ -7,7 +7,7 @@ Region Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    1    NumPixels
@@ -122,7 +122,7 @@ Image Statistics
     Append Image    image_Jy_per_pixel.fits
     Append Image    image_K.fits
     Append Image    image_MJy_per_sr.fits
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
@@ -220,7 +220,7 @@ Image Statistics
 Polarization Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     # Stokes I
     Set Selenium Speed    0.02
@@ -304,7 +304,7 @@ Polarization Statistics
 Compressed FITS fz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.fz
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    1.0
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.238062400000e+7 pixel(s)
@@ -329,7 +329,7 @@ Compressed FITS fz statistics
 Compressed FITS gz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.gz
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.238062400000e+7 pixel(s)

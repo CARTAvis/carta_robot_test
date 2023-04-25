@@ -10,7 +10,7 @@ ${MAGIC_INDEX}    17
 Query Splatalogue
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
@@ -76,7 +76,7 @@ Query Splatalogue
 Line Table Filtering And Shifting
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
@@ -111,7 +111,7 @@ Line Table Filtering And Shifting
 Line Table Column Configuration
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
@@ -147,7 +147,7 @@ Line ID Overlay On Spectral Profiler
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     # close the region config dialog
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Click Element    //*[@id="SpectrallinequerywidgetButton"]
+    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
@@ -163,7 +163,7 @@ Line ID Overlay On Spectral Profiler
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # select all filtered lines in the table
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/label
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}
     # capture a screenshot of the spectral profile plot
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
