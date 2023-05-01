@@ -133,7 +133,7 @@ ${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]
 
 
 ${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/table
-${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[18]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
+${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
 
 ${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[2]
 ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]/div[3]
