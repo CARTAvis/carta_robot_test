@@ -47,130 +47,130 @@ ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load catalog")]
 ${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load region")]
 
 
-${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
+${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
 ${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
-${VIEWER_DIV}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
+${VIEWER_DIV}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
 ${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
 ${VIEWER_10_ZOOM_IN_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
 ${VIEWER_10_MATCH_BUTTON}    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
 ${VIEWER_10_CANVAS}    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
-${VIEWER_SETTINGS_DIALOG}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[4]
-${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[3]
+${VIEWER_SETTINGS_DIALOG}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[4]
+${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[3]
 
-${CLIP_BUTTON_90}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
+${CLIP_BUTTON_90}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
 
-${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
-${COLORMAP_DROPDOWN_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button     
+${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
+${COLORMAP_DROPDOWN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button     
 
-${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
 
-${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
-${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
-${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
-${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
-${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
+${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
+${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
+${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
+${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
+${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
 
-${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
-${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
-${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
-${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
-${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
-${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
-${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
-${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
-${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
-${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label   
-
-
-${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
-${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
-${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
-${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
-${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div[2]/div/div[2]
-
-${CATALOG_WIDGET_DOCK_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
-${CATALOG_WIDGET_TITLE}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span
-${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button/span[1]
-${CATALOG_WIDGET_FILTER_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[1]
-${CATALOG_WIDGET_RESET_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
-${CATALOG_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
-${CATALOG_WIDGET_PLOT_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
-${CATALOG_WIDGET_TABLE_FILTERING_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody
-${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
-${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
-${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
+${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
+${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
+${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
+${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
+${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
+${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
+${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
+${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label   
 
 
-${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input
-${RENDER_CONFIG_CLIP_MAX_CUBE}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[3]/div/div/div/input
-${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[16]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[1]/div/span/span/div/button
+${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
+${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
+${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
+${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[17]/div[2]/div/div[2]
+
+${CATALOG_WIDGET_DOCK_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
+${CATALOG_WIDGET_TITLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span
+${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button/span[1]
+${CATALOG_WIDGET_FILTER_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[1]
+${CATALOG_WIDGET_RESET_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
+${CATALOG_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+${CATALOG_WIDGET_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
+${CATALOG_WIDGET_TABLE_FILTERING_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody
+${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
+${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
+${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+
+
+${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input
+${RENDER_CONFIG_CLIP_MAX_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[3]/div/div/div/input
+${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[1]/div/span/span/div/button
 
 
 ${IMAGE_FITTING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/span[2]/a
+${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[1]/div/input
+${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[2]/div/input
+${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/div/div/input
+${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/span[2]/a
 ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]
-${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[1]/button
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[1]
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[2]
-${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[1]
-${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[2]
-${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/a
-${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[1]
-${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[2]
-${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[14]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/a
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]
+${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[1]/button
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[1]
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[2]
+${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[1]
+${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[2]
+${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/a
+${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[1]
+${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[2]
+${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/a
 
 
 
-${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/table
-${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
+${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/table
+${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[18]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
 
-${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[2]
-${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
-${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
-${SPECTRAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
+${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[2]
+${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]/div[3]
+${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
+${SPECTRAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[5]
 
 ${PROFILE_FITTING_RESULT_TAB}    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div
 ${PROFILE_FITTING_FIT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
 ${PROFILE_FITTING_RESET_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
 ${PROFILE_FITTING_AUTO_DETECT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
-${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
+${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
 
 
-${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_TO_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input
-${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
-${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[1]
-${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
-${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[1]/a
-${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
-${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[1]/div[1]/div[2]/div/div[2]/div[2]/span[3]/a
-${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[2]/div[2]/span[4]/a
+${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
+${SPECTRAL_LINE_QUERY_TO_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input
+${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
+${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[1]
+${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
+${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
+${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[2]/span[1]/a
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
+${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
+${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div[1]/div[1]/div[2]/div/div[2]/div[2]/span[3]/a
+${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[2]/span[4]/a
 
 
-${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
-${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
-${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
-${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
-${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[16]/div/div[1]/div[1]/div[3]
+${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
+${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
+${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
+${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
+${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[3]
 
 
-${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
+${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
 
-${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
+${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
 ${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
 ${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
 
@@ -183,7 +183,7 @@ ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/d
 ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
 
 ${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
-${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
+${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
 
 
 ${POINT_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
@@ -221,15 +221,15 @@ ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-pa
 
 
 ${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
-${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[4]
+${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
 
 
 
-${IMAGE_LIST_FIRST_IMAGE_NAME}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
-${IMAGE_LIST_SECOND_IMAGE_NAME}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]
-${IMAGE_LIST_THIRD_IMAGE_NAME}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
-${IMAGE_LIST_SECOND_MATCHING_XY}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-${IMAGE_LIST_THIRD_MATCHING_XY}    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]/a
+${IMAGE_LIST_FIRST_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
+${IMAGE_LIST_SECOND_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]
+${IMAGE_LIST_THIRD_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
+${IMAGE_LIST_SECOND_MATCHING_XY}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+${IMAGE_LIST_THIRD_MATCHING_XY}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]/a
 
 
 

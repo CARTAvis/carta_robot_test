@@ -3,8 +3,8 @@ Documentation     Check the features in the spectral profiler
 Resource          ../resource.robot
 
 *** Variables ***
-${MAGIC_INDEX}    16
-${MAGIC_INDEX2}    17
+${MAGIC_INDEX}    17
+${MAGIC_INDEX2}    18
 
 *** Test Cases ***
 Region Spectral Profile
@@ -71,7 +71,7 @@ Spectral Profile Visualization From Multiple Regions
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    30
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
     # click the region dropdown menu to close the option list
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
     Sleep    1
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check.png
     Set Selenium Speed    0.02

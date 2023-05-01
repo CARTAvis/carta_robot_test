@@ -3,7 +3,7 @@ Documentation     Test the functionalities of the spectral line query widget
 Resource          ../resource.robot
 
 *** Variables ***
-${MAGIC_INDEX}    17
+${MAGIC_INDEX}    18
 
 
 *** Test Cases ***

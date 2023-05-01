@@ -134,16 +134,16 @@ Catalog Image Overlay Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    model.fits
     Load Catalog File  model_fits_fk4.xml
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[17]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[5]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element At Coordinates   //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element At Coordinates   //*[@id="root"]/div/div[18]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[5]
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
     Set Selenium Speed    0.02
     # catalog points

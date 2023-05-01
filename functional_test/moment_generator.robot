@@ -106,7 +106,7 @@ Generate All Moment Images
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     # create a statistics widget and dock it to the panel with the X spatial profiler
-    Drag And Drop    //*[@id="StatisticsWidgetButton"]    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[1]/div[1]
+    Drag And Drop    //*[@id="StatisticsWidgetButton"]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum_coord
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    3.025600051880e+1 km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_11.png
@@ -305,7 +305,7 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[6]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -323,7 +323,7 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -369,7 +369,7 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[6]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -387,7 +387,7 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}

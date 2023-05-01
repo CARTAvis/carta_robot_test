@@ -259,9 +259,9 @@ Generation Of Model And Residual Images After Fitting
     Mouse Over    //*[@id="image-panel-0-0"]/div[7]/div/div/canvas
     Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
     # check pixel values of the three images in the cursor info widget
-    Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    1.95008e+1
-    Run Keyword And Warn On Failure   Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.20803e+1
-    Run Keyword And Warn On Failure   Element Should Contain    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.27992
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    1.95008e+1
+    Run Keyword And Warn On Failure   Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.20803e+1
+    Run Keyword And Warn On Failure   Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.27992
     Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
     # with a model image only
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
