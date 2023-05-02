@@ -102,7 +102,7 @@ Polyline Spatial Profile Fixed Pixel Width
     PNG Two Pixels Should Have Matched RGBA    check.png    127,85,410,14
     PNG Two Pixels Should Have Matched RGBA    check.png    127,85,494,95    
     Mouse Over    ${SPATIAL_PROFILER_PLOT}
-    # need to double check
+    # need to double check if it is due to a regression from interactive pv (backend PR#1253)
     # Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Distance: 2.71726 deg, 1.28723e-2)
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Distance: 2.71699 deg, 1.28723e-2)
     Remove Files    check.png
