@@ -25,7 +25,7 @@ Narrow-field PV Image Generation
     Click Element    //*[@id="PVGeneratorButton"]
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -78,7 +78,7 @@ Wide-field PV Image Generation
     Click Element    //*[@id="PVGeneratorButton"]
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -123,7 +123,7 @@ PV Image Generation Cancellation And Rerequest
     Click Element    //*[@id="PVGeneratorButton"]
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Contains    Generating PV    timeout=5
     Sleep    2.5
@@ -171,7 +171,7 @@ PV Image Generation Repeat
     Click Element    //*[@id="PVGeneratorButton"]
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -228,7 +228,7 @@ PV Image Generation With Matched Cubes
     Click Element    //*[@id="PVGeneratorButton"]
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -237,11 +237,11 @@ PV Image Generation With Matched Cubes
     Click Element    //*[@id="image-panel-0-1"]/div[8]/span[8]/a
     Click Element    //*[@id="PVGeneratorButton"]
     # use the image dropdown to select M17_SWex.fits
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[1]/div
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[1]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[1]/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[1]/div/div/select/option[2]
     # use the region dropdown to select Region 1
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -290,7 +290,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    //*[@id="PVGeneratorButton"]
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -301,11 +301,11 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    xpath://*[contains(text(), "tab10")]
     Click Element    //*[@id="PVGeneratorButton"]
     # use the image dropdown to select Gaussian_array_wide.fits
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[1]/div
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[1]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[1]/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[1]/div/div/select/option[2]
     # use the region dropdown to select Region 1
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div/div/select/option[2]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}

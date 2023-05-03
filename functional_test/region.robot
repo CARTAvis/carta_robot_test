@@ -1246,24 +1246,24 @@ Shared Region And Region Inheritance
     Page Should Not Contain Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]
     # match image with the XY button
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
 
     # unmatch image with the XY button
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 2
     # set a new active image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
 
     # set the 2nd image as active by clicking it in the image list
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
     # create a new region on the unmatched 2nd image
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
     Click Element At Coordinates    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas    20    -50
@@ -1272,26 +1272,26 @@ Shared Region And Region Inheritance
 
     # match the 2nd image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[4]    Region 4
     # set a new active image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[4]    Region 4
 
     # unmatch again
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[4]    Region 4
     # set a new active image
     Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
     Click Element    xpath://*[contains(text(), "Region List")]
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 5
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[3]/div[4]    Region 6
@@ -1314,7 +1314,7 @@ Loading 4000 Regions From A File
     Sleep    1
 
     # scroll the region list to the very bottom
-    Assign Id To Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
+    Assign Id To Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
     Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, 200000)
 
     Page Should Contain    Region 4000
@@ -1326,7 +1326,7 @@ Loading Regions on Active Matched Image
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
     # match m51_151_MHz.fits to m51cm3i_8_small.fits by clicking the XY button in the image list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Load Region File    region_004.crtf
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
 
@@ -1343,9 +1343,9 @@ Loading Regions on Active Reference Image
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
     # match m51_151_MHz.fits to m51cm3i_8_small.fits by clicking the XY button in the image list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     # set m51cm3i_8_small.fits as active by clicking it in the image list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
     Load Region File    region_004.crtf
     Capture Element Screenshot    ${VIEWER_DIV}    check.png
 

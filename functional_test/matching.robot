@@ -4,7 +4,7 @@ Resource          ../resource.robot
 
 
 *** Variables ***
-${MAGIC_INDEX}    17
+${MAGIC_INDEX}    18
 
 
 *** Test Cases ***
@@ -63,7 +63,7 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     # center the point region in the view by clicking the center button in the region list widget
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
     Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
@@ -76,8 +76,8 @@ Match Wide-Field Images Spatially
     # zoom in the image with the zoom-in button
     Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
     # select the point region in the region list and delete it
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Press Keys    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Press Keys    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    matched_multipanel.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}

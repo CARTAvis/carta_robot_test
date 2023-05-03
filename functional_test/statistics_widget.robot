@@ -36,7 +36,7 @@ Region Statistics
     Set Selenium Speed    0.2
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the point region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.162480000000e+5 pixel(s)
@@ -54,7 +54,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+0 (Jy/beam)^2    
     Set Selenium Speed    0.2
     # select the rectangle region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
@@ -69,7 +69,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.587572883201e-2 (Jy/beam)^2          
     Set Selenium Speed    0.2
     # select the ellipse region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.159000000000e+3 pixel(s)
@@ -84,7 +84,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.317876269933e-2 (Jy/beam)^2
     Set Selenium Speed    0.2
     # select the polygon region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    7.434000000000e+3 pixel(s)
@@ -99,8 +99,8 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    5.209058156941e-2 (Jy/beam)^2              
     Set Selenium Speed    0.2
     # use the region drondown menu to select region 2 - rectangle region
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select/option[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select/option[3]
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.127695460264e-1 Jy/beam
@@ -201,8 +201,8 @@ Image Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+3 (JY/BEAM.KM/S)^2          
     Set Selenium Speed    0.2
     # use the image drondown menu to select the last image - image_MJy_per_sr.fits
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select/option[6]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select/option[6]
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    1.153122180488e+1 MJy/sr
@@ -284,8 +284,8 @@ Polarization Statistics
     
     Set Selenium Speed    0.2
     # use the polarization dropdown menu to select Stokes I
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select/option[2]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)

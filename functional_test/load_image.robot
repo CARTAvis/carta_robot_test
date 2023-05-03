@@ -4,8 +4,8 @@ Resource          ../resource.robot
 
 
 *** Variables ***
-${MAGIC_INDEX1}    13
-${MAGIC_INDEX2}    16 
+${MAGIC_INDEX1}    14
+${MAGIC_INDEX2}    17 
 
 
 *** Test Cases ***
@@ -360,7 +360,7 @@ Load Axes-Swapped Cubes
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # check slider label in the animator
     Click Element    xpath://*[contains(text(), "Animator")]
-    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -381,7 +381,7 @@ Load Axes-Swapped Cubes
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -401,7 +401,7 @@ Load Axes-Swapped Cubes
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    RA
+    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    RA
     # switch to a different RA
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
@@ -423,7 +423,7 @@ Load Axes-Swapped Cubes
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    DEC
+    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    DEC
     # switch to a different DEC
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
@@ -445,7 +445,7 @@ Load Axes-Swapped Cubes
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLAT
+    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLAT
     # switch to a different GLAT
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
@@ -467,7 +467,7 @@ Load Axes-Swapped Cubes
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
     Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLON
+    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLON
     # switch to a different GLON
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)

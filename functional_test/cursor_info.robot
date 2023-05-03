@@ -3,7 +3,7 @@ Documentation     Check the features in the cursor info widget
 Resource          ../resource.robot
 
 *** Variables ***
-${MAGIC_INDEX}    16
+${MAGIC_INDEX}    17
 
 
 *** Test Cases ***
