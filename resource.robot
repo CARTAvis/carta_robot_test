@@ -182,9 +182,9 @@ ${CONTOUR_CONFIG_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[3]
 ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
 ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
 
-${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_pvGeneratorTabs_0"]/div/div[9]
-${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
-
+${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[12]/div[2]/span/a
+${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div
 
 ${POINT_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
 ${LINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
