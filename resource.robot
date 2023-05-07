@@ -17,7 +17,7 @@ ${CARTA_BACKEND_EXECUTABLE}    /Users/kswang/carta_build/carta-backend/build/car
 ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
 ${CARTA_PORT}    3003
-${PYTHON3_EXECUTABLE}    /opt/anaconda3/bin/python
+${PYTHON3_EXECUTABLE}    /Users/kswang/anaconda3/bin/python
 ${N_OMP_THREADS}    8
 ${PACKAGE_TESTING}    False
 ###########################################################################
