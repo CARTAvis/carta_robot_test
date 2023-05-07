@@ -297,37 +297,37 @@ Generation Of Model And Residual Images After Fitting
 
 Fitting With Cancellation
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    cluster_00512.fits
+    Load Initial Image    spire500_ext.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
-    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    256
-    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    256
-    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    361
+    Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    454
+    Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    100
     Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    100
     Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    100
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    0
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Contains    Image fitting processing
-    Sleep    0.05
+    Sleep    0.02
     Click Element    xpath://*[contains(text(), "Cancel")]
     Element Should Be Enabled    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     # try to fit again and cancel again
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Contains    Image fitting processing
-    Sleep    0.05
+    Sleep    0.02
     Click Element    xpath://*[contains(text(), "Cancel")]
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check entries in the image list widget
-    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_1_image
     Page Should Not Contain Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
     # try to fit again and let it finish
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=20
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check the filenames of appended model and residule images
-    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
-    Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_model.fits
-    Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    cluster_00512_residual.fits
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_1_image
+    Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    spire500_ext_model.fits
+    Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    spire500_ext_residual.fits
     [Teardown]    Kill carta_backend And Close Browser
 
 Fitting With One Gaussian Having Fixed Parameters
