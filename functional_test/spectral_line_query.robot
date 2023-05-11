@@ -15,7 +15,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to GHz
@@ -23,7 +23,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349.500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to cm
@@ -31,7 +31,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08580944500100181    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.08577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to mm
@@ -39,7 +39,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.8580944500100181    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.8577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}
     # set query mode from FROM-TO to CENTER-WIDTH
@@ -47,28 +47,28 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.8579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.00015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[3]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.000015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[2]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    65    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).        
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[1]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.065    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Sleep    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).       
     [Teardown]    Kill carta_backend And Close Browser
 
