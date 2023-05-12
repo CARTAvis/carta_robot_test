@@ -110,7 +110,6 @@ Polyline Spatial Profile Fixed Pixel Width
 
 
 Polyline Spatial Profile Fixed Angular Width
-    Pass Execution    Skip due to a regression from interactive pv (backend PR#1253)
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
