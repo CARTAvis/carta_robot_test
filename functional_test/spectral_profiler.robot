@@ -66,10 +66,10 @@ Spectral Profile Visualization From Multiple Regions
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
     # select all options in the list
     # this is a hacky way to click elements that cannot be located...
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    -30
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    0
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    30
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    -30
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    0
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    30
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
     # click the region dropdown menu to close the option list
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
     Sleep    1
@@ -85,10 +85,10 @@ Spectral Profile Visualization From Multiple Regions
     PNG Two Pixels Should Not Have Matched RGBA    check.png    476,76,538,33
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -114,11 +114,11 @@ Spectral Profile Visualization From Multiple Statistics
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
     # this is a hacky way to click elements that cannot be located...
     # select mean
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    90
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    90
     # select stdDev
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    30
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    30
     # select rms
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    0
+    Click Element At Cooridnates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    0
     # click the statistic dropdown menu to close the list
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
     Sleep    1
@@ -134,10 +134,10 @@ Spectral Profile Visualization From Multiple Statistics
     PNG Two Pixels Should Not Have Matched RGBA    check.png    511,110,511,75
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Cooridnate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -177,9 +177,9 @@ Spectral Profile Visualization From Multiple Images
     PNG Two Pixels Should Not Have Matched RGBA    check.png    564,108,585,68
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -381,13 +381,13 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    ${VIEWER_DIV}
     # launch the region config dialog by double-clicking the point region
     Double Click Element    ${VIEWER_DIV}
-    # switch to image coordinate and set a new center position
+    # switch to image Cooridnate and set a new center position
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
     Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    63
     Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
     Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    43
-    # click the image coordinate radio button again to apply changes
+    # click the image Cooridnate radio button again to apply changes
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     # close the region config dialog
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
