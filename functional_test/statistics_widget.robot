@@ -173,32 +173,32 @@ Image Statistics
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    9.497000000000e+3 pixel(s)
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    5.438445809627e+4 KM/S
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    5.438445809627e+4 km/s
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN    
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    5.726488164290e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.474178491848e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    2.277516603470e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.805154800415e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    8.805154800415e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.913175127729e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    3.320686839461e+5 (KM/S)^2       
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    5.726488164290e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.474178491848e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    2.277516603470e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.805154800415e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    8.805154800415e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.913175127729e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    3.320686839461e+5 (km/s)^2       
     Set Selenium Speed    0.2
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.864780000000e+5 pixel(s)
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.197464537811e+4 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    1.296979979085e+2 JY.KM/S    
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    1.178404175190e-1 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.886894357813e-1 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    3.175728255883e-3 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.969475269318e+0 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    2.969475269318e+0 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    2.224632020120e-1 JY/BEAM.KM/S
-    #Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    9.228773143240e+3 (JY/BEAM.KM/S)^2
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.197464537811e+4 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    1.296979979085e+2 Jy.km/s    
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    1.178404175190e-1 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.886894357813e-1 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    3.175728255883e-3 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.969475269318e+0 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    2.969475269318e+0 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    2.224632020120e-1 Jy/beam.km/s
+    #Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    9.228773143240e+3 (Jy/beam.km/s)^2
     # dirty workaround for rounding error  
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    9.2287731432  
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+3 (JY/BEAM.KM/S)^2          
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+3 (Jy/beam.km/s)^2          
     Set Selenium Speed    0.2
     # use the image drondown menu to select the last image - image_MJy_per_sr.fits
     Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select
