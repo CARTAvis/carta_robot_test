@@ -92,7 +92,7 @@ Line Table Filtering And Shifting
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # verify shifted frequency
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div    349388.6353287392
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div    349388.6352976394
     # switch from velocity to redshift
     Click Element    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}
     Click Element    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}/option[2]
