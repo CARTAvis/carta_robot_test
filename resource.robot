@@ -153,12 +153,12 @@ ${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/d
 ${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[1]
 ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
 ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[2]/span[1]/a
+${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[1]
 ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
 ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[2]/span[2]/a
-${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div[1]/div[1]/div[2]/div/div[2]/div[2]/span[3]/a
-${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[2]/span[4]/a
+${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[2]
+${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/span/a
+${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[3]
 
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
