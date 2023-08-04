@@ -26,7 +26,7 @@ Match Images Spatially And Spectrally
     Mouse Over    ${VIEWER_DIV}
     Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    Sleep    1.0
     Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched.png
     Sleep    0.5
     Click Element    ${ANIMATOR_IMAGE_RADIO_BUTTON}
@@ -34,7 +34,7 @@ Match Images Spatially And Spectrally
     Mouse Over    ${VIEWER_DIV}
     Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    Sleep    1.0
     Capture Element Screenshot    ${VIEWER_DIV}    fits_zoomed_matched.png
     Sleep    0.5
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
