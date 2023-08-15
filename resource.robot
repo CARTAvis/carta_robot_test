@@ -173,6 +173,7 @@ ${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]
 ${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
 ${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
 ${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
+${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[13]/div/label[2]
 
 ${FILE_HEADER_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
 ${FILE_HEADER_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[1]/button

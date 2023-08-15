@@ -288,6 +288,7 @@ Generate A Moment Image With A Region Mask FITS
     # Region 1
     Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[4]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[5]
+    Click Element    ${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -352,6 +353,7 @@ Generate A Moment Image With A Region Mask HDF5
     # Region 1
     Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[4]
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[5]
+    Click Element    ${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
