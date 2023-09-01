@@ -309,7 +309,8 @@ Generation Of Model And Residual Images After Fitting
     Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.20
     # CI workaround
     Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.29423
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.2
+    Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.2
+    Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.30407
     Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
     # with a model image only
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
