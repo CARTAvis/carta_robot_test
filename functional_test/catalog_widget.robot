@@ -349,6 +349,11 @@ Catalog Rendering As Scatter Plot
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check4.png
 
+    # close the catalog file and check the state of the scatter plot widget
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[1]/div[1]    Catalog 2D scatter
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[2]/div    No catalog file loaded
+
     Set Selenium Speed    0.02
     PNG Two Pixels Should Have Matched RGBA    check.png    243,93,579,117
     PNG Two Pixels Should Not Have Matched RGBA    check.png    243,93,300,155
@@ -402,6 +407,11 @@ Catalog Rendering As Histogram Plot
     # check the context in the info field of the catalog histogram plot widget
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.2141465077500007, Count: 378
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
+
+    # close the catalog file and check the state of the histogram plot widget
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[1]/div[1]    Catalog Histogram
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[2]/div    No catalog file loaded
 
     Set Selenium Speed    0.02
     PNG Two Pixels Should Have Matched RGBA    check.png    243,170,530,68
