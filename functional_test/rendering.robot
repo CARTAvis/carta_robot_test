@@ -320,3 +320,156 @@ Vector Field Rendering With A Stokes Line Cube
     PNG Images Should Be Different    check_channel_0.png    check_channel_5.png
     Remove files    check_channel_0.png    check_channel_5.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+GUI Initialization
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # close file browser dialog
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[1]/button
+    # region list widget
+    Click Element    //*[@id="RegionListWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Region List
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # log widget
+    Click Element    //*[@id="LogWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Log
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]    AST library loaded
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]    Compute module loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # spatial profiler widget
+    Click Element    //*[@id="SpatialProfilerButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    X Profile: Cursor
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    X Spatial Profile Settings: Cursor
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Styling
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    # spectral profiler widget
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Z Profile
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label    Image
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Z Profile Settings
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Conversion
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    # statistics widget
+    Click Element    //*[@id="StatisticsWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Statistics
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No stats data
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # histogram widget
+    Click Element    //*[@id="HistogramWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Histogram
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Histogram Settings
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Configuration
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5] 
+    # animator widget
+    Click Element    //*[@id="AnimatorWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Animator
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # render config widget
+    Click Element    //*[@id="RenderConfigurationWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Render Configuration
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Render Configuration Settings
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Line color (Primary)
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    # Stokes analysis widget
+    Click Element    //*[@id="StokesAnalysisWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Stokes Analysis
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    Image
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Stokes Analysis Settings
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Conversion
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    # image list widget
+    Click Element    //*[@id="ImageListWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Image List
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Image List Settings
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Matching
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    # catalog widget
+    Click Element    //*[@id="CatalogWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Catalog
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No catalog file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Catalog Settings
+    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Major
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    # spectral line query widget
+    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Spectral Line Query
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    Range
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # cursor info widget
+    Click Element    //*[@id="CursorInfoWidgetButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Cursor Info
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # pv generator widget
+    Click Element    //*[@id="PVGeneratorButton"]
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    PV Generator
+    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    PV cut
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    # file header dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
+    Element Should Contain    //*[@id="root"]/div/div[6]/div/div[1]/div[2]/div/div[1]/h4    File Header
+    Element Should Contain    //*[@id="root"]/div/div[6]/div/div[1]/div[2]/div/div[2]/div    No file selected
+    Click Element    //*[@id="root"]/div/div[6]/div/div[1]/div[2]/div/div[1]/button
+    # preferences dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[2]/a
+    Element Should Contain    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[1]/h4    Preferences
+    Element Should Contain    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[2]    Global
+    Click Element    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[1]/button
+    # contour config dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]/a
+    Element Should Contain    //*[@id="root"]/div/div[4]/div/div[1]/div[2]/div/div[1]/h4    Contour Configuration
+    Element Should Contain    //*[@id="root"]/div/div[4]/div/div[1]/div[2]/div/div[2]    No file loaded
+    Click Element    //*[@id="root"]/div/div[4]/div/div[1]/div[2]/div/div[1]/button
+    # vector overlay dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[4]/a
+    Element Should Contain    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[1]/h4    Vector Overlay Configuration
+    Element Should Contain    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[2]    No file loaded
+    Click Element    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[1]/button
+    # image fitting dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
+    Element Should Contain    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/h4    Image Fitting
+    Element Should Contain    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[2]    No file loaded
+    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/button
+    # online catalog query dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[6]/a
+    Element Should Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[1]/h4    Online Catalog Query
+    Element Should Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]    No file loaded
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[1]/button
+    # distance measurement dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[7]/a
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/h4    Distance Measurement (undefined)
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    Configuration
+    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/button
+    # region config dialog
+    Load Image    cosmos_spitzer3.6micron.fits
+    #   create a rectangle region
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    Press Keys    None    DELETE
+    Element Should Contain    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/h4    No region selected
+    Element Should Contain    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[2]/div    Region not supported
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
+    # catalog histogram and scatter plot widgets
+    #   refer to catalog_widget.robot to save testing time
+    [Teardown]    Kill carta_backend And Close Browser
+
