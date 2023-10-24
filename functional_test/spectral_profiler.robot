@@ -390,7 +390,7 @@ Spectral Profile Fitting Guess Then Fit
     # click the image Cooridnate radio button again to apply changes
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     # close the region config dialog
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     # launch a spectral profiler widget
     Click Element    //*[@id="SpectralProfilerButton"]
     Sleep    0.5
