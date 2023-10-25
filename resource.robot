@@ -280,8 +280,10 @@ Setup carta_backend And Open Browser To CARTA
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
+    # check if there is a telemetry prompt and remove it 
     ${PAGE_SOURCE} =    Get Source
     Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    xpath:/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/button[2]/span
+    # reset viewer to multi-panel mode
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
