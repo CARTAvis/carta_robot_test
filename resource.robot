@@ -26,7 +26,7 @@ ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 #${BROWSER}        chrome
 ${DELAY}          0.2
-${LOGIN URL}      http://${SERVER}/
+${LOGIN URL}      http://${SERVER}
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
 ${WINDOW_SIZE_Y}    800
@@ -280,10 +280,13 @@ Setup carta_backend And Open Browser To CARTA
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
+    ${PAGE_SOURCE} =    Get Source
+    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    xpath:/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/button[2]/span
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
+    
 
 Kill carta_backend And Close Browser
     IF    '${PACKAGE_TESTING}' == 'False'
