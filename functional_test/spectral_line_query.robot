@@ -146,7 +146,7 @@ Line ID Overlay On Spectral Profiler
     Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    43
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     # close the region config dialog
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     Click Element    //*[@id="SpectralLineQueryWidgetButton"]
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
