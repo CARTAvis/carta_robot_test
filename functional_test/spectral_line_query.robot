@@ -16,7 +16,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to GHz
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[1]
@@ -24,7 +24,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349.500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to cm
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[3]
@@ -32,7 +32,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.08577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to mm
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[4]
@@ -40,7 +40,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.8577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}
     # set query mode from FROM-TO to CENTER-WIDTH
     Click Element    ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}/option[2]
@@ -48,28 +48,28 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.00015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[3]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.000015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[2]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    65    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).        
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).        
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[1]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.065    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).       
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).       
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -82,12 +82,12 @@ Line Table Filtering And Shifting
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 4 filtered line(s) of total 419 line(s). Applied 1 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 4 filtered line(s) of total 424 line(s). Applied 1 filter(s).
     # set a velocity to compute shifted frequencies
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
@@ -104,7 +104,7 @@ Line Table Filtering And Shifting
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div    349388.63532873924
     Sleep    5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -117,7 +117,7 @@ Line Table Column Configuration
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # hide Chemical Name column
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[9]/div/label
     # verify Chemical Name column is hidden so the column becomes Shifted Frequency
@@ -153,12 +153,12 @@ Line ID Overlay On Spectral Profiler
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Sleep    5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 419 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 4 filtered line(s) of total 419 line(s). Applied 1 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 4 filtered line(s) of total 424 line(s). Applied 1 filter(s).
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4.5    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # select all filtered lines in the table
