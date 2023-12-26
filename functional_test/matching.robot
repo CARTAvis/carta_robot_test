@@ -4,7 +4,7 @@ Resource          ../resource.robot
 
 
 *** Variables ***
-${MAGIC_INDEX}    17
+${MAGIC_INDEX}    18
 
 
 *** Test Cases ***
@@ -26,7 +26,7 @@ Match Images Spatially And Spectrally
     Mouse Over    ${VIEWER_DIV}
     Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    Sleep    1.0
     Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched.png
     Sleep    0.5
     Click Element    ${ANIMATOR_IMAGE_RADIO_BUTTON}
@@ -34,7 +34,7 @@ Match Images Spatially And Spectrally
     Mouse Over    ${VIEWER_DIV}
     Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    Sleep    1.0
     Capture Element Screenshot    ${VIEWER_DIV}    fits_zoomed_matched.png
     Sleep    0.5
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
@@ -54,16 +54,16 @@ Match Wide-Field Images Spatially
     Click Element    ${VIEWER_DIV}
     # edit the position of the point region in image coordinate in the region config dialog
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    465.5
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    483
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    465.5
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    483
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     # center the point region in the view by clicking the center button in the region list widget
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
     Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
     Sleep    1
@@ -76,8 +76,8 @@ Match Wide-Field Images Spatially
     # zoom in the image with the zoom-in button
     Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
     # select the point region in the region list and delete it
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Press Keys    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Press Keys    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
     Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    matched_multipanel.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
@@ -105,19 +105,20 @@ Matched Region Canvas Rendering Multiple Panel View
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set a new size and a new styling
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    5
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[3]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    3
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    5
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    1
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    1
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    1
+    Click Element    //*[@id="bp3-tab-title_regionDialogTabs_1"]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    3
+    Click Element    //*[@id="bp3-tab-title_regionDialogTabs_1"]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     Append Image    pixel_shader_test.fits
     # match the 2nd pixel_shader_test.fits to the 1st pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
@@ -274,19 +275,20 @@ Matched Region Canvas Rendering Single Panel View
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set a new size and a new styling
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    5
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[2]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[4]/td[3]/div/div/input    1
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[1]/div/div[2]/div/div/div[1]/input    3
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    5
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    1
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    1
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    1
+    Click Element    //*[@id="bp3-tab-title_regionDialogTabs_1"]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    3
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/label
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     Append Image    pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_10_MATCH_BUTTON}

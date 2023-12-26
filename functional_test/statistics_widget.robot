@@ -7,7 +7,7 @@ Region Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    1    NumPixels
@@ -36,7 +36,7 @@ Region Statistics
     Set Selenium Speed    0.2
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the point region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.162480000000e+5 pixel(s)
@@ -54,7 +54,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+0 (Jy/beam)^2    
     Set Selenium Speed    0.2
     # select the rectangle region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
@@ -69,7 +69,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.587572883201e-2 (Jy/beam)^2          
     Set Selenium Speed    0.2
     # select the ellipse region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.159000000000e+3 pixel(s)
@@ -84,7 +84,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.317876269933e-2 (Jy/beam)^2
     Set Selenium Speed    0.2
     # select the polygon region in the region list
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    7.434000000000e+3 pixel(s)
@@ -99,8 +99,8 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    5.209058156941e-2 (Jy/beam)^2              
     Set Selenium Speed    0.2
     # use the region drondown menu to select region 2 - rectangle region
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select/option[3]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select/option[3]
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.127695460264e-1 Jy/beam
@@ -122,7 +122,7 @@ Image Statistics
     Append Image    image_Jy_per_pixel.fits
     Append Image    image_K.fits
     Append Image    image_MJy_per_sr.fits
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
@@ -173,36 +173,36 @@ Image Statistics
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    9.497000000000e+3 pixel(s)
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    5.438445809627e+4 KM/S
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    5.438445809627e+4 km/s
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN    
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    5.726488164290e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.474178491848e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    2.277516603470e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.805154800415e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    8.805154800415e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.913175127729e+0 KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    3.320686839461e+5 (KM/S)^2       
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    5.726488164290e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.474178491848e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    2.277516603470e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.805154800415e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    8.805154800415e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.913175127729e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    3.320686839461e+5 (km/s)^2       
     Set Selenium Speed    0.2
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.864780000000e+5 pixel(s)
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.197464537811e+4 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    1.296979979085e+2 JY.KM/S    
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    1.178404175190e-1 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.886894357813e-1 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    3.175728255883e-3 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.969475269318e+0 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    2.969475269318e+0 JY/BEAM.KM/S
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    2.224632020120e-1 JY/BEAM.KM/S
-    #Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    9.228773143240e+3 (JY/BEAM.KM/S)^2
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.197464537811e+4 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    1.296979979085e+2 Jy.km/s    
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    1.178404175190e-1 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.886894357813e-1 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    3.175728255883e-3 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.969475269318e+0 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    2.969475269318e+0 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    2.224632020120e-1 Jy/beam.km/s
+    #Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    9.228773143240e+3 (Jy/beam.km/s)^2
     # dirty workaround for rounding error  
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    9.2287731432  
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+3 (JY/BEAM.KM/S)^2          
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+3 (Jy/beam.km/s)^2          
     Set Selenium Speed    0.2
     # use the image drondown menu to select the last image - image_MJy_per_sr.fits
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select/option[6]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select/option[6]
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    1.153122180488e+1 MJy/sr
@@ -220,7 +220,7 @@ Image Statistics
 Polarization Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     # Stokes I
     Set Selenium Speed    0.02
@@ -284,8 +284,8 @@ Polarization Statistics
     
     Set Selenium Speed    0.2
     # use the polarization dropdown menu to select Stokes I
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select/option[2]
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select
+    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select/option[2]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)
@@ -304,7 +304,7 @@ Polarization Statistics
 Compressed FITS fz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.fz
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    1.0
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.238062400000e+7 pixel(s)
@@ -329,7 +329,7 @@ Compressed FITS fz statistics
 Compressed FITS gz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.gz
-    Click Element    //*[@id="StatisticswidgetButton"]
+    Click Element    //*[@id="StatisticsWidgetButton"]
     Sleep    0.5
     Set Selenium Speed    0.02
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.238062400000e+7 pixel(s)

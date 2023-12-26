@@ -3,15 +3,15 @@ Documentation     Check the features in the spectral profiler
 Resource          ../resource.robot
 
 *** Variables ***
-${MAGIC_INDEX}    16
-${MAGIC_INDEX2}    17
+${MAGIC_INDEX}    17
+${MAGIC_INDEX2}    18
 
 *** Test Cases ***
 Region Spectral Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -54,7 +54,7 @@ Spectral Profile Visualization From Multiple Regions
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -71,7 +71,7 @@ Spectral Profile Visualization From Multiple Regions
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    30
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
     # click the region dropdown menu to close the option list
-    Click Element    //*[@id="root"]/div/div[17]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
     Sleep    1
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check.png
     Set Selenium Speed    0.02
@@ -85,10 +85,10 @@ Spectral Profile Visualization From Multiple Regions
     PNG Two Pixels Should Not Have Matched RGBA    check.png    476,76,538,33
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -99,7 +99,7 @@ Spectral Profile Visualization From Multiple Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -134,10 +134,10 @@ Spectral Profile Visualization From Multiple Statistics
     PNG Two Pixels Should Not Have Matched RGBA    check.png    511,110,511,75
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Coordinate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -158,7 +158,7 @@ Spectral Profile Visualization From Multiple Images
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the rectangle region
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -177,9 +177,9 @@ Spectral Profile Visualization From Multiple Images
     PNG Two Pixels Should Not Have Matched RGBA    check.png    564,108,585,68
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Cooridnate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
     Remove Files    check.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -189,7 +189,7 @@ Single Spectral Profile Intensity Unit Conversion
     Load Initial Image   M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}
     # launch a spectral profiler widget and dock it to the panel with the render config widget
-    Drag And Drop    //*[@id="SpectralprofilerButton"]    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]
+    Drag And Drop    //*[@id="SpectralProfilerButton"]    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]
     # click the spectral profile plot
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[1]/div/div/div[2]/div
     # launch the spectral profiler settings dialog
@@ -238,7 +238,7 @@ Single Spectral Profile Smoothing
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    xpath://*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -336,7 +336,7 @@ Multiple Spectral Profiles Smoothing
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the rectangle region
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     # select the image checkbox to enable image multi-plot mode
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -381,18 +381,18 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    ${VIEWER_DIV}
     # launch the region config dialog by double-clicking the point region
     Double Click Element    ${VIEWER_DIV}
-    # switch to image coordinate and set a new center position
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[2]/div/div/input    63
-    Press Keys    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    DELETE
-    Input Text    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[3]/td[3]/div/div/input    43
-    # click the image coordinate radio button again to apply changes
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[2]/div/div[1]/label[1]
+    # switch to image Cooridnate and set a new center position
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    63
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    43
+    # click the image Cooridnate radio button again to apply changes
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     # close the region config dialog
-    Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     # launch a spectral profiler widget
-    Click Element    //*[@id="SpectralprofilerButton"]
+    Click Element    //*[@id="SpectralProfilerButton"]
     Sleep    0.5
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check.png
     # click the profile fitting button

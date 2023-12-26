@@ -27,7 +27,7 @@ Stream FITS spectral profile With Psrecord
     Click Element    xpath://*[contains(text(), "Close")]
     Run psrecord    psrecord_spectral_profile_stream_fits.png
     Sleep    0.5
-    Click Element    xpath://*[@id="spectralProfilerButton"]
+    Click Element    xpath://*[@id="SpectralProfilerButton"]
     Wait Until Element Contains    //*[@id="root"]/div/div[12]/div/div[1]/div[1]    complete
     Wait Until Element Does Not Contain    //*[@id="root"]/div/div[12]/div/div[1]/div[1]    complete    timeout=30
     Sleep    0.5
