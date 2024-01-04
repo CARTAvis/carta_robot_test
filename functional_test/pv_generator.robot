@@ -356,10 +356,75 @@ Interactive PV Preview
     # moving pv cut
     Drag And Drop By Offset    ${VIEWER_DIV}    20    50
     Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after.png
+    # checking rendered images
+    Set Selenium Speed    0.02
     PNG Images Should Be Different    before.png    after.png
     PNG Two Pixels Should Have Matched RGBA    before.png    272,298,476,40
     PNG Two Pixels Should Have Matched RGBA    after.png    268,485,476,40
     Remove Files    before.png    after.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Interactive PV Preview With Customization
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1_subimage.fits
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    200
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
+    Drag And Drop    //*[@id="PVGeneratorButton"]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
+    # remove unused widgets
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    # define pv cut
+    Click Element     //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[2]/div/div/select/option[2]
+    # switch to radio velocity definition
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[4]/div/div/select/option[1]
+    # define a velocity range
+    Input Text    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[6]/div/div/div[1]/div/div/div/input    -5
+    Input Text    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[6]/div/div/div[2]/div/div/div/input    18
+    # swap axes
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[7]/div/div/select/option[2]
+    # downsample cube
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[10]/div/div/div[1]/div/div/div[2]/button[1]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[10]/div/div/div[2]/div/div/div[2]/button[1]
+    # enable preview
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[12]/div[1]/span/a
+    # relocate preview widget
+    Drag And Drop    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]
+    # change colormap
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
+    Click Element    xpath://*[contains(text(), "tab10")]
+    Click Element    ${VIEWER_DIV}
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before.png
+    # moving pv cut
+    Drag And Drop By Offset    ${VIEWER_DIV}    -20    20
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after.png
+    # generate full resolution PV
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[2]
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[12]/div[2]/span/a
+    Sleep    2
+    # change colormap
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
+    Click Element    xpath://*[contains(text(), "tab10")]
+    # make pv preview widget active
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[3]
+    Capture Page Screenshot    final.png
+    # checking rendered images
+    Set Selenium Speed    0.02
+    PNG Images Should Be Different    before.png    after.png
+    PNG Two Pixels Should Have Matched RGBA    before.png   236,353,476,40
+    PNG Two Pixels Should Have Matched RGBA    after.png    299,302,476,40
+    PNG Two Pixels Should Have Matched RGBA    final.png    1267,520,2137,740
+    PNG Two Pixels Should Have Matched RGBA    final.png    965,1042,1862,1552
+    Remove Files    before.png    after.png    final.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
