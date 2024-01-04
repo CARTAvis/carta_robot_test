@@ -325,9 +325,43 @@ PV Image Generation With Matched Wide-field Cubes
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Interactive PV Preview
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    S255_CH3CN_subcube.fits
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    DELETE
+    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[6]/div/div/div/input    60
+    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
+    Drag And Drop    //*[@id="PVGeneratorButton"]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
+    # remove unused widgets
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
+    # define pv cut
+    Click Element     //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[2]/div/div/select/option[2]
+    # enable preview
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[12]/div[1]/span/a
+    # relocate preview widget
+    Drag And Drop    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]
+    # change colormap
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
+    Click Element    xpath://*[contains(text(), "tab10")]
+    Click Element    ${VIEWER_DIV}
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before.png
+    # moving pv cut
+    Drag And Drop By Offset    ${VIEWER_DIV}    20    50
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after.png
+    PNG Images Should Be Different    before.png    after.png
+    PNG Two Pixels Should Have Matched RGBA    before.png    272,298,476,40
+    PNG Two Pixels Should Have Matched RGBA    after.png    268,485,476,40
+    Remove Files    before.png    after.png
+    [Teardown]    Kill carta_backend And Close Browser
 
 
 # validate pv cut and check the state of the generate button
 # pv cut on None and NaN
-
-
