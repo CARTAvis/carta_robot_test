@@ -233,9 +233,9 @@ Catalog Rendering As Image Overlay With Column Mapping
 
     # set up ra and dec column for rendering image overlay
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[4]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[4]/a/div
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
     # set up size mapping
@@ -244,7 +244,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     # click the shape dropdown menu to see its context
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]/div/span/span/div/button
     # select the line segment shape
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[12]
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[12]
     # click the column dropdown menu to set up size mapping with respect to the ANG_DIST column
     Click Element    //*[@id="bp3-tab-panel_catalogSettings_5"]/div/div[1]/div/span/span/div/button
     Click Element At Coordinates    //*[@id="bp3-tab-panel_catalogSettings_5"]/div/div[1]/div/span/span/div/button    0    -220
@@ -320,11 +320,11 @@ Catalog Rendering As Scatter Plot
 
     # enable scatter plot with x=ANG_DIST y=RA_d
     Click Element    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
     
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check.png
@@ -338,7 +338,7 @@ Catalog Rendering As Scatter Plot
 
     # click the statistic source dropdown menu to select ANG_DIST
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[4]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[12]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[11]/div/div/div/div/div/ul/li[2]
     # mouse over the scatter plot element
     Mouse Over    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]
     # check the context in the info field of the scatter plot widget
@@ -383,9 +383,9 @@ Catalog Rendering As Histogram Plot
 
     # enable histogram plot
     Click Element    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[2]
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check.png
@@ -403,7 +403,7 @@ Catalog Rendering As Histogram Plot
     Mouse Over    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]
     # click the statistic source dropdown menu to select DEC_d
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[5]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[11]/div/div/div/div/div/ul/li[4]
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[4]
     # check the context in the info field of the catalog histogram plot widget
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.2141465077500007, Count: 378
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
@@ -444,9 +444,9 @@ Linked Catalog Visualization
     # set up image overlay, scatter plot and histogram plot
     # plot image overlay with x=RA_d and y=DEC_d
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[4]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[4]/a/div
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
     # plot scatter plot with x=RA_d

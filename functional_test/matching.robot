@@ -453,7 +453,7 @@ Match Catalog Image Overlay Spatially
     Load Catalog File  model_fits_fk4.xml
     # click the RA dropdown and select RA_d column
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]
     # click the DEC dropdown and select DEC_d column (tricky to select it so a work-around is applied)
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
     Click Element At Coordinates   //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
