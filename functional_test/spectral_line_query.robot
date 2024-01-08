@@ -102,7 +102,12 @@ Line Table Filtering And Shifting
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # verify shifted frequency
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div    349388.63532873924
-    Sleep    5
+    # add another filter to "shifted frequency"
+    Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[4]/div[2]/div[2]/div[2]/span/div/input    349420..349423
+    Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
+    Sleep    0.5
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 424 line(s). Applied 2 filter(s).
+    Sleep    0.5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     [Teardown]    Kill carta_backend And Close Browser
