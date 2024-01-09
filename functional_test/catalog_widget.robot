@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation     Catalog file loading, sorting, filtering, and rendering tests
 Resource          ../resource.robot
+Library    XML
 
 *** Variables ***
 ${MAGIC_INDEX}    17
@@ -536,3 +537,103 @@ Load And Manage Two Catalog Files
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Fetch VizieR Catalog And Visualize 
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51_151_MHz.fits
+    # enable catalog query dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[6]/a
+    # switch to VizieR catalog
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath://*[contains(text(), "VizieR")]
+    # set up keyword for query
+    Input Text    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[2]/div/div/input    NVSS
+    # make query
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
+    Wait Until Element Does Not Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[4]/div[1]    Querying VizieR    timeout=30
+    # select a catalog
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[7]/div/div/div/div/div/div/input
+    Click Element    xpath://*[contains(text(), "1. Variable")] 
+    # retrive 
+    Click Element   //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[4]/div[2]/a[3]
+    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30
+    # enable catalog image overlay
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[5]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[6]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    # enable scatter plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # enable histogram plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # close catalog widget
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    
+    Capture Element Screenshot    ${VIEWER_DIV}    image.png
+    # check png images
+    Set Selenium Speed    0.02
+    PNG Two Pixels Should Have Matched RGBA    image.png    376,214,227,355
+    PNG Two Pixels Should Have Matched RGBA    scatter.png    249,143,530,162
+    PNG Two Pixels Should Have Matched RGBA    histogram.png    171,58,601,58
+    Remove Files    image.png    scatter.png    histogram.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Fetch SIMBAD Catalog And Visualize 
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    spire500_ext.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[5]/a
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    image_before.png
+    # enable catalog query dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[6]/a
+    # set search radius
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[3]/div/span[3]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[3]/div/span[1]/div/div/input    value    0.8045196532714395
+    # set search center
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[4]/div/span[4]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[4]/div/span[2]/div/div/input    value    7:08:30.8601970197
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[4]/div/span[3]/div/div/input    value    -10:33:15.4199949321
+    # make query
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
+    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30    
+    # enable catalog image overlay
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    # enable scatter plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # enable histogram plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # close catalog widget
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    
+    Capture Element Screenshot    ${VIEWER_DIV}    image_after.png
+    
+    # check png images
+    Set Selenium Speed    0.02
+    PNG Images Should Be Different    image_before.png    image_after.png
+    PNG Two Pixels Should Have Matched RGBA    scatter.png    167,41,644,164
+    PNG Two Pixels Should Have Matched RGBA    histogram.png    118,162,583,89
+    #Remove Files    image_before.png    image_after.png    scatter.png    histogram.png
+    [Teardown]    Kill carta_backend And Close Browser
