@@ -1147,7 +1147,7 @@ Region selecting, centering, locking, and deleting
     [Teardown]    Kill carta_backend And Close Browser
 
 
-Creating regions
+Creating Regions And Export As Region Files
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     # point
@@ -1226,6 +1226,60 @@ Creating regions
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    8.1702127660"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    5.1063829787"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
+
+    # export as region files
+    Set Selenium Speed    0.2
+    # delete region files from previous tests if any
+    Remove Files    ~/set_QA_e2e_v2/e2e_check_region_world.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.reg    ~/set_QA_e2e_v2/e2e_check_region_world.reg
+
+    # save as a crtf region file in world coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_world.crtf
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # save as a crtf region file in pixel coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
+    Click Element    xpath://*[contains(text(), "Pixel coordinates")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_pixel.crtf
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # save as a ds9 region file in pixel coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[1]/button
+    Click Element    xpath://*[contains(text(), "DS9 region file")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_pixel.reg
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # save as a ds9 region file in world coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
+    Click Element    xpath://*[contains(text(), "World coordinates")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_world.reg
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # compare generated regions files with snapshot region files
+    ${test_world_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_world.crtf
+    ${snapshot_world_crtf} =    Get File    ./functional_test/snapshot/e2e_check_region_world.crtf
+    Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
+
+    ${test_pixel_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_pixel.crtf
+    ${snapshot_pixel_crtf} =    Get File    ./functional_test/snapshot/e2e_check_region_pixel.crtf
+    Should Be Equal As Strings    ${test_pixel_crtf}    ${snapshot_pixel_crtf}
+
+    ${test_pixel_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_pixel.reg
+    ${snapshot_pixel_ds9} =    Get File    ./functional_test/snapshot/e2e_check_region_pixel.reg
+    Should Be Equal As Strings    ${test_pixel_ds9}    ${snapshot_pixel_ds9}
+
+    ${test_world_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_world.reg
+    ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_region_world.reg
+    Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
+
+    Remove Files    ~/set_QA_e2e_v2/e2e_check_region_world.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.reg    ~/set_QA_e2e_v2/e2e_check_region_world.reg
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -2169,14 +2223,105 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     [Teardown]    Kill carta_backend And Close Browser
 
 
-Creating annotations
+Creating Annotations And Export As Region Files
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Pass Execution    to be implemented...
     Load Initial Image    HD163296_CO_2_1.mom0.fits
-    
+    # point
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[1]
+    Click Element At Coordinates    ${VIEWER_DIV}    -150    -150
+    # line
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[2]
+    Drag And Drop By Offset    ${VIEWER_DIV}    50    -50
+    # rectangle
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[3]
+    Drag And Drop By Offset    ${VIEWER_DIV}    80    60
+    # ellipse
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[4]
+    Drag And Drop By Offset    ${VIEWER_DIV}    50    80
+    # polygon
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[5]
+    Click Element At Coordinates    ${VIEWER_DIV}    -110    -110
+    Click Element At Coordinates    ${VIEWER_DIV}    120    -15
+    Double Click Element    ${VIEWER_DIV}
+    # polyline
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[6]
+    Click Element At Coordinates    ${VIEWER_DIV}    110    110
+    Click Element At Coordinates    ${VIEWER_DIV}    -60    75
+    Double Click Element    ${VIEWER_DIV}
+    # vector
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[7]
+    Click Element At Coordinates    ${VIEWER_DIV}    32    45
+    # text
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[8]
+    Click Element At Coordinates    ${VIEWER_DIV}    23    56
+    # compass
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[9]
+    Click Element At Coordinates    ${VIEWER_DIV}    78    -90
+    # ruler
+    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[10]
+    Drag And Drop By Offset    ${VIEWER_DIV}    -90    45
 
-    Sleep    5
-    #Remove Files    check.png
+    # delete region files from previous tests if any
+    Remove Files    ~/set_QA_e2e_v2/e2e_check_annotation_world.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.reg    ~/set_QA_e2e_v2/e2e_check_annotation_world.reg
+
+    # save as a crtf region file in world coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.crtf
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # save as a crtf region file in pixel coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
+    Click Element    xpath://*[contains(text(), "Pixel coordinates")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.crtf
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # save as a ds9 region file in pixel coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[1]/button
+    Click Element    xpath://*[contains(text(), "DS9 region file")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.reg
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # save as a ds9 region file in world coordinate
+    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
+    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
+    Click Element    xpath://*[contains(text(), "World coordinates")]
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.reg
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+
+    # compare generated regions files with snapshot region files
+    ${test_world_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_world.crtf
+    ${snapshot_world_crtf} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.crtf
+    Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
+
+    ${test_pixel_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.crtf
+    ${snapshot_pixel_crtf} =    Get File    ./functional_test/snapshot/e2e_check_annotation_pixel.crtf
+    Should Be Equal As Strings    ${test_pixel_crtf}    ${snapshot_pixel_crtf}
+
+    ${test_pixel_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.reg
+    ${snapshot_pixel_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_pixel.reg
+    Should Be Equal As Strings    ${test_pixel_ds9}    ${snapshot_pixel_ds9}
+
+    ${test_world_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_world.reg
+    ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.reg
+    Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
+
+    Remove Files    ~/set_QA_e2e_v2/e2e_check_annotation_world.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.reg    ~/set_QA_e2e_v2/e2e_check_annotation_world.reg
     [Teardown]    Kill carta_backend And Close Browser
 
 
