@@ -1229,8 +1229,10 @@ Creating Regions And Export As Region Files
 
     # export as region files
     Set Selenium Speed    0.2
+    ${system}=    Evaluate    platform.system()    platform
+    
     # delete region files from previous tests if any
-    Remove Files    ~/set_QA_e2e_v2/e2e_check_region_world.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.reg    ~/set_QA_e2e_v2/e2e_check_region_world.reg
+    Remove Files    ${INITIAL_IMAGE_FOLDER}/set_QA_e2e_v2/e2e_check_region_world.crtf    ${INITIAL_IMAGE_FOLDER}/set_QA_e2e_v2/e2e_check_region_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/set_QA_e2e_v2/e2e_check_region_pixel.reg    ${INITIAL_IMAGE_FOLDER}/set_QA_e2e_v2/e2e_check_region_world.reg
 
     # save as a crtf region file in world coordinate
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
@@ -1263,23 +1265,23 @@ Creating Regions And Export As Region Files
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
 
     # compare generated regions files with snapshot region files
-    ${test_world_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_world.crtf
+    ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf
     ${snapshot_world_crtf} =    Get File    ./functional_test/snapshot/e2e_check_region_world.crtf
     Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
 
-    ${test_pixel_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_pixel.crtf
+    ${test_pixel_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf
     ${snapshot_pixel_crtf} =    Get File    ./functional_test/snapshot/e2e_check_region_pixel.crtf
     Should Be Equal As Strings    ${test_pixel_crtf}    ${snapshot_pixel_crtf}
 
-    ${test_pixel_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_pixel.reg
+    ${test_pixel_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg
     ${snapshot_pixel_ds9} =    Get File    ./functional_test/snapshot/e2e_check_region_pixel.reg
     Should Be Equal As Strings    ${test_pixel_ds9}    ${snapshot_pixel_ds9}
 
-    ${test_world_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_region_world.reg
+    ${test_world_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
     ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_region_world.reg
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
-    Remove Files    ~/set_QA_e2e_v2/e2e_check_region_world.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_region_pixel.reg    ~/set_QA_e2e_v2/e2e_check_region_world.reg
+    Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -2272,7 +2274,7 @@ Creating Annotations And Export As Region Files
     Drag And Drop By Offset    ${VIEWER_DIV}    -90    45
 
     # delete region files from previous tests if any
-    Remove Files    ~/set_QA_e2e_v2/e2e_check_annotation_world.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.reg    ~/set_QA_e2e_v2/e2e_check_annotation_world.reg
+    Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
 
     # save as a crtf region file in world coordinate
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
@@ -2305,23 +2307,23 @@ Creating Annotations And Export As Region Files
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
 
     # compare generated regions files with snapshot region files
-    ${test_world_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_world.crtf
+    ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf
     ${snapshot_world_crtf} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.crtf
     Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
 
-    ${test_pixel_crtf} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.crtf
+    ${test_pixel_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf
     ${snapshot_pixel_crtf} =    Get File    ./functional_test/snapshot/e2e_check_annotation_pixel.crtf
     Should Be Equal As Strings    ${test_pixel_crtf}    ${snapshot_pixel_crtf}
 
-    ${test_pixel_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.reg
+    ${test_pixel_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg
     ${snapshot_pixel_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_pixel.reg
     Should Be Equal As Strings    ${test_pixel_ds9}    ${snapshot_pixel_ds9}
 
-    ${test_world_ds9} =    Get File    ~/set_QA_e2e_v2/e2e_check_annotation_world.reg
+    ${test_world_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
     ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.reg
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
-    Remove Files    ~/set_QA_e2e_v2/e2e_check_annotation_world.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.crtf    ~/set_QA_e2e_v2/e2e_check_annotation_pixel.reg    ~/set_QA_e2e_v2/e2e_check_annotation_world.reg
+    Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
     [Teardown]    Kill carta_backend And Close Browser
 
 
