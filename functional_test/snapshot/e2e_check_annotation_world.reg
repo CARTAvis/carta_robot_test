@@ -7,8 +7,8 @@ fk5
 # ellipse(269.088702690, -21.956466464, 4.0851", 2.5532", 90) color=#FFBA01 width=2
 # polygon(269.090384975, -21.954906172, 269.086867452, -21.956253688, 269.088702690, -21.956466464) color=#FFBA01 width=2
 # polyline(269.087020368, -21.958026740, 269.089620318, -21.957530291, 269.088702690, -21.956466464) color=#FFBA01 width=2
-# vector(269.088270642, -21.957051570, 0.5416", -45.0000) color=#FFBA01 width=2 vector=1
-# textbox(269.088350934, -21.957260790, 10.4986", 1.0213", 0) align=center
-# text(269.088350934, -21.957260790) color=#FFBA01 width=1 font="helvetica 20 normal roman" text={Double click to edit text}
+# vector(269.088760041, -21.956413273, 0.5416", -45.0000) color=#FFBA01 width=2 vector=1
+# textbox(269.088702690, -21.956466464, 10.4986", 1.0213", 0) align=center
+# text(269.088702690, -21.956466464) color=#FFBA01 width=1 font="helvetica 20 normal roman" text={Double click to edit text}
 # compass(269.087509794, -21.955189864, 5.0000") color=#FFBA01 width=2 font="helvetica 20 normal roman" compass=fk5 {N} {E} 1 1
 # ruler(269.088702690, -21.956466464, 269.090079127, -21.957104756) color=#FFBA01 width=2 ruler=fk5 degrees
