@@ -68,7 +68,10 @@ def vector_field_rendering():
     #imgs[1].set_center("4h31m38.429s", "18d13m57.20s")
     imgs[1].set_center(267, 252)
     imgs[1].zoom_to_size("1.88arcsec", "y")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('nipy_spectral')
 
+    # atomic setup
     imgs[0].vectors.configure(angular_source=VectorOverlaySource.NONE, 
                               intensity_source=VectorOverlaySource.CURRENT,
                               pixel_averaging_enabled=True,
@@ -79,6 +82,8 @@ def vector_field_rendering():
                               debiasing=False)
     imgs[0].vectors.set_length_range(0, 10)
     imgs[0].vectors.set_colormap('tab10')
+    imgs[0].vectors.set_intensity_range(0.0002, 0.0009)
+    imgs[0].vectors.set_bias_and_contrast(0.1, 0.9)
     imgs[0].vectors.apply()
     
     imgs[1].vectors.configure(angular_source=VectorOverlaySource.COMPUTED, 
@@ -94,12 +99,44 @@ def vector_field_rendering():
     imgs[1].vectors.set_length_range(0, 30)
     imgs[1].vectors.set_rotation_offset(90)
     imgs[1].vectors.set_color('white')
+    imgs[1].vectors.set_thickness(2)
     imgs[1].vectors.apply()    
     
-    
-    
-    
-    
-    session.save_rendered_view("vector_field_rendering.png")
+    session.save_rendered_view("vector_field_rendering_atomic.png")
+    imgs[0].vectors.clear()
+    imgs[1].vectors.clear()
+    session.save_rendered_view("vector_field_rendering_reset.png")
+    # molecular setup
+    imgs[0].vectors.plot(angular_source=VectorOverlaySource.NONE,
+                         intensity_source=VectorOverlaySource.CURRENT,
+                         pixel_averaging_enabled=True,
+                         pixel_averaging=4,
+                         fractional_intensity=False,
+                         threshold_enabled=True,
+                         threshold=0.0001,
+                         debiasing=False,
+                         intensity_min=0.0002,
+                         intensity_max=0.0009,
+                         length_min=0,
+                         length_max=10,
+                         colormap='tab10',
+                         bias=0.1,
+                         contrast=0.9)
+    imgs[1].vectors.plot(angular_source=VectorOverlaySource.COMPUTED,
+                         intensity_source=VectorOverlaySource.COMPUTED,
+                         pixel_averaging_enabled=True,
+                         pixel_averaging=4,
+                         fractional_intensity=False,
+                         threshold_enabled=True,
+                         threshold=0.001,
+                         debiasing=True,
+                         q_error=0.0001,
+                         u_error=0.0001,
+                         thickness=2,
+                         length_min=0,
+                         length_max=30,
+                         rotation_offset=90,
+                         color='white')
+    session.save_rendered_view("vector_field_rendering_molecular.png")
 
     return "Done"

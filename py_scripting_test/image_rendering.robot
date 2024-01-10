@@ -32,4 +32,11 @@ Vector Field Rendering
     ${result}=    test_image_rendering.vector_field_rendering
     Should Be Equal    ${result}    Done
     
+    PNG Images Should Be Identical    vector_field_rendering_atomic.png    vector_field_rendering_molecular.png
+    PNG Images Should Be Different    vector_field_rendering_atomic.png    vector_field_rendering_reset.png
+    # intensity markers
+    PNG Two Pixels Should Have Matched RGBA    vector_field_rendering_atomic.png    181,253,581,253
+    # polarization segments
+    PNG Two Pixels Should Have Matched RGBA    vector_field_rendering_molecular.png    275,109,675,109
+    Remove Files    vector_field_rendering_atomic.png    vector_field_rendering_molecular.png    vector_field_rendering_reset.png
     [Teardown]    Terminate carta_backend
