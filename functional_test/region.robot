@@ -2279,12 +2279,18 @@ Creating Annotations And Export As Region Files
     # save as a crtf region file in world coordinate
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
+    # not including vector and text due to CI
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.crtf
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
 
     # save as a crtf region file in pixel coordinate
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
+    # not including vector and text due to CI
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
     Click Element    xpath://*[contains(text(), "Pixel coordinates")]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.crtf
@@ -2293,6 +2299,9 @@ Creating Annotations And Export As Region Files
     # save as a ds9 region file in pixel coordinate
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
+    # not including vector and text due to CI
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[1]/button
     Click Element    xpath://*[contains(text(), "DS9 region file")]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.reg
@@ -2301,6 +2310,9 @@ Creating Annotations And Export As Region Files
     # save as a ds9 region file in world coordinate
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
+    # not including vector and text due to CI
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
     Click Element    xpath://*[contains(text(), "World coordinates")]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.reg
