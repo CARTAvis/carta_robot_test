@@ -75,8 +75,31 @@ def vector_field_rendering():
                               pixel_averaging=4,
                               fractional_intensity=False,
                               threshold_enabled=True,
-                              threshold=0.001,
+                              threshold=0.0001,
                               debiasing=False)
+    imgs[0].vectors.set_length_range(0, 10)
+    imgs[0].vectors.set_colormap('tab10')
     imgs[0].vectors.apply()
+    
+    imgs[1].vectors.configure(angular_source=VectorOverlaySource.COMPUTED, 
+                              intensity_source=VectorOverlaySource.COMPUTED,
+                              pixel_averaging_enabled=True,
+                              pixel_averaging=4,
+                              fractional_intensity=False,
+                              threshold_enabled=True,
+                              threshold=0.001,
+                              debiasing=True,
+                              q_error=0.0001,
+                              u_error=0.0001)
+    imgs[1].vectors.set_length_range(0, 30)
+    imgs[1].vectors.set_rotation_offset(90)
+    imgs[1].vectors.set_color('white')
+    imgs[1].vectors.apply()    
+    
+    
+    
+    
+    
     session.save_rendered_view("vector_field_rendering.png")
+
     return "Done"
