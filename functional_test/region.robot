@@ -2259,11 +2259,11 @@ Creating Annotations And Export As Region Files
     # vector
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
     Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[7]
-    Click Element At Coordinates    ${VIEWER_DIV}    0    0
+    Drag And Drop By Offset    ${VIEWER_DIV}    100    100
     # text
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
     Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[8]
-    Click Element At Coordinates    ${VIEWER_DIV}    0    0
+    Drag And Drop By Offset    ${VIEWER_DIV}    -100    -100
     # compass
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
     Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[9]
@@ -2323,7 +2323,7 @@ Creating Annotations And Export As Region Files
     ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.reg
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
-    #Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
+    Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
     [Teardown]    Kill carta_backend And Close Browser
 
 

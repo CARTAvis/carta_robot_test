@@ -5,8 +5,8 @@ ann centerbox [[213.9681pix, 197.6277pix], [163.4043pix, 122.5532pix]] coord=J20
 ann ellipse [[213.9681pix, 197.6277pix], [81.7021pix, 51.0638pix], 0deg] coord=J2000, linewidth=2, linestyle=-, color=ffba01
 ann poly [[101.6277pix, 309.9681pix], [336.5213pix, 212.9468pix], [213.9681pix, 197.6277pix]] coord=J2000, linewidth=2, linestyle=-, color=ffba01
 ann polyline [[326.3085pix, 85.2872pix], [152.6915pix, 121.0319pix], [213.9681pix, 197.6277pix]] coord=J2000, linewidth=2, linestyle=-, color=ffba01
-vector [[210.1383pix, 201.4574pix], [217.7979pix, 193.7979pix]] coord=J2000, linewidth=2, linestyle=-, color=ffba01
-# textbox [[213.9681pix, 197.6277pix], [209.9727pix, 20.4255pix]] label="", align=center
+vector [[111.8404pix, 299.7553pix], [316.0957pix, 95.5000pix]] coord=J2000, linewidth=2, linestyle=-, color=ffba01
+# textbox [[213.9681pix, 197.6277pix], [400.0000pix, 400.0000pix]] label="", align=center
 text [[213.9681pix, 197.6277pix], "Double click to edit text"] coord=J2000, linewidth=1, linestyle=-, color=ffba01, font=Helvetica, fontsize=20, fontstyle=normal, usetex=false
 # compass [[293.6277pix, 289.5425pix], 100.0000pix] coord=J2000, linewidth=2, linestyle=-, color=ffba01, font=Helvetica, fontsize=20, fontstyle=normal, usetex=false compass=J2000 {N} {E} 1 1
 # ruler [[213.9681pix, 197.6277pix], [122.0532pix, 151.6702pix]] coord=J2000, linewidth=2, linestyle=-, color=ffba01, font=Helvetica, fontsize=13, fontstyle=normal, usetex=false ruler=J2000 degrees
