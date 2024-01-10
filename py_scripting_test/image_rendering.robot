@@ -25,3 +25,11 @@ Contour Rendering
     PNG Two Pixels Should Have Matched RGBA    contour_rendering.png    219,199,619,199
     Remove Files    contour_rendering.png
     [Teardown]    Terminate carta_backend
+
+
+Vector Field Rendering
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.vector_field_rendering
+    Should Be Equal    ${result}    Done
+    
+    [Teardown]    Terminate carta_backend
