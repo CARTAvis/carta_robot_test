@@ -1266,19 +1266,19 @@ Creating Regions And Export As Region Files
 
     # compare generated regions files with snapshot region files
     ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf
-    ${snapshot_world_crtf} =    Get File    ./functional_test/snapshot/e2e_check_region_world.crtf
+    ${snapshot_world_crtf} =    Get File    ./snapshot/e2e_check_region_world.crtf
     Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
 
     ${test_pixel_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf
-    ${snapshot_pixel_crtf} =    Get File    ./functional_test/snapshot/e2e_check_region_pixel.crtf
+    ${snapshot_pixel_crtf} =    Get File    ./snapshot/e2e_check_region_pixel.crtf
     Should Be Equal As Strings    ${test_pixel_crtf}    ${snapshot_pixel_crtf}
 
     ${test_pixel_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg
-    ${snapshot_pixel_ds9} =    Get File    ./functional_test/snapshot/e2e_check_region_pixel.reg
+    ${snapshot_pixel_ds9} =    Get File    ./snapshot/e2e_check_region_pixel.reg
     Should Be Equal As Strings    ${test_pixel_ds9}    ${snapshot_pixel_ds9}
 
     ${test_world_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
-    ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_region_world.reg
+    ${snapshot_world_ds9} =    Get File    ./snapshot/e2e_check_region_world.reg
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
@@ -2320,19 +2320,19 @@ Creating Annotations And Export As Region Files
 
     # compare generated regions files with snapshot region files
     ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf
-    ${snapshot_world_crtf} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.crtf
+    ${snapshot_world_crtf} =    Get File    ./snapshot/e2e_check_annotation_world.crtf
     Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
 
     ${test_pixel_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf
-    ${snapshot_pixel_crtf} =    Get File    ./functional_test/snapshot/e2e_check_annotation_pixel.crtf
+    ${snapshot_pixel_crtf} =    Get File    ./snapshot/e2e_check_annotation_pixel.crtf
     Should Be Equal As Strings    ${test_pixel_crtf}    ${snapshot_pixel_crtf}
 
     ${test_pixel_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg
-    ${snapshot_pixel_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_pixel.reg
+    ${snapshot_pixel_ds9} =    Get File    ./snapshot/e2e_check_annotation_pixel.reg
     Should Be Equal As Strings    ${test_pixel_ds9}    ${snapshot_pixel_ds9}
 
     ${test_world_ds9} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
-    ${snapshot_world_ds9} =    Get File    ./functional_test/snapshot/e2e_check_annotation_world.reg
+    ${snapshot_world_ds9} =    Get File    ./snapshot/e2e_check_annotation_world.reg
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
