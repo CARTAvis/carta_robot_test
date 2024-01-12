@@ -2,6 +2,7 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     rm -rf utilities 
     cp -r ../utilities .
     robot --variable CARTA_PORT:3012 \
+        --variable SNAPSHOT_FOLDER:../snapshot \
         --report report_parallel_manual_run_02.html \
         --log log_parallel_manual_run_02.html \
         --output output_parallel_manual_run_02.xml \
@@ -21,6 +22,7 @@ if [[ $OSTYPE == 'linux'* ]]; then
         --variable CARTA_BACKEND_EXECUTABLE:/home/kswang/carta_build/carta-backend/build/carta_backend \
         --variable CARTA_FRONTEND_FOLDER:/home/kswang/carta_build/carta-frontend/build \
         --variable INITIAL_IMAGE_FOLDER:/home/kswang/set_QA_e2e_v2 \
+        --variable SNAPSHOT_FOLDER:../snapshot \
         --report report_parallel_manual_run_02.html \
         --log log_parallel_manual_run_02.html \
         --output output_parallel_manual_run_02.xml \
