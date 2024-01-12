@@ -531,3 +531,37 @@ Match Vector Field Overlay Spatially
 
     Remove files    check.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Matching Vector And Contour From Secondary To Reference
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HL_Tau.POLI.fits
+    Append Image    HL_Tau.POLA.fits
+    # matching POLA to POLI
+    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
+    Mouse Over    xpath://*[contains(text(), "Spatial only")]
+    Click Element    xpath://*[contains(text(), "Spatial only")]
+    # zoom in
+    Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
+    # trigger vector rendering using POLA (2nd image)
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    # trigger contour rendering using POLA (2nd image)
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]/a
+    Input Text    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/div/div/div/input    60
+    Click Element    xpath://*[contains(text(), "Styling")]
+    Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    2
+    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    # check vector rendering
+    PNG Two Pixels Should Have Matched RGBA    check.png    274,252,653,252
+    # check contour rendering
+    PNG Two Pixels Should Have Matched RGBA    check.png    292,258,671,258
+    Remove File    check.png
+    [Teardown]    Kill carta_backend And Close Browser
