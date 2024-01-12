@@ -2230,47 +2230,47 @@ Creating Annotations And Export As Region Files
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     # point
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[1]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[1]
     Click Element At Coordinates    ${VIEWER_DIV}    -150    -150
     # line
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[2]
     Drag And Drop By Offset    ${VIEWER_DIV}    50    -50
     # rectangle
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[3]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[3]
     Drag And Drop By Offset    ${VIEWER_DIV}    80    60
     # ellipse
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[4]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[4]
     Drag And Drop By Offset    ${VIEWER_DIV}    50    80
     # polygon
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[5]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[5]
     Click Element At Coordinates    ${VIEWER_DIV}    -110    -110
     Click Element At Coordinates    ${VIEWER_DIV}    120    -15
     Double Click Element    ${VIEWER_DIV}
     # polyline
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[6]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[6]
     Click Element At Coordinates    ${VIEWER_DIV}    110    110
     Click Element At Coordinates    ${VIEWER_DIV}    -60    75
     Double Click Element    ${VIEWER_DIV}
     # vector
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[7]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[7]
     Drag And Drop By Offset    ${VIEWER_DIV}    100    100
     # text
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[8]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[8]
     Drag And Drop By Offset    ${VIEWER_DIV}    -100    -100
     # compass
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[9]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[9]
     Click Element At Coordinates    ${VIEWER_DIV}    78    -90
     # ruler
     Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/ul/li[10]
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[10]
     Drag And Drop By Offset    ${VIEWER_DIV}    -90    45
 
     # delete region files from previous tests if any

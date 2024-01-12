@@ -558,19 +558,19 @@ Fetch VizieR Catalog And Visualize
     Wait Until Page Does Not Contain    Online Catalog Query    timeout=30
     # enable catalog image overlay
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[5]/a/div
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[5]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[6]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     # enable scatter plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter.png
     Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
     # enable histogram plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram.png
     Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
@@ -609,19 +609,19 @@ Fetch SIMBAD Catalog And Visualize
     Wait Until Page Does Not Contain    Online Catalog Query    timeout=30    
     # enable catalog image overlay
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[2]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     # enable scatter plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter.png
     Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
     # enable histogram plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram.png
     Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
