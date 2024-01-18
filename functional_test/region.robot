@@ -111,7 +111,7 @@ Import World Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.2615758083
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:29.0606406413
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.7791013191"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    334.1
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Compass - Ann
@@ -287,7 +287,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.2615758083
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:29.0606406413
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.7791013191"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    334.1
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Compass - Ann
@@ -464,7 +464,7 @@ Import Image Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    17:56:21.2615758083
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[6]    -21:57:29.0606406413
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[7]    3.7791013191"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    334.1
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[14]/div[8]    0.0
 
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[4]    Annotation 14
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[5]    Compass - Ann
@@ -1548,7 +1548,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231545943
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1189020202
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9764497926"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
     PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
@@ -1751,7 +1751,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231550878
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1189296768
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9764956886"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
     PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
@@ -1955,7 +1955,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231551427
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1189289139
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9764994849"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
     PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
@@ -2158,7 +2158,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    17:56:20.7231534976
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[6]    -21:57:26.1188447995
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[7]    4.9766758483"
-    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
+    Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    0.0
 
     # annotation 1, 2: filled square point and open square point
     PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
@@ -2280,8 +2280,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[9]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.crtf
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
 
@@ -2289,8 +2289,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[9]
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
     Click Element    xpath://*[contains(text(), "Pixel coordinates")]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.crtf
@@ -2300,8 +2300,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[9]
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[1]/button
     Click Element    xpath://*[contains(text(), "DS9 region file")]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.reg
@@ -2311,8 +2311,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
     Click Element    xpath://*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[8]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/label[9]
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
     Click Element    xpath://*[contains(text(), "World coordinates")]
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.reg
