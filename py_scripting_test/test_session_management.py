@@ -9,7 +9,7 @@ image_file_0 = 'HD163296_CO_2_1_subimage.fits'
 
 def create_session():
     session = Session.create(Chrome(headless=using_headless_chrome, options=custom_chrome_options), url_without_token, debug_no_auth=True)
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     img0 = session.open_image(image_file_0)
     img0.set_channel(88)
     img0.raster.set_colormap('tab10')
@@ -19,7 +19,7 @@ def create_session():
 
 def start_and_create_session():
     session = Session.start_and_create(Chrome(headless=using_headless_chrome, options=custom_chrome_options), "/Users/kswang/carta_build/carta-backend/build/carta_backend", params=("/Users/kswang/set_QA_e2e_v2", "--frontend_folder", "/Users/kswang/carta_build/carta-frontend/build", "--port", "3003", "--debug_no_auth"))
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     img0 = session.open_image(image_file_0)
     img0.set_channel(88)
     img0.raster.set_colormap('tab10')

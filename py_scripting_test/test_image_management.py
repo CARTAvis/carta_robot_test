@@ -11,7 +11,7 @@ def test_session_initializer():
 
 def load_and_append_images():
     session = test_session_initializer()
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     img0 = session.open_image("M17_SWex.fits")
     img0.set_channel(12)
     img0.raster.set_colormap('tab10')
@@ -33,7 +33,7 @@ def load_and_append_images():
 
 def load_images():
     session = test_session_initializer()
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     imgs = session.open_images(["M17_SWex.fits", "M17_SWex.image", "M17_SWex.hdf5", "M17_SWex.miriad"])
     imgs[0].set_channel(12)
     imgs[0].raster.set_colormap('tab10')
@@ -56,7 +56,7 @@ def load_fits_image_with_HDUs():
 
 def load_compressed_fits_image():
     session = test_session_initializer()
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     # load a fz fits image
     img = session.open_image("tu2310418.fits.fz")
     img.raster.set_colormap('tab10')
@@ -69,7 +69,7 @@ def load_compressed_fits_image():
 
 def load_complex_image():
     session = test_session_initializer()
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     # load a complex CASA image in different forms
     img = session.open_complex_image("complex.image", "AMPLITUDE")
     session.save_rendered_view('load_complex_image_amplitude.png')
@@ -83,7 +83,7 @@ def load_complex_image():
 
 def load_Stokes_hypercube():
     session = test_session_initializer()
-    session.overlay.set_view_area(800, 800)
+    session.wcs.set_view_area(800, 800)
     # input files as a list
     img = session.open_hypercube(["IRCp10216_sci.spw0.cube.I.manual.pbcor.fits", 
                                   "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits", 
@@ -104,7 +104,7 @@ def load_Stokes_hypercube():
 
 def load_image_with_LEL():
     session = test_session_initializer()
-    session.overlay.set_view_area(900, 300)
+    session.wcs.set_view_area(900, 300)
     session.set_viewer_grid(1, 3)
     img1 = session.open_image("dice_one.fits")
     img1.raster.set_colormap('tab10')
@@ -143,7 +143,7 @@ def check_image_meta_data():
 
 def check_matching():
     session = test_session_initializer()
-    session.overlay.set_view_area(800, 400)
+    session.wcs.set_view_area(800, 400)
     
     imgs = session.open_images(["HD163296_CO_2_1_subimage.fits", 
                                 "HD163296_13CO_2-1_subimage.fits"])

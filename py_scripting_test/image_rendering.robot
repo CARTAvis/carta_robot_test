@@ -40,3 +40,13 @@ Vector Field Rendering
     PNG Two Pixels Should Have Matched RGBA    vector_field_rendering_molecular.png    275,109,675,109
     Remove Files    vector_field_rendering_atomic.png    vector_field_rendering_molecular.png    vector_field_rendering_reset.png
     [Teardown]    Terminate carta_backend
+
+
+WCS Rendering
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering
+    Log To Console    ${result}
+    #Should Be Equal    ${result}    Done
+
+    #Remove File    wcs_rendering.png
+    [Teardown]    Terminate carta_backend
