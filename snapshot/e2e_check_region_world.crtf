@@ -1,0 +1,7 @@
+#CRTFv0 CASA Region Text Format version 0
+symbol [[17:56:21.65569, -021.57.18.1729], s] coord=J2000, corr=[I], linewidth=2, linestyle=-, symsize=1, symthick=1, color=2ee6d6, font=Helvetica, fontsize=10, fontstyle=bold, usetex=false
+line [[17:56:21.05007, -021.57.20.7261], [17:56:21.52723, -021.57.25.8325]] coord=J2000, corr=[I], linewidth=2, linestyle=-, symsize=1, symthick=1, color=2ee6d6, font=Helvetica, fontsize=10, fontstyle=bold, usetex=false
+centerbox [[17:56:21.28865, -021.57.23.2793], [6.1277arcsec, 8.1702arcsec]] coord=J2000, corr=[I], linewidth=2, linestyle=-, symsize=1, symthick=1, color=2ee6d6, font=Helvetica, fontsize=10, fontstyle=bold, usetex=false
+ellipse [[17:56:21.28865, -021.57.23.2793], [2.5532arcsec, 5.1064arcsec], 0.00000000deg] coord=J2000, corr=[I], linewidth=2, linestyle=-, symsize=1, symthick=1, color=2ee6d6, font=Helvetica, fontsize=10, fontstyle=bold, usetex=false
+poly [[17:56:21.01336, -021.57.19.4495], [17:56:21.10512, -021.57.29.4069], [17:56:21.28865, -021.57.23.2793]] coord=J2000, corr=[I], linewidth=2, linestyle=-, symsize=1, symthick=1, color=2ee6d6, font=Helvetica, fontsize=10, fontstyle=bold, usetex=false
+polyline [[17:56:21.28865, -021.57.28.3857], [17:56:21.58229, -021.57.27.3644], [17:56:20.99501, -021.57.26.3431], [17:56:21.28865, -021.57.23.2793]] coord=J2000, corr=[I], linewidth=2, linestyle=-, symsize=1, symthick=1, color=2ee6d6, font=Helvetica, fontsize=10, fontstyle=bold, usetex=false

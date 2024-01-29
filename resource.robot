@@ -16,6 +16,7 @@ Library           Collections
 ${CARTA_BACKEND_EXECUTABLE}    /Users/kswang/carta_build/carta-backend/build/carta_backend
 ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
+${SNAPSHOT_FOLDER}    ./snapshot
 ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /Users/kswang/anaconda3/bin/python
 ${N_OMP_THREADS}    8
@@ -269,11 +270,11 @@ Setup carta_backend And Open Browser To CARTA
     END
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb")
+    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     END
     IF    '${BROWSER}' == 'chrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb")
+    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security")
     Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
     Sleep    1
@@ -282,7 +283,7 @@ Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains    No file selected.
     # check if there is a telemetry prompt and remove it 
     ${PAGE_SOURCE} =    Get Source
-    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    xpath:/html/body/div[3]/div/div[2]/div/div[2]/div/div[2]/button[2]/span
+    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    xpath:/html/body/div[4]/div/div[2]/div/div[2]/div/div[2]/button[2]/span
     # reset viewer to multi-panel mode
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'

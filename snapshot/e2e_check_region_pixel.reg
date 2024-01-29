@@ -1,0 +1,9 @@
+# Region file format: DS9 CARTA 5.0.0-dev
+global color=green dashlist=8 3 width=1 font="helvetica 10 normal roman" select=1 highlite=1 dash=0 fixed=0 edit=1 move=1 delete=1 include=1 source=1
+image
+point(112.84, 300.76) # color=#2EE6D6 width=2
+line(281.35, 249.69, 148.59, 147.56) # color=#2EE6D6 width=2
+box(214.97, 198.63, 122.55, 163.40, 0) # color=#2EE6D6 width=2
+ellipse(214.97, 198.63, 51.06, 102.13, 90) # color=#2EE6D6 width=2
+polygon(291.56, 275.22, 266.03, 76.07, 214.97, 198.63) # color=#2EE6D6 width=2
+polyline(214.97, 96.50, 133.27, 116.93, 296.67, 137.35, 214.97, 198.63) # color=#2EE6D6 width=2
