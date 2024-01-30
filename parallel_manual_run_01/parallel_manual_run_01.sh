@@ -1,7 +1,7 @@
 if [[ $OSTYPE == 'darwin'* ]]; then
     rm -rf utilities 
     cp -r ../utilities .
-    robot --variable CARTA_PORT:3011 \
+    time robot --variable CARTA_PORT:3011 \
         --variable SNAPSHOT_FOLDER:../snapshot \
         --report report_parallel_manual_run_01.html \
         --log log_parallel_manual_run_01.html \
@@ -16,7 +16,7 @@ fi
 if [[ $OSTYPE == 'linux'* ]]; then
     rm -rf utilities 
     cp -r ../utilities .
-    robot --variable CARTA_PORT:3011 \
+    time robot --variable CARTA_PORT:3011 \
         --variable PYTHON3_EXECUTABLE:/home/kswang/anaconda3/bin/python \
         --variable N_OMP_THREADS:8 \
         --variable CARTA_BACKEND_EXECUTABLE:/home/kswang/carta_build/carta-backend/build/carta_backend \
