@@ -171,33 +171,34 @@ Line ID Overlay On Spectral Profiler
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}
     # capture a screenshot of the spectral profile plot
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_${key}.png
     Click Element    ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}
     # capture a screenshot of the spectral profile plot
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2_${key}.png
     Set Selenium Speed    0.02
-    PNG Images Should Be Different    check.png    check2.png
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     
     # NEED A MORE ROBUST TEST HERE
     
     # with line ID label (note the rgba inconsistency due to anti-aliasing)
     #IF    '${BROWSER}' == 'headlesschrome'
-    #PNG Pixel XY Should Match RGBA    check.png    199,15,129,188,165,255
-    #PNG Pixel XY Should Match RGBA    check.png    415,15,129,188,165,255
-    #PNG Pixel XY Should Match RGBA    check.png    544,15,129,188,165,255
-    #PNG Pixel XY Should Match RGBA    check.png    588,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    199,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    415,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    544,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    588,15,129,188,165,255
     #END
     #IF    '${BROWSER}' == 'chrome'
-    #PNG Pixel XY Should Match RGBA    check.png    199,15,13,128,80,255
-    #PNG Pixel XY Should Match RGBA    check.png    415,15,14,129,81,255
-    #PNG Pixel XY Should Match RGBA    check.png    544,15,15,129,82,255
-    #PNG Pixel XY Should Match RGBA    check.png    588,15,14,128,81,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    199,15,13,128,80,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    415,15,14,129,81,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    544,15,15,129,82,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    588,15,14,128,81,255
     #END
     # without line ID label
-    #PNG Pixel XY Should Match RGBA    check2.png    199,15,245,248,250,255
-    #PNG Pixel XY Should Match RGBA    check2.png    415,15,245,248,250,255
-    #PNG Pixel XY Should Match RGBA    check2.png    544,15,245,248,250,255
-    #PNG Pixel XY Should Match RGBA    check2.png    588,15,245,248,250,255    
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    199,15,245,248,250,255
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    415,15,245,248,250,255
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    544,15,245,248,250,255
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    588,15,245,248,250,255    
     
-    Remove Files    check.png    check2.png
+    Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

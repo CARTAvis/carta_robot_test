@@ -39,20 +39,21 @@ Narrow-field PV Image Generation
     Element Should Contain    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    [63, 251, 1]
     Click Element    ${FILE_HEADER_DIALOG_CLOSE_BUTTON}
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,71,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,155,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,180,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,248,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    573,69,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,71,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,155,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,180,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,248,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    573,69,729,25
     Set Selenium Speed    0.2
     # generate a point region
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.02785714, Image: 33 px, 6.28957e-2)
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: -288.7972, Image: 115 px, 6.28957e-2)
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -85,19 +86,20 @@ Wide-field PV Image Generation
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    475,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    546,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    617,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    687,215,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    463,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    475,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    617,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
     Set Selenium Speed    0.2
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -135,19 +137,20 @@ PV Image Generation Cancellation And Rerequest
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    475,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    546,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    617,215,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    687,215,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    463,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    475,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    617,215,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
     Set Selenium Speed    0.2
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -182,22 +185,23 @@ PV Image Generation Repeat
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,71,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,155,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,180,729,25
-    PNG Two Pixels Should Have Matched RGBA    check.png    604,248,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    573,69,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,71,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,155,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,180,729,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,248,729,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    573,69,729,25
     Set Selenium Speed    0.2
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
-    Capture Element Screenshot    ${VIEWER_DIV}    check2.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
-    Capture Element Screenshot    ${VIEWER_DIV}    check3.png
-    PNG Images Should Be Different    check.png    check2.png
-    PNG Images Should Be Identical    check.png    check3.png
-    Remove Files    check.png    check2.png    check3.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check3_${key}.png
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
+    PNG Images Should Be Identical    check_${key}.png    check3_${key}.png
+    Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -247,8 +251,9 @@ PV Image Generation With Matched Cubes
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
-    PNG Two Pixels Should Have Matched RGBA    check.png    194,335,573,335
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    194,335,573,335
     Click Element    xpath://*[contains(text(), "Animator")]
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex_pv.fits
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -259,7 +264,7 @@ PV Image Generation With Matched Cubes
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex_pv.hdf5
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex_pv.fits
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
     
 
@@ -313,15 +318,16 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    xpath://*[contains(text(), "tab10")]
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.5
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    96,400,475,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    143,400,522,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    189,400,568,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    235,400,614,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    281,400,660,400
-    PNG Two Pixels Should Have Matched RGBA    check.png    327,400,706,400
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    96,400,475,400
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    143,400,522,400
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    189,400,568,400
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    235,400,614,400
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    281,400,660,400
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    327,400,706,400
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -352,16 +358,17 @@ Interactive PV Preview
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before_${key}.png
     # moving pv cut
     Drag And Drop By Offset    ${VIEWER_DIV}    20    50
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after_${key}.png
     # checking rendered images
     Set Selenium Speed    0.02
-    PNG Images Should Be Different    before.png    after.png
-    PNG Two Pixels Should Have Matched RGBA    before.png    272,298,476,40
-    PNG Two Pixels Should Have Matched RGBA    after.png    268,486,476,40
-    Remove Files    before.png    after.png
+    PNG Images Should Be Different    before_${key}.png    after_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    before_${key}.png    272,298,476,40
+    PNG Two Pixels Should Have Matched RGBA    after_${key}.png    268,486,476,40
+    Remove Files    before_${key}.png    after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -403,10 +410,11 @@ Interactive PV Preview With Customization
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before_${key}.png
     # moving pv cut
     Drag And Drop By Offset    ${VIEWER_DIV}    -20    20
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after_${key}.png
     # generate full resolution PV
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[2]
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[12]/div[2]/span/a
@@ -416,15 +424,15 @@ Interactive PV Preview With Customization
     Click Element    xpath://*[contains(text(), "tab10")]
     # make pv preview widget active
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[3]
-    Capture Page Screenshot    final.png
+    Capture Page Screenshot    final_${key}.png
     # checking rendered images
     Set Selenium Speed    0.02
-    PNG Images Should Be Different    before.png    after.png
-    PNG Two Pixels Should Have Matched RGBA    before.png   236,353,476,40
-    PNG Two Pixels Should Have Matched RGBA    after.png    299,303,476,40
-    PNG Two Pixels Should Have Matched RGBA    final.png    634,260,1068,371
-    PNG Two Pixels Should Have Matched RGBA    final.png    500,280,960,410
-    Remove Files    before.png    after.png    final.png
+    PNG Images Should Be Different    before_${key}.png    after_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    before_${key}.png   236,353,476,40
+    PNG Two Pixels Should Have Matched RGBA    after_${key}.png    299,303,476,40
+    PNG Two Pixels Should Have Matched RGBA    final_${key}.png    634,260,1068,371
+    PNG Two Pixels Should Have Matched RGBA    final_${key}.png    500,280,960,410
+    Remove Files    before_${key}.png    after_${key}.png    final_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
