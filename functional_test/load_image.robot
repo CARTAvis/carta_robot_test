@@ -364,6 +364,7 @@ Load Images With LEL
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    380,217,274,110
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 

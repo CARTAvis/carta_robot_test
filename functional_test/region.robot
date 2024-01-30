@@ -759,7 +759,7 @@ Import Image Coordinate CASA Region Made Manually
 
     # region 10: point
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    455,92,515,343
-    #Remove Files    check_${key}.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
