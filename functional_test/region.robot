@@ -8,7 +8,8 @@ Import World Coordinate ds9 Region Made In ds9
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_ds9.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -122,61 +123,61 @@ Import World Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    0.0
 
     # region 1: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,260,88
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,280,108
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,299,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,260,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,280,108
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,299,88
 
     # region 2: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,246,165
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,264,213
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,282,165
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,246,165
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,264,213
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,282,165
 
     # region 3: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,264,318
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,318
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,266
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,264,318
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,360,318
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,360,266
 
     # region 4: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,255,371
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,281,397
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,294,372
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,294,333
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,276,362
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,255,371
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,281,397
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,294,372
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,294,333
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,276,362
     
     # region 5: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    443,73,520,156
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    443,73,520,156
 
     # annotation 6: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,383,121
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,393,120
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,379,43
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,383,121
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,393,120
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,379,43
 
     # annotation 7: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    335,149,346,204
-    PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    335,149,346,204
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    335,149,396,238
 
     # annotation 8: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,444,284
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,450,289
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,453,282
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,451,377
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,507,331
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,507,353
 
     # annotation 13: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,369,380
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,400,315
-    #PNG Two Pixels Should Have Matched RGBA    check.png    366,352,390,350
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    369,315,369,380
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    369,315,400,315
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    366,352,390,350
 
     # annotation 14: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,538,31
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,536,27
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,490,64
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,31
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,536,27
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,490,64
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -184,7 +185,8 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_ds9_no_header.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -298,61 +300,61 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    0.0
 
     # region 1: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,260,88
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,280,108
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,299,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,260,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,280,108
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,299,88
 
     # region 2: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,246,165
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,264,213
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,282,165
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,246,165
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,264,213
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,282,165
 
     # region 3: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,264,318
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,318
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,266
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,264,318
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,360,318
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,360,266
 
     # region 4: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,255,371
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,281,397
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,294,372
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,294,333
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,276,362
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,255,371
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,281,397
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,294,372
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,294,333
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,276,362
     
     # region 5: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    443,73,520,156
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    443,73,520,156
 
     # annotation 6: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,383,121
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,393,120
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,379,43
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,383,121
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,393,120
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,379,43
 
     # annotation 7: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    335,149,346,204
-    PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    335,149,346,204
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    335,149,396,238
 
     # annotation 8: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,444,284
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,450,289
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,453,282
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,451,377
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,507,331
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,507,353
 
     # annotation 13: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,369,380
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,400,315
-    #PNG Two Pixels Should Have Matched RGBA    check.png    366,352,390,350
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    369,315,369,380
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    369,315,400,315
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    366,352,390,350
 
     # annotation 14: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,538,31
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,536,27
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,490,64
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,31
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,536,27
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,490,64
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -361,7 +363,8 @@ Import Image Coordinate ds9 Region Made In ds9
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_ds9_pix.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -475,61 +478,61 @@ Import Image Coordinate ds9 Region Made In ds9
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[15]/div[8]    0.0
 
     # region 1: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,260,88
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,280,108
-    PNG Two Pixels Should Have Matched RGBA    check.png    280,69,299,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,260,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,280,108
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    280,69,299,88
 
     # region 2: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,246,165
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,264,213
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,117,282,165
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,246,165
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,264,213
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,117,282,165
 
     # region 3: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,264,318
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,318
-    PNG Two Pixels Should Have Matched RGBA    check.png    264,266,360,266
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,264,318
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,360,318
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    264,266,360,266
 
     # region 4: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,255,371
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,281,397
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,294,372
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,294,333
-    PNG Two Pixels Should Have Matched RGBA    check.png    255,334,276,362
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,255,371
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,281,397
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,294,372
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,294,333
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    255,334,276,362
     
     # region 5: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    443,73,520,156
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    443,73,520,156
 
     # annotation 6: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,383,121
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,393,120
-    PNG Two Pixels Should Have Matched RGBA    check.png    389,130,379,43
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,383,121
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,393,120
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,130,379,43
 
     # annotation 7: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    335,149,346,204
-    PNG Two Pixels Should Have Matched RGBA    check.png    335,149,396,238
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    335,149,346,204
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    335,149,396,238
 
     # annotation 8: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,444,284
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,450,289
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,453,282
-    #PNG Two Pixels Should Have Matched RGBA    check.png    439,286,460,289
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,444,284
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,450,289
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,453,282
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    439,286,460,289
 
     # region 9, 10 ,11, 12: point
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,451,377
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,331
-    PNG Two Pixels Should Have Matched RGBA    check.png    451,356,507,353
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,451,377
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,507,331
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    451,356,507,353
 
     # annotation 13: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,369,380
-    PNG Two Pixels Should Have Matched RGBA    check.png    369,315,400,315
-    #PNG Two Pixels Should Have Matched RGBA    check.png    366,352,390,350
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    369,315,369,380
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    369,315,400,315
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    366,352,390,350
 
     # annotation 14: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,538,31
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,536,27
-    PNG Two Pixels Should Have Matched RGBA    check.png    538,67,490,64
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,31
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,536,27
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,490,64
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -539,7 +542,8 @@ Import World Coordinate CASA Region Made In CASAViewer
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     # this region file has been patched to show polyline (poly->polyline) and line (box->line) properly in CARTA
     Load Region File    all_region_generated_with_casaviewer.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -593,25 +597,25 @@ Import World Coordinate CASA Region Made In CASAViewer
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    8.3041952513"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    208.4
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    230,69,228,122
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    230,69,228,122
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    228,122,228,149
-    PNG Two Pixels Should Have Matched RGBA    check.png    228,122,326,149
-    PNG Two Pixels Should Have Matched RGBA    check.png    228,122,326,122
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    228,122,228,149
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    228,122,326,149
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    228,122,326,122
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    242,212,228,250
-    PNG Two Pixels Should Have Matched RGBA    check.png    242,212,242,289
-    PNG Two Pixels Should Have Matched RGBA    check.png    242,212,254,250
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    242,212,228,250
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    242,212,242,289
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    242,212,254,250
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    269,326,265,405
-    PNG Two Pixels Should Have Matched RGBA    check.png    269,326,358,357
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    269,326,265,405
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    269,326,358,357
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    441,154,515,292
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    441,154,515,292
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,295,405,356
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,295,443,315
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,295,490,371
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,295,405,356
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,295,443,315
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,295,490,371
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -620,7 +624,8 @@ Import Image Coordinate CASA Region Made Manually
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_manually.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -706,55 +711,55 @@ Import Image Coordinate CASA Region Made Manually
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[11]/div[8]    0.0
 
     # region 1: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    212,46,212,68
-    PNG Two Pixels Should Have Matched RGBA    check.png    212,46,258,68
-    PNG Two Pixels Should Have Matched RGBA    check.png    212,46,258,46
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    212,46,212,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    212,46,258,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    212,46,258,46
     
     # region 2: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,104,210,136
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,104,286,136
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,104,286,104
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,104,210,136
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,104,286,136
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,104,286,104
     
     # region 3: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    209,184,242,266
-    PNG Two Pixels Should Have Matched RGBA    check.png    209,184,267,256
-    PNG Two Pixels Should Have Matched RGBA    check.png    209,184,234,173
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    209,184,242,266
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    209,184,267,256
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    209,184,234,173
     
     # region 4: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    240,303,208,391
-    PNG Two Pixels Should Have Matched RGBA    check.png    240,303,250,375
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    240,303,208,391
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    240,303,250,375
     
     # region 5: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    364,43,341,66
-    PNG Two Pixels Should Have Matched RGBA    check.png    364,43,364,90
-    PNG Two Pixels Should Have Matched RGBA    check.png    364,43,387,66
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    364,43,341,66
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    364,43,364,90
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    364,43,387,66
     
     # region 6: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    376,238,349,274
-    PNG Two Pixels Should Have Matched RGBA    check.png    376,238,344,323
-    PNG Two Pixels Should Have Matched RGBA    check.png    376,238,374,285
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    376,238,349,274
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    376,238,344,323
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    376,238,374,285
     
     # region 7: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    455,92,556,48
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    455,92,556,48
     
     # annotation 8: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    442,130,565,164
-    PNG Two Pixels Should Have Matched RGBA    check.png    442,130,554,154
-    PNG Two Pixels Should Have Matched RGBA    check.png    442,130,551,167
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    442,130,565,164
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    442,130,554,154
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    442,130,551,167
 
     # annotation 9: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,484,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,498,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,510,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,517,239
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,530,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,537,231
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,547,230
-    #PNG Two Pixels Should Have Matched RGBA    check.png    480,225,554,226
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,484,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,498,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,510,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,517,239
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,530,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,537,231
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,547,230
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    480,225,554,226
 
     # region 10: point
-    PNG Two Pixels Should Have Matched RGBA    check.png    455,92,515,343
-    #Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    455,92,515,343
+    #Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -763,7 +768,8 @@ Import World Coordinate CASA Region Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_carta.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -817,28 +823,28 @@ Import World Coordinate CASA Region Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    2.8484153748"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    248,82,214,129
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    248,82,214,129
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    214,129,288,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    214,129,288,169
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,225,262
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,300,226
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,285,195
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,225,262
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,300,226
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,285,195
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,245,367
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,288,386
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,273,345
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,245,367
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,288,386
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,273,345
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,360,130
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,423,144
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,476,128
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,441,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,360,130
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,423,144
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,476,128
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,441,67
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,410,169
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,464,223
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,511,180
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,410,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,464,223
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -847,7 +853,8 @@ Import Image Coordinate CASA Region Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_carta_pix.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -901,28 +908,28 @@ Import Image Coordinate CASA Region Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    2.8483543396"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    248,82,214,129
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    248,82,214,129
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    214,129,288,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    214,129,288,169
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,225,262
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,300,226
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,285,195
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,225,262
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,300,226
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,285,195
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,245,367
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,288,386
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,273,345
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,245,367
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,288,386
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,273,345
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,360,130
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,423,144
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,476,128
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,441,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,360,130
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,423,144
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,476,128
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,441,67
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,410,169
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,464,223
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,511,180
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,410,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,464,223
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -931,7 +938,8 @@ Import World Coordinate ds9 Region Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_carta.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -985,28 +993,28 @@ Import World Coordinate ds9 Region Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    2.8483497620"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    248,82,214,129
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    248,82,214,129
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    214,129,288,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    214,129,288,169
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,225,262
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,300,226
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,285,195
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,225,262
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,300,226
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,285,195
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,245,367
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,288,386
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,273,345
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,245,367
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,288,386
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,273,345
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,360,130
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,423,144
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,476,128
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,441,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,360,130
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,423,144
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,476,128
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,441,67
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,410,169
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,464,223
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,511,180
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,410,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,464,223
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1014,7 +1022,8 @@ Import Image Coordinate ds9 Region Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_carta_pix.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -1068,28 +1077,28 @@ Import Image Coordinate ds9 Region Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[7]    2.8485000610"
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    248,82,214,129
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    248,82,214,129
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    214,129,288,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    214,129,288,169
 
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,225,262
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,300,226
-    PNG Two Pixels Should Have Matched RGBA    check.png    210,231,285,195
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,225,262
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,300,226
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    210,231,285,195
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,245,367
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,288,386
-    PNG Two Pixels Should Have Matched RGBA    check.png    231,325,273,345
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,245,367
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,288,386
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    231,325,273,345
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,360,130
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,423,144
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,476,128
-    PNG Two Pixels Should Have Matched RGBA    check.png    390,68,441,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,360,130
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,423,144
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,476,128
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,68,441,67
     
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,410,169
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,464,223
-    PNG Two Pixels Should Have Matched RGBA    check.png    358,218,511,180
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,410,169
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,464,223
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
-    Remove Files    check.png
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1106,44 +1115,45 @@ Region selecting, centering, locking, and deleting
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_selected_from_viewer.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_selected_from_viewer_${key}.png
     Click Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[4]
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polyline_selected_from_list.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polyline_selected_from_list_${key}.png
     Click Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[2]
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_${key}.png
     Click Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[4]
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_${key}.png
     Click Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[1]
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_${key}.png
     Press Keys    None    DELETE
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[4]    Region 5
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[5]    Polygon
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_tried_delete.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_tried_delete_${key}.png
     Click Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[1]
-    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_center_fov_selected_locked_tried_delete_unlocked_${key}.png
     Press Keys    None    DELETE
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[4]    Region 6
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[5]    Polyline
     
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,259,130
-    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,323,144
-    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,377,129
-    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,341,67
-    PNG Two Pixels Should Not Have Matched RGBA    check_polygon_selected_from_viewer.png    290,67,316,67
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,259,130
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,323,144
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,377,129
+    PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,341,67
+    PNG Two Pixels Should Not Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,316,67
 
-    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list.png    256,220,310,168
-    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list.png    256,220,364,224
-    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list.png    256,220,413,179
-    PNG Two Pixels Should Not Have Matched RGBA    check_polyline_selected_from_list.png    256,220,283,195
+    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list_${key}.png    256,220,310,168
+    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list_${key}.png    256,220,364,224
+    PNG Two Pixels Should Have Matched RGBA    check_polyline_selected_from_list_${key}.png    256,220,413,179
+    PNG Two Pixels Should Not Have Matched RGBA    check_polyline_selected_from_list_${key}.png    256,220,283,195
 
-    PNG Images Should Be Different    check_polyline_selected_from_list.png    check_polygon_center_fov.png    
-    PNG Images Should Be Identical    check_polygon_center_fov_selected_locked.png    check_polygon_center_fov_selected_locked_tried_delete.png
-    PNG Images Should Be Identical    check_polygon_center_fov_selected.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
+    PNG Images Should Be Different    check_polyline_selected_from_list_${key}.png    check_polygon_center_fov_${key}.png    
+    PNG Images Should Be Identical    check_polygon_center_fov_selected_locked_${key}.png    check_polygon_center_fov_selected_locked_tried_delete_${key}.png
+    PNG Images Should Be Identical    check_polygon_center_fov_selected_${key}.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked_${key}.png
 
-    Remove Files    check_polygon_selected_from_viewer.png    check_polyline_selected_from_list.png    check_polygon_center_fov.png
-    Remove Files    check_polygon_center_fov_selected.png    check_polygon_center_fov_selected_locked.png
-    Remove Files    check_polygon_center_fov_selected_locked_tried_delete.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked.png
+    Remove Files    check_polygon_selected_from_viewer_${key}.png    check_polyline_selected_from_list_${key}.png    check_polygon_center_fov_${key}.png
+    Remove Files    check_polygon_center_fov_selected_${key}.png    check_polygon_center_fov_selected_locked_${key}.png
+    Remove Files    check_polygon_center_fov_selected_locked_tried_delete_${key}.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1384,13 +1394,14 @@ Loading Regions on Active Matched Image
     # match m51_151_MHz.fits to m51cm3i_8_small.fits by clicking the XY button in the image list
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
     Load Region File    region_004.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    118,72,497,72
-    PNG Two Pixels Should Have Matched RGBA    check.png    139,149,518,149
-    PNG Two Pixels Should Have Matched RGBA    check.png    163,120,542,120
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    118,72,497,72
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    139,149,518,149
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    163,120,542,120
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1403,13 +1414,14 @@ Loading Regions on Active Reference Image
     # set m51cm3i_8_small.fits as active by clicking it in the image list
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
     Load Region File    region_004.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
     Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    118,72,497,72
-    PNG Two Pixels Should Have Matched RGBA    check.png    139,149,518,149
-    PNG Two Pixels Should Have Matched RGBA    check.png    163,120,542,120
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    118,72,497,72
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    139,149,518,149
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    163,120,542,120
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1417,7 +1429,8 @@ Import World Coordinate CASA Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_annotation_generated_with_carta.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -1551,68 +1564,68 @@ Import World Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
 
     # annotation 1, 2: filled square point and open square point
-    PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    222,63,221,94
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    218,66,218,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    222,63,221,94
 
     # annotation 3, 4: filled circle point and open circle point
-    PNG Two Pixels Should Have Matched RGBA    check.png    221,120,220,150
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    221,123,220,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    221,120,220,150
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    221,123,220,152
 
     # annotation 5, 6: filled diamond point and open diamond point
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,180,219,209
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    220,182,219,212   
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,180,219,209
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    220,182,219,212   
 
     # annotation 7, 8: plus point and cross point 
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,244,219,275
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,244,219,275
 
     # annotation 9: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    196,378,263,316
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    196,378,263,316
 
     # annotation 10: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,272,61
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,332,93
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,345,69
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,272,61
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,332,93
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,345,69
 
     # annotation 11: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,296,143
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,287,175
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,319,160
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,296,143
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,287,175
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,319,160
 
     # annotation 12: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,286,326
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,332,313
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,286,326
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,332,313
 
     # annotation 13: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,394,105
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,438,60
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,470,103
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,394,105
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,438,60
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,470,103
 
     # annotation 14: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,397,182
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,403,174
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,397,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,403,174
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,407,182
 
     # annotation 15: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,436,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,473,224
 
     # annotation 16: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,388,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,442,257
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,380,335
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,438,280
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,388,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,442,257
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,380,335
 
     # annotation 17: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    558,250,507,298
-    #PNG Two Pixels Should Have Matched RGBA    check.png    558,250,555,298
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,505,330
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,507,298
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,555,298
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1620,7 +1633,8 @@ Import Image Coordinate CASA Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_annotation_generated_with_carta_pix.crtf
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -1754,68 +1768,68 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
 
     # annotation 1, 2: filled square point and open square point
-    PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    222,63,221,94
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    218,66,218,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    222,63,221,94
 
     # annotation 3, 4: filled circle point and open circle point
-    PNG Two Pixels Should Have Matched RGBA    check.png    221,120,220,150
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    221,123,220,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    221,120,220,150
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    221,123,220,152
 
     # annotation 5, 6: filled diamond point and open diamond point
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,180,219,209
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    220,182,219,212   
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,180,219,209
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    220,182,219,212   
 
     # annotation 7, 8: plus point and cross point 
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,244,219,275
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,244,219,275
 
     # annotation 9: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    196,378,263,316
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    196,378,263,316
 
     # annotation 10: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,272,61
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,332,93
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,345,69
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,272,61
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,332,93
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,345,69
 
     # annotation 11: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,296,143
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,287,175
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,319,160
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,296,143
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,287,175
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,319,160
 
     # annotation 12: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,286,326
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,332,313
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,286,326
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,332,313
 
     # annotation 13: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,394,105
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,438,60
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,470,103
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,394,105
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,438,60
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,470,103
 
     # annotation 14: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,397,182
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,403,174
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,397,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,403,174
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,407,182
 
     # annotation 15: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,436,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,473,224
 
     # annotation 16: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,388,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,442,257
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,380,335
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,438,280
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,388,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,442,257
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,380,335
 
     # annotation 17: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    558,250,507,298
-    #PNG Two Pixels Should Have Matched RGBA    check.png    558,250,555,299
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,505,330
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,507,298
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,555,299
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -1824,7 +1838,8 @@ Import World Coordinate ds9 Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_annotation_generated_with_carta.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -1958,67 +1973,67 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
 
     # annotation 1, 2: filled square point and open square point
-    PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    222,63,221,94
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    218,66,218,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    222,63,221,94
 
     # annotation 3, 4: filled circle point and open circle point
-    PNG Two Pixels Should Have Matched RGBA    check.png    221,120,220,150
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    221,123,220,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    221,120,220,150
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    221,123,220,152
 
     # annotation 5, 6: filled diamond point and open diamond point
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,180,219,209
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    220,182,219,212   
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,180,219,209
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    220,182,219,212   
 
     # annotation 7, 8: plus point and cross point 
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,244,219,275
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,244,219,275
 
     # annotation 9: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    196,378,263,316
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    196,378,263,316
 
     # annotation 10: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,272,61
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,332,93
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,345,69
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,272,61
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,332,93
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,345,69
 
     # annotation 11: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,296,143
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,287,175
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,319,160
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,296,143
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,287,175
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,319,160
 
     # annotation 12: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,286,326
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,332,313
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,286,326
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,332,313
 
     # annotation 13: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,394,105
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,438,60
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,470,103
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,394,105
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,438,60
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,470,103
 
     # annotation 14: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,397,182
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,403,174
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,397,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,403,174
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,407,182
 
     # annotation 15: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,436,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,473,224
 
     # annotation 16: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,388,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,442,257
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,380,335
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,438,280
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,388,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,442,257
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,380,335
 
     # annotation 17: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    558,250,513,296
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,505,330
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,513,296
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -2027,7 +2042,8 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_annotation_generated_with_carta_pix.reg
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
     Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -2161,67 +2177,67 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[18]/div[8]    146.6
 
     # annotation 1, 2: filled square point and open square point
-    PNG Two Pixels Should Have Matched RGBA    check.png    218,66,218,97
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    222,63,221,94
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    218,66,218,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    222,63,221,94
 
     # annotation 3, 4: filled circle point and open circle point
-    PNG Two Pixels Should Have Matched RGBA    check.png    221,120,220,150
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    221,123,220,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    221,120,220,150
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    221,123,220,152
 
     # annotation 5, 6: filled diamond point and open diamond point
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,180,219,209
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    220,182,219,212   
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,180,219,209
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    220,182,219,212   
 
     # annotation 7, 8: plus point and cross point 
-    PNG Two Pixels Should Have Matched RGBA    check.png    220,244,219,275
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    220,244,219,275
 
     # annotation 9: line
-    PNG Two Pixels Should Have Matched RGBA    check.png    196,378,263,316
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    196,378,263,316
 
     # annotation 10: rectangle
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,272,61
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,332,93
-    PNG Two Pixels Should Have Matched RGBA    check.png    285,37,345,69
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,272,61
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,332,93
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    285,37,345,69
 
     # annotation 11: ellipse
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,296,143
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,287,175
-    PNG Two Pixels Should Have Matched RGBA    check.png    329,125,319,160
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,296,143
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,287,175
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    329,125,319,160
 
     # annotation 12: polygon
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,286,326
-    PNG Two Pixels Should Have Matched RGBA    check.png    304,211,332,313
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,286,326
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    304,211,332,313
 
     # annotation 13: polyline
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,394,105
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,438,60
-    PNG Two Pixels Should Have Matched RGBA    check.png    385,54,470,103
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,394,105
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,438,60
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,54,470,103
 
     # annotation 14: vector
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,397,182
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,403,174
-    PNG Two Pixels Should Have Matched RGBA    check.png    498,132,407,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,397,182
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,403,174
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    498,132,407,182
 
     # annotation 15: text
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,400,228
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,411,225
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,429,231
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,436,229
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,451,235
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,454,233
-    #PNG Two Pixels Should Have Matched RGBA    check.png    385,233,473,224
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,400,228
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,411,225
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,429,231
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,436,229
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,451,235
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,454,233
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,233,473,224
 
     # annotation 16: compass
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,438,280
-    PNG Two Pixels Should Have Matched RGBA    check.png    438,329,388,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,442,257
-    #PNG Two Pixels Should Have Matched RGBA    check.png    438,329,380,335
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,438,280
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,388,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,442,257
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    438,329,380,335
 
     # annotation 17: ruler
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,505,330
-    PNG Two Pixels Should Have Matched RGBA    check.png    558,250,558,330
-    #PNG Two Pixels Should Have Matched RGBA    check.png    558,250,513,296
-    Remove Files    check.png
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,505,330
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
+    #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,513,296
+    Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
