@@ -6,10 +6,9 @@ if [[ $OSTYPE == 'darwin'* ]]; then
         --report report_parallel_manual_run_01.html \
         --log log_parallel_manual_run_01.html \
         --output output_parallel_manual_run_01.xml \
+        ../functional_test/spectral_profiler.robot \
         ../functional_test/region.robot \
-        ../functional_test/pv_generator.robot \
-        ../functional_test/cube_histogram.robot \
-        ../functional_test/WebGL_test.robot
+        ../functional_test/cube_histogram.robot
     rm -rf utilities
 fi
 
@@ -26,9 +25,8 @@ if [[ $OSTYPE == 'linux'* ]]; then
         --report report_parallel_manual_run_01.html \
         --log log_parallel_manual_run_01.html \
         --output output_parallel_manual_run_01.xml \
+        ../functional_test/spectral_profiler.robot \
         ../functional_test/region.robot \
-        ../functional_test/pv_generator.robot \
-        ../functional_test/cube_histogram.robot \
-        ../functional_test/WebGL_test.robot
+        ../functional_test/cube_histogram.robot
     rm -rf utilities
 fi

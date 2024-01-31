@@ -6,11 +6,11 @@ if [[ $OSTYPE == 'darwin'* ]]; then
         --report report_parallel_manual_run_03.html \
         --log log_parallel_manual_run_03.html \
         --output output_parallel_manual_run_03.xml \
-        ../functional_test/moment_generator.robot \
-        ../functional_test/image_fitting.robot \
-        ../functional_test/spatial_profiler.robot \
-        ../functional_test/cursor_info.robot \
-        ../functional_test/animator.robot
+        ../functional_test/pv_generator.robot \
+        ../functional_test/load_image.robot \
+        ../functional_test/animator.robot \
+        ../functional_test/spectral_line_query.robot \
+        ../functional_test/WebGL_test.robot
     rm -rf utilities 
 fi
 
@@ -27,10 +27,10 @@ if [[ $OSTYPE == 'linux'* ]]; then
         --report report_parallel_manual_run_03.html \
         --log log_parallel_manual_run_03.html \
         --output output_parallel_manual_run_03.xml \
-        ../functional_test/moment_generator.robot \
-        ../functional_test/image_fitting.robot \
-        ../functional_test/spatial_profiler.robot \
-        ../functional_test/cursor_info.robot \
-        ../functional_test/animator.robot
+        ../functional_test/pv_generator.robot \
+        ../functional_test/load_image.robot \
+        ../functional_test/animator.robot \
+        ../functional_test/spectral_line_query.robot \
+        ../functional_test/WebGL_test.robot
     rm -rf utilities 
 fi
