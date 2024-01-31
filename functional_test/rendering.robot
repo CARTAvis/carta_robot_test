@@ -334,6 +334,14 @@ GUI Initialization
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # close file browser dialog
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[1]/button
+    # region / annotation shortcut buttons
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[1]/a    disabled    true
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[2]/a    disabled    true
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[3]/a    disabled    true
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[4]/a    disabled    true
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[5]/a    disabled    true
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[6]/a    disabled    true
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a    disabled    true
     # region list widget
     Click Element    //*[@id="RegionListWidgetButton"]
     Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Region List
@@ -433,40 +441,22 @@ GUI Initialization
     Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    PV cut
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
     # file header dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
-    Element Should Contain    //*[@id="root"]/div/div[6]/div/div[1]/div[2]/div/div[1]/h4    File Header
-    Element Should Contain    //*[@id="root"]/div/div[6]/div/div[1]/div[2]/div/div[2]/div    No file selected
-    Click Element    //*[@id="root"]/div/div[6]/div/div[1]/div[2]/div/div[1]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[1]/a    disabled    true
     # preferences dialog
     Click Element    //*[@id="root"]/div/div[1]/div[3]/span[2]/a
     Element Should Contain    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[1]/h4    Preferences
     Element Should Contain    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[2]    Global
     Click Element    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[1]/button
     # contour config dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]/a
-    Element Should Contain    //*[@id="root"]/div/div[4]/div/div[1]/div[2]/div/div[1]/h4    Contour Configuration
-    Element Should Contain    //*[@id="root"]/div/div[4]/div/div[1]/div[2]/div/div[2]    No file loaded
-    Click Element    //*[@id="root"]/div/div[4]/div/div[1]/div[2]/div/div[1]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[3]/a    disabled    true
     # vector overlay dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[4]/a
-    Element Should Contain    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[1]/h4    Vector Overlay Configuration
-    Element Should Contain    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[2]    No file loaded
-    Click Element    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[1]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[4]/a    disabled    true
     # image fitting dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-    Element Should Contain    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/h4    Image Fitting
-    Element Should Contain    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[2]    No file loaded
-    Click Element    //*[@id="root"]/div/div[15]/div/div[1]/div[2]/div/div[1]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[5]/a    disabled    true
     # online catalog query dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[6]/a
-    Element Should Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[1]/h4    Online Catalog Query
-    Element Should Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]    No file loaded
-    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[1]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[6]/a    disabled    true
     # distance measurement dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[7]/a
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/h4    Distance Measurement (undefined)
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[2]    Configuration
-    Click Element    //*[@id="root"]/div/div[16]/div/div[1]/div[2]/div/div[1]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[7]/a    disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region
