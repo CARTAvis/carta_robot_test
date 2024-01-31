@@ -160,7 +160,7 @@ ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[18]/div/
 ${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[2]
 ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/span/a
 ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[3]
-
+${SPECTRAL_LINE_QUERY_LOADING_ICON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
 ${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
