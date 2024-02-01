@@ -290,7 +290,7 @@ Load Images As A Stokes Hypercube
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[8]/div/span/span/div/button/span[1]    Stokes V
     Set Selenium Speed    0.2
     # click the load button
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[3]/div/a[2]
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div/div[1]/div[2]/div/div[3]/div/a
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    IRCp10216_sci.spw0.cube.hypercube_IQUV.manual.pbcor.fits

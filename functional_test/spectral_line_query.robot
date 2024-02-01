@@ -174,6 +174,8 @@ Line ID Overlay On Spectral Profiler
     ${key}=    Generate Random String    8
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_${key}.png
     Click Element    ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}
+    # bring spectral profile plot to frontend
+    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]    350    0
     # capture a screenshot of the spectral profile plot
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2_${key}.png
     Set Selenium Speed    0.02
