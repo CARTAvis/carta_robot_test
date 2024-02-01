@@ -15,7 +15,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to GHz
@@ -23,7 +23,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349.500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to cm
@@ -31,7 +31,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08580944500100181    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.08577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to mm
@@ -39,7 +39,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.8580944500100181    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.8577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}
     # set query mode from FROM-TO to CENTER-WIDTH
@@ -47,28 +47,28 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.8579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.00015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[3]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.000015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[2]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    65    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).        
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[1]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.065    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).       
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -81,7 +81,7 @@ Line Table Filtering And Shifting
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
@@ -121,7 +121,7 @@ Line Table Column Configuration
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # hide Chemical Name column
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[9]/div/label
@@ -157,7 +157,7 @@ Line ID Overlay On Spectral Profiler
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
