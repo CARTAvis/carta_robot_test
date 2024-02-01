@@ -76,6 +76,25 @@ Generate A Moment Image From HDF5 Cube
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Generate A Moment Image From Cube With PerPlaneBeam
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.subimage.fits
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    ${MOMENT_GENERATOR_BUTTON}
+    Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
+    Wait Until Page Does Not Contain    Generating Moments    timeout=5
+    Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
+    Sleep    2
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    test_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    test_${key}.png    198,208,577,208
+    PNG Two Pixels Should Not Have Matched RGBA    test_${key}.png    180,263,595,208
+    Remove Files    test_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
 Generate All Moment Images
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
