@@ -29,12 +29,11 @@ Webglreport Test
     Go To    https://webglreport.com/?v\=1
     Wait Until Page Contains    WebGL
     Page Should Contain    This browser supports WebGL 1
-    ${key}=    Generate Random String    8
-    Capture Page Screenshot    WebGL1_${key}.png
+    Capture Page Screenshot    WebGL1.png
     Go To    https://webglreport.com/?v\=2
     Wait Until Page Contains    WebGL
     Page Should Contain    This browser supports WebGL 2
-    Capture Page Screenshot    WebGL2_${key}.png
+    Capture Page Screenshot    WebGL2.png
     Close Browser
 
 
