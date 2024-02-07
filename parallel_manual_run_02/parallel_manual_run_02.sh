@@ -23,6 +23,7 @@ if [[ $USERNAME == 'acdc1301' ]]; then
         --variable CARTA_FRONTEND_FOLDER:/home/acdc1301/carta_build/carta-frontend/build \
         --variable INITIAL_IMAGE_FOLDER:/home/acdc1301/set_QA_e2e_v2 \
         --variable SNAPSHOT_FOLDER:../snapshot \
+        --variable WINDOW_SIZE_Y:874 \
         --report report_parallel_manual_run_02.html \
         --log log_parallel_manual_run_02.html \
         --output output_parallel_manual_run_02.xml \
