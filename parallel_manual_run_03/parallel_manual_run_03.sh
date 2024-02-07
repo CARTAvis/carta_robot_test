@@ -14,15 +14,15 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     rm -rf utilities 
 fi
 
-if [[ $OSTYPE == 'linux'* ]]; then
+if [[ $USERNAME == 'acdc1301' ]]; then
     rm -rf utilities 
     cp -r ../utilities .
     time robot --variable CARTA_PORT:3013 \
-        --variable PYTHON3_EXECUTABLE:/home/kswang/anaconda3/bin/python \
+        --variable PYTHON3_EXECUTABLE:/usr/bin/python3 \
         --variable N_OMP_THREADS:8 \
-        --variable CARTA_BACKEND_EXECUTABLE:/home/kswang/carta_build/carta-backend/build/carta_backend \
-        --variable CARTA_FRONTEND_FOLDER:/home/kswang/carta_build/carta-frontend/build \
-        --variable INITIAL_IMAGE_FOLDER:/home/kswang/set_QA_e2e_v2 \
+        --variable CARTA_BACKEND_EXECUTABLE:/home/acdc1301/carta_build/carta-backend/build/carta_backend \
+        --variable CARTA_FRONTEND_FOLDER:/home/acdc1301/carta_build/carta-frontend/build \
+        --variable INITIAL_IMAGE_FOLDER:/home/acdc1301/set_QA_e2e_v2 \
         --variable SNAPSHOT_FOLDER:../snapshot \
         --report report_parallel_manual_run_03.html \
         --log log_parallel_manual_run_03.html \
