@@ -16,7 +16,7 @@ if [[ $USERNAME == 'acdc1301' ]]; then
     rm -rf utilities 
     cp -r ../utilities .
     time robot --variable CARTA_PORT:3011 \
-        --variable PYTHON3_EXECUTABLE:/usr/bin/python3 \
+        --variable PYTHON3_EXECUTABLE:/home/acdc1301/anaconda3/bin/python \
         --variable N_OMP_THREADS:8 \
         --variable CARTA_BACKEND_EXECUTABLE:/home/acdc1301/carta_build/carta-backend/build/carta_backend \
         --variable CARTA_FRONTEND_FOLDER:/home/acdc1301/carta_build/carta-frontend/build \
