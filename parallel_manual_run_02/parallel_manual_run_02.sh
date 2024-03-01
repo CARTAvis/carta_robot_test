@@ -3,13 +3,15 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     cp -r ../utilities .
     time robot --variable CARTA_PORT:3012 \
         --variable SNAPSHOT_FOLDER:../snapshot \
+        --variable DELAY:0.15 \
         --report report_parallel_manual_run_02.html \
         --log log_parallel_manual_run_02.html \
         --output output_parallel_manual_run_02.xml \
-        ../functional_test/catalog_widget.robot \
-        ../functional_test/image_fitting.robot \
+        ../functional_test/load_image.robot \
+        ../functional_test/spectral_profiler.robot \
         ../functional_test/rendering.robot \
-        ../functional_test/spatial_profiler.robot
+        ../functional_test/cube_histogram.robot \
+        ../functional_test/WebGL_test.robot
     rm -rf utilities
 fi 
 
@@ -18,6 +20,7 @@ if [[ $USERNAME == 'acdc1301' ]]; then
     cp -r ../utilities .
     time robot --variable CARTA_PORT:3012 \
         --variable PYTHON3_EXECUTABLE:/home/acdc1301/anaconda3/bin/python \
+        --variable DELAY:0.15 \
         --variable N_OMP_THREADS:8 \
         --variable CARTA_BACKEND_EXECUTABLE:/home/acdc1301/carta_build/carta-backend/build/carta_backend \
         --variable CARTA_FRONTEND_FOLDER:/home/acdc1301/carta_build/carta-frontend/build \
@@ -27,9 +30,10 @@ if [[ $USERNAME == 'acdc1301' ]]; then
         --report report_parallel_manual_run_02.html \
         --log log_parallel_manual_run_02.html \
         --output output_parallel_manual_run_02.xml \
-        ../functional_test/catalog_widget.robot \
-        ../functional_test/image_fitting.robot \
+        ../functional_test/load_image.robot \
+        ../functional_test/spectral_profiler.robot \
         ../functional_test/rendering.robot \
-        ../functional_test/spatial_profiler.robot
+        ../functional_test/cube_histogram.robot \
+        ../functional_test/WebGL_test.robot
     rm -rf utilities
 fi 
