@@ -8,11 +8,11 @@ Raster Image Rendering
     Load Initial Image    pixel_shader_test.fits
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     # test pixel shader
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    check_${key}.png    76,212,31,119,180,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    136,212,255,127,14,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    196,212,44,160,44,255
@@ -38,11 +38,11 @@ Contour Image Rendering
     Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
     Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
     Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     # test contour shader
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    check_${key}.png    379,196,15,153,96,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    367,200,15,153,96,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    362,205,15,153,96,255
@@ -79,11 +79,11 @@ Region Canvas Rendering
     Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    3
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/label
     Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     # test region canvas rendering
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points
     PNG Pixel XY Should Match RGBA    check_${key}.png    348,248,255,255,255,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    348,217,255,255,255,255
@@ -104,12 +104,12 @@ Region Canvas Rendering
     PNG Pixel XY Should Match RGBA    check_${key}.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    364,248,46,230,214,255
     # set region inactive
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Press Keys    ${VIEWER_DIV}    ESCAPE
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points
     PNG Pixel XY Should Match RGBA    check2_${key}.png    348,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    348,217,46,230,214,255
@@ -149,7 +149,7 @@ Catalog Image Overlay Rendering
     Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[5]
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # catalog points
     PNG Pixel XY Should Match RGBA    check_${key}.png    122,167,0,179,164,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    99,213,0,179,164,255
@@ -216,7 +216,7 @@ Vector Field Rendering With A Stokes Continuum Cube
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    check_cleared_${key}.png
     # verify screenshots
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    check_cleared_${key}.png    check_computed_PI_PA_${key}.png
     PNG Images Should Be Different    check_computed_PI_PA_${key}.png    check_computed_PI_PA_with_threshold_${key}.png
     #PNG Images Should Be Different    check_computed_PI_PA_with_threshold_${key}.png    check_computed_PI_PA_with_threshold_with_debiasing_${key}.png
@@ -276,7 +276,7 @@ Vector Field Rendering With A POLI Image
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_pixel_as_PI_with_threshold_${key}.png
     # verify screenshots
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PI_with_threshold_${key}.png    383,221,388,226
     PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PI_with_threshold_${key}.png    383,221,398,198
     PNG Two Pixels Should Not Have Matched RGBA    check_pixel_as_PI_with_threshold_${key}.png    383,221,383,198
@@ -300,7 +300,7 @@ Vector Field Rendering With A POLA Image
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_pixel_as_PA_with_threshold_${key}.png
     # verify screenshots
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PA_with_threshold_${key}.png    417,232,433,242
     PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PA_with_threshold_${key}.png    417,232,341,229
     PNG Two Pixels Should Have Matched RGBA    check_pixel_as_PA_with_threshold_${key}.png    417,232,350,245
