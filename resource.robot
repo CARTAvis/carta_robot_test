@@ -82,24 +82,25 @@ ${ANIMATOR_IMAGE_RADIO_BUTTON}           css:[data-testid="animator-image-slider
 ${ANIMATOR_POLARIZATION_RADIO_BUTTON}    css:[data-testid="animator-polarization-slider"] label
 
 
-${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
-${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
-${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
-${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
+${SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-tab
+${SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-tab-close-button
+${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-tab-close-button
+${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-tab-close-button
+${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-tab-close-button
 ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[17]/div[2]/div/div[2]
 
-${CATALOG_WIDGET_DOCK_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
-${CATALOG_WIDGET_TITLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span
-${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button/span[1]
-${CATALOG_WIDGET_FILTER_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[1]
-${CATALOG_WIDGET_RESET_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
-${CATALOG_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
-${CATALOG_WIDGET_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
-${CATALOG_WIDGET_TABLE_FILTERING_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody
-${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
-${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
-${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+${CATALOG_WIDGET_DOCK_BUTTON}    data:testid:catalog-overlay-component-0-header-dock-button
+${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-tab"] span
+${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    data:testid:catalog-system-dropdown
+${CATALOG_WIDGET_FILTER_BUTTON}    data:testid:catalog-filter-button
+${CATALOG_WIDGET_RESET_BUTTON}    data:testid:catalog-reset-button
+${CATALOG_WIDGET_CLOSE_BUTTON}    data:testid:catalog-close-button
+${CATALOG_WIDGET_PLOT_BUTTON}    data:testid:catalog-plot-button
+${CATALOG_WIDGET_TABLE_FILTERING_INFO}    data:testid:catalog-table-filtering-info
+${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    data:testid:catalog-rendering-type-dropdown
+${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    data:testid:catalog-rendering-column-x-dropdown
+${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    data:testid:catalog-rendering-column-y-dropdown
+${CATALOG_WIDGET_FILE_DROPDOWN}    data:testid:catalog-file-dropdown
 
 
 ${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input

@@ -13,11 +13,11 @@ Load Catalog File In VOTable Format
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Set Selenium Speed    0.02
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.xml
@@ -63,11 +63,11 @@ Load Catalog File In FITS Format
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.fits
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Set Selenium Speed    0.02
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.fits
@@ -112,11 +112,11 @@ Catalog Filtering And Sorting
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     # apply a filter to the ANG_DIST column
@@ -175,11 +175,11 @@ Catalog Column Show And Hide
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     # hide TYPED_ID column by setting the toggle to OFF
@@ -225,11 +225,11 @@ Catalog Rendering As Image Overlay With Column Mapping
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     # set up ra and dec column for rendering image overlay
@@ -313,11 +313,11 @@ Catalog Rendering As Scatter Plot
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     # enable scatter plot with x=ANG_DIST y=RA_d
@@ -377,11 +377,11 @@ Catalog Rendering As Histogram Plot
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     # enable histogram plot
@@ -438,11 +438,11 @@ Linked Catalog Visualization
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     # set up image overlay, scatter plot and histogram plot
@@ -509,11 +509,11 @@ Load And Manage Two Catalog Files
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
-    Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.xml 

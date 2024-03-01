@@ -12,8 +12,8 @@ Import World Coordinate ds9 Region Made In ds9
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -189,8 +189,8 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -367,8 +367,8 @@ Import Image Coordinate ds9 Region Made In ds9
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -546,8 +546,8 @@ Import World Coordinate CASA Region Made In CASAViewer
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -628,8 +628,8 @@ Import Image Coordinate CASA Region Made Manually
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -772,8 +772,8 @@ Import World Coordinate CASA Region Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -857,8 +857,8 @@ Import Image Coordinate CASA Region Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -942,8 +942,8 @@ Import World Coordinate ds9 Region Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -1026,8 +1026,8 @@ Import Image Coordinate ds9 Region Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -1109,8 +1109,8 @@ Region selecting, centering, locking, and deleting
     Load Region File    all_region_generated_with_carta.crtf
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
     Mouse Out    ${VIEWER_DIV}
@@ -1185,8 +1185,8 @@ Creating Regions And Export As Region Files
     Double Click Element    ${VIEWER_DIV} 
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
 
@@ -1299,8 +1299,8 @@ Shared Region And Region Inheritance
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
 
@@ -1370,8 +1370,8 @@ Loading 4000 Regions From A File
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
 
@@ -1433,8 +1433,8 @@ Import World Coordinate CASA Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -1637,8 +1637,8 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -1842,8 +1842,8 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
@@ -2046,8 +2046,8 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    xpath://*[contains(text(), "Region List")]
-    Click Element    ${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0.02
