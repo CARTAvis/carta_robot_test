@@ -189,21 +189,29 @@ Polarization Slider And Computed Components
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_I_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_Q_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes U 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_U_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes V 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_V_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Ptotal 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Ptotal_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Plinear
     Capture Element Screenshot    ${VIEWER_DIV}    check_Plinear_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    PFtotal 
     Capture Element Screenshot    ${VIEWER_DIV}    check_PFtotal_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    PFlinear 
     Capture Element Screenshot    ${VIEWER_DIV}    check_PFlinear_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Pangle 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Pangle_${key}.png
 
     Set Selenium Speed    0

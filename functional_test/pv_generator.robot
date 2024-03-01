@@ -183,6 +183,7 @@ PV Image Generation Repeat
     #Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     #Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
+    Wait Until Page Contains Element    xpath://*[contains(text(), "tab10")]
     Click Element    xpath://*[contains(text(), "tab10")]
     ${key}=    Generate Random String    8
     # this sleep is required to let the viewer size popup in the viewer go away
