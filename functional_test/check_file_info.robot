@@ -6,11 +6,10 @@ Resource          ../resource.robot
 File Info Of A Regular FITS Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    M17_SWex.fits
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.fits")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   M17_SWex.fits
     Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
@@ -38,11 +37,10 @@ File Info Of A Regular FITS Image
 File Info Of A Regular CASA Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    M17_SWex.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.image")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   M17_SWex.image
     Click Element    xpath://*[contains(text(), "M17_SWex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1] (RA, DEC, FREQ, STOKES)
@@ -69,11 +67,10 @@ File Info Of A Regular CASA Image
 File Info Of A Regular HDF5 Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    M17_SWex.hdf5
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.hdf5")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   M17_SWex.hdf5
     Click Element    xpath://*[contains(text(), "M17_SWex.hdf5")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.hdf5
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
@@ -103,11 +100,10 @@ File Info Of A Regular HDF5 Image
 File Info Of A Regular MIRIAD Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    M17_SWex.miriad
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "M17_SWex.miriad")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   M17_SWex.miriad
     Click Element    xpath://*[contains(text(), "M17_SWex.miriad")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.miriad
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [640, 800, 25, 1] (RA, DEC, FREQ, STOKES)
@@ -135,11 +131,10 @@ File Info Of A Regular MIRIAD Image
 File Info Of A CASA Complex Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= complex.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= Complex
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [100, 100, 1, 10] (RA, DEC, STOKES, FREQ)
@@ -165,11 +160,10 @@ File Info Of A CASA Complex Image
 File Info Of A CASA PV Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    casa_pv.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "casa_pv.image")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   casa_pv.image
     Click Element    xpath://*[contains(text(), "casa_pv.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= casa_pv.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [201, 250, 1] (OFFSET, FREQ, STOKES)
@@ -193,11 +187,10 @@ File Info Of A CASA PV Image
 File Info Of A FITS PV Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    carta_pv.fits
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "carta_pv.fits")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   carta_pv.fits
     Click Element    xpath://*[contains(text(), "carta_pv.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= carta_pv.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
@@ -222,11 +215,10 @@ File Info Of A FITS PV Image
 File Info Of A fz FITS Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    tu2310418.fits.fz
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "tu2310418.fits.fz")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   tu2310418.fits.fz
     Click Element    xpath://*[contains(text(), "tu2310418.fits.fz")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= tu2310418.fits.fz
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
@@ -247,11 +239,10 @@ File Info Of A fz FITS Image
 File Info Of A gz FITS Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    tu2310418.fits.gz
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "tu2310418.fits.gz")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   tu2310418.fits.gz
     Click Element    xpath://*[contains(text(), "tu2310418.fits.gz")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= tu2310418.fits.gz
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
@@ -272,11 +263,10 @@ File Info Of A gz FITS Image
 File Info Of A CASA UV Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    UVamp.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "UVamp.image")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   UVamp.image
     Click Element    xpath://*[contains(text(), "UVamp.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= UVamp.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [300, 300, 5] (UU, VV, FREQ)
@@ -297,11 +287,10 @@ File Info Of A CASA UV Image
 File Info Of A Stokes Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits")]    timeout=2
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Element Should Contain    ${FILE_INFO_TEXT}    HDU \= 0
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
@@ -331,11 +320,10 @@ File Info Of Swapped-Axes Cubes
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # case 1: STOKES-GLON-FREQ-GLAT
     Input Text    ${FILE_FILTER}    gaussian_array_large_GALACTIC_2031.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_2031.image")]    timeout=2    
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   gaussian_array_large_GALACTIC_2031.image
     Click Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_2031.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_GALACTIC_2031.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4, 746, 10, 746] (STOKES, GLON, FREQ, GLAT)
@@ -356,14 +344,13 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # case 2: DEC-STOKES-FREQ-RA
     Input Text    ${FILE_FILTER}    gaussian_array_large_1230.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_1230.image")]    timeout=2    
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   gaussian_array_large_1230.image
     Click Element    xpath://*[contains(text(), "gaussian_array_large_1230.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_1230.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [550, 4, 10, 550] (DEC, STOKES, FREQ, RA)
@@ -384,14 +371,13 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
-    Set Selenium Speed    0.2    
+    Set Selenium Speed    ${DELAY}    
     # case 3: FREQ-RA-STOKES-DEC
     Input Text    ${FILE_FILTER}    gaussian_array_large_3021.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_3021.image")]    timeout=2    
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   gaussian_array_large_3021.image
     Click Element    xpath://*[contains(text(), "gaussian_array_large_3021.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_3021.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [10, 550, 4, 550] (FREQ, RA, STOKES, DEC)
@@ -412,14 +398,13 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
-    Set Selenium Speed    0.2        
+    Set Selenium Speed    ${DELAY}        
     # case 4: FREQ-GLAT-GLON-STOKES
     Input Text    ${FILE_FILTER}    gaussian_array_large_GALACTIC_3102.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_3102.image")]    timeout=2    
+    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   gaussian_array_large_GALACTIC_3102.image
     Click Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_3102.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_GALACTIC_3102.image
     Element Should Contain    ${FILE_INFO_TEXT}    Data type \= float
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [10, 746, 746, 4] (FREQ, GLAT, GLON, STOKES)
@@ -440,5 +425,4 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
-    Set Selenium Speed    0.2
     [Teardown]    Kill carta_backend And Close Browser
