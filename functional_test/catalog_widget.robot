@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Catalog file loading, sorting, filtering, and rendering tests
 Resource          ../resource.robot
-Library    XML
+#Library    XML
 
 *** Variables ***
 ${MAGIC_INDEX}    17
@@ -19,7 +19,7 @@ Load Catalog File In VOTable Format
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.xml
     Element Should Contain    ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    ICRS
     
@@ -69,7 +69,7 @@ Load Catalog File In FITS Format
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.fits
     Element Should Contain    ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    ICRS
 
@@ -277,11 +277,11 @@ Catalog Rendering As Image Overlay With Column Mapping
     Repeat Keyword    4    Click Element   //*[@id="image-panel-0-0"]/div[8]/span[5]/a
     Mouse Out    ${VIEWER_DIV}
     
-    Sleep    1
+    #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    233,216,331,225
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    215,142,383,218
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    236,352,299,68
@@ -357,7 +357,7 @@ Catalog Rendering As Scatter Plot
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[1]/div[1]    Catalog 2D scatter
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[2]/div    No catalog file loaded
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,93,579,117
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,93,300,155
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
@@ -417,7 +417,7 @@ Catalog Rendering As Histogram Plot
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[1]/div[1]    Catalog Histogram
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[2]/div    No catalog file loaded
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,170,530,68
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,170,115,22
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    172,122,458,25
@@ -475,20 +475,20 @@ Linked Catalog Visualization
     # close the catalog scatter plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[1]/div[4]
 
-    Sleep    1
+    #Sleep    1
     # check the context in the catalog table
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[17]/div    73.06999969482422
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected_${key}.png
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_selected_${key}.png
     
     Click Element    ${CATALOG_WIDGET_RESET_BUTTON}
-    Sleep    1
+    #Sleep    1
     # on the mac mini, this is not always true. sometimes it is 8.279999732971191, the cell above 9.220000267028809
     #Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[12]/div    9.220000267028809
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_reset_${key}.png
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,20,338,227
     PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,20,342,16
     PNG Images Should Be Different    check_histogram_selected_${key}.png    check_histogram_${key}.png
@@ -563,6 +563,8 @@ Fetch VizieR Catalog And Visualize
     # enable catalog image overlay
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[5]/a/div
+    # required this 0.01s sleep to make xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div searchable [TODO: improve this]
+    Sleep    0.01
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
@@ -584,7 +586,7 @@ Fetch VizieR Catalog And Visualize
     
     Capture Element Screenshot    ${VIEWER_DIV}    image_${key}.png
     # check png images
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    image_${key}.png    376,214,227,355
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    249,143,530,162
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    171,58,601,58
@@ -637,7 +639,7 @@ Fetch SIMBAD Catalog And Visualize
     Capture Element Screenshot    ${VIEWER_DIV}    image_after_${key}.png
     
     # check png images
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    image_before_${key}.png    image_after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,563,65
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    118,162,583,89
