@@ -133,7 +133,7 @@ Load CASA boolean image
 Load CASA complex image as amplitude
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   complex.image
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -154,7 +154,7 @@ Load CASA complex image as amplitude
 Load CASA complex image as phase
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   complex.image
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -175,7 +175,7 @@ Load CASA complex image as phase
 Load CASA complex image as real
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   complex.image
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -196,7 +196,7 @@ Load CASA complex image as real
 Load CASA complex image as imaginary
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   complex.image
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -254,7 +254,7 @@ Load CASA concatenated image
 Load Images As A Stokes Hypercube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
+    Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
     Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -314,7 +314,7 @@ Load Images As A Stokes Hypercube
 Load Multiple Images In One Shot
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
+    Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
     Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
