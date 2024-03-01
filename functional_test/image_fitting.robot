@@ -17,6 +17,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=5
 
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 10:59:59.9999998479 ± 0.000384 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= -40:00:00.0000178350 ± 0.005763 (arcsec)
@@ -89,7 +90,7 @@ Triple Gaussian Fitting
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    0    
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 10:00:00.0600012160 ± 0.000808 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 0:00:00.4504712147 ± 0.018075 (arcsec)
@@ -201,7 +202,7 @@ FOV Image Fitting
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    38
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=2
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.7677241853 ± 0.001515 (s)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:02.9895992722 ± 0.026720 (arcsec)
@@ -253,7 +254,7 @@ FOV Matched Image Fitting
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    44
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=2
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 109.8614700160 (deg) ± 0.021480 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= -31.5622759241 (deg) ± 0.024337 (arcsec)
@@ -394,7 +395,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -405,7 +406,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 38.767326 ± 1.155697 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     # zoom the reference image to fix the new FOV in the multi-panel view
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Mouse Over    //*[@id="image-panel-0-0"]/div[8]/div/div/canvas
     Click Element    //*[@id="image-panel-0-0"]/div[9]/span[8]/a
     # with center free, amplitude locked, FWHM free, and PA free
@@ -414,7 +415,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3674122687 ± 0.001029 (s)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0124248555 ± 0.015488 (arcsec)
@@ -424,14 +425,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 46.079536 ± 30.412366 (deg)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 24.878172 ± 1.475226 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center free, amplitude free, FWHM locked, and PA free
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3672367946 ± 0.000370 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0081254667 ± 0.004542 (arcsec)
@@ -441,14 +442,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 25.142565 ± 3.165650 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 49.999830 ± 1.186596 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center free, amplitude free, FWHM free, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3672142086 ± 0.000183 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0072626361 ± 0.002749 (arcsec)
@@ -458,7 +459,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 38.042577 ± 0.781411 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude locked, FWHM free, and PA free
     Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
@@ -466,7 +467,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -476,14 +477,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 38.159081 ± 5.110127 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 27.808448 ± 1.556683 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude free, FWHM locked, and PA free
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -493,14 +494,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 37.839369 ± 4.929092 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 32.111784 ± 1.186596 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude free, FWHM free, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -510,7 +511,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 37.450058 ± 1.161857 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center free, amplitude locked, FWHM locked, and PA free
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
@@ -520,7 +521,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3672408472 ± 0.001022 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0066810390 ± 0.015338 (arcsec)
@@ -530,14 +531,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.066065 ± 9.568361 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 16.542221 (Jy) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center free, amplitude locked, FWHM free, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3674273224 ± 0.001027 (s)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0038317164 ± 0.015398 (arcsec)
@@ -547,14 +548,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 22.331266 ± 1.393965 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center free, amplitude free, FWHM locked, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3671906758 ± 0.000331 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0079087495 ± 0.004966 (arcsec)
@@ -564,7 +565,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 51.074063 ± 1.186596 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude locked, FWHM locked, and PA free
     Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
@@ -572,7 +573,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -582,13 +583,13 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 50.028899 ± 9.568361 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 16.542221 (Jy) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude free, FWHM locked, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_PA_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -598,14 +599,14 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 27.367953 ± 1.186596 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude locked, FWHM free, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
@@ -615,7 +616,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 29.618108 ± 1.601962 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center free, amplitude locked, FWHM locked, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
@@ -623,7 +624,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3677548778 ± 0.001022 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0050935737 ± 0.015333 (arcsec)
@@ -633,12 +634,12 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 16.542221 (Jy) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # with center locked, amplitude locked, FWHM locked, and PA locked
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}
     Mouse Over   ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
-    Sleep    1
+    #Sleep    1
     Page Should Not Contain    Clear existing fitting results and fit the current channel of the image
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -666,7 +667,7 @@ Fitting With Multiple Gaussians Having Fixed Parameters
     Click Element    ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=2
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3987650670 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.7574425865 (fixed)
