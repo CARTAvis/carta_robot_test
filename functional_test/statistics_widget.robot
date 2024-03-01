@@ -38,6 +38,7 @@ Region Statistics
     Click Element    xpath://*[contains(text(), "Region List")]
     # select the point region in the region list
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.162480000000e+5 pixel(s)
@@ -56,6 +57,7 @@ Region Statistics
     Set Selenium Speed    ${DELAY}
     # select the rectangle region in the region list
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
@@ -71,6 +73,7 @@ Region Statistics
     Set Selenium Speed    ${DELAY}
     # select the ellipse region in the region list
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.159000000000e+3 pixel(s)
@@ -86,6 +89,7 @@ Region Statistics
     Set Selenium Speed    ${DELAY}
     # select the polygon region in the region list
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    7.434000000000e+3 pixel(s)
@@ -102,6 +106,7 @@ Region Statistics
     # use the region drondown menu to select region 2 - rectangle region
     Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select
     Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select/option[3]
+    Wait Until Page Does Not Contain    No stats data
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.127695460264e-1 Jy/beam

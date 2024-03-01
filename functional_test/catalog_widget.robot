@@ -563,8 +563,8 @@ Fetch VizieR Catalog And Visualize
     # enable catalog image overlay
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[5]/a/div
-    # required this 0.01s sleep to make xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div searchable [TODO: improve this]
-    Sleep    0.01
+    # required this 0.1s sleep to make xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div searchable [TODO: improve this]
+    Sleep    0.1
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
