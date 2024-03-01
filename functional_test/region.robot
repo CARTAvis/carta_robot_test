@@ -16,7 +16,7 @@ Import World Coordinate ds9 Region Made In ds9
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Ellipse
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.6479279877
@@ -193,7 +193,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Ellipse
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.6479279877
@@ -371,7 +371,7 @@ Import Image Coordinate ds9 Region Made In ds9
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Ellipse
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.6479280152
@@ -550,7 +550,7 @@ Import World Coordinate CASA Region Made In CASAViewer
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8283000066
@@ -632,7 +632,7 @@ Import Image Coordinate CASA Region Made Manually
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Rectangle
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8114504359
@@ -776,7 +776,7 @@ Import World Coordinate CASA Region Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.7651299952
@@ -861,7 +861,7 @@ Import Image Coordinate CASA Region Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.7651252516
@@ -946,7 +946,7 @@ Import World Coordinate ds9 Region Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.7651252790
@@ -1030,7 +1030,7 @@ Import Image Coordinate ds9 Region Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.7651256081
@@ -1114,7 +1114,7 @@ Region selecting, centering, locking, and deleting
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
     Mouse Out    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_polygon_selected_from_viewer_${key}.png
     Click Element    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[4]
@@ -1135,7 +1135,7 @@ Region selecting, centering, locking, and deleting
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[4]    Region 6
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[6]/div[5]    Polyline
     
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,259,130
     PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,323,144
     PNG Two Pixels Should Have Matched RGBA    check_polygon_selected_from_viewer_${key}.png    290,67,377,129
@@ -1190,7 +1190,7 @@ Creating Regions And Export As Region Files
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Region 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.6556900185
@@ -1238,7 +1238,7 @@ Creating Regions And Export As Region Files
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[7]/div[8]    0.0
 
     # export as region files
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     ${system}=    Evaluate    platform.system()    platform
     
     # delete region files from previous tests if any
@@ -1275,6 +1275,7 @@ Creating Regions And Export As Region Files
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
 
     # compare generated regions files with snapshot region files
+    Set Selenium Speed    0
     ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf
     ${snapshot_world_crtf} =    Get File    ${SNAPSHOT_FOLDER}/e2e_check_region_world.crtf
     Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
@@ -1377,7 +1378,7 @@ Loading 4000 Regions From A File
 
     Load Region File    box_region_n_4000.crtf
     Wait Until Page Does Not Contain    Importing regions    timeout=10
-    Sleep    1
+    #Sleep    1
 
     # scroll the region list to the very bottom
     Assign Id To Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
@@ -1397,7 +1398,7 @@ Loading Regions on Active Matched Image
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    118,72,497,72
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    139,149,518,149
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    163,120,542,120
@@ -1417,7 +1418,7 @@ Loading Regions on Active Reference Image
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    118,72,497,72
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    139,149,518,149
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    163,120,542,120
@@ -1437,7 +1438,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Annotation 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8622799970
@@ -1641,7 +1642,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Annotation 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8622796543
@@ -1846,7 +1847,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Annotation 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8622794349
@@ -2050,7 +2051,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Click Element    ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[4]    Annotation 1
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[5]    Point - Ann
     Element Should Contain    ${REGION_LIST_TABLE_ROOT_XPATH}/div[2]/div[6]    17:56:21.8622692350
@@ -2335,6 +2336,7 @@ Creating Annotations And Export As Region Files
     Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
 
     # compare generated regions files with snapshot region files
+    Set Selenium Speed    0
     ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf
     ${snapshot_world_crtf} =    Get File    ${SNAPSHOT_FOLDER}/e2e_check_annotation_world.crtf
     Should Be Equal As Strings    ${test_world_crtf}    ${snapshot_world_crtf}
