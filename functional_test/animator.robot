@@ -206,7 +206,7 @@ Polarization Slider And Computed Components
     Click Element    ${ANIMATOR_NEXT_BUTTON} 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Pangle_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # Stokes I
     PNG Two Pixels Should Have Matched RGBA    check_Stokes_I_${key}.png     390,216,394,219
     PNG Two Pixels Should Have Matched RGBA    check_Stokes_I_${key}.png     390,192,391,245
