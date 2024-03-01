@@ -38,16 +38,16 @@ Narrow-field PV Image Generation
     Element Should Contain    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    S255_CH3CN_subcube_pv.fits
     Element Should Contain    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    [63, 251, 1]
     Click Element    ${FILE_HEADER_DIALOG_CLOSE_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,71,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,155,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,180,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,248,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    573,69,729,25
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # generate a point region
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
@@ -85,16 +85,16 @@ Wide-field PV Image Generation
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    475,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    617,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
@@ -130,22 +130,22 @@ PV Image Generation Cancellation And Rerequest
     Wait Until Page Contains    Generating PV    timeout=5
     Sleep    2.5
     Click Element    xpath://*[contains(text(), "Cancel")]
-    Sleep    1
+    #Sleep    1
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    475,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    617,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
@@ -181,19 +181,20 @@ PV Image Generation Repeat
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     # the following is a workaround of a bug (the widget should not be closed automatically)
     #Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
-    Sleep    1
+    #Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
-    Sleep    0.5
     ${key}=    Generate Random String    8
+    # this sleep is required to let the viewer size popup in the viewer go away
+    Sleep    0.8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,71,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,155,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,180,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,248,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    573,69,729,25
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
@@ -250,7 +251,7 @@ PV Image Generation With Matched Cubes
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    194,335,573,335
@@ -286,7 +287,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
     Click Element    //*[@id="root"]/div/div[2]/div[1]/div/div[2]/div/div[1]/button
     Append Image    Gaussian_array_wide2.fits
-    Sleep    1
+    #Sleep    1
     # match Gaussian_array_wide2.fits to Gaussian_array_wide.fits via the matching button in the viewer
     Mouse Over    //*[@id="image-panel-1-0"]/div[7]/div/div/canvas
     Click Element    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
@@ -317,10 +318,10 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    96,400,475,400
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    143,400,522,400
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    189,400,568,400
@@ -364,7 +365,7 @@ Interactive PV Preview
     Drag And Drop By Offset    ${VIEWER_DIV}    20    50
     Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after_${key}.png
     # checking rendered images
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    before_${key}.png    272,298,476,40
     PNG Two Pixels Should Have Matched RGBA    after_${key}.png    268,486,476,40
@@ -418,7 +419,7 @@ Interactive PV Preview With Customization
     # generate full resolution PV
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[2]
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div/div[12]/div[2]/span/a
-    Sleep    2
+    Wait Until Page Does Not Contain    Generating PV    timeout=30
     # change colormap
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "tab10")]
@@ -426,7 +427,7 @@ Interactive PV Preview With Customization
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[3]
     Capture Page Screenshot    final_${key}.png
     # checking rendered images
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    before_${key}.png   236,353,476,40
     PNG Two Pixels Should Have Matched RGBA    after_${key}.png    299,303,476,40
