@@ -38,8 +38,8 @@ ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 
 ${FILE_LIST}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]
 ${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
-${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
-${FILE_FILTER}    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/input
+${FILE_INFO_TEXT}    css:[data-testid="file-info"] .header-list
+${FILE_FILTER}    data:testid:file-filter-input
 
 ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
@@ -48,40 +48,38 @@ ${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load catalog")]
 ${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load region")]
 
 
-${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
-${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
-${VIEWER_DIV}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
-${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
-${VIEWER_10_ZOOM_IN_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
-${VIEWER_10_MATCH_BUTTON}    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
-${VIEWER_10_CANVAS}    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
-${VIEWER_10_ZOOM_TO_FIT_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
-${VIEWER_SETTINGS_DIALOG}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[4]
-${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[3]
+${VIEWER_TAB_TITLE}    css:[data-testid="image-view-tab"] span
+${VIEWER_CURSOR_INFO_BAR}    data:testid:viewer-cursor-info-bar
+${VIEWER_DIV}    data:testid:viewer-div
+${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button"]
+${VIEWER_10_ZOOM_IN_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-in-button"]
+${VIEWER_10_MATCH_BUTTON}    css:#image-panel-1-0 [data-testid="match-button"]
+${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
+${VIEWER_10_ZOOM_TO_FIT_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-to-fit-button"]
+${VIEWER_SETTINGS_DIALOG}    data:testid:image-view-header-settings-button
+${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:image-view-floating-settings-0-header-close-button
 
-${CLIP_BUTTON_90}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
+${CLIP_BUTTON_90}    data:testid:clip-button-90
+${COLORMAP_DROPDOWN}    data:testid:colormap-dropdown
 
-${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
-${COLORMAP_DROPDOWN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button     
+${MULTIPANEL_VIEW_SWITCH}    data:testid:image-view-multipanel-view-switch
 
-${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
+${ANIMATOR_FIRST_BUTTON}    data:testid:animator-first-button
+${ANIMATOR_PREVIOUS_BUTTON}    data:testid:animator-previous-button
+${ANIMATOR_PLAY_STOP_BUTTON}    data:testid:animator-play-stop-button
+${ANIMATOR_NEXT_BUTTON}    data:testid:animator-next-button
+${ANIMATOR_LAST_BUTTON}    data:testid:animator-last-button
 
-${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
-${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
-${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
-${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
-${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
-
-${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
-${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
-${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
-${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
-${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
-${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
-${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
-${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
-${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
-${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label   
+${ANIMATOR_SLIDER}    css:[data-testid="animator-slider"] div
+${ANIMATOR_SLIDER_INFO}    data:testid:animator-slider-info
+${ANIMATOR_SLIDER_HANDLE}    css:[data-testid="animator-slider"] div span
+${ANIMATOR_SPINBOX_UP}    css:[data-testid="animator-controls"] button > span[icon="chevron-up"]
+${ANIMATOR_SPINBOX_DOWN}    css:[data-testid="animator-controls"] button > span[icon="chevron-down"]
+${ANIMATOR_PLAYBACK_MODE_BUTTON}    data:testid:animator-playback-mode-button
+${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-start"]
+${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-end"]
+${ANIMATOR_IMAGE_RADIO_BUTTON}           css:[data-testid="animator-image-slider"] label
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    css:[data-testid="animator-polarization-slider"] label
 
 
 ${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]

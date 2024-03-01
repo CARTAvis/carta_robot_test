@@ -182,7 +182,7 @@ Polarization Slider And Computed Components
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     # change to tab10 colormap
-    Click Element    ${COLORMAP_DROPDOWN_CUBE}
+    Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     # use animator and the polarization slider to switch to different components
     Click Element    xpath://*[contains(text(), "Animator")]
