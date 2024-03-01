@@ -36,11 +36,10 @@ ${WINDOW_SIZE_dY}    124
 ${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
 ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 
-${FILE_LIST}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div[1]/div[1]
+${FILE_LIST}    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]
 ${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
 ${FILE_FILTER}    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/input
-${FIRST_FILE_IN_THE_FILE_LIST}    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/div/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[1]/div/div
 
 ${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
 ${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
@@ -312,7 +311,7 @@ Load Initial Image
     [Arguments]    ${IMAGE_TO_LOAD}
     ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   ${IMAGE_TO_LOAD}
+    Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -327,7 +326,7 @@ Load Image
     Click Element    xpath://*[contains(text(), "File")]
     Click Element    xpath://*[contains(text(), "Open Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   ${IMAGE_TO_LOAD}
+    Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -342,7 +341,7 @@ Append Image
     Click Element    xpath://*[contains(text(), "File")]
     Click Element    xpath://*[contains(text(), "Append Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   ${IMAGE_TO_APPEND}
+    Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Click Element    ${IMAGE_TO_APPEND_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
@@ -363,7 +362,7 @@ Load Region File
     Click Element    xpath://*[contains(text(), "Import Regions")]
     Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
     #Sleep    0.3
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   ${REGION_TO_LOAD}
+    Wait Until Element Contains    ${FILE_LIST}   ${REGION_TO_LOAD}
     Click Element    ${REGION_TO_LOAD_XPATH}
     Click Element    ${LOAD_REGION_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
@@ -375,7 +374,7 @@ Load Catalog File
     Click Element    xpath://*[contains(text(), "Import Catalog")]
     Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
     #Sleep    0.3
-    Wait Until Element Contains    ${FIRST_FILE_IN_THE_FILE_LIST}   ${CATALOG_TO_LOAD}
+    Wait Until Element Contains    ${FILE_LIST}   ${CATALOG_TO_LOAD}
     Click Element    ${CATALOG_TO_LOAD_XPATH}
     Click Element    ${LOAD_CATALOG_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
