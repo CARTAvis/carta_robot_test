@@ -378,6 +378,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.02925218516611667
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030942637323668337
@@ -400,6 +401,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.029219418991124884
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022093053485489067
@@ -422,6 +424,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.039907573853270185
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030997400288470325
@@ -444,6 +447,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04001756319485144
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0031459159769216052
@@ -466,6 +470,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.03939278678037231
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.002182948510162576
@@ -488,6 +493,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.034293831676934936
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022011746039559063

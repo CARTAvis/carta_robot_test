@@ -26,7 +26,7 @@ ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --fronte
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 #${BROWSER}        chrome
-${DELAY}          0.1
+${DELAY}          0.15
 ${LOGIN URL}      http://${SERVER}
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
@@ -312,6 +312,7 @@ Load Initial Image
     ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
     Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -327,6 +328,7 @@ Load Image
     Click Element    xpath://*[contains(text(), "Open Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
     Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -342,6 +344,7 @@ Append Image
     Click Element    xpath://*[contains(text(), "Append Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
+    Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
     Click Element    ${IMAGE_TO_APPEND_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
@@ -363,6 +366,7 @@ Load Region File
     Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${REGION_TO_LOAD}
+    Wait Until Page Contains Element    ${REGION_TO_LOAD_XPATH}
     Click Element    ${REGION_TO_LOAD_XPATH}
     Click Element    ${LOAD_REGION_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
@@ -375,6 +379,7 @@ Load Catalog File
     Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${CATALOG_TO_LOAD}
+    Wait Until Page Contains Element    ${CATALOG_TO_LOAD_XPATH}
     Click Element    ${CATALOG_TO_LOAD_XPATH}
     Click Element    ${LOAD_CATALOG_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
