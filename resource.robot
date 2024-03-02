@@ -313,6 +313,7 @@ Load Initial Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
+    Sleep    0.2
     Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -329,6 +330,7 @@ Load Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
+    Sleep    0.2
     Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -345,6 +347,7 @@ Append Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
+    Sleep    0.2
     Click Element    ${IMAGE_TO_APPEND_XPATH}
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
@@ -367,6 +370,7 @@ Load Region File
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${REGION_TO_LOAD}
     Wait Until Page Contains Element    ${REGION_TO_LOAD_XPATH}
+    Sleep    0.2
     Click Element    ${REGION_TO_LOAD_XPATH}
     Click Element    ${LOAD_REGION_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
@@ -380,6 +384,7 @@ Load Catalog File
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${CATALOG_TO_LOAD}
     Wait Until Page Contains Element    ${CATALOG_TO_LOAD_XPATH}
+    Sleep    0.2
     Click Element    ${CATALOG_TO_LOAD_XPATH}
     Click Element    ${LOAD_CATALOG_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20

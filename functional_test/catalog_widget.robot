@@ -562,14 +562,14 @@ Fetch VizieR Catalog And Visualize
     Wait Until Page Does Not Contain    Online Catalog Query    timeout=30
     Wait Until Page Contains Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[1]/table/tbody/tr/td/pre
     # enable catalog image overlay
-    # workaround for element no found issue [TODO: investigate this]
-    #Set Selenium Speed    0.2
+    # workaround for element not found issue [TODO: investigate this]
+    Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button    
     Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[5]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
     Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
-    #Set Selenium Speed    ${DELAY}
+    Set Selenium Speed    ${DELAY}
     # enable scatter plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
     Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
