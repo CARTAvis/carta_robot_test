@@ -24,6 +24,7 @@ Match Images Spatially And Spectrally
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    14.2200 km/s
+    Sleep    0.2
     Mouse Over    ${VIEWER_DIV}
     #Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
