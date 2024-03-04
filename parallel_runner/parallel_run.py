@@ -1,5 +1,6 @@
 from multiprocessing import Pool
 import os
+import time
 
 test_suites = {3100: "animator.robot",
                3101: "catalog_widget.robot",
@@ -26,6 +27,7 @@ def test_runner(port):
 
 
 if __name__ == '__main__':
+    t_start = time.time()
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(6) as p:
@@ -35,3 +37,5 @@ if __name__ == '__main__':
     for value in test_suites.values():
         output_list = output_list + "output_parallel_run_%s.xml "%value[:-6]
     os.system("rebot --outputdir . --output output.xml -l log.html -r report.html %s"%output_list)
+    t_end = time.time()
+    print(f"Elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html to see the test results in one place.")
