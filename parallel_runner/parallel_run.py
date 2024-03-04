@@ -3,8 +3,14 @@ import os
 import time
 import sys
 
-with open(sys.argv[1], "r") as fobj:
+if len(sys.argv) == 1:
+    config_file = "./config.txt"
+elif len(sys.argv) == 2:
+    config_file = sys.argv[1]
+
+with open(config_file, "r") as fobj:
     tmp = fobj.readlines()
+
 n_process = int(tmp[0])
 custom_robot_flags = tmp[1]
 
