@@ -41,18 +41,17 @@ Narrow-field PV Image Generation
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    # generate a point region
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
+    Click Element At Coordinates    ${VIEWER_DIV}    200    0
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.02785714, Image: 33 px, 6.28957e-2)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: -288.7972, Image: 115 px, 6.28957e-2)
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,71,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,155,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,180,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,248,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    573,69,729,25
-    Set Selenium Speed    ${DELAY}
-    # generate a point region
-    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
-    Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.02785714, Image: 33 px, 6.28957e-2)
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: -288.7972, Image: 115 px, 6.28957e-2)
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -88,17 +87,16 @@ Wide-field PV Image Generation
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
+    Click Element At Coordinates    ${VIEWER_DIV}    200    0
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    475,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    617,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
-    Set Selenium Speed    ${DELAY}
-    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
-    Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -137,6 +135,10 @@ PV Image Generation Cancellation And Rerequest
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     #Sleep    0.5
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
+    Click Element At Coordinates    ${VIEWER_DIV}    200    0
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
@@ -144,12 +146,7 @@ PV Image Generation Cancellation And Rerequest
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    617,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
-    Set Selenium Speed    ${DELAY}
-    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
-    Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25    
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -181,7 +178,7 @@ PV Image Generation Repeat
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     # the following is a workaround of a bug (the widget should not be closed automatically)
     #Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
-    #Sleep    1
+    Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
     Wait Until Page Contains Element    xpath://*[contains(text(), "tab10")]
     Click Element    xpath://*[contains(text(), "tab10")]
@@ -316,6 +313,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
+    Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
     Mouse Out    ${VIEWER_DIV}

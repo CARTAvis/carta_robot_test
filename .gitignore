@@ -4,3 +4,11 @@
 .DS_Store
 *.log
 *.pyc
+parallel_runner/*.html
+parallel_runner/*.xml
+parallel_runner/*.png
+parallel_runner/utilities
+parallel_manual_run_01/utilities
+parallel_manual_run_02/utilities
+parallel_manual_run_03/utilities
+parallel_manual_run_04/utilities
