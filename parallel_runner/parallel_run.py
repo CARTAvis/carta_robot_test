@@ -1,6 +1,13 @@
 from multiprocessing import Pool
 import os
 import time
+import sys
+
+with open(sys.argv[1], "r") as fobj:
+    tmp = fobj.readlines()
+n_process = int(tmp[0])
+custom_robot_flags = tmp[1]
+
 
 test_suites = {3100: "animator.robot",
                3101: "catalog_widget.robot",
@@ -23,14 +30,14 @@ test_suites = {3100: "animator.robot",
 
 def test_runner(port):
     test_suite_name = test_suites[port][:-6]
-    os.system("time robot --variable CARTA_PORT:%d --variable SNAPSHOT_FOLDER:../snapshot --variable DELAY:0.2 --variable N_OMP_THREADS:8 --report report_parallel_run_%s.html --log log_parallel_run_%s.html --output output_parallel_run_%s.xml ../functional_test/%s"%(port, test_suite_name, test_suite_name, test_suite_name, test_suites[port]))
+    os.system("time robot --variable CARTA_PORT:%d --variable SNAPSHOT_FOLDER:../snapshot --report report_parallel_run_%s.html --log log_parallel_run_%s.html --output output_parallel_run_%s.xml %s ../functional_test/%s"%(port, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suites[port]))
 
 
 if __name__ == '__main__':
     t_start = time.time()
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
-    with Pool(6) as p:
+    with Pool(n_process) as p:
         print(p.map(test_runner, range(3100, 3117, 1)))
     
     output_list = ""
