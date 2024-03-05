@@ -31,7 +31,7 @@ Region Spectral Profile
     # select the point region from the region list
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    point_profile_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    polygon_profile_${key}.png    476,61,509,18
     PNG Two Pixels Should Not Have Matched RGBA    polygon_profile_${key}.png    476,61,476,30
     PNG Two Pixels Should Have Matched RGBA    ellipse_profile_${key}.png    477,153,541,17
@@ -73,10 +73,10 @@ Spectral Profile Visualization From Multiple Regions
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
     # click the region dropdown menu to close the option list
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
-    Sleep    1
+    #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    373,108,473,63
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    378,100,476,90
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    378,87,476,101
@@ -123,10 +123,10 @@ Spectral Profile Visualization From Multiple Statistics
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    0
     # click the statistic dropdown menu to close the list
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
-    Sleep    1
+    #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    511,16,545,20
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    511,25,545,29
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    511,36,545,38
@@ -168,11 +168,12 @@ Spectral Profile Visualization From Multiple Images
     Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the image check box to enable image multi-plot mode
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
     Sleep    1
+    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
+    Wait Until Page Contains Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    568,19,593,46
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    567,77,595,86
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    564,108,599,110
@@ -304,7 +305,7 @@ Single Spectral Profile Smoothing
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_original_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    410,40,544,17
     PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    410,74,544,61
     PNG Two Pixels Should Not Have Matched RGBA    check_boxcar_${key}.png    410,40,410,74
@@ -360,7 +361,7 @@ Multiple Spectral Profiles Smoothing
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    381,17,428,44
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    365,35,407,57
@@ -399,26 +400,26 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
     # launch a spectral profiler widget
     Click Element    //*[@id="SpectralProfilerButton"]
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     # click the profile fitting button
     Click Element    ${PROFILE_FITTING_BUTTON}
     # click the auto detect button    
     Click Element    ${PROFILE_FITTING_AUTO_DETECT_BUTTON}
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # check the auto detect results
     Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div    detected 5 components.
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[5]/div/div/div[1]/div[1]/input    value    5
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[6]/div/div/div/div/input    value    349.47310991224464
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0.17664572759531438
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[8]/div/div/div/div/input    value    0.004394980985239272
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # close the profile fitting dialog
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check2_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    100,80,200,80
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    200,80,413,80
@@ -426,7 +427,7 @@ Spectral Profile Fitting Guess Then Fit
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    545,80,589,80
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    589,80,747,80
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    747,80,100,80    
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # launch the profile fitting dialog
     Click Element    ${PROFILE_FITTING_BUTTON}
     # click the auto detect button
@@ -434,7 +435,7 @@ Spectral Profile Fitting Guess Then Fit
     # make the fit button visible and click it to trigger profile fitting
     Scroll Element Into View    ${PROFILE_FITTING_FIT_BUTTON}
     Click Element    ${PROFILE_FITTING_FIT_BUTTON}
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Component #1
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Center \= 349.387533 (GHz)
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Center Error \= 0.000084 (0.000%)
@@ -484,11 +485,11 @@ Spectral Profile Fitting Guess Then Fit
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    FWHM Error \= 0.000161 (3.916%)
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Integral \= 0.000897 (Jy/beam * GHz)
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Integral Error ~\= 0.000030 (3.392%)
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    # close fitting dialog
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check3_${key}.png
-    Set Selenium Speed    0.02    
+    Set Selenium Speed    0   
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
     PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    180,32,195,32
@@ -497,22 +498,21 @@ Spectral Profile Fitting Guess Then Fit
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    542,16,587,16
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    587,16,746,23
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    746,23,207,143
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${PROFILE_FITTING_BUTTON}    # profile fitting button
     Scroll Element Into View    ${PROFILE_FITTING_RESET_BUTTON}
     Click Element    ${PROFILE_FITTING_RESET_BUTTON}    # reset button
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # check the default initial values
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div/div/div[1]/input    value    1
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[5]/div/div/div/div/input    value    0
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[6]/div/div/div/div/input    value    0
     Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0
     Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[9]/div/div/div[1]/pre/div    ${EMPTY}
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    # close fitting dialog
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check4_${key}.png
-    Sleep    5
     PNG Images Should Be Identical    check_${key}.png    check4_${key}.png
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png    check4_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

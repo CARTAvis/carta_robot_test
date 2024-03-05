@@ -13,23 +13,23 @@ screen may be copied and pasted to the shell script per executor.
 n_executor = 4
 
 # execution time per suite from actual e2e test run
-test_suites_dict = {'../functional_test/animator.robot':'3:11', 
-                    '../functional_test/check_file_info.robot':'2:29',
-                    '../functional_test/cursor_info.robot':'0:28',
-                    '../functional_test/catalog_widget.robot':'5:45',
-                    '../functional_test/spectral_line_query.robot':'2:15',
-                    '../functional_test/WebGL_test.robot':'0:23',
-                    '../functional_test/image_fitting.robot':'4:45',
-                    '../functional_test/spatial_profiler.robot':'2:00',
-                    '../functional_test/load_image.robot':'5:41',
-                    '../functional_test/moment_generator.robot':'5:22',
-                    '../functional_test/pv_generator.robot':'4:53',
-                    '../functional_test/matching.robot':'5:37',
-                    '../functional_test/rendering.robot':'4:23',
-                    '../functional_test/cube_histogram.robot':'1:24',
-                    '../functional_test/region.robot':'10:23',
-                    '../functional_test/spectral_profiler.robot':'4:31',
-                    '../functional_test/statistics_widget.robot':'2:28'
+test_suites_dict = {'../functional_test/animator.robot':'2:21', 
+                    '../functional_test/check_file_info.robot':'1:40',
+                    '../functional_test/cursor_info.robot':'0:18',
+                    '../functional_test/catalog_widget.robot':'4:03',
+                    '../functional_test/spectral_line_query.robot':'1:29',
+                    '../functional_test/WebGL_test.robot':'0:17',
+                    '../functional_test/image_fitting.robot':'2:48',
+                    '../functional_test/spatial_profiler.robot':'1:16',
+                    '../functional_test/load_image.robot':'4:03',
+                    '../functional_test/moment_generator.robot':'3:20',
+                    '../functional_test/pv_generator.robot':'3:22',
+                    '../functional_test/matching.robot':'3:55',
+                    '../functional_test/rendering.robot':'3:00',
+                    '../functional_test/cube_histogram.robot':'1:00',
+                    '../functional_test/region.robot':'7:09',
+                    '../functional_test/spectral_profiler.robot':'3:00',
+                    '../functional_test/statistics_widget.robot':'1:17'
 }
 
 ##########################################################################

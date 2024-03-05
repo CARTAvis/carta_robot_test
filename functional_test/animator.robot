@@ -9,16 +9,17 @@ Animation Playback
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
     Click Element    xpath://*[contains(text(), "Animator")]
-    Repeat Keyword    4    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    5
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=10
+    #Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} >= 3 and ${result} <= 7
+    Should Be True    ${result} == 5 or ${result} == 6
     Remove Files    initial_${key}.png    final_${key}.png 
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -29,18 +30,19 @@ Animation Playback Backwards
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
     Click Element    xpath://*[contains(text(), "Animator")]
-    Repeat Keyword    4    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    5
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    16    timeout=10
+    #Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} <= 22 and ${result} >= 18
+    Should Be True    ${result} == 16 or ${result} == 15
     Remove Files    initial_${key}.png    final_${key}.png 
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -52,18 +54,19 @@ Animation Playback Bouncing
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
-    Repeat Keyword    20    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Repeat Keyword    23    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    4
+    #Sleep    4
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    22    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 20 or ${result} == 21 or ${result} == 22 or ${result} == 23
+    Should Be True    ${result} == 22 or ${result} == 21
     Remove Files    initial_${key}.png    final_${key}.png 
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -189,24 +192,32 @@ Polarization Slider And Computed Components
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_I_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_Q_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes U 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_U_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes V 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_V_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Ptotal 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Ptotal_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Plinear
     Capture Element Screenshot    ${VIEWER_DIV}    check_Plinear_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    PFtotal 
     Capture Element Screenshot    ${VIEWER_DIV}    check_PFtotal_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    PFlinear 
     Capture Element Screenshot    ${VIEWER_DIV}    check_PFlinear_${key}.png
-    Click Element    ${ANIMATOR_NEXT_BUTTON} 
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Pangle 
     Capture Element Screenshot    ${VIEWER_DIV}    check_Pangle_${key}.png
 
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # Stokes I
     PNG Two Pixels Should Have Matched RGBA    check_Stokes_I_${key}.png     390,216,394,219
     PNG Two Pixels Should Have Matched RGBA    check_Stokes_I_${key}.png     390,192,391,245

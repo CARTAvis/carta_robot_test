@@ -13,34 +13,36 @@ Match Images Spatially And Spectrally
     Load Initial Image    M17_SWex.fits
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Over    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Append Image    M17_SWex.image
     Mouse Over    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     # match M17_SWex.image to M17_SWex.fits
     Click Element    //*[@id="image-panel-0-0"]/div[9]/span[9]/span/a
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    14.2200 km/s
+    Sleep    0.2
     Mouse Over    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    Sleep    1.0
+    #Sleep    1.0
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched_${key}.png
-    Sleep    0.5
+    #Sleep    0.5
     Click Element    ${ANIMATOR_IMAGE_RADIO_BUTTON}
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Mouse Over    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    Sleep    1.0
+    #Sleep    1.0
     Capture Element Screenshot    ${VIEWER_DIV}    fits_zoomed_matched_${key}.png
-    Sleep    0.5
+    #Sleep    0.5
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    0.5
-    Set Selenium Speed    0.02
+    #Sleep    0.5
+    Set Selenium Speed    0
     PNG Images Should Be Identical    fits_zoomed_matched_${key}.png    casa_zoomed_matched_${key}.png
     Remove Files    fits_zoomed_matched_${key}.png    casa_zoomed_matched_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
@@ -67,31 +69,31 @@ Match Wide-Field Images Spatially
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[2]
     Append Image    Gaussian_SE2.fits
     Mouse Over    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     # match Gaussian_SE2.fits to Gaussian2.fits
     Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
-    Sleep    0.5
+    #Sleep    0.5
     Mouse Out    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
-    Sleep    0.5
+    #Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
     # zoom in the image with the zoom-in button
     Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
     # select the point region in the region list and delete it
     Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
     Press Keys    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]    DELETE
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    matched_multipanel_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    1
+    #Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    matched_2nd_image_${key}.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    matched_1st_image_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    0.5
-    Set Selenium Speed    0.02
+    #Sleep    0.5
+    Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    matched_1st_image_${key}.png    379,217,252,254,164,255
     PNG Pixel XY Should Match RGBA    matched_2nd_image_${key}.png    379,217,252,254,164,255
     PNG Two Pixels Should Have Matched RGBA    matched_multipanel_${key}.png    190,217,570,217
@@ -126,13 +128,13 @@ Matched Region Canvas Rendering Multiple Panel View
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_10_MATCH_BUTTON}
     Mouse Out    ${VIEWER_10_MATCH_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points left region
     PNG Pixel XY Should Match RGBA    check_${key}.png    159,186,255,255,255,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    159,217,255,255,255,255
@@ -171,12 +173,12 @@ Matched Region Canvas Rendering Multiple Panel View
     PNG Pixel XY Should Match RGBA    check_${key}.png    599,201,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    584,186,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    553,186,46,230,214,255
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points left region
     PNG Pixel XY Should Match RGBA    check2_${key}.png    159,186,255,255,255,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    159,217,255,255,255,255
@@ -215,17 +217,17 @@ Matched Region Canvas Rendering Multiple Panel View
     PNG Pixel XY Should Match RGBA    check2_${key}.png    599,201,46,230,214,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    584,186,46,230,214,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    553,186,46,230,214,255
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check3_${key}.png
     PNG Images Should Be Identical    check_${key}.png    check3_${key}.png
     # de-select the region
     Press Keys    ${VIEWER_DIV}    ESCAPE
     Mouse Out    ${VIEWER_DIV}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check4_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points left region
     PNG Pixel XY Should Match RGBA    check4_${key}.png    159,186,46,230,214,255
     PNG Pixel XY Should Match RGBA    check4_${key}.png    159,217,46,230,214,255
@@ -296,15 +298,16 @@ Matched Region Canvas Rendering Single Panel View
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_10_MATCH_BUTTON}
     Mouse Out    ${VIEWER_10_MATCH_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Out    ${VIEWER_DIV}
+    # this sleep is necessary for an unknown reason to make the test work... [TODO: investigate this] 
     Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     # test region canvas rendering
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points
     PNG Pixel XY Should Match RGBA    check_${key}.png    348,248,255,255,255,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    348,217,255,255,255,255
@@ -324,13 +327,13 @@ Matched Region Canvas Rendering Single Panel View
     PNG Pixel XY Should Match RGBA    check_${key}.png    410,233,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    364,248,46,230,214,255
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
     # test region canvas rendering
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points
     PNG Pixel XY Should Match RGBA    check2_${key}.png    348,248,255,255,255,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    348,217,255,255,255,255
@@ -350,12 +353,12 @@ Matched Region Canvas Rendering Single Panel View
     PNG Pixel XY Should Match RGBA    check2_${key}.png    410,233,46,230,214,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    364,248,46,230,214,255
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Capture Element Screenshot    ${VIEWER_DIV}    check3_${key}.png
     # test region canvas rendering
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # control points
     PNG Pixel XY Should Match RGBA    check3_${key}.png    348,248,255,255,255,255
     PNG Pixel XY Should Match RGBA    check3_${key}.png    348,217,255,255,255,255
@@ -375,7 +378,7 @@ Matched Region Canvas Rendering Single Panel View
     PNG Pixel XY Should Match RGBA    check3_${key}.png    410,233,46,230,214,255
     PNG Pixel XY Should Match RGBA    check3_${key}.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check3_${key}.png    364,248,46,230,214,255
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
@@ -396,7 +399,7 @@ Match Contours Spatially
     Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
     Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
     Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
-    Sleep    1
+    #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -406,7 +409,7 @@ Match Contours Spatially
     Mouse Over    xpath://*[contains(text(), "Spatial only")]
     Click Element    xpath://*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
     Click Element    ${CONTOUR_CONFIG_DIALOG_BUTTON}
     # set a contour level of 0.5
@@ -416,14 +419,14 @@ Match Contours Spatially
     Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
     Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
     Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
-    Sleep    1
+    #Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check3_${key}.png
     Mouse Over    ${VIEWER_10_CANVAS}
     Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Mouse Out    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check4_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check_${key}.png    check4_${key}.png
@@ -483,10 +486,10 @@ Match Catalog Image Overlay Spatially
     Mouse Over    ${VIEWER_10_CANVAS}
     Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Mouse Out    ${VIEWER_DIV}
-    Sleep    1
+    #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     # matched catalog points
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    100,200,479,200
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    92,216,471,216
@@ -531,7 +534,7 @@ Match Vector Field Overlay Spatially
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     # verify screenshot
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    230,220,609,220
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    222,216,601,216
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    230,220,601,216
@@ -567,6 +570,7 @@ Matching Vector And Contour From Secondary To Reference
     Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    Set Selenium Speed    0
     # check vector rendering
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    274,252,653,252
     # check contour rendering

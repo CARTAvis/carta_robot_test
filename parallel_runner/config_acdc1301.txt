@@ -1,0 +1,2 @@
+8
+--variable DELAY:0.2 --variable N_OMP_THREADS:8 --variable PYTHON3_EXECUTABLE:/home/acdc1301/anaconda3/bin/python --variable CARTA_BACKEND_EXECUTABLE:/home/acdc1301/carta_build/carta-backend/build/carta_backend --variable CARTA_FRONTEND_FOLDER:/home/acdc1301/carta_build/carta-frontend/build --variable INITIAL_IMAGE_FOLDER:/home/acdc1301/set_QA_e2e_v2

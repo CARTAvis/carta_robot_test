@@ -86,7 +86,7 @@ Line Table Filtering And Shifting
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 424 line(s). Applied 1 filter(s).
     # set a velocity to compute shifted frequencies
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4    True
@@ -105,9 +105,9 @@ Line Table Filtering And Shifting
     # add another filter to "shifted frequency"
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[4]/div[2]/div[2]/div[2]/span/div/input    349420..349423
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 424 line(s). Applied 2 filter(s).
-    Sleep    0.5
+    #Sleep    0.5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     [Teardown]    Kill carta_backend And Close Browser
@@ -162,7 +162,7 @@ Line ID Overlay On Spectral Profiler
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 424 line(s). Applied 1 filter(s).
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4.5    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
@@ -178,7 +178,7 @@ Line ID Overlay On Spectral Profiler
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]    350    0
     # capture a screenshot of the spectral profile plot
     Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     
     # NEED A MORE ROBUST TEST HERE

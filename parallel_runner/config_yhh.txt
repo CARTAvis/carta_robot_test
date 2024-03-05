@@ -1,0 +1,2 @@
+4
+--variable DELAY:0.2 --variable N_OMP_THREADS:8 --variable PYTHON3_EXECUTABLE:/Users/yuhsuan/miniconda3/envs/carta_env/bin/python --variable CARTA_BACKEND_EXECUTABLE:/Users/yuhsuan/Documents/CARTAvis/carta-build/carta-backend/build/carta_backend --variable CARTA_FRONTEND_FOLDER:/Users/yuhsuan/Documents/CARTAvis/carta-frontend/build --variable INITIAL_IMAGE_FOLDER:/Users/yuhsuan/Documents/CARTAvis/set_QA_e2e_v2
