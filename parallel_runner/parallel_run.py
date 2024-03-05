@@ -46,9 +46,12 @@ if __name__ == '__main__':
     with Pool(n_process) as p:
         print(p.map(test_runner, range(3100, 3117, 1)))
     
+    # combine test reports
     output_list = ""
     for value in test_suites.values():
         output_list = output_list + "output_parallel_run_%s.xml "%value[:-6]
     os.system("rebot --outputdir . --output output.xml -l log.html -r report.html %s"%output_list)
+    
     t_end = time.time()
     print(f"Elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html to see the test results in one place.")
+    os.system("open report.html")
