@@ -13,7 +13,7 @@ Generate A Moment Image From FITS Cube
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    test_${key}.png
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
@@ -31,7 +31,7 @@ Generate A Moment Image From CASA Cube
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    test_${key}.png
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
@@ -49,7 +49,7 @@ Generate A Moment Image From MIRIAD Cube
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    test_${key}.png
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
@@ -67,7 +67,7 @@ Generate A Moment Image From HDF5 Cube
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    test_${key}.png
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
@@ -86,7 +86,7 @@ Generate A Moment Image From Cube With PerPlaneBeam
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    test_${key}.png
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    198,208,577,208
@@ -125,7 +125,7 @@ Generate All Moment Images
     Click Element    xpath://*[contains(text(), "11: Coordinate of the minimum value of the spectrum")]
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=10
-    Sleep    5
+    #Sleep    5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     # create a statistics widget and dock it to the panel with the X spatial profiler
@@ -183,8 +183,8 @@ Generate All Moment Images
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.average
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.551147937775e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_-1_${key}.png
-    Sleep    1
-    Set Selenium Speed    0.01
+    #Sleep    1
+    Set Selenium Speed    0
     PNG Images Should Be Different    moment_-1_${key}.png    moment_0_${key}.png
     PNG Images Should Be Different    moment_-1_${key}.png    moment_1_${key}.png
     PNG Images Should Be Different    moment_-1_${key}.png    moment_2_${key}.png
@@ -197,9 +197,8 @@ Generate All Moment Images
     PNG Images Should Be Different    moment_-1_${key}.png    moment_9_${key}.png
     PNG Images Should Be Different    moment_-1_${key}.png    moment_10_${key}.png
     PNG Images Should Be Different    moment_-1_${key}.png    moment_11_${key}.png
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    1
     Remove Files    moment_*_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -229,7 +228,7 @@ Generate A Moment Image With Custom Parameters
     Input Text    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[2]/div/div/div/input    25
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
-    Sleep    2
+    #Sleep    2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${FILE_HEADER_DIALOG_BUTTON}
@@ -249,14 +248,14 @@ Generate Moment Images From Unmatched Cubes
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
-    Sleep    2
+    #Sleep    2
     # use the image dropdown to explicitly select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
     Element Should Be Enabled    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
-    Sleep    2
+    #Sleep    2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
@@ -281,14 +280,14 @@ Generate Moment Images From Matched Cubes
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
-    Sleep    2
+    #Sleep    2
     # use the image dropdown to explicitly select M17_SWex.fits
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
     Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
     Element Should Be Enabled    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
-    Sleep    2
+    #Sleep    2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
@@ -317,7 +316,7 @@ Generate A Moment Image With A Region Mask FITS
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    moment_rectangle_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_rectangle_mask_${key}.png    403,186,410,186
@@ -336,7 +335,7 @@ Generate A Moment Image With A Region Mask FITS
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,66
     PNG Two Pixels Should Not Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,74
@@ -354,13 +353,12 @@ Generate A Moment Image With A Region Mask FITS
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_polygon_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,451,103
     PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,200,102
     Remove Files    moment_rectangle_mask_${key}.png    moment_ellipse_mask_${key}.png    moment_polygon_mask_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    2
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -383,7 +381,7 @@ Generate A Moment Image With A Region Mask HDF5
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    moment_rectangle_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_rectangle_mask_${key}.png    403,186,410,186
@@ -402,7 +400,7 @@ Generate A Moment Image With A Region Mask HDF5
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,66
     PNG Two Pixels Should Not Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,74
@@ -420,13 +418,12 @@ Generate A Moment Image With A Region Mask HDF5
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
-    Sleep    2
+    #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_polygon_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,451,103
     PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,200,102
     Remove Files    moment_rectangle_mask_${key}.png    moment_ellipse_mask_${key}.png    moment_polygon_mask_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Sleep    2
     [Teardown]    Kill carta_backend And Close Browser
 
 

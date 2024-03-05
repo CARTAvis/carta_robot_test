@@ -133,8 +133,7 @@ Load CASA boolean image
 Load CASA complex image as amplitude
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -155,8 +154,7 @@ Load CASA complex image as amplitude
 Load CASA complex image as phase
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -177,8 +175,7 @@ Load CASA complex image as phase
 Load CASA complex image as real
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -199,8 +196,7 @@ Load CASA complex image as real
 Load CASA complex image as imaginary
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "complex.image")]
+    Wait Until Element Contains    ${FILE_LIST}   complex.image
     Click Element    xpath://*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -258,8 +254,7 @@ Load CASA concatenated image
 Load Images As A Stokes Hypercube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
+    Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
     Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -288,7 +283,7 @@ Load Images As A Stokes Hypercube
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[6]/div/span/span/div/button/span[1]    Stokes U
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[7]/div    IRCp10216_sci.spw0.cube.V.manual.pbcor.fits
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[8]/div/span/span/div/button/span[1]    Stokes V
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # click the load button
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div/div[1]/div[2]/div/div[3]/div/a
     Wait Until Page Does Not Contain    File Browser    timeout=20
@@ -306,7 +301,7 @@ Load Images As A Stokes Hypercube
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFtotal
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFlinear
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Pangle
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
     Click Element    ${CLIP_BUTTON_90}
@@ -319,8 +314,7 @@ Load Images As A Stokes Hypercube
 Load Multiple Images In One Shot
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216
-    Sleep    0.2
-    Wait Until Page Contains Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
+    Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
     Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -360,7 +354,6 @@ Load Images With LEL
     Element Should Contain    ${VIEWER_TAB_TITLE}    "dice_one.fits"+"dice_four.fits"
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    xpath://*[contains(text(), "tab10")]
-    Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    380,217,274,110
@@ -385,6 +378,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.02925218516611667
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030942637323668337
@@ -397,7 +391,7 @@ Load Axes-Swapped Cubes
     # check source locations
     PNG Two Pixels Should Have Matched RGBA    check_1032_${key}.png    498,370,570,355
     PNG Two Pixels Should Not Have Matched RGBA    check_1032_${key}.png    498,370,539,407
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
 
     Load Image    gaussian_array_large_GALACTIC_0213.image
     # enable gridline rendering
@@ -407,6 +401,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.029219418991124884
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022093053485489067
@@ -417,7 +412,7 @@ Load Axes-Swapped Cubes
     Set Selenium Speed    0.02
     # check source locations
     PNG Two Pixels Should Have Matched RGBA    check_g_0213_${key}.png        379,218,402,77
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
 
     Load Image    gaussian_array_large_1230.image
     # enable gridline rendering
@@ -429,6 +424,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.039907573853270185
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030997400288470325
@@ -439,7 +435,7 @@ Load Axes-Swapped Cubes
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_1230_${key}.png        83,69,676,407
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
 
     Load Image    gaussian_array_large_3021.image
     # enable gridline rendering
@@ -451,6 +447,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04001756319485144
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0031459159769216052
@@ -461,7 +458,7 @@ Load Axes-Swapped Cubes
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_3021_${key}.png        76,50,682,383
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
 
     Load Image    gaussian_array_large_GALACTIC_2031.image
     # enable gridline rendering
@@ -473,6 +470,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.03939278678037231
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.002182948510162576
@@ -483,7 +481,7 @@ Load Axes-Swapped Cubes
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_g_2031_${key}.png        102,69,589,407
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
 
     Load Image    gaussian_array_large_GALACTIC_3102.image
     # enable gridline rendering
@@ -495,6 +493,7 @@ Load Axes-Swapped Cubes
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.034293831676934936
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022011746039559063
