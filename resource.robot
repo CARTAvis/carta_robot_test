@@ -103,32 +103,32 @@ ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    data:testid:catalog-rendering-c
 ${CATALOG_WIDGET_FILE_DROPDOWN}    data:testid:catalog-file-dropdown
 
 
-${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input
-${RENDER_CONFIG_CLIP_MAX_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[3]/div/div/div/input
-${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[1]/div/span/span/div/button
+${RENDER_CONFIG_CLIP_MIN_CUBE}    data:testid:clip-min-input
+${RENDER_CONFIG_CLIP_MAX_CUBE}    data:testid:clip-max-input
+${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    data:testid:histogram-mode-dropdown
 
 
-${IMAGE_FITTING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/span[2]/a
-${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div
-${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
-${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]
-${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[1]/button
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[1]
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[2]
-${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[1]
-${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[2]
-${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/a
-${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[1]
-${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[2]
-${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/a
+${IMAGE_FITTING_DIALOG_BUTTON}    data:testid:image-fitting-dialog-button
+${IMAGE_FITTING_DIALOG_CENTER_X}    //input[@placeholder="Center X"]
+${IMAGE_FITTING_DIALOG_CENTER_Y}    //input[@placeholder="Center Y"]
+${IMAGE_FITTING_DIALOG_AMPLITUDE}    //input[@placeholder="Amplitude"]
+${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //input[@placeholder="Major axis"]
+${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //input[@placeholder="Minor axis"]
+${IMAGE_FITTING_DIALOG_PA}    //input[@placeholder="Position angle"]
+${IMAGE_FITTING_DIALOG_FIT_BUTTON}    data:testid:image-fitting-fit-button
+${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    css:[data-testid="image-fitting-result-tab"] .fitting-result-text
+${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log-tab"] .log-text
+${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //input[@data-testid="image-fitting-component-input"]/ancestor::div//button[.//span[@icon="chevron-up"]]
+${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    css:[data-testid="fitting-dialog"] [class*="-dialog-close-button"]
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:input[data-testid="image-fitting-model-toggle"] + span
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:input[data-testid="image-fitting-residual-toggle"] + span
+${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    data:testid:image-fitting-center-x-lock-button
+${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    data:testid:image-fitting-center-y-lock-button
+${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    data:testid:image-fitting-amplitude-lock-button
+${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    data:testid:image-fitting-fwhm-x-lock-button
+${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    data:testid:image-fitting-fwhm-y-lock-button
+${IMAGE_FITTING_DIALOG_PA_LOCK}    data:testid:image-fitting-pa-lock-button
 
 
 
