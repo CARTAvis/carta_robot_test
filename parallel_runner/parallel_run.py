@@ -22,16 +22,17 @@ test_suites = {3100: "animator.robot",
                3104: "cursor_info.robot",
                3105: "image_fitting.robot",
                3106: "region.robot",
-               3107: "matching.robot",
-               3108: "moment_generator.robot",
-               3109: "pv_generator.robot",
-               3110: "load_image.robot",
-               3111: "rendering.robot",
-               3112: "spatial_profiler.robot",
-               3113: "spectral_line_query.robot",
-               3114: "spectral_profiler.robot",
-               3115: "statistics_widget.robot",
-               3116: "WebGL_test.robot"
+               3107: "annotation.robot",
+               3108: "matching.robot",
+               3109: "moment_generator.robot",
+               3110: "pv_generator.robot",
+               3111: "load_image.robot",
+               3112: "rendering.robot",
+               3113: "spatial_profiler.robot",
+               3114: "spectral_line_query.robot",
+               3115: "spectral_profiler.robot",
+               3116: "statistics_widget.robot",
+               3117: "WebGL_test.robot"
                }
 
 def test_runner(port):
@@ -49,7 +50,7 @@ if __name__ == '__main__':
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        summary = p.map(test_runner, range(3100, 3117, 1))
+        summary = p.map(test_runner, range(3100, 3118, 1))
     
     # show summary in terminal and collect failed suites to rerun
     rerun_suites = []
