@@ -131,57 +131,57 @@ Generate All Moment Images
     # create a statistics widget and dock it to the panel with the X spatial profiler
     Drag And Drop    //*[@id="StatisticsWidgetButton"]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum_coord
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    3.025600051880e+1 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    3.025600051880e+1 km/s
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    moment_11_${key}.png
     Click Element    xpath://*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    2.420960962772e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.420960962772e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_10_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.maximum_coord
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    3.025600051880e+1 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    3.025600051880e+1 km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_9_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.maximum
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    4.446276426315e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    4.446276426315e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_8_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.abs_mean_dev
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    1.477163285017e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    1.477163285017e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_7_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.rms
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    2.927759885788e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.927759885788e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_6_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.standard_deviation
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    1.882859319448e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    1.882859319448e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_5_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.median_coord
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    3.025600051880e+1 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    3.025600051880e+1 km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_4_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.median
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    2.901065945625e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.901065945625e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_3_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.weighted_dispersion_coord
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    5.907100677490e+0 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    5.907100677490e+0 km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_2_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.weighted_coord
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    3.025600051880e+1 km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    3.025600051880e+1 km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_1_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    8.415695428848e-1 Jy/beam.km/s
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.415695428848e-1 Jy/beam.km/s
     Capture Element Screenshot    ${VIEWER_DIV}    moment_0_${key}.png
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.average
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE_DOCKED}    8    2    2.551147937775e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.551147937775e-1 Jy/beam
     Capture Element Screenshot    ${VIEWER_DIV}    moment_-1_${key}.png
     Sleep    1
     Set Selenium Speed    0.01

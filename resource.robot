@@ -121,8 +121,8 @@ ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
 ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //input[@data-testid="image-fitting-component-input"]/ancestor::div//button[.//span[@icon="chevron-up"]]
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    css:[data-testid="fitting-dialog"] [class*="-dialog-close-button"]
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:input[data-testid="image-fitting-model-toggle"] + span
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:input[data-testid="image-fitting-residual-toggle"] + span
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:[data-testid="image-fitting-model-toggle"] + span
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:[data-testid="image-fitting-residual-toggle"] + span
 ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    data:testid:image-fitting-center-x-lock-button
 ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    data:testid:image-fitting-center-y-lock-button
 ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    data:testid:image-fitting-amplitude-lock-button
@@ -132,19 +132,18 @@ ${IMAGE_FITTING_DIALOG_PA_LOCK}    data:testid:image-fitting-pa-lock-button
 
 
 
-${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/table
-${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
+${STATISTICS_WIDGET_TABLE}    data:testid:statistics-table
 
-${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[2]
-${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]/div[3]
-${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
-${SPECTRAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[5]
+${SPECTRAL_PROFILER_SETTINGS_BUTTON}     data:testid:spectral-profiler-0-header-settings-button
+${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}     data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-widget"] [data-testid="profiler-plot"]
+${SPECTRAL_PROFILER_CLOSE_BUTTON}    data:testid:spectral-profiler-0-header-close-button
 
-${PROFILE_FITTING_RESULT_TAB}    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div
-${PROFILE_FITTING_FIT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
-${PROFILE_FITTING_RESET_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
-${PROFILE_FITTING_AUTO_DETECT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
-${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
+${PROFILE_FITTING_RESULT_TAB}    css:[data-testid="profile-fitting-result"] .fitting-result-text
+${PROFILE_FITTING_FIT_BUTTON}    data:testid:profile-fitting-fit-button
+${PROFILE_FITTING_RESET_BUTTON}    data:testid:profile-fitting-reset-button
+${PROFILE_FITTING_AUTO_DETECT_BUTTON}    data:testid:profile-fitting-auto-detect-button
+${PROFILE_FITTING_BUTTON}    data:testid:profile-fitting-button
 
 
 ${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
@@ -161,11 +160,11 @@ ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]
 ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[3]
 ${SPECTRAL_LINE_QUERY_LOADING_ICON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]
 
-${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
-${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
-${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
-${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
-${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[3]
+${SPATIAL_PROFILER_CURSOR_INFO}    data:testid:x-profiler-info
+${SPATIAL_PROFILER_CURSOR_INFO_Y}    data:testid:y-profiler-info
+${SPATIAL_PROFILER_PLOT}    css:[data-testid="x-profiler-widget"] [data-testid="profiler-plot"]
+${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-header-settings-button
+${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler-0-floating-settings-0-header-close-button
 
 
 ${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
