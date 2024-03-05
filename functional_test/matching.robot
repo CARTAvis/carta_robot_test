@@ -28,7 +28,7 @@ Match Images Spatially And Spectrally
     Mouse Over    ${VIEWER_DIV}
     #Sleep    0.5
     Mouse Out    ${VIEWER_DIV}
-    #Sleep    1.0
+    Sleep    1.0
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    casa_zoomed_matched_${key}.png
     #Sleep    0.5
