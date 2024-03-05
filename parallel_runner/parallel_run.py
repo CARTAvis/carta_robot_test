@@ -37,14 +37,21 @@ test_suites = {3100: "animator.robot",
 def test_runner(port):
     test_suite_name = test_suites[port][:-6]
     os.system("time robot --variable CARTA_PORT:%d --variable SNAPSHOT_FOLDER:../snapshot --report report_parallel_run_%s.html --log log_parallel_run_%s.html --output output_parallel_run_%s.xml %s ../functional_test/%s"%(port, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suites[port]))
-
+    with open("./output_parallel_run_%s.xml"%test_suite_name, 'r') as fobj:
+        tmp = fobj.readlines()
+    test_result = tmp[-6]
+    return test_result
 
 if __name__ == '__main__':
     t_start = time.time()
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        print(p.map(test_runner, range(3100, 3117, 1)))
+        summary = p.map(test_runner, range(3100, 3117, 1))
+    
+    # show summary in terminal
+    for suite_summary in summary:
+        print(suite_summary[:-1])
     
     # combine test reports
     output_list = ""
