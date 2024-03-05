@@ -65,7 +65,9 @@ if __name__ == '__main__':
         output_list = output_list + "output_parallel_run_%s.xml "%value[:-6]
     os.system("rebot --outputdir . --output output.xml -l log.html -r report.html %s"%output_list)
     os.system("open report.html")
-    
+    t_middle = time.time()
+    print(f"\nElapsed time for parallel run: {(t_middle - t_start) / 60.0} mins...")
+
     # rerun failed tests
     if len(rerun_suites) != 0:
         output_list = ""
@@ -77,5 +79,5 @@ if __name__ == '__main__':
         os.system("open report_rerun.html")
 
     t_end = time.time()
-    print(f"\nElapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")
+    print(f"\nTotal elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")
     
