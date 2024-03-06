@@ -8,11 +8,12 @@ Check Raster Rendering With WebGL
     Sleep     3
     Page Should Not Contain    'Could not load WebGL. Images will not be displayed properly.'
     Load Initial Image    M17_SWex.fits
-    Capture Element Screenshot    ${VIEWER_DIV}    initial.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
     Click Element    ${CLIP_BUTTON_90}
-    Capture Element Screenshot    ${VIEWER_DIV}    rerendered.png
-    PNG Images Should Be Different    initial.png    rerendered.png
-    Remove Files    initial.png    rerendered.png
+    Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
+    PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
+    Remove Files    initial_${key}.png    rerendered_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Webglreport Test

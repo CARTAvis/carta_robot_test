@@ -16,7 +16,7 @@ Cursor Info For Matched And Unmatched Images
     Drag And Drop    //*[@id="CursorInfoWidgetButton"]    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]
     # click the bottom-left panel with an offset to make HD163296_CO_2_1_subimage.fits active
     Click Element At Coordinates    //*[@id="image-panel-0-1"]/div[8]/div/div/canvas    0    10
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div    HD163296_13CO_2-1_subimage.fits
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    -
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[3]/div    -
@@ -41,7 +41,7 @@ Cursor Info For Matched And Unmatched Images
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[22]/div    LSRK 230.5121 GHz\n33.7063 km/s
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[23]/div    0
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[24]/div    Stokes I
-    Set Selenium Speed    0.2
+    Set Selenium Speed    ${DELAY}
     # click the top-right panel to make HD163296_C18O_2-1_subimage.fits
     Click Element    //*[@id="image-panel-1-0"]
     # click the matching button and trigger spatial+spectral matching
@@ -49,7 +49,7 @@ Cursor Info For Matched And Unmatched Images
     Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
     # mouse over the top-left panel, ie HD163296_13CO_2-1_subimage.fits
     Mouse Over    //*[@id="image-panel-0-0"]
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div    HD163296_13CO_2-1_subimage.fits
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    -5.81883e-3\nJy/beam
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[3]/div    FK5

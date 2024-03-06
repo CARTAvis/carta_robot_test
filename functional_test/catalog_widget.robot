@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation     Catalog file loading, sorting, filtering, and rendering tests
 Resource          ../resource.robot
+#Library    XML
 
 *** Variables ***
 ${MAGIC_INDEX}    17
@@ -18,7 +19,7 @@ Load Catalog File In VOTable Format
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.xml
     Element Should Contain    ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    ICRS
     
@@ -68,7 +69,7 @@ Load Catalog File In FITS Format
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Click Element    ${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     Element Should Contain    ${CATALOG_WIDGET_TITLE}    Catalog : cosmos_mega_simbad.fits
     Element Should Contain    ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    ICRS
 
@@ -233,9 +234,9 @@ Catalog Rendering As Image Overlay With Column Mapping
 
     # set up ra and dec column for rendering image overlay
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[4]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[4]/a/div
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
     # set up size mapping
@@ -244,7 +245,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     # click the shape dropdown menu to see its context
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]/div/span/span/div/button
     # select the line segment shape
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[12]
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[12]
     # click the column dropdown menu to set up size mapping with respect to the ANG_DIST column
     Click Element    //*[@id="bp3-tab-panel_catalogSettings_5"]/div/div[1]/div/span/span/div/button
     Click Element At Coordinates    //*[@id="bp3-tab-panel_catalogSettings_5"]/div/div[1]/div/span/span/div/button    0    -220
@@ -276,33 +277,34 @@ Catalog Rendering As Image Overlay With Column Mapping
     Repeat Keyword    4    Click Element   //*[@id="image-panel-0-0"]/div[8]/span[5]/a
     Mouse Out    ${VIEWER_DIV}
     
-    Sleep    1
-    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+    #Sleep    1
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
-    Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    233,216,331,225
-    PNG Two Pixels Should Have Matched RGBA    check.png    215,142,383,218
-    PNG Two Pixels Should Have Matched RGBA    check.png    236,352,299,68
-    PNG Two Pixels Should Have Matched RGBA    check.png    454,114,112,338
-    PNG Two Pixels Should Have Matched RGBA    check.png    64,69,459,382
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    233,216,331,225
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    215,142,383,218
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    236,352,299,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,114,112,338
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    64,69,459,382
 
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    233,216,215,142
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    233,216,236,352
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    233,216,454,114
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    233,216,64,69
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    215,142,236,352
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    215,142,454,114
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    215,142,64,69
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    236,352,454,114
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    236,352,64,69
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    454,114,64,69
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    233,216,215,142
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    233,216,236,352
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    233,216,454,114
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    233,216,64,69
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    215,142,236,352
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    215,142,454,114
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    215,142,64,69
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    236,352,454,114
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    236,352,64,69
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,114,64,69
 
     # remove the catalog image overlay by clicking the reset button
     Click Element    ${CATALOG_WIDGET_RESET_BUTTON}
-    Capture Element Screenshot    ${VIEWER_DIV}    check2.png
-    PNG Images Should Be Different    check.png    check2.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
 
-    Remove Files    check.png    check2.png
+    Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -320,25 +322,26 @@ Catalog Rendering As Scatter Plot
 
     # enable scatter plot with x=ANG_DIST y=RA_d
     Click Element    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
-    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[3]
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
     
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check_${key}.png
     # click the plot button in the catalog scatter plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[2]/a[2]
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check2.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check2_${key}.png
     # click the x dropdown menu in the catalog scatter plot widget to select DEC_d
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button    0    150
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check3.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check3_${key}.png
 
     # click the statistic source dropdown menu to select ANG_DIST
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[4]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[12]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[11]/div/div/div/div/div/ul/li[2]
     # mouse over the scatter plot element
     Mouse Over    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]
     # check the context in the info field of the scatter plot widget
@@ -347,24 +350,24 @@ Catalog Rendering As Scatter Plot
 
     # click the linear fit button in the catalog scatter plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check4.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check4_${key}.png
 
     # close the catalog file and check the state of the scatter plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[1]/div[1]    Catalog 2D scatter
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[2]/div    No catalog file loaded
 
-    Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    243,93,579,117
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    243,93,300,155
-    PNG Images Should Be Different    check.png    check2.png
-    PNG Images Should Be Different    check.png    check3.png
-    PNG Images Should Be Different    check.png    check4.png
-    PNG Images Should Be Different    check2.png    check3.png
-    PNG Images Should Be Different    check2.png    check4.png
-    PNG Images Should Be Different    check3.png    check4.png
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,93,579,117
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,93,300,155
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
+    PNG Images Should Be Different    check_${key}.png    check3_${key}.png
+    PNG Images Should Be Different    check_${key}.png    check4_${key}.png
+    PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
+    PNG Images Should Be Different    check2_${key}.png    check4_${key}.png
+    PNG Images Should Be Different    check3_${key}.png    check4_${key}.png
     
-    Remove Files    check.png    check2.png    check3.png    check4.png
+    Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png    check4_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -383,27 +386,28 @@ Catalog Rendering As Histogram Plot
 
     # enable histogram plot
     Click Element    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[2]
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check_${key}.png
     # click the plot button in the catalog histogram plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[2]/a
     # click the bins text field and enter 0 to set the bins from 8 to 80
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/div/input    0
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check2.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check2_${key}.png
     # click the x dropdown menu in the catalog histogram plot widget to select DEC_d 
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button
     Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div/span/span/div/button    0    150
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check3.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check3_${key}.png
     
     # mouse over the histogram plot element
     Mouse Over    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]
     # click the statistic source dropdown menu to select DEC_d
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[5]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[11]/div/div/div/div/div/ul/li[4]
+    Click Element    xpath:/html/body/div[10]/div/div/div/div/div/ul/li[4]
     # check the context in the info field of the catalog histogram plot widget
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d: 2.2141465077500007, Count: 378
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[3]/div[1]/div/pre    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
@@ -413,19 +417,19 @@ Catalog Rendering As Histogram Plot
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[1]/div[1]    Catalog Histogram
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div/div[2]/div    No catalog file loaded
 
-    Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check.png    243,170,530,68
-    PNG Two Pixels Should Not Have Matched RGBA    check.png    243,170,115,22
-    PNG Two Pixels Should Have Matched RGBA    check2.png    172,122,458,25
-    PNG Two Pixels Should Not Have Matched RGBA    check2.png    172,122,115,22
-    PNG Two Pixels Should Have Matched RGBA    check3.png    186,119,665,123
-    PNG Two Pixels Should Not Have Matched RGBA    check3.png    186,119,115,22
-    PNG Images Should Be Different    check.png    check2.png
-    PNG Images Should Be Different    check.png    check2.png
-    PNG Images Should Be Different    check.png    check3.png
-    PNG Images Should Be Different    check2.png    check3.png
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,170,530,68
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,170,115,22
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    172,122,458,25
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    172,122,115,22
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    186,119,665,123
+    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    186,119,115,22
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
+    PNG Images Should Be Different    check_${key}.png    check3_${key}.png
+    PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
     
-    Remove Files    check.png    check2.png    check3.png
+    Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -444,58 +448,59 @@ Linked Catalog Visualization
     # set up image overlay, scatter plot and histogram plot
     # plot image overlay with x=RA_d and y=DEC_d
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[4]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[4]/a/div
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
     # plot scatter plot with x=RA_d
     Click Element    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}
     Click Element At Coordinates    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    0    -30
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check_scatter.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check_scatter_${key}.png
 
     # plot histogram plot with x=RA_d
     Click Element    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}
     Click Element At Coordinates    ${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    0    -60
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
 
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div[1]/div[2]/div/div[2]    check_histogram.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div[1]/div[2]/div/div[2]    check_histogram_${key}.png
     # click the histogram plot element
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div[1]/div[2]/div/div[2]
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div[1]/div[2]/div/div[2]    check_histogram_selected.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div[1]/div[2]/div/div[2]    check_histogram_selected_${key}.png
     # close the catalog histogram plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div[1]/div[1]/div[4]
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check_scatter_selected.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[2]    check_scatter_selected_${key}.png
     # close the catalog scatter plot widget
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[1]/div[4]
 
-    Sleep    1
+    #Sleep    1
     # check the context in the catalog table
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[17]/div    73.06999969482422
-    Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected.png
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_selected.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected_${key}.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_selected_${key}.png
     
     Click Element    ${CATALOG_WIDGET_RESET_BUTTON}
-    Sleep    1
+    #Sleep    1
     # on the mac mini, this is not always true. sometimes it is 8.279999732971191, the cell above 9.220000267028809
     #Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[12]/div    9.220000267028809
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_reset.png
-    Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div    check_table_reset_${key}.png
+    Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset_${key}.png
 
-    Set Selenium Speed    0.02
-    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected.png    338,20,338,227
-    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected.png    338,20,342,16
-    PNG Images Should Be Different    check_histogram_selected.png    check_histogram.png
-    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected.png    340,16,340,225
-    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected.png    340,16,350,142
-    PNG Images Should Be Different    check_scatter_selected.png    check_scatter.png
-    PNG Images Should Be Different    check_image_overlay_selected.png    check_image_overlay_reset.png
-    PNG Two Pixels Should Have Matched RGBA    check_table_selected.png    120,70,580,70
-    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected.png    120,70,120,90
-    PNG Images Should Be Different    check_table_selected.png    check_table_reset.png
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,20,338,227
+    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,20,342,16
+    PNG Images Should Be Different    check_histogram_selected_${key}.png    check_histogram_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected_${key}.png    340,16,340,225
+    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected_${key}.png    340,16,350,142
+    PNG Images Should Be Different    check_scatter_selected_${key}.png    check_scatter_${key}.png
+    PNG Images Should Be Different    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    check_table_selected_${key}.png    120,70,580,70
+    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected_${key}.png    120,70,120,90
+    PNG Images Should Be Different    check_table_selected_${key}.png    check_table_reset_${key}.png
 
-    Remove Files    check_scatter.png    check_scatter_selected.png    check_histogram.png    check_histogram_selected.png    check_image_overlay_selected.png    check_image_overlay_reset.png    check_table_selected.png    check_table_reset.png
+    Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -536,3 +541,109 @@ Load And Manage Two Catalog Files
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Fetch VizieR Catalog And Visualize 
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51_151_MHz.fits
+    # enable catalog query dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[6]/a
+    # switch to VizieR catalog
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath://*[contains(text(), "VizieR")]
+    # set up keyword for query
+    Input Text    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[2]/div/div/input    NVSS
+    # make query
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
+    Wait Until Element Does Not Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[4]/div[1]    Querying VizieR    timeout=30
+    # select a catalog
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[7]/div/div/div/div/div/div/input
+    Click Element    xpath://*[contains(text(), "1. Variable")] 
+    # retrive 
+    Click Element   //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[4]/div[2]/a[3]
+    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30
+    Wait Until Page Contains Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[1]/table/tbody/tr/td/pre
+    # enable catalog image overlay
+    # workaround for element not found issue [TODO: investigate this]
+    Set Selenium Speed    0.2
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button    
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[5]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Set Selenium Speed    ${DELAY}
+    # enable scatter plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter_${key}.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # enable histogram plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram_${key}.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # close catalog widget
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    
+    Capture Element Screenshot    ${VIEWER_DIV}    image_${key}.png
+    # check png images
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    image_${key}.png    376,214,227,355
+    PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    249,143,530,162
+    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    171,58,601,58
+    Remove Files    image_${key}.png    scatter_${key}.png    histogram_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Fetch SIMBAD Catalog And Visualize 
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    spire500_ext.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[5]/a
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    image_before_${key}.png
+    # enable catalog query dialog
+    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[6]/a
+    # set search radius
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[3]/div/span[3]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[3]/div/span[1]/div/div/input    value    0.8045196532714395
+    # set search center
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[4]/div/span[4]/button
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[4]/div/span[2]/div/div/input    value    7:08:30.8601970197
+    Element Attribute Value Should Be    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[4]/div/span[3]/div/div/input    value    -10:33:15.4199949321
+    # make query
+    Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
+    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30    
+    # enable catalog image overlay
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    # enable scatter plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter_${key}.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # enable histogram plot
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
+    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
+    Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram_${key}.png
+    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
+    # close catalog widget
+    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    
+    Capture Element Screenshot    ${VIEWER_DIV}    image_after_${key}.png
+    
+    # check png images
+    Set Selenium Speed    0
+    PNG Images Should Be Different    image_before_${key}.png    image_after_${key}.png
+    PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,563,65
+    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    118,162,583,89
+    Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser

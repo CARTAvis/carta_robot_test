@@ -1,0 +1,2 @@
+8
+--variable DELAY:0.2 --variable N_OMP_THREADS:8

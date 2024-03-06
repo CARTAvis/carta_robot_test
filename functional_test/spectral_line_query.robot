@@ -15,7 +15,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to GHz
@@ -23,7 +23,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349.500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to cm
@@ -31,7 +31,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08580944500100181    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.08577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to mm
@@ -39,7 +39,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.8580944500100181    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.8577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}
     # set query mode from FROM-TO to CENTER-WIDTH
@@ -47,28 +47,28 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.8579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.00015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[3]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    0.08579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.000015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[2]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    65    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).        
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}/option[1]
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349.435    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.065    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    10
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).       
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -81,12 +81,12 @@ Line Table Filtering And Shifting
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 424 line(s). Applied 1 filter(s).
     # set a velocity to compute shifted frequencies
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4    True
@@ -102,7 +102,12 @@ Line Table Filtering And Shifting
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # verify shifted frequency
     Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[4]/div    349388.63532873924
-    Sleep    5
+    # add another filter to "shifted frequency"
+    Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[4]/div[2]/div[2]/div[2]/span/div/input    349420..349423
+    Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
+    #Sleep    0.5
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 424 line(s). Applied 2 filter(s).
+    #Sleep    0.5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     [Teardown]    Kill carta_backend And Close Browser
@@ -116,7 +121,7 @@ Line Table Column Configuration
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # hide Chemical Name column
     Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[9]/div/label
@@ -152,12 +157,12 @@ Line ID Overlay On Spectral Profiler
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
-    Sleep    5
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 424 line(s).
     # apply a filter to the Species field
     Input Text    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/div[2]/div[2]/div[2]/div[2]/span/div/input    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
-    Sleep    0.5
+    #Sleep    0.5
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 424 line(s). Applied 1 filter(s).
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4.5    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
@@ -166,33 +171,36 @@ Line ID Overlay On Spectral Profiler
     Click Element    //*[@id="SpectralProfilerButton"]
     Click Element    ${SPECTRAL_LINE_QUERY_PLOT_BUTTON}
     # capture a screenshot of the spectral profile plot
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check.png
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_${key}.png
     Click Element    ${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}
+    # bring spectral profile plot to frontend
+    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]    350    0
     # capture a screenshot of the spectral profile plot
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2.png
-    Set Selenium Speed    0.02
-    PNG Images Should Be Different    check.png    check2.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2_${key}.png
+    Set Selenium Speed    0
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     
     # NEED A MORE ROBUST TEST HERE
     
     # with line ID label (note the rgba inconsistency due to anti-aliasing)
     #IF    '${BROWSER}' == 'headlesschrome'
-    #PNG Pixel XY Should Match RGBA    check.png    199,15,129,188,165,255
-    #PNG Pixel XY Should Match RGBA    check.png    415,15,129,188,165,255
-    #PNG Pixel XY Should Match RGBA    check.png    544,15,129,188,165,255
-    #PNG Pixel XY Should Match RGBA    check.png    588,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    199,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    415,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    544,15,129,188,165,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    588,15,129,188,165,255
     #END
     #IF    '${BROWSER}' == 'chrome'
-    #PNG Pixel XY Should Match RGBA    check.png    199,15,13,128,80,255
-    #PNG Pixel XY Should Match RGBA    check.png    415,15,14,129,81,255
-    #PNG Pixel XY Should Match RGBA    check.png    544,15,15,129,82,255
-    #PNG Pixel XY Should Match RGBA    check.png    588,15,14,128,81,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    199,15,13,128,80,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    415,15,14,129,81,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    544,15,15,129,82,255
+    #PNG Pixel XY Should Match RGBA    check_${key}.png    588,15,14,128,81,255
     #END
     # without line ID label
-    #PNG Pixel XY Should Match RGBA    check2.png    199,15,245,248,250,255
-    #PNG Pixel XY Should Match RGBA    check2.png    415,15,245,248,250,255
-    #PNG Pixel XY Should Match RGBA    check2.png    544,15,245,248,250,255
-    #PNG Pixel XY Should Match RGBA    check2.png    588,15,245,248,250,255    
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    199,15,245,248,250,255
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    415,15,245,248,250,255
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    544,15,245,248,250,255
+    #PNG Pixel XY Should Match RGBA    check2_${key}.png    588,15,245,248,250,255    
     
-    Remove Files    check.png    check2.png
+    Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

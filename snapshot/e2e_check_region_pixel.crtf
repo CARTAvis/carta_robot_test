@@ -1,0 +1,7 @@
+#CRTFv0 CASA Region Text Format version 0
+symbol [[111.8404pix, 299.7553pix], s] coord=J2000, linewidth=2, linestyle=-, color=2ee6d6, symsize=1, symthick=1
+line [[280.3511pix, 248.6915pix], [147.5851pix, 146.5638pix]] coord=J2000, linewidth=2, linestyle=-, color=2ee6d6
+centerbox [[213.9681pix, 197.6277pix], [122.5532pix, 163.4043pix]] coord=J2000, linewidth=2, linestyle=-, color=2ee6d6
+ellipse [[213.9681pix, 197.6277pix], [51.0638pix, 102.1277pix], 0deg] coord=J2000, linewidth=2, linestyle=-, color=2ee6d6
+poly [[290.5638pix, 274.2234pix], [265.0319pix, 75.0745pix], [213.9681pix, 197.6277pix]] coord=J2000, linewidth=2, linestyle=-, color=2ee6d6
+polyline [[213.9681pix, 95.5000pix], [132.2660pix, 115.9255pix], [295.6702pix, 136.3511pix], [213.9681pix, 197.6277pix]] coord=J2000, linewidth=2, linestyle=-, color=2ee6d6
