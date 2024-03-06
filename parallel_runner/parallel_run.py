@@ -14,28 +14,7 @@ with open(config_file, "r") as fobj:
 n_process = int(tmp[0])
 custom_robot_flags = tmp[1]
 
-"""
-test_suites = {3100: "animator.robot",
-               3101: "catalog_widget.robot",
-               3102: "check_file_info.robot",
-               3103: "cube_histogram.robot",
-               3104: "cursor_info.robot",
-               3105: "image_fitting.robot",
-               3106: "region.robot",
-               3107: "annotation.robot",
-               3108: "matching.robot",
-               3109: "moment_generator.robot",
-               3110: "pv_generator.robot",
-               3111: "load_image.robot",
-               3112: "rendering.robot",
-               3113: "spatial_profiler.robot",
-               3114: "spectral_line_query.robot",
-               3115: "spectral_profiler.robot",
-               3116: "statistics_widget.robot",
-               3117: "WebGL_test.robot"
-               }
-"""
-
+# having longer runs run first
 test_suites = {3100: "region.robot",
                3101: "catalog_widget.robot",
                3102: "load_image.robot",
