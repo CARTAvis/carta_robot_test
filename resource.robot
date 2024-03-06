@@ -379,6 +379,10 @@ Load Catalog File
     Click Element    ${LOAD_CATALOG_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
 
+Verify Region List Table Cell Content
+    [Arguments]    ${row_index}    ${column_index}    ${expected_content}
+    ${cell}    Get WebElement    css:[data-testid="region-list-table-row-${row_index}"] .cell:nth-child(${column_index})
+    Element Should Contain    ${cell}    ${expected_content}
 
 
 
