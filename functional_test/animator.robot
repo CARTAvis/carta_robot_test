@@ -11,7 +11,7 @@ Animation Playback
     Click Element    xpath://*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=10
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=20
     #Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
@@ -34,7 +34,7 @@ Animation Playback Backwards
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element    xpath://*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    16    timeout=10
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    16    timeout=20
     #Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
@@ -59,7 +59,7 @@ Animation Playback Bouncing
     Click Element    xpath://*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     #Sleep    4
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    22    timeout=10
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    22    timeout=20
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png

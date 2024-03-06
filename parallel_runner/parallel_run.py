@@ -14,7 +14,7 @@ with open(config_file, "r") as fobj:
 n_process = int(tmp[0])
 custom_robot_flags = tmp[1]
 
-
+"""
 test_suites = {3100: "animator.robot",
                3101: "catalog_widget.robot",
                3102: "check_file_info.robot",
@@ -34,6 +34,28 @@ test_suites = {3100: "animator.robot",
                3116: "statistics_widget.robot",
                3117: "WebGL_test.robot"
                }
+"""
+
+test_suites = {3100: "region.robot",
+               3101: "catalog_widget.robot",
+               3102: "load_image.robot",
+               3103: "matching.robot",
+               3104: "moment_generator.robot",
+               3105: "pv_generator.robot",
+               3106: "statistics_widget.robot",
+               3107: "rendering.robot",
+               3108: "image_fitting.robot",
+               3109: "animator.robot",
+               3110: "annotation.robot",
+               3111: "spectral_line_query.robot",
+               3112: "check_file_info.robot",
+               3113: "statistics_widget.robot",
+               3114: "spatial_profiler.robot",
+               3115: "cube_histogram.robot",
+               3116: "cursor_info.robot",
+               3117: "WebGL_test.robot"
+               }
+
 
 def test_runner(port):
     test_suite_name = test_suites[port][:-6]
