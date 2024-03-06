@@ -167,31 +167,23 @@ ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-heade
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler-0-floating-settings-0-header-close-button
 
 
-${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
+${MOMENT_GENERATOR_BUTTON}    data:testid:moment-generator-button
+${MOMENT_GENERATOR_GENERATE_BUTTON}    data:testid:moment-generator-generate-button
+${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    css:[data-testid="moment-generator-auto-matching-toggle"] + span
 
-${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
-${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
-${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[13]/div/label[2]
+${FILE_HEADER_DIALOG_BUTTON}    data:testid:file-header-dialog-button
+${FILE_HEADER_DIALOG_CLOSE_BUTTON}    css:[data-testid="fileInfo-dialog"] [class*="-dialog-close-button"]
 
-${FILE_HEADER_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
-${FILE_HEADER_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[1]/button
+${CONTOUR_CONFIG_DIALOG_BUTTON}    data:testid:contour-config-dialog-button
+${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    data:testid:contour-config-apply-button
+${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    css:[data-testid="contour-dialog"] [class*="-dialog-close-button"]
 
+${PV_GENERATOR_GENERATE_BUTTON}    data:testid:pv-generator-generate-button
+${PV_GENERATOR_CLOSE_BUTTON}    data:testid:pv-generator-0-header-close-button
+${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}    data:testid:pv-generator-pv-cut-region-dropdown
 
-${CONTOUR_CONFIG_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[3]
-${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
-${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
-
-${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[12]/div[2]/span/a
-${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
-${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div
-
-${POINT_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
-${LINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
-${RECTANGLE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
-${ELLIPSE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
-${POLYGON_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
-${POLYLINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
+${POINT_REGION_SHORTCUT_BUTTON}    data:testid:point-region-shortcut-button
+${LINE_REGION_SHORTCUT_BUTTON}    data:testid:line-region-shortcut-button
 
 
 
