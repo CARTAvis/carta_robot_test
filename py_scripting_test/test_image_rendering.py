@@ -324,20 +324,59 @@ def wcs_rendering():
     session.save_rendered_view("wcs_rendering_colorbar.png", 'white')
 
 
+    # check session.wcs.grid
+    grid = session.wcs.grid
+    grid.set_visible(True)
+    grid.set_custom_color(True)
+    grid.set_color(PaletteColor.RED)
+    grid.set_width(3)
+    grid.set_custom_gap(True)
+    grid.set_gap(0.1, 0.1)
+    imgs[1].zoom_to_size("120degree", "x") # required to see the grid
+    session.save_rendered_view("wcs_rendering_grid_gap.png", 'white')
+    imgs[1].zoom_to_size("11arcsec", "x")
+    assert grid.custom_color == True
+    assert grid.color == PaletteColor.RED
+    assert grid.custom_gap == True
+    assert grid.gap == (0.1, 0.1)
+    assert grid.width == 3
+    grid.hide() # this is equivalent to grid.set_visible(False)
+    assert grid.visible == False
+    grid.show() # this is equivalent to grid.set_visible(True)
+    grid.set_custom_gap(False)
+    session.save_rendered_view("wcs_rendering_grid.png", 'white')
+    # BUG: mssing new pixel grid settings
 
+    # check session.wcs.labels
+    labels = session.wcs.labels
+    labels.set_visible(False)
+    assert labels.visible == False
+    labels.set_visible(True)
+    assert labels.visible == True
+    labels.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD)
+    labels.set_font_size(24)
+    labels.set_custom_color(True)
+    labels.set_color(PaletteColor.RED)
+    labels.set_custom_text(True)
+    labels.set_label_text("RA", "Dec")
+    assert labels.label_text == ("RA", "Dec")
+    assert labels.custom_color == True
+    assert labels.color == PaletteColor.RED
+    assert labels.custom_text == True
+    assert labels.font == (FontFamily.COURIER_NEW, FontStyle.BOLD)
+    assert labels.font_size == 24
+    labels.hide() # this is equivalent to labels.set_visible(False)
+    assert labels.visible == False
+    labels.show() # this is equivalent to labels.set_visible(True)
+    session.save_rendered_view("wcs_rendering_labels.png", 'white')
 
-
-
-
-
-
+   
+   
 
 
 
 
     """
-    session.wcs.grid
-    session.wcs.labels
     session.wcs.numbers
     session.wcs.set_view_area
     session.wcs.ticks
@@ -353,7 +392,7 @@ def wcs_rendering():
 
     #return "Done"
     session.close()
-    return(dir(session.wcs.colorbar.gradient))
+    return(dir(session.wcs.labels))
 
 
 
