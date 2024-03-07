@@ -36,7 +36,7 @@ ${WINDOW_SIZE_dY}    124
 ${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
 ${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
 
-${FILE_LIST}    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]
+${FILE_LIST}    data:testid:file-list
 ${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    css:[data-testid="file-info"] .header-list
 ${FILE_FILTER}    data:testid:file-filter-input
@@ -187,41 +187,41 @@ ${LINE_REGION_SHORTCUT_BUTTON}    data:testid:line-region-shortcut-button
 
 
 
-${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[4]/a
-${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[2]
-${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/label
-${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[4]/div/div/div[1]/input
-${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}    //*[@id="bp3-tab-title_undefined_0"]
-${VECTOR_FIELD_RENDERING_STYLING_TAB}    //*[@id="bp3-tab-title_undefined_1"]
-${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[1]/div/div/div[1]/input
-${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}     //*[@id="bp3-tab-panel_undefined_1"]/div/div[3]/div/div/div/div[2]/div/div/div[1]/input
-${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[4]/div/div/div/input
-${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[1]/button
-${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[6]/div/label
-${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[7]/div/div/div/input
-${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[8]/div/label
-${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[9]/div/div/div/input
-${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[10]/div/div/div/input
-${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[1]
-${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select
-${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[1]
-${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[3]
-${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select
-${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select/option[1]
-${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select
-${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select/option[2]
+${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    data:testid:vector-field-dialog-button
+${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    data:testid:vector-field-apply-button
+${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}    css:[data-testid="vector-field-averaging-toggle"] + span
+${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    data:testid:vector-field-averaging-width-input
+${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}    data:testid:vector-field-configuration-tab
+${VECTOR_FIELD_RENDERING_STYLING_TAB}    data:testid:vector-field-styling-tab
+${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    data:testid:vector-field-line-input
+${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}     data:testid:vector-field-line-length-max-input
+${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    data:testid:vector-field-rotation-offset-input
+${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    css:[data-testid="vector-dialog"] [class*="-dialog-close-button"]
+${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}    css:[data-testid="vector-field-threshold-toggle"] + span
+${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    data:testid:vector-field-threshold-input
+${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    css:[data-testid="vector-field-debiasing-toggle"] + span
+${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    data:testid:vector-field-stokes-q-error-input
+${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    data:testid:vector-field-stokes-u-error-input
+${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}    data:testid:vector-field-clear-button
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}    data:testid:vector-field-intensity-source-dropdown
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}    data:testid:vector-field-intensity-source-dropdown-none
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}    data:testid:vector-field-intensity-source-dropdown-computed-pi
+${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    data:testid:vector-field-angular-source-dropdown
+${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    data:testid:vector-field-angular-source-dropdown-none
+${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    data:testid:vector-field-color-mode-dropdown
+${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    data:testid:vector-field-color-mode-dropdown-colormapped
 
 
-${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
-${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
+${CURSOR_INFO_WIDGET_BUTTON}    id:CursorInfoWidgetButton
+${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    data:testid:cursor-info-0-header-close-button
 
 
 
-${IMAGE_LIST_FIRST_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
-${IMAGE_LIST_SECOND_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]
-${IMAGE_LIST_THIRD_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
-${IMAGE_LIST_SECOND_MATCHING_XY}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-${IMAGE_LIST_THIRD_MATCHING_XY}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]/a
+${IMAGE_LIST_FIRST_IMAGE_NAME}    data:testid:image-list-0-image-name
+${IMAGE_LIST_SECOND_IMAGE_NAME}    data:testid:image-list-1-image-name
+${IMAGE_LIST_THIRD_IMAGE_NAME}    data:testid:image-list-2-image-name
+${IMAGE_LIST_SECOND_MATCHING_XY}    data:testid:image-list-1-matching-xy
+${IMAGE_LIST_THIRD_MATCHING_XY}    data:testid:image-list-2-matching-xy
 
 
 
@@ -273,7 +273,7 @@ Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains    No file selected.
     # check if there is a telemetry prompt and remove it 
     ${PAGE_SOURCE} =    Get Source
-    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    xpath:/html/body/div[4]/div/div[2]/div/div[2]/div/div[2]/button[2]/span
+    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    data:testid:telemetry-opt-out-button
     # reset viewer to multi-panel mode
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
