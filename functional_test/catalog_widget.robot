@@ -550,13 +550,15 @@ Fetch VizieR Catalog And Visualize
     Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[1]/div/span/span/div/button
     Click Element    xpath://*[contains(text(), "VizieR")]
     # set up keyword for query
-    Input Text    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[2]/div/div/input    NVSS
+    Input Text    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[2]/div/div/input    SDSS
     # make query
     Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[3]/div[2]/a[1]
     Wait Until Element Does Not Contain    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[4]/div[1]    Querying VizieR    timeout=30
     # select a catalog
     Click Element    //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[2]/div/div[7]/div/div/div/div/div/div/input
-    Click Element    xpath://*[contains(text(), "1. Variable")] 
+    #Click Element    xpath://*[contains(text(), "v/154/sdss16")]     
+    # 4. Sloan Digital Sky Surveys (SDSS), Release 16 (DR16) (Ahumada+, 2020) * output of the SDSS photometric catalog
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[4]/a/div
     # retrive 
     Click Element   //*[@id="root"]/div/div[3]/div/div[1]/div[2]/div/div[4]/div[2]/a[3]
     Wait Until Page Does Not Contain    Online Catalog Query    timeout=30
@@ -565,21 +567,21 @@ Fetch VizieR Catalog And Visualize
     # workaround for element not found issue [TODO: investigate this]
     Set Selenium Speed    0.2
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button    
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[5]/a/div
+    Click Element    xpath:/html/body/div[6]/div/div/div/div/div/ul/li[6]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[6]/a/div
+    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[7]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     Set Selenium Speed    ${DELAY}
     # enable scatter plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[3]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[3]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     ${key}=    Generate Random String    8
     Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    scatter_${key}.png
     Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
     # enable histogram plot
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[9]/div/div/div/div/div/ul/li[2]/a/div
+    Click Element    xpath:/html/body/div[8]/div/div/div/div/div/ul/li[2]/a/div
     Click Element    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[3]/div/a[4]
     Capture Element Screenshot    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div/div[2]    histogram_${key}.png
     Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[4]
@@ -589,9 +591,9 @@ Fetch VizieR Catalog And Visualize
     Capture Element Screenshot    ${VIEWER_DIV}    image_${key}.png
     # check png images
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    image_${key}.png    376,214,227,355
-    PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    249,143,530,162
-    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    171,58,601,58
+    PNG Two Pixels Should Have Matched RGBA    image_${key}.png    375,245,232,213
+    PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    366,184,591,150
+    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    279,227,655,76
     Remove Files    image_${key}.png    scatter_${key}.png    histogram_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
