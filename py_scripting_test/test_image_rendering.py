@@ -223,7 +223,7 @@ def wcs_rendering():
     border.set_custom_color(True)
     border.set_visible(False)
     border.set_width(2)
-    assert border.color == PaletteColor.BLACK
+    assert border.color == PaletteColor.BLACK # BUG: the rendered black is actually with rgba as (16,22,26,255), something to do with chrome settings?
     assert border.custom_color == True
     assert border.visible == False
     assert border.width == 2
@@ -254,7 +254,7 @@ def wcs_rendering():
     colorbar.label.set_custom_color(True)
     colorbar.label.set_custom_text(True)
     # BUG: missing colorbar.label.set_text()
-    colorbar.label.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD) # BUG: setting BOLD results in ITALIC, missing font size
+    colorbar.label.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD) # BUG: missing font size
     colorbar.label.set_rotation(90) # NOTE: igored when the colorbar position is top or bottom
     colorbar.label.set_visible(True)
     assert colorbar.label.color == PaletteColor.GREEN
@@ -279,7 +279,7 @@ def wcs_rendering():
     assert colorbar.numbers.custom_color == True
     assert colorbar.numbers.custom_precision == True
     #colorbar.numbers.custom_text # BUG: cannot get this value and this is not needed actually
-    assert colorbar.numbers.font == (FontFamily.COURIER_NEW, FontStyle.BOLD) # BUG: missing font size, bold results in italic
+    assert colorbar.numbers.font == (FontFamily.COURIER_NEW, FontStyle.BOLD) # BUG: missing font size
     assert colorbar.numbers.precision == 4
     assert colorbar.numbers.rotation == 90
     assert colorbar.numbers.visible == True
@@ -312,7 +312,7 @@ def wcs_rendering():
     colorbar.border.hide() # this is equivalent to colorbar.border.set_visible(False)
     colorbar.border.show() # this is equivalent to colorbar.border.set_visible(True)
 
-    colorbar.gradient.set_visible(True) # BUG: do we really need this?
+    colorbar.gradient.set_visible(True) # TODO: do we really need this?
     assert colorbar.gradient.visible == True
     colorbar.gradient.hide() # this is equivalent to colorbar.gradient.set_visible(False)
     colorbar.gradient.show() # this is equivalent to colorbar.gradient.set_visible(True)
@@ -370,29 +370,88 @@ def wcs_rendering():
     labels.show() # this is equivalent to labels.set_visible(True)
     session.save_rendered_view("wcs_rendering_labels.png", 'white')
 
-   
-   
+    
+    # check session.wcs.numbers
+    numbers = session.wcs.numbers
+    numbers.set_custom_color(True)
+    numbers.set_color(PaletteColor.BLACK)
+    numbers.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD)
+    numbers.set_font_size(24)
+    numbers.set_custom_format(True)
+    numbers.set_format("d", "d")
+    numbers.set_custom_precision(True)
+    numbers.set_precision(6)
+    numbers.set_visible(False)
+    assert numbers.visible == False
+    numbers.set_visible(True)
+    assert numbers.color == PaletteColor.BLACK
+    assert numbers.custom_color == True
+    assert numbers.custom_format == True
+    assert numbers.custom_precision == True
+    assert numbers.font == (FontFamily.COURIER_NEW, FontStyle.BOLD)
+    assert numbers.font_size == 24
+    assert numbers.format == ("d", "d")
+    assert numbers.precision == 6
+    numbers.hide() # this is equivalent to numbers.set_visible(False)
+    assert numbers.visible == False
+    numbers.show() # this is equivalent to numbers.set_visible(True)
+    session.save_rendered_view("wcs_rendering_numbers.png", 'white')
 
 
+    # check session.wcs.ticks
+    ticks = session.wcs.ticks
+    ticks.set_draw_on_all_edges(False)
+    assert ticks.draw_on_all_edges == False
+    #ticks.set_visible(False) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (False,) failed: Error: Missing action function: setVisible
+    #assert ticks.visible == False # BUG: CartaBadResponse: CARTA scripting action .fetchParameter called with parameters (Macro('overlayStore.ticks', 'visible'),) expected a response, but did not receive one.
+    #ticks.set_visible(True) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (True,) failed: Error: Missing action function: setVisible
+    ticks.set_custom_color(True)
+    ticks.set_color(PaletteColor.WHITE)
+    ticks.set_custom_density(True)
+    ticks.set_density(5, 5)
+    ticks.set_major_length(4)
+    ticks.set_minor_length(2)
+    ticks.set_width(2)
+    assert ticks.width == 2
+    assert ticks.custom_color == True
+    assert ticks.color == PaletteColor.WHITE
+    assert ticks.custom_density == True
+    assert ticks.density == (5, 5)
+    assert ticks.major_length == 4
+    assert ticks.minor_length == 2
+    #ticks.hide() # this is equivalent to ticks.set_visible(False) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (False,) failed: Error: Missing action function: setVisible
+    #assert ticks.visible == False # BUG: as above
+    # ticks.show() # this is equivalent to ticks.set_visible(True) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (True,) failed: Error: Missing action function: setVisible
+    session.save_rendered_view("wcs_rendering_ticks.png", 'white')
 
 
-    """
-    session.wcs.numbers
-    session.wcs.set_view_area
-    session.wcs.ticks
-    session.wcs.title
-    session.wcs.toggle_labels
-    """
+    # check session.wcs.title
+    title = session.wcs.title
+    title.set_visible(True)
+    title.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD)
+    title.set_font_size(20)
+    title.set_custom_color(True)
+    title.set_color(PaletteColor.BLACK)
+    assert title.font == (FontFamily.COURIER_NEW, FontStyle.BOLD)
+    assert title.font_size == 20
+    assert title.custom_color == True
+    assert title.color == PaletteColor.BLACK
+    title.set_custom_text(True)
+    assert title.custom_text == True
+    # BUG: missing title.set_text. title should be set to different images independently
+    assert title.visible == True
+    title.hide() # this is equivalent to title.set_visible(False)
+    assert title.visible == False
+    title.show() # this is equivalent to title.set_visible(True)
+    session.save_rendered_view("wcs_rendering_title.png", 'white')
 
+    
+    #session.wcs.toggle_labels() # TODO: do we need this? Need to know the state first before apply it to get what we need. It seems redundant to labels.set_visible(True/False)
 
-    #session.save_rendered_view("wcs_rendering_beam.png", 'white')
+    # TODO: need the context in the Conversion tab when a pv image is loaded
 
-    # TODO: add test for session.wcs.axes which is only effective with interior axes 
-
-
-    #return "Done"
     session.close()
-    return(dir(session.wcs.labels))
+    return("Done")
 
 
 
