@@ -2,6 +2,8 @@ from multiprocessing import Pool
 import os
 import time
 import sys
+from datetime import date
+import glob
 
 if len(sys.argv) == 1:
     config_file = "./config.txt"
@@ -62,10 +64,17 @@ if __name__ == '__main__':
 
     # combine test reports
     output_list = ""
+    ddate = date.today().strftime("%Y%m%d")
+    output_dir = f"/home/acdc1301/e2e_reports/{ddate}"
+    exist_dir = len(glob.glob(f"{output_dir}*"))
+    if exist_dir > 0:
+        output_dir = f"{output_dir}_{exist_dir}"
+    os.system(f"mkdir -p {output_dir}")
+
     for value in test_suites.values():
         output_list = output_list + "output_parallel_run_%s.xml "%value[:-6]
-    os.system("rebot --outputdir . --output output.xml -l log.html -r report.html %s"%output_list)
-    os.system("open report.html")
+    os.system(f"rebot --outputdir {output_dir} --output output.xml -l log.html -r report.html {output_list}")
+    # os.system("open report.html")
     t_middle = time.time()
     print(f"\nElapsed time for parallel run: {(t_middle - t_start) / 60.0} mins...")
 
@@ -76,8 +85,8 @@ if __name__ == '__main__':
             print("\nRerun failed tests in %s..."%test_suite_name)
             os.system("time robot --variable CARTA_PORT:3200 --variable SNAPSHOT_FOLDER:../snapshot --rerunfailed output_parallel_run_%s.xml --report report_parallel_run_%s_rerun.html --log log_parallel_run_%s_rerun.html --output output_parallel_run_%s_rerun.xml %s ../functional_test/%s.robot"%(test_suite_name, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suite_name))
             output_list = output_list + "output_parallel_run_%s_rerun.xml "%test_suite_name
-        os.system("rebot --outputdir . --output output_rerun.xml -l log_rerun.html -r report_rerun.html %s"%output_list)
-        os.system("open report_rerun.html")
+        os.system(f"rebot --outputdir {output_dir} --output output_rerun.xml -l log_rerun.html -r report_rerun.html {output_list}")
+        # os.system("open report_rerun.html")
 
     t_end = time.time()
     print(f"\nTotal elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")
