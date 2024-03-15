@@ -184,6 +184,10 @@ ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}    data:testid:pv-generator-pv-cut-region
 
 ${POINT_REGION_SHORTCUT_BUTTON}    data:testid:point-region-shortcut-button
 ${LINE_REGION_SHORTCUT_BUTTON}    data:testid:line-region-shortcut-button
+${RECTANGLE_REGION_SHORTCUT_BUTTON}    data:testid:rectangle-region-shortcut-button
+${ELLIPSE_REGION_SHORTCUT_BUTTON}    data:testid:ellipse-region-shortcut-button
+${POLYGON_REGION_SHORTCUT_BUTTON}    data:testid:polygon-region-shortcut-button
+${POLYLINE_REGION_SHORTCUT_BUTTON}    data:testid:polyline-region-shortcut-button
 
 
 

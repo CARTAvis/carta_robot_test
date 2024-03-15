@@ -10,7 +10,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -214,7 +214,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -419,7 +419,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -623,7 +623,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -823,94 +823,94 @@ Creating Annotations And Export As Region Files
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     # point
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[1]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-point
     Click Element At Coordinates    ${VIEWER_DIV}    -150    -150
     # line
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[2]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-line
     Drag And Drop By Offset    ${VIEWER_DIV}    50    -50
     # rectangle
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[3]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-rectangle
     Drag And Drop By Offset    ${VIEWER_DIV}    80    60
     # ellipse
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[4]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-ellipse
     Drag And Drop By Offset    ${VIEWER_DIV}    50    80
     # polygon
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[5]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-polygon
     Click Element At Coordinates    ${VIEWER_DIV}    -110    -110
     Click Element At Coordinates    ${VIEWER_DIV}    120    -15
     Double Click Element    ${VIEWER_DIV}
     # polyline
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[6]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-polyline
     Click Element At Coordinates    ${VIEWER_DIV}    110    110
     Click Element At Coordinates    ${VIEWER_DIV}    -60    75
     Double Click Element    ${VIEWER_DIV}
     # vector
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[7]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-vector
     Drag And Drop By Offset    ${VIEWER_DIV}    100    100
     # text
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[8]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-text
     Drag And Drop By Offset    ${VIEWER_DIV}    -100    -100
     # compass
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[9]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-compass
     Click Element At Coordinates    ${VIEWER_DIV}    78    -90
     # ruler
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a
-    Click Element    xpath:/html/body/div[6]/div/div/div/div/ul/li[10]
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-ruler
     Drag And Drop By Offset    ${VIEWER_DIV}    -90    45
 
     # delete region files from previous tests if any
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
 
     # save as a crtf region file in world coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.crtf
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    css:[data-testid="export-region-selection-list-6"] + span
+    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_world.crtf
+    Click Element    //*[contains(text(), "Export regions")]
 
     # save as a crtf region file in pixel coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
-    Click Element    xpath://*[contains(text(), "Pixel coordinates")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.crtf
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    css:[data-testid="export-region-selection-list-6"] + span
+    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    //*[contains(text(), "World")]
+    Click Element    //*[contains(text(), "Pixel coordinates")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_pixel.crtf
+    Click Element    //*[contains(text(), "Export regions")]
 
     # save as a ds9 region file in pixel coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[1]/button
-    Click Element    xpath://*[contains(text(), "DS9 region file")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_pixel.reg
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    css:[data-testid="export-region-selection-list-6"] + span
+    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    data:testid:export-region-file-type-dropdown
+    Click Element    //*[contains(text(), "DS9 region file")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_pixel.reg
+    Click Element    //*[contains(text(), "Export regions")]
 
     # save as a ds9 region file in world coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[7]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div[1]/div/div/label[8]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
-    Click Element    xpath://*[contains(text(), "World coordinates")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_annotation_world.reg
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    css:[data-testid="export-region-selection-list-6"] + span
+    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    //*[contains(text(), "Pixel")]
+    Click Element    //*[contains(text(), "World coordinates")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_world.reg
+    Click Element    //*[contains(text(), "Export regions")]
 
     # compare generated regions files with snapshot region files
     Set Selenium Speed    0

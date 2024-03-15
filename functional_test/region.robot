@@ -11,7 +11,7 @@ Import World Coordinate ds9 Region Made In ds9
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -188,7 +188,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -366,7 +366,7 @@ Import Image Coordinate ds9 Region Made In ds9
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -545,7 +545,7 @@ Import World Coordinate CASA Region Made In CASAViewer
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -627,7 +627,7 @@ Import Image Coordinate CASA Region Made Manually
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -771,7 +771,7 @@ Import World Coordinate CASA Region Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -856,7 +856,7 @@ Import Image Coordinate CASA Region Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -941,7 +941,7 @@ Import World Coordinate ds9 Region Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -1025,7 +1025,7 @@ Import Image Coordinate ds9 Region Made In CARTA
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -1108,7 +1108,7 @@ Region selecting, centering, locking, and deleting
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     Load Region File    all_region_generated_with_carta.crtf
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -1161,30 +1161,30 @@ Creating Regions And Export As Region Files
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
     # point
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    -100    -100
     # line
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
+    Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Drag And Drop By Offset    ${VIEWER_DIV}    -65    50
     # rectangle
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+    Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
     Drag And Drop By Offset    ${VIEWER_DIV}    -60    80
     # ellipse
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
+    Click Element    ${ELLIPSE_REGION_SHORTCUT_BUTTON}
     Drag And Drop By Offset    ${VIEWER_DIV}    -100    50
     # polygon
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
+    Click Element    ${POLYGON_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    75    -75
     Click Element At Coordinates    ${VIEWER_DIV}    50    120
     Double Click Element    ${VIEWER_DIV}
     # polyline
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
+    Click Element    ${POLYLINE_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    0    100
     Click Element At Coordinates    ${VIEWER_DIV}    -80    80
     Click Element At Coordinates    ${VIEWER_DIV}    80    60
     Double Click Element    ${VIEWER_DIV} 
     
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -1245,34 +1245,34 @@ Creating Regions And Export As Region Files
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
 
     # save as a crtf region file in world coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_world.crtf
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_region_world.crtf
+    Click Element    //*[contains(text(), "Export regions")]
 
     # save as a crtf region file in pixel coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
-    Click Element    xpath://*[contains(text(), "Pixel coordinates")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_pixel.crtf
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
+    Click Element    //*[contains(text(), "World")]
+    Click Element    //*[contains(text(), "Pixel coordinates")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_region_pixel.crtf
+    Click Element    //*[contains(text(), "Export regions")]
 
     # save as a ds9 region file in pixel coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[1]/button
-    Click Element    xpath://*[contains(text(), "DS9 region file")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_pixel.reg
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
+    Click Element    data:testid:export-region-file-type-dropdown
+    Click Element    //*[contains(text(), "DS9 region file")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_region_pixel.reg
+    Click Element    //*[contains(text(), "Export regions")]
 
     # save as a ds9 region file in world coordinate
-    Click Element    //*[@id="root"]/div/div[1]/span[1]/ul/li
-    Click Element    xpath://*[contains(text(), "Export Regions")]
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/span/div/span[2]/button
-    Click Element    xpath://*[contains(text(), "World coordinates")]
-    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[2]/input    e2e_check_region_world.reg
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[4]/div/span/a
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Export Regions")]
+    Click Element    //*[contains(text(), "Pixel")]
+    Click Element    //*[contains(text(), "World coordinates")]
+    Input Text    //input[@placeholder="Enter file name"]    e2e_check_region_world.reg
+    Click Element    //*[contains(text(), "Export regions")]
 
     # compare generated regions files with snapshot region files
     Set Selenium Speed    0
@@ -1299,7 +1299,7 @@ Creating Regions And Export As Region Files
 Shared Region And Region Inheritance
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -1312,54 +1312,54 @@ Shared Region And Region Inheritance
     Append Image    HD163296_CO_2_1.mom1.fits
     Page Should Not Contain Element    data:testid:region-list-table-row-2
     # match image with the XY button
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 1
 
     # unmatch image with the XY button
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 2
     # set a new active image
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_FIRST_IMAGE_NAME}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 1
 
     # set the 2nd image as active by clicking it in the image list
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
     # create a new region on the unmatched 2nd image
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
-    Click Element At Coordinates    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas    20    -50
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
+    Click Element At Coordinates    ${VIEWER_10_CANVAS}    20    -50
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    3    4    Region 3
 
     # match the 2nd image
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 1
     Verify Region List Table Cell Content    3    4    Region 4
     # set a new active image
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div/div
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_FIRST_IMAGE_NAME}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 1
     Verify Region List Table Cell Content    3    4    Region 4
 
     # unmatch again
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 1
     Verify Region List Table Cell Content    3    4    Region 4
     # set a new active image
-    Click Element    xpath://*[contains(text(), "Image List")]
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]/div/div
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
+    Click Element    //*[contains(text(), "Region List")]
     Verify Region List Table Cell Content    2    4    Region 5
     Verify Region List Table Cell Content    3    4    Region 6
 
@@ -1370,7 +1370,7 @@ Shared Region And Region Inheritance
 Loading 4000 Regions From A File
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
@@ -1393,7 +1393,7 @@ Loading Regions on Active Matched Image
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
     # match m51_151_MHz.fits to m51cm3i_8_small.fits by clicking the XY button in the image list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     Load Region File    region_004.crtf
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -1411,9 +1411,9 @@ Loading Regions on Active Reference Image
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
     # match m51_151_MHz.fits to m51cm3i_8_small.fits by clicking the XY button in the image list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     # set m51cm3i_8_small.fits as active by clicking it in the image list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
+    Click Element    ${IMAGE_LIST_FIRST_IMAGE_NAME}
     Load Region File    region_004.crtf
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
