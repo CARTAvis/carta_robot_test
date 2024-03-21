@@ -21,7 +21,7 @@ function git_func() {
 ## default branchs
 git_func $FORNTEND_FOLDER dev
 git_func $BACKEND_FOLDER dev
-git_func $E2E_FOLDER main
+git_func $E2E_FOLDER acdc1301
 
 if [[ $# -eq 0 ]]; then
     echo "enter flag -f, -b, or -t and its argument."
