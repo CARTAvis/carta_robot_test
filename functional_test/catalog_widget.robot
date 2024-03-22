@@ -251,7 +251,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     Click Element    data:testid:catalog-settings-major-size-column-dropdown
     Click Element    //a[contains(., "ANG_DIST")]
     # click the thickness spinbox to increase the thickness of the line segment shape
-    Repeat Keyword    4    Click Element    //input[@data-testid="catalog-settings-thickness-input"]/ancestor::div//button[.//span[@icon="chevron-up"]]
+    Repeat Keyword    4    Click Element    //input[@data-testid="catalog-settings-thickness-input"]/parent::div/parent::div//button[.//span[@icon="chevron-up"]]
 
     # set up color mapping
     # click the color tab

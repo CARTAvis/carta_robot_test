@@ -3,11 +3,6 @@ Documentation     Load an image and check if the image is loaded properly
 Resource          ../resource.robot
 
 
-*** Variables ***
-${MAGIC_INDEX1}    14
-${MAGIC_INDEX2}    17 
-
-
 *** Test Cases ***
 Load FITS image
     [Setup]    Setup carta_backend And Open Browser To CARTA
@@ -134,11 +129,11 @@ Load CASA complex image as amplitude
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
     Wait Until Element Contains    ${FILE_LIST}   complex.image
-    Click Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    //*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     Click Element    ${LOAD_BUTTON}
-    Click Element    xpath://*[contains(text(), "Amplitude")]
+    Click Element    //*[contains(text(), "Amplitude")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    AMPLITUDE("complex.image")
@@ -155,11 +150,11 @@ Load CASA complex image as phase
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
     Wait Until Element Contains    ${FILE_LIST}   complex.image
-    Click Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    //*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     Click Element    ${LOAD_BUTTON}
-    Click Element    xpath://*[contains(text(), "Phase")]
+    Click Element    //*[contains(text(), "Phase")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    PHASE("complex.image")
@@ -176,11 +171,11 @@ Load CASA complex image as real
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
     Wait Until Element Contains    ${FILE_LIST}   complex.image
-    Click Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    //*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     Click Element    ${LOAD_BUTTON}
-    Click Element    xpath://*[contains(text(), "Real")]
+    Click Element    //*[contains(text(), "Real")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    REAL("complex.image")
@@ -197,11 +192,11 @@ Load CASA complex image as imaginary
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    complex.image
     Wait Until Element Contains    ${FILE_LIST}   complex.image
-    Click Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    //*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     Click Element    ${LOAD_BUTTON}
-    Click Element    xpath://*[contains(text(), "Imaginary")]
+    Click Element    //*[contains(text(), "Imaginary")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    IMAG("complex.image")
@@ -255,52 +250,51 @@ Load Images As A Stokes Hypercube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216
     Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=COMMAND
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=COMMAND
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=COMMAND
     ELSE
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=CTRL
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=CTRL
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=CTRL
     END
     # click the "load as hypercube" button
-    Click Element    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[4]/div/div/span[2]/a
+    Click Element    //a[contains(., "Load as hypercube")]
     # check the popup title 
-    Wait Until Page Contains Element    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[1]/h4
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[1]/h4    Merging polarization hypercube
+    Wait Until Page Contains Element    //h4[contains(text(), "Merging polarization hypercube")]
     Set Selenium Speed    0.02
     # verify the context in the popup window
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[1]/div    IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[2]/div/span/span/div/button/span[1]    Stokes I
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[3]/div    IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[4]/div/span/span/div/button/span[1]    Stokes Q
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[5]/div    IRCp10216_sci.spw0.cube.U.manual.pbcor.fits
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[6]/div/span/span/div/button/span[1]    Stokes U
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[7]/div    IRCp10216_sci.spw0.cube.V.manual.pbcor.fits
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div[1]/div/div[2]/div/div[2]/div/div[1]/div[1]/div/div[2]/div/div/div/div/div[8]/div/span/span/div/button/span[1]    Stokes V
+    Element Should Contain    data:testid:stokes-table-filename-0    IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
+    Element Should Contain    data:testid:stokes-table-dropdown-0    Stokes I
+    Element Should Contain    data:testid:stokes-table-filename-1    IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits
+    Element Should Contain    data:testid:stokes-table-dropdown-1    Stokes Q
+    Element Should Contain    data:testid:stokes-table-filename-2    IRCp10216_sci.spw0.cube.U.manual.pbcor.fits
+    Element Should Contain    data:testid:stokes-table-dropdown-2    Stokes U
+    Element Should Contain    data:testid:stokes-table-filename-3    IRCp10216_sci.spw0.cube.V.manual.pbcor.fits
+    Element Should Contain    data:testid:stokes-table-dropdown-3    Stokes V
     Set Selenium Speed    ${DELAY}
     # click the load button
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX1}]/div/div[1]/div[2]/div/div[3]/div/a
+    Click Element    data:testid:load-hypercube-button
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    IRCp10216_sci.spw0.cube.hypercube_IQUV.manual.pbcor.fits
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Set Selenium Speed    0.02
     # check the labels in the polarization slider to ensure native and computed polarization components are there
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes I
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes Q
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes U
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Stokes V
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Ptotal
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Plinear
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFtotal
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    PFlinear
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div    Pangle
+    Element Should Contain    data:testid:animator-polarization-slider    Stokes I
+    Element Should Contain    data:testid:animator-polarization-slider    Stokes Q
+    Element Should Contain    data:testid:animator-polarization-slider    Stokes U
+    Element Should Contain    data:testid:animator-polarization-slider    Stokes V
+    Element Should Contain    data:testid:animator-polarization-slider    Ptotal
+    Element Should Contain    data:testid:animator-polarization-slider    Plinear
+    Element Should Contain    data:testid:animator-polarization-slider    PFtotal
+    Element Should Contain    data:testid:animator-polarization-slider    PFlinear
+    Element Should Contain    data:testid:animator-polarization-slider    Pangle
     Set Selenium Speed    ${DELAY}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
@@ -315,20 +309,20 @@ Load Multiple Images In One Shot
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    IRCp10216
     Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.I.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
     ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=COMMAND
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=COMMAND
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=COMMAND
     ELSE
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=CTRL
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=CTRL
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.Q.manual.pbcor.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.U.manual.pbcor.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.V.manual.pbcor.fits")]    modifier=CTRL
     END
-    Click Element    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[4]/div/div/span[1]/a
+    Click Element    //a[contains(., "Load selected")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    IRCp10216_sci.spw0.cube.V.manual.pbcor.fits
@@ -344,16 +338,16 @@ Load Multiple Images In One Shot
 Load Images With LEL
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # switch to the image arithmetic mode from the default file filtering mode
-    Click Element    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/span[1]/span/button
-    Click Element    xpath://*[contains(text(), "Image arithmetic")]
+    Click Element    //button[contains(., "Filter")]
+    Click Element    //*[contains(text(), "Image arithmetic")]
     # fill in the LEL expression
-    Input text    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/input    "dice_one.fits"+"dice_four.fits"
-    Click Element    xpath://*[contains(text(), "Load expression")]
+    Input text    //input[@placeholder="Enter an image arithmetic expression"]    "dice_one.fits"+"dice_four.fits"
+    Click Element    //*[contains(text(), "Load expression")]
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    "dice_one.fits"+"dice_four.fits"
     Click Element    ${COLORMAP_DROPDOWN}
-    Click Element    xpath://*[contains(text(), "tab10")]
+    Click Element    //*[contains(text(), "tab10")]
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    380,217,274,110
@@ -366,15 +360,15 @@ Load Axes-Swapped Cubes
     Load Initial Image    gaussian_array_large_1032.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
+    Click Element    css:#image-panel-0-0 [data-testid="grid-button"]
     # make grid line thicker
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Click Element    //*[@id="bp3-tab-title_imageViewSettingsTabs_Grids"]
-    Repeat Keyword    3    Click Element    //*[@id="bp3-tab-panel_imageViewSettingsTabs_Grids"]/div/div[4]/div/div/div[2]/button[1]
+    Click Element    data:testid:image-view-settings-grid-tab-title
+    Repeat Keyword    3    Click Element    //input[@data-testid="image-view-settings-grid-width-input"]/parent::div/parent::div//button[.//span[@icon="chevron-up"]]
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # check slider label in the animator
-    Click Element    xpath://*[contains(text(), "Animator")]
-    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    Click Element    //*[contains(text(), "Animator")]
+    Element Text Should Be   css:[data-testid="animator-slider"] label    Channel
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -396,8 +390,8 @@ Load Axes-Swapped Cubes
     Load Image    gaussian_array_large_GALACTIC_0213.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    Channel
+    Click Element    css:#image-panel-0-0 [data-testid="grid-button"]
+    Element Text Should Be   css:[data-testid="animator-slider"] label    Channel
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
@@ -417,8 +411,8 @@ Load Axes-Swapped Cubes
     Load Image    gaussian_array_large_1230.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    RA
+    Click Element    css:#image-panel-0-0 [data-testid="grid-button"]
+    Element Text Should Be   css:[data-testid="animator-slider"] label    RA
     # switch to a different RA
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
@@ -440,8 +434,8 @@ Load Axes-Swapped Cubes
     Load Image    gaussian_array_large_3021.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    DEC
+    Click Element    css:#image-panel-0-0 [data-testid="grid-button"]
+    Element Text Should Be   css:[data-testid="animator-slider"] label    DEC
     # switch to a different DEC
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
@@ -463,8 +457,8 @@ Load Axes-Swapped Cubes
     Load Image    gaussian_array_large_GALACTIC_2031.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLAT
+    Click Element    css:#image-panel-0-0 [data-testid="grid-button"]
+    Element Text Should Be   css:[data-testid="animator-slider"] label    GLAT
     # switch to a different GLAT
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
@@ -486,8 +480,8 @@ Load Axes-Swapped Cubes
     Load Image    gaussian_array_large_GALACTIC_3102.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[11]/a
-    Element Text Should Be   //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label    GLON
+    Click Element    css:#image-panel-0-0 [data-testid="grid-button"]
+    Element Text Should Be   css:[data-testid="animator-slider"] label    GLON
     # switch to a different GLON
     Click Element    ${ANIMATOR_SLIDER}
     # switch to a different Stokes (Q)
