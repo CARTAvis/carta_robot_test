@@ -104,10 +104,10 @@ Matched Region Canvas Rendering Multiple Panel View
     # enable region config dialog and set a new size and a new styling
     Double Click Element    ${VIEWER_DIV}
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Press Keys    //input[@placeholder="X Coordinate"][1]    DELETE
-    Input Text    //input[@placeholder="X Coordinate"][1]    5
-    Press Keys    //input[@placeholder="Y Coordinate"][1]    DELETE
-    Input Text    //input[@placeholder="Y Coordinate"][1]    1
+    Press Keys    (//input[@placeholder="X Coordinate"])[1]    DELETE
+    Input Text    (//input[@placeholder="X Coordinate"])[1]    5
+    Press Keys    (//input[@placeholder="Y Coordinate"])[1]    DELETE
+    Input Text    (//input[@placeholder="Y Coordinate"])[1]    1
     Press Keys    //input[@placeholder="Width"]    DELETE
     Input Text    //input[@placeholder="Width"]    1
     Press Keys    //input[@placeholder="Height"]    DELETE
@@ -274,10 +274,10 @@ Matched Region Canvas Rendering Single Panel View
     # enable region config dialog and set a new size and a new styling
     Double Click Element    ${VIEWER_DIV}
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Press Keys    //input[@placeholder="X Coordinate"][1]    DELETE
-    Input Text    //input[@placeholder="X Coordinate"][1]    5
-    Press Keys    //input[@placeholder="Y Coordinate"][1]    DELETE
-    Input Text    //input[@placeholder="Y Coordinate"][1]    1
+    Press Keys    (//input[@placeholder="X Coordinate"])[1]    DELETE
+    Input Text    (//input[@placeholder="X Coordinate"])[1]    5
+    Press Keys    (//input[@placeholder="Y Coordinate"])[1]    DELETE
+    Input Text    (//input[@placeholder="Y Coordinate"])[1]    1
     Press Keys    //input[@placeholder="Width"]    DELETE
     Input Text    //input[@placeholder="Width"]    1
     Press Keys    //input[@placeholder="Height"]    DELETE
