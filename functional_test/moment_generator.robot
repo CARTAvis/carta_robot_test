@@ -7,7 +7,7 @@ Generate A Moment Image From FITS Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -25,7 +25,7 @@ Generate A Moment Image From CASA Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.image
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -43,7 +43,7 @@ Generate A Moment Image From MIRIAD Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.miriad
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -61,7 +61,7 @@ Generate A Moment Image From HDF5 Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.hdf5
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -80,7 +80,7 @@ Generate A Moment Image From Cube With PerPlaneBeam
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.subimage.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -100,41 +100,41 @@ Generate All Moment Images
     Load Initial Image    M17_SWex.fits
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Over    ${VIEWER_DIV}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # set mask mode to include
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[8]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[8]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-mask-dropdown
+    Click Element    //option[contains(text(), "Include")]
     # set mask range from value to 0.03
-    Press Keys    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[9]/div/div/div[1]/div/div/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[9]/div/div/div[1]/div/div/div/input    0.03
+    Press Keys    data:testid:moment-generator-mask-range-from-input    DELETE
+    Input Text    data:testid:moment-generator-mask-range-from-input    0.03
     # select all kinds of moments
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[11]/div/div/div/div/div/button
-    Click Element    xpath://*[contains(text(), "-1: Mean value of the spectrum")]
-    Click Element    xpath://*[contains(text(), "0: Integrated value of the spectrum")]
-    Click Element    xpath://*[contains(text(), "1: Intensity weighted coordinate")]
-    Click Element    xpath://*[contains(text(), "2: Intensity weighted dispersion of the coordinate")]
-    Click Element    xpath://*[contains(text(), "3: Median value of the spectrum")]
-    Click Element    xpath://*[contains(text(), "4: Median coordinate")]
-    Click Element    xpath://*[contains(text(), "5: Standard deviation about the mean of the spectrum")]
-    Click Element    xpath://*[contains(text(), "6: Root mean square of the spectrum")]
-    Click Element    xpath://*[contains(text(), "7: Absolute mean deviation of the spectrum")]
-    Click Element    xpath://*[contains(text(), "8: Maximum value of the spectrum")]
-    Click Element    xpath://*[contains(text(), "9: Coordinate of the maximum value of the spectrum")]
-    Click Element    xpath://*[contains(text(), "10: Minimum value of the spectrum")]
-    Click Element    xpath://*[contains(text(), "11: Coordinate of the minimum value of the spectrum")]
+    Click Element    data:testid:moment-generator-clear-select-button
+    Click Element    //*[contains(text(), "-1: Mean value of the spectrum")]
+    Click Element    //*[contains(text(), "0: Integrated value of the spectrum")]
+    Click Element    //*[contains(text(), "1: Intensity weighted coordinate")]
+    Click Element    //*[contains(text(), "2: Intensity weighted dispersion of the coordinate")]
+    Click Element    //*[contains(text(), "3: Median value of the spectrum")]
+    Click Element    //*[contains(text(), "4: Median coordinate")]
+    Click Element    //*[contains(text(), "5: Standard deviation about the mean of the spectrum")]
+    Click Element    //*[contains(text(), "6: Root mean square of the spectrum")]
+    Click Element    //*[contains(text(), "7: Absolute mean deviation of the spectrum")]
+    Click Element    //*[contains(text(), "8: Maximum value of the spectrum")]
+    Click Element    //*[contains(text(), "9: Coordinate of the maximum value of the spectrum")]
+    Click Element    //*[contains(text(), "10: Minimum value of the spectrum")]
+    Click Element    //*[contains(text(), "11: Coordinate of the minimum value of the spectrum")]
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=10
     #Sleep    5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     # create a statistics widget and dock it to the panel with the X spatial profiler
-    Drag And Drop    //*[@id="StatisticsWidgetButton"]    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
+    Drag And Drop    StatisticsWidgetButton    ${SPATIAL_PROFILER_TAB}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum_coord
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    3.025600051880e+1 km/s
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    moment_11_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.420960962772e-1 Jy/beam
@@ -208,24 +208,24 @@ Generate A Moment Image With Custom Parameters
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
     Append Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to explicitly select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
-    Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/label/span    M17
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.fits")]
+    Element Should Contain    data:testid:moment-generator-file-info    M17
     # use the region dropdown to explicitly select Region 4
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
-    Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/label/span/span    Region 4
+    Click Element    data:testid:moment-generator-region-dropdown
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 4")]
+    Element Should Contain    data:testid:moment-generator-region-info    Region 4
     # use the coordinate dropdown to select radio velocity as the reference 
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[4]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[4]/div/div/select/option[1]
+    Click Element    css:[data-testid="moment-generator-tab"] [data-testid="spectral-profiler-coordinate-dropdown"]
+    Click Element    //*[@data-testid="moment-generator-tab"]//option[contains(text(), "Radio velocity (km/s)")]
     # set velocity range from 15 to 25
-    Press Keys    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[1]/div/div/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[1]/div/div/div/input    15
-    Press Keys    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[2]/div/div/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[6]/div/div/div[2]/div/div/div/input    25
+    Press Keys    data:testid:moment-generator-spectral-range-from-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-from-input    15
+    Press Keys    data:testid:moment-generator-spectral-range-to-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-to-input    25
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     #Sleep    2
@@ -233,10 +233,10 @@ Generate A Moment Image With Custom Parameters
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${FILE_HEADER_DIALOG_BUTTON}
     # switch to the file information tab
-    Click Element    //*[@id="bp3-tab-title_file-info-tabs_image-file"]
+    Click Element    data:testid:file-information-tab-title
     # verify file info context
-    Element Should Contain    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    M17_SWex.fits.moment.integrated
-    Element Should Contain    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[2]/div/div[2]/div/div    [116, 128, 1, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    M17_SWex.fits.moment.integrated
+    Element Should Contain    ${FILE_INFO_TEXT}    [116, 128, 1, 1]
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -244,14 +244,14 @@ Generate Moment Images From Unmatched Cubes
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Append Image    M17_SWex.hdf5
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     #Sleep    2
     # use the image dropdown to explicitly select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.fits")]
     Element Should Be Enabled    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -259,7 +259,7 @@ Generate Moment Images From Unmatched Cubes
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.hdf5.moment.integrated
     [Teardown]    Kill carta_backend And Close Browser
@@ -269,21 +269,21 @@ Generate Moment Images From Matched Cubes
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     # create an ellipse region at the image view center via the region shortcut button
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
+    Click Element    ${ELLIPSE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Append Image    M17_SWex.hdf5
     # trigger image matching
-    Mouse Over    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
-    Click Element    //*[@id="image-panel-1-0"]/div[9]/span[9]/span/a
-    Click Element    xpath://*[contains(text(), "Spectral (VRAD) and spatial")]
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spectral (VRAD) and spatial")]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     #Sleep    2
     # use the image dropdown to explicitly select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.fits")]
     Element Should Be Enabled    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -291,7 +291,7 @@ Generate Moment Images From Matched Cubes
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.hdf5.moment.integrated
     [Teardown]    Kill carta_backend And Close Browser
@@ -302,15 +302,15 @@ Generate A Moment Image With A Region Mask FITS
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the region dropdown to select Region 2
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
+    Click Element    data:testid:moment-generator-region-dropdown
     # Cursor region
-    Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[3]
+    Element Should be Disabled    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Cursor")]
     # Region 1
-    Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[4]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[5]
+    Element Should be Disabled    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 1")]
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 2")]
     Click Element    ${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -321,16 +321,16 @@ Generate A Moment Image With A Region Mask FITS
     Capture Element Screenshot    ${VIEWER_DIV}    moment_rectangle_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_rectangle_mask_${key}.png    403,186,410,186
     PNG Two Pixels Should Not Have Matched RGBA    moment_rectangle_mask_${key}.png    403,178,410,186
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.fits")]
     # use the region dropdown to select Region 3
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[6]
+    Click Element    data:testid:moment-generator-region-dropdown
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 3")]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    data:testid:spectral-profiler-0-floating-settings-0-header-title    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -339,16 +339,16 @@ Generate A Moment Image With A Region Mask FITS
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,66
     PNG Two Pixels Should Not Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,74
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.fits")]
     # use the region dropdown to select Region 4
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
+    Click Element    data:testid:moment-generator-region-dropdown
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 4")]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    data:testid:spectral-profiler-0-floating-settings-0-header-title    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -367,15 +367,15 @@ Generate A Moment Image With A Region Mask HDF5
     Load Initial Image    M17_SWex.hdf5
     Load Region File    region_001.crtf
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the region dropdown to select Region 2
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
+    Click Element    data:testid:moment-generator-region-dropdown
     # Cursor region
-    Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[3]
+    Element Should be Disabled    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Cursor")]
     # Region 1
-    Element Should be Disabled    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[4]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[5]
+    Element Should be Disabled    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 1")]
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 2")]
     Click Element    ${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
@@ -386,16 +386,16 @@ Generate A Moment Image With A Region Mask HDF5
     Capture Element Screenshot    ${VIEWER_DIV}    moment_rectangle_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_rectangle_mask_${key}.png    403,186,410,186
     PNG Two Pixels Should Not Have Matched RGBA    moment_rectangle_mask_${key}.png    403,178,410,186
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.hdf5")]
     # use the region dropdown to select Region 3
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[6]
+    Click Element    data:testid:moment-generator-region-dropdown
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 3")]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    data:testid:spectral-profiler-0-floating-settings-0-header-title    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -404,16 +404,16 @@ Generate A Moment Image With A Region Mask HDF5
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask_${key}.png
     PNG Two Pixels Should Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,66
     PNG Two Pixels Should Not Have Matched RGBA    moment_ellipse_mask_${key}.png    228,74,236,74
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # use the image dropdown to select M17_SWex.fits
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[1]/div/div/select/option[2]
+    Click Element    data:testid:moment-generator-image-dropdown
+    Click Element    //*[@data-testid="moment-generator-image-dropdown"]/option[contains(text(), "0: M17_SWex.hdf5")]
     # use the region dropdown to select Region 4
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[2]/div/div/select/option[7]
+    Click Element    data:testid:moment-generator-region-dropdown
+    Click Element    //*[@data-testid="moment-generator-region-dropdown"]/option[contains(text(), "Region 4")]
     # move the dialog so that the generate button is clickable in the view
-    Drag And Drop By Offset    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]    0    50
+    Drag And Drop By Offset    data:testid:spectral-profiler-0-floating-settings-0-header-title    0    50
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
