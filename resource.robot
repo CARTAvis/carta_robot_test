@@ -73,8 +73,8 @@ ${ANIMATOR_LAST_BUTTON}    data:testid:animator-last-button
 ${ANIMATOR_SLIDER}    css:[data-testid="animator-slider"] [class*="-slider-track"]
 ${ANIMATOR_SLIDER_INFO}    data:testid:animator-slider-info
 ${ANIMATOR_SLIDER_HANDLE}    css:[data-testid="animator-slider"] div span
-${ANIMATOR_SPINBOX_UP}    css:[data-testid="animator-controls"] button > span[icon="chevron-up"]
-${ANIMATOR_SPINBOX_DOWN}    css:[data-testid="animator-controls"] button > span[icon="chevron-down"]
+${ANIMATOR_SPINBOX_UP}    css:[data-testid="animator-controls"] button:nth-child(1)
+${ANIMATOR_SPINBOX_DOWN}    css:[data-testid="animator-controls"] button:nth-child(2)
 ${ANIMATOR_PLAYBACK_MODE_BUTTON}    data:testid:animator-playback-mode-button
 ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-start"]
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-end"]
@@ -119,7 +119,7 @@ ${IMAGE_FITTING_DIALOG_FIT_BUTTON}    data:testid:image-fitting-fit-button
 ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    css:[data-testid="image-fitting-result-tab"] .fitting-result-text
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log-tab"] .log-text
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //input[@data-testid="image-fitting-component-input"]/parent::div/parent::div//button[.//span[@icon="chevron-up"]]
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    (//input[@data-testid="image-fitting-component-input"]/parent::div/parent::div//button)[1]
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    css:[data-testid="fitting-dialog"] [class*="-dialog-close-button"]
 ${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:[data-testid="image-fitting-model-toggle"] + span
 ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:[data-testid="image-fitting-residual-toggle"] + span

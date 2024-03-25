@@ -266,7 +266,7 @@ Load Images As A Stokes Hypercube
     # click the "load as hypercube" button
     Click Element    //a[contains(., "Load as hypercube")]
     # check the popup title 
-    Wait Until Page Contains Element    //h4[contains(text(), "Merging polarization hypercube")]
+    Wait Until Page Contains Element    //*[contains(text(), "Merging polarization hypercube")]
     Set Selenium Speed    0.02
     # verify the context in the popup window
     Element Should Contain    data:testid:stokes-table-filename-0    IRCp10216_sci.spw0.cube.I.manual.pbcor.fits
@@ -364,7 +364,7 @@ Load Axes-Swapped Cubes
     # make grid line thicker
     Click Element    ${VIEWER_SETTINGS_DIALOG}
     Click Element    data:testid:image-view-settings-grid-tab-title
-    Repeat Keyword    3    Click Element    //input[@data-testid="image-view-settings-grid-width-input"]/parent::div/parent::div//button[.//span[@icon="chevron-up"]]
+    Repeat Keyword    3    Click Element    (//input[@data-testid="image-view-settings-grid-width-input"]/parent::div/parent::div//button)[1]
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # check slider label in the animator
     Click Element    //*[contains(text(), "Animator")]
