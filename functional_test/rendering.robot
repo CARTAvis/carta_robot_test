@@ -7,7 +7,7 @@ Raster Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
     Click Element    ${COLORMAP_DROPDOWN}
-    Click Element    xpath://*[contains(text(), "tab10")]
+    Click Element    //*[contains(text(), "tab10")]
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -31,13 +31,13 @@ Contour Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
     Click Element    ${COLORMAP_DROPDOWN}
-    Click Element    xpath://*[contains(text(), "nipy_spectral")]
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[3]/a
-    Input Text    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/div/div/div/input    0.6
-    Click Element    xpath://*[contains(text(), "Styling")]
-    Input Text    //*[@id="bp3-tab-panel_undefined_2"]/div/div[1]/div/div/div[1]/input    5
-    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
-    Click Element    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
+    Click Element    //*[contains(text(), "nipy_spectral")]
+    Click Element    data:testid:contour-config-dialog-button
+    Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
+    Click Element    //*[contains(text(), "Styling")]
+    Input Text    data:testid:contour-thickness-input    5
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -62,23 +62,22 @@ Contour Image Rendering
 Region Canvas Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+    Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    5
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    1
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[1]/div/input    1
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[4]/div/div[2]/div/input    1
-    Click Element    //*[@id="bp3-tab-title_regionDialogTabs_1"]
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/div/div/div[1]/input    3
-    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_1"]/div/div[2]/label
-    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
+    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Press Keys    (//input[@placeholder="X Coordinate"])[1]    DELETE
+    Input Text    (//input[@placeholder="X Coordinate"])[1]    5
+    Press Keys    (//input[@placeholder="Y Coordinate"])[1]    DELETE
+    Input Text    (//input[@placeholder="Y Coordinate"])[1]    1
+    Press Keys    //input[@placeholder="Width"]    DELETE
+    Input Text    //input[@placeholder="Width"]    1
+    Press Keys    //input[@placeholder="Height"]    DELETE
+    Input Text    //input[@placeholder="Height"]    1
+   Click Element    //*[contains(text(), "Styling")]
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -137,16 +136,16 @@ Catalog Image Overlay Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    model.fits
     Load Catalog File  model_fits_fk4.xml
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-    Click Element    xpath:/html/body/div[7]/div/div/div/div/div/ul/li[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[2]/div/div[2]/div/span/span/div/button    0    -150
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[3]/div[3]/div/a[4]
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/a[1]
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button
-    Click Element At Coordinates   //*[@id="root"]/div/div[18]/div[2]/div[1]/div[2]/div/div[2]/div/span/span/div/button    0    50
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[5]
+    Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
+    Click Element    //a[contains(., "RA_d")]
+    Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
+    Click Element    //a[contains(., "DEC_d")]
+    Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
+    Click Element    //*[contains(text(), "Size")]
+    Click Element    data:testid:catalog-settings-shape-dropdown
+    Click Element    data:testid:catalog-settings-shape-circle-filled
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    Click Element    data:testid:catalog-overlay-component-0-header-close-button
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
@@ -322,7 +321,7 @@ Vector Field Rendering With A Stokes Line Cube
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_channel_0_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    check_channel_5_${key}.png
     PNG Images Should Be Different    check_channel_0_${key}.png    check_channel_5_${key}.png
@@ -333,140 +332,140 @@ Vector Field Rendering With A Stokes Line Cube
 GUI Initialization
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # close file browser dialog
-    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[1]/button
+    Click Element    css:[data-testid="fileBrowser-dialog"] [class*="-dialog-close-button"]
     # region / annotation shortcut buttons
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[1]/a    disabled    true
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[2]/a    disabled    true
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[3]/a    disabled    true
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[4]/a    disabled    true
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[5]/a    disabled    true
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[6]/a    disabled    true
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[1]/span[7]/span/a    disabled    true
+    Element Attribute Value Should Be    ${POINT_REGION_SHORTCUT_BUTTON}    disabled    true
+    Element Attribute Value Should Be    ${LINE_REGION_SHORTCUT_BUTTON}    disabled    true
+    Element Attribute Value Should Be    ${RECTANGLE_REGION_SHORTCUT_BUTTON}    disabled    true
+    Element Attribute Value Should Be    ${ELLIPSE_REGION_SHORTCUT_BUTTON}    disabled    true
+    Element Attribute Value Should Be    ${POLYGON_REGION_SHORTCUT_BUTTON}    disabled    true
+    Element Attribute Value Should Be    ${POLYLINE_REGION_SHORTCUT_BUTTON}    disabled    true
+    Element Attribute Value Should Be    data:testid:annotation-shortcut-dropdown    disabled    true
     # region list widget
-    Click Element    //*[@id="RegionListWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Region List
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:RegionListWidgetButton
+    Element Should Contain    data:testid:region-list-1-header-title    Region List
+    Element Should Contain    data:testid:region-list-1-content    No file loaded
+    Click Element    data:testid:region-list-1-header-close-button
     # log widget
-    Click Element    //*[@id="LogWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Log
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]    AST library loaded
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]    Compute module loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:LogWidgetButton
+    Element Should Contain    data:testid:log-0-header-title    Log
+    Element Should Contain    data:testid:log-0-content    AST library loaded
+    Element Should Contain    data:testid:log-0-content    Compute module loaded
+    Click Element    data:testid:log-0-header-close-button
     # spatial profiler widget
-    Click Element    //*[@id="SpatialProfilerButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    X Profile: Cursor
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    X Spatial Profile Settings: Cursor
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Styling
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    Click Element    id:SpatialProfilerButton
+    Element Should Contain    data:testid:spatial-profiler-2-header-title    X Profile: Cursor
+    Click Element    data:testid:spatial-profiler-2-header-settings-button
+    Element Should Contain    data:testid:spatial-profiler-2-floating-settings-0-header-title    X Spatial Profile Settings: Cursor
+    Element Should Contain    data:testid:spatial-profiler-2-floating-settings-0-content    Styling
+    Click Element    data:testid:spatial-profiler-2-floating-settings-0-header-close-button
+    Click Element    data:testid:spatial-profiler-2-header-close-button
     # spectral profiler widget
-    Click Element    //*[@id="SpectralProfilerButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Z Profile
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label    Image
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Z Profile Settings
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Conversion
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    Click Element    id:SpectralProfilerButton
+    Element Should Contain    data:testid:spectral-profiler-0-header-title    Z Profile
+    Element Should Contain    data:testid:spectral-profiler-0-content    Image
+    Click Element    data:testid:spectral-profiler-0-header-settings-button
+    Element Should Contain    data:testid:spectral-profiler-0-floating-settings-0-header-title    Z Profile Settings
+    Element Should Contain    data:testid:spectral-profiler-0-floating-settings-0-content    Conversion
+    Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+    Click Element    data:testid:spectral-profiler-0-header-close-button
     # statistics widget
-    Click Element    //*[@id="StatisticsWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Statistics
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No stats data
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:StatisticsWidgetButton
+    Element Should Contain    data:testid:stats-0-header-title    Statistics
+    Element Should Contain    data:testid:stats-0-content    No stats data
+    Click Element    data:testid:stats-0-header-close-button
     # histogram widget
-    Click Element    //*[@id="HistogramWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Histogram
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Histogram Settings
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Configuration
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5] 
+    Click Element    id:HistogramWidgetButton
+    Element Should Contain    data:testid:histogram-0-header-title    Histogram
+    Element Should Contain    data:testid:histogram-0-content    No file loaded
+    Click Element    data:testid:histogram-0-header-settings-button
+    Element Should Contain    data:testid:histogram-0-floating-settings-0-header-title    Histogram Settings
+    Element Should Contain    data:testid:histogram-0-floating-settings-0-content    Configuration
+    Click Element    data:testid:histogram-0-floating-settings-0-header-close-button
+    Click Element    data:testid:histogram-0-header-close-button
     # animator widget
-    Click Element    //*[@id="AnimatorWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Animator
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:AnimatorWidgetButton
+    Element Should Contain    data:testid:animator-1-header-title    Animator
+    Element Should Contain    data:testid:animator-1-content    No file loaded
+    Click Element    data:testid:animator-1-header-close-button
     # render config widget
-    Click Element    //*[@id="RenderConfigurationWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Render Configuration
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Render Configuration Settings
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Line color (Primary)
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    Click Element    id:RenderConfigurationWidgetButton
+    Element Should Contain    data:testid:render-config-1-header-title    Render Configuration
+    Element Should Contain    data:testid:render-config-1-content    No file loaded
+    Click Element    data:testid:render-config-1-header-settings-button
+    Element Should Contain    data:testid:render-config-1-floating-settings-0-header-title    Render Configuration Settings
+    Element Should Contain    data:testid:render-config-1-floating-settings-0-content    Line color (Primary)
+    Click Element    data:testid:render-config-1-floating-settings-0-header-close-button
+    Click Element    data:testid:render-config-1-header-close-button
     # Stokes analysis widget
-    Click Element    //*[@id="StokesAnalysisWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Stokes Analysis
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    Image
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Stokes Analysis Settings
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Conversion
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    Click Element    id:StokesAnalysisWidgetButton
+    Element Should Contain    data:testid:stokes-0-header-title    Stokes Analysis
+    Element Should Contain    data:testid:stokes-0-content    Image
+    Click Element    data:testid:stokes-0-header-settings-button
+    Element Should Contain    data:testid:stokes-0-floating-settings-0-header-title    Stokes Analysis Settings
+    Element Should Contain    data:testid:stokes-0-floating-settings-0-content    Conversion
+    Click Element    data:testid:stokes-0-floating-settings-0-header-close-button
+    Click Element    data:testid:stokes-0-header-close-button
     # image list widget
-    Click Element    //*[@id="ImageListWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Image List
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Image List Settings
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Matching
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    Click Element    id:ImageListWidgetButton
+    Element Should Contain    data:testid:layer-list-1-header-title    Image List
+    Element Should Contain    data:testid:layer-list-1-content    No file loaded
+    Click Element    data:testid:layer-list-1-header-settings-button
+    Element Should Contain    data:testid:layer-list-1-floating-settings-0-header-title    Image List Settings
+    Element Should Contain    data:testid:layer-list-1-floating-settings-0-content    Matching
+    Click Element    data:testid:layer-list-1-floating-settings-0-header-close-button
+    Click Element    data:testid:layer-list-1-header-close-button
     # catalog widget
-    Click Element    //*[@id="CatalogWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Catalog
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No catalog file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[2]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[1]    Catalog Settings
-    Element Should Contain    //*[@id="root"]/div/div[18]/div[2]/div/div[2]/div    Major
-    Click Element    //*[@id="root"]/div/div[18]/div[2]/div/div[1]/div[3]
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[5]
+    Click Element    id:CatalogWidgetButton
+    Element Should Contain    data:testid:catalog-overlay-component-0-header-title    Catalog
+    Element Should Contain    data:testid:catalog-overlay-component-0-content    No catalog file loaded
+    Click Element    data:testid:catalog-overlay-component-0-header-settings-button
+    Element Should Contain    data:testid:catalog-overlay-component-0-floating-settings-0-header-title    Catalog Settings
+    Element Should Contain    data:testid:catalog-overlay-component-0-floating-settings-0-content    Major
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    Click Element    data:testid:catalog-overlay-component-0-header-close-button
     # spectral line query widget
-    Click Element    //*[@id="SpectralLineQueryWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Spectral Line Query
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    Range
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:SpectralLineQueryWidgetButton
+    Element Should Contain    data:testid:spectral-line-query-0-header-title    Spectral Line Query
+    Element Should Contain    data:testid:spectral-line-query-0-content    Range
+    Click Element    data:testid:spectral-line-query-0-header-close-button
     # cursor info widget
-    Click Element    //*[@id="CursorInfoWidgetButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    Cursor Info
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    No file loaded
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:CursorInfoWidgetButton
+    Element Should Contain    data:testid:cursor-info-0-header-title    Cursor Info
+    Element Should Contain    data:testid:cursor-info-0-content    No file loaded
+    Click Element    data:testid:cursor-info-0-header-close-button
     # pv generator widget
-    Click Element    //*[@id="PVGeneratorButton"]
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[1]/div[1]    PV Generator
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div/div[2]/div    PV cut
-    Click Element    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
+    Click Element    id:PVGeneratorButton
+    Element Should Contain    data:testid:pv-generator-0-header-title    PV Generator
+    Element Should Contain    data:testid:pv-generator-0-content    PV cut
+    Click Element    data:testid:pv-generator-0-header-close-button
     # file header dialog
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[1]/a    disabled    true
+    Element Attribute Value Should Be    data:testid:file-header-dialog-button    disabled    true
     # preferences dialog
-    Click Element    //*[@id="root"]/div/div[1]/div[3]/span[2]/a
-    Element Should Contain    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[1]/h4    Preferences
-    Element Should Contain    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[2]    Global
-    Click Element    //*[@id="root"]/div/div[8]/div/div[1]/div[2]/div/div[1]/button
+    Click Element    data:testid:preference-dialog-button
+    Element Should Contain    data:testid:preference-dialog    Preferences
+    Element Should Contain    data:testid:preference-dialog    Global
+    Click Element    css:[data-testid="preference-dialog"] [class*="-dialog-close-button"]
     # contour config dialog
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[3]/a    disabled    true
+    Element Attribute Value Should Be    data:testid:contour-config-dialog-button    disabled    true
     # vector overlay dialog
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[4]/a    disabled    true
+    Element Attribute Value Should Be    data:testid:vector-field-dialog-button    disabled    true
     # image fitting dialog
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[5]/a    disabled    true
+    Element Attribute Value Should Be    data:testid:image-fitting-dialog-button    disabled    true
     # online catalog query dialog
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[6]/a    disabled    true
+    Element Attribute Value Should Be    data:testid:catalog-query-dialog-button    disabled    true
     # distance measurement dialog
-    Element Attribute Value Should Be    //*[@id="root"]/div/div[1]/div[3]/span[7]/a    disabled    true
+    Element Attribute Value Should Be    data:testid:distance-measuring-dialog-button    disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
+    Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
     Press Keys    None    DELETE
-    Element Should Contain    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/h4    No region selected
-    Element Should Contain    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[2]/div    Region not supported
-    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
+    Element Should Contain    data:testid:region-dialog    No region selected
+    Element Should Contain    data:testid:region-dialog    Region not supported
+    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
     # catalog histogram and scatter plot widgets
     #   refer to catalog_widget.robot to save testing time
     [Teardown]    Kill carta_backend And Close Browser

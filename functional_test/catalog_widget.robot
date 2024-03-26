@@ -356,7 +356,7 @@ Catalog Rendering As Scatter Plot
     # close the catalog file and check the state of the scatter plot widget
     Click Element    ${CATALOG_WIDGET_CLOSE_BUTTON}
     Element Should Contain    data:testid:catalog-plot-0-header-title    Catalog 2D scatter
-    Element Should Contain    data:testid:catalog-plot-widget-non-ideal    No catalog file loaded
+    Element Should Contain    data:testid:catalog-plot-0-content    No catalog file loaded
 
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,93,579,117
@@ -416,7 +416,7 @@ Catalog Rendering As Histogram Plot
     # close the catalog file and check the state of the histogram plot widget
     Click Element    ${CATALOG_WIDGET_CLOSE_BUTTON}
     Element Should Contain    data:testid:catalog-plot-0-header-title    Catalog Histogram
-    Element Should Contain    data:testid:catalog-plot-widget-non-ideal    No catalog file loaded
+    Element Should Contain    data:testid:catalog-plot-0-content    No catalog file loaded
 
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,170,530,68
