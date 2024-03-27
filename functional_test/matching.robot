@@ -554,7 +554,7 @@ Matching Vector And Contour From Secondary To Reference
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
     # trigger contour rendering using POLA (2nd image)
-    Click Element    data:testid:contour-config-dialog-button
+    Click Element    ${CONTOUR_CONFIG_DIALOG_BUTTON}
     Input Text    css:[data-testid="contour-config-level-input-form"] input    60
     Click Element    data:testid:contour-dailog-styling-tab-title
     Input Text    data:testid:contour-thickness-input    2

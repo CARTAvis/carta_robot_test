@@ -33,19 +33,19 @@ ${WINDOW_SIZE_X}    1280
 ${WINDOW_SIZE_Y}    800
 ${WINDOW_SIZE_dY}    124
 
-${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
-${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
+${SERVER_STATUS_ICON}    //*[@id="root"]/div/div[1]/span[6]/span/span
+${PROGRESS_CLOUD}    //*[@id="root"]/div/div[1]/span[5]/span/span
 
 ${FILE_LIST}    data:testid:file-list
-${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
+${QA_FOLDER}    //*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    css:[data-testid="file-info"] .header-list
 ${FILE_FILTER}    data:testid:file-filter-input
 
-${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
-${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
-${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
-${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load catalog")]
-${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load region")]
+${LOAD_BUTTON}    //*[contains(text(), "Load")]
+${APPEND_BUTTON}    //*[contains(text(), "Append")]
+${CLOSE_BUTTON}    //*[contains(text(), "Close")]
+${LOAD_CATALOG_BUTTON}    //*[contains(text(), "Load catalog")]
+${LOAD_REGION_BUTTON}    //*[contains(text(), "Load region")]
 
 
 ${VIEWER_TAB_TITLE}    css:[data-testid="image-view-tab"] span
@@ -303,7 +303,7 @@ Go To E2E QA Folder
 
 Load Initial Image 
     [Arguments]    ${IMAGE_TO_LOAD}
-    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
@@ -318,9 +318,9 @@ Load Initial Image
 
 Load Image 
     [Arguments]    ${IMAGE_TO_LOAD}
-    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Open Image")]
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Open Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
@@ -335,9 +335,9 @@ Load Image
 
 Append Image
     [Arguments]    ${IMAGE_TO_APPEND}
-    ${IMAGE_TO_APPEND_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Append Image")]
+    ${IMAGE_TO_APPEND_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Append Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
@@ -351,15 +351,15 @@ Append Image
 
 
 Close Image
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Close Image")]
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Close Image")]
 
 
 Load Region File
     [Arguments]    ${REGION_TO_LOAD}
-    ${REGION_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import Regions")]
+    ${REGION_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Import Regions")]
     Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${REGION_TO_LOAD}
@@ -371,9 +371,9 @@ Load Region File
 
 Load Catalog File
     [Arguments]    ${CATALOG_TO_LOAD}
-    ${CATALOG_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import Catalog")]
+    ${CATALOG_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Import Catalog")]
     Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${CATALOG_TO_LOAD}

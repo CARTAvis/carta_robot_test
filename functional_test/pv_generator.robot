@@ -354,9 +354,9 @@ Interactive PV Preview
     # enable preview
     Click Element    //a[contains(., "Start preview")]
     # relocate preview widget
-    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    data:testid:spatial-profiler-tab
+    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${SPATIAL_PROFILER_TAB}
     # change colormap
-    Click Element    data:testid:colormap-dropdown
+    Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
@@ -408,9 +408,9 @@ Interactive PV Preview With Customization
     # enable preview
     Click Element    //a[contains(., "Start preview")]
     # relocate preview widget
-    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    data:testid:spatial-profiler-tab
+    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${SPATIAL_PROFILER_TAB}
     # change colormap
-    Click Element    data:testid:colormap-dropdown
+    Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
@@ -423,7 +423,7 @@ Interactive PV Preview With Customization
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     # change colormap
-    Click Element    data:testid:colormap-dropdown
+    Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     # make pv preview widget active
     Click Element    data:testid:pv-preview-tab
