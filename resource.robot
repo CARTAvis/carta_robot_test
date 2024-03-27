@@ -146,19 +146,21 @@ ${PROFILE_FITTING_AUTO_DETECT_BUTTON}    data:testid:profile-fitting-auto-detect
 ${PROFILE_FITTING_BUTTON}    data:testid:profile-fitting-button
 
 
-${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_TO_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input
-${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
-${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[1]
-${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
-${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[1]
-${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[2]
-${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/span/a
-${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[3]
-${SPECTRAL_LINE_QUERY_LOADING_ICON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]
+${SPECTRAL_LINE_QUERY_FROM_INPUT}    data:testid:spectral-line-query-from-input
+${SPECTRAL_LINE_QUERY_TO_INPUT}    data:testid:spectral-line-query-to-input
+${SPECTRAL_LINE_QUERY_CENTER_INPUT}    data:testid:spectral-line-query-center-input
+${SPECTRAL_LINE_QUERY_WIDTH_INPUT}    data:testid:spectral-line-query-width-input
+${SPECTRAL_LINE_QUERY_BUTTON}    //button[contains(., "Query")]
+${SPECTRAL_LINE_QUERY_INFO}    data:testid:spectral-line-query-result-info
+${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    data:testid:spectral-line-query-unit-dropdown
+${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    data:testid:spectral-line-query-mode-dropdown
+${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[contains(text(), "Apply filter")]
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    data:testid:spectral-line-query-frequency-shift-reference
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    data:testid:spectral-line-query-frequency-shift-input
+${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[contains(text(), "Reset filter")]
+${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[contains(text(), "Plot")]
+${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[contains(text(), "Clear plot")]
+${SPECTRAL_LINE_QUERY_LOADING_ICON}    data:testid:spectral-line-query-loading-icon
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    data:testid:x-profiler-info
 ${SPATIAL_PROFILER_CURSOR_INFO_Y}    data:testid:y-profiler-info

@@ -1306,7 +1306,7 @@ Shared Region And Region Inheritance
     Click Element At Coordinates    ${VIEWER_DIV}    50    -150
 
     # create a point region
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    -50    -50
 
     Append Image    HD163296_CO_2_1.mom1.fits
