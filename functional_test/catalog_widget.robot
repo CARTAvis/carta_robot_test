@@ -275,7 +275,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     
     # use the zoom-in button to zoom in
     Mouse Over    ${VIEWER_DIV}
-    Repeat Keyword    4    Click Element   //*[@id="image-panel-0-0"]/div[8]/span[5]/a
+    Repeat Keyword    4    Click Element   ${VIEWER_00_ZOOM_IN_BUTTON}
     Mouse Out    ${VIEWER_DIV}
     
     #Sleep    1
