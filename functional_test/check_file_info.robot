@@ -8,7 +8,7 @@ File Info Of A Regular FITS Image
     Input Text    ${FILE_FILTER}    M17_SWex.fits
     Wait Until Element Contains    ${FILE_LIST}   M17_SWex.fits
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "M17_SWex.fits")]
+    Click Element    //*[contains(text(), "M17_SWex.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.fits
@@ -40,7 +40,7 @@ File Info Of A Regular CASA Image
     Input Text    ${FILE_FILTER}    M17_SWex.image
     Wait Until Element Contains    ${FILE_LIST}   M17_SWex.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "M17_SWex.image")]
+    Click Element    //*[contains(text(), "M17_SWex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.image
@@ -71,7 +71,7 @@ File Info Of A Regular HDF5 Image
     Input Text    ${FILE_FILTER}    M17_SWex.hdf5
     Wait Until Element Contains    ${FILE_LIST}   M17_SWex.hdf5
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "M17_SWex.hdf5")]
+    Click Element    //*[contains(text(), "M17_SWex.hdf5")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.hdf5
@@ -96,7 +96,7 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [86.7514, 86.7455] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [10.0000, 30.2560] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
-    Scroll Element Into View    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div/div[22]
+    Scroll Element Into View    data:testid:header-entry-21
     Element Should Contain    ${FILE_INFO_TEXT}    Has mipmaps \= T
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -105,7 +105,7 @@ File Info Of A Regular MIRIAD Image
     Input Text    ${FILE_FILTER}    M17_SWex.miriad
     Wait Until Element Contains    ${FILE_LIST}   M17_SWex.miriad
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "M17_SWex.miriad")]
+    Click Element    //*[contains(text(), "M17_SWex.miriad")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= M17_SWex.miriad
@@ -137,7 +137,7 @@ File Info Of A CASA Complex Image
     Input Text    ${FILE_FILTER}    complex.image
     Wait Until Element Contains    ${FILE_LIST}   complex.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "complex.image")]
+    Click Element    //*[contains(text(), "complex.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= complex.image
@@ -167,7 +167,7 @@ File Info Of A CASA PV Image
     Input Text    ${FILE_FILTER}    casa_pv.image
     Wait Until Element Contains    ${FILE_LIST}   casa_pv.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "casa_pv.image")]
+    Click Element    //*[contains(text(), "casa_pv.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= casa_pv.image
@@ -195,7 +195,7 @@ File Info Of A FITS PV Image
     Input Text    ${FILE_FILTER}    carta_pv.fits
     Wait Until Element Contains    ${FILE_LIST}   carta_pv.fits
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "carta_pv.fits")]
+    Click Element    //*[contains(text(), "carta_pv.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= carta_pv.fits
@@ -223,7 +223,7 @@ File Info Of A fz FITS Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Input Text    ${FILE_FILTER}    tu2310418.fits.fz
     Wait Until Element Contains    ${FILE_LIST}   tu2310418.fits.fz
-    Click Element    xpath://*[contains(text(), "tu2310418.fits.fz")]
+    Click Element    //*[contains(text(), "tu2310418.fits.fz")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= tu2310418.fits.fz
@@ -248,7 +248,7 @@ File Info Of A gz FITS Image
     Input Text    ${FILE_FILTER}    tu2310418.fits.gz
     Wait Until Element Contains    ${FILE_LIST}   tu2310418.fits.gz
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "tu2310418.fits.gz")]
+    Click Element    //*[contains(text(), "tu2310418.fits.gz")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= tu2310418.fits.gz
@@ -273,7 +273,7 @@ File Info Of A CASA UV Image
     Input Text    ${FILE_FILTER}    UVamp.image
     Wait Until Element Contains    ${FILE_LIST}   UVamp.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "UVamp.image")]
+    Click Element    //*[contains(text(), "UVamp.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= UVamp.image
@@ -298,7 +298,7 @@ File Info Of A Stokes Image
     Input Text    ${FILE_FILTER}    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Wait Until Element Contains    ${FILE_LIST}   IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits")]
+    Click Element    //*[contains(text(), "IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
@@ -332,7 +332,7 @@ File Info Of Swapped-Axes Cubes
     Input Text    ${FILE_FILTER}    gaussian_array_large_GALACTIC_2031.image
     Wait Until Element Contains    ${FILE_LIST}   gaussian_array_large_GALACTIC_2031.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_2031.image")]
+    Click Element    //*[contains(text(), "gaussian_array_large_GALACTIC_2031.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_GALACTIC_2031.image
@@ -360,7 +360,7 @@ File Info Of Swapped-Axes Cubes
     Input Text    ${FILE_FILTER}    gaussian_array_large_1230.image
     Wait Until Element Contains    ${FILE_LIST}   gaussian_array_large_1230.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "gaussian_array_large_1230.image")]
+    Click Element    //*[contains(text(), "gaussian_array_large_1230.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_1230.image
@@ -388,7 +388,7 @@ File Info Of Swapped-Axes Cubes
     Input Text    ${FILE_FILTER}    gaussian_array_large_3021.image
     Wait Until Element Contains    ${FILE_LIST}   gaussian_array_large_3021.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "gaussian_array_large_3021.image")]
+    Click Element    //*[contains(text(), "gaussian_array_large_3021.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_3021.image
@@ -416,7 +416,7 @@ File Info Of Swapped-Axes Cubes
     Input Text    ${FILE_FILTER}    gaussian_array_large_GALACTIC_3102.image
     Wait Until Element Contains    ${FILE_LIST}   gaussian_array_large_GALACTIC_3102.image
     Sleep    0.2
-    Click Element    xpath://*[contains(text(), "gaussian_array_large_GALACTIC_3102.image")]
+    Click Element    //*[contains(text(), "gaussian_array_large_GALACTIC_3102.image")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Name \= gaussian_array_large_GALACTIC_3102.image

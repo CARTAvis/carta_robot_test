@@ -185,7 +185,7 @@ FOV Image Fitting
     Load Initial Image    double.miriad
     # zoom in the image with the zoom in button
     Mouse Over    ${VIEWER_DIV}
-    Repeat Keyword    3    Click Element    //*[@id="image-panel-0-0"]/div[8]/span[5]/a
+    Repeat Keyword    3    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    487
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    520
@@ -235,9 +235,9 @@ FOV Matched Image Fitting
     # match double_bin2_gal.miriad to double.miriad with the XY button in the image list widget
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     # zoom in the image with the zoom in button
-    Mouse Over    //*[@id="image-panel-1-0"]/div[7]/div/div/canvas
-    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[8]/a
-    Repeat Keyword    3    Click Element    //*[@id="image-panel-1-0"]/div[8]/span[5]/a
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
+    Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    243
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    257
@@ -301,17 +301,17 @@ Generation Of Model And Residual Images After Fitting
     Mouse Over    ${IMAGE_LIST_THIRD_IMAGE_NAME}
     Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
     # mouse over the top-left panel
-    Mouse Over    //*[@id="image-panel-0-0"]/div[7]/div/div/canvas
+    Mouse Over    css:#image-panel-0-0 .region-stage
     Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
     # check pixel values of the three images in the cursor info widget
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[2]/div    1.95008e+1
+    Element Should Contain    data:testid:simple-table-0-1    1.95008e+1
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.21062e+1
-    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[10]/div    1.2
+    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-1-1    1.21062e+1
+    Element Should Contain    data:testid:simple-table-1-1    1.2
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.25401
-    Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.2
-    Run Keyword And Warn On Failure    Element Should Contain    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[18]/div    7.25401
+    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.25401
+    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.2
+    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.25401
     Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
     # with a model image only
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
@@ -358,13 +358,13 @@ Fitting With Cancellation
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Contains    Image fitting processing
     Sleep    0.02
-    Click Element    xpath://*[contains(text(), "Cancel")]
+    Click Element    //*[contains(text(), "Cancel")]
     Element Should Be Enabled    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     # try to fit again and cancel again
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Contains    Image fitting processing
     Sleep    0.02
-    Click Element    xpath://*[contains(text(), "Cancel")]
+    Click Element    //*[contains(text(), "Cancel")]
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check entries in the image list widget
     Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_1_image
@@ -407,8 +407,8 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     # zoom the reference image to fix the new FOV in the multi-panel view
     Set Selenium Speed    ${DELAY}
-    Mouse Over    //*[@id="image-panel-0-0"]/div[8]/div/div/canvas
-    Click Element    //*[@id="image-panel-0-0"]/div[9]/span[8]/a
+    Mouse Over    css:#image-panel-0-0 .region-stage
+    Click Element    css:#image-panel-0-0 [data-testid="zoom-to-fit-button"]
     # with center free, amplitude locked, FWHM free, and PA free
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}
     Click Element    ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}

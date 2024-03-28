@@ -36,13 +36,13 @@ Line Spatial Profile Fixed Pixel Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 1st region (line region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    data:testid:region-list-table-row-2
     #Sleep    1
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
@@ -62,13 +62,13 @@ Line Spatial Profile Fixed Angular Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 2nd region (line region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Click Element    data:testid:region-list-table-row-3
     #Sleep    5
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
@@ -89,13 +89,13 @@ Polyline Spatial Profile Fixed Pixel Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 3rd region (polyline region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element   data:testid:region-list-table-row-4
     #Sleep    3
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
@@ -117,13 +117,13 @@ Polyline Spatial Profile Fixed Angular Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 4th region (polyline region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    data:testid:region-list-table-row-5
     #Sleep    5
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
