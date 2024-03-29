@@ -1381,7 +1381,7 @@ Loading 4000 Regions From A File
     #Sleep    1
 
     # scroll the region list to the very bottom
-    Assign Id To Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]    tmp_REGIONLIST
+    Assign Id To Element    css:[data-testid="region-list-table"] > div:nth-child(2)    tmp_REGIONLIST
     Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, 200000)
 
     Page Should Contain    Region 4000
