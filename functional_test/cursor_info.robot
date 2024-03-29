@@ -13,7 +13,7 @@ Cursor Info For Matched And Unmatched Images
     Append Image    HD163296_C18O_2-1_subimage.fits
     Append Image    HD163296_CO_2_1_subimage.fits
     # enable the cursor info widget and dock to the panel with render config widget
-    Drag And Drop    CursorInfoWidgetButton    data:testid:render-config-tab
+    Drag And Drop    CursorInfoWidgetButton    data:testid:render-config-0-header-title
     # click the bottom-left panel with an offset to make HD163296_CO_2_1_subimage.fits active
     Click Element At Coordinates    css:#image-panel-0-1 .region-stage    0    10
     Set Selenium Speed    0

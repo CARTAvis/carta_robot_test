@@ -13,8 +13,8 @@ Load Catalog File In VOTable Format
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -63,8 +63,8 @@ Load Catalog File In FITS Format
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.fits
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -112,8 +112,8 @@ Catalog Filtering And Sorting
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -176,8 +176,8 @@ Catalog Column Show And Hide
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -226,8 +226,8 @@ Catalog Rendering As Image Overlay With Column Mapping
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -314,8 +314,8 @@ Catalog Rendering As Scatter Plot
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -378,8 +378,8 @@ Catalog Rendering As Histogram Plot
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -439,8 +439,8 @@ Linked Catalog Visualization
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_0_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -510,8 +510,8 @@ Load And Manage Two Catalog Files
     Load Initial Image    cosmos_spitzer3.6micron.fits
     Load Catalog File    cosmos_mega_simbad.xml
     # dock the catalog widget and close widgets to create more space
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -538,7 +538,7 @@ Load And Manage Two Catalog Files
     Element Should Contain    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    Showing 1 to 50 of total 20000 entries    
     Click Element    ${CATALOG_WIDGET_CLOSE_BUTTON}
     # check for the non-ideal state of the catalog widget 
-    Element Should Contain    data:testid:catalog-widget-non-ideal    No catalog file loaded
+    Element Should Contain    data:testid:catalog-overlay-component-0-content    No catalog file loaded
     [Teardown]    Kill carta_backend And Close Browser
 
 

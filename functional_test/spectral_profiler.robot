@@ -191,11 +191,11 @@ Single Spectral Profile Intensity Unit Conversion
     Load Initial Image   M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}
     # launch a spectral profiler widget and dock it to the panel with the render config widget
-    Drag And Drop    id:SpectralProfilerButton    data:testid:render-config-tab
+    Drag And Drop    id:SpectralProfilerButton    data:testid:render-config-0-header-title
     # click the spectral profile plot
     Click Element    ${SPECTRAL_PROFILER_PLOT}
     # launch the spectral profiler settings dialog
-    Click Element    data:testid:spectral-profiler-header-settings-button
+    Click Element    data:testid:spectral-profiler-0-header-settings-button
     # check cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -1.09e-2)
     # click the intensity unit dropdown menu and select mJy/beam

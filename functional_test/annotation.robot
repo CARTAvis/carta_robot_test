@@ -11,8 +11,8 @@ Import World Coordinate CASA Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    //*[contains(text(), "Region List")]
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0
@@ -215,8 +215,8 @@ Import Image Coordinate CASA Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    //*[contains(text(), "Region List")]
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0
@@ -420,8 +420,8 @@ Import World Coordinate ds9 Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    //*[contains(text(), "Region List")]
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0
@@ -624,8 +624,8 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     
     Click Element    //*[contains(text(), "Region List")]
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
-    Click Element    ${SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0

@@ -129,7 +129,7 @@ Generate All Moment Images
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     # create a statistics widget and dock it to the panel with the X spatial profiler
-    Drag And Drop    StatisticsWidgetButton    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    StatisticsWidgetButton    ${X_SPATIAL_PROFILER_TAB}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.minimum_coord
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    3.025600051880e+1 km/s
     ${key}=    Generate Random String    8

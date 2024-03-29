@@ -342,9 +342,9 @@ Interactive PV Preview
     Input Text    //input[@placeholder="Length"]    60
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
     Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
-    Drag And Drop    id:PVGeneratorButton   (//li[@data-testid="spatial-profiler-tab"])[1]
+    Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
     # remove unused widgets
-    Click Element    (//div[@data-testid="spatial-profiler-tab-close-button"])[2]
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -354,16 +354,16 @@ Interactive PV Preview
     # enable preview
     Click Element    //a[contains(., "Start preview")]
     # relocate preview widget
-    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${SPATIAL_PROFILER_TAB}
+    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${X_SPATIAL_PROFILER_TAB}
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before_${key}.png
+    Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    before_${key}.png
     # moving pv cut
     Drag And Drop By Offset    ${VIEWER_DIV}    20    50
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after_${key}.png
+    Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    after_${key}.png
     # checking rendered images
     Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
@@ -385,9 +385,9 @@ Interactive PV Preview With Customization
     Input Text    //input[@placeholder="Length"]    200
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
     Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
-    Drag And Drop    id:PVGeneratorButton   (//li[@data-testid="spatial-profiler-tab"])[1]
+    Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
     # remove unused widgets
-    Click Element    (//div[@data-testid="spatial-profiler-tab-close-button"])[2]
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
@@ -408,25 +408,26 @@ Interactive PV Preview With Customization
     # enable preview
     Click Element    //a[contains(., "Start preview")]
     # relocate preview widget
-    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${SPATIAL_PROFILER_TAB}
+    Sleep    0.1
+    Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${X_SPATIAL_PROFILER_TAB}
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    before_${key}.png
+    Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    before_${key}.png
     # moving pv cut
     Drag And Drop By Offset    ${VIEWER_DIV}    -20    20
-    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]    after_${key}.png
+    Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    after_${key}.png
     # generate full resolution PV
-    Click Element    data:testid:pv-generator-tab
+    Click Element    data:testid:pv-generator-0-header-title
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     # make pv preview widget active
-    Click Element    data:testid:pv-preview-tab
+    Click Element    data:testid:pv-generator-0-pv-preview-0-header-title
     Capture Page Screenshot    final_${key}.png
     # checking rendered images
     Set Selenium Speed    0

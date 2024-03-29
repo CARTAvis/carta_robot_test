@@ -48,7 +48,7 @@ ${LOAD_CATALOG_BUTTON}    //*[contains(text(), "Load catalog")]
 ${LOAD_REGION_BUTTON}    //*[contains(text(), "Load region")]
 
 
-${VIEWER_TAB_TITLE}    css:[data-testid="image-view-tab"] span
+${VIEWER_TAB_TITLE}    css:[data-testid="image-view-header-title"] span
 ${VIEWER_CURSOR_INFO_BAR}    data:testid:viewer-cursor-info-bar
 ${VIEWER_DIV}    data:testid:viewer-div
 ${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button"]
@@ -82,15 +82,16 @@ ${ANIMATOR_IMAGE_RADIO_BUTTON}           css:[data-testid="animator-image-slider
 ${ANIMATOR_POLARIZATION_RADIO_BUTTON}    css:[data-testid="animator-polarization-slider"] label
 
 
-${SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-tab
-${SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-tab-close-button
-${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-tab-close-button
-${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-tab-close-button
-${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-tab-close-button
+${X_SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-0-header-title
+${X_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-0-header-close-button
+${Y_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-1-header-close-button
+${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-0-header-close-button
+${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-0-header-close-button
+${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-0-header-close-button
 ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[17]/div[2]/div/div[2]
 
 ${CATALOG_WIDGET_DOCK_BUTTON}    data:testid:catalog-overlay-component-0-header-dock-button
-${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-tab"] span
+${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-component-0-header-title"] span
 ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    data:testid:catalog-system-dropdown
 ${CATALOG_WIDGET_FILTER_BUTTON}    data:testid:catalog-filter-button
 ${CATALOG_WIDGET_RESET_BUTTON}    data:testid:catalog-reset-button
@@ -136,7 +137,7 @@ ${STATISTICS_WIDGET_TABLE}    data:testid:statistics-table
 
 ${SPECTRAL_PROFILER_SETTINGS_BUTTON}     data:testid:spectral-profiler-0-header-settings-button
 ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}     data:testid:spectral-profiler-0-floating-settings-0-header-close-button
-${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-widget"] [data-testid="profiler-plot"]
+${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
 ${SPECTRAL_PROFILER_CLOSE_BUTTON}    data:testid:spectral-profiler-0-header-close-button
 
 ${PROFILE_FITTING_RESULT_TAB}    css:[data-testid="profile-fitting-result"] .fitting-result-text
@@ -164,8 +165,8 @@ ${SPECTRAL_LINE_QUERY_LOADING_ICON}    data:testid:spectral-line-query-loading-i
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    data:testid:x-profiler-info
 ${SPATIAL_PROFILER_CURSOR_INFO_Y}    data:testid:y-profiler-info
-${SPATIAL_PROFILER_PLOT}    css:[data-testid="x-profiler-widget"] [data-testid="profiler-plot"]
-${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-header-settings-button
+${SPATIAL_PROFILER_PLOT}    css:[data-testid="spatial-profiler-0-content"] [data-testid="profiler-plot"]
+${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-0-header-settings-button
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler-0-floating-settings-0-header-close-button
 
 
