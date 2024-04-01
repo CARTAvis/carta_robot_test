@@ -58,7 +58,7 @@ Match Wide-Field Images Spatially
     Input Text    //input[@placeholder="X Coordinate"]    465.5
     Press Keys    //input[@placeholder="Y Coordinate"]    DELETE
     Input Text    //input[@placeholder="Y Coordinate"]    483
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     # center the point region in the view by clicking the center button in the region list widget
     Click Element    //*[contains(text(), "Region List")]
     Click Element    data:testid:region-list-table-row-2-center-cell
@@ -115,7 +115,7 @@ Matched Region Canvas Rendering Multiple Panel View
     Click Element    data:testid:region-dialog-styling-tab-title
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
     Input Text    data:testid:region-dialog-line-width-input    3
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Append Image    pixel_shader_test.fits
     # match the 2nd pixel_shader_test.fits to the 1st pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
@@ -285,7 +285,7 @@ Matched Region Canvas Rendering Single Panel View
     Click Element    data:testid:region-dialog-styling-tab-title
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
     Input Text    data:testid:region-dialog-line-width-input    3
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Append Image    pixel_shader_test.fits
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_10_MATCH_BUTTON}

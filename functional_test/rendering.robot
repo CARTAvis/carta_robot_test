@@ -32,7 +32,7 @@ Contour Image Rendering
     Load Initial Image    small_gaussian.fits
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "nipy_spectral")]
-    Click Element    data:testid:contour-config-dialog-button
+    Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
     Click Element    //*[contains(text(), "Styling")]
     Input Text    data:testid:contour-thickness-input    5
@@ -77,7 +77,7 @@ Region Canvas Rendering
    Click Element    //*[contains(text(), "Styling")]
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
     Input Text    data:testid:region-dialog-line-width-input    3
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -332,7 +332,7 @@ Vector Field Rendering With A Stokes Line Cube
 GUI Initialization
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # close file browser dialog
-    Click Element    css:[data-testid="fileBrowser-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:file-browser-dialog-header-close-button
     # region / annotation shortcut buttons
     Element Attribute Value Should Be    ${POINT_REGION_SHORTCUT_BUTTON}    disabled    true
     Element Attribute Value Should Be    ${LINE_REGION_SHORTCUT_BUTTON}    disabled    true
@@ -440,22 +440,22 @@ GUI Initialization
     Element Should Contain    data:testid:pv-generator-0-content    PV cut
     Click Element    data:testid:pv-generator-0-header-close-button
     # file header dialog
-    Element Attribute Value Should Be    data:testid:file-header-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:file-info-dialog-button    disabled    true
     # preferences dialog
     Click Element    data:testid:preference-dialog-button
     Element Should Contain    data:testid:preference-dialog    Preferences
     Element Should Contain    data:testid:preference-dialog    Global
-    Click Element    css:[data-testid="preference-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:preference-dialog-header-close-button
     # contour config dialog
-    Element Attribute Value Should Be    data:testid:contour-config-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:contour-dialog-button    disabled    true
     # vector overlay dialog
-    Element Attribute Value Should Be    data:testid:vector-field-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:vector-dialog-button    disabled    true
     # image fitting dialog
-    Element Attribute Value Should Be    data:testid:image-fitting-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:fitting-dialog-button    disabled    true
     # online catalog query dialog
     Element Attribute Value Should Be    data:testid:catalog-query-dialog-button    disabled    true
     # distance measurement dialog
-    Element Attribute Value Should Be    data:testid:distance-measuring-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region
@@ -465,7 +465,7 @@ GUI Initialization
     Press Keys    None    DELETE
     Element Should Contain    data:testid:region-dialog    No region selected
     Element Should Contain    data:testid:region-dialog    Region not supported
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     # catalog histogram and scatter plot widgets
     #   refer to catalog_widget.robot to save testing time
     [Teardown]    Kill carta_backend And Close Browser

@@ -394,7 +394,7 @@ Spectral Profile Fitting Guess Then Fit
     # click the image Cooridnate radio button again to apply changes
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
     # close the region config dialog
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     # launch a spectral profiler widget
     Click Element    id:SpectralProfilerButton
     #Sleep    0.5

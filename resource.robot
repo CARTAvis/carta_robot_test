@@ -109,7 +109,7 @@ ${RENDER_CONFIG_CLIP_MAX_CUBE}    data:testid:clip-max-input
 ${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    data:testid:histogram-mode-dropdown
 
 
-${IMAGE_FITTING_DIALOG_BUTTON}    data:testid:image-fitting-dialog-button
+${IMAGE_FITTING_DIALOG_BUTTON}    data:testid:fitting-dialog-button
 ${IMAGE_FITTING_DIALOG_CENTER_X}    //input[@placeholder="Center X"]
 ${IMAGE_FITTING_DIALOG_CENTER_Y}    //input[@placeholder="Center Y"]
 ${IMAGE_FITTING_DIALOG_AMPLITUDE}    //input[@placeholder="Amplitude"]
@@ -121,7 +121,7 @@ ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    css:[data-testid="image-fitting-re
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log-tab"] .log-text
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
 ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    (//input[@data-testid="image-fitting-component-input"]/parent::div/parent::div//button)[1]
-${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    css:[data-testid="fitting-dialog"] [class*="-dialog-close-button"]
+${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    data:testid:fitting-dialog-header-close-button
 ${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:[data-testid="image-fitting-model-toggle"] + span
 ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:[data-testid="image-fitting-residual-toggle"] + span
 ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    data:testid:image-fitting-center-x-lock-button
@@ -174,12 +174,12 @@ ${MOMENT_GENERATOR_BUTTON}    data:testid:moment-generator-button
 ${MOMENT_GENERATOR_GENERATE_BUTTON}    data:testid:moment-generator-generate-button
 ${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    css:[data-testid="moment-generator-auto-matching-toggle"] + span
 
-${FILE_HEADER_DIALOG_BUTTON}    data:testid:file-header-dialog-button
-${FILE_HEADER_DIALOG_CLOSE_BUTTON}    css:[data-testid="fileInfo-dialog"] [class*="-dialog-close-button"]
+${FILE_HEADER_DIALOG_BUTTON}    data:testid:file-info-dialog-button
+${FILE_HEADER_DIALOG_CLOSE_BUTTON}    data:testid:file-info-dialog-header-close-button
 
-${CONTOUR_CONFIG_DIALOG_BUTTON}    data:testid:contour-config-dialog-button
+${CONTOUR_CONFIG_DIALOG_BUTTON}    data:testid:contour-dialog-button
 ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    data:testid:contour-config-apply-button
-${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    css:[data-testid="contour-dialog"] [class*="-dialog-close-button"]
+${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    data:testid:contour-dialog-header-close-button
 
 ${PV_GENERATOR_GENERATE_BUTTON}    data:testid:pv-generator-generate-button
 ${PV_GENERATOR_CLOSE_BUTTON}    data:testid:pv-generator-0-header-close-button
@@ -194,7 +194,7 @@ ${POLYLINE_REGION_SHORTCUT_BUTTON}    data:testid:polyline-region-shortcut-butto
 
 
 
-${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    data:testid:vector-field-dialog-button
+${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    data:testid:vector-dialog-button
 ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    data:testid:vector-field-apply-button
 ${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}    css:[data-testid="vector-field-averaging-toggle"] + span
 ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    data:testid:vector-field-averaging-width-input
@@ -203,7 +203,7 @@ ${VECTOR_FIELD_RENDERING_STYLING_TAB}    data:testid:vector-field-styling-tab
 ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    data:testid:vector-field-line-input
 ${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}     data:testid:vector-field-line-length-max-input
 ${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    data:testid:vector-field-rotation-offset-input
-${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    css:[data-testid="vector-dialog"] [class*="-dialog-close-button"]
+${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    data:testid:vector-dialog-header-close-button
 ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}    css:[data-testid="vector-field-threshold-toggle"] + span
 ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    data:testid:vector-field-threshold-input
 ${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    css:[data-testid="vector-field-debiasing-toggle"] + span

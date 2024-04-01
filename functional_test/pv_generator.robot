@@ -21,7 +21,7 @@ Narrow-field PV Image Generation
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    315
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
@@ -74,7 +74,7 @@ Wide-field PV Image Generation
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    90
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
@@ -119,7 +119,7 @@ PV Image Generation Cancellation And Rerequest
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    90
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
@@ -167,7 +167,7 @@ PV Image Generation Repeat
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    315
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
@@ -221,7 +221,7 @@ PV Image Generation With Matched Cubes
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    124
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Append Image    M17_SWex.hdf5
     Mouse Over    ${VIEWER_10_CANVAS}
     # match M17_SWex.hdf5 to M17_SWex.fits via the matching button in the viewer
@@ -283,7 +283,7 @@ PV Image Generation With Matched Wide-field Cubes
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    90
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Append Image    Gaussian_array_wide2.fits
     #Sleep    1
     # match Gaussian_array_wide2.fits to Gaussian_array_wide.fits via the matching button in the viewer
@@ -341,7 +341,7 @@ Interactive PV Preview
     Press Keys    //input[@placeholder="Length"]    DELETE
     Input Text    //input[@placeholder="Length"]    60
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
     # remove unused widgets
     Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
@@ -384,7 +384,7 @@ Interactive PV Preview With Customization
     Press Keys    //input[@placeholder="Length"]    DELETE
     Input Text    //input[@placeholder="Length"]    200
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
     # remove unused widgets
     Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}

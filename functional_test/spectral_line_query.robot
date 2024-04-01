@@ -148,7 +148,7 @@ Line ID Overlay On Spectral Profiler
     Input Text    //input[@placeholder="Y Coordinate"]    43
     Click Element    css:[data-testid="coordinate-image-radio-button"] + span
     # close the region config dialog
-    Click Element    css:[data-testid="region-dialog"] [class*="-dialog-close-button"]
+    Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:SpectralLineQueryWidgetButton
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
