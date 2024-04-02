@@ -33,8 +33,7 @@ ${WINDOW_SIZE_X}    1280
 ${WINDOW_SIZE_Y}    800
 ${WINDOW_SIZE_dY}    124
 
-${SERVER_STATUS_ICON}    //*[@id="root"]/div/div[1]/span[6]/span/span
-${PROGRESS_CLOUD}    //*[@id="root"]/div/div[1]/span[5]/span/span
+${PROGRESS_CLOUD}    data:testid:progress-cloud
 
 ${FILE_LIST}    data:testid:file-list
 ${QA_FOLDER}    //*[contains(text(), "set_QA_e2e_v2")]
