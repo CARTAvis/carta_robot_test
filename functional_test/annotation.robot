@@ -874,8 +874,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[contains(text(), "File")]
     Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    css:[data-testid="export-region-selection-list-6"] + span
-    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    //*[contains(text(), "Annotation 7")]
+    Click Element    //*[contains(text(), "Annotation 8")]
     Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_world.crtf
     Click Element    //*[contains(text(), "Export regions")]
 
@@ -883,8 +883,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[contains(text(), "File")]
     Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    css:[data-testid="export-region-selection-list-6"] + span
-    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    //*[contains(text(), "Annotation 7")]
+    Click Element    //*[contains(text(), "Annotation 8")]
     Click Element    //*[contains(text(), "World")]
     Click Element    //*[contains(text(), "Pixel coordinates")]
     Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_pixel.crtf
@@ -894,8 +894,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[contains(text(), "File")]
     Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    css:[data-testid="export-region-selection-list-6"] + span
-    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    //*[contains(text(), "Annotation 7")]
+    Click Element    //*[contains(text(), "Annotation 8")]
     Click Element    data:testid:export-region-file-type-dropdown
     Click Element    //*[contains(text(), "DS9 region file")]
     Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_pixel.reg
@@ -905,8 +905,8 @@ Creating Annotations And Export As Region Files
     Click Element    //*[contains(text(), "File")]
     Click Element    //*[contains(text(), "Export Regions")]
     # not including vector and text due to CI
-    Click Element    css:[data-testid="export-region-selection-list-6"] + span
-    Click Element    css:[data-testid="export-region-selection-list-7"] + span
+    Click Element    //*[contains(text(), "Annotation 7")]
+    Click Element    //*[contains(text(), "Annotation 8")]
     Click Element    //*[contains(text(), "Pixel")]
     Click Element    //*[contains(text(), "World coordinates")]
     Input Text    //input[@placeholder="Enter file name"]    e2e_check_annotation_world.reg

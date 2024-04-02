@@ -11,7 +11,7 @@ Narrow-field PV Image Generation
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set up the line region
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[3]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[3]    54
     Press Keys    (//input[@placeholder="Y Coordinate"])[3]    DELETE
@@ -20,7 +20,7 @@ Narrow-field PV Image Generation
     Input Text    //input[@placeholder="Length"]    62
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    315
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
@@ -64,7 +64,7 @@ Wide-field PV Image Generation
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set up the line region
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[3]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[3]    268
     Press Keys    (//input[@placeholder="Y Coordinate"])[3]    DELETE
@@ -73,7 +73,7 @@ Wide-field PV Image Generation
     Input Text    //input[@placeholder="Length"]    400
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    90
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
@@ -109,7 +109,7 @@ PV Image Generation Cancellation And Rerequest
     Click Element    ${VIEWER_DIV}
     # enable region config dialog and set up the line region
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[3]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[3]    268
     Press Keys    (//input[@placeholder="Y Coordinate"])[3]    DELETE
@@ -118,7 +118,7 @@ PV Image Generation Cancellation And Rerequest
     Input Text    //input[@placeholder="Length"]    400
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    90
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
@@ -157,7 +157,7 @@ PV Image Generation Repeat
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[3]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[3]    54
     Press Keys    (//input[@placeholder="Y Coordinate"])[3]    DELETE
@@ -166,7 +166,7 @@ PV Image Generation Repeat
     Input Text    //input[@placeholder="Length"]    62
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    315
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:PVGeneratorButton
     # select the line region as the pv cut
@@ -211,7 +211,7 @@ PV Image Generation With Matched Cubes
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[3]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[3]    245
     Press Keys    (//input[@placeholder="Y Coordinate"])[3]    DELETE
@@ -220,7 +220,7 @@ PV Image Generation With Matched Cubes
     Input Text    //input[@placeholder="Length"]    141
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    124
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Append Image    M17_SWex.hdf5
     Mouse Over    ${VIEWER_10_CANVAS}
@@ -273,7 +273,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[3]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[3]    813
     Press Keys    (//input[@placeholder="Y Coordinate"])[3]    DELETE
@@ -282,7 +282,7 @@ PV Image Generation With Matched Wide-field Cubes
     Input Text    //input[@placeholder="Length"]    888
     Press Keys    //input[@placeholder="P.A."]    DELETE
     Input Text    //input[@placeholder="P.A."]    90
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Append Image    Gaussian_array_wide2.fits
     #Sleep    1
@@ -337,10 +337,10 @@ Interactive PV Preview
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    //input[@placeholder="Length"]    DELETE
     Input Text    //input[@placeholder="Length"]    60
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
     # remove unused widgets
@@ -380,10 +380,10 @@ Interactive PV Preview With Customization
     Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    //input[@placeholder="Length"]    DELETE
     Input Text    //input[@placeholder="Length"]    200
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
     Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
     # remove unused widgets

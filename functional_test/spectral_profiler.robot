@@ -59,7 +59,7 @@ Spectral Profile Visualization From Multiple Regions
     Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the region checkbox to enable region multi-plot mode
-    Click Element    css:[data-testid="spectral-profiler-region-checkbox"] + span
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Region")]
     # click the region dropdown menu to see options
     Click Element    data:testid:spectral-profiler-region-dropdown
     # select all options in the list
@@ -107,7 +107,7 @@ Spectral Profile Visualization From Multiple Statistics
     # select the polygon region from the region list 
     Click Element    data:testid:region-list-table-row-5
     # select the statistic checkbox to enable statistic multi-plot mode
-    Click Element    css:[data-testid="spectral-profiler-statistic-checkbox"] + span
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Statistic")]
     # click the statistic dropdown menu to see options
     Click Element    data:testid:spectral-profiler-statistic-dropdown
     # select mean
@@ -166,7 +166,7 @@ Spectral Profile Visualization From Multiple Images
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the image check box to enable image multi-plot mode
     Sleep    1
-    Click Element    css:[data-testid="spectral-profiler-image-checkbox"] + span
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
     Wait Until Page Contains Element    data:testid:spectral-profiler-info-2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
@@ -341,7 +341,7 @@ Multiple Spectral Profiles Smoothing
     Click Element    data:testid:region-list-table-row-2
     Click Element    id:SpectralProfilerButton
     # select the image checkbox to enable image multi-plot mode
-    Click Element    css:[data-testid="spectral-profiler-image-checkbox"] + span
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
@@ -386,13 +386,13 @@ Spectral Profile Fitting Guess Then Fit
     # launch the region config dialog by double-clicking the point region
     Double Click Element    ${VIEWER_DIV}
     # switch to image Cooridnate and set a new center position
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    //input[@placeholder="X Coordinate"]    DELETE
     Input Text    //input[@placeholder="X Coordinate"]    63
     Press Keys    //input[@placeholder="Y Coordinate"]    DELETE
     Input Text    //input[@placeholder="Y Coordinate"]    43
     # click the image Cooridnate radio button again to apply changes
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     # close the region config dialog
     Click Element    data:testid:region-dialog-header-close-button
     # launch a spectral profiler widget

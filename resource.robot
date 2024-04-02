@@ -39,7 +39,7 @@ ${PROGRESS_CLOUD}    //*[@id="root"]/div/div[1]/span[5]/span/span
 ${FILE_LIST}    data:testid:file-list
 ${QA_FOLDER}    //*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    css:[data-testid="file-info"] .header-list
-${FILE_FILTER}    data:testid:file-filter-input
+${FILE_FILTER}    //input[@placeholder="Filter by filename with fuzzy search"]
 
 ${LOAD_BUTTON}    //*[contains(text(), "Load")]
 ${APPEND_BUTTON}    //*[contains(text(), "Append")]
@@ -73,13 +73,13 @@ ${ANIMATOR_LAST_BUTTON}    data:testid:animator-last-button
 ${ANIMATOR_SLIDER}    css:[data-testid="animator-slider"] [class*="-slider-track"]
 ${ANIMATOR_SLIDER_INFO}    data:testid:animator-slider-info
 ${ANIMATOR_SLIDER_HANDLE}    css:[data-testid="animator-slider"] div span
-${ANIMATOR_SPINBOX_UP}    css:[data-testid="animator-controls"] button:nth-child(1)
-${ANIMATOR_SPINBOX_DOWN}    css:[data-testid="animator-controls"] button:nth-child(2)
+${ANIMATOR_SPINBOX_UP}    data:testid:animator-control-input-increment-button
+${ANIMATOR_SPINBOX_DOWN}    data:testid:animator-control-input-decrement-button
 ${ANIMATOR_PLAYBACK_MODE_BUTTON}    data:testid:animator-playback-mode-button
 ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-start"]
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-end"]
-${ANIMATOR_IMAGE_RADIO_BUTTON}           css:[data-testid="animator-image-slider"] label
-${ANIMATOR_POLARIZATION_RADIO_BUTTON}    css:[data-testid="animator-polarization-slider"] label
+${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@data-testid="animator-0-content"]//*[contains(text(), "Image")]
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@data-testid="animator-0-content"]//*[contains(text(), "Polarization")]
 
 
 ${X_SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-0-header-title
@@ -122,8 +122,8 @@ ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
 ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    data:testid:image-fitting-component-input-increment-button
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    data:testid:fitting-dialog-header-close-button
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:[data-testid="image-fitting-model-toggle"] + span
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:[data-testid="image-fitting-residual-toggle"] + span
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[contains(text(), "Model")]
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[contains(text(), "Residual")]
 ${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    data:testid:image-fitting-center-x-lock-button
 ${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    data:testid:image-fitting-center-y-lock-button
 ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    data:testid:image-fitting-amplitude-lock-button
@@ -172,7 +172,7 @@ ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler
 
 ${MOMENT_GENERATOR_BUTTON}    data:testid:moment-generator-button
 ${MOMENT_GENERATOR_GENERATE_BUTTON}    data:testid:moment-generator-generate-button
-${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    css:[data-testid="moment-generator-auto-matching-toggle"] + span
+${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    //*[contains(text(), "Auto spatial matching")]
 
 ${FILE_HEADER_DIALOG_BUTTON}    data:testid:file-info-dialog-button
 ${FILE_HEADER_DIALOG_CLOSE_BUTTON}    data:testid:file-info-dialog-header-close-button

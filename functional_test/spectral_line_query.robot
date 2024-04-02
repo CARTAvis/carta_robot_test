@@ -141,12 +141,12 @@ Line ID Overlay On Spectral Profiler
     # enable region config dialog
     Double Click Element    ${VIEWER_DIV}
     # switch to image coordinate and set a new position for the point region
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    //input[@placeholder="X Coordinate"]    DELETE
     Input Text    //input[@placeholder="X Coordinate"]    63
     Press Keys    //input[@placeholder="Y Coordinate"]    DELETE
     Input Text    //input[@placeholder="Y Coordinate"]    43
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     # close the region config dialog
     Click Element    data:testid:region-dialog-header-close-button
     Click Element    id:SpectralLineQueryWidgetButton

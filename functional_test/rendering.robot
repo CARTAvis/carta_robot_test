@@ -65,7 +65,7 @@ Region Canvas Rendering
     Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
     Double Click Element    ${VIEWER_DIV}
-    Click Element    css:[data-testid="coordinate-image-radio-button"] + span
+    Click Element    //*[contains(text(), "Image")]
     Press Keys    (//input[@placeholder="X Coordinate"])[1]    DELETE
     Input Text    (//input[@placeholder="X Coordinate"])[1]    5
     Press Keys    (//input[@placeholder="Y Coordinate"])[1]    DELETE
