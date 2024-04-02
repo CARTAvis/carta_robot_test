@@ -364,7 +364,7 @@ Load Axes-Swapped Cubes
     # make grid line thicker
     Click Element    ${VIEWER_SETTINGS_DIALOG}
     Click Element    data:testid:image-view-settings-grid-tab-title
-    Repeat Keyword    3    Click Element    (//input[@data-testid="image-view-settings-grid-width-input"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    3    Click Element    data:testid:image-view-settings-grid-width-input-increment-button
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # check slider label in the animator
     Click Element    //*[contains(text(), "Animator")]

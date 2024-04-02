@@ -403,8 +403,8 @@ Interactive PV Preview With Customization
     # swap axes
     Click Element    //option[contains(text(), "X-axis: Spectral, Y-axis: Spatial")]
     # downsample cube
-    Click Element    (//input[@data-testid="pv-generator-preview-rebin-xy-input"]/parent::div/parent::div//button)[1]
-    Click Element    (//input[@data-testid="pv-generator-preview-rebin-z-input"]/parent::div/parent::div//button)[1]
+    Click Element    data:testid:pv-generator-preview-rebin-xy-input-increment-button
+    Click Element    data:testid:pv-generator-preview-rebin-z-input-increment-button
     # enable preview
     Click Element    //a[contains(., "Start preview")]
     # relocate preview widget

@@ -12,7 +12,7 @@ Region Spectral Profile
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    //*[contains(text(), "Region List")]
     # select the polygon region from the region list
@@ -56,7 +56,7 @@ Spectral Profile Visualization From Multiple Regions
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the region checkbox to enable region multi-plot mode
     Click Element    css:[data-testid="spectral-profiler-region-checkbox"] + span
@@ -101,7 +101,7 @@ Spectral Profile Visualization From Multiple Statistics
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    //*[contains(text(), "Region List")]
     # select the polygon region from the region list 
@@ -162,7 +162,7 @@ Spectral Profile Visualization From Multiple Images
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the image check box to enable image multi-plot mode
     Sleep    1
@@ -244,7 +244,7 @@ Single Spectral Profile Smoothing
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Click Element    //*[contains(text(), "Region List")]
     # select the ellipse region from the region list
@@ -253,9 +253,9 @@ Single Spectral Profile Smoothing
     Click Element    data:testid:smoothing-button
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Boxcar")]
-    Repeat Keyword    3    Click Element    (//input[@data-testid="smoothing-settings-line-width-input"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    3    Click Element    data:testid:smoothing-settings-line-width-input-increment-button
     Click Element    css:[data-testid="smoothing-settings-overlay-toggle"] + span
-    Click Element    (//input[@data-testid="smoothing-settings-kernel-input"]/parent::div/parent::div//button)[1]
+    Click Element    data:testid:smoothing-settings-kernel-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_boxcar_${key}.png
@@ -263,36 +263,36 @@ Single Spectral Profile Smoothing
     Click Element    data:testid:smoothing-button
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Gaussian")]
-    Repeat Keyword    3    Click Element    (//input[@data-testid="smoothing-settings-sigma-input"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    3    Click Element    data:testid:smoothing-settings-sigma-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_gaussian_${key}.png
 
     Click Element    data:testid:smoothing-button
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Hanning")]
-    Click Element    (//input[@data-testid="smoothing-settings-kernel-input"]/parent::div/parent::div//button)[1]
+    Click Element    data:testid:smoothing-settings-kernel-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_hanning_${key}.png
 
     Click Element    data:testid:smoothing-button
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Binning")]
-    Click Element    (//input[@data-testid="smoothing-settings-binning-width-input"]/parent::div/parent::div//button)[1]
+    Click Element    data:testid:smoothing-settings-binning-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_binning_${key}.png
 
     Click Element    data:testid:smoothing-button
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Savitzky-Golay")]
-    Click Element    (//input[@data-testid="smoothing-settings-kernel-input"]/parent::div/parent::div//button)[1]
-    Click Element    (//input[@data-testid="smoothing-settings-fitting-order-input"]/parent::div/parent::div//button)[1]
+    Click Element    data:testid:smoothing-settings-kernel-input-increment-button
+    Click Element    data:testid:smoothing-settings-fitting-order-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_Savitzky-Golay_${key}.png
 
     Click Element    data:testid:smoothing-button
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Decimation")]
-    Click Element   (//input[@data-testid="smoothing-settings-decimation-width-input"]/parent::div/parent::div//button)[1]
+    Click Element    data:testid:smoothing-settings-decimation-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_decimation_${key}.png
 
@@ -345,7 +345,7 @@ Multiple Spectral Profiles Smoothing
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    4    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    4    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
@@ -354,7 +354,7 @@ Multiple Spectral Profiles Smoothing
     Click Element    data:testid:smoothing-settings-method-dropdown
     Click Element    //option[contains(text(), "Binning")]
     Click Element    css:[data-testid="smoothing-settings-overlay-toggle"] + span
-    Repeat Keyword    2    Click Element    (//input[@data-testid="smoothing-settings-binning-width-input"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    2    Click Element    data:testid:smoothing-settings-binning-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check2_${key}.png
 

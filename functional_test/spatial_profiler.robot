@@ -42,7 +42,7 @@ Line Spatial Profile Fixed Pixel Width
     #Sleep    1
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
@@ -68,7 +68,7 @@ Line Spatial Profile Fixed Angular Width
     #Sleep    5
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
@@ -95,7 +95,7 @@ Polyline Spatial Profile Fixed Pixel Width
     #Sleep    3
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
@@ -123,7 +123,7 @@ Polyline Spatial Profile Fixed Angular Width
     #Sleep    5
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    (//input[@placeholder="Line width"]/parent::div/parent::div//button)[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png

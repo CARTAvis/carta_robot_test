@@ -120,7 +120,7 @@ ${IMAGE_FITTING_DIALOG_FIT_BUTTON}    data:testid:image-fitting-fit-button
 ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    css:[data-testid="image-fitting-result-tab"] .fitting-result-text
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log-tab"] .log-text
 ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    (//input[@data-testid="image-fitting-component-input"]/parent::div/parent::div//button)[1]
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    data:testid:image-fitting-component-input-increment-button
 ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    data:testid:fitting-dialog-header-close-button
 ${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    css:[data-testid="image-fitting-model-toggle"] + span
 ${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    css:[data-testid="image-fitting-residual-toggle"] + span
