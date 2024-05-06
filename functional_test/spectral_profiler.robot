@@ -2,34 +2,31 @@
 Documentation     Check the features in the spectral profiler
 Resource          ../resource.robot
 
-*** Variables ***
-${MAGIC_INDEX}    17
-${MAGIC_INDEX2}    18
 
 *** Test Cases ***
 Region Spectral Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
-    Click Element    xpath://*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the polygon region from the region list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    data:testid:region-list-table-row-5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    polygon_profile_${key}.png
     # select the ellipse region from the region list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element    data:testid:region-list-table-row-4
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    ellipse_profile_${key}.png
     # select the rectangle region from the region list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Click Element    data:testid:region-list-table-row-3
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    rectangle_profile_${key}.png
     # select the point region from the region list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    data:testid:region-list-table-row-2
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    point_profile_${key}.png
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    polygon_profile_${key}.png    476,61,509,18
@@ -55,24 +52,23 @@ Spectral Profile Visualization From Multiple Regions
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
-    Click Element    xpath://*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the region checkbox to enable region multi-plot mode
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[1]/label
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Region")]
     # click the region dropdown menu to see options
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
+    Click Element    data:testid:spectral-profiler-region-dropdown
     # select all options in the list
-    # this is a hacky way to click elements that cannot be located...
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    -30
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    0
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    30
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    -60    60
+    Click Element    data:testid:spectral-profiler-region-dropdown-region-1
+    Click Element    data:testid:spectral-profiler-region-dropdown-region-2
+    Click Element    data:testid:spectral-profiler-region-dropdown-region-3
+    Click Element    data:testid:spectral-profiler-region-dropdown-region-4
     # click the region dropdown menu to close the option list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/span[2]/span/a
+    Click Element    data:testid:spectral-profiler-region-dropdown
     #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
@@ -87,10 +83,10 @@ Spectral Profile Visualization From Multiple Regions
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    476,76,538,33
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-3    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -101,28 +97,29 @@ Spectral Profile Visualization From Multiple Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
-    Click Element    xpath://*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the polygon region from the region list 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    data:testid:region-list-table-row-5
     # select the statistic checkbox to enable statistic multi-plot mode
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[1]/label
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Statistic")]
     # click the statistic dropdown menu to see options
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
-    # this is a hacky way to click elements that cannot be located...
+    Click Element    data:testid:spectral-profiler-statistic-dropdown
     # select mean
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    90
+    Click Element    data:testid:spectral-profiler-statistic-dropdown-mean
     # select stdDev
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    30
+    Click Element    data:testid:spectral-profiler-statistic-dropdown-stddev
     # select rms
-    Click Element At Coordinates    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]    20    0
+    Click Element    data:testid:spectral-profiler-statistic-dropdown-rms
+    # select min
+    Click Element    data:testid:spectral-profiler-statistic-dropdown-min
     # click the statistic dropdown menu to close the list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[3]/span[2]/span/a
+    Click Element    data:testid:spectral-profiler-statistic-dropdown
     #Sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
@@ -137,10 +134,10 @@ Spectral Profile Visualization From Multiple Statistics
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    511,110,511,75
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[4]    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (86.748221 GHz, 6.57e-2), M17_SWex.fits, Region 4, Statistic RMS, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-3    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Coordinate Current
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -153,24 +150,24 @@ Spectral Profile Visualization From Multiple Images
     Append Image    HD163296_CO_2_1_subimage.fits
     Load Region File    region_003.crtf
     # matching C18O cube to 13CO cube spatially and spectrally
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Click Element    data:testid:image-list-1-matching-z
     # matching CO cube to 13CO cube spatially and spectrally
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
+    Click Element    data:testid:image-list-2-matching-z
+    Click Element    //*[contains(text(), "Region List")]
     # select the rectangle region
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    data:testid:region-list-table-row-2
+    Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
-    Click Element    xpath://*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     # select the image check box to enable image multi-plot mode
     Sleep    1
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
-    Wait Until Page Contains Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
+    Wait Until Page Contains Element    data:testid:spectral-profiler-info-2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
@@ -182,9 +179,9 @@ Spectral Profile Visualization From Multiple Images
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    564,108,585,68
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[1]    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[2]    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/div[3]    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -194,48 +191,48 @@ Single Spectral Profile Intensity Unit Conversion
     Load Initial Image   M17_SWex.fits
     Mouse Over    ${VIEWER_DIV}
     # launch a spectral profiler widget and dock it to the panel with the render config widget
-    Drag And Drop    //*[@id="SpectralProfilerButton"]    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]
+    Drag And Drop    id:SpectralProfilerButton    data:testid:render-config-0-header-title
     # click the spectral profile plot
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[1]/div/div/div[2]/div
+    Click Element    ${SPECTRAL_PROFILER_PLOT}
     # launch the spectral profiler settings dialog
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[1]/ul[2]/li[4]
+    Click Element    data:testid:spectral-profiler-0-header-settings-button
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.09e-2)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -1.09e-2)
     # click the intensity unit dropdown menu and select mJy/beam
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "mJy/beam")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "mJy/beam")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.09e+1)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -1.09e+1)
     # click the intensity unit dropdown menu and select uJy/beam
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "uJy/beam")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "uJy/beam")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.09e+4)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -1.09e+4)
     # click the intensity unit dropdown menu and select MJy/beam
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "MJy/sr")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "MJy/sr")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -1.34e+2)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -1.34e+2)
     # click the intensity unit dropdown menu and select Jy/arcsec^2
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "Jy/arcsec^2")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "Jy/arcsec^2")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -3.14e-3)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -3.14e-3)
     # click the intensity unit dropdown menu and select mJy/arcsec^2
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "mJy/arcsec^2")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "mJy/arcsec^2")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -3.14e+0)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -3.14e+0)
     # click the intensity unit dropdown menu and select uJy/arcsec^2
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "uJy/arcsec^2")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "uJy/arcsec^2")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -3.14e+3)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -3.14e+3)
     # click the intensity unit dropdown menu and select mK
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_0"]/div[3]/div
-    Click Element    xpath://*[contains(text(), "mK")]
+    Click Element    data:testid:spectral-profiler-settings-intensity-unit-dropdown
+    Click Element    //*[contains(text(), "mK")]
     # check cursor info
-    Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[1]/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div/div/div/div    Data: (86.748221 GHz, -5.77e+2)
+    Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -5.77e+2)
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -243,67 +240,67 @@ Single Spectral Profile Smoothing
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
-    Click Element    xpath://*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[2]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the ellipse region from the region list
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element    data:testid:region-list-table-row-4
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[2]
-    Repeat Keyword    3    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[4]/div/div/div[2]/button[1]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[6]/div/label
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Boxcar")]
+    Repeat Keyword    3    Click Element    data:testid:smoothing-settings-line-width-input-increment-button
+    Click Element    css:[data-testid="smoothing-settings-overlay-toggle"] + span
+    Click Element    data:testid:smoothing-settings-kernel-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_boxcar_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_boxcar_${key}.png
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[3]
-    Repeat Keyword    3    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Gaussian")]
+    Repeat Keyword    3    Click Element    data:testid:smoothing-settings-sigma-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_gaussian_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_gaussian_${key}.png
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[4]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Hanning")]
+    Click Element    data:testid:smoothing-settings-kernel-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_hanning_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_hanning_${key}.png
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[5]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Binning")]
+    Click Element    data:testid:smoothing-settings-binning-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_binning_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_binning_${key}.png
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[6]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[8]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Savitzky-Golay")]
+    Click Element    data:testid:smoothing-settings-kernel-input-increment-button
+    Click Element    data:testid:smoothing-settings-fitting-order-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_Savitzky-Golay_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_Savitzky-Golay_${key}.png
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[7]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[7]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Decimation")]
+    Click Element    data:testid:smoothing-settings-decimation-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_decimation_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_decimation_${key}.png
 
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "None")]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_original_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_original_${key}.png
 
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    410,40,544,17
@@ -336,30 +333,30 @@ Multiple Spectral Profiles Smoothing
     Load Initial Image   HD163296_13CO_2-1_subimage.fits
     Append Image    HD163296_C18O_2-1_subimage.fits
     # match C18O cube to 13CO cube spatially and spectrally via the image list widget
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Click Element    data:testid:image-list-1-matching-z
     Load Region File    region_003.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the rectangle region
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    data:testid:region-list-table-row-2
+    Click Element    id:SpectralProfilerButton
     # select the image checkbox to enable image multi-plot mode
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/span[1]/label
+    Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
-    Click Element    xpath://*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
-    Repeat Keyword    4    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_1"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    4    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     # apply smoothing with the binning method
-    Click Element    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[1]/a
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div/div/div/select/option[5]
-    Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[4]/div/label
-    Repeat Keyword    2  Click Element    //*[@id="bp3-tab-panel_spectralSettingTabs_2"]/div/div[5]/div/div/div[2]/button[1]
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //option[contains(text(), "Binning")]
+    Click Element    css:[data-testid="smoothing-settings-overlay-toggle"] + span
+    Repeat Keyword    2    Click Element    data:testid:smoothing-settings-binning-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    Capture Element Screenshot    //*[@id="root"]/div/div[${MAGIC_INDEX2}]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas    check2_${key}.png
+    Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check2_${key}.png
 
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
@@ -383,23 +380,23 @@ Spectral Profile Fitting Guess Then Fit
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
     # enter the point region creation mode via the region shortcut button
-    Click Element    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
+    Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     # create a point region at the center of the image view
     Click Element    ${VIEWER_DIV}
     # launch the region config dialog by double-clicking the point region
     Double Click Element    ${VIEWER_DIV}
     # switch to image Cooridnate and set a new center position
-    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[1]/div/input    63
-    Press Keys    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    DELETE
-    Input Text    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[3]/div/div[2]/div/input    43
+    Click Element    //*[contains(text(), "Image")]
+    Press Keys    //input[@placeholder="X Coordinate"]    DELETE
+    Input Text    //input[@placeholder="X Coordinate"]    63
+    Press Keys    //input[@placeholder="Y Coordinate"]    DELETE
+    Input Text    //input[@placeholder="Y Coordinate"]    43
     # click the image Cooridnate radio button again to apply changes
-    Click Element    //*[@id="bp3-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
+    Click Element    //*[contains(text(), "Image")]
     # close the region config dialog
-    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[2]/div/div[1]/button
+    Click Element    data:testid:region-dialog-header-close-button
     # launch a spectral profiler widget
-    Click Element    //*[@id="SpectralProfilerButton"]
+    Click Element    id:SpectralProfilerButton
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
@@ -409,11 +406,11 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    ${PROFILE_FITTING_AUTO_DETECT_BUTTON}
     Set Selenium Speed    0
     # check the auto detect results
-    Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div    detected 5 components.
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[5]/div/div/div[1]/div[1]/input    value    5
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[6]/div/div/div/div/input    value    349.47310991224464
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0.17664572759531438
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[8]/div/div/div/div/input    value    0.004394980985239272
+    Element Should Contain    data:testid:profile-fitting-auto-detect-info    detected 5 components.
+    Element Attribute Value Should Be    data:testid:profile-fitting-component-input    value    5
+    Element Attribute Value Should Be    data:testid:profile-fitting-center-input    value    349.47310991224464
+    Element Attribute Value Should Be    data:testid:profile-fitting-amplitude-input    value    0.17664572759531438
+    Element Attribute Value Should Be    data:testid:profile-fitting-fwhm-input    value    0.004394980985239272
     Set Selenium Speed    ${DELAY}
     # close the profile fitting dialog
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
@@ -504,11 +501,11 @@ Spectral Profile Fitting Guess Then Fit
     Click Element    ${PROFILE_FITTING_RESET_BUTTON}    # reset button
     Set Selenium Speed    0
     # check the default initial values
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[4]/div/div/div/div[1]/input    value    1
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[5]/div/div/div/div/input    value    0
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[6]/div/div/div/div/input    value    0
-    Element Attribute Value Should Be    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[7]/div/div/div/div/input    value    0
-    Element Should Contain    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[9]/div/div/div[1]/pre/div    ${EMPTY}
+    Element Attribute Value Should Be    data:testid:profile-fitting-component-input    value    1
+    Element Attribute Value Should Be    data:testid:profile-fitting-center-input    value    0
+    Element Attribute Value Should Be    data:testid:profile-fitting-amplitude-input    value    0
+    Element Attribute Value Should Be    data:testid:profile-fitting-fwhm-input    value    0
+    Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    ${EMPTY}
     Set Selenium Speed    ${DELAY}
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    # close fitting dialog
     #Sleep    0.5
