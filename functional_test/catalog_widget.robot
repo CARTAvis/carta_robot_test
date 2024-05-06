@@ -645,7 +645,7 @@ Fetch SIMBAD Catalog And Visualize
     # check png images
     Set Selenium Speed    0
     PNG Images Should Be Different    image_before_${key}.png    image_after_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,563,65
+    PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    200,162,565,63
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    118,162,583,89
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
