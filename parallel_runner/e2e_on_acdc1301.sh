@@ -4,7 +4,7 @@ CONDA_PATH=/home/acdc1301/anaconda3/bin
 eval "$($CONDA_PATH/conda shell.bash hook)"
 conda activate
 
-FORNTEND_FOLDER=/home/acdc1301/carta_build/carta-frontend
+FRONTEND_FOLDER=/home/acdc1301/carta_build/carta-frontend
 BACKEND_FOLDER=/home/acdc1301/carta_build/carta-backend
 E2E_FOLDER=/home/acdc1301/carta_robot_test
 E2E_RUN_FOLDER=/home/acdc1301/carta_robot_test/parallel_runner
@@ -24,7 +24,7 @@ function git_func() {
 f_branch=dev
 b_branch=dev
 e2e_branch=main
-git_func $FORNTEND_FOLDER $f_branch
+git_func $FRONTEND_FOLDER $f_branch
 git_func $BACKEND_FOLDER $b_branch
 git_func $E2E_FOLDER $e2e_branch
 
@@ -39,7 +39,7 @@ while [[ $# -gt 0 ]]; do
         if [[ -n "$2" ]]; then
             f_branch="$2"
         fi
-        git_func $FORNTEND_FOLDER $f_branch
+        git_func $FRONTEND_FOLDER $f_branch
         shift
         ;;
     -b | --backend)
@@ -57,7 +57,7 @@ while [[ $# -gt 0 ]]; do
         shift
         ;;
     --build_f)
-        cd $FORNTEND_FOLDER 
+        cd $FRONTEND_FOLDER 
         git submodule update
         npm install --legacy-peer-deps & 
         wait ${!}
