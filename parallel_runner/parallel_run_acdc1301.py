@@ -2,6 +2,8 @@ from multiprocessing import Pool
 import os
 import time
 import sys
+from datetime import date
+import glob
 
 if len(sys.argv) == 1:
     config_file = "./config.txt"
@@ -35,11 +37,16 @@ test_suites = {3100: "region.robot",
                3117: "WebGL_test.robot"
                }
 
+robot_test_dir = '/home/acdc1301/carta_robot_test'
+ddate = date.today().strftime("%Y%m%d")
+output_dir = f"/home/acdc1301/e2e_reports/{ddate}"
+# run_dir = f'{robot_test_dir}/parallel_runner'
+run_dir = f'/home/acdc1301/temp_parallel_runner'
 
 def test_runner(port):
     test_suite_name = test_suites[port][:-6]
-    os.system("time robot --variable CARTA_PORT:%d --variable SNAPSHOT_FOLDER:../snapshot --report report_parallel_run_%s.html --log log_parallel_run_%s.html --output output_parallel_run_%s.xml %s ../functional_test/%s"%(port, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suites[port]))
-    with open("./output_parallel_run_%s.xml"%test_suite_name, 'r') as fobj:
+    os.system(f"time robot --variable CARTA_PORT:{port} --variable SNAPSHOT_FOLDER:{robot_test_dir}/snapshot --report report_parallel_run_{test_suite_name}.html --log log_parallel_run_{test_suite_name}.html --output output_parallel_run_{test_suite_name}.xml {custom_robot_flags} {robot_test_dir}/functional_test/{test_suites[port]}")
+    with open(f"{run_dir}/output_parallel_run_{test_suite_name}.xml", 'r') as fobj:
         tmp = fobj.readlines()
     tmp2 = tmp[-6]
     tmp3 = tmp2.split()
@@ -48,8 +55,8 @@ def test_runner(port):
 
 if __name__ == '__main__':
     t_start = time.time()
-    os.system("rm -rf run_* *.png *.xml *.html")
-    os.system("cp -r ../utilities .")
+    os.system(f"rm -rf {run_dir}/run_* {run_dir}/*.png {run_dir}/*.xml {run_dir}/*.html")
+    os.system(f"cp -r {robot_test_dir}/utilities .")
     with Pool(n_process) as p:
         summary = p.map(test_runner, range(3100, 3118, 1))
     
@@ -62,10 +69,15 @@ if __name__ == '__main__':
 
     # combine test reports
     output_list = ""
+    exist_dir = len(glob.glob(f"{output_dir}*"))
+    if exist_dir > 0:
+        output_dir = f"{output_dir}_{exist_dir}"
+    os.system(f"mkdir -p {output_dir}")
+
     for value in test_suites.values():
-        output_list = output_list + "output_parallel_run_%s.xml "%value[:-6]
-    os.system("rebot --outputdir . --output output.xml -l log.html -r report.html %s"%output_list)
-    os.system("open report.html")
+        output_list = f"{output_list}output_parallel_run_{value[:-6]}.xml "
+    os.system(f"rebot --outputdir {output_dir} --output output.xml -l log.html -r report.html {output_list}")
+    # os.system("open report.html")
     t_middle = time.time()
     print(f"\nElapsed time for parallel run: {(t_middle - t_start) / 60.0} mins...")
 
@@ -73,12 +85,14 @@ if __name__ == '__main__':
     if len(rerun_suites) != 0:
         output_list = ""
         for test_suite_name in rerun_suites:
-            print("\nRerun failed tests in %s..."%test_suite_name)
-            os.system("time robot --variable CARTA_PORT:3200 --variable SNAPSHOT_FOLDER:../snapshot --rerunfailed output_parallel_run_%s.xml --report report_parallel_run_%s_rerun.html --log log_parallel_run_%s_rerun.html --output output_parallel_run_%s_rerun.xml %s ../functional_test/%s.robot"%(test_suite_name, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suite_name))
-            output_list = output_list + "output_parallel_run_%s_rerun.xml "%test_suite_name
-        os.system("rebot --outputdir . --output output_rerun.xml -l log_rerun.html -r report_rerun.html %s"%output_list)
-        os.system("open report_rerun.html")
+            print(f"\nRerun failed tests in {test_suite_name}...")
+            os.system(f"time robot --variable CARTA_PORT:3200 --variable SNAPSHOT_FOLDER:{robot_test_dir}/snapshot --rerunfailed output_parallel_run_{test_suite_name}.xml --report report_parallel_run_{test_suite_name}_rerun.html --log log_parallel_run_{test_suite_name}_rerun.html --output output_parallel_run_{test_suite_name}_rerun.xml {custom_robot_flags} {robot_test_dir}/functional_test/{test_suite_name}.robot")
+            output_list = f"{output_list}output_parallel_run_{test_suite_name}_rerun.xml"
+        os.system(f"rebot --outputdir {output_dir} --output output_rerun.xml -l log_rerun.html -r report_rerun.html {output_list}")
+        # os.system("open report_rerun.html")
 
     t_end = time.time()
     print(f"\nTotal elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")
+
+    os.system(f"mv branch_info.txt {output_dir}")
     

@@ -13,15 +13,20 @@ E2E_REPORT_FOLDER=/home/acdc1301/e2e_reports
 function git_func() {
     cd $1
     git fetch
-    git checkout $2
+    git clean -f
+    git checkout -f $2
     git pull
+    git submodule update
     # git status
 }
 
 ## default branchs
-git_func $FORNTEND_FOLDER dev
-git_func $BACKEND_FOLDER dev
-git_func $E2E_FOLDER acdc1301
+f_branch=dev
+b_branch=dev
+e2e_branch=main
+git_func $FORNTEND_FOLDER $f_branch
+git_func $BACKEND_FOLDER $b_branch
+git_func $E2E_FOLDER $e2e_branch
 
 if [[ $# -eq 0 ]]; then
     echo "enter flag -f, -b, or -t and its argument."
@@ -33,36 +38,29 @@ while [[ $# -gt 0 ]]; do
     -f | --frontend)
         if [[ -n "$2" ]]; then
             f_branch="$2"
-            git_func $FORNTEND_FOLDER $f_branch
-            shift
-        else
-            git_func $FORNTEND_FOLDER dev
-            shift
         fi
+        git_func $FORNTEND_FOLDER $f_branch
+        shift
         ;;
     -b | --backend)
         if [[ -n "$2" ]]; then
             b_branch="$2"
-            git_func $BACKEND_FOLDER $b_branch
-            shift
-        else
-            git_func $BACKEND_FOLDER dev
-            shift
         fi
+        git_func $BACKEND_FOLDER $b_branch
+        shift
         ;;
     -t | --e2etest)
         if [[ -n "$2" ]]; then
             e2e_branch="$2"
-            git_func $E2E_FOLDER $e2e_branch
-            shift
-        else
-            git_func $E2E_FOLDER main
-            shift
         fi
+        git_func $E2E_FOLDER $e2e_branch
+        shift
         ;;
     --build_f)
         cd $FORNTEND_FOLDER 
         git submodule update
+        npm install --legacy-peer-deps & 
+        wait ${!}
         npm run build-docker &
         wait ${!}
         shift
@@ -89,8 +87,13 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
-cd $E2E_RUN_FOLDER
-python parallel_run.py config_acdc1301.txt
+# cd $E2E_RUN_FOLDER
+# python parallel_run_acdc1301.py config_acdc1301.txt
+cd /home/acdc1301/temp_parallel_runner
+echo "backend: $b_branch
+frontend: $f_branch
+e2e: $e2e_branch" > branch_info.txt
+python parallel_run_acdc1301.py $E2E_RUN_FOLDER/config_acdc1301.txt
 
 conda deactivate
 
