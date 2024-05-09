@@ -8,7 +8,7 @@ Animation Playback
     Load Initial Image    M17_SWex.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=10
@@ -29,10 +29,10 @@ Animation Playback Backwards
     Load Initial Image    M17_SWex.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Play backwards")]
+    Click Element    //*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    16    timeout=10
     #Sleep    5
@@ -52,11 +52,11 @@ Animation Playback Bouncing
     Load Initial Image    M17_SWex.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Repeat Keyword    23    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
-    Click Element    xpath://*[contains(text(), "Bouncing")]
+    Click Element    //*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     #Sleep    4
     Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    22    timeout=10
@@ -77,7 +77,7 @@ Animation Playback Blink
     Load Initial Image    M17_SWex.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PLAYBACK_MODE_BUTTON}
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
@@ -101,7 +101,7 @@ Animation Playback Blink
 Channel Navigation
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    5    Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
     Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    5
@@ -135,7 +135,7 @@ Animation Playback Channel Range
     Load Initial Image    M17_SWex.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     Drag And Drop By Offset    ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    50    0
     Drag And Drop By Offset    ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    -100    0
@@ -161,9 +161,9 @@ Animation Playback Channel Step
     Load Initial Image    M17_SWex.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
-    Click Element    xpath://*[contains(text(), "Animator")]
-    Click Element    xpath://*[contains(text(), "Frame rate")]
-    Click Element    xpath://*[contains(text(), "Step")]
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Frame rate")]
+    Click Element    //*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    2
@@ -185,10 +185,10 @@ Polarization Slider And Computed Components
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     # change to tab10 colormap
-    Click Element    ${COLORMAP_DROPDOWN_CUBE}
-    Click Element    xpath://*[contains(text(), "tab10")]
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
     # use animator and the polarization slider to switch to different components
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_Stokes_I_${key}.png

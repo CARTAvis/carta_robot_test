@@ -33,205 +33,201 @@ ${WINDOW_SIZE_X}    1280
 ${WINDOW_SIZE_Y}    800
 ${WINDOW_SIZE_dY}    124
 
-${SERVER_STATUS_ICON}    xpath://*[@id="root"]/div/div[1]/span[6]/span/span
-${PROGRESS_CLOUD}    xpath://*[@id="root"]/div/div[1]/span[5]/span/span
+${PROGRESS_CLOUD}    data:testid:progress-cloud
 
-${FILE_LIST}    //*[@id="root"]/div/div[7]/div/div[1]/div[2]/div/div[3]/div[1]/div[1]
-${QA_FOLDER}    xpath://*[contains(text(), "set_QA_e2e_v2")]
-${FILE_INFO_TEXT}    xpath://*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[1]/div[2]/div/div[2]/div/div
-${FILE_FILTER}    //*[@id="root"]/div/div[7]/div[1]/div/div[2]/div/div[3]/div[2]/input
+${FILE_LIST}    data:testid:file-list
+${QA_FOLDER}    //*[contains(text(), "set_QA_e2e_v2")]
+${FILE_INFO_TEXT}    css:[data-testid="file-info"] .header-list
+${FILE_FILTER}    //input[@placeholder="Filter by filename with fuzzy search"]
 
-${LOAD_BUTTON}    xpath://*[contains(text(), "Load")]
-${APPEND_BUTTON}    xpath://*[contains(text(), "Append")]
-${CLOSE_BUTTON}    xpath://*[contains(text(), "Close")]
-${LOAD_CATALOG_BUTTON}    xpath://*[contains(text(), "Load catalog")]
-${LOAD_REGION_BUTTON}    xpath://*[contains(text(), "Load region")]
-
-
-${VIEWER_TAB_TITLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[1]/li/span
-${VIEWER_CURSOR_INFO_BAR}    //*[@id="image-panel-0-0"]/div[4]
-${VIEWER_DIV}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[2]/div/div/div
-${VIEWER_00_ZOOM_IN_BUTTON}    //*[@id="image-panel-0-0"]/div[9]/span[5]/a     
-${VIEWER_10_ZOOM_IN_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[5]/a
-${VIEWER_10_MATCH_BUTTON}    //*[@id="image-panel-1-0"]/div[8]/span[9]/span/a
-${VIEWER_10_CANVAS}    //*[@id="image-panel-1-0"]/div[8]/div/div/canvas
-${VIEWER_10_ZOOM_TO_FIT_BUTTON}    //*[@id="image-panel-1-0"]/div[9]/span[8]/a
-${VIEWER_SETTINGS_DIALOG}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[4]
-${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[3]
-
-${CLIP_BUTTON_90}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[1]/div[1]/div/button[1]
-
-${COLORMAP_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[4]/div/span/span/div/button
-${COLORMAP_DROPDOWN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[5]/div/span/span/div/button     
-
-${MULTIPANEL_VIEW_SWITCH}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[1]/div[1]/ul[2]/li[2]
-
-${ANIMATOR_FIRST_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[1]
-${ANIMATOR_PREVIOUS_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[2]
-${ANIMATOR_PLAY_STOP_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[3]
-${ANIMATOR_NEXT_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[4]
-${ANIMATOR_LAST_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[1]/button[5]
-
-${ANIMATOR_SLIDER}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/div[1]
-${ANIMATOR_SLIDER_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[2]
-${ANIMATOR_SLIDER_HANDLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/div[1]/span
-${ANIMATOR_SPINBOX_UP}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[1]
-${ANIMATOR_SPINBOX_DOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/button[2]
-${ANIMATOR_PLAYBACK_MODE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[1]/span
-${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[1]
-${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/span[2]
-${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[1]/label
-${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[2]/div/div/div[2]/div[3]/label   
+${LOAD_BUTTON}    //*[contains(text(), "Load")]
+${APPEND_BUTTON}    //*[contains(text(), "Append")]
+${CLOSE_BUTTON}    //*[contains(text(), "Close")]
+${LOAD_CATALOG_BUTTON}    //*[contains(text(), "Load catalog")]
+${LOAD_REGION_BUTTON}    //*[contains(text(), "Load region")]
 
 
-${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_PANEL_HEAD}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]
-${DEFAULT_LAYOUT_Y_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li/div
-${DEFAULT_LAYOUT_X_SPATIAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]/ul[1]/li/div
-${DEFAULT_LAYOUT_WIDGET_CLOSE_BUTTON_DYNAMIC}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[1]/ul[1]/li[1]/div    
+${VIEWER_TAB_TITLE}    css:[data-testid="image-view-header-title"] span
+${VIEWER_CURSOR_INFO_BAR}    data:testid:viewer-cursor-info-bar
+${VIEWER_DIV}    data:testid:viewer-div
+${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button"]
+${VIEWER_10_ZOOM_IN_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-in-button"]
+${VIEWER_10_MATCH_BUTTON}    css:#image-panel-1-0 [data-testid="match-button"]
+${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
+${VIEWER_10_ZOOM_TO_FIT_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-to-fit-button"]
+${VIEWER_SETTINGS_DIALOG}    data:testid:image-view-header-settings-button
+${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:image-view-floating-settings-0-header-close-button
+
+${CLIP_BUTTON_90}    data:testid:clip-button-90
+${COLORMAP_DROPDOWN}    data:testid:colormap-dropdown
+
+${MULTIPANEL_VIEW_SWITCH}    data:testid:image-view-multipanel-view-switch
+
+${ANIMATOR_FIRST_BUTTON}    data:testid:animator-first-button
+${ANIMATOR_PREVIOUS_BUTTON}    data:testid:animator-previous-button
+${ANIMATOR_PLAY_STOP_BUTTON}    data:testid:animator-play-stop-button
+${ANIMATOR_NEXT_BUTTON}    data:testid:animator-next-button
+${ANIMATOR_LAST_BUTTON}    data:testid:animator-last-button
+
+${ANIMATOR_SLIDER}    css:[data-testid="animator-slider"] [class*="-slider-track"]
+${ANIMATOR_SLIDER_INFO}    data:testid:animator-slider-info
+${ANIMATOR_SLIDER_HANDLE}    css:[data-testid="animator-slider"] div span
+${ANIMATOR_SPINBOX_UP}    data:testid:animator-control-input-increment-button
+${ANIMATOR_SPINBOX_DOWN}    data:testid:animator-control-input-decrement-button
+${ANIMATOR_PLAYBACK_MODE_BUTTON}    data:testid:animator-playback-mode-button
+${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-start"]
+${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-end"]
+${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@data-testid="animator-0-content"]//*[contains(text(), "Image")]
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@data-testid="animator-0-content"]//*[contains(text(), "Polarization")]
+
+
+${X_SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-0-header-title
+${X_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-0-header-close-button
+${Y_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-1-header-close-button
+${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-0-header-close-button
+${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-0-header-close-button
+${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-0-header-close-button
 ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[17]/div[2]/div/div[2]
 
-${CATALOG_WIDGET_DOCK_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
-${CATALOG_WIDGET_TITLE}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/ul[1]/li[2]/span
-${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[2]/div/span/span/div/button/span[1]
-${CATALOG_WIDGET_FILTER_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[1]
-${CATALOG_WIDGET_RESET_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[2]
-${CATALOG_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[3]
-${CATALOG_WIDGET_PLOT_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[3]/div/a[4]
-${CATALOG_WIDGET_TABLE_FILTERING_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[1]/table/tbody
-${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/span/span/div/button
-${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[1]/div/span/span/div/button
-${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/span/span/div/button  
-${CATALOG_WIDGET_FILE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[1]/div[1]/div/span/span/div/button
+${CATALOG_WIDGET_DOCK_BUTTON}    data:testid:catalog-overlay-component-0-header-dock-button
+${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-component-0-header-title"] span
+${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    data:testid:catalog-system-dropdown
+${CATALOG_WIDGET_FILTER_BUTTON}    data:testid:catalog-filter-button
+${CATALOG_WIDGET_RESET_BUTTON}    data:testid:catalog-reset-button
+${CATALOG_WIDGET_CLOSE_BUTTON}    data:testid:catalog-close-button
+${CATALOG_WIDGET_PLOT_BUTTON}    data:testid:catalog-plot-button
+${CATALOG_WIDGET_TABLE_FILTERING_INFO}    data:testid:catalog-table-filtering-info
+${CATALOG_WIDGET_RENDERING_TYPE_DROPDOWN}    data:testid:catalog-rendering-type-dropdown
+${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}    data:testid:catalog-rendering-column-x-dropdown
+${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}    data:testid:catalog-rendering-column-y-dropdown
+${CATALOG_WIDGET_FILE_DROPDOWN}    data:testid:catalog-file-dropdown
 
 
-${RENDER_CONFIG_CLIP_MIN_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[2]/div/div/div/input
-${RENDER_CONFIG_CLIP_MAX_CUBE}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[3]/div/div/div/input
-${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]/div[2]/div/div/div/div[2]/div[1]/div/span/span/div/button
+${RENDER_CONFIG_CLIP_MIN_CUBE}    data:testid:clip-min-input
+${RENDER_CONFIG_CLIP_MAX_CUBE}    data:testid:clip-max-input
+${RENDER_CONFIG_HISTOGRAM_MODE_DROPDOWN}    data:testid:histogram-mode-dropdown
 
 
-${IMAGE_FITTING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[5]/a
-${IMAGE_FITTING_DIALOG_CENTER_X}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_CENTER_Y}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_AMPLITUDE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[1]/div/input
-${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/div[2]/div/input
-${IMAGE_FITTING_DIALOG_PA}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/div/div/input
-${IMAGE_FITTING_DIALOG_FIT_BUTTON}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/span[2]/a
-${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_0"]/pre/div
-${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    //*[@id="bp3-tab-panel_fittingResultTabs_1"]/pre/div
-${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     //*[@id="bp3-tab-title_fittingResultTabs_1"]
-${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[2]/div/div/div[2]/button[1]
-${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[1]/button
-${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[1]
-${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[2]/div/label[2]
-${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[1]
-${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[4]/div/a[2]
-${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[5]/div/a
-${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[1]
-${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[6]/div/a[2]
-${IMAGE_FITTING_DIALOG_PA_LOCK}    //*[@id="root"]/div/div[15]/div[1]/div/div[2]/div/div[3]/div[1]/div/div[1]/div[7]/div/a
-
-
-
-${STATISTICS_WIDGET_TABLE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/table
-${STATISTICS_WIDGET_TABLE_DOCKED}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div[2]/div/div/div[2]/table
-
-${SPECTRAL_PROFILER_SETTINGS_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[2]
-${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div[2]/div[1]/div[1]/div[3]
-${SPECTRAL_PROFILER_PLOT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[1]/div/div/div[2]/div/canvas
-${SPECTRAL_PROFILER_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[5]
-
-${PROFILE_FITTING_RESULT_TAB}    //*[@id\="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[10]/div/div/div[1]/pre/div
-${PROFILE_FITTING_FIT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[2]
-${PROFILE_FITTING_RESET_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[2]/a[1]
-${PROFILE_FITTING_AUTO_DETECT_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_4"]/div/span/div/div/div[1]/div[3]/div/div/span/a
-${PROFILE_FITTING_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[3]/a
-
-
-${SPECTRAL_LINE_QUERY_FROM_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_TO_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[3]/div/div/div/input
-${SPECTRAL_LINE_QUERY_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/button
-${SPECTRAL_LINE_QUERY_INFO}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[2]/div[1]
-${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[4]/div/div/select
-${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[1]
-${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[1]/div/div/select
-${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/div/div/div/input
-${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[2]
-${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/span/a
-${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[2]/div[2]/a[3]
-${SPECTRAL_LINE_QUERY_LOADING_ICON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[3]/div[2]
-
-${SPATIAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[3]/div
-${SPATIAL_PROFILER_CURSOR_INFO_Y}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[3]/div[2]/div/div/div/div[1]/div[3]/div
-${SPATIAL_PROFILER_PLOT}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/div[2]/div/canvas
-${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[1]/div[1]/ul[2]/li[4]
-${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div/div[1]/div[1]/div[3]
-
-
-${REGION_LIST_TABLE_ROOT_XPATH}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[2]/div[3]/div/div/div[1]/div[2]/div
-
-${MOMENT_GENERATOR_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div[2]/span[2]/a
-${MOMENT_GENERATOR_GENERATE_BUTTON}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[14]/span/a
-${MOMENT_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div[1]/div[1]/div[3]
-${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    //*[@id="bp3-tab-panel_spectralSettingTabs_3"]/div/div/div[13]/div/label[2]
-
-${FILE_HEADER_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[1]/a
-${FILE_HEADER_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[6]/div[1]/div/div[2]/div/div[1]/button
-
-
-${CONTOUR_CONFIG_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[3]
-${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[3]/div/a[2]
-${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[4]/div[1]/div/div[2]/div/div[1]/button
-
-${PV_GENERATOR_GENERATE_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[12]/div[2]/span/a
-${PV_GENERATOR_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div/div[1]/div[4]
-${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}    //*[@id="root"]/div/div[18]/div/div/div[2]/div/div[1]/div/div[2]/div
-
-${POINT_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[1]/a
-${LINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[2]/a
-${RECTANGLE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[3]/a
-${ELLIPSE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[4]/a
-${POLYGON_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[5]/a
-${POLYLINE_REGION_SHORTCUT_BUTTON}    //*[@id="root"]/div/div[1]/div[1]/span[6]/a
+${IMAGE_FITTING_DIALOG_BUTTON}    data:testid:fitting-dialog-button
+${IMAGE_FITTING_DIALOG_CENTER_X}    //input[@placeholder="Center X"]
+${IMAGE_FITTING_DIALOG_CENTER_Y}    //input[@placeholder="Center Y"]
+${IMAGE_FITTING_DIALOG_AMPLITUDE}    //input[@placeholder="Amplitude"]
+${IMAGE_FITTING_DIALOG_FWHM_MAJOR}    //input[@placeholder="Major axis"]
+${IMAGE_FITTING_DIALOG_FWHM_MINOR}    //input[@placeholder="Minor axis"]
+${IMAGE_FITTING_DIALOG_PA}    //input[@placeholder="Position angle"]
+${IMAGE_FITTING_DIALOG_FIT_BUTTON}    data:testid:image-fitting-fit-button
+${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    css:[data-testid="image-fitting-result-tab"] .fitting-result-text
+${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    css:[data-testid="image-fitting-full-log-tab"] .log-text
+${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}     data:testid:image-fitting-full-log-tab-title
+${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}    data:testid:image-fitting-component-input-increment-button
+${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}    data:testid:fitting-dialog-header-close-button
+${IMAGE_FITTING_DIALOG_MODEL_TOGGLE}    //*[contains(text(), "Model")]
+${IMAGE_FITTING_DIALOG_RESIDUAL_TOGGLE}    //*[contains(text(), "Residual")]
+${IMAGE_FITTING_DIALOG_CENTER_X_LOCK}    data:testid:image-fitting-center-x-lock-button
+${IMAGE_FITTING_DIALOG_CENTER_Y_LOCK}    data:testid:image-fitting-center-y-lock-button
+${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    data:testid:image-fitting-amplitude-lock-button
+${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    data:testid:image-fitting-fwhm-x-lock-button
+${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    data:testid:image-fitting-fwhm-y-lock-button
+${IMAGE_FITTING_DIALOG_PA_LOCK}    data:testid:image-fitting-pa-lock-button
 
 
 
-${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    //*[@id="root"]/div/div[1]/div[3]/span[4]/a
-${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[2]
-${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[3]/div/label
-${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[4]/div/div/div[1]/input
-${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}    //*[@id="bp3-tab-title_undefined_0"]
-${VECTOR_FIELD_RENDERING_STYLING_TAB}    //*[@id="bp3-tab-title_undefined_1"]
-${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[1]/div/div/div[1]/input
-${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}     //*[@id="bp3-tab-panel_undefined_1"]/div/div[3]/div/div/div/div[2]/div/div/div[1]/input
-${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[4]/div/div/div/input
-${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    //*[@id="root"]/div/div[5]/div/div[1]/div[2]/div/div[1]/button
-${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[6]/div/label
-${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[7]/div/div/div/input
-${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[8]/div/label
-${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[9]/div/div/div/input
-${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[10]/div/div/div/input
-${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}    //*[@id="root"]/div/div[5]/div[1]/div/div[2]/div/div[3]/div/a[1]
-${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select
-${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[1]
-${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[2]/div/div/select/option[3]
-${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select
-${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    //*[@id="bp3-tab-panel_undefined_0"]/div/div[1]/div/div/select/option[1]
-${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select
-${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    //*[@id="bp3-tab-panel_undefined_1"]/div/div[5]/div/div/select/option[2]
+${STATISTICS_WIDGET_TABLE}    data:testid:statistics-table
+
+${SPECTRAL_PROFILER_SETTINGS_BUTTON}     data:testid:spectral-profiler-0-header-settings-button
+${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}     data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
+${SPECTRAL_PROFILER_CLOSE_BUTTON}    data:testid:spectral-profiler-0-header-close-button
+
+${PROFILE_FITTING_RESULT_TAB}    css:[data-testid="profile-fitting-result"] .fitting-result-text
+${PROFILE_FITTING_FIT_BUTTON}    data:testid:profile-fitting-fit-button
+${PROFILE_FITTING_RESET_BUTTON}    data:testid:profile-fitting-reset-button
+${PROFILE_FITTING_AUTO_DETECT_BUTTON}    data:testid:profile-fitting-auto-detect-button
+${PROFILE_FITTING_BUTTON}    data:testid:profile-fitting-button
 
 
-${CURSOR_INFO_WIDGET_BUTTON}    //*[@id="CursorInfoWidgetButton"]
-${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    //*[@id="root"]/div/div[18]/div/div[1]/div[1]/div[4]
+${SPECTRAL_LINE_QUERY_FROM_INPUT}    data:testid:spectral-line-query-from-input
+${SPECTRAL_LINE_QUERY_TO_INPUT}    data:testid:spectral-line-query-to-input
+${SPECTRAL_LINE_QUERY_CENTER_INPUT}    data:testid:spectral-line-query-center-input
+${SPECTRAL_LINE_QUERY_WIDTH_INPUT}    data:testid:spectral-line-query-width-input
+${SPECTRAL_LINE_QUERY_BUTTON}    //button[contains(., "Query")]
+${SPECTRAL_LINE_QUERY_INFO}    data:testid:spectral-line-query-result-info
+${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}    data:testid:spectral-line-query-unit-dropdown
+${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}    data:testid:spectral-line-query-mode-dropdown
+${SPECTRAL_LINE_QUERY_FILTER_BUTTON}   //*[contains(text(), "Apply filter")]
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_REFERENCE}    data:testid:spectral-line-query-frequency-shift-reference
+${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    data:testid:spectral-line-query-frequency-shift-input
+${SPECTRAL_LINE_QUERY_RESET_BUTTON}    //*[contains(text(), "Reset filter")]
+${SPECTRAL_LINE_QUERY_PLOT_BUTTON}    //*[contains(text(), "Plot")]
+${SPECTRAL_LINE_QUERY_CLEAR_BUTTON}    //*[contains(text(), "Clear plot")]
+${SPECTRAL_LINE_QUERY_LOADING_ICON}    data:testid:spectral-line-query-loading-icon
+
+${SPATIAL_PROFILER_CURSOR_INFO}    data:testid:x-profiler-info
+${SPATIAL_PROFILER_CURSOR_INFO_Y}    data:testid:y-profiler-info
+${SPATIAL_PROFILER_PLOT}    css:[data-testid="spatial-profiler-0-content"] [data-testid="profiler-plot"]
+${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-0-header-settings-button
+${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler-0-floating-settings-0-header-close-button
+
+
+${MOMENT_GENERATOR_BUTTON}    data:testid:moment-generator-button
+${MOMENT_GENERATOR_GENERATE_BUTTON}    data:testid:moment-generator-generate-button
+${MOMENT_GENERATOR_AUTO_MATCHING_TOGGLE}    //*[contains(text(), "Auto spatial matching")]
+
+${FILE_HEADER_DIALOG_BUTTON}    data:testid:file-info-dialog-button
+${FILE_HEADER_DIALOG_CLOSE_BUTTON}    data:testid:file-info-dialog-header-close-button
+
+${CONTOUR_CONFIG_DIALOG_BUTTON}    data:testid:contour-dialog-button
+${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}    data:testid:contour-config-apply-button
+${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    data:testid:contour-dialog-header-close-button
+
+${PV_GENERATOR_GENERATE_BUTTON}    data:testid:pv-generator-generate-button
+${PV_GENERATOR_CLOSE_BUTTON}    data:testid:pv-generator-0-header-close-button
+${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}    data:testid:pv-generator-pv-cut-region-dropdown
+
+${POINT_REGION_SHORTCUT_BUTTON}    data:testid:point-region-shortcut-button
+${LINE_REGION_SHORTCUT_BUTTON}    data:testid:line-region-shortcut-button
+${RECTANGLE_REGION_SHORTCUT_BUTTON}    data:testid:rectangle-region-shortcut-button
+${ELLIPSE_REGION_SHORTCUT_BUTTON}    data:testid:ellipse-region-shortcut-button
+${POLYGON_REGION_SHORTCUT_BUTTON}    data:testid:polygon-region-shortcut-button
+${POLYLINE_REGION_SHORTCUT_BUTTON}    data:testid:polyline-region-shortcut-button
 
 
 
-${IMAGE_LIST_FIRST_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[1]
-${IMAGE_LIST_SECOND_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[6]
-${IMAGE_LIST_THIRD_IMAGE_NAME}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[11]
-${IMAGE_LIST_SECOND_MATCHING_XY}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[8]/div/span[1]/a
-${IMAGE_LIST_THIRD_MATCHING_XY}    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[13]/div/span[1]/a
+${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}    data:testid:vector-dialog-button
+${VECTOR_FIELD_RENDERING_APPLY_BUTTON}    data:testid:vector-field-apply-button
+${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}    css:[data-testid="vector-field-averaging-toggle"] + span
+${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    data:testid:vector-field-averaging-width-input
+${VECTOR_FIELD_RENDERING_CONFIGURATION_TAB}    data:testid:vector-field-configuration-tab
+${VECTOR_FIELD_RENDERING_STYLING_TAB}    data:testid:vector-field-styling-tab
+${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    data:testid:vector-field-line-input
+${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}     data:testid:vector-field-line-length-max-input
+${VECTOR_FIELD_RENDERING_ROTATION_OFFSET_INPUT}    data:testid:vector-field-rotation-offset-input
+${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}    data:testid:vector-dialog-header-close-button
+${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}    css:[data-testid="vector-field-threshold-toggle"] + span
+${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    data:testid:vector-field-threshold-input
+${VECTOR_FIELD_RENDERING_DEBIASING_TOGGLE}    css:[data-testid="vector-field-debiasing-toggle"] + span
+${VECTOR_FIELD_RENDERING_STOKES_Q_ERROR_INPUT}    data:testid:vector-field-stokes-q-error-input
+${VECTOR_FIELD_RENDERING_STOKES_U_ERROR_INPUT}    data:testid:vector-field-stokes-u-error-input
+${VECTOR_FIELD_RENDERING_CLEAR_BUTTON}    data:testid:vector-field-clear-button
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN}    data:testid:vector-field-intensity-source-dropdown
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_NONE}    data:testid:vector-field-intensity-source-dropdown-none
+${VECTOR_FIELD_RENDERING_INTENSITY_SOURCE_DROPDOWN_COMPUTED_PI}    data:testid:vector-field-intensity-source-dropdown-computed-pi
+${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    data:testid:vector-field-angular-source-dropdown
+${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    data:testid:vector-field-angular-source-dropdown-none
+${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    data:testid:vector-field-color-mode-dropdown
+${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    data:testid:vector-field-color-mode-dropdown-colormapped
+
+
+${CURSOR_INFO_WIDGET_BUTTON}    id:CursorInfoWidgetButton
+${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    data:testid:cursor-info-0-header-close-button
+
+
+
+${IMAGE_LIST_FIRST_IMAGE_NAME}    data:testid:image-list-0-image-name
+${IMAGE_LIST_SECOND_IMAGE_NAME}    data:testid:image-list-1-image-name
+${IMAGE_LIST_THIRD_IMAGE_NAME}    data:testid:image-list-2-image-name
+${IMAGE_LIST_SECOND_MATCHING_XY}    data:testid:image-list-1-matching-xy
+${IMAGE_LIST_THIRD_MATCHING_XY}    data:testid:image-list-2-matching-xy
 
 
 
@@ -283,7 +279,7 @@ Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains    No file selected.
     # check if there is a telemetry prompt and remove it 
     ${PAGE_SOURCE} =    Get Source
-    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    xpath:/html/body/div[4]/div/div[2]/div/div[2]/div/div[2]/button[2]/span
+    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    data:testid:telemetry-opt-out-button
     # reset viewer to multi-panel mode
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
@@ -309,7 +305,7 @@ Go To E2E QA Folder
 
 Load Initial Image 
     [Arguments]    ${IMAGE_TO_LOAD}
-    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
@@ -324,9 +320,9 @@ Load Initial Image
 
 Load Image 
     [Arguments]    ${IMAGE_TO_LOAD}
-    ${IMAGE_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Open Image")]
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Open Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
@@ -341,9 +337,9 @@ Load Image
 
 Append Image
     [Arguments]    ${IMAGE_TO_APPEND}
-    ${IMAGE_TO_APPEND_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Append Image")]
+    ${IMAGE_TO_APPEND_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_APPEND}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Append Image")]
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
@@ -357,15 +353,15 @@ Append Image
 
 
 Close Image
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Close Image")]
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Close Image")]
 
 
 Load Region File
     [Arguments]    ${REGION_TO_LOAD}
-    ${REGION_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import Regions")]
+    ${REGION_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${REGION_TO_LOAD}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Import Regions")]
     Input Text    ${FILE_FILTER}    ${REGION_TO_LOAD}
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${REGION_TO_LOAD}
@@ -377,9 +373,9 @@ Load Region File
 
 Load Catalog File
     [Arguments]    ${CATALOG_TO_LOAD}
-    ${CATALOG_TO_LOAD_XPATH}=    Replace String    xpath://*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
-    Click Element    xpath://*[contains(text(), "File")]
-    Click Element    xpath://*[contains(text(), "Import Catalog")]
+    ${CATALOG_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${CATALOG_TO_LOAD}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Import Catalog")]
     Input Text    ${FILE_FILTER}    ${CATALOG_TO_LOAD}
     #Sleep    0.3
     Wait Until Element Contains    ${FILE_LIST}   ${CATALOG_TO_LOAD}
@@ -389,6 +385,10 @@ Load Catalog File
     Click Element    ${LOAD_CATALOG_BUTTON}
     Wait Until Page Does Not Contain    File Browser    timeout=20
 
+Verify Region List Table Cell Content
+    [Arguments]    ${row_index}    ${column_index}    ${expected_content}
+    ${cell}    Get WebElement    css:[data-testid="region-list-table-row-${row_index}"] .cell:nth-child(${column_index})
+    Element Should Contain    ${cell}    ${expected_content}
 
 
 
