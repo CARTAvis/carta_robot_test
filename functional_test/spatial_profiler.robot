@@ -47,7 +47,7 @@ Line Spatial Profile Fixed Pixel Width
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    127,100,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    127,100,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,100,210,55
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,100,302,17
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,100,376,66
@@ -73,7 +73,7 @@ Line Spatial Profile Fixed Angular Width
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    111,104,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    111,104,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,174,104
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,230,104
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,295,18
@@ -100,7 +100,7 @@ Polyline Spatial Profile Fixed Pixel Width
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    127,85,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    127,85,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,85,186,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,85,296,106
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,85,410,14
@@ -128,7 +128,7 @@ Polyline Spatial Profile Fixed Angular Width
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    124,17,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    124,17,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,200,15
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,299,104
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,398,16
