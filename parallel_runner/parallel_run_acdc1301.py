@@ -95,4 +95,5 @@ if __name__ == '__main__':
     print(f"\nTotal elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")
 
     os.system(f"mv branch_info.txt {output_dir}")
+    os.system(f"mv selenium-screenshot*.png {output_dir}")
     

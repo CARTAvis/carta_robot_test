@@ -28,6 +28,7 @@ git_func $FRONTEND_FOLDER $f_branch
 git_func $BACKEND_FOLDER $b_branch
 git_func $E2E_FOLDER $e2e_branch
 
+name=none
 
 if [[ $# -eq 0 ]]; then
     echo "enter flag -f, -b, or -t and its argument."
@@ -47,9 +48,14 @@ while [[ $# -gt 0 ]]; do
     -t | --e2etest)
         if [[ -n "$2" ]]; then
             e2e_branch="$2"
-            git_func $E2E_FOLDER $e2e_branch
         fi
         git_func $E2E_FOLDER $e2e_branch
+        shift
+        ;;
+    --project)
+        if [[ -n "$2" ]]; then
+            name="$2"
+        fi
         shift
         ;;
     --build_f)
@@ -93,7 +99,8 @@ echo -n "8
 cd /home/acdc1301/temp_parallel_runner
 echo "backend: $b_branch
 frontend: $f_branch
-e2e: $e2e_branch" > branch_info.txt
+e2e: $e2e_branch
+project: $name" > branch_info.txt
 python parallel_run_acdc1301.py $E2E_RUN_FOLDER/config_acdc1301_uncommit.txt
 
 

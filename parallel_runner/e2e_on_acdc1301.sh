@@ -16,7 +16,6 @@ function git_func() {
     git clean -f
     git checkout -f $2
     git pull
-    git submodule update
     # git status
 }
 
