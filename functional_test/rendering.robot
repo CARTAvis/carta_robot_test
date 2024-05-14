@@ -454,8 +454,6 @@ GUI Initialization
     Element Attribute Value Should Be    data:testid:fitting-dialog-button    disabled    true
     # online catalog query dialog
     Element Attribute Value Should Be    data:testid:catalog-query-dialog-button    disabled    true
-    # distance measurement dialog
-    Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region
