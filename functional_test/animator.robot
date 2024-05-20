@@ -3,6 +3,56 @@ Documentation     Test animator functions
 Resource          ../resource.robot
 
 *** Test Cases ***
+Animation Playback Perf FITS
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    S255_IR_sci.spw29.cube.I.pbcor.fits
+    Click Element    //*[contains(text(), "Animator")]
+    Repeat Keyword    10    Click Element    ${ANIMATOR_SPINBOX_UP}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    30
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Page Screenshot    animator_perf_fits.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Animation Playback Perf CASA
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    S255_IR_sci.spw29.cube.I.pbcor.image
+    Click Element    //*[contains(text(), "Animator")]
+    Repeat Keyword    10    Click Element    ${ANIMATOR_SPINBOX_UP}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    30
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Page Screenshot    animator_perf_casa.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Animation Playback Perf HDF5
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    S255_IR_sci.spw29.cube.I.pbcor.hdf5
+    Click Element    //*[contains(text(), "Animator")]
+    Repeat Keyword    10    Click Element    ${ANIMATOR_SPINBOX_UP}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    30
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Page Screenshot    animator_perf_hdf5.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Animation Playback
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
