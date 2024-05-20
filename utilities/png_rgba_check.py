@@ -25,7 +25,7 @@ pix = im.load()
 #print(pix[0,0])
 
 
-if pix[ref_x, ref_y] == (ref_r, ref_g, ref_b, ref_a):
+if pix[ref_x, ref_y] == (ref_r, ref_g, ref_b, ref_a) or pix[ref_x, ref_y] == (ref_r, ref_g, ref_b):
     print("identical")
 else:
     print("different,", (ref_x, ref_y), "should be", pix[ref_x, ref_y])
