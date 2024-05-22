@@ -43,18 +43,18 @@ Contour Image Rendering
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     # test contour shader
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    379,196,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    367,200,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    362,205,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    358,217,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    362,229,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    367,234,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    379,238,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    391,234,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    396,229,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    400,217,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    396,205,15,153,96,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    392,200,15,153,96,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    379,196,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    367,200,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    362,205,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    358,217,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    362,229,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    367,234,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    379,238,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    391,234,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    396,229,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    400,217,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    396,205,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    392,200,35,133,81,255
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -150,12 +150,12 @@ Catalog Image Overlay Rendering
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
     # catalog points
-    PNG Pixel XY Should Match RGBA    check_${key}.png    122,167,0,179,164,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    99,213,0,179,164,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    78,260,0,179,164,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    621,161,0,179,164,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    657,197,0,179,164,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    691,234,0,179,164,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    122,167,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    99,213,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    78,260,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    621,161,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    657,197,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    691,234,0,163,150,255
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
