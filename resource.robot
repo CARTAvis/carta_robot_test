@@ -53,6 +53,8 @@ ${VIEWER_DIV}    data:testid:viewer-div
 ${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button"]
 ${VIEWER_10_ZOOM_IN_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-in-button"]
 ${VIEWER_10_MATCH_BUTTON}    css:#image-panel-1-0 [data-testid="match-button"]
+${VIEWER_10_WCS_BUTTON}    css:#image-panel-1-0 [data-testid="overlay-coordinate-button"]
+${VIEWER_10_GRID_BUTTON}    css:#image-panel-1-0 [data-testid="grid-button"]
 ${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-to-fit-button"]
 ${VIEWER_SETTINGS_DIALOG}    data:testid:image-view-header-settings-button
