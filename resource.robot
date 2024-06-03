@@ -54,6 +54,7 @@ ${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button
 ${VIEWER_10_ZOOM_IN_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-in-button"]
 ${VIEWER_10_MATCH_BUTTON}    css:#image-panel-1-0 [data-testid="match-button"]
 ${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
+${VIEWER_01_CANVAS}    css:#image-panel-0-1 .region-stage
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-to-fit-button"]
 ${VIEWER_SETTINGS_DIALOG}    data:testid:image-view-header-settings-button
 ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:image-view-floating-settings-0-header-close-button
@@ -228,7 +229,7 @@ ${IMAGE_LIST_SECOND_IMAGE_NAME}    data:testid:image-list-1-image-name
 ${IMAGE_LIST_THIRD_IMAGE_NAME}    data:testid:image-list-2-image-name
 ${IMAGE_LIST_SECOND_MATCHING_XY}    data:testid:image-list-1-matching-xy
 ${IMAGE_LIST_THIRD_MATCHING_XY}    data:testid:image-list-2-matching-xy
-
+${IMAGE_LIST_FOURTH_MATCHING_XY}    data:testid:image-list-3-matching-xy
 
 
 
