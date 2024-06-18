@@ -42,75 +42,133 @@ Vector Field Rendering
     [Teardown]    Terminate carta_backend
 
 
-WCS Rendering
+
+WCS Rendering - Global
     [Setup]    Run carta_backend
-    ${result}=    test_image_rendering.wcs_rendering
+    ${result}=    test_image_rendering.wcs_rendering_global
     Should Be Equal    ${result}    Done
     Set Selenium Speed    0
-    # global
-    # BUG?: labels/tick value rgba is rendered as (194,48,48,255). It is not pure red
-    #  labels
-    PNG Pixel XY Should Match RGBA    wcs_rendering_global.png    12,239,194,48,48,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_global.png    12,239,172,47,51,255
     PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global.png    12,239,548,387
-    #  tick value
-    PNG Pixel XY Should Match RGBA    wcs_rendering_global.png    126,208,194,48,48,255
-    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global.png    126,208,526,208
+    Remove Files    wcs_rendering_global.png
+    [Teardown]    Terminate carta_backend
 
-    # interior axes
-    PNG Pixel XY Should Match RGBA    wcs_rendering_global_interior_axes.png    228,158,255,255,255,255
-    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global_interior_axes.png   228,158,628,158
+WCS Rendering - Axes
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_axes
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_global_interior_axes.png    144,351,255,255,255,255
+    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global_interior_axes.png   144,351,544,351
+    Remove Files    wcs_rendering_global_interior_axes.png
+    [Teardown]    Terminate carta_backend
 
-    # beam # TODO: refine the tests when the beam setting per image issue is fixed
-    #  BUG?: beam rgba is rendered as (194,48,48,255). It is not pure red
-    PNG Pixel XY Should Match RGBA    wcs_rendering_beam.png    739,21,194,48,48,255
-    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_beam.png   739,21,743,18
-    PNG Two Pixels Should Not Have Matched RGBA    wcs_rendering_beam.png   739,21,741,19
 
-    # border
-    # BUG?: border rgba is rendered as (16,22,26,255). It is not pure black
-    PNG Pixel XY Should Match RGBA    wcs_rendering_border.png    441,357,16,22,26,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_border.png    758,4,16,22,26,255
+WCS Rendering - Beam
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_beam
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_beam.png    63,338,172,47,51,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_beam.png    743,18,115,128,145,255
+    Remove Files    wcs_rendering_beam.png
+    [Teardown]    Terminate carta_backend
 
-    # colorbar
+WCS Rendering - Border
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_border
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_border.png    441,357,17,20,24,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_border.png    358,4,17,20,24,255
+    Remove Files    wcs_rendering_border.png
+    [Teardown]    Terminate carta_backend
+
+WCS Rendering - Colorbar
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_colorbar
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
     #  border
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    41,41,194,48,48,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    441,41,194,48,48,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    41,40,172,47,51,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    441,40,172,47,51,255
     #  tick
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    106,53,255,255,255,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    464,53,255,255,255,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    106,52,255,255,255,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    464,52,255,255,255,255
     #  tick value
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    95,33,191,115,38,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    453,33,191,115,38,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    97,33,147,86,16,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    512,33,147,86,16,255
     #  label
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    261,6,13,128,80,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    625,6,13,128,80,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    232,16,28,110,66,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_colorbar.png    619,10,28,110,66,255
+    Remove Files    wcs_rendering_colorbar.png
+    [Teardown]    Terminate carta_backend
 
-    # grid
-    #  grid gap
-    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_gap.png    204,184,194,48,48,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_gap.png    637,184,194,48,48,255
-    #  usual grid
-    PNG Pixel XY Should Match RGBA    wcs_rendering_grid.png    122,201,194,48,48,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_grid.png    522,201,194,48,48,255
+WCS Rendering - Grid
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_grid
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    # grid gap
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_gap.png    204,184,172,47,51,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_gap.png    630,184,172,47,51,255
+    # usual grid
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid.png    233,169,172,47,51,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid.png    633,169,172,47,51,255
+    # pixel grid
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_pixel_grid.png    199,150,160,181,170,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_pixel_grid.png    168,245,160,181,170,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_pixel_grid.png    568,182,21,121,158,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_grid_pixel_grid.png    599,245,21,121,158,255
+    Remove Files    wcs_rendering_grid.png    wcs_rendering_grid_gap.png    wcs_rendering_grid_pixel_grid.png
+    [Teardown]    Terminate carta_backend
 
-    # labels
-    PNG Pixel XY Should Match RGBA    wcs_rendering_labels.png    22,229,194,48,48,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_labels.png    609,375,194,48,48,255
+WCS Rendering - Labels
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_labels
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_labels.png    21,197,172,47,51,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_labels.png    591,375,172,47,51,255
+    Remove Files    wcs_rendering_labels.png
+    [Teardown]    Terminate carta_backend
 
-    # numbers
-    PNG Pixel XY Should Match RGBA    wcs_rendering_numbers.png    51,107,16,22,26,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_numbers.png    626,358,16,22,26,255
+WCS Rendering - Numbers
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_numbers
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_numbers.png    41,122,17,20,24,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_numbers.png    649,367,17,20,24,255
+    Remove Files    wcs_rendering_numbers.png
+    [Teardown]    Terminate carta_backend
 
-    # ticks
-    PNG Pixel XY Should Match RGBA    wcs_rendering_ticks.png    72,179,255,255,255,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_ticks.png    776,332,255,255,255,255
+WCS Rendering - Ticks
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_ticks
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_ticks.png    113,346,255,255,255,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_ticks.png    721,352,255,255,255,255    
+    Remove Files    wcs_rendering_ticks.png
+    [Teardown]    Terminate carta_backend
 
-    # title
-    PNG Pixel XY Should Match RGBA    wcs_rendering_title.png    325,18,16,22,26,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_title.png    725,18,16,22,26,255
+WCS Rendering - Title
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_title
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_title.png    296,18,17,20,24,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_title.png    621,18,17,20,24,255
+    Remove Files    wcs_rendering_title.png
+    [Teardown]    Terminate carta_backend
 
-
-    Remove Files    wcs_rendering_beam.png    wcs_rendering_border.png    wcs_rendering_colorbar.png    wcs_rendering_global.png
-    Remove Files    wcs_rendering_global_interior_axes.png    wcs_rendering_grid.png    wcs_rendering_grid_gap.png
-    Remove Files    wcs_rendering_labels.png    wcs_rendering_numbers.png    wcs_rendering_ticks.png    wcs_rendering_title.png
+WCS Rendering - Spatial-Spectral Conversion
+    [Setup]    Run carta_backend
+    ${result}=    test_image_rendering.wcs_rendering_spatial_spectral_conversion
+    Should Be Equal    ${result}    Done
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    wcs_rendering_spatial_spectral_conversion.png    416,210,33,93,176,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_spatial_spectral_conversion.png    433,196,33,93,176,255
+    Remove Files    wcs_rendering_spatial_spectral_conversion.png
     [Teardown]    Terminate carta_backend

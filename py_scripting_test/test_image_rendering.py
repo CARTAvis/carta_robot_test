@@ -7,6 +7,10 @@ from carta.constants import CoordinateSystem
 from carta.constants import ColorbarPosition
 from carta.constants import FontFamily, FontStyle
 from carta.constants import LabelType
+from carta.constants import SpectralType
+from carta.constants import SpectralUnit
+from carta.constants import SpectralSystem
+
 
 url_without_token = 'http://localhost:3003'
 using_headless_chrome = True
@@ -148,7 +152,7 @@ def vector_field_rendering():
     return "Done"
 
 
-def wcs_rendering():
+def wcs_rendering_global():
     session = test_session_initializer()
     session.wcs.set_view_area(800, 400)
 
@@ -171,7 +175,23 @@ def wcs_rendering():
     assert global_.tolerance == 0.1
 
     session.save_rendered_view("wcs_rendering_global.png", 'white')
+    session.close()
 
+    return "Done"
+
+def wcs_rendering_axes():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
+    global_ = session.wcs.global_
+    global_.set_labelling(LabelType.INTERIOR)
     # check session.wcs.axes here since it only works for interior axes
     axes = session.wcs.axes
     axes.set_color(PaletteColor.WHITE)
@@ -186,10 +206,11 @@ def wcs_rendering():
     axes.show() # this is equivalent to axes.set_visible(True)
 
     session.save_rendered_view("wcs_rendering_global_interior_axes.png", 'white')
-
-
-    # reset testing state for other wcs components
     session.close()
+
+    return "Done"
+
+def wcs_rendering_beam():
     session = test_session_initializer()
     session.wcs.set_view_area(800, 400)
 
@@ -200,39 +221,65 @@ def wcs_rendering():
     imgs[0].raster.set_colormap('nipy_spectral')
     imgs[1].raster.set_colormap('jet')
 
-    # check session.wcs.beam
-    beam = session.wcs.beam # BUG: This only applies to active image. We need to be able to set beam properties per image.
-    beam.set_color(PaletteColor.RED)
-    beam.set_position(280, 320)
+    beam = session.wcs.beam
+    beam.set_color(PaletteColor.RED, [0])
+    beam.set_position(280, 320, [1])
     beam.set_type(BeamType.SOLID)
     beam.set_visible(True)
     beam.set_width(2)
-    assert beam.color == PaletteColor.RED
-    assert beam.position == (280, 320)
-    assert beam.type == BeamType.SOLID
-    assert beam.visible == True
-    assert beam.width == 2
+    assert beam.color() == (PaletteColor.RED, PaletteColor.GRAY)
+    assert beam.position() == ((0, 0), (280, 320))
+    assert beam.type() == (BeamType.SOLID, BeamType.SOLID)
+    assert beam.visible() == (True, True)
+    assert beam.width() == (2, 2)
     beam.hide() # this is equivalent to beam.set_visible(False)
     beam.show() # this is equivalent to beam.set_visible(True)
 
     session.save_rendered_view("wcs_rendering_beam.png", 'white')
+    session.close()
 
-    # check session.wcs.border
+    return "Done"
+
+def wcs_rendering_border():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     border = session.wcs.border
     border.set_color(PaletteColor.BLACK)
     border.set_custom_color(True)
     border.set_visible(False)
     border.set_width(2)
-    assert border.color == PaletteColor.BLACK # BUG: the rendered black is actually with rgba as (16,22,26,255), something to do with chrome settings?
+    assert border.color == PaletteColor.BLACK
     assert border.custom_color == True
     assert border.visible == False
     assert border.width == 2
     border.hide() # this is equivalent border.set_visible(False)
-    border.show() # this is equivalent border.set_visible(True)
+    border.show() # this is equivalent border.set_visible(True)   
 
     session.save_rendered_view("wcs_rendering_border.png", 'white')
+    session.close()
 
-    # check session.wcs.colorbar
+    return "Done"
+
+
+def wcs_rendering_colorbar():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     colorbar = session.wcs.colorbar
 
     colorbar.set_color(PaletteColor.BLACK)
@@ -253,15 +300,17 @@ def wcs_rendering():
     colorbar.label.set_color(PaletteColor.GREEN)
     colorbar.label.set_custom_color(True)
     colorbar.label.set_custom_text(True)
-    # BUG: missing colorbar.label.set_text()
-    colorbar.label.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD) # BUG: missing font size
+    colorbar.label.set_text("kilometer per second", [1])
+    colorbar.label.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD)
+    colorbar.label.set_font_size(16)
     colorbar.label.set_rotation(90) # NOTE: igored when the colorbar position is top or bottom
     colorbar.label.set_visible(True)
     assert colorbar.label.color == PaletteColor.GREEN
     assert colorbar.label.custom_color == True
     assert colorbar.label.custom_text == True
-    # BUG: missing colorbar.label.text()
+    assert colorbar.label.text([1]) == ('kilometer per second',)
     assert colorbar.label.font == (FontFamily.COURIER_NEW, FontStyle.BOLD)
+    assert colorbar.label.font_size == 16
     assert colorbar.label.rotation == 90
     assert colorbar.label.visible == True
     colorbar.label.hide() # this is equivalent to colorbar.label.set_visible(False)
@@ -270,16 +319,16 @@ def wcs_rendering():
     colorbar.numbers.set_color(PaletteColor.ORANGE)
     colorbar.numbers.set_custom_color(True)
     colorbar.numbers.set_custom_precision(True)
-    #colorbar.numbers.set_custom_text # BUG: this is not needed actually
     colorbar.numbers.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD)
+    colorbar.numbers.set_font_size(10)
     colorbar.numbers.set_precision(4)
     colorbar.numbers.set_rotation(90) # NOTE: igored when the colorbar position is top or bottom
     colorbar.numbers.set_visible(True)
     assert colorbar.numbers.color == PaletteColor.ORANGE
     assert colorbar.numbers.custom_color == True
     assert colorbar.numbers.custom_precision == True
-    #colorbar.numbers.custom_text # BUG: cannot get this value and this is not needed actually
-    assert colorbar.numbers.font == (FontFamily.COURIER_NEW, FontStyle.BOLD) # BUG: missing font size
+    assert colorbar.numbers.font == (FontFamily.COURIER_NEW, FontStyle.BOLD)
+    assert colorbar.numbers.font_size == 10
     assert colorbar.numbers.precision == 4
     assert colorbar.numbers.rotation == 90
     assert colorbar.numbers.visible == True
@@ -322,9 +371,21 @@ def wcs_rendering():
     colorbar.show() # this is equivalent to colorbar.set_visible(True)
 
     session.save_rendered_view("wcs_rendering_colorbar.png", 'white')
+    session.close()
 
+    return "Done"
 
-    # check session.wcs.grid
+def wcs_rendering_grid():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     grid = session.wcs.grid
     grid.set_visible(True)
     grid.set_custom_color(True)
@@ -345,9 +406,30 @@ def wcs_rendering():
     grid.show() # this is equivalent to grid.set_visible(True)
     grid.set_custom_gap(False)
     session.save_rendered_view("wcs_rendering_grid.png", 'white')
-    # BUG: mssing new pixel grid settings
+    # test pixel grid rendering
+    imgs[1].zoom_to_size("0.5arcsec", "x") # required to see the pixel grid
+    session.raster.set_pixel_grid(True, PaletteColor.WHITE)
+    assert session.raster.pixel_grid_visible == True
+    assert session.raster.pixel_grid_color == PaletteColor.WHITE
+    session.raster.set_pixel_grid_visible(True)
+    session.raster.set_pixel_grid_color(PaletteColor.GREEN)
+    session.raster.show_pixel_grid()
+    session.save_rendered_view("wcs_rendering_grid_pixel_grid.png", 'white')
+    session.close()
 
-    # check session.wcs.labels
+    return "Done"
+
+def wcs_rendering_labels():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     labels = session.wcs.labels
     labels.set_visible(False)
     assert labels.visible == False
@@ -358,8 +440,8 @@ def wcs_rendering():
     labels.set_custom_color(True)
     labels.set_color(PaletteColor.RED)
     labels.set_custom_text(True)
-    labels.set_label_text("RA", "Dec")
-    assert labels.label_text == ("RA", "Dec")
+    labels.set_text("RA", "Dec")
+    assert labels.text == ("RA", "Dec")
     assert labels.custom_color == True
     assert labels.color == PaletteColor.RED
     assert labels.custom_text == True
@@ -369,9 +451,21 @@ def wcs_rendering():
     assert labels.visible == False
     labels.show() # this is equivalent to labels.set_visible(True)
     session.save_rendered_view("wcs_rendering_labels.png", 'white')
+    session.close()
 
-    
-    # check session.wcs.numbers
+    return "Done"
+
+def wcs_rendering_numbers():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     numbers = session.wcs.numbers
     numbers.set_custom_color(True)
     numbers.set_color(PaletteColor.BLACK)
@@ -396,15 +490,24 @@ def wcs_rendering():
     assert numbers.visible == False
     numbers.show() # this is equivalent to numbers.set_visible(True)
     session.save_rendered_view("wcs_rendering_numbers.png", 'white')
+    session.close()
 
+    return "Done"
 
-    # check session.wcs.ticks
+def wcs_rendering_ticks():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     ticks = session.wcs.ticks
     ticks.set_draw_on_all_edges(False)
     assert ticks.draw_on_all_edges == False
-    #ticks.set_visible(False) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (False,) failed: Error: Missing action function: setVisible
-    #assert ticks.visible == False # BUG: CartaBadResponse: CARTA scripting action .fetchParameter called with parameters (Macro('overlayStore.ticks', 'visible'),) expected a response, but did not receive one.
-    #ticks.set_visible(True) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (True,) failed: Error: Missing action function: setVisible
     ticks.set_custom_color(True)
     ticks.set_color(PaletteColor.WHITE)
     ticks.set_custom_density(True)
@@ -419,39 +522,58 @@ def wcs_rendering():
     assert ticks.density == (5, 5)
     assert ticks.major_length == 4
     assert ticks.minor_length == 2
-    #ticks.hide() # this is equivalent to ticks.set_visible(False) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (False,) failed: Error: Missing action function: setVisible
-    #assert ticks.visible == False # BUG: as above
-    # ticks.show() # this is equivalent to ticks.set_visible(True) # BUG: CartaActionFailed: CARTA scripting action overlayStore.ticks.setVisible called with parameters (True,) failed: Error: Missing action function: setVisible
     session.save_rendered_view("wcs_rendering_ticks.png", 'white')
+    session.close()
 
+    return "Done"
 
-    # check session.wcs.title
+def wcs_rendering_title():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
+
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "HD163296_CO_2_1.mom1.fits"])
+    imgs[1].set_spatial_matching(True)
+    imgs[1].zoom_to_size("11arcsec", "x")
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+
     title = session.wcs.title
     title.set_visible(True)
     title.set_font(FontFamily.COURIER_NEW, FontStyle.BOLD)
     title.set_font_size(20)
     title.set_custom_color(True)
     title.set_color(PaletteColor.BLACK)
+    title.set_text("mom1", [1])
     assert title.font == (FontFamily.COURIER_NEW, FontStyle.BOLD)
     assert title.font_size == 20
     assert title.custom_color == True
     assert title.color == PaletteColor.BLACK
     title.set_custom_text(True)
     assert title.custom_text == True
-    # BUG: missing title.set_text. title should be set to different images independently
+    assert title.text([1]) == ("mom1",)
     assert title.visible == True
     title.hide() # this is equivalent to title.set_visible(False)
     assert title.visible == False
     title.show() # this is equivalent to title.set_visible(True)
     session.save_rendered_view("wcs_rendering_title.png", 'white')
-
-    
-    #session.wcs.toggle_labels() # TODO: do we need this? Need to know the state first before apply it to get what we need. It seems redundant to labels.set_visible(True/False)
-
-    # TODO: need the context in the Conversion tab when a pv image is loaded
-
     session.close()
-    return("Done")
+
+    return "Done"
 
 
+def wcs_rendering_spatial_spectral_conversion():
+    session = test_session_initializer()
+    session.wcs.set_view_area(800, 400)
 
+    imgs = session.open_images(["HD163296_CO_2_1.mom0.fits", 
+                                "carta_pv.fits"])
+    imgs[0].raster.set_colormap('nipy_spectral')
+    imgs[1].raster.set_colormap('jet')
+    imgs[1].set_spectral_system(SpectralSystem.LSRD)
+    imgs[1].set_spectral_coordinate(SpectralType.FREQ, SpectralUnit.GHZ)
+    
+    session.save_rendered_view("wcs_rendering_spatial_spectral_conversion.png", 'white')
+    session.close()
+
+    return "Done"
