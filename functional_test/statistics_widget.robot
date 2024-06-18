@@ -7,7 +7,7 @@ Region Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
     Load Region File    region_001.crtf
-    Click Element    //*[@id="StatisticsWidgetButton"]
+    Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -35,9 +35,9 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    4.84713562161
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+0 (Jy/beam)^2
     Set Selenium Speed    ${DELAY}
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the point region in the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    data:testid:region-list-table-row-2
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -56,7 +56,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+0 (Jy/beam)^2    
     Set Selenium Speed    ${DELAY}
     # select the rectangle region in the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Click Element    data:testid:region-list-table-row-3
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -72,7 +72,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.587572883201e-2 (Jy/beam)^2          
     Set Selenium Speed    ${DELAY}
     # select the ellipse region in the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element    data:testid:region-list-table-row-4
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -88,7 +88,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.317876269933e-2 (Jy/beam)^2
     Set Selenium Speed    ${DELAY}
     # select the polygon region in the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    data:testid:region-list-table-row-5
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -104,8 +104,8 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    5.209058156941e-2 (Jy/beam)^2              
     Set Selenium Speed    ${DELAY}
     # use the region drondown menu to select region 2 - rectangle region
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[2]/div/div/select/option[3]
+    Click Element    css:[data-testid="stats-0-content"] [data-testid="region-dropdown"]
+    Click Element    //*[@data-testid="stats-0-content"]//*[@data-testid="region-dropdown"]/option[contains(text(), "Region 2")]
     Wait Until Page Does Not Contain    No stats data
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    2.809000000000e+3 pixel(s)
@@ -128,7 +128,7 @@ Image Statistics
     Append Image    image_Jy_per_pixel.fits
     Append Image    image_K.fits
     Append Image    image_MJy_per_sr.fits
-    Click Element    //*[@id="StatisticsWidgetButton"]
+    Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -143,7 +143,7 @@ Image Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    1.016112952303e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    4.229060738407e+3 (MJy/sr)^2
     Set Selenium Speed    ${DELAY}
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_IMAGE_RADIO_BUTTON}
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Wait Until Page Does Not Contain    No stats data
@@ -212,8 +212,8 @@ Image Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+3 (Jy/beam.km/s)^2          
     Set Selenium Speed    ${DELAY}
     # use the image drondown menu to select the last image - image_MJy_per_sr.fits
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[1]/div/div/select/option[6]
+    Click Element    css:[data-testid="stats-0-content"] [data-testid="image-dropdown"]
+    Click Element    //*[@data-testid="stats-0-content"]//*[@data-testid="image-dropdown"]/option[contains(text(), "4: image_MJy_per_sr.fits")]
     Wait Until Page Does Not Contain    No stats data
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
@@ -232,7 +232,7 @@ Image Statistics
 Polarization Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
-    Click Element    //*[@id="StatisticsWidgetButton"]
+    Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     # Stokes I
@@ -248,7 +248,7 @@ Polarization Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.370073400759e-2 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    4.488586188493e+1 (Jy/beam)^2
     Set Selenium Speed    ${DELAY}
-    Click Element    xpath://*[contains(text(), "Animator")]
+    Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Page Does Not Contain    No stats data
@@ -300,8 +300,8 @@ Polarization Statistics
     
     Set Selenium Speed    ${DELAY}
     # use the polarization dropdown menu to select Stokes I
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select
-    Click Element    //*[@id="root"]/div/div[18]/div/div[1]/div[2]/div/div[1]/div[3]/div/div/select/option[2]
+    Click Element    css:[data-testid="stats-0-content"] [data-testid="polarization-dropdown"]
+    Click Element    //*[@data-testid="stats-0-content"]//*[@data-testid="polarization-dropdown"]/option[contains(text(), "Stokes I")]
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0
@@ -321,7 +321,7 @@ Polarization Statistics
 Compressed FITS fz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.fz
-    Click Element    //*[@id="StatisticsWidgetButton"]
+    Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    1.0
     Set Selenium Speed    0
@@ -347,7 +347,7 @@ Compressed FITS fz statistics
 Compressed FITS gz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.gz
-    Click Element    //*[@id="StatisticsWidgetButton"]
+    Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
     Set Selenium Speed    0

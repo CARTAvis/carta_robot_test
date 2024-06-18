@@ -36,18 +36,18 @@ Line Spatial Profile Fixed Pixel Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 1st region (line region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[2]/div[4]
+    Click Element    data:testid:region-list-table-row-2
     #Sleep    1
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    127,100,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    127,100,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,100,210,55
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,100,302,17
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,100,376,66
@@ -62,18 +62,18 @@ Line Spatial Profile Fixed Angular Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 2nd region (line region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[3]/div[4]
+    Click Element    data:testid:region-list-table-row-3
     #Sleep    5
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    111,104,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    111,104,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,174,104
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,230,104
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,295,18
@@ -89,18 +89,18 @@ Polyline Spatial Profile Fixed Pixel Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 3rd region (polyline region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[4]/div[4]
+    Click Element   data:testid:region-list-table-row-4
     #Sleep    3
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    127,85,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    127,85,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,85,186,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,85,296,106
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    127,85,410,14
@@ -117,18 +117,18 @@ Polyline Spatial Profile Fixed Angular Width
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_array_wide.fits
     Load Region File    region_002.crtf
-    Click Element    xpath://*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region List")]
     # select the 4th region (polyline region) from the region list
-    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[3]/div[5]/div[2]/div[3]/div/div/div[1]/div[2]/div/div[5]/div[4]
+    Click Element    data:testid:region-list-table-row-5
     #Sleep    5
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}
     # increase the line width
-    Repeat Keyword    6    Click Element    //*[@id="bp3-tab-panel_spatialSettingTabs_0"]/div/div[3]/div/div/div[2]/button[1]
+    Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPATIAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    124,17,16,107,163,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    124,17,33,93,176,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,200,15
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,299,104
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,398,16
