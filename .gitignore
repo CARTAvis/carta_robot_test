@@ -3,6 +3,8 @@
 *.png
 .DS_Store
 *.log
+__pycache__
+py_scripting_test/__pycache__
 *.pyc
 parallel_runner/*.html
 parallel_runner/*.xml
