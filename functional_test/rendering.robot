@@ -684,4 +684,3 @@ Multicolor Rendering
 
     Remove files    check_rgb_${key}.png    check_rgb_remove_layer_${key}.png    check_rgb_add_layer_${key}.png    check_rgb_reduce_alpha_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
->>>>>>> main
