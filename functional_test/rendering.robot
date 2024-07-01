@@ -556,7 +556,6 @@ Coordinate Grid Rendering
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_2_${key}.png
 
-
     # verify screenshots
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_${key}.png    93,315,472,315
@@ -608,3 +607,81 @@ Coordinate Grid Rendering
     Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png
     Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+Multicolor Rendering
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    disk_0.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Red'] 
+    Append Image    disk_1.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Green'] 
+    Append Image    disk_2.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Blue'] 
+    # enable spatial matching and adjust zoom level
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
+    # enable multicolor blending
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Multi-Color Blending")]
+
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_rgb_${key}.png
+
+    # close the 2nd image
+    Click Element    ${VIEWER_10_CANVAS}
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Close Image")]
+    Click Element    //*[contains(text(), "OK")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_rgb_remove_layer_${key}.png
+
+    # Append a new image
+    Append Image    disk_1.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Green'] 
+    Click Element    ${IMAGE_LIST_FOURTH_MATCHING_XY}
+
+    # join the new image into the blending image
+    Click Element    ${VIEWER_01_CANVAS}
+    Click Element    //*[normalize-space(text())='Add layer']
+    Click Element At Coordinates    //*[normalize-space(text())='Add layer']    0    -30
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_rgb_add_layer_${key}.png
+
+    # change alpha value
+    Click Element    css:div.alpha-picker.alpha-slider
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_rgb_reduce_alpha_${key}.png
+
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    568,290,255,0,0,255    # Red
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    610,373,0,255,0,255    # Green
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    527,373,0,0,255,255    # Blue
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    541,333,255,0,255,255    # Magenta
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    595,333,255,255,0,255    # Yellow
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    568,377,0,255,255,255    # Cyan
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    568,340,255,255,255,255    # White
+    PNG Pixel XY Should Match RGBA    check_rgb_${key}.png    568,260,0,0,0,255    # Black
+
+    PNG Pixel XY Should Match RGBA    check_rgb_remove_layer_${key}.png    190,289,255,0,0,255    # Red
+    PNG Pixel XY Should Match RGBA    check_rgb_remove_layer_${key}.png    150,370,0,0,255,255    # Blue
+    PNG Pixel XY Should Match RGBA    check_rgb_remove_layer_${key}.png    225,370,0,0,0,255    # Black
+
+    PNG Pixel XY Should Match RGBA    check_rgb_add_layer_${key}.png    190,289,255,0,0,255    # Red
+    PNG Pixel XY Should Match RGBA    check_rgb_add_layer_${key}.png    150,370,0,0,255,255    # Blue
+    PNG Pixel XY Should Match RGBA    check_rgb_add_layer_${key}.png    225,370,0,255,0,255    # Green
+
+    PNG Pixel XY Should Match RGBA    check_rgb_reduce_alpha_${key}.png    191,295,128,0,0,255    # reduced Red
+    PNG Pixel XY Should Match RGBA    check_rgb_reduce_alpha_${key}.png    166,332,128,0,255,255    # reduced Magenta
+    PNG Pixel XY Should Match RGBA    check_rgb_reduce_alpha_${key}.png    207,332,128,255,0,255    # reduced Yellow
+    PNG Pixel XY Should Match RGBA    check_rgb_reduce_alpha_${key}.png    191,342,128,255,255,255    # reduced White
+
+    Remove files    check_rgb_${key}.png    check_rgb_remove_layer_${key}.png    check_rgb_add_layer_${key}.png    check_rgb_reduce_alpha_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+>>>>>>> main
