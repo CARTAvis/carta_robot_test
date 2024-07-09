@@ -454,8 +454,6 @@ GUI Initialization
     Element Attribute Value Should Be    data:testid:fitting-dialog-button    disabled    true
     # online catalog query dialog
     Element Attribute Value Should Be    data:testid:catalog-query-dialog-button    disabled    true
-    # distance measurement dialog
-    Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region
@@ -468,6 +466,146 @@ GUI Initialization
     Click Element    data:testid:region-dialog-header-close-button
     # catalog histogram and scatter plot widgets
     #   refer to catalog_widget.robot to save testing time
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Coordinate Grid Rendering
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    model.fits
+    Append Image    model_imregrid_galactic.fits
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    css:#image-panel-1-0 [data-testid="match-button"]
+    Click Element    //*[contains(text(), "Spatial only")]
+    Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
+    Click Element    ${VIEWER_10_GRID_BUTTON}
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "FK5")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_fk5_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "FK4")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_fk4_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "ECL")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_ecl_${key}.png    
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "ICRS")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "GAL")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_gal_${key}.png
+
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "Offset")]
+    Mouse Out    ${VIEWER_DIV}
+
+    # change FOV and the origin of the offset grid
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Double Click Element    id:numericInput-3
+    Press Keys    None    DELETE
+    Input Text     id:numericInput-3    70.0    clear=True
+    Double Click Element    id:numericInput-4
+    Press Keys    None    DELETE
+    Input Text     id:numericInput-4    0.0    clear=True
+    Double Click Element    id:numericInput-5
+    Press Keys    None    DELETE
+    Double Click Element    id:numericInput-5
+    Press Keys    None    DELETE    
+    Input Text     id:numericInput-5    10deg    clear=True
+    Double Click Element    id:numericInput-7
+    Press Keys    None    DELETE
+    Input Text     id:numericInput-7    70.0    clear=True    
+    Double Click Element    id:numericInput-8
+    Press Keys    None    DELETE
+    Input Text     id:numericInput-8    0.0    clear=True   
+    Double Click Element    id:numericInput-3
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
+
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_gal_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "FK5")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_fk5_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "FK4")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_fk4_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "ECL")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_ecl_offset_${key}.png    
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "ICRS")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element At Coordinates    ${VIEWER_10_WCS_BUTTON}    0    -220
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "Offset")]
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_2_${key}.png
+
+    # verify screenshots
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    grid_wcs_${key}.png    93,315,472,315
+    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_${key}.png    93,315,472,318
+
+    PNG Two Pixels Should Have Matched RGBA    grid_fk5_${key}.png    237,397,569,400
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk5_${key}.png    237,397,570,401
+
+    PNG Two Pixels Should Have Matched RGBA    grid_fk4_${key}.png    187,400,566,400
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk4_${key}.png    187,400,567,401
+
+    PNG Two Pixels Should Have Matched RGBA    grid_ecl_${key}.png    59,126,438,125
+    PNG Two Pixels Should Not Have Matched RGBA    grid_ecl_${key}.png    59,126,439,126
+
+    PNG Two Pixels Should Have Matched RGBA    grid_icrs_${key}.png    190,400,569,400
+    PNG Two Pixels Should Not Have Matched RGBA    grid_icrs_${key}.png    190,400,570,401
+
+    PNG Two Pixels Should Have Matched RGBA    grid_gal_${key}.png    93,316,472,316
+    PNG Two Pixels Should Not Have Matched RGBA    grid_gal_${key}.png    93,316,472,318 
+
+    PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_gal_offset_${key}.png    190,217,570,217
+    PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,573,300
+
+    PNG Two Pixels Should Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,568,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,550,343
+
+    PNG Two Pixels Should Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,568,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,550,343
+
+    PNG Two Pixels Should Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,568,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,523,329
+
+    PNG Two Pixels Should Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,568,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,551,343
+
+    PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,570,217
+    PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,536,343
+
+    PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_2_${key}.png    190,217,570,217
+    PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,573,300
+
+    Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png
+    Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Multicolor Rendering
