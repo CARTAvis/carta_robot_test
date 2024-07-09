@@ -546,7 +546,7 @@ Fetch VizieR Catalog And Visualize
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51_151_MHz.fits
     # enable catalog query dialog
-    Click Element    data:testid:catalog-query-dialog-button
+    Click Element    data:testid:online-data-query-dialog-button
     # switch to VizieR catalog
     Click Element    //button[contains(., "SIMBAD")]
     Click Element    //*[contains(text(), "VizieR")]
@@ -608,7 +608,7 @@ Fetch SIMBAD Catalog And Visualize
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    image_before_${key}.png
     # enable catalog query dialog
-    Click Element    data:testid:catalog-query-dialog-button
+    Click Element    data:testid:online-data-query-dialog-button
     # set search radius
     Click Element    //button[contains(., "Set to viewer")]
     Element Attribute Value Should Be    data:testid:catalog-query-search-radius-input    value    0.8045196532714395

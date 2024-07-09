@@ -453,7 +453,7 @@ GUI Initialization
     # image fitting dialog
     Element Attribute Value Should Be    data:testid:fitting-dialog-button    disabled    true
     # online catalog query dialog
-    Element Attribute Value Should Be    data:testid:catalog-query-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:online-data-query-dialog-button    disabled    true
     # distance measurement dialog
     Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    disabled    true
     # region config dialog
