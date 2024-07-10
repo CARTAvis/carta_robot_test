@@ -440,22 +440,29 @@ GUI Initialization
     Element Should Contain    data:testid:pv-generator-0-content    PV cut
     Click Element    data:testid:pv-generator-0-header-close-button
     # file header dialog
-    Element Attribute Value Should Be    data:testid:file-info-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:file-info-dialog-button    aria-disabled    true
     # preferences dialog
     Click Element    data:testid:preference-dialog-button
     Element Should Contain    data:testid:preference-dialog    Preferences
     Element Should Contain    data:testid:preference-dialog    Global
     Click Element    data:testid:preference-dialog-header-close-button
     # contour config dialog
-    Element Attribute Value Should Be    data:testid:contour-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:contour-dialog-button    aria-disabled    true
     # vector overlay dialog
-    Element Attribute Value Should Be    data:testid:vector-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:vector-dialog-button    aria-disabled    true
     # image fitting dialog
-    Element Attribute Value Should Be    data:testid:fitting-dialog-button    disabled    true
-    # online catalog query dialog
-    Element Attribute Value Should Be    data:testid:online-data-query-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:fitting-dialog-button    aria-disabled    true
+    # online data query dialog
+    Click Element    data:testid:online-data-query-dialog-button
+    Element Should Contain    data:testid:online-data-query-dialog    Online Data Query
+    Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_0    Catalog
+    Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_0    No file loaded
+    Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_1    HiPS survey
+    Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
+    Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_1    Query by object
+    Click Element    data:testid:online-data-query-dialog-header-close-button
     # distance measurement dialog
-    Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    disabled    true
+    Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    aria-disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region
