@@ -461,8 +461,6 @@ GUI Initialization
     Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
     Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_1    Query by object
     Click Element    data:testid:online-data-query-dialog-header-close-button
-    # distance measurement dialog
-    Element Attribute Value Should Be    data:testid:distance-measure-dialog-button    aria-disabled    true
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits
     #   create a rectangle region

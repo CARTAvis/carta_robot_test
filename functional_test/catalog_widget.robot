@@ -618,7 +618,7 @@ Fetch SIMBAD Catalog And Visualize
     Element Attribute Value Should Be    data:testid:catalog-query-center-y-input    value    -10:33:15.4199949321
     # make query
     Click Element    //a[contains(., "Query")]
-    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30    
+    Wait Until Page Does Not Contain    Online Data Query    timeout=30    
     # enable catalog image overlay
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
     Click Element    //a[contains(., "ra")]
