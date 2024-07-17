@@ -478,6 +478,12 @@ Coordinate Grid Rendering
     Click Element    //*[contains(text(), "Spatial only")]
     Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Click Element    ${VIEWER_10_GRID_BUTTON}
+    # make grid line thicker
+    Click Element    data:testid:image-view-header-settings-button
+    Click Element    //*[normalize-space(text())='Grids']
+    Input Text    id:numericInput-14    3    clear=True
+    Click Element    //*[normalize-space(text())='Grids']
+    Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_${key}.png
@@ -508,24 +514,24 @@ Coordinate Grid Rendering
 
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Double Click Element    id:numericInput-3
+    Double Click Element    id:numericInput-30
     Press Keys    None    DELETE
-    Input Text     id:numericInput-3    70.0    clear=True
-    Double Click Element    id:numericInput-4
+    Input Text     id:numericInput-30    70.0    clear=True
+    Double Click Element    id:numericInput-31
     Press Keys    None    DELETE
-    Input Text     id:numericInput-4    0.0    clear=True
-    Double Click Element    id:numericInput-5
+    Input Text     id:numericInput-31    0.0    clear=True
+    Double Click Element    id:numericInput-32
     Press Keys    None    DELETE
-    Double Click Element    id:numericInput-5
+    Double Click Element    id:numericInput-32
     Press Keys    None    DELETE    
-    Input Text     id:numericInput-5    10deg    clear=True
-    Double Click Element    id:numericInput-7
+    Input Text     id:numericInput-32    10deg    clear=True
+    Double Click Element    id:numericInput-34
     Press Keys    None    DELETE
-    Input Text     id:numericInput-7    70.0    clear=True    
-    Double Click Element    id:numericInput-8
+    Input Text     id:numericInput-34    70.0    clear=True    
+    Double Click Element    id:numericInput-35
     Press Keys    None    DELETE
-    Input Text     id:numericInput-8    0.0    clear=True   
-    Double Click Element    id:numericInput-3
+    Input Text     id:numericInput-35    0.0    clear=True   
+    Double Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
 
     Mouse Out    ${VIEWER_DIV}
@@ -562,46 +568,46 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_${key}.png    93,315,472,318
 
     PNG Two Pixels Should Have Matched RGBA    grid_fk5_${key}.png    237,397,569,400
-    PNG Two Pixels Should Not Have Matched RGBA    grid_fk5_${key}.png    237,397,570,401
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk5_${key}.png    237,397,570,402
 
     PNG Two Pixels Should Have Matched RGBA    grid_fk4_${key}.png    187,400,566,400
-    PNG Two Pixels Should Not Have Matched RGBA    grid_fk4_${key}.png    187,400,567,401
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk4_${key}.png    187,400,568,404
 
     PNG Two Pixels Should Have Matched RGBA    grid_ecl_${key}.png    59,126,438,125
-    PNG Two Pixels Should Not Have Matched RGBA    grid_ecl_${key}.png    59,126,439,126
+    PNG Two Pixels Should Not Have Matched RGBA    grid_ecl_${key}.png    59,126,440,128
 
     PNG Two Pixels Should Have Matched RGBA    grid_icrs_${key}.png    190,400,569,400
-    PNG Two Pixels Should Not Have Matched RGBA    grid_icrs_${key}.png    190,400,570,401
+    PNG Two Pixels Should Not Have Matched RGBA    grid_icrs_${key}.png    190,400,571,403
 
     PNG Two Pixels Should Have Matched RGBA    grid_gal_${key}.png    93,316,472,316
-    PNG Two Pixels Should Not Have Matched RGBA    grid_gal_${key}.png    93,316,472,318 
+    PNG Two Pixels Should Not Have Matched RGBA    grid_gal_${key}.png    93,316,473,320 
 
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,569,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_gal_offset_${key}.png    190,217,570,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_gal_offset_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,573,300
 
     PNG Two Pixels Should Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,568,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,571,218
     PNG Two Pixels Should Have Matched RGBA    grid_fk5_offset_${key}.png    189,217,550,343
 
     PNG Two Pixels Should Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,568,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,571,218
     PNG Two Pixels Should Have Matched RGBA    grid_fk4_offset_${key}.png    189,217,550,343
 
     PNG Two Pixels Should Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,568,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,571,219
     PNG Two Pixels Should Have Matched RGBA    grid_ecl_offset_${key}.png    189,217,523,329
 
     PNG Two Pixels Should Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,568,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,571,218
     PNG Two Pixels Should Have Matched RGBA    grid_icrs_offset_${key}.png    189,217,551,343
 
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,569,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,570,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,536,343
 
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,569,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_2_${key}.png    190,217,570,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_2_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,573,300
 
     Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png
