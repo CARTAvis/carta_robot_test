@@ -1,5 +1,7 @@
 from carta.session import Session
 from carta.browser import Chrome
+import carta.region as Region
+from carta.constants import RegionType
 
 url_without_token = 'http://localhost:3003'
 using_headless_chrome = True
@@ -7,7 +9,7 @@ custom_chrome_options = ['--use-gl=angle', '--force-device-scale-factor=1','--fo
 
 image_file_0 = 'spire500_ext.fits'
 
-def create_region_annotation():
+def create_region_annotation_pixel():
     session = Session.create(Chrome(headless=using_headless_chrome, options=custom_chrome_options), url_without_token, debug_no_auth=True)
     session.wcs.set_view_area(800, 800)
     img0 = session.open_image(image_file_0)
@@ -22,6 +24,7 @@ def create_region_annotation():
     
     img0.regions.add_line((300, 300), (500, 400), annotation=False, name='my_line_region')
     img0.regions.add_line((300, 300), (500, 450), annotation=True, name='my_line_annotation')
+    # BUG: can we also support center/length/pa?
 
     img0.regions.add_point((100, 400), annotation=False, name="my_point_region")
     img0.regions.add_point((150, 400), annotation=True, name="my_point_annotation")
@@ -45,8 +48,57 @@ def create_region_annotation():
     img0.regions.add_vector((50, 600), (80, 700), "my_vector_annotation")
 
 
+    #img0.regions.export_to("./pye2e_region.crtf")
 
+    # get a list of created regions
     my_region_list = img0.regions.list()
+    assert isinstance(my_region_list[0], Region.CompassAnnotation)
+    assert my_region_list[0].region_id == 1
+    assert my_region_list[0].region_type == RegionType.ANNCOMPASS
+    assert my_region_list[0].center == (300, 300)
+    #assert my_region_list[0].size == (100, 100) # BUG: when we use add_compass(center, length, name='') to create a 
+    # compass annoation, we use length as a float to define the size. However, the CompassAnnotation object has an attibute 
+    # called "size" as a tuple (float, float). This might be confusing to users.
+    
+    assert isinstance(my_region_list[1], Region.EllipticalRegion)
+    assert my_region_list[1].region_id == 2
+    assert my_region_list[1].region_type == RegionType.ELLIPSE
+    assert my_region_list[1].center == (300, 300)
+    assert my_region_list[1].semi_axes == (100, 50)
+    assert my_region_list[1].rotation == 30
+    # BUG?: what does my_region_list[1].size (a tuple as (100, 200) in this case) mean? 
+
+    assert isinstance(my_region_list[2], Region.EllipticalRegion)
+    assert my_region_list[2].region_id == 3
+    assert my_region_list[2].region_type == RegionType.ANNELLIPSE
+    assert my_region_list[2].center == (300, 300)
+    assert my_region_list[2].semi_axes == (100, 50)
+    assert my_region_list[2].rotation == 45
+    # BUG?: what does my_region_list[2].size (a tuple as (100, 200) in this case) mean? 
+
+    assert isinstance(my_region_list[3], Region.LineRegion)
+    assert my_region_list[3].region_id == 4
+    assert my_region_list[3].region_type == RegionType.LINE
+    assert my_region_list[3].control_points == [(300, 300), (500, 400)]
+    assert my_region_list[3].center == (400, 350)
+    assert my_region_list[3].length == 223.60679774997897
+    assert my_region_list[3].rotation == 116.56505117707798
+
+
+
+    assert isinstance(my_region_list[4], Region.LineRegion)
+    #assert isinstance(my_region_list[5], Region.Region) # BUG?: "6:Point" is an instance of class 'carta.region.Region'???
+    assert isinstance(my_region_list[6], Region.PointAnnotation) # "7:Point - Ann is an instance of " class 'carta.region.PointAnnotation'
+    assert isinstance(my_region_list[7], Region.PolygonRegion)
+    assert isinstance(my_region_list[8], Region.PolygonRegion)
+    assert isinstance(my_region_list[9], Region.PolylineRegion)
+    assert isinstance(my_region_list[10], Region.PolylineRegion)
+    assert isinstance(my_region_list[11], Region.RectangularRegion)
+    assert isinstance(my_region_list[12], Region.RectangularRegion)
+    assert isinstance(my_region_list[13], Region.RulerAnnotation)
+    assert isinstance(my_region_list[14], Region.TextAnnotation)
+    assert isinstance(my_region_list[15], Region.VectorAnnotation)
+
 
     """
     img0.regions.export_to
@@ -56,12 +108,38 @@ def create_region_annotation():
     """
 
 
-
-
-
-
     session.save_rendered_view('create_region_annotation.png')
-
-    return dir(img0.regions), my_region_list
+    
+    i = 3
+    return dir(my_region_list[i]), my_region_list[i].center,  my_region_list[i].length, my_region_list[i].rotation
     #return "Done"
 
+
+
+def create_point_region_pixel():
+    session = Session.create(Chrome(headless=using_headless_chrome, options=custom_chrome_options), url_without_token, debug_no_auth=True)
+    session.wcs.set_view_area(800, 800)
+    img0 = session.open_image(image_file_0)
+
+    my_region = img0.regions.add_point((200, 200), annotation=False, name="my_point_region")
+
+    assert my_region.center == (200, 200)
+    assert my_region.color == '#2EE6D6'
+    assert my_region.control_points == [(200, 200)]
+    assert my_region.dash_length == 0
+    #assert my_region.existing
+    #assert my_region.
+    #assert my_region.
+    #assert my_region.
+
+
+
+
+    #'delete', 'existing', 'export_to', 'focus', 'from_list', 'get_value', 'line_width', 'lock', 'macro', 'name', 'new', 'region_class', 'region_id', 'region_set', 'region_type', 'session', 'set_center', 'set_control_point', 'set_control_points', 'set_line_style', 'set_name', 'set_size', 'size', 'unlock', 'wcs_center', 'wcs_size'
+
+
+
+    session.save_rendered_view('create_point_region_pixel.png')
+
+    return dir(my_region), my_region.existing
+    #return "Done"
