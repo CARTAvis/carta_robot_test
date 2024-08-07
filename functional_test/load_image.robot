@@ -500,3 +500,86 @@ Load Axes-Swapped Cubes
     PNG Two Pixels Should Have Matched RGBA    check_g_3102_${key}.png        76,86,682,361
     Remove Files    check_1032_${key}.png    check_g_0213_${key}.png    check_1230_${key}.png    check_3021_${key}.png    check_g_2031_${key}.png    check_g_3102_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Three Images As A Three-color-blended Image
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    m16_f
+    Wait Until Element Contains    ${FILE_LIST}    m16_f
+    # select three images and load as a RGB-blended image
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
+    END
+    Click Element    //*[normalize-space(text())='Load with RGB blending']
+    Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
+    # apply different color sets
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    RGB_${key}.png
+    Click Element    //*[normalize-space(text())='Apply color set']
+    Click Element    //*[normalize-space(text())='CMY']
+    Capture Element Screenshot    ${VIEWER_DIV}    CMY_${key}.png
+    Click Element    //*[normalize-space(text())='Apply color set']
+    Click Element    //*[normalize-space(text())='Rainbow']    
+    Capture Element Screenshot    ${VIEWER_DIV}    rainbow_${key}.png
+
+    Set Selenium Speed    0.02
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    274,148,255,0,0,255
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    653,154,0,255,0,255
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    271,393,0,0,255,255
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    590,326,226,176,235,255
+
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    274,148,255,0,255,255
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    653,154,255,255,0,255
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    271,393,0,255,255,255
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    556,372,185,169,180,255
+
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    274,148,255,0,0,255
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    653,154,128,254,179,255
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    271,393,127,0,255,255
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    596,350,228,142,178,255
+
+    Remove Files    RGB_${key}.png    CMY_${key}.png    rainbow_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Multiple Images As A Multi-color-blended Image
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    m16_f
+    Wait Until Element Contains    ${FILE_LIST}    m16_f
+    # select seven images and load as a multi-color-blended image
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0444w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0200w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0090w.fits']    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0444w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0200w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0090w.fits']    modifier=CTRL
+    END
+    Click Element    //*[normalize-space(text())='Load with multi-color blending']
+    Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    multicolor_${key}.png
+    Set Selenium Speed    0.02
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    588,347,191,59,174,255
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    520,397,55,23,17,255
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    513,252,120,144,142,255
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    636,333,255,255,199,255
+    Remove Files    multicolor_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
