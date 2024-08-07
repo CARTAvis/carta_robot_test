@@ -521,12 +521,15 @@ Load Three Images As A Three-color-blended Image
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
     # apply different color sets
     ${key}=    Generate Random String    8
+    Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    RGB_${key}.png
     Click Element    //*[normalize-space(text())='Apply color set']
     Click Element    //*[normalize-space(text())='CMY']
+    Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    CMY_${key}.png
     Click Element    //*[normalize-space(text())='Apply color set']
     Click Element    //*[normalize-space(text())='Rainbow']    
+    Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    rainbow_${key}.png
 
     Set Selenium Speed    0.02
@@ -575,6 +578,7 @@ Load Multiple Images As A Multi-color-blended Image
     Click Element    //*[normalize-space(text())='Load with multi-color blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
     ${key}=    Generate Random String    8
+    Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    multicolor_${key}.png
     Set Selenium Speed    0.02
     PNG Pixel XY Should Match RGBA    multicolor_${key}.png    588,347,191,59,174,255
