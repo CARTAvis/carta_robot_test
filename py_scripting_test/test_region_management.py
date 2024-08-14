@@ -110,13 +110,13 @@ def create_region_annotation_pixel():
 
     session.save_rendered_view('create_region_annotation.png')
     
-    i = 3
-    return dir(my_region_list[i]), my_region_list[i].center,  my_region_list[i].length, my_region_list[i].rotation
+    i = 15
+    return dir(my_region_list[i])
     #return "Done"
 
 
 
-def create_point_region_pixel():
+def manage_point_region():
     session = Session.create(Chrome(headless=using_headless_chrome, options=custom_chrome_options), url_without_token, debug_no_auth=True)
     session.wcs.set_view_area(800, 800)
     img0 = session.open_image(image_file_0)
@@ -124,22 +124,71 @@ def create_point_region_pixel():
     my_region = img0.regions.add_point((200, 200), annotation=False, name="my_point_region")
 
     assert my_region.center == (200, 200)
-    assert my_region.color == '#2EE6D6'
+    assert my_region.color == '#2EE6D6' # BUG: missing set_color method, it is hidden in set_line_style method
     assert my_region.control_points == [(200, 200)]
     assert my_region.dash_length == 0
-    #assert my_region.existing
-    #assert my_region.
-    #assert my_region.
-    #assert my_region.
+    assert my_region.line_width == 2
+    assert my_region.name == "my_point_region"
+    assert my_region.region_id == 1
+    assert my_region.region_type == RegionType.POINT
+    assert my_region.size == None
+    assert my_region.wcs_center == ('7:11:54.9804278286', '-11:27:55.5820918111')
+    assert my_region.wcs_size == None
+
+    my_region.set_center(('7:10:00', '-11:00:00'))
+    my_region.set_name("my_point_region_renamed")
+    assert my_region.center == (320.6804809099717, 319.8820730158677)
+    assert my_region.name == "my_point_region_renamed"
+    #my_region.set_size = 10 # BUG: no effect. should not have the set_size method for point region
+    #my_region.set_line_style # BUG: should not have the set_line_style method for point region
+    #my_region.set_control_point # BUG: should not have the set_control_point method for point region
+    #my_region.set_control_points # BUG: should not have the set_control_points method for point region
+
+    # 'delete', 'export_to', 'focus', 'lock',  
+    # 'unlock',
 
 
 
+    session.save_rendered_view('manage_point_region.png')
 
-    #'delete', 'existing', 'export_to', 'focus', 'from_list', 'get_value', 'line_width', 'lock', 'macro', 'name', 'new', 'region_class', 'region_id', 'region_set', 'region_type', 'session', 'set_center', 'set_control_point', 'set_control_points', 'set_line_style', 'set_name', 'set_size', 'size', 'unlock', 'wcs_center', 'wcs_size'
+    return dir(my_region)
+    #return "Done"
+
+def manage_rectangle_region():
+    session = Session.create(Chrome(headless=using_headless_chrome, options=custom_chrome_options), url_without_token, debug_no_auth=True)
+    session.wcs.set_view_area(800, 800)
+    img0 = session.open_image(image_file_0)
+
+    my_region = img0.regions.add_point((200, 200), annotation=False, name="my_point_region")
+
+    """
+    assert my_region.center == (200, 200)
+    assert my_region.color == '#2EE6D6' # BUG: missing set_color method, it is hidden in set_line_style method
+    assert my_region.control_points == [(200, 200)]
+    assert my_region.dash_length == 0
+    assert my_region.line_width == 2
+    assert my_region.name == "my_point_region"
+    assert my_region.region_id == 1
+    assert my_region.region_type == RegionType.POINT
+    assert my_region.size == None
+    assert my_region.wcs_center == ('7:11:54.9804278286', '-11:27:55.5820918111')
+    assert my_region.wcs_size == None
+
+    my_region.set_center(('7:10:00', '-11:00:00'))
+    my_region.set_name("my_point_region_renamed")
+    assert my_region.center == (320.6804809099717, 319.8820730158677)
+    assert my_region.name == "my_point_region_renamed"
+    #my_region.set_size = 10 # BUG: no effect. should not have the set_size method for point region
+    #my_region.set_line_style # BUG: should not have the set_line_style method for point region
+    #my_region.set_control_point # BUG: should not have the set_control_point method for point region
+    #my_region.set_control_points # BUG: should not have the set_control_points method for point region
+
+    # 'delete', 'export_to', 'focus', 'lock',  
+    # 'unlock',
+    """
 
 
+    session.save_rendered_view('manage_rectangle_region.png')
 
-    session.save_rendered_view('create_point_region_pixel.png')
-
-    return dir(my_region), my_region.existing
+    return dir(my_region)
     #return "Done"

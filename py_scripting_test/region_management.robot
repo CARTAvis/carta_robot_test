@@ -13,12 +13,21 @@ Create Region And Annotation In Image Coordinate
     #Remove File    create_region_annotation.png
     [Teardown]    Terminate carta_backend
 
-Create Point Region In Image Coordinate 
+Manage Point Region 
     [Setup]    Run carta_backend
-    ${result}=    test_region_management.create_point_region_pixel
+    ${result}=    test_region_management.manage_point_region
     Log To Console    ${result}
     #Should Be Equal    ${result}    Done
     
     #Remove File    create_region_annotation.png
     [Teardown]    Terminate carta_backend
 
+
+Manage Rectangle Region 
+    [Setup]    Run carta_backend
+    ${result}=    test_region_management.manage_rectangle_region
+    Log To Console    ${result}
+    #Should Be Equal    ${result}    Done
+    
+    #Remove File    create_region_annotation.png
+    [Teardown]    Terminate carta_backend
