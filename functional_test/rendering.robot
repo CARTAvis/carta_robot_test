@@ -697,3 +697,164 @@ Multicolor Rendering
 
     Remove files    check_rgb_${key}.png    check_rgb_remove_layer_${key}.png    check_rgb_add_layer_${key}.png    check_rgb_reduce_alpha_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Layer Management With Multicolor Image
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    gaussian_
+    Wait Until Element Contains    ${FILE_LIST}    gaussian_0.fits
+    Sleep    0.2
+    # select three images and load as a RGB-blended image
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='gaussian_0.fits']
+    Click Element    //*[normalize-space(text())='gaussian_1.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='gaussian_2.fits']    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='gaussian_0.fits']
+    Click Element    //*[normalize-space(text())='gaussian_1.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='gaussian_2.fits']    modifier=CTRL
+    END
+    Click Element    //*[normalize-space(text())='Load with RGB blending']
+    Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
+
+    Click Element    ${VIEWER_00_CANVAS}
+    Click Element    data:testid:contour-dialog-button
+    Input Text    css:[data-testid="contour-config-level-input-form"] input    0.002
+    Click Element    //*[contains(text(), "Styling")]
+    Input Text    data:testid:contour-thickness-input    3
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
+
+    Click Element    ${VIEWER_01_CANVAS}
+    Click Element    data:testid:contour-dialog-button
+    Input Text    css:[data-testid="contour-config-level-input-form"] input    0.002
+    Click Element    //*[contains(text(), "Styling")]
+    Input Text    data:testid:contour-thickness-input    3
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
+
+    Click Element    ${VIEWER_10_CANVAS}
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}
+    Click Element    ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.002
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    
+    Click Element    ${VIEWER_11_CANVAS}
+    Repeat Keyword    2    Click Element    ${VIEWER_11_ZOOM_IN_BUTTON}
+
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_full_${key}.png
+    
+    # TODO: create testid of layer control buttons
+    # hide then show R of image 0
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image0_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]/a
+
+    # hide then show C of image 0
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image0_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]/a
+
+    # hide then show R of image 1
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image1_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]/a
+
+    # hide then show V of image 1
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image1_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]/a
+
+    # hide then show R of image 2
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image2_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]/a
+
+    # hide then show C of image 2
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image2_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]/a
+
+    # hide then show R of image 3 (multicolor image)
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image3_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]/a
+
+    # hide then show C of image 3 (multicolor image)
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image3_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]/a
+
+    # hide then show V of image 3 (multicolor image)
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]/a
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image3_${key}.png
+    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]/a
+
+    Set Selenium Speed    0
+    # full
+    # upper contour in each panel
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    190,80,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    570,80,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    190,316,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    570,316,35,133,81,255
+    # bottom-left contour in each panel
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    117,118,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    496,118,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    117,353,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    496,353,35,133,81,255
+    # bottom-right vector in each panel
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    245,126,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    624,126,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    245,361,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_full_${key}.png    624,361,35,133,81,255
+
+    # hide then show R of image 0
+    PNG Pixel XY Should Match RGBA    check_hide_R_image0_${key}.png    200,100,246,247,249,255
+    PNG Pixel XY Should Match RGBA    check_hide_R_image0_${key}.png    570,350,0,194,191,255
+
+    # hide then show C of image 0
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image0_${key}.png    190,80,570,80
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image0_${key}.png    190,80,190,316
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image0_${key}.png    190,80,570,316
+
+    # hide then show R of image 1
+    PNG Pixel XY Should Match RGBA    check_hide_R_image1_${key}.png    570,100,246,247,249,255
+    PNG Pixel XY Should Match RGBA    check_hide_R_image1_${key}.png    570,350,198,0,191,255
+
+    # hide then show V of image 1
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_V_image1_${key}.png    245,126,624,126
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_V_image1_${key}.png    245,126,245,361
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_V_image1_${key}.png    245,126,624,361
+
+    # hide then show R of image 2
+    PNG Pixel XY Should Match RGBA    check_hide_R_image2_${key}.png    200,330,246,247,249,255
+    PNG Pixel XY Should Match RGBA    check_hide_R_image2_${key}.png    580,330,219,184,0,255
+
+    # hide then show C of image 2
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image2_${key}.png    117,118,496,118
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image2_${key}.png    117,118,117,353
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image2_${key}.png    117,118,496,353
+
+    # hide then show R of image 3 (multicolor image)
+    PNG Pixel XY Should Match RGBA    check_hide_R_image3_${key}.png    580,330,246,247,249,255
+
+    # hide then show C of image 3 (multicolor image)
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image3_${key}.png    190,80,570,316
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_C_image3_${key}.png    117,118,496,353
+
+    # hide then show V of image 3 (multicolor image)
+    PNG Two Pixels Should Not Have Matched RGBA    check_hide_V_image3_${key}.png    245,126,624,361
+
+    Remove Files    check_full_${key}.png
+    Remove Files    check_hide_R_image0_${key}.png    check_hide_C_image0_${key}.png
+    Remove Files    check_hide_R_image1_${key}.png    check_hide_V_image1_${key}.png
+    Remove Files    check_hide_R_image2_${key}.png    check_hide_C_image2_${key}.png
+    Remove Files    check_hide_R_image3_${key}.png    check_hide_C_image3_${key}.png    check_hide_V_image3_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
