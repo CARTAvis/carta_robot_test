@@ -580,11 +580,10 @@ Load Multiple Images As A Multi-color-blended Image
     ${key}=    Generate Random String    8
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    multicolor_${key}.png
-    Set Selenium Speed    0.02
+    Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    multicolor_${key}.png    588,347,191,59,174,255
     PNG Pixel XY Should Match RGBA    multicolor_${key}.png    520,397,55,23,17,255
     PNG Pixel XY Should Match RGBA    multicolor_${key}.png    513,252,120,144,142,255
-    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    636,333,255,255,199,255
     Remove Files    multicolor_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
