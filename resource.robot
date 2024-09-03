@@ -30,8 +30,8 @@ ${DELAY}          0.1
 ${LOGIN URL}      http://${SERVER}
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
-${WINDOW_SIZE_Y}    800
-${WINDOW_SIZE_dY}    124
+${WINDOW_SIZE_Y}    939
+${WINDOW_SIZE_dY}    0
 
 ${PROGRESS_CLOUD}    data:testid:progress-cloud
 
