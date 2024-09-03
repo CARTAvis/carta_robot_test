@@ -49,7 +49,7 @@ WCS Rendering - Global
     Should Be Equal    ${result}    Done
     Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    wcs_rendering_global.png    12,239,172,47,51,255
-    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global.png    12,239,548,387
+    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global.png    12,239,545,381
     Remove Files    wcs_rendering_global.png
     [Teardown]    Terminate carta_backend
 
@@ -169,6 +169,6 @@ WCS Rendering - Spatial-Spectral Conversion
     Should Be Equal    ${result}    Done
     Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    wcs_rendering_spatial_spectral_conversion.png    416,210,33,93,176,255
-    PNG Pixel XY Should Match RGBA    wcs_rendering_spatial_spectral_conversion.png    433,196,33,93,176,255
+    PNG Pixel XY Should Match RGBA    wcs_rendering_spatial_spectral_conversion.png    434,196,33,93,176,255
     Remove Files    wcs_rendering_spatial_spectral_conversion.png
     [Teardown]    Terminate carta_backend
