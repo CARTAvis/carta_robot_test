@@ -427,4 +427,60 @@ Generate A Moment Image With A Region Mask HDF5
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Generate Moment Images With A Custom Rest Frequency
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Image    S255_CH3CN_subcube.fits
+    Click Element    data:testid:ellipse-region-shortcut-button
+    Click Element At Coordinates    ${VIEWER_DIV}    60    10
+    # enable the moment generator dialog
+    Click Element    id:SpectralProfilerButton
+    Click Element    ${MOMENT_GENERATOR_BUTTON}
+    # apply a new custom rest frequency for NH2CHO at 349.4795473 GHz
+    Double Click Element    id:numericInput-11
+    Input Text    id:numericInput-11    349.4795473    clear=False
+    # use the coordinate dropdown to select radio velocity as the reference 
+    Click Element    css:[data-testid="moment-generator-tab"] [data-testid="spectral-profiler-coordinate-dropdown"]
+    Click Element    //*[@data-testid="moment-generator-tab"]//option[contains(text(), "Radio velocity (km/s)")]
+    # set velocity range from 15 to 25
+    Press Keys    data:testid:moment-generator-spectral-range-from-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-from-input    0
+    Press Keys    data:testid:moment-generator-spectral-range-to-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-to-input    15
+    # set mask mode to include
+    Click Element    data:testid:moment-generator-mask-dropdown
+    Click Element    //option[contains(text(), "Include")]
+    # set mask range from value to 0.03
+    Press Keys    data:testid:moment-generator-mask-range-from-input    DELETE
+    Input Text    data:testid:moment-generator-mask-range-from-input    0.05
+    # select moment 0, 1, and 2
+    Click Element    data:testid:moment-generator-clear-select-button
+    Click Element    //*[contains(text(), "0: Integrated value of the spectrum")]
+    Click Element    //*[contains(text(), "1: Intensity weighted coordinate")]
+    Click Element    //*[contains(text(), "2: Intensity weighted dispersion of the coordinate")]
+    # generate moment images
+    Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
+    Wait Until Page Does Not Contain    Generating Moments    timeout=5
+    Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}    
+    # check the moment 2 image
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    0.0011296000655354591
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    2.3289730491042175   
+    # check the moment 1 image
+    Click Element    ${VIEWER_01_CANVAS} 
+    # apply jet color for velocity image rendering
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "jet")]
+    # check the new clip min and max
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    3.5962982066050144
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    9.133099871367225   
+    # get a screenshot to verify rendering
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    moment1_${key}.png
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    moment1_${key}.png    220,345,134,255,112,255
+    Remove Files    moment1_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
 # TODO: load two images and create a moment image from each
