@@ -546,7 +546,7 @@ Fetch VizieR Catalog And Visualize
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51_151_MHz.fits
     # enable catalog query dialog
-    Click Element    data:testid:catalog-query-dialog-button
+    Click Element    data:testid:online-data-query-dialog-button
     # switch to VizieR catalog
     Click Element    //button[contains(., "SIMBAD")]
     Click Element    //*[contains(text(), "VizieR")]
@@ -608,7 +608,7 @@ Fetch SIMBAD Catalog And Visualize
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    image_before_${key}.png
     # enable catalog query dialog
-    Click Element    data:testid:catalog-query-dialog-button
+    Click Element    data:testid:online-data-query-dialog-button
     # set search radius
     Click Element    //button[contains(., "Set to viewer")]
     Element Attribute Value Should Be    data:testid:catalog-query-search-radius-input    value    0.8045196532714395
@@ -618,7 +618,7 @@ Fetch SIMBAD Catalog And Visualize
     Element Attribute Value Should Be    data:testid:catalog-query-center-y-input    value    -10:33:15.4199949321
     # make query
     Click Element    //a[contains(., "Query")]
-    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30    
+    Wait Until Page Does Not Contain    Online Data Query    timeout=30    
     # enable catalog image overlay
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_X_DROPDOWN}
     Click Element    //a[contains(., "ra")]
@@ -646,6 +646,6 @@ Fetch SIMBAD Catalog And Visualize
     Set Selenium Speed    0
     PNG Images Should Be Different    image_before_${key}.png    image_after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    200,162,565,63
-    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    118,162,583,89
+    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,583,83
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

@@ -30,8 +30,8 @@ ${DELAY}          0.1
 ${LOGIN URL}      http://${SERVER}
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
-${WINDOW_SIZE_Y}    800
-${WINDOW_SIZE_dY}    124
+${WINDOW_SIZE_Y}    939
+${WINDOW_SIZE_dY}    0
 
 ${PROGRESS_CLOUD}    data:testid:progress-cloud
 
@@ -52,9 +52,16 @@ ${VIEWER_CURSOR_INFO_BAR}    data:testid:viewer-cursor-info-bar
 ${VIEWER_DIV}    data:testid:viewer-div
 ${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button"]
 ${VIEWER_10_ZOOM_IN_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-in-button"]
+${VIEWER_11_ZOOM_IN_BUTTON}    css:#image-panel-1-1 [data-testid="zoom-in-button"]
 ${VIEWER_10_MATCH_BUTTON}    css:#image-panel-1-0 [data-testid="match-button"]
+${VIEWER_10_WCS_BUTTON}    css:#image-panel-1-0 [data-testid="overlay-coordinate-button"]
+${VIEWER_10_GRID_BUTTON}    css:#image-panel-1-0 [data-testid="grid-button"]
 ${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
+${VIEWER_01_CANVAS}    css:#image-panel-0-1 .region-stage
+${VIEWER_00_CANVAS}    css:#image-panel-0-0 .region-stage
+${VIEWER_11_CANVAS}    css:#image-panel-1-1 .region-stage
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-to-fit-button"]
+${VIEWER_01_ZOOM_TO_FIT_BUTTON}    css:#image-panel-0-1 [data-testid="zoom-to-fit-button"]
 ${VIEWER_SETTINGS_DIALOG}    data:testid:image-view-header-settings-button
 ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:image-view-floating-settings-0-header-close-button
 
@@ -87,7 +94,7 @@ ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-1-header-clos
 ${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-0-header-close-button
 ${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-0-header-close-button
 ${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-0-header-close-button
-${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[17]/div[2]/div/div[2]
+${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div[2]/div/div[2]
 
 ${CATALOG_WIDGET_DOCK_BUTTON}    data:testid:catalog-overlay-component-0-header-dock-button
 ${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-component-0-header-title"] span
@@ -228,7 +235,7 @@ ${IMAGE_LIST_SECOND_IMAGE_NAME}    data:testid:image-list-1-image-name
 ${IMAGE_LIST_THIRD_IMAGE_NAME}    data:testid:image-list-2-image-name
 ${IMAGE_LIST_SECOND_MATCHING_XY}    data:testid:image-list-1-matching-xy
 ${IMAGE_LIST_THIRD_MATCHING_XY}    data:testid:image-list-2-matching-xy
-
+${IMAGE_LIST_FOURTH_MATCHING_XY}    data:testid:image-list-3-matching-xy
 
 
 

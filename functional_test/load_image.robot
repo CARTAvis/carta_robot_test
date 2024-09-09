@@ -500,3 +500,151 @@ Load Axes-Swapped Cubes
     PNG Two Pixels Should Have Matched RGBA    check_g_3102_${key}.png        76,86,682,361
     Remove Files    check_1032_${key}.png    check_g_0213_${key}.png    check_1230_${key}.png    check_3021_${key}.png    check_g_2031_${key}.png    check_g_3102_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Three Images As A Three-color-blended Image
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    m16_f
+    Wait Until Element Contains    ${FILE_LIST}    m16_f
+    # select three images and load as a RGB-blended image
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
+    END
+    Click Element    //*[normalize-space(text())='Load with RGB blending']
+    Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
+    # apply different color sets
+    ${key}=    Generate Random String    8
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    RGB_${key}.png
+    Click Element    //*[normalize-space(text())='Apply color set']
+    Click Element    //*[normalize-space(text())='CMY']
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    CMY_${key}.png
+    Click Element    //*[normalize-space(text())='Apply color set']
+    Click Element    //*[normalize-space(text())='Rainbow']    
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    rainbow_${key}.png
+
+    Set Selenium Speed    0.02
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    274,148,255,0,0,255
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    653,154,0,255,0,255
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    271,393,0,0,255,255
+    PNG Pixel XY Should Match RGBA    RGB_${key}.png    590,326,226,176,235,255
+
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    274,148,255,0,255,255
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    653,154,255,255,0,255
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    271,393,0,255,255,255
+    PNG Pixel XY Should Match RGBA    CMY_${key}.png    556,372,185,169,180,255
+
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    274,148,255,0,0,255
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    653,154,128,254,179,255
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    271,393,127,0,255,255
+    PNG Pixel XY Should Match RGBA    rainbow_${key}.png    596,350,228,142,178,255
+
+    Remove Files    RGB_${key}.png    CMY_${key}.png    rainbow_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Multiple Images As A Multi-color-blended Image
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    m16_f
+    Wait Until Element Contains    ${FILE_LIST}    m16_f
+    # select seven images and load as a multi-color-blended image
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0444w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0200w.fits']    modifier=COMMAND
+    Click Element    //*[normalize-space(text())='m16_f0090w.fits']    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0444w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0200w.fits']    modifier=CTRL
+    Click Element    //*[normalize-space(text())='m16_f0090w.fits']    modifier=CTRL
+    END
+    Click Element    //*[normalize-space(text())='Load with multi-color blending']
+    Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
+    ${key}=    Generate Random String    8
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    multicolor_${key}.png
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    588,347,191,59,174,255
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    520,397,55,23,17,255
+    PNG Pixel XY Should Match RGBA    multicolor_${key}.png    513,252,120,144,142,255
+    Remove Files    multicolor_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Image Via HiPS2FITS Service
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51_151_MHz.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
+    # launch online data query dialog and switch to hips2fits service
+    Click Element    data:testid:online-data-query-dialog-button
+    Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
+    # set observation to herschel pacs70
+    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[1]/div/div/input
+    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[1]/div/div/input    PACS70
+    Click Element    //*[normalize-space(text())='ESAVO/P/HERSCHEL/PACS70']
+    # search by source name
+    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[3]/div/div/input    M51
+    # set output image properties
+    Input Text    //*[@id="numericInput-7"]    500
+    Input Text    //*[@id="numericInput-8"]    500
+    Input Text    //*[@id="numericInput-9"]    0.2
+    # apply query
+    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
+    Wait Until Page Does Not Contain    Online Data Query    timeout=60
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
+    # try another query
+    # launch online data query dialog and switch to hips2fits service
+    Click Element    data:testid:online-data-query-dialog-button
+    Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
+    # query by center coordinate in ICRS reference frame
+    Click Element    //*[normalize-space(text())='Query by center']
+    Input Text    //*[@id="numericInput-19"]    202.4977
+    Input Text    //*[@id="numericInput-20"]    47.2667
+    # set output image in galactic coordinate
+    Click Element    //*[normalize-space(text())='Galactic']
+    # set output image projection as SIN
+    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[7]/div/div
+    Click Element    //*[normalize-space(text())='SIN - orthographic/synthesis']
+    Click Element    //*[normalize-space(text())='Projection']
+    # set output image to have a rotation of 45 deg
+    Input Text    //*[@id="numericInput-18"]    45    clear=True
+    # apply query
+    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
+    Wait Until Page Does Not Contain    Online Data Query    timeout=60
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
+    # enable spatial matching
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
+    Mouse Over    ${VIEWER_01_CANVAS}
+    Click Element    ${VIEWER_01_ZOOM_TO_FIT_BUTTON}
+    # get screenshot and check
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_hips2fits_${key}.png
+    Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    check_hips2fits_${key}.png    190,99,569,100
+    PNG Two Pixels Should Have Matched RGBA    check_hips2fits_${key}.png    190,99,191,334
+    Remove File    check_hips2fits_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+

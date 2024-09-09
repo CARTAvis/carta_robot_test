@@ -90,92 +90,36 @@ Triple Gaussian Fitting
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    0    
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    # generate fitting results as ellipse regions
+    Mouse Over    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}
+    Click Element    //*[@id="bp5-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[1]/a
+    # check rendered regions
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Mouse Out    ${VIEWER_DIV}
+    Sleep    0.2
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 10:00:00.0600012160 ± 0.000808 (s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 0:00:00.4504712147 ± 0.018075 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 0.008818 ± 0.000040 (Jy/pixel)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 9.540590 ± 0.043091 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 6.137742 ± 0.027722 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 11.769422 ± 0.401689 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 2.340368 ± 0.010570 (Jy)
-    
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #2:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 9:59:59.7253126120 ± 0.001066 (s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 0:00:03.7242811119 ± 0.012984 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 0.009530 ± 0.000070 (Jy/pixel)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 3.313623 ± 0.024410 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 5.688434 ± 0.041904 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 32.725431 ± 0.526287 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 0.814125 ± 0.005997 (Jy)
-    
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #3:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 9:59:59.6591051169 ± 0.001080 (s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= -0:00:03.6487542379 ± 0.015017 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 0.008340 ± 0.000050 (Jy/pixel)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 5.573810 ± 0.033720 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 6.545903 ± 0.039600 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -210.876776 ± 1.518063 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 1.379221 ± 0.008344 (Jy)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/pixel) (fixed)
-    Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: Gaussian_triple.fits
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: entire image
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Gaussian fitting with 3 component(s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    summary from method 'trust-region/levenberg-marquardt':
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    number of iterations \= 64
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    function evaluations \= 1247
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Jacobian evaluations \= 0
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    reason for stopping  \= small step size
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    initial |f(x)|${SPACE*7}\= 1.206974636655e-01
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final |f(x)|${SPACE*9}\= 8.155327203982e-02
-    # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    initial cost${SPACE*9}\= 1.456787773528e-02
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    initial cost${SPACE*9}\= 1.45678777352
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final cost${SPACE*11}\= 6.650936180401e-03
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    residual variance${SPACE*4}\= 1.015131136543e-07
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final cond(J)${SPACE*8}\= 7.164273678734e+04
-    
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Component #1:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center X${SPACE*8}\= 10:00:00.0600012160 ± 8.076116811208e-4 (s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.261999635218e+2 ± 2.422835043362e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center Y${SPACE*8}\= 0:00:00.4504712147 ± 1.807455505493e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.289009424294e+2 ± 3.614911010986e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Amplitude${SPACE*7}\= 8.818116552649e-3 ± 3.982785622424e-5 (Jy/pixel)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Major Axis \= 9.540589791690e+0 ± 4.309097484130e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.908117958338e+1 ± 8.618194968261e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 6.137741785547e+0 ± 2.772169044452e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.227548357109e+1 ± 5.544338088905e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= 1.176942205301e+1 ± 4.016892109806e-1 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 2.340367634047e+0 ± 1.057049145179e-2 (Jy)
-    
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Component #2:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center X${SPACE*8}\= 9:59:59.7253126120 ± 1.065653854063e-3 (s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.362406216397e+2 ± 3.196961562188e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center Y${SPACE*8}\= 0:00:03.7242811119 ± 1.298438847903e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.354485622235e+2 ± 2.596877695806e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Amplitude${SPACE*7}\= 9.529521672126e-3 ± 7.019901028531e-5 (Jy/pixel)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Major Axis \= 3.313622524469e+0 ± 2.440972691811e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 6.627245048937e+0 ± 4.881945383622e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 5.688433512292e+0 ± 4.190371944950e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.137686702458e+1 ± 8.380743889901e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= 3.272543116625e+1 ± 5.262867978382e-1 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 8.141252672164e-1 ± 5.997235745213e-3 (Jy)
-    
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Component #3:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center X${SPACE*8}\= 9:59:59.6591051169 ± 1.079761581744e-3 (s)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.382268464898e+2 ± 3.239284745231e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center Y${SPACE*8}\= -0:00:03.6487542379 ± 1.501745715611e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.207024915244e+2 ± 3.003491431223e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Amplitude${SPACE*7}\= 8.340416700056e-3 ± 5.045660088587e-5 (Jy/pixel)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Major Axis \= 5.573810327304e+0 ± 3.371960097586e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.114762065461e+1 ± 6.743920195172e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 6.545902502509e+0 ± 3.960041828661e-2 (arcsec)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.309180500502e+1 ± 7.920083657323e-2 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -2.108767756592e+2 ± 1.518063060307e+0 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 1.379221057521e+0 ± 8.343804504666e-3 (Jy)
-
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Background${SPACE*6}\= 0.000000000000e+0 (Jy/pixel) (fixed)
+    # component 1
+    PNG Pixel XY Should Match RGBA    check_${key}.png    356,146,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    384,269,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    329,208,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    409,196,46,230,214,255
+    # component 2
+    PNG Pixel XY Should Match RGBA    check_${key}.png    427,145,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    447,184,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    404,183,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    469,144,46,230,214,255
+    # component 3
+    PNG Pixel XY Should Match RGBA    check_${key}.png    411,242,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    485,287,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    434,295,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    467,229,46,230,214,255
+    Remove Files    check_${key}.png
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
     [Teardown]    Kill carta_backend And Close Browser
 
 
