@@ -98,6 +98,23 @@ Triple Gaussian Fitting
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Mouse Over    ${VIEWER_DIV}
     Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    # make region line thicker
+    Click Element    //*[normalize-space(text())='Region List']
+    Double Click Element    //*[normalize-space(text())='Fitting result: Component #1']
+    Click Element    //*[contains(text(), "Styling")]
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Click Element    data:testid:region-dialog-header-close-button
+    Double Click Element    //*[normalize-space(text())='Fitting result: Component #2']
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Click Element    data:testid:region-dialog-header-close-button
+    Double Click Element    //*[normalize-space(text())='Fitting result: Component #3']
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Click Element    data:testid:region-dialog-header-close-button
+    Sleep    10
+    Click Element At Coordinates    ${VIEWER_DIV}    0    100
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.2
     ${key}=    Generate Random String    8
@@ -121,8 +138,6 @@ Triple Gaussian Fitting
     Remove Files    check_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     [Teardown]    Kill carta_backend And Close Browser
-
-
 
 FOV Image Fitting
     [Setup]    Setup carta_backend And Open Browser To CARTA
