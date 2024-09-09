@@ -74,7 +74,7 @@ Region Canvas Rendering
     Input Text    //input[@placeholder="Width"]    1
     Press Keys    //input[@placeholder="Height"]    DELETE
     Input Text    //input[@placeholder="Height"]    1
-   Click Element    //*[contains(text(), "Styling")]
+    Click Element    //*[contains(text(), "Styling")]
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
     Input Text    data:testid:region-dialog-line-width-input    3
     Click Element    data:testid:region-dialog-header-close-button
