@@ -103,15 +103,21 @@ Triple Gaussian Fitting
     Double Click Element    //*[normalize-space(text())='Fitting result: Component #1']
     Click Element    //*[contains(text(), "Styling")]
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
-    Input Text    data:testid:region-dialog-line-width-input    5
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Press Keys    //input[@placeholder="Dash length"]    DELETE
+    Input Text    //input[@placeholder="Dash length"]    0
     Click Element    data:testid:region-dialog-header-close-button
     Double Click Element    //*[normalize-space(text())='Fitting result: Component #2']
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
-    Input Text    data:testid:region-dialog-line-width-input    5
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Press Keys    //input[@placeholder="Dash length"]    DELETE
+    Input Text    //input[@placeholder="Dash length"]    0
     Click Element    data:testid:region-dialog-header-close-button
     Double Click Element    //*[normalize-space(text())='Fitting result: Component #3']
     Press Keys    data:testid:region-dialog-line-width-input    DELETE
-    Input Text    data:testid:region-dialog-line-width-input    5
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Press Keys    //input[@placeholder="Dash length"]    DELETE
+    Input Text    //input[@placeholder="Dash length"]    0
     Click Element    data:testid:region-dialog-header-close-button
     Sleep    10
     Click Element At Coordinates    ${VIEWER_DIV}    0    100
