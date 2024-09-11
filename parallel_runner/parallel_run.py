@@ -41,7 +41,10 @@ def test_runner(port):
     os.system("time robot --variable CARTA_PORT:%d --variable SNAPSHOT_FOLDER:../snapshot --report report_parallel_run_%s.html --log log_parallel_run_%s.html --output output_parallel_run_%s.xml %s ../functional_test/%s"%(port, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suites[port]))
     with open("./output_parallel_run_%s.xml"%test_suite_name, 'r') as fobj:
         tmp = fobj.readlines()
-    tmp2 = tmp[-6]
+    for ii in range(len(tmp)-1, 0, -1):
+        if tmp[ii][0:5] == '<stat':
+            tmp2 = tmp[ii]
+            break
     tmp3 = tmp2.split()
     test_result = tmp3[2] + "    " + tmp3[1] + "\t" + test_suite_name
     return test_result
