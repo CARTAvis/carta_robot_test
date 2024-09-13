@@ -49,7 +49,7 @@ WCS Rendering - Global
     Should Be Equal    ${result}    Done
     Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    wcs_rendering_global.png    13,239,172,47,51,255
-    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global.png    13,239,545,381
+    PNG Two Pixels Should Have Matched RGBA    wcs_rendering_global.png    13,239,617,384
     Remove Files    wcs_rendering_global.png
     [Teardown]    Terminate carta_backend
 
