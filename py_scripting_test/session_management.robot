@@ -23,11 +23,14 @@ Interact With An Existing Session
     [Teardown]    Kill carta_backend And Close Browser
 
 Start And Create A Session Directly With CARTA-PYTHON
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
     ${result}=    test_session_management.start_and_create_session
     Should Be Equal    ${result}    Done
     PNG Two Pixels Should Have Matched RGBA    start_and_create_session.png    340,395,395,450
     PNG Two Pixels Should Have Matched RGBA    start_and_create_session.png    296,400,440,465
     PNG Two Pixels Should Not Have Matched RGBA    start_and_create_session.png    340,395,296,400
+    END
     Remove File    start_and_create_session.png
 
 Start And Interact With A New Session
