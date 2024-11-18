@@ -648,6 +648,6 @@ Fetch SIMBAD Catalog And Visualize
     #PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    200,162,572,61
     #PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    200,162,565,63
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,563,65
-    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,583,83
+    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,584,100
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
