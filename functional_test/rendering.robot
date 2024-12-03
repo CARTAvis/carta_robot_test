@@ -511,9 +511,14 @@ Coordinate Grid Rendering
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "IMG")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_img_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "GAL")]
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_gal_${key}.png
+    
 
     Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "Offset")]
@@ -560,7 +565,11 @@ Coordinate Grid Rendering
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
-    Click Element At Coordinates    ${VIEWER_10_WCS_BUTTON}    0    -220
+    Click Element    //*[contains(text(), "IMG")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_img_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element At Coordinates    ${VIEWER_10_WCS_BUTTON}    0    -235
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
@@ -589,6 +598,9 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Have Matched RGBA    grid_gal_${key}.png    93,316,472,316
     PNG Two Pixels Should Not Have Matched RGBA    grid_gal_${key}.png    93,316,473,320 
 
+    PNG Two Pixels Should Have Matched RGBA    grid_img_${key}.png    134,186,508,215
+    PNG Two Pixels Should Not Have Matched RGBA    grid_img_${key}.png    134,186,595,210 
+
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,569,217
     PNG Two Pixels Should Not Have Matched RGBA    grid_gal_offset_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,573,300
@@ -613,12 +625,16 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,536,343
 
+    PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_img_offset_${key}.png    190,216,568,214
+    PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,688,378
+
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,569,217
     PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_2_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,573,300
 
-    Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png
-    Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png
+    Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png    grid_img_${key}.png
+    Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png    grid_img_offset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Multicolor Rendering
