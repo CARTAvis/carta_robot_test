@@ -368,6 +368,7 @@ GUI Initialization
     Element Should Contain    data:testid:spectral-profiler-0-floating-settings-0-header-title    Z Profile Settings
     Element Should Contain    data:testid:spectral-profiler-0-floating-settings-0-content    Conversion
     Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    data:testid:spectral-profiler-0-header-close-button
     # statistics widget
     Click Element    id:StatisticsWidgetButton
