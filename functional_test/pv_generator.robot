@@ -26,6 +26,8 @@ Narrow-field PV Image Generation
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -79,6 +81,8 @@ Wide-field PV Image Generation
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -124,6 +128,8 @@ PV Image Generation Cancellation And Rerequest
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Contains    Generating PV    timeout=5
     Sleep    2.5
@@ -172,6 +178,8 @@ PV Image Generation Repeat
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
@@ -232,6 +240,8 @@ PV Image Generation With Matched Cubes
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -245,6 +255,8 @@ PV Image Generation With Matched Cubes
     # use the region dropdown to select Region 1
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -295,6 +307,8 @@ PV Image Generation With Matched Wide-field Cubes
     # select the line region as the pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -310,6 +324,8 @@ PV Image Generation With Matched Wide-field Cubes
     # use the region dropdown to select Region 1
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
@@ -351,6 +367,8 @@ Interactive PV Preview
     # define pv cut
     Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
     Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    # select axes order
+    Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     # enable preview
     Click Element    //a[contains(., "Start preview")]
     # relocate preview widget
