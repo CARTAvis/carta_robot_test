@@ -60,6 +60,7 @@ ${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
 ${VIEWER_01_CANVAS}    css:#image-panel-0-1 .region-stage
 ${VIEWER_00_CANVAS}    css:#image-panel-0-0 .region-stage
 ${VIEWER_11_CANVAS}    css:#image-panel-1-1 .region-stage
+${VIEWER_00_ZOOM_TO_FIT_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-to-fit-button"]
 ${VIEWER_10_ZOOM_TO_FIT_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-to-fit-button"]
 ${VIEWER_01_ZOOM_TO_FIT_BUTTON}    css:#image-panel-0-1 [data-testid="zoom-to-fit-button"]
 ${VIEWER_SETTINGS_DIALOG}    data:testid:image-view-header-settings-button
