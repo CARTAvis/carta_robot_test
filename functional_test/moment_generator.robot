@@ -12,6 +12,7 @@ Generate A Moment Image From FITS Cube
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -30,6 +31,7 @@ Generate A Moment Image From CASA Cube
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -48,6 +50,7 @@ Generate A Moment Image From MIRIAD Cube
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -66,6 +69,7 @@ Generate A Moment Image From HDF5 Cube
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -85,6 +89,7 @@ Generate A Moment Image From Cube With PerPlaneBeam
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -127,6 +132,7 @@ Generate All Moment Images
     Wait Until Page Does Not Contain    Generating Moments    timeout=10
     #Sleep    5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     # create a statistics widget and dock it to the panel with the X spatial profiler
     Drag And Drop    StatisticsWidgetButton    ${X_SPATIAL_PROFILER_TAB}
@@ -230,6 +236,7 @@ Generate A Moment Image With Custom Parameters
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     #Sleep    2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${FILE_HEADER_DIALOG_BUTTON}
     # switch to the file information tab
@@ -257,6 +264,7 @@ Generate Moment Images From Unmatched Cubes
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     #Sleep    2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
     Click Element    //*[contains(text(), "Animator")]
@@ -289,6 +297,7 @@ Generate Moment Images From Matched Cubes
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     #Sleep    2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.fits.moment.integrated
     Click Element    //*[contains(text(), "Animator")]
@@ -315,6 +324,7 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -334,6 +344,7 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask_${key}.png
@@ -352,6 +363,7 @@ Generate A Moment Image With A Region Mask FITS
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_polygon_mask_${key}.png
@@ -380,6 +392,7 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     ${key}=    Generate Random String    8
@@ -399,6 +412,7 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_ellipse_mask_${key}.png
@@ -417,6 +431,7 @@ Generate A Moment Image With A Region Mask HDF5
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}
     #Sleep    2
     Capture Element Screenshot    ${VIEWER_DIV}    moment_polygon_mask_${key}.png
@@ -461,6 +476,7 @@ Generate Moment Images With A Custom Rest Frequency
     Click Element    ${MOMENT_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating Moments    timeout=5
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    Mouse Out    ${SPECTRAL_PROFILER_PLOT}
     Click Element    ${SPECTRAL_PROFILER_CLOSE_BUTTON}    
     # check the moment 2 image
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    0.0011296000655354591

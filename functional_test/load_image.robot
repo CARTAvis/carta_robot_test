@@ -519,6 +519,10 @@ Load Three Images As A Three-color-blended Image
     END
     Click Element    //*[normalize-space(text())='Load with RGB blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
+    # control FOV for testing
+    Mouse Over    ${VIEWER_00_CANVAS}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Click Element    ${VIEWER_11_CANVAS}
     # apply different color sets
     ${key}=    Generate Random String    8
     Mouse Out    ${VIEWER_DIV}
@@ -548,7 +552,7 @@ Load Three Images As A Three-color-blended Image
     PNG Pixel XY Should Match RGBA    rainbow_${key}.png    271,393,127,0,255,255
     PNG Pixel XY Should Match RGBA    rainbow_${key}.png    596,350,228,142,178,255
 
-    Remove Files    RGB_${key}.png    CMY_${key}.png    rainbow_${key}.png
+    #Remove Files    RGB_${key}.png    CMY_${key}.png    rainbow_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
