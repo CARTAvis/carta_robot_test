@@ -482,7 +482,7 @@ Coordinate Grid Rendering
     Load Initial Image    model.fits
     Append Image    model_imregrid_galactic.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    css:#image-panel-1-0 [data-testid="match-button"]
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
     Click Element    //*[contains(text(), "Spatial only")]
     Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Click Element    ${VIEWER_10_GRID_BUTTON}
@@ -513,10 +513,13 @@ Coordinate Grid Rendering
     Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "IMG")]
+    Click Element    //*[normalize-space(text())='OK']
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_img_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "GAL")]
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_gal_${key}.png
     
@@ -567,10 +570,13 @@ Coordinate Grid Rendering
     Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "IMG")]
+    Click Element    //*[normalize-space(text())='OK']
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_img_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element At Coordinates    ${VIEWER_10_WCS_BUTTON}    0    -235
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
@@ -599,8 +605,8 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Have Matched RGBA    grid_gal_${key}.png    93,316,472,316
     PNG Two Pixels Should Not Have Matched RGBA    grid_gal_${key}.png    93,316,473,320 
 
-    PNG Two Pixels Should Have Matched RGBA    grid_img_${key}.png    134,186,508,215
-    PNG Two Pixels Should Not Have Matched RGBA    grid_img_${key}.png    134,186,595,210 
+    PNG Two Pixels Should Have Matched RGBA    grid_img_${key}.png    134,186,520,315
+    PNG Two Pixels Should Not Have Matched RGBA    grid_img_${key}.png    134,186,620,149 
 
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,569,217
     PNG Two Pixels Should Not Have Matched RGBA    grid_gal_offset_${key}.png    190,217,572,217
@@ -627,8 +633,8 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,536,343
 
     PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,569,217
-    PNG Two Pixels Should Not Have Matched RGBA    grid_img_offset_${key}.png    190,216,568,214
-    PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,688,378
+    PNG Two Pixels Should Not Have Matched RGBA    grid_img_offset_${key}.png    190,216,571,215
+    PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,667,314
 
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,569,217
     PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_2_${key}.png    190,217,572,217
