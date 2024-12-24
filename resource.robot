@@ -95,8 +95,7 @@ ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-1-header-clos
 ${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-0-header-close-button
 ${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-0-header-close-button
 ${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-0-header-close-button
-${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div[2]/div/div[2]
-
+${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div/div/div[2]/div
 ${CATALOG_WIDGET_DOCK_BUTTON}    data:testid:catalog-overlay-component-0-header-dock-button
 ${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-component-0-header-title"] span
 ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    data:testid:catalog-system-dropdown
