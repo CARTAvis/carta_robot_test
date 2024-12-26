@@ -513,7 +513,7 @@ Load Three Images As A Three-color-blended Image
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=COMMAND
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
     ELSE
-    Set Selenium Speed    0.5
+    Set Selenium Speed    1
     Click Element    //*[normalize-space(text())='m16_f1130w.fits']
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
