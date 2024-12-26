@@ -513,9 +513,11 @@ Load Three Images As A Three-color-blended Image
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=COMMAND
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
     ELSE
+    Set Selenium Speed    0.5
     Click Element    //*[normalize-space(text())='m16_f1130w.fits']
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
+    Set Selenium Speed    0.2
     END
     Click Element    //*[normalize-space(text())='Load with RGB blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
