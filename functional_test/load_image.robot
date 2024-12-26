@@ -504,6 +504,8 @@ Load Axes-Swapped Cubes
 
 Load Three Images As A Three-color-blended Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
+    Set Selenium Speed    0.5
     Input Text    ${FILE_FILTER}    m16_f
     Wait Until Element Contains    ${FILE_LIST}    m16_f
     # select three images and load as a RGB-blended image
@@ -513,12 +515,11 @@ Load Three Images As A Three-color-blended Image
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=COMMAND
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
     ELSE
-    Set Selenium Speed    1
     Click Element    //*[normalize-space(text())='m16_f1130w.fits']
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
-    Set Selenium Speed    0.2
     END
+    Set Selenium Speed    0.2
     Click Element    //*[normalize-space(text())='Load with RGB blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
     # control FOV for testing
@@ -560,6 +561,8 @@ Load Three Images As A Three-color-blended Image
 
 Load Multiple Images As A Multi-color-blended Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
+    Set Selenium Speed    0.5
     Input Text    ${FILE_FILTER}    m16_f
     Wait Until Element Contains    ${FILE_LIST}    m16_f
     # select seven images and load as a multi-color-blended image
@@ -581,6 +584,7 @@ Load Multiple Images As A Multi-color-blended Image
     Click Element    //*[normalize-space(text())='m16_f0200w.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='m16_f0090w.fits']    modifier=CTRL
     END
+    Set Selenium Speed    0.2
     Click Element    //*[normalize-space(text())='Load with multi-color blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
     ${key}=    Generate Random String    8

@@ -724,6 +724,8 @@ Multicolor Rendering
 
 Layer Management With Multicolor Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
+    Set Selenium Speed    0.5
     Input Text    ${FILE_FILTER}    gaussian_
     Wait Until Element Contains    ${FILE_LIST}    gaussian_0.fits
     Sleep    0.2
@@ -738,6 +740,7 @@ Layer Management With Multicolor Image
     Click Element    //*[normalize-space(text())='gaussian_1.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='gaussian_2.fits']    modifier=CTRL
     END
+    Set Selenium Speed    0.2
     Click Element    //*[normalize-space(text())='Load with RGB blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
 
