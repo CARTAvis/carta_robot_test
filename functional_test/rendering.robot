@@ -725,7 +725,7 @@ Multicolor Rendering
 Layer Management With Multicolor Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
-    Set Selenium Speed    0.5
+    Set Selenium Speed    1.0
     Input Text    ${FILE_FILTER}    gaussian_
     Wait Until Element Contains    ${FILE_LIST}    gaussian_0.fits
     Sleep    0.2
