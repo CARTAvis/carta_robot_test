@@ -745,6 +745,7 @@ Layer Management With Multicolor Image
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
 
     Click Element    ${VIEWER_00_CANVAS}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.002
     Click Element    //*[contains(text(), "Styling")]
