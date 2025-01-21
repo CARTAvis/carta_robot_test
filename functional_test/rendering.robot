@@ -779,49 +779,49 @@ Layer Management With Multicolor Image
     
     # TODO: create testid of layer control buttons
     # hide then show R of image 0
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image0_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
 
     # hide then show C of image 0
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image0_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
 
     # hide then show R of image 1
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image1_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
 
     # hide then show V of image 1
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image1_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
 
     # hide then show R of image 2
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image2_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
 
     # hide then show C of image 2
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image2_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
 
     # hide then show R of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
 
     # hide then show C of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
 
     # hide then show V of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div[2]/div/div[3]/div[5]/div[2]/div[1]/div/div/div[1]/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
 
     Set Selenium Speed    0
     # full
