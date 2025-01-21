@@ -482,7 +482,7 @@ Coordinate Grid Rendering
     Load Initial Image    model.fits
     Append Image    model_imregrid_galactic.fits
     Mouse Over    ${VIEWER_DIV}
-    Click Element    css:#image-panel-1-0 [data-testid="match-button"]
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
     Click Element    //*[contains(text(), "Spatial only")]
     Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Click Element    ${VIEWER_10_GRID_BUTTON}
@@ -512,9 +512,17 @@ Coordinate Grid Rendering
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element    //*[contains(text(), "IMG")]
+    Click Element    //*[normalize-space(text())='OK']
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_img_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "GAL")]
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_gal_${key}.png
+    
 
     Click Element    ${VIEWER_10_WCS_BUTTON}
     Click Element    //*[contains(text(), "Offset")]
@@ -561,7 +569,14 @@ Coordinate Grid Rendering
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_icrs_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
-    Click Element At Coordinates    ${VIEWER_10_WCS_BUTTON}    0    -220
+    Click Element    //*[contains(text(), "IMG")]
+    Click Element    //*[normalize-space(text())='OK']
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_img_offset_${key}.png
+    Click Element    ${VIEWER_10_WCS_BUTTON}
+    Click Element At Coordinates    ${VIEWER_10_WCS_BUTTON}    0    -235
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_wcs_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}
@@ -590,6 +605,9 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Have Matched RGBA    grid_gal_${key}.png    93,316,472,316
     PNG Two Pixels Should Not Have Matched RGBA    grid_gal_${key}.png    93,316,473,320 
 
+    PNG Two Pixels Should Have Matched RGBA    grid_img_${key}.png    134,186,520,315
+    PNG Two Pixels Should Not Have Matched RGBA    grid_img_${key}.png    134,186,620,149 
+
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,569,217
     PNG Two Pixels Should Not Have Matched RGBA    grid_gal_offset_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_gal_offset_${key}.png    190,217,573,300
@@ -614,12 +632,16 @@ Coordinate Grid Rendering
     PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_offset_${key}.png    190,217,536,343
 
+    PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,569,217
+    PNG Two Pixels Should Not Have Matched RGBA    grid_img_offset_${key}.png    190,216,571,215
+    PNG Two Pixels Should Have Matched RGBA    grid_img_offset_${key}.png    190,216,667,314
+
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,569,217
     PNG Two Pixels Should Not Have Matched RGBA    grid_wcs_2_${key}.png    190,217,572,217
     PNG Two Pixels Should Have Matched RGBA    grid_wcs_2_${key}.png    190,217,573,300
 
-    Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png
-    Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png
+    Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png    grid_img_${key}.png
+    Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png    grid_img_offset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Multicolor Rendering
@@ -702,6 +724,8 @@ Multicolor Rendering
 
 Layer Management With Multicolor Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
+    Set Selenium Speed    1.0
     Input Text    ${FILE_FILTER}    gaussian_
     Wait Until Element Contains    ${FILE_LIST}    gaussian_0.fits
     Sleep    0.2
@@ -716,10 +740,12 @@ Layer Management With Multicolor Image
     Click Element    //*[normalize-space(text())='gaussian_1.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='gaussian_2.fits']    modifier=CTRL
     END
+    Set Selenium Speed    0.2
     Click Element    //*[normalize-space(text())='Load with RGB blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
 
     Click Element    ${VIEWER_00_CANVAS}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.002
     Click Element    //*[contains(text(), "Styling")]

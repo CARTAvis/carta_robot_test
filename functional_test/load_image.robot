@@ -504,6 +504,8 @@ Load Axes-Swapped Cubes
 
 Load Three Images As A Three-color-blended Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
+    Set Selenium Speed    0.5
     Input Text    ${FILE_FILTER}    m16_f
     Wait Until Element Contains    ${FILE_LIST}    m16_f
     # select three images and load as a RGB-blended image
@@ -517,6 +519,7 @@ Load Three Images As A Three-color-blended Image
     Click Element    //*[normalize-space(text())='m16_f1500w.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
     END
+    Set Selenium Speed    0.2
     Click Element    //*[normalize-space(text())='Load with RGB blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
     # control FOV for testing
@@ -558,6 +561,8 @@ Load Three Images As A Three-color-blended Image
 
 Load Multiple Images As A Multi-color-blended Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    # ubuntu CI workaround, otherwise files cannot be selected correctly for an unknown reason
+    Set Selenium Speed    0.5
     Input Text    ${FILE_FILTER}    m16_f
     Wait Until Element Contains    ${FILE_LIST}    m16_f
     # select seven images and load as a multi-color-blended image
@@ -579,6 +584,7 @@ Load Multiple Images As A Multi-color-blended Image
     Click Element    //*[normalize-space(text())='m16_f0200w.fits']    modifier=CTRL
     Click Element    //*[normalize-space(text())='m16_f0090w.fits']    modifier=CTRL
     END
+    Set Selenium Speed    0.2
     Click Element    //*[normalize-space(text())='Load with multi-color blending']
     Wait Until Page Does Not Contain Element    ${PROGRESS_CLOUD} 
     ${key}=    Generate Random String    8
@@ -601,11 +607,11 @@ Load Image Via HiPS2FITS Service
     Click Element    data:testid:online-data-query-dialog-button
     Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
     # set observation to herschel pacs70
-    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[1]/div/div/input
-    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[1]/div/div/input    PACS70
+    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[1]/div/div/input
+    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[1]/div/div/input    PACS70
     Click Element    //*[normalize-space(text())='ESAVO/P/HERSCHEL/PACS70']
     # search by source name
-    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[3]/div/div/input    M51
+    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[3]/div/div/input    M51
     # set output image properties
     Input Text    //*[@id="numericInput-7"]    500
     Input Text    //*[@id="numericInput-8"]    500
@@ -626,7 +632,7 @@ Load Image Via HiPS2FITS Service
     # set output image in galactic coordinate
     Click Element    //*[normalize-space(text())='Galactic']
     # set output image projection as SIN
-    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div[7]/div/div
+    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[7]/div/div
     Click Element    //*[normalize-space(text())='SIN - orthographic/synthesis']
     Click Element    //*[normalize-space(text())='Projection']
     # set output image to have a rotation of 45 deg
