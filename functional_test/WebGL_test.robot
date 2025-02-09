@@ -17,6 +17,7 @@ Check Raster Rendering With WebGL
     [Teardown]    Kill carta_backend And Close Browser
 
 Webglreport Test
+    Pass Execution    service down...
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
     Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb")
