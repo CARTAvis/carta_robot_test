@@ -555,7 +555,7 @@ Load Three Images As A Three-color-blended Image
     PNG Pixel XY Should Match RGBA    rainbow_${key}.png    271,393,127,0,255,255
     PNG Pixel XY Should Match RGBA    rainbow_${key}.png    596,350,228,142,178,255
 
-    #Remove Files    RGB_${key}.png    CMY_${key}.png    rainbow_${key}.png
+    Remove Files    RGB_${key}.png    CMY_${key}.png    rainbow_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
