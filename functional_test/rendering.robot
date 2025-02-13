@@ -458,7 +458,7 @@ GUI Initialization
     Element Should Contain    data:testid:online-data-query-dialog    Online Data Query
     Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_0    Catalog
     Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_0    No file loaded
-    Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_1    HiPS survey
+    Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_1    HiPS Survey
     Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
     Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_1    Query by object
     Click Element    data:testid:online-data-query-dialog-header-close-button
