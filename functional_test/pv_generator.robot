@@ -452,8 +452,8 @@ Interactive PV Preview With Customization
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    before_${key}.png   247,356,470,212
     PNG Two Pixels Should Have Matched RGBA    after_${key}.png    237,349,470,212
-    PNG Two Pixels Should Have Matched RGBA    final_${key}.png    571,306,1017,431
-    PNG Two Pixels Should Have Matched RGBA    final_${key}.png    547,161,983,209
+    PNG Two Pixels Should Have Matched RGBA    final_${key}.png    590,283,1050,397
+    PNG Two Pixels Should Have Matched RGBA    final_${key}.png    713,262,1221,377
     Remove Files    before_${key}.png    after_${key}.png    final_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
