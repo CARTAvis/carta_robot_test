@@ -32,7 +32,8 @@ test_suites = {3100: "region.robot",
                3114: "spatial_profiler.robot",
                3115: "cube_histogram.robot",
                3116: "cursor_info.robot",
-               3117: "WebGL_test.robot"
+               3117: "channel_map_view.robot",
+               3118: "WebGL_test.robot"
                }
 
 
