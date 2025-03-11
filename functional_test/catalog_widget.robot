@@ -490,8 +490,8 @@ Linked Catalog Visualization
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset_${key}.png
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,20,338,227
-    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,20,342,16
+    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,21,338,227
+    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,21,342,16
     PNG Images Should Be Different    check_histogram_selected_${key}.png    check_histogram_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_scatter_selected_${key}.png    340,16,340,225
     PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected_${key}.png    340,16,350,142
