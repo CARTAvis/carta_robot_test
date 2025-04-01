@@ -3,7 +3,7 @@ Documentation     Test channel map view features and its integration with other 
 Resource          ../resource.robot
 
 *** Test Cases ***
-Channel Map View
+Channel Map View - Layout
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    //*[@id="root"]/div/div[16]/div/div/div[1]/div[1]/div[1]/ul[2]/li[1]
@@ -24,14 +24,13 @@ Channel Map View
     Mouse Over    ${VIEWER_DIV}
     Click Element    data:testid:zoom-to-fit-button
     Mouse Out    ${VIEWER_DIV}
-    Sleep    5
+    Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
+    Sleep    1
 
+    # Verify channel map view screenshot
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png   124,93,687,355
-
-
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png   108,60,672,380
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
