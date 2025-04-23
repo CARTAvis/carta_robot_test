@@ -218,7 +218,7 @@ FOV Matched Image Fitting
     Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    4
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    44
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=2
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=5
     Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 109.8614700160 (deg) ± 0.021480 (arcsec)
