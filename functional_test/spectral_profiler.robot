@@ -29,14 +29,14 @@ Region Spectral Profile
     Click Element    data:testid:region-list-table-row-2
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    point_profile_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    polygon_profile_${key}.png    476,61,509,18
-    PNG Two Pixels Should Not Have Matched RGBA    polygon_profile_${key}.png    476,61,476,30
-    PNG Two Pixels Should Have Matched RGBA    ellipse_profile_${key}.png    477,153,541,17
-    PNG Two Pixels Should Not Have Matched RGBA    ellipse_profile_${key}.png    477,153,477,32
-    PNG Two Pixels Should Have Matched RGBA    point_profile_${key}.png    477,90,541,17
-    PNG Two Pixels Should Not Have Matched RGBA    point_profile_${key}.png    477,90,510,21
-    PNG Two Pixels Should Have Matched RGBA    rectangle_profile_${key}.png    477,58,541,17
-    PNG Two Pixels Should Not Have Matched RGBA    rectangle_profile_${key}.png    477,58,486,21
+    PNG Two Pixels Should Have Matched RGBA    polygon_profile_${key}.png    454,61,520,16
+    PNG Two Pixels Should Not Have Matched RGBA    polygon_profile_${key}.png    454,61,522,25
+    PNG Two Pixels Should Have Matched RGBA    ellipse_profile_${key}.png    357,50,553,16
+    PNG Two Pixels Should Not Have Matched RGBA    ellipse_profile_${key}.png    357,50,554,51
+    PNG Two Pixels Should Have Matched RGBA    point_profile_${key}.png    454,90,553,16
+    PNG Two Pixels Should Not Have Matched RGBA    point_profile_${key}.png    454,90,554,76
+    PNG Two Pixels Should Have Matched RGBA    rectangle_profile_${key}.png    454,58,553,16
+    PNG Two Pixels Should Not Have Matched RGBA    rectangle_profile_${key}.png    454,58,619,159
     PNG Images Should Be Different    polygon_profile_${key}.png    ellipse_profile_${key}.png
     PNG Images Should Be Different    polygon_profile_${key}.png    point_profile_${key}.png
     PNG Images Should Be Different    polygon_profile_${key}.png    rectangle_profile_${key}.png
