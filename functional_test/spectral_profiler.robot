@@ -73,14 +73,14 @@ Spectral Profile Visualization From Multiple Regions
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    373,108,473,63
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    378,100,476,90
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    378,87,476,101
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    476,76,542,67
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    373,108,538,33
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    378,100,538,33
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    378,87,538,33
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    476,76,538,33
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,63,585,55
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,78,553,67
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,97,615,106
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,87,520,98
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,63,673,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,78,673,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    389,97,673,25
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    357,87,673,25
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
