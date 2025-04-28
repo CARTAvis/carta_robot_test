@@ -171,17 +171,17 @@ Spectral Profile Visualization From Multiple Images
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    568,19,593,46
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    567,77,595,86
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    564,108,599,110
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    568,19,585,68
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    567,77,585,68
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    564,108,585,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    565,14,589,44
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    563,75,592,85
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    554,116,596,118
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    565,14,710,57
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    563,75,710,57
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    554,116,710,57
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-8.834 km/s, 9.46e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-9.151 km/s, 2.37e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
