@@ -416,12 +416,12 @@ Spectral Profile Fitting Guess Then Fit
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check2_${key}.png
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    100,80,200,80
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    200,80,413,80
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    413,80,545,80
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    545,80,589,80
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    589,80,747,80
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    747,80,100,80    
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    100,80,197,80
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    197,80,409,80
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    409,80,538,80
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    538,80,583,80
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    583,80,738,80
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    738,80,100,80    
     Set Selenium Speed    ${DELAY}
     # launch the profile fitting dialog
     Click Element    ${PROFILE_FITTING_BUTTON}
@@ -487,12 +487,13 @@ Spectral Profile Fitting Guess Then Fit
     Set Selenium Speed    0   
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
-    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    180,32,195,32
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    195,32,413,21
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    413,21,542,16
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    542,16,587,16
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    587,16,746,23
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    746,23,207,143
+    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    180,32,193,32
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    193,32,409,21
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    409,21,536,16
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    536,16,581,16
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    581,16,737,23
+    # chech residual dots
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    737,23,205,145
     Set Selenium Speed    ${DELAY}
     Click Element    ${PROFILE_FITTING_BUTTON}    # profile fitting button
     Scroll Element Into View    ${PROFILE_FITTING_RESET_BUTTON}
