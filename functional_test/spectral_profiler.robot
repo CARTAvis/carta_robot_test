@@ -360,18 +360,16 @@ Multiple Spectral Profiles Smoothing
 
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    381,17,428,44
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    365,35,407,57
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    381,17,365,35
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    381,17,406,98
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    365,35,406,98
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,120,392,121
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    355,137,397,113
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,120,355,137
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,120,406,98
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    355,137,406,98
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    381,17,361,120
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    365,35,355,137
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,424,44
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,33,430,56
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,361,33    
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    367,104,441,126
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    394,114,434,135
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    367,104,394,114
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,367,104
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,33,394,114
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,394,114
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,33,367,104
     Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
