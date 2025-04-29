@@ -303,26 +303,26 @@ Single Spectral Profile Smoothing
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_original_${key}.png
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    410,40,544,17
-    PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    410,74,544,61
-    PNG Two Pixels Should Not Have Matched RGBA    check_boxcar_${key}.png    410,40,410,74
-    PNG Two Pixels Should Have Matched RGBA    check_gaussian_${key}.png    410,40,544,17
-    PNG Two Pixels Should Have Matched RGBA    check_gaussian_${key}.png    410,101,544,90
-    PNG Two Pixels Should Not Have Matched RGBA    check_gaussian_${key}.png    410,40,410,101
-    PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    410,40,544,17
-    PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    410,83,544,70
-    PNG Two Pixels Should Not Have Matched RGBA    check_hanning_${key}.png    410,40,410,83
-    PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    410,40,544,17
-    PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    410,108,510,61
-    PNG Two Pixels Should Not Have Matched RGBA    check_binning_${key}.png    410,40,410,108
-    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    410,40,544,17
-    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    410,81,544,67
-    PNG Two Pixels Should Not Have Matched RGBA    check_Savitzky-Golay_${key}.png    410,40,410,81
-    PNG Two Pixels Should Have Matched RGBA    check_decimation_${key}.png    394,50,558,53
-    PNG Two Pixels Should Have Matched RGBA    check_decimation_${key}.png    443,40,509,18
-    PNG Two Pixels Should Not Have Matched RGBA    check_decimation_${key}.png    394,50,443,40
-    PNG Two Pixels Should Have Matched RGBA    check_original_${key}.png    410,40,544,17
-    PNG Two Pixels Should Not Have Matched RGBA    check_original_${key}.png    410,40,480,58
+    PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    389,39,518,16
+    PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    389,73,553,60
+    PNG Two Pixels Should Not Have Matched RGBA    check_boxcar_${key}.png    389,39,389,73
+    PNG Two Pixels Should Have Matched RGBA    check_gaussian_${key}.png    389,39,518,16
+    PNG Two Pixels Should Have Matched RGBA    check_gaussian_${key}.png    325,110,617,99
+    PNG Two Pixels Should Not Have Matched RGBA    check_gaussian_${key}.png    389,39,325,110
+    PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    389,39,518,16
+    PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    325,116,617,105
+    PNG Two Pixels Should Not Have Matched RGBA    check_hanning_${key}.png    389,39,325,116
+    PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    389,39,518,16
+    PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    293,117,486,60
+    PNG Two Pixels Should Not Have Matched RGBA    check_binning_${key}.png    389,39,293,117
+    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    389,39,518,16
+    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    325,107,617,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_Savitzky-Golay_${key}.png    389,39,325,107
+    PNG Two Pixels Should Have Matched RGBA    check_decimation_${key}.png    357,50,585,53
+    PNG Two Pixels Should Have Matched RGBA    check_decimation_${key}.png    440,39,569,16
+    PNG Two Pixels Should Not Have Matched RGBA    check_decimation_${key}.png    357,50,440,39
+    PNG Two Pixels Should Have Matched RGBA    check_original_${key}.png    389,39,518,16
+    PNG Two Pixels Should Not Have Matched RGBA    check_original_${key}.png    389,39,673,45
     Remove Files    check_boxcar_${key}.png    check_gaussian_${key}.png    check_hanning_${key}.png    check_binning_${key}.png    check_Savitzky-Golay_${key}.png    check_decimation_${key}.png    check_original_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
