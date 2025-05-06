@@ -171,10 +171,10 @@ Spectral Profile Visualization From Multiple Images
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    565,14,589,44
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    564,15,589,44
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    563,75,592,85
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    554,116,596,118
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    565,14,710,57
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    564,15,710,57
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    563,75,710,57
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    554,116,710,57
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
