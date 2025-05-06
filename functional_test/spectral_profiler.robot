@@ -493,7 +493,7 @@ Spectral Profile Fitting Guess Then Fit
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    536,16,581,16
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    581,16,737,23
     # chech residual dots
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    737,23,205,145
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    737,23,202,146
     Set Selenium Speed    ${DELAY}
     Click Element    ${PROFILE_FITTING_BUTTON}    # profile fitting button
     Scroll Element Into View    ${PROFILE_FITTING_RESET_BUTTON}
