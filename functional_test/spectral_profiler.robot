@@ -124,14 +124,14 @@ Spectral Profile Visualization From Multiple Statistics
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    521,14,554,19
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    521,14,553,19
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    487,25,519,30
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    455,43,487,35
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    425,79,551,88
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    424,79,551,88
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    521,14,674,36
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    487,25,674,36
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    455,43,674,36
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    425,79,674,36
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    424,79,674,36
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
