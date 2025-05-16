@@ -344,8 +344,12 @@ Multiple Spectral Profiles Smoothing
     # select the rectangle region
     Click Element    data:testid:region-list-table-row-2
     Click Element    id:SpectralProfilerButton
-    # select the image checkbox to enable image multi-plot mode
+    # select the image checkbox to enable image multi-plot mode and select all images to show profiles
     Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
+    Click Element    //*[@data-testid="spectral-profiler-image-dropdown"]
+    Click Element    //*[normalize-space(text())='0: HD163296_13CO_2-1_subimage.fits (matched)']
+    Click Element    //*[normalize-space(text())='Z Profile']
+    # change profile styling
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
