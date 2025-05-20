@@ -164,9 +164,13 @@ Spectral Profile Visualization From Multiple Images
     # increase the line width in the profile plot
     Repeat Keyword    6    Click Element    data:testid:profiler-settings-line-width-input-increment-button
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}
-    # select the image check box to enable image multi-plot mode
+    # select the image check box to enable image multi-plot mode and select all images to show profiles
     Sleep    1
     Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
+    Click Element    //*[@data-testid="spectral-profiler-image-dropdown"]
+    Click Element    //*[normalize-space(text())='0: HD163296_13CO_2-1_subimage.fits (matched)']
+    Click Element    //*[normalize-space(text())='1: HD163296_C18O_2-1_subimage.fits (matched)']
+    Click Element    //*[normalize-space(text())='Z Profile']
     Wait Until Page Contains Element    data:testid:spectral-profiler-info-2
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
@@ -340,8 +344,12 @@ Multiple Spectral Profiles Smoothing
     # select the rectangle region
     Click Element    data:testid:region-list-table-row-2
     Click Element    id:SpectralProfilerButton
-    # select the image checkbox to enable image multi-plot mode
+    # select the image checkbox to enable image multi-plot mode and select all images to show profiles
     Click Element    //*[@data-testid="spectral-profiler-0-content"]//*[contains(text(), "Image")]
+    Click Element    //*[@data-testid="spectral-profiler-image-dropdown"]
+    Click Element    //*[normalize-space(text())='0: HD163296_13CO_2-1_subimage.fits (matched)']
+    Click Element    //*[normalize-space(text())='Z Profile']
+    # change profile styling
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
     # increase the line width in the profile plot
