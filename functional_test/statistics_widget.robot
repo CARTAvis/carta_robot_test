@@ -134,7 +134,7 @@ Image Statistics
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    1.153122180488e+1 MJy/sr
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN   
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    2.439313217493e-13 MJy   
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    2.815239698457e-3 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.016233111814e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -3.389632701874e+0 MJy/sr
