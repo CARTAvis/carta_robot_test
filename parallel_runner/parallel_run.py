@@ -43,7 +43,7 @@ def test_runner(port):
     with open("./output_parallel_run_%s.xml"%test_suite_name, 'r') as fobj:
         tmp = fobj.readlines()
     for ii in range(len(tmp)-1, 0, -1):
-        if tmp[ii][0:5] == '<stat':
+        if tmp[ii][0:5] == '<stat' and "All Tests" in tmp[ii]:
             tmp2 = tmp[ii]
             break
     tmp3 = tmp2.split()

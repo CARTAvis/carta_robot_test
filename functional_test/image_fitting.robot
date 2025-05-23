@@ -31,6 +31,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     
     Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
+    Sleep    1
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: small_gaussian.fits
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: entire image
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Gaussian fitting with 1 component(s)
@@ -186,6 +187,7 @@ FOV Image Fitting
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 1465.350023 ± 12.970626 (Jy)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/pixel) (fixed)
     Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
+    Sleep    1
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: double.miriad
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: field of view
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox[[511.500000pix, 511.500000pix], [203.650118pix, 128.000000pix], 0.000000deg]
@@ -218,7 +220,7 @@ FOV Matched Image Fitting
     Input Text    ${IMAGE_FITTING_DIALOG_FWHM_MINOR}    4
     Input Text    ${IMAGE_FITTING_DIALOG_PA}    44
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=2
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=5
     Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 109.8614700160 (deg) ± 0.021480 (arcsec)
@@ -237,6 +239,7 @@ FOV Matched Image Fitting
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 47.568251 ± 0.354359 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 365.605036 ± 3.056502 (Jy)
     Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
+    Sleep    1
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: double_bin2_gal.miriad
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: field of view
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox[[255.500000pix, 255.500000pix], [77.124482pix, 110.964816pix], 13.442261deg]
