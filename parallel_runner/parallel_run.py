@@ -32,7 +32,8 @@ test_suites = {3100: "region.robot",
                3114: "spatial_profiler.robot",
                3115: "cube_histogram.robot",
                3116: "cursor_info.robot",
-               3117: "WebGL_test.robot"
+               3117: "channel_map_view.robot",
+               3118: "WebGL_test.robot"
                }
 
 
@@ -54,7 +55,7 @@ if __name__ == '__main__':
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        summary = p.map(test_runner, range(3100, 3118, 1))
+        summary = p.map(test_runner, range(3100, 3119, 1))
     
     # show summary in terminal and collect failed suites to rerun
     rerun_suites = []
