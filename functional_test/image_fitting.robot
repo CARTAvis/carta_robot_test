@@ -274,10 +274,7 @@ Generation Of Model And Residual Images After Fitting
     Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
     Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_model.fits
     Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    cluster_00512_residual.fits
-    # match model and residual images to the reference image
-    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
-    Mouse Over    ${IMAGE_LIST_THIRD_IMAGE_NAME}
-    Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
+    # model and residual images are automatically matched to the reference image
     # mouse over the top-left panel
     Mouse Over    css:#image-panel-0-0 .region-stage
     Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
