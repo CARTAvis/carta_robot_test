@@ -75,6 +75,8 @@ Animation Playback Bouncing
 Animation Playback Blink
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
+    # let the size indicator go away
+    sleep    1
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
     Click Element    //*[contains(text(), "Animator")]

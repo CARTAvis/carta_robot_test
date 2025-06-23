@@ -134,7 +134,7 @@ Image Statistics
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    1.153122180488e+1 MJy/sr
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN   
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    2.439313217493e-13 MJy   
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    2.815239698457e-3 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.016233111814e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -3.389632701874e+0 MJy/sr
@@ -151,7 +151,7 @@ Image Statistics
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    2.878577669585e+1 K
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    2.590719902626e-2 K    
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    2.590719902626e-2 K*arcsec^2    
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    7.027777513635e-3 K
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    9.771618130143e-1 K
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -3.334778070450e+0 K
@@ -169,7 +169,7 @@ Image Statistics
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    -3.764594403670e+1 Jy/pixel
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN    
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    -3.764594403670e+1 Jy    
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    -9.190904305835e-3 Jy/pixel
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    9.893811565010e-1 Jy/pixel
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -3.585187673569e+0 Jy/pixel
@@ -218,7 +218,7 @@ Image Statistics
     Set Selenium Speed    0
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    4.096000000000e+3 pixel(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    1.153122180488e+1 MJy/sr
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN   
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    2.439313217493e-13 MJy   
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    2.815239698457e-3 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    1.016233111814e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -3.389632701874e+0 MJy/sr
