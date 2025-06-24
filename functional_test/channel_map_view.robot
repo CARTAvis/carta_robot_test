@@ -19,7 +19,7 @@ Channel Map View - Layout
     # configure starting channel
     Input Text    //*[@id="numericInput-3"]    20    clear=True
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
 
     # adjust FOV
     Mouse Over    ${VIEWER_DIV}
@@ -86,7 +86,7 @@ Channel Map View - raster coloring
     # configure starting channel
     Input Text    //*[@id="numericInput-3"]    20    clear=True
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
 
     # adjust FOV
     Mouse Over    ${VIEWER_DIV}
@@ -120,7 +120,7 @@ Channel Map View - active channel switching
     # configure starting channel
     Input Text    //*[@id="numericInput-3"]    20    clear=True
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
 
     # adjust FOV
     Mouse Over    ${VIEWER_DIV}
@@ -197,7 +197,7 @@ Channel Map View - spectral labels
     Input Text    //*[@id="numericInput-3"]    20    clear=True
     Sleep    5
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     ${key}=    Generate Random String    8
@@ -210,7 +210,7 @@ Channel Map View - spectral labels
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div/div/div[2]/div[7]/div/div/label
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div/div/div[2]/div[8]/div/div/label
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[3]
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    after_${key}.png    
