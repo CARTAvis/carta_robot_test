@@ -181,6 +181,8 @@ Vector Field Rendering With A Stokes Continuum Cube
     # enable and apply a threshold then re-render
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_OPTION_DROPDOWN}
+    Click Element    //*[@id="bp5-tab-panel_undefined_0"]/div/div[6]/div/div/select/option[2]
     Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.005
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}

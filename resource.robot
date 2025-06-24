@@ -223,7 +223,7 @@ ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN}    data:testid:vector-field-an
 ${VECTOR_FIELD_RENDERING_ANGULAR_SOURCE_DROPDOWN_NONE}    data:testid:vector-field-angular-source-dropdown-none
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN}    data:testid:vector-field-color-mode-dropdown
 ${VECTOR_FIELD_RENDERING_COLOR_MODE_DROPDOWN_COLORMAPPED}    data:testid:vector-field-color-mode-dropdown-colormapped
-
+${VECTOR_FIELD_RENDERING_THRESHOLD_OPTION_DROPDOWN}    data:testid:vector-field-threshold-option-dropdown
 
 ${CURSOR_INFO_WIDGET_BUTTON}    id:CursorInfoWidgetButton
 ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}    data:testid:cursor-info-0-header-close-button
