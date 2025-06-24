@@ -136,8 +136,7 @@ ${IMAGE_FITTING_DIALOG_AMPLITUDE_LOCK}    data:testid:image-fitting-amplitude-lo
 ${IMAGE_FITTING_DIALOG_FWHM_X_LOCK}    data:testid:image-fitting-fwhm-x-lock-button
 ${IMAGE_FITTING_DIALOG_FWHM_Y_LOCK}    data:testid:image-fitting-fwhm-y-lock-button
 ${IMAGE_FITTING_DIALOG_PA_LOCK}    data:testid:image-fitting-pa-lock-button
-
-
+${IMAGE_FITTING_AUTO_TOGGLE}    css:[data-testid="image-fitting-auto-initial-value-toggle"] + span
 
 ${STATISTICS_WIDGET_TABLE}    data:testid:statistics-table
 

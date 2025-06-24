@@ -8,6 +8,8 @@ Single Gaussian Fitting With Smart Angular Unit
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    11.42
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    12.46
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    0.5
@@ -69,6 +71,8 @@ Triple Gaussian Fitting
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    Gaussian_triple.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    128
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    129
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    0.01
@@ -153,6 +157,8 @@ FOV Image Fitting
     Mouse Over    ${VIEWER_DIV}
     Repeat Keyword    3    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    487
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    520
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    6
@@ -206,6 +212,8 @@ FOV Matched Image Fitting
     Click Element    ${VIEWER_10_ZOOM_TO_FIT_BUTTON}
     Repeat Keyword    3    Click Element    ${VIEWER_10_ZOOM_IN_BUTTON}
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    243
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    257
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    7
@@ -251,6 +259,8 @@ Generation Of Model And Residual Images After Fitting
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    cluster_00512.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    256
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    256
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
@@ -264,10 +274,7 @@ Generation Of Model And Residual Images After Fitting
     Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
     Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    cluster_00512_model.fits
     Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    cluster_00512_residual.fits
-    # match model and residual images to the reference image
-    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
-    Mouse Over    ${IMAGE_LIST_THIRD_IMAGE_NAME}
-    Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
+    # model and residual images are automatically matched to the reference image
     # mouse over the top-left panel
     Mouse Over    css:#image-panel-0-0 .region-stage
     Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
@@ -317,6 +324,8 @@ Fitting With Cancellation
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    spire500_ext.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    361
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    454
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    100
@@ -352,6 +361,8 @@ Fitting With One Gaussian Having Fixed Parameters
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    dice_one.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    45
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    55
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
@@ -616,6 +627,8 @@ Fitting With Multiple Gaussians Having Fixed Parameters
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    dice_four.fits
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    # manual fitting
+    Click Element    ${IMAGE_FITTING_AUTO_TOGGLE}
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_X}    35
     Input Text    ${IMAGE_FITTING_DIALOG_CENTER_Y}    75
     Input Text    ${IMAGE_FITTING_DIALOG_AMPLITUDE}    1
@@ -655,3 +668,68 @@ Fitting With Multiple Gaussians Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     [Teardown]    Kill carta_backend And Close Browser
 
+
+
+Automatic Triple Gaussian Fitting
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    Gaussian_triple.fits
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
+    Repeat Keyword    2    Click Element    ${IMAGE_FITTING_DIALOG_COMPONENT_SPINBOX_UP}
+    # automatic fitting
+    Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=10
+    # generate fitting results as ellipse regions
+    Mouse Over    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}
+    Click Element    //*[@id="bp5-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[1]/a
+    # check rendered regions
+    Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    #Mouse Over    ${VIEWER_DIV}
+    #Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    # make region line thicker
+    Click Element    //*[normalize-space(text())='Region List']
+    Double Click Element    //*[normalize-space(text())='Fitting result: Component #1']
+    Click Element    //*[contains(text(), "Styling")]
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    8
+    Press Keys    //input[@placeholder="Dash length"]    DELETE
+    Input Text    //input[@placeholder="Dash length"]    0
+    Click Element    data:testid:region-dialog-header-close-button
+    Double Click Element    //*[normalize-space(text())='Fitting result: Component #2']
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    8
+    Press Keys    //input[@placeholder="Dash length"]    DELETE
+    Input Text    //input[@placeholder="Dash length"]    0
+    Click Element    data:testid:region-dialog-header-close-button
+    Double Click Element    //*[normalize-space(text())='Fitting result: Component #3']
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    8
+    Press Keys    //input[@placeholder="Dash length"]    DELETE
+    Input Text    //input[@placeholder="Dash length"]    0
+    Click Element    data:testid:region-dialog-header-close-button
+    Click Element At Coordinates    ${VIEWER_DIV}    0    100
+    Mouse Out    ${VIEWER_DIV}
+    Sleep    0.2
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    Set Selenium Speed    0
+    # component 1
+    PNG Pixel XY Should Match RGBA    check_${key}.png    365,185,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    357,222,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    387,243,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    397,205,46,230,214,255
+    # component 2
+    PNG Pixel XY Should Match RGBA    check_${key}.png    404,181,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    395,200,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    415,199,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    424,180,46,230,214,255
+    # component 3
+    PNG Pixel XY Should Match RGBA    check_${key}.png    398,232,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    408,257,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    433,250,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    425,225,46,230,214,255
+    Remove Files    check_${key}.png
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    [Teardown]    Kill carta_backend And Close Browser
