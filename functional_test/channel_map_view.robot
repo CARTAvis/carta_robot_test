@@ -28,6 +28,12 @@ Channel Map View - Layout
     Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
     Sleep    1
 
+    # adjust AST layout: channel border width
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    //*[contains(text(), "Border")]
+    Repeat Keyword    2    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Border"]/div/div/div/div[4]/div/div/div[2]/button[1]
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+
     # Verify channel map view screenshot
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -62,7 +68,7 @@ Channel Map View - Layout
     PNG Pixel XY Should Match RGBA    check2_${key}.png    716,5,33,93,176,255
 
 
-    Remove Files    check_${key}.png
+    #Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Channel Map View - raster coloring
