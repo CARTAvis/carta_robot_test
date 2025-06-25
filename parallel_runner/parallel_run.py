@@ -15,26 +15,27 @@ n_process = int(tmp[0])
 custom_robot_flags = tmp[1]
 
 # having longer runs run first
-test_suites = {3100: "region.robot",
-               3101: "catalog_widget.robot",
-               3102: "load_image.robot",
-               3103: "matching.robot",
-               3104: "moment_generator.robot",
-               3105: "pv_generator.robot",
-               3106: "spectral_profiler.robot",
-               3107: "rendering.robot",
-               3108: "image_fitting.robot",
-               3109: "animator.robot",
-               3110: "annotation.robot",
-               3111: "spectral_line_query.robot",
-               3112: "check_file_info.robot",
-               3113: "statistics_widget.robot",
-               3114: "spatial_profiler.robot",
-               3115: "cube_histogram.robot",
-               3116: "cursor_info.robot",
-               3117: "channel_map_view.robot",
-               3118: "WebGL_test.robot"
-               }
+test_suites = {
+    3100: "rendering.robot",             # 05:40
+    3101: "load_image.robot",            # 05:14
+    3102: "region.robot",                # 05:08
+    3103: "matching.robot",              # 04:04
+    3104: "catalog_widget.robot",        # 04:02
+    3105: "moment_generator.robot",      # 03:51
+    3106: "image_fitting.robot",         # 03:43
+    3107: "pv_generator.robot",          # 03:36
+    3108: "spectral_profiler.robot",     # 03:01
+    3109: "animator.robot",              # 02:19
+    3110: "annotation.robot",            # 02:05
+    3111: "check_file_info.robot",       # 01:36
+    3112: "channel_map_view.robot",      # 01:25
+    3113: "spectral_line_query.robot",   # 01:22
+    3114: "spatial_profiler.robot",      # 01:15
+    3115: "statistics_widget.robot",     # 01:14
+    3116: "cube_histogram.robot",        # 00:57
+    3117: "cursor_info.robot",           # 00:19
+    3118: "WebGL_test.robot"             # 00:16
+    }
 
 
 def test_runner(port):
