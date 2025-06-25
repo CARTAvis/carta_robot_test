@@ -722,7 +722,7 @@ Automatic Triple Gaussian Fitting
     PNG Pixel XY Should Match RGBA    check_${key}.png    397,205,46,230,214,255
     # component 2
     PNG Pixel XY Should Match RGBA    check_${key}.png    404,181,46,230,214,255
-    PNG Pixel XY Should Match RGBA    check_${key}.png    395,200,46,230,214,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    392,200,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    415,199,46,230,214,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    424,180,46,230,214,255
     # component 3
