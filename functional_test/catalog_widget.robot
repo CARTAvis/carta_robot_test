@@ -554,14 +554,14 @@ Fetch VizieR Catalog And Visualize
     Input Text    data:testid:catalog-query-keyword-input    SDSS
     # make query
     Click Element    //a[contains(., "Query")]
-    Wait Until Element Does Not Contain    data:testid:catalog-query-info    Querying VizieR    timeout=30
+    Wait Until Element Does Not Contain    data:testid:catalog-query-info    Querying VizieR    timeout=60
     # select a catalog
     Click Element    //input[@placeholder="Please select catalog tables"]
     # 4. Sloan Digital Sky Surveys (SDSS), Release 16 (DR16) (Ahumada+, 2020) * output of the SDSS photometric catalog
     Click Element    //a[contains(., "V/154/sdss16")]
     # retrive 
     Click Element   //a[contains(., "Load selected")]
-    Wait Until Page Does Not Contain    Online Catalog Query    timeout=30
+    Wait Until Page Does Not Contain    Online Catalog Query    timeout=60
     Wait Until Page Contains Element    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}
     # enable catalog image overlay
     # workaround for element not found issue [TODO: investigate this]
