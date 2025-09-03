@@ -184,8 +184,7 @@ PV Image Generation Repeat
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
-    # the following is a workaround of a bug (the widget should not be closed automatically)
-    #Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
+    Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
     Wait Until Page Contains Element    //*[contains(text(), "tab10")]
