@@ -173,10 +173,10 @@ Import World Coordinate ds9 Region Made In ds9
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    366,352,390,350
 
     # annotation 14: compass
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,31
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,536,27
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,490,64
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,27
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -350,10 +350,10 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    366,352,390,350
 
     # annotation 14: compass
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,31
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,536,27
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,490,64
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,27
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -528,10 +528,10 @@ Import Image Coordinate ds9 Region Made In ds9
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    366,352,390,350
 
     # annotation 14: compass
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,31
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,67
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,536,27
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,490,64
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,27
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
