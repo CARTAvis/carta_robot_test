@@ -7,5 +7,5 @@ image
 # ellipse(214.97, 198.63, 81.70, 51.06, 90) color=#FFBA01 width=2
 # polygon(102.63, 310.97, 337.52, 213.95, 214.97, 198.63) color=#FFBA01 width=2
 # polyline(327.31, 86.29, 153.69, 122.03, 214.97, 198.63) color=#FFBA01 width=2
-# compass(294.63, 290.54, 100.00) color=#FFBA01 width=2 font="helvetica 20 normal roman" compass=fk5 {N} {E} 1 1
-# ruler(214.97, 198.63, 123.05, 152.67) color=#FFBA01 width=2 ruler=fk5 degrees
+# compass(294.63, 290.54, 100.00) color=#FFBA01 width=2 font="helvetica 20 normal roman" compass=image {N} {E} 1 1
+# ruler(214.97, 198.63, 123.05, 152.67) color=#FFBA01 width=2 ruler=image degrees
