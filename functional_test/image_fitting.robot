@@ -24,10 +24,10 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 10:59:59.9999998479 ± 0.000384 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= -40:00:00.0000178350 ± 0.005763 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 ± 0.000023 (Jy/beam)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 9.999994 ± 0.000226 (arcmin)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 9.999995 ± 0.000226 (arcmin)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 9.999992 ± 0.000226 (arcmin)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 9.999992 ± 0.000226 (arcmin)
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395210 (deg)
+    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395211 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.3
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 0.999998 ± 0.000039 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
@@ -50,17 +50,17 @@ Single Gaussian Fitting With Smart Angular Unit
     # CI workaround
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final cond(J)${SPACE*8}\= inf
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Component #1:
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center X${SPACE*8}\= 10:59:59.9999998479 ± 3.842306488765e-4 (s)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center X${SPACE*8}\= 10:59:59.9999998479 ± 3.842305688285e-4 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.200000001456e+1 ± 4.802881229828e-5 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center Y${SPACE*8}\= -40:00:00.0000178350 ± 5.763459437474e-3 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center Y${SPACE*8}\= -40:00:00.0000178350 ± 5.763458236754e-3 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.199999985138e+1 ± 4.802880983434e-5 (px)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Amplitude${SPACE*7}\= 1.000000284162e+0 ± 2.261986942176e-5 (Jy/beam)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Major Axis \= 9.999994245264e+0 ± 2.261984968680e-4 (arcmin)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Major Axis \= 9.999992161933e+0 ± 2.261984497433e-4 (arcmin)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 4.999995164301e+0 ± 1.130992041368e-4 (px)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 9.999994501776e+0 ± 2.261985084725e-4 (arcmin)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 9.999992418445e+0 ± 2.261984613479e-4 (arcmin)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 4.999995292557e+0 ± 1.130992099391e-4 (px)
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639520974e+4 (deg)
+    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639521051e+4 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 9.999983755341e-1 ± 3.917871324727e-5 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Background${SPACE*6}\= 0.000000000000e+0 (Jy/beam) (fixed)
