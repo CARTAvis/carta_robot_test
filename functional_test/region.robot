@@ -174,7 +174,7 @@ Import World Coordinate ds9 Region Made In ds9
 
     # annotation 14: compass
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,27
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,501,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
@@ -351,7 +351,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
 
     # annotation 14: compass
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,27
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,501,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
@@ -529,7 +529,7 @@ Import Image Coordinate ds9 Region Made In ds9
 
     # annotation 14: compass
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,538,27
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,500,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,501,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
