@@ -285,7 +285,7 @@ Setup carta_backend And Open Browser To CARTA
     Wait Until Page Contains    No file selected.
     # check if there is a telemetry prompt and remove it 
     ${PAGE_SOURCE} =    Get Source
-    Run Keyword If    'CARTA Usage Data' in '${PAGE_SOURCE}'    Click Element    data:testid:telemetry-opt-out-button
+    Run Keyword If    'CARTA Usage Data' in '''${PAGE_SOURCE}'''    Click Element    data:testid:telemetry-opt-out-button
     # reset viewer to multi-panel mode
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
     IF    '${VIEWER_MODE}' != 'switch to single panel'
