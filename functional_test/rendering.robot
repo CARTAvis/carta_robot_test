@@ -887,3 +887,13 @@ Layer Management With Multicolor Image
     Remove Files    check_hide_R_image3_${key}.png    check_hide_C_image3_${key}.png    check_hide_V_image3_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
+AST Rendering XY Labels
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    pixel_shader_test.fits
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    Set Selenium Speed    0
+    OCR Test    check_${key}.png    296 447 461 467 "Right ascension (ICRS)"
+    OCR Test    check_${key}.png    2 148 21 279 "Declination (ICRS)" --rotation 90
+    Remove Files    check_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser

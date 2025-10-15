@@ -259,7 +259,8 @@ ${IMAGE_PIXEL_RGBA_CHECK_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/png_rgba_che
 # image two pixels rgba check
 ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/match_png_rgba.py __REFERENCE__ __TEST__
 
-
+# image ocr test
+${IMAGE_OCR_TEST_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/ocr.py __REFERENCE__ __TEST__    
 
 
 
@@ -490,3 +491,13 @@ PNG Two Pixels Should Not Have Matched RGBA
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    different
+
+OCR Test
+   [Arguments]      ${Reference_Image_Path}    ${Test_Input}
+   ${TEMP}=         Replace String     ${IMAGE_OCR_TEST_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Input}
+   Log              Executing: ${COMMAND}
+   ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
+   Log              Return Code: ${RC}
+   Log              Return Output: ${OUTPUT}       
+   Should Contain   ${OUTPUT}    Identical
