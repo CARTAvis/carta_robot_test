@@ -84,3 +84,14 @@ File List Generation Mode Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Sleep    5
     [Teardown]    Kill carta_backend And Close Browser
+
+
+File Header Search Test
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Sleep    5
+    [Teardown]    Kill carta_backend And Close Browser
+
+Compose LEL With Keyboard and Mouse Test
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Sleep    5
+    [Teardown]    Kill carta_backend And Close Browser
