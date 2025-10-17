@@ -4,7 +4,7 @@ Resource          ../resource.robot
 
 
 *** Test Cases ***
-File Path Diplay and Edit
+File Path Diplay and Edit Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # check current file path display
     Click Element    ${FILE_BROWSER_EDIT_PATH_BUTTON}
@@ -34,4 +34,53 @@ File Path Diplay and Edit
     Should Be Equal    ${file_path}    /
 
     # missing test for the refresh button
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Filter Mode Test
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # fuzzy search test
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
+    Input Text    ${FILE_FILTER}    m16
+    Element Should Contain    ${FILE_LIST}    m16_f0200w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0770w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f1500w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f1130w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0444w-f0470n.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0444w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0335m.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0187n.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0090w.fits   
+    Element Should Not Contain    ${FILE_LIST}    m16_f2000w.fits 
+    # unix pattern test
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Unix pattern']
+    Input Text    ${FILE_FILTER_UNIX_PATTERN}     m16_f1*.fits
+    Element Should Contain    ${FILE_LIST}    m16_f1500w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f1130w.fits
+    Element Should Not Contain    ${FILE_LIST}    m16_f0200w.fits
+    # regex test
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Regular expression']
+    Input Text    ${FILE_FILTER_REGEX}    m16_f0[0-4][0-9][0-9]w\.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0200w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0444w.fits
+    Element Should Contain    ${FILE_LIST}    m16_f0090w.fits 
+    Element Should Not Contain    ${FILE_LIST}    m16_f0335m.fits
+    # reset filter
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Dynamic Loading Button Rendering
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Sleep    5
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+File List Generation Mode Test
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Sleep    5
     [Teardown]    Kill carta_backend And Close Browser
