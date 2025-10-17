@@ -237,10 +237,9 @@ ${IMAGE_LIST_THIRD_MATCHING_XY}    data:testid:image-list-2-matching-xy
 ${IMAGE_LIST_FOURTH_MATCHING_XY}    data:testid:image-list-3-matching-xy
 
 
-
-
-
-
+${FILE_BROWSER_EDIT_PATH_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/div/span[2]/a
+${FILE_BROWSER_EDIT_PATH_INPUT}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/div[2]/input
+${FILE_BROWSER_GO_TO_ROOT_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/ul/li[1]/a
 
 
 
