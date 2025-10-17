@@ -93,5 +93,16 @@ File Header Search Test
 
 Compose LEL With Keyboard and Mouse Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Sleep    5
+    Click Element    //*[normalize-space(text())='subfolder']
+    # switch to the image arithmetic mode from the default file filtering mode
+    Click Element    //button[contains(., "Filter")]
+    Click Element    //*[contains(text(), "Image arithmetic")]
+    # compose LEL with mouse click
+    Click Element    //*[normalize-space(text())='dice_one.fits']
+    ${LEL}    Get Element Attribute    //input[@placeholder="Enter an image arithmetic expression"]     value
+    Should Be Equal    ${LEL}    "dice_one.fits"
+    Input Text    //input[@placeholder="Enter an image arithmetic expression"]     +     clear=False
+    Click Element    //*[normalize-space(text())='dice_four.fits']
+    ${LEL}    Get Element Attribute    //input[@placeholder="Enter an image arithmetic expression"]     value
+    Should Be Equal    ${LEL}    "dice_one.fits"+"dice_four.fits"
     [Teardown]    Kill carta_backend And Close Browser
