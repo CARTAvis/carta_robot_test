@@ -102,7 +102,7 @@ Manual Selection of Displayed Histogram
     # verify the changes
     Mouse Over    ${HISTOGRAM_PLOT_CANVAS}
     Sleep    0.2
-    Run Keyword And Warn On Failure   Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: -0.00003 Jy/beam, 143 Counts   
+    Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: -0.00003 Jy/beam, 143 Counts   
     [Teardown]    Kill carta_backend And Close Browser
 
 Histogram rendering styling

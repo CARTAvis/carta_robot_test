@@ -57,7 +57,7 @@ if __name__ == '__main__':
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        summary = p.map(test_runner, range(3100, 3119, 1))
+        summary = p.map(test_runner, range(3100, 3100+len(test_suites), 1))
     
     # show summary in terminal and collect failed suites to rerun
     rerun_suites = []
