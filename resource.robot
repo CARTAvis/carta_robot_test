@@ -237,12 +237,15 @@ ${IMAGE_LIST_THIRD_MATCHING_XY}    data:testid:image-list-2-matching-xy
 ${IMAGE_LIST_FOURTH_MATCHING_XY}    data:testid:image-list-3-matching-xy
 
 
-
-
-
-
-
-
+${HISTOGRAM_PLOT_CANVAS}    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div/div[1]/div/canvas
+${HISTOGRAM_PLOT_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[3]/div
+${HISTOGRAM_AUTO_BOUND_TOGGLE}    //*[@id="bp5-tab-panel_histogramSettingTabs_1"]/div/div[1]/div
+${HISTOGRAM_MANUAL_BOUND_MIN_INPUT}    //*[@id="numericInput-9"]
+${HISTOGRAM_MANUAL_BOUND_MAX_INPUT}    //*[@id="numericInput-10"]
+${HISTOGRAM_AUTO_BINS_TOGGLE}    //*[@id="bp5-tab-panel_histogramSettingTabs_1"]/div/div[4]/div
+${HISTOGRAM_MANUAL_MAX_BINS_INPUT}    //*[@id="numericInput-11"]
+${HISTOGRAM_MANUAL_BINS_SLIDER}    //*[@id="bp5-tab-panel_histogramSettingTabs_1"]/div/div[5]/div[1]/div
+${HISTOGRAM_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]
 
 
 # image comparsion
