@@ -35,7 +35,8 @@ test_suites = {
     3116: "cube_histogram.robot",        # 00:57
     3117: "cursor_info.robot",           # 00:19
     3118: "WebGL_test.robot",            # 00:16
-    3119: "histogram_widget.robot"       # ??:??
+    3119: "histogram_widget.robot",      # ??:??
+    3120: "conversion.robot"             # ??:??
     }
 
 
