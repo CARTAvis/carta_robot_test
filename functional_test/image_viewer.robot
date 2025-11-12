@@ -62,3 +62,58 @@ Image Viewer Settings - Pan and Zoom
     OCR Test    test1_${key}.png    465 446 681 468 "Right ascension (FKS) arcmin)"    # workaround du to OCR accuracy issue
     Remove Files    test0_${key}.png    test1_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Image Viewer Settings - Global
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Image Viewer Settings - Title
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Ticks
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Image Viewer Settings - Border
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Axes
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Numbers
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Labels
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Colorbar
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Beam
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
+
+Image Viewer Settings - Conversion
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Pass Execution    To be implemented
+    [Teardown]    Kill carta_backend And Close Browser
