@@ -507,3 +507,11 @@ OCR Test
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    Identical
+
+
+Clear Input Field
+    [Arguments]    ${INPUT_FIELD}
+    Set Focus To Element    ${INPUT_FIELD}
+    Set Selenium Speed    0.001
+    Repeat Keyword    20    Press Keys    ${INPUT_FIELD}    BACKSPACE
+    Set Selenium Speed    ${DELAY}
