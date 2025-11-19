@@ -897,3 +897,45 @@ AST Rendering XY Labels
     OCR Test    check_${key}.png    2 148 21 279 "Declination (ICRS)" --rotation 90
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Tile Rendering with Different MIP
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    multiscale_pattern_5120x5120.fits
+    Append Image    downsampled_2x2.fits
+    Append Image    downsampled_4x4.fits
+    Append Image    downsampled_8x8.fits
+    # match all the images spatially
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Click Element    ${VIEWER_10_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
+    Mouse Over    ${VIEWER_01_CANVAS}
+    Click Element    ${VIEWER_01_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
+    Mouse Over    ${VIEWER_11_CANVAS}
+    Click Element    ${VIEWER_11_MATCH_BUTTON}
+    Click Element    //*[contains(text(), "Spatial only")]
+    # enable raster config matching
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
+    Mouse Over    ${VIEWER_11_CANVAS}
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]/a
+    Mouse Over    ${VIEWER_11_CANVAS}
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[18]/div/span[2]/a
+    # set image zoom level to 1:1
+    Mouse Over    ${VIEWER_11_CANVAS}
+    Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
+    # change colormap
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='tab10']
+    # take screenshot and perform pixel checks
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    tile_mip_${key}.png
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    tile_mip_${key}.png    189,99,140,86,75,255
+    PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,568,99
+    PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,189,334
+    PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,568,334
+    Remove Files    tile_mip_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser

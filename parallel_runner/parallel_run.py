@@ -35,7 +35,9 @@ test_suites = {
     3116: "cube_histogram.robot",        # 00:57
     3117: "cursor_info.robot",           # 00:19
     3118: "WebGL_test.robot",            # 00:16
-    3119: "file_browser.robot"           # ??:??
+    3119: "file_browser.robot",          # ??:??
+    3120: "histogram_widget.robot",      # ??:??
+    3121: "image_viewer.robot"           # ??:??
     }
 
 
@@ -57,7 +59,7 @@ if __name__ == '__main__':
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        summary = p.map(test_runner, range(3100, 3119, 1))
+        summary = p.map(test_runner, range(3100, 3100+len(test_suites), 1))
     
     # show summary in terminal and collect failed suites to rerun
     rerun_suites = []
