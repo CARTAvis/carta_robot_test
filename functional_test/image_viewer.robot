@@ -36,8 +36,8 @@ Image Viewer Settings - Pan and Zoom
     # take screenshot for verification
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    test0_${key}.png
-    PNG Pixel XY Should Match RGBA    test0_${key}.png    196,199,227,119,194,255
-    PNG Pixel XY Should Match RGBA    test0_${key}.png    580,210,23,190,207,255
+    PNG Pixel XY Should Match RGBA    test0_${key}.png    195,200,227,119,194,255
+    PNG Pixel XY Should Match RGBA    test0_${key}.png    579,211,23,190,207,255
     # enable offset coordinates
     Click Element    ${VIEWER_SETTINGS_DIALOG}
     Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Pan and Zoom"]/div/div/div/div[6]/div/label
@@ -57,9 +57,9 @@ Image Viewer Settings - Pan and Zoom
     Mouse Out    ${VIEWER_DIV}
     # take screenshot for verification
     Capture Element Screenshot    ${VIEWER_DIV}    test1_${key}.png
-    OCR Test    test1_${key}.png    627 422 666 445 "0.0"
+    OCR Test    test1_${key}.png    627 420 668 445 "0.0"
     OCR Test    test1_${key}.png    403 105 429 145 "0.0" --rotation 90
-    OCR Test    test1_${key}.png    465 446 681 468 "Right ascension (FKS) arcmin)"    # workaround du to OCR accuracy issue
+    OCR Test    test1_${key}.png    465 444 683 469 "Right ascension (FKS) (arcmin)"    # workaround due to OCR accuracy issue
     Remove Files    test0_${key}.png    test1_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
