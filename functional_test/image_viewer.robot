@@ -67,13 +67,82 @@ Image Viewer Settings - Pan and Zoom
 
 Image Viewer Settings - Global
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Pass Execution    To be implemented
+    Load Initial Image    m16_f0090w.fits
+    Append Image    m16_f0187n.fits
+    Append Image    m16_f0335m.fits
+    Append Image    m16_f0444w.fits
+    Append Image    m16_f0770w.fits
+    # enable viewer settings dialog - Global tab
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    id:bp5-tab-title_imageViewSettingsTabs_Global
+    # switch to single panel mode
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Global"]/div/div/div/div[1]/div/label/span
+    ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
+    Should Be True    '${VIEWER_MODE}' == 'switch to multi-panel'
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    
+    # verify it is in the single panel mode
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_layout_mode_${key}.png
+    # switch back to multi-panel mode
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    # check layout modes
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    id:bp5-tab-title_imageViewSettingsTabs_Global
+    # dynamic grid size: 3 columns x 2 rows
+    
+    ### Pending bug fix: https://github.com/CARTAvis/carta-frontend/issues/2620
+    
+    #Input Text    //*[@id="numericInput-34"]    3    clear=True
+    #Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    #Capture Element Screenshot    ${VIEWER_DIV}    check_dynamic_grid_3x2_${key}.png
+    # fixed grid size : 3 columns x 1 row
+    #Click Element    ${VIEWER_SETTINGS_DIALOG}
+    #Click Element    id:bp5-tab-title_imageViewSettingsTabs_Global
+    #Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Global"]/div/div/div/div[2]/div/div/select/option[2]
+    #Input Text    //*[@id="numericInput-35"]    1    clear=True
+
+
+    #Sleep    5
+    # verify all screenshots
+    #PNG Pixel XY Should Match RGBA    check_layout_mode_${key}.png    479,311,19,124,189,255
+
+
+    Remove Files    check_layout_mode_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Image Viewer Settings - Title
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Pass Execution    To be implemented
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Append Image    HD163296_CO_2_1.mom1.fits
+    # enable title display
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    id:bp5-tab-title_imageViewSettingsTabs_Title
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[1]/div/label
+    Input Text    //*[@id="numericInput-10"]    24    clear=True
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    # take screenshot for verification
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    test_default_titles_${key}.png
+    # set custom titles
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    id:bp5-tab-title_imageViewSettingsTabs_Title    
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[3]/div/label
+    Input Text    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[4]/div/div/div/div/input    Moment 1    clear=True
+    Click Element    ${IMAGE_LIST_FIRST_IMAGE_NAME}
+    Input Text    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[4]/div/div/div/div/input    Moment 0    clear=True
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[5]/div/label
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[6]/div/div/div/div/button
+    Click Element    //*[@id="listbox-18"]/li[4]
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    # take screenshot for verification
+    Capture Element Screenshot    ${VIEWER_DIV}    test_custom_titles_${key}.png
+    # verify all screenshots
+    OCR Test    test_default_titles_${key}.png   9 1 137 34 "HD163296"    # workaround due to OCR accuracy issue
+    OCR Test    test_custom_titles_${key}.png    15 1 364 34 "Moment 0"  
+    PNG Pixel XY Should Match RGBA    test_default_titles_${key}.png    42,10,33,93,176,255
+    PNG Pixel XY Should Match RGBA    test_custom_titles_${key}.png    150,10,172,47,51,255
+    Remove Files    test_default_titles_${key}.png    test_custom_titles_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 Image Viewer Settings - Ticks
