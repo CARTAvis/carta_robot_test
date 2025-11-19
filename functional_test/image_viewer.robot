@@ -147,7 +147,44 @@ Image Viewer Settings - Title
 
 Image Viewer Settings - Ticks
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Pass Execution    To be implemented
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    # enable viewer settings dialog - Ticks tab
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    id:bp5-tab-title_imageViewSettingsTabs_Ticks
+    # enable custom density
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[2]/div/label
+    Input Text    //*[@id="numericInput-30"]    2    clear=True
+    Input Text    //*[@id="numericInput-31"]    2    clear=True
+    # enable custom color
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[4]/div/label
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[5]/div/div/div/div/button
+    Click Element    //*[@id="listbox-10"]/li[4]
+    # custom width
+    Input Text    //*[@id="numericInput-11"]    10    clear=True
+    # custom minor length
+    Input Text    //*[@id="numericInput-12"]    5    clear=True
+    # custom major length
+    Input Text    //*[@id="numericInput-13"]    8    clear=True
+    # close viewer settings dialog
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    # take screenshot for verification
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_ticks_${key}.png
+    # not draw on all edges
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Click Element    id:bp5-tab-title_imageViewSettingsTabs_Ticks
+    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[1]/div/label
+    # close viewer settings dialog
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
+    # take screenshot for verification
+    Capture Element Screenshot    ${VIEWER_DIV}    check_ticks_not_all_edge_${key}.png
+    # verify all screenshots
+    PNG Pixel XY Should Match RGBA    check_ticks_${key}.png    323,397,172,47,51,255
+    PNG Pixel XY Should Match RGBA    check_ticks_${key}.png    391,409,172,47,51,255
+    PNG Pixel XY Should Match RGBA    check_ticks_${key}.png    684,206,172,47,51,255
+    PNG Pixel XY Should Match RGBA    check_ticks_${key}.png    696,226,172,47,51,255
+    PNG Pixel XY Should Match RGBA    check_ticks_not_all_edge_${key}.png    696,226,246,247,249,255
+    Remove Files    check_ticks_${key}.png    check_ticks_not_all_edge_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
