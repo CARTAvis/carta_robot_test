@@ -43,7 +43,7 @@ Filter Mode Test
     Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
     Click Element    //*[normalize-space(text())='Fuzzy search']
     Input Text    ${FILE_FILTER}    m16
-    Element Should Contain    ${FILE_LIST}    m16_f0200w.fits
+    Wait Until Element Contains    ${FILE_LIST}    m16_f0200w.fits    timeout=5s
     Element Should Contain    ${FILE_LIST}    m16_f0770w.fits
     Element Should Contain    ${FILE_LIST}    m16_f1500w.fits
     Element Should Contain    ${FILE_LIST}    m16_f1130w.fits
@@ -57,14 +57,14 @@ Filter Mode Test
     Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
     Click Element    //*[normalize-space(text())='Unix pattern']
     Input Text    ${FILE_FILTER_UNIX_PATTERN}     m16_f1*.fits
-    Element Should Contain    ${FILE_LIST}    m16_f1500w.fits
+    Wait Until Element Contains    ${FILE_LIST}    m16_f1500w.fits    timeout=5s
     Element Should Contain    ${FILE_LIST}    m16_f1130w.fits
     Element Should Not Contain    ${FILE_LIST}    m16_f0200w.fits
     # regex test
     Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
     Click Element    //*[normalize-space(text())='Regular expression']
     Input Text    ${FILE_FILTER_REGEX}    m16_f0[0-4][0-9][0-9]w\.fits
-    Element Should Contain    ${FILE_LIST}    m16_f0200w.fits
+    Wait Until Element Contains    ${FILE_LIST}    m16_f0200w.fits    timeout=5s
     Element Should Contain    ${FILE_LIST}    m16_f0444w.fits
     Element Should Contain    ${FILE_LIST}    m16_f0090w.fits 
     Element Should Not Contain    ${FILE_LIST}    m16_f0335m.fits
