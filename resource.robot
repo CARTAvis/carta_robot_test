@@ -39,6 +39,8 @@ ${FILE_LIST}    data:testid:file-list
 ${QA_FOLDER}    //*[contains(text(), "set_QA_e2e_v2")]
 ${FILE_INFO_TEXT}    css:[data-testid="file-info"] .header-list
 ${FILE_FILTER}    //input[@placeholder="Filter by filename with fuzzy search"]
+${FILE_FILTER_UNIX_PATTERN}    //input[@placeholder="Filter by filename using unix-style pattern"]         
+${FILE_FILTER_REGEX}    //input[@placeholder="Filter by filename using regular expression"]
 
 ${LOAD_BUTTON}    //*[contains(text(), "Load")]
 ${APPEND_BUTTON}    //*[contains(text(), "Append")]
@@ -54,6 +56,9 @@ ${VIEWER_00_ZOOM_IN_BUTTON}    css:#image-panel-0-0 [data-testid="zoom-in-button
 ${VIEWER_10_ZOOM_IN_BUTTON}    css:#image-panel-1-0 [data-testid="zoom-in-button"]
 ${VIEWER_11_ZOOM_IN_BUTTON}    css:#image-panel-1-1 [data-testid="zoom-in-button"]
 ${VIEWER_10_MATCH_BUTTON}    css:#image-panel-1-0 [data-testid="match-button"]
+${VIEWER_01_MATCH_BUTTON}    css:#image-panel-0-1 [data-testid="match-button"]
+${VIEWER_11_MATCH_BUTTON}    css:#image-panel-1-1 [data-testid="match-button"]
+
 ${VIEWER_10_WCS_BUTTON}    css:#image-panel-1-0 [data-testid="overlay-coordinate-button"]
 ${VIEWER_10_GRID_BUTTON}    css:#image-panel-1-0 [data-testid="grid-button"]
 ${VIEWER_10_CANVAS}    css:#image-panel-1-0 .region-stage
@@ -248,6 +253,17 @@ ${HISTOGRAM_MANUAL_MAX_BINS_INPUT}    //*[@id="numericInput-11"]
 ${HISTOGRAM_MANUAL_BINS_SLIDER}    //*[@id="bp5-tab-panel_histogramSettingTabs_1"]/div/div[5]/div[1]/div
 ${HISTOGRAM_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]
 
+${FILE_BROWSER_EDIT_PATH_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/div/span[2]/a
+${FILE_BROWSER_EDIT_PATH_INPUT}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/div[2]/input
+${FILE_BROWSER_GO_TO_ROOT_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/ul/li[1]/a
+${FILE_BROWSER_FILTER_MODE_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[2]/span[2]/span/button
+
+
+
+
+
+
+
 
 ${ONLINE_DATA_QUERY_WCS_DROPDOWN}    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_0"]/div/div[1]/div/div/div[4]/div/div/button
 
@@ -320,6 +336,8 @@ Go To E2E QA Folder
 
 Load Initial Image 
     [Arguments]    ${IMAGE_TO_LOAD}
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
     ${IMAGE_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
@@ -509,3 +527,11 @@ OCR Test
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    Identical
+
+
+Clear Input Field
+    [Arguments]    ${INPUT_FIELD}
+    Set Focus To Element    ${INPUT_FIELD}
+    Set Selenium Speed    0.001
+    Repeat Keyword    20    Press Keys    ${INPUT_FIELD}    BACKSPACE
+    Set Selenium Speed    ${DELAY}
