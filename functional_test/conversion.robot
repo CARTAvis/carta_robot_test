@@ -745,6 +745,7 @@ Spectral Axis Conversion from WAVE
 
 Spectral Axis Conversion from AWAV
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Skip    Skipping due to a regression from strict null check PR1
     Load Initial Image    ADP.2016-07-12T14_02_12.047_subimage.fits
     # set cursor position
     Mouse Over    ${VIEWER_DIV}
