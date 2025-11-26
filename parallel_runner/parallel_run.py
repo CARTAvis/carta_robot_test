@@ -16,28 +16,29 @@ custom_robot_flags = tmp[1]
 
 # having longer runs run first
 test_suites = {
-    3100: "rendering.robot",             # 05:40
-    3101: "load_image.robot",            # 05:14
-    3102: "region.robot",                # 05:08
-    3103: "matching.robot",              # 04:04
-    3104: "catalog_widget.robot",        # 04:02
-    3105: "moment_generator.robot",      # 03:51
-    3106: "image_fitting.robot",         # 03:43
-    3107: "pv_generator.robot",          # 03:36
-    3108: "spectral_profiler.robot",     # 03:01
-    3109: "animator.robot",              # 02:19
-    3110: "annotation.robot",            # 02:05
-    3111: "check_file_info.robot",       # 01:36
-    3112: "channel_map_view.robot",      # 01:25
-    3113: "spectral_line_query.robot",   # 01:22
-    3114: "spatial_profiler.robot",      # 01:15
-    3115: "statistics_widget.robot",     # 01:14
-    3116: "cube_histogram.robot",        # 00:57
-    3117: "cursor_info.robot",           # 00:19
-    3118: "WebGL_test.robot",            # 00:16
-    3119: "file_browser.robot",          # ??:??
-    3120: "histogram_widget.robot",      # ??:??
-    3121: "image_viewer.robot"           # ??:??
+    3100: "conversion.robot",            # ??:??
+    3101: "rendering.robot",             # 05:40
+    3102: "load_image.robot",            # 05:14
+    3103: "region.robot",                # 05:08
+    3104: "matching.robot",              # 04:04
+    3105: "catalog_widget.robot",        # 04:02
+    3106: "moment_generator.robot",      # 03:51
+    3107: "image_fitting.robot",         # 03:43
+    3108: "pv_generator.robot",          # 03:36
+    3109: "spectral_profiler.robot",     # 03:01
+    3110: "animator.robot",              # 02:19
+    3111: "annotation.robot",            # 02:05
+    3112: "check_file_info.robot",       # 01:36
+    3113: "channel_map_view.robot",      # 01:25
+    3114: "spectral_line_query.robot",   # 01:22
+    3115: "spatial_profiler.robot",      # 01:15
+    3116: "statistics_widget.robot",     # 01:14
+    3117: "cube_histogram.robot",        # 00:57
+    3118: "cursor_info.robot",           # 00:19
+    3119: "WebGL_test.robot",            # 00:16
+    3120: "file_browser.robot",          # ??:??
+    3121: "histogram_widget.robot",      # ??:??
+    3122: "image_viewer.robot"           # ??:??
     }
 
 
