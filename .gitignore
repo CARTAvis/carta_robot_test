@@ -14,3 +14,7 @@ parallel_manual_run_01/utilities
 parallel_manual_run_02/utilities
 parallel_manual_run_03/utilities
 parallel_manual_run_04/utilities
+kchou_test/*.html
+kchou_test/*.xml
+kchou_test/*.png
+kchou_test/utilities
