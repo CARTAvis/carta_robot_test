@@ -18,3 +18,6 @@ kchou_test/*.html
 kchou_test/*.xml
 kchou_test/*.png
 kchou_test/utilities
+kchou_test/branch_info.txt
+kchou_test/run_a_set.sh
+kchou_test/config_macbookHou_uncommit.txt

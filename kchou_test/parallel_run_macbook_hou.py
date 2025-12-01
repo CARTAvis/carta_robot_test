@@ -20,23 +20,27 @@ custom_robot_flags = tmp[1]
 test_suites = {
     3100: "rendering.robot",             # 05:40
     3101: "load_image.robot",            # 05:14
-    3102: "region.robot",                # 05:08
-    3103: "matching.robot",              # 04:04
+    3102: "conversion.robot",            # ??:??
+    3103: "region.robot",                # 05:08
     3104: "catalog_widget.robot",        # 04:02
-    3105: "moment_generator.robot",      # 03:51
-    3106: "image_fitting.robot",         # 03:43
-    3107: "pv_generator.robot",          # 03:36
-    3108: "spectral_profiler.robot",     # 03:01
-    3109: "animator.robot",              # 02:19
-    3110: "annotation.robot",            # 02:05
-    3111: "check_file_info.robot",       # 01:36
-    3112: "channel_map_view.robot",      # 01:25
+    3105: "image_fitting.robot",         # 03:43
+    3106: "matching.robot",              # 04:04
+    3107: "moment_generator.robot",      # 03:51
+    3108: "pv_generator.robot",          # 03:36
+    3109: "spectral_profiler.robot",     # 03:01
+    3110: "animator.robot",              # 02:19
+    3111: "annotation.robot",            # 02:05
+    3112: "check_file_info.robot",       # 01:36
     3113: "spectral_line_query.robot",   # 01:22
-    3114: "spatial_profiler.robot",      # 01:15
-    3115: "statistics_widget.robot",     # 01:14
-    3116: "cube_histogram.robot",        # 00:57
-    3117: "cursor_info.robot",           # 00:19
-    3118: "WebGL_test.robot"             # 00:16
+    3114: "channel_map_view.robot",      # 01:25
+    3115: "spatial_profiler.robot",      # 01:15
+    3116: "statistics_widget.robot",     # 01:14
+    3117: "image_viewer.robot",          # ??:??
+    3118: "file_browser.robot",          # ??:??
+    3119: "histogram_widget.robot",      # ??:??
+    3120: "cube_histogram.robot",        # 00:57
+    3121: "cursor_info.robot",           # 00:19
+    3122: "WebGL_test.robot",            # 00:16
     }
 
 base_dir = f'/Users/kchou/bz'

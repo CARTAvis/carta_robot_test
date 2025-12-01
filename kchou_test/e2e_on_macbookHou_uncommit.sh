@@ -4,7 +4,7 @@
 # eval "$($CONDA_PATH/conda shell.bash hook)"
 # conda activate
 
-source /Users/kchou/python_venv/python3.11/bin/activate
+shortcuts run "Set Appearance light"
 
 BASE_DIR=/Users/kchou/bz
 FRONTEND_FOLDER=$BASE_DIR/carta_build/carta-frontend-dev
@@ -13,6 +13,9 @@ E2E_FOLDER=$BASE_DIR/carta_robot_test
 E2E_RUN_FOLDER=$BASE_DIR/carta_robot_test/kchou_test
 # E2E_RUN_FOLDER=$BASE_DIR/temp_parallel_runner
 E2E_REPORT_FOLDER=$BASE_DIR/e2e_reports
+PYTHON_ENV=e2e
+
+source /Users/kchou/python_venv/${PYTHON_ENV}/bin/activate
 
 function git_func() {
     cd $1
@@ -96,7 +99,7 @@ done
 cd $E2E_RUN_FOLDER
 
 echo -n "8
---variable DELAY:0.2 --variable N_OMP_THREADS:8 --variable PYTHON3_EXECUTABLE:/Users/kchou/python_venv/python3.11/bin/python --variable CARTA_BACKEND_EXECUTABLE:${BACKEND_FOLDER}/build/carta_backend --variable CARTA_FRONTEND_FOLDER:${FRONTEND_FOLDER}/build --variable INITIAL_IMAGE_FOLDER:${BASE_DIR}/set_QA_e2e_v2" > config_macbookHou_uncommit.txt
+--variable DELAY:0.2 --variable N_OMP_THREADS:8 --variable PYTHON3_EXECUTABLE:/Users/kchou/python_venv/${PYTHON_ENV}/bin/python --variable CARTA_BACKEND_EXECUTABLE:${BACKEND_FOLDER}/build/carta_backend --variable CARTA_FRONTEND_FOLDER:${FRONTEND_FOLDER}/build --variable INITIAL_IMAGE_FOLDER:${BASE_DIR}/set_QA_e2e_v2" > config_macbookHou_uncommit.txt
 
 
 # python parallel_run_acdc1301.py config_acdc1301_uncommit.txt
@@ -110,6 +113,8 @@ python parallel_run_macbook_hou.py $E2E_RUN_FOLDER/config_macbookHou_uncommit.tx
 
 
 deactivate
+
+shortcuts run "Set Appearance dark"
 
 # cd $E2E_REPORT_FOLDER
 # tree -H '.' -L 1 --noreport --dirsfirst -T 'e2e reports' -s -D --charset utf-8 -I "index.html" -o index.html

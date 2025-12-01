@@ -1,2 +1,2 @@
 8
---variable DELAY:0.2 --variable N_OMP_THREADS:8 --variable PYTHON3_EXECUTABLE:/Users/kchou/python_venv/python3.11/bin/python --variable CARTA_BACKEND_EXECUTABLE:/Users/kchou/bz/carta_build/carta-backend-dev/build/carta_backend --variable CARTA_FRONTEND_FOLDER:/Users/kchou/bz/carta_build/carta-frontend-dev/build --variable INITIAL_IMAGE_FOLDER:/Users/kchou/bz/set_QA_e2e_v2
+--variable DELAY:0.2 --variable N_OMP_THREADS:8 --variable PYTHON3_EXECUTABLE:/Users/kchou/python_venv/e2e/bin/python --variable CARTA_BACKEND_EXECUTABLE:/Users/kchou/bz/carta_build/carta-backend-dev/build/carta_backend --variable CARTA_FRONTEND_FOLDER:/Users/kchou/bz/carta_build/carta-frontend-dev/build --variable INITIAL_IMAGE_FOLDER:/Users/kchou/bz/set_QA_e2e_v2
