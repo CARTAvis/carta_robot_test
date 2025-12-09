@@ -512,7 +512,7 @@ WCS Sexagesimal to Degree
     # update cursor position
     Mouse Over    ${VIEWER_DIV}
     # check text in cursor info bar
-    Element Text Should Be    ${VIEWER_CURSOR_INFO_BAR}    WCS: (269.08870, -21.95647); Image: (214, 198); Value:${SPACE*2}1.35843 Jy/beam.km/s ; Polarization: Stokes I
+    Element Text Should Be    ${VIEWER_CURSOR_INFO_BAR}    WCS: (269.08870, -21.95647); Image: (214, 198); Value: 1.35843 Jy/beam.km/s ; Polarization: Stokes I
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -531,7 +531,7 @@ WCS Degree to Sexagesimal
     # update cursor position
     Mouse Over    ${VIEWER_DIV}
     # check text in cursor info bar
-    Element Text Should Be    ${VIEWER_CURSOR_INFO_BAR}    WCS: (5:37:37, -21:55:19); Image: (1764, 1470); Value:${SPACE*2}0.0 Jy/beam
+    Element Text Should Be    ${VIEWER_CURSOR_INFO_BAR}    WCS: (5:37:37, -21:55:19); Image: (1764, 1470); Value: 0.0 Jy/beam
     [Teardown]    Kill carta_backend And Close Browser
 
 
