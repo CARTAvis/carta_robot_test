@@ -18,7 +18,7 @@ ${CARTA_FRONTEND_FOLDER}    /Users/kswang/carta_build/carta-frontend/build
 ${INITIAL_IMAGE_FOLDER}    /Users/kswang/set_QA_e2e_v2
 ${SNAPSHOT_FOLDER}    ./snapshot
 ${CARTA_PORT}    3003
-${PYTHON3_EXECUTABLE}    /Users/kswang/anaconda3/bin/python
+${PYTHON3_EXECUTABLE}    /opt/miniconda3/bin/python
 ${N_OMP_THREADS}    8
 ${PACKAGE_TESTING}    False
 ###########################################################################
