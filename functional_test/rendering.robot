@@ -167,6 +167,7 @@ Vector Field Rendering With A Stokes Continuum Cube
     Repeat Keyword    2    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     # with pixel averaging toggle enabled, set averaging width (px) to 6
+    Clear Input Field    ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}
     Input Text    ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    6
     Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
@@ -182,7 +183,7 @@ Vector Field Rendering With A Stokes Continuum Cube
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_OPTION_DROPDOWN}
-    Click Element    //*[@id="bp5-tab-panel_undefined_0"]/div/div[6]/div/div/select/option[2]
+    Click Element    //*[@id="bp5-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
     Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.005
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
@@ -315,8 +316,9 @@ Vector Field Rendering With A Stokes Line Cube
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.subimage.fits
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
-    # disable pixel averaging
-    Click Element    ${VECTOR_FIELD_RENDERING_AVERAGING_TOGGLE}
+    # disable pixel averaging by setting averaging width (px) to 1
+    Clear Input Field    ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}
+    Input Text    ${VECTOR_FIELD_RENDERING_AVERAGING_WIDTH_INPUT}    1
     Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
