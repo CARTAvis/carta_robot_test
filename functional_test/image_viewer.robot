@@ -59,6 +59,6 @@ Image Viewer Settings - Pan and Zoom
     Capture Element Screenshot    ${VIEWER_DIV}    test1_${key}.png
     OCR Test    test1_${key}.png    627 420 668 445 "0.0"
     OCR Test    test1_${key}.png    403 105 429 145 "0.0" --rotation 90
-    OCR Test    test1_${key}.png    465 444 683 469 "Right ascension (FKS) (arcmin)"    # workaround due to OCR accuracy issue
+    OCR Test    test1_${key}.png    465 444 683 469 "Offset coordinate (arcmin)"    # workaround due to OCR accuracy issue
     Remove Files    test0_${key}.png    test1_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
