@@ -255,7 +255,7 @@ ${HISTOGRAM_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/
 
 ${FILE_BROWSER_EDIT_PATH_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/div/span[2]/a
 ${FILE_BROWSER_EDIT_PATH_INPUT}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/div[2]/input
-${FILE_BROWSER_GO_TO_ROOT_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/ul/li[1]/a
+${FILE_BROWSER_GO_TO_ROOT_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[2]/nav/ol/li[1]/a
 ${FILE_BROWSER_FILTER_MODE_BUTTON}    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[2]/span[2]/span/button
 
 
