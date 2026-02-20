@@ -183,7 +183,7 @@ Vector Field Rendering With A Stokes Continuum Cube
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_OPTION_DROPDOWN}
-    Click Element    //*[@id="bp5-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
+    Click Element    //*[@id="bp6-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
     Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.005
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
@@ -460,11 +460,11 @@ GUI Initialization
     # online data query dialog
     Click Element    data:testid:online-data-query-dialog-button
     Element Should Contain    data:testid:online-data-query-dialog    Online Data Query
-    Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_0    Catalog
-    Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_0    No file loaded
-    Element Should Contain    id:bp5-tab-title_onlineQueryDialogTabs_1    HiPS Survey
-    Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
-    Element Should Contain    id:bp5-tab-panel_onlineQueryDialogTabs_1    Query by object
+    Element Should Contain    id:bp6-tab-title_onlineQueryDialogTabs_0    Catalog
+    Element Should Contain    id:bp6-tab-panel_onlineQueryDialogTabs_0    No file loaded
+    Element Should Contain    id:bp6-tab-title_onlineQueryDialogTabs_1    HiPS Survey
+    Click Element    id:bp6-tab-title_onlineQueryDialogTabs_1
+    Element Should Contain    id:bp6-tab-panel_onlineQueryDialogTabs_1    Query by object
     Click Element    data:testid:online-data-query-dialog-header-close-button
     # region config dialog
     Load Image    cosmos_spitzer3.6micron.fits

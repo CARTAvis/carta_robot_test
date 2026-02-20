@@ -40,7 +40,7 @@ Image Viewer Settings - Pan and Zoom
     PNG Pixel XY Should Match RGBA    test0_${key}.png    579,211,23,190,207,255
     # enable offset coordinates
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Pan and Zoom"]/div/div/div/div[6]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Pan and Zoom"]/div/div/div/div[6]/div/label
     # set new offset origin
     Clear Input Field    //*[@id="numericInput-57"]
     Input Text    //*[@id="numericInput-57"]    7:08:56.4326588482    clear=True

@@ -97,7 +97,7 @@ Triple Gaussian Fitting
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
     # generate fitting results as ellipse regions
     Mouse Over    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}
-    Click Element    //*[@id="bp5-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[1]/a
+    Click Element    //*[@id="bp6-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[1]/a
     # check rendered regions
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
@@ -682,7 +682,7 @@ Automatic Triple Gaussian Fitting
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
     # generate fitting results as ellipse regions
     Mouse Over    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}
-    Click Element    //*[@id="bp5-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[1]/a
+    Click Element    //*[@id="bp6-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[1]/a
     # check rendered regions
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}

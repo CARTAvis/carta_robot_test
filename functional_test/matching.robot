@@ -501,7 +501,7 @@ Match Vector Field Overlay Spatially
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_OPTION_DROPDOWN}
-    Click Element    //*[@id="bp5-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
+    Click Element    //*[@id="bp6-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
     Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.01
     Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2
@@ -517,7 +517,7 @@ Match Vector Field Overlay Spatially
     Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
     Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_OPTION_DROPDOWN}
-    Click Element    //*[@id="bp5-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
+    Click Element    //*[@id="bp6-tab-panel_undefined_0"]/div/div[5]/div/div/select/option[2]
     Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.001
     Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
     Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    2

@@ -605,26 +605,26 @@ Load Image Via HiPS2FITS Service
     Click Element    //*[contains(text(), "tab10")]
     # launch online data query dialog and switch to hips2fits service
     Click Element    data:testid:online-data-query-dialog-button
-    Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
+    Click Element    id:bp6-tab-title_onlineQueryDialogTabs_1
     # set observation to herschel pacs70
-    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[1]/div/div/input
-    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[1]/div/div/input    PACS70
+    Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[1]/div/div/input
+    Input Text    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[1]/div/div/input    PACS70
     Click Element    //*[normalize-space(text())='ESAVO/P/HERSCHEL/PACS70']
     # search by source name
-    Input Text    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[3]/div/div/input    M51
+    Input Text    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[3]/div/div/input    M51
     # set output image properties
     Input Text    //*[@id="numericInput-7"]    500
     Input Text    //*[@id="numericInput-8"]    500
     Input Text    //*[@id="numericInput-9"]    0.2
     # apply query
-    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
+    Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     # try another query
     # launch online data query dialog and switch to hips2fits service
     Click Element    data:testid:online-data-query-dialog-button
-    Click Element    id:bp5-tab-title_onlineQueryDialogTabs_1
+    Click Element    id:bp6-tab-title_onlineQueryDialogTabs_1
     # query by center coordinate in ICRS reference frame
     Click Element    //*[normalize-space(text())='Query by center']
     Input Text    //*[@id="numericInput-19"]    202.4977
@@ -632,13 +632,13 @@ Load Image Via HiPS2FITS Service
     # set output image in galactic coordinate
     Click Element    //*[normalize-space(text())='Galactic']
     # set output image projection as SIN
-    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[7]/div/div
+    Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[7]/div/div
     Click Element    //*[normalize-space(text())='SIN - orthographic/synthesis']
     Click Element    //*[normalize-space(text())='Projection']
     # set output image to have a rotation of 45 deg
     Input Text    //*[@id="numericInput-18"]    45    clear=True
     # apply query
-    Click Element    //*[@id="bp5-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
+    Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
