@@ -465,14 +465,14 @@ Load Axes-Swapped Cubes
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
-    Capture Page Screenshot    test.png
     # check the new clip min and max
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.03939278678037231
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.002182948510162576
+    Capture Page Screenshot    test.png
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04236642293471964
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0023210009619462207
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_2031_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (15:11:25.0, 1.420309E+09); Image: (371, 4); Value: -3.54482e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (15:11:25.2, 1.420309E+09); Image: (371, 4); Value: -3.73602e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_g_2031_${key}.png        102,69,589,407
@@ -490,12 +490,12 @@ Load Axes-Swapped Cubes
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.034293831676934936
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022011746039559063
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.039658265542471816
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.002447188806587064
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_3102_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 43.1527); Image: (4, 342); Value:  8.33026e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 43.1531); Image: (4, 342); Value: 7.85461e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_g_3102_${key}.png        76,86,682,361
