@@ -31,7 +31,7 @@ Channel Map View - Layout
     # adjust AST layout: channel border width
     Click Element    ${VIEWER_SETTINGS_DIALOG}
     Click Element    //*[contains(text(), "Border")]
-    Repeat Keyword    2    Click Element    //*[@id="bp5-tab-panel_imageViewSettingsTabs_Border"]/div/div/div/div[4]/div/div/div[2]/button[1]
+    Repeat Keyword    2    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Border"]/div/div/div/div[4]/div/div/div[2]/button[1]
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
 
     # Verify channel map view screenshot
