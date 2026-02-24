@@ -19,7 +19,7 @@ File Info Of A Regular FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [321, 401]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [321, 401]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.4", 0.4"
@@ -50,7 +50,7 @@ File Info Of A Regular CASA Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [321, 401]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [321, 401]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.4", 0.4"
@@ -82,7 +82,7 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [321, 401]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [321, 401]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.4", 0.4"
@@ -115,7 +115,7 @@ File Info Of A Regular MIRIAD Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [321, 401]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [321, 401]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [18:20:21.0000, -016.12.10.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [275.088 deg, -16.2028 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.4", 0.4"
@@ -147,7 +147,7 @@ File Info Of A CASA Complex Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [51, 51]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [51, 51]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [01:20:00.0000, +020.00.00.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [20 deg, 20 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -10", 10"
@@ -176,7 +176,7 @@ File Info Of A CASA PV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 250
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Offset, Frequency
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [101, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [101, 1]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [0 arcsec, 2.30512e+11 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [0 deg, 2.30512e+11 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 0.05", 244126 Hz
@@ -205,7 +205,7 @@ File Info Of A FITS PV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 250
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 1
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= OFFSET, FREQ
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [100, 1]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [100, 1]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [0 arcsec, 2.30512e+11 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [0 deg, 2.30512e+11 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 0.0497487", 244126 Hz
@@ -232,7 +232,7 @@ File Info Of A fz FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4536, 4934] (RA, DEC)
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= TAN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [4820, 1107]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [4820, 1107]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [13:27:47.9880, +047.00.00.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [201.95 deg, 47 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.5", 0.5"
@@ -257,7 +257,7 @@ File Info Of A gz FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [4536, 4934] (RA, DEC)
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= TAN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [4820, 1107]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [4820, 1107]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [13:27:47.9880, +047.00.00.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [201.95 deg, 47 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.5", 0.5"
@@ -281,7 +281,7 @@ File Info Of A CASA UV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Shape \= [300, 300, 5] (UU, VV, FREQ)
     Element Should Contain    ${FILE_INFO_TEXT}    Number of channels \= 5
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= UU, VV
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [151, 151]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [151, 151]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [0 lambda, 0 lambda]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -1718.87 lambda, 1718.87 lambda
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel unit \= Jy/beam
@@ -309,7 +309,7 @@ File Info Of A Stokes Image
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Right Ascension, Declination
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [129, 129]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [129, 129]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [09:47:57.4891, +013.16.44.0806]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [146.99 deg, 13.2789 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.18", 0.18"
@@ -342,7 +342,7 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Longitude, Frequency
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [374, 6]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [374, 6]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [+227.32.34.6512, 1.4204e+09 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [227.543 deg, 1.4204e+09 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -360", 100000 Hz
@@ -370,7 +370,7 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Declination, Frequency
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [276, 6]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [276, 6]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [+010.00.00.0000, 1.4204e+09 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [10 deg, 1.4204e+09 Hz]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 360", 100000 Hz
@@ -398,7 +398,7 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Frequency, Right Ascension
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [6, 276]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [6, 276]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [1.4204e+09 Hz, 10:00:00.0000]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [1.4204e+09 Hz, 150 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 100000 Hz, -360"
@@ -426,7 +426,7 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Number of polarizations \= 4
     Element Should Contain    ${FILE_INFO_TEXT}    Coordinate type \= Frequency, Latitude
     Element Should Contain    ${FILE_INFO_TEXT}    Projection \= SIN
-    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixel \= [6, 373]
+    Element Should Contain    ${FILE_INFO_TEXT}    Image reference pixels \= [6, 373]
     Element Should Contain    ${FILE_INFO_TEXT}    Image reference coords \= [1.4204e+09 Hz, +046.11.28.2950]
     Element Should Contain    ${FILE_INFO_TEXT}    Image ref coords (deg) \= [1.4204e+09 Hz, 46.1912 deg]
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= 100000 Hz, 360"
