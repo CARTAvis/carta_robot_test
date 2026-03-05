@@ -544,7 +544,8 @@ Coordinate Grid Rendering
     Double Click Element    id:numericInput-32
     Press Keys    None    DELETE
     Double Click Element    id:numericInput-32
-    Press Keys    None    DELETE    
+    Press Keys    None    DELETE
+    Press Keys    None    BACKSPACE   
     Input Text     id:numericInput-32    10deg    clear=True
     Double Click Element    id:numericInput-34
     Press Keys    None    DELETE
