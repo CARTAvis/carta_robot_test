@@ -73,14 +73,14 @@ Spectral Profile Visualization From Multiple Regions
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,63,585,55
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,78,553,67
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,97,615,106
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,87,520,98
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,63,673,25
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,78,673,25
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    390,97,673,25
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    357,87,673,25
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,90,585,78
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,110,553,95
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,140,615,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,160,520,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,90,673,32
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,110,673,32
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    390,140,673,32
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    357,160,673,32
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
@@ -124,14 +124,14 @@ Spectral Profile Visualization From Multiple Statistics
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    521,14,553,19
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    487,25,519,30
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    455,43,487,35
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    424,79,551,88
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    521,14,674,36
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    487,25,674,36
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    455,43,674,36
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    424,79,674,36
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,16,521,17
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,21,521,30
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,63,521,48
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,153,521,163
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,16,674,23
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,21,674,23
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,63,674,23
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,153,674,23
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
@@ -175,12 +175,12 @@ Spectral Profile Visualization From Multiple Images
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    564,15,589,44
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    563,75,592,85
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    554,116,596,118
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    564,15,710,57
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    563,75,710,57
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    554,116,710,57
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    559,16,589,54
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,91,592,104
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    555,132,590,135
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    559,16,710,41
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    558,91,710,41
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    555,132,710,41
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
@@ -368,16 +368,16 @@ Multiple Spectral Profiles Smoothing
 
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,424,44
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,33,429,56
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,361,33    
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    367,104,440,126
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    394,114,434,135
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    367,104,394,114
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,367,104
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,33,394,114
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,394,114
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,33,367,104
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,424,47
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,361,35    
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    424,47,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,424,47
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,35,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    424,47,463,28
     Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 

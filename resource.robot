@@ -149,7 +149,7 @@ ${SPECTRAL_PROFILER_SETTINGS_BUTTON}     data:testid:spectral-profiler-0-header-
 ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}     data:testid:spectral-profiler-0-floating-settings-0-header-close-button
 ${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
 ${SPECTRAL_PROFILER_CLOSE_BUTTON}    data:testid:spectral-profiler-0-header-close-button
-${SPECTRAL_PROFILER_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div[2]/div/div/div/div/div/div
+${SPECTRAL_PROFILER_CURSOR_INFO}    data:testid:spectral-profiler-info-0
 
 ${PROFILE_FITTING_RESULT_TAB}    css:[data-testid="profile-fitting-result"] .fitting-result-text
 ${PROFILE_FITTING_FIT_BUTTON}    data:testid:profile-fitting-fit-button
