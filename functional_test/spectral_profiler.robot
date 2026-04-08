@@ -368,16 +368,16 @@ Multiple Spectral Profiles Smoothing
 
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,424,44
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,33,429,56
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,361,33    
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    367,104,440,126
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    394,114,434,135
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    367,104,394,114
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,367,104
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,33,394,114
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,394,114
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,33,367,104
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,424,47
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,361,35    
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    424,47,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,424,47
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,35,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    424,47,463,28
     Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
