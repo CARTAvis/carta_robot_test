@@ -32,7 +32,11 @@ elif np.sum(np.abs((np.array(pix[ref_x1, ref_y1]) - np.array(pix[ref_x2, ref_y2]
     print("identical, almost")
 else:
     print("different,", (ref_x1, ref_y1), "should be", pix[ref_x1, ref_y1],",", (ref_x2, ref_y2), "should be", pix[ref_x2, ref_y2])
-
+    # also print out nearby pixels for debugging
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            print(f"Pixel at ({ref_x1+i}, {ref_y1+j}): {pix[ref_x1+i, ref_y1+j]}")
+            print(f"Pixel at ({ref_x2+i}, {ref_y2+j}): {pix[ref_x2+i, ref_y2+j]}")
 
 if debug:
     plt.subplot(321)
