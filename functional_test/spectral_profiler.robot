@@ -75,7 +75,7 @@ Spectral Profile Visualization From Multiple Regions
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,90,585,78
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,110,553,95
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,140,615,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,140,615,152
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,160,520,97
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,90,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,110,673,32
@@ -368,15 +368,15 @@ Multiple Spectral Profiles Smoothing
 
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,424,47
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,424,47
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,430,60
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,361,35    
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,361,35    
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    424,47,430,60
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    371,16,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,430,60
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,424,47
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,463,28
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,35,463,28
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    371,16,463,28
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,463,28
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    424,47,463,28
     Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
