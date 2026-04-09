@@ -369,10 +369,10 @@ Multiple Spectral Profiles Smoothing
     Set Selenium Speed    0
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,424,47
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,429,60
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,361,35    
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    424,47,430,60
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,430,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    424,47,429,60
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    372,16,429,60
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    361,35,424,47
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,463,28
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    361,35,463,28
