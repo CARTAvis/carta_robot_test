@@ -562,7 +562,7 @@ Fetch VizieR Catalog And Visualize
     # retrive 
     Click Element   //a[contains(., "Load selected")]
     Wait Until Page Does Not Contain    Online Catalog Query    timeout=60
-    Wait Until Page Contains Element    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}
+    Wait Until Page Contains Element    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    timeout=30
     # enable catalog image overlay
     # workaround for element not found issue [TODO: investigate this]
     Set Selenium Speed    0.2
