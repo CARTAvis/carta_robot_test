@@ -91,8 +91,8 @@ ${ANIMATOR_PLAYBACK_MODE_BUTTON}    data:testid:animator-playback-mode-button
 ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-start"]
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-end"]
 ${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@data-testid="animator-0-content"]//*[contains(text(), "Image")]
-${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@data-testid="animator-0-content"]//*[contains(text(), "Polarization")]
-
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@data-testid="animator-polarization-slider"]//*[contains(text(), "Polarization")]
+                                         
 
 ${X_SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-0-header-title
 ${X_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-0-header-close-button
