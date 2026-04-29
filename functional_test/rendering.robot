@@ -141,7 +141,7 @@ Catalog Image Overlay Rendering
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
     Click Element    //a[contains(., "DEC_d")]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
-    Click Element    //*[contains(text(), "Size")]
+    Click Element    //a[contains(., "Size")]
     Click Element    data:testid:catalog-settings-shape-dropdown
     Click Element    data:testid:catalog-settings-shape-circle-filled
     Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
