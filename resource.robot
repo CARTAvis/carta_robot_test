@@ -532,6 +532,6 @@ OCR Test
 Clear Input Field
     [Arguments]    ${INPUT_FIELD}
     Set Focus To Element    ${INPUT_FIELD}
-    Set Selenium Speed    0.001
+    Set Selenium Speed    0.01
     Repeat Keyword    20    Press Keys    ${INPUT_FIELD}    BACKSPACE
     Set Selenium Speed    ${DELAY}

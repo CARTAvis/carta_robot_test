@@ -347,9 +347,9 @@ GUI Initialization
     Element Attribute Value Should Be    data:testid:annotation-shortcut-dropdown    disabled    true
     # region list widget
     Click Element    id:RegionListWidgetButton
-    Element Should Contain    data:testid:region-list-1-header-title    Region List
-    Element Should Contain    data:testid:region-list-1-content    No file loaded
-    Click Element    data:testid:region-list-1-header-close-button
+    Element Should Contain    data:testid:region-list-0-header-title    Region List
+    Element Should Contain    data:testid:region-list-0-content    No file loaded
+    Click Element    data:testid:region-list-0-header-close-button
     # log widget
     Click Element    id:LogWidgetButton
     Element Should Contain    data:testid:log-0-header-title    Log
@@ -358,12 +358,12 @@ GUI Initialization
     Click Element    data:testid:log-0-header-close-button
     # spatial profiler widget
     Click Element    id:SpatialProfilerButton
-    Element Should Contain    data:testid:spatial-profiler-2-header-title    X Profile: Cursor
-    Click Element    data:testid:spatial-profiler-2-header-settings-button
-    Element Should Contain    data:testid:spatial-profiler-2-floating-settings-0-header-title    X Spatial Profile Settings: Cursor
-    Element Should Contain    data:testid:spatial-profiler-2-floating-settings-0-content    Styling
-    Click Element    data:testid:spatial-profiler-2-floating-settings-0-header-close-button
-    Click Element    data:testid:spatial-profiler-2-header-close-button
+    Element Should Contain    data:testid:spatial-profiler-1-header-title    X Profile: Cursor
+    Click Element    data:testid:spatial-profiler-1-header-settings-button
+    Element Should Contain    data:testid:spatial-profiler-1-floating-settings-0-header-title    X Spatial Profile Settings: Cursor
+    Element Should Contain    data:testid:spatial-profiler-1-floating-settings-0-content    Styling
+    Click Element    data:testid:spatial-profiler-1-floating-settings-0-header-close-button
+    Click Element    data:testid:spatial-profiler-1-header-close-button
     # spectral profiler widget
     Click Element    id:SpectralProfilerButton
     Element Should Contain    data:testid:spectral-profiler-0-header-title    Z Profile
@@ -390,18 +390,18 @@ GUI Initialization
     Click Element    data:testid:histogram-0-header-close-button
     # animator widget
     Click Element    id:AnimatorWidgetButton
-    Element Should Contain    data:testid:animator-1-header-title    Animator
-    Element Should Contain    data:testid:animator-1-content    No file loaded
-    Click Element    data:testid:animator-1-header-close-button
+    Element Should Contain    data:testid:animator-0-header-title    Animator
+    Element Should Contain    data:testid:animator-0-content    No file loaded
+    Click Element    data:testid:animator-0-header-close-button
     # render config widget
     Click Element    id:RenderConfigurationWidgetButton
-    Element Should Contain    data:testid:render-config-1-header-title    Render Configuration
-    Element Should Contain    data:testid:render-config-1-content    No file loaded
-    Click Element    data:testid:render-config-1-header-settings-button
-    Element Should Contain    data:testid:render-config-1-floating-settings-0-header-title    Render Configuration Settings
-    Element Should Contain    data:testid:render-config-1-floating-settings-0-content    Line color (Primary)
-    Click Element    data:testid:render-config-1-floating-settings-0-header-close-button
-    Click Element    data:testid:render-config-1-header-close-button
+    Element Should Contain    data:testid:render-config-0-header-title    Render Configuration
+    Element Should Contain    data:testid:render-config-0-content    No file loaded
+    Click Element    data:testid:render-config-0-header-settings-button
+    Element Should Contain    data:testid:render-config-0-floating-settings-0-header-title    Render Configuration Settings
+    Element Should Contain    data:testid:render-config-0-floating-settings-0-content    Line color (Primary)
+    Click Element    data:testid:render-config-0-floating-settings-0-header-close-button
+    Click Element    data:testid:render-config-0-header-close-button
     # Stokes analysis widget
     Click Element    id:StokesAnalysisWidgetButton
     Element Should Contain    data:testid:stokes-0-header-title    Stokes Analysis
@@ -413,13 +413,13 @@ GUI Initialization
     Click Element    data:testid:stokes-0-header-close-button
     # image list widget
     Click Element    id:ImageListWidgetButton
-    Element Should Contain    data:testid:layer-list-1-header-title    Image List
-    Element Should Contain    data:testid:layer-list-1-content    No file loaded
-    Click Element    data:testid:layer-list-1-header-settings-button
-    Element Should Contain    data:testid:layer-list-1-floating-settings-0-header-title    Image List Settings
-    Element Should Contain    data:testid:layer-list-1-floating-settings-0-content    Matching
-    Click Element    data:testid:layer-list-1-floating-settings-0-header-close-button
-    Click Element    data:testid:layer-list-1-header-close-button
+    Element Should Contain    data:testid:layer-list-0-header-title    Image List
+    Element Should Contain    data:testid:layer-list-0-content    No file loaded
+    Click Element    data:testid:layer-list-0-header-settings-button
+    Element Should Contain    data:testid:layer-list-0-floating-settings-0-header-title    Image List Settings
+    Element Should Contain    data:testid:layer-list-0-floating-settings-0-content    Matching
+    Click Element    data:testid:layer-list-0-floating-settings-0-header-close-button
+    Click Element    data:testid:layer-list-0-header-close-button
     # catalog widget
     Click Element    id:CatalogWidgetButton
     Element Should Contain    data:testid:catalog-overlay-component-0-header-title    Catalog
@@ -493,7 +493,7 @@ Coordinate Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-14    3    clear=True
+    Input Text    id:numericInput-13    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
@@ -549,7 +549,7 @@ Coordinate Grid Rendering
     Input Text     id:numericInput-32    10deg    clear=True
     Double Click Element    id:numericInput-34
     Press Keys    None    DELETE
-    Input Text     id:numericInput-34    70.0    clear=True    
+    Input Text     id:numericInput-34    70.0    clear=True
     Double Click Element    id:numericInput-35
     Press Keys    None    DELETE
     Press Keys    None    BACKSPACE
@@ -786,49 +786,49 @@ Layer Management With Multicolor Image
     
     # TODO: create testid of layer control buttons
     # hide then show R of image 0
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image0_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
 
     # hide then show C of image 0
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image0_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
 
     # hide then show R of image 1
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image1_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
 
     # hide then show V of image 1
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image1_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
 
     # hide then show R of image 2
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image2_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
 
     # hide then show C of image 2
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image2_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
 
     # hide then show R of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
 
     # hide then show C of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
 
     # hide then show V of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
 
     Set Selenium Speed    0
     # full
@@ -922,11 +922,11 @@ Tile Rendering with Different MIP
     Click Element    ${VIEWER_11_MATCH_BUTTON}
     Click Element    //*[contains(text(), "Spatial only")]
     # enable raster config matching
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
     Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]/a
     Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[18]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[18]/div/span[2]/a
     # set image zoom level to 1:1
     Mouse Over    ${VIEWER_11_CANVAS}
     Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
