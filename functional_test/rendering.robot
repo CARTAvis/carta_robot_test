@@ -534,27 +534,17 @@ Coordinate Grid Rendering
 
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Double Click Element    id:numericInput-30
-    Press Keys    None    DELETE
-    Input Text     id:numericInput-30    70.0    clear=True
-    Double Click Element    id:numericInput-31
-    Press Keys    None    DELETE
-    Press Keys    None    BACKSPACE
-    Input Text     id:numericInput-31    0.0    clear=True
-    Double Click Element    id:numericInput-32
-    Press Keys    None    DELETE
-    Double Click Element    id:numericInput-32
-    Press Keys    None    DELETE
-    Press Keys    None    BACKSPACE   
-    Input Text     id:numericInput-32    10deg    clear=True
-    Double Click Element    id:numericInput-34
-    Press Keys    None    DELETE
-    Input Text     id:numericInput-34    70.0    clear=True
-    Double Click Element    id:numericInput-35
-    Press Keys    None    DELETE
-    Press Keys    None    BACKSPACE
-    Input Text     id:numericInput-35    0.0    clear=True   
-    Double Click Element    id:numericInput-30
+    Clear Input Field    id:numericInput-29
+    Input Text     id:numericInput-29    70.0    clear=True
+    Clear Input Field    id:numericInput-30
+    Input Text     id:numericInput-30    0.0    clear=True
+    Clear Input Field    id:numericInput-31
+    Input Text     id:numericInput-31    10deg    clear=True
+    Clear Input Field    id:numericInput-33
+    Input Text     id:numericInput-33    70.0    clear=True
+    Clear Input Field    id:numericInput-34
+    Input Text     id:numericInput-34    0.0    clear=True   
+    Double Click Element    id:numericInput-29
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
 
     Mouse Out    ${VIEWER_DIV}
