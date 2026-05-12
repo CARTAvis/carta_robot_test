@@ -242,6 +242,7 @@ Catalog Rendering As Image Overlay With Column Mapping
 
     # set up size mapping
     # click the size button to launch the settings dialog
+    Sleep    30
     Click Element    //*[contains(text(), "Size")]
     # click the shape dropdown menu to see its context
     Click Element    data:testid:catalog-settings-shape-dropdown
@@ -539,6 +540,7 @@ Load And Manage Two Catalog Files
     Click Element    ${CATALOG_WIDGET_CLOSE_BUTTON}
     # check for the non-ideal state of the catalog widget 
     Element Should Contain    data:testid:catalog-overlay-component-0-content    No catalog file loaded
+    
     [Teardown]    Kill carta_backend And Close Browser
 
 
