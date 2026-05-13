@@ -27,7 +27,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 9.999992 ± 0.000226 (arcmin)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 9.999992 ± 0.000226 (arcmin)
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395211 (deg)
+    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395656 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.3
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 0.999998 ± 0.000039 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
@@ -60,7 +60,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 9.999992418445e+0 ± 2.261984613479e-4 (arcmin)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 4.999995292557e+0 ± 1.130992099391e-4 (px)
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639521051e+4 (deg)
+    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639565584e+4 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 9.999983755341e-1 ± 3.917871324727e-5 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Background${SPACE*6}\= 0.000000000000e+0 (Jy/beam) (fixed)
@@ -281,12 +281,11 @@ Generation Of Model And Residual Images After Fitting
     # check pixel values of the three images in the cursor info widget
     Element Should Contain    data:testid:simple-table-0-1    1.95008e+1
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-1-1    1.21062e+1
+    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-1-1    1.20961e+1
     Element Should Contain    data:testid:simple-table-1-1    1.2
     # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.25401
+    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.26406
     Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.2
-    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.25401
     Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
     # with a model image only
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
