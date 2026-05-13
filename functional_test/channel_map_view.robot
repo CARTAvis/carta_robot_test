@@ -99,8 +99,8 @@ Channel Map View - raster coloring
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    120,72,31,119,180,255
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png   120,72,630,394
+    PNG Pixel XY Should Match RGBA    check_${key}.png    121,73,31,119,180,255
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png   121,73,631,394
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
