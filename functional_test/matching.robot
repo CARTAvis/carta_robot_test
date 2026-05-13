@@ -459,7 +459,7 @@ Match Catalog Image Overlay Spatially
     Click Element    //a[contains(., "DEC_d")]
     # render catalog overlay by clicking the Plot button
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
-    Click Element    //*[contains(text(), "Size")]
+    Click Element    data:testid:catalog-size-button
     # change mark shape to filled circle
     Click Element    data:testid:catalog-settings-shape-dropdown
     Click Element    data:testid:catalog-settings-shape-circle-filled
