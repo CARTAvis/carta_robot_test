@@ -25,6 +25,7 @@ ${PACKAGE_TESTING}    False
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser --enable_scripting
 ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
+${CHROMEDRIVER_PATH}    '/usr/local/bin/chromedriver'
 #${BROWSER}        chrome
 ${DELAY}          0.1
 ${LOGIN URL}      http://${SERVER}
@@ -297,11 +298,11 @@ Setup carta_backend And Open Browser To CARTA
     END
     Set Selenium Speed    ${DELAY}
     IF    '${BROWSER}' == 'headlesschrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
+    Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
     Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
     END
     IF    '${BROWSER}' == 'chrome'
-    Open Browser    browser=${BROWSER}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security")
+    Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security")
     Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
     END
     #Sleep    1
