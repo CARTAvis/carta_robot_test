@@ -18,17 +18,17 @@ Image Viewer Settings - Pan and Zoom
     # enable viewer settings dialog
     Click Element    ${VIEWER_SETTINGS_DIALOG}
     # set a custom field center
+    Clear Input Field    //*[@id="numericInput-2"]
+    Input Text    //*[@id="numericInput-2"]    7:08:59.6718741073    clear=True
     Clear Input Field    //*[@id="numericInput-3"]
-    Input Text    //*[@id="numericInput-3"]    7:08:59.6718741073    clear=True
-    Clear Input Field    //*[@id="numericInput-4"]
-    Input Text    //*[@id="numericInput-4"]    -11:12:39.5779647306    clear=True
+    Input Text    //*[@id="numericInput-3"]    -11:12:39.5779647306    clear=True
     # set a custom fov in ra
-    Clear Input Field    //*[@id="numericInput-5"]
-    Input Text    //*[@id="numericInput-5"]    3.2'    clear=True
-    Press Keys    //*[@id="numericInput-5"]    RETURN
+    Clear Input Field    //*[@id="numericInput-4"]
+    Input Text    //*[@id="numericInput-4"]    3.2'    clear=True
+    Press Keys    //*[@id="numericInput-4"]    RETURN
     # verify the fov changes
-    ${fov_x}=    Get Element Attribute    //*[@id="numericInput-5"]    value
-    ${fov_y}=    Get Element Attribute    //*[@id="numericInput-6"]    value
+    ${fov_x}=    Get Element Attribute    //*[@id="numericInput-4"]    value
+    ${fov_y}=    Get Element Attribute    //*[@id="numericInput-5"]    value
     Should Be Equal As Strings    ${fov_x}    3.2019458956'
     Should Be Equal As Strings    ${fov_y}    4.6054338865'
     # close viewer settings dialog
@@ -42,14 +42,14 @@ Image Viewer Settings - Pan and Zoom
     Click Element    ${VIEWER_SETTINGS_DIALOG}
     Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Pan and Zoom"]/div/div/div/div[6]/div/label
     # set new offset origin
+    Clear Input Field    //*[@id="numericInput-56"]
+    Input Text    //*[@id="numericInput-56"]    7:08:56.4326588482    clear=True
     Clear Input Field    //*[@id="numericInput-57"]
-    Input Text    //*[@id="numericInput-57"]    7:08:56.4326588482    clear=True
-    Clear Input Field    //*[@id="numericInput-58"]
-    Input Text    //*[@id="numericInput-58"]    -11:11:45.1705220787    clear=True
-    Press Keys    //*[@id="numericInput-58"]    RETURN
+    Input Text    //*[@id="numericInput-57"]    -11:11:45.1705220787    clear=True
+    Press Keys    //*[@id="numericInput-57"]    RETURN
     # enlarge tick values
     Click Element    //*[contains(text(), "Numbers")]
-    Input Text    //*[@id="numericInput-44"]    24    clear=True
+    Input Text    //*[@id="numericInput-43"]    24    clear=True
     # close viewer settings dialog
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
     Mouse Over    ${VIEWER_10_CANVAS}
