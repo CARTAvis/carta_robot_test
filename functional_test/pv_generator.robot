@@ -46,7 +46,7 @@ Narrow-field PV Image Generation
     # generate a point region
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.02785714, Image: 33 px, 6.28957e-2)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.02507143, Image: 33 px, 6.28957e-2)
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: -288.7972, Image: 115 px, 6.28957e-2)
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,71,729,25
@@ -93,8 +93,8 @@ Wide-field PV Image Generation
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.9831633, Image: 332 px, -2.63311e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -2.63311e-4)
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    475,215,729,25
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    546,215,729,25
@@ -143,8 +143,8 @@ PV Image Generation Cancellation And Rerequest
     #Sleep    0.5
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 1.089626, Image: 334 px, -4.17348e-4)
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -4.17348e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Data: (WCS: 0.9831633, Image: 332 px, -2.63311e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO_Y}    Data: (WCS: 123.5346, Image: 58 px, -2.63311e-4)
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
@@ -357,7 +357,7 @@ Interactive PV Preview
     Input Text    //input[@placeholder="Length"]    60
     Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
-    Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
+    Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-plot
     # remove unused widgets
     Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
@@ -402,7 +402,7 @@ Interactive PV Preview With Customization
     Input Text    //input[@placeholder="Length"]    200
     Click Element    //*[contains(text(), "Image")]
     Click Element    data:testid:region-dialog-header-close-button
-    Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-header-title
+    Drag And Drop    id:PVGeneratorButton   data:testid:spatial-profiler-0-plot
     # remove unused widgets
     Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
