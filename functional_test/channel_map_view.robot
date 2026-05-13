@@ -146,7 +146,7 @@ Channel Map View - active channel switching
     Mouse Over    ${VIEWER_DIV}
     Click Element    id:SpectralProfilerButton
     # use the spectral profile plot to switch to a new active channel
-    Click Element    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
+    Click Element    data:testid:spectral-profiler-0-plot
     Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
     Sleep    5
     # close spectral profiler
