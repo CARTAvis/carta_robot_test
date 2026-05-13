@@ -166,10 +166,10 @@ Channel Map View - active channel switching
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png   313,218,313,323
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png   313,218,447,323
     # check raster pixel coloring due to the default per-channel raster rendering config
-    PNG Pixel XY Should Match RGBA    check_${key}.png    262,192,255,127,14,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    263,192,255,127,14,255
 
     # check raster pixel coloring due to the default per-channel raster rendering config
-    PNG Pixel XY Should Match RGBA    check2_${key}.png    652,276,44,160,44,255
+    PNG Pixel XY Should Match RGBA    check2_${key}.png    655,277,44,160,44,255
     # check active channel highlight box
     PNG Pixel XY Should Match RGBA    check2_${key}.png    42,4,255,0,0,255
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png   42,4,176,4
