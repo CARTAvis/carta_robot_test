@@ -420,12 +420,12 @@ Load Axes-Swapped Cubes
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.039907573853270185
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0030997400288470325
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04319079584092838
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0031714495620690647
     Capture Element Screenshot    ${VIEWER_DIV}    check_1230_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:38, 1.420309E+09); Image: (273, 4); Value: -3.61129e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:39, 1.420309E+09); Image: (273, 4); Value: -3.69371e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_1230_${key}.png        83,69,676,407
@@ -443,12 +443,12 @@ Load Axes-Swapped Cubes
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04001756319485144
-    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0031459159769216052
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.042869671873631936
+    Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.003215339596626246
     Capture Element Screenshot    ${VIEWER_DIV}    check_3021_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 10:09:26.5); Image: (4, 252); Value: -7.21823e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 10:09:26.7); Image: (4, 252); Value: 5.08979e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_3021_${key}.png        76,50,682,383
@@ -614,9 +614,9 @@ Load Image Via HiPS2FITS Service
     # search by source name
     Input Text    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[3]/div/div/input    M51
     # set output image properties
+    Input Text    //*[@id="numericInput-6"]    500
     Input Text    //*[@id="numericInput-7"]    500
-    Input Text    //*[@id="numericInput-8"]    500
-    Input Text    //*[@id="numericInput-9"]    0.2
+    Input Text    //*[@id="numericInput-8"]    0.2
     # apply query
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
@@ -628,8 +628,8 @@ Load Image Via HiPS2FITS Service
     Click Element    id:bp6-tab-title_onlineQueryDialogTabs_1
     # query by center coordinate in ICRS reference frame
     Click Element    //*[normalize-space(text())='Query by center']
-    Input Text    //*[@id="numericInput-19"]    202.4977
-    Input Text    //*[@id="numericInput-20"]    47.2667
+    Input Text    //*[@id="numericInput-18"]    202.4977
+    Input Text    //*[@id="numericInput-19"]    47.2667
     # set output image in galactic coordinate
     Click Element    //*[normalize-space(text())='Galactic']
     # set output image projection as SIN
@@ -637,7 +637,7 @@ Load Image Via HiPS2FITS Service
     Click Element    //*[normalize-space(text())='SIN - orthographic/synthesis']
     Click Element    //*[normalize-space(text())='Projection']
     # set output image to have a rotation of 45 deg
-    Input Text    //*[@id="numericInput-18"]    45    clear=True
+    Input Text    //*[@id="numericInput-17"]    45    clear=True
     # apply query
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
