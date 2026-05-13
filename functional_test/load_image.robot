@@ -472,7 +472,7 @@ Load Axes-Swapped Cubes
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_2031_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (15:11:25.2, 1.420309E+09); Image: (371, 4); Value: -3.73602e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (15:11:25.2, 1.420309); Image: (371, 4); Value: -3.73602e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_g_2031_${key}.png        102,69,589,407
