@@ -148,7 +148,7 @@ ${STATISTICS_WIDGET_TABLE}    data:testid:statistics-table
 
 ${SPECTRAL_PROFILER_SETTINGS_BUTTON}     data:testid:spectral-profiler-0-header-settings-button
 ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}     data:testid:spectral-profiler-0-floating-settings-0-header-close-button
-${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
+${SPECTRAL_PROFILER_PLOT}    data:testid:spectral-profiler-0-plot
 ${SPECTRAL_PROFILER_CLOSE_BUTTON}    data:testid:spectral-profiler-0-header-close-button
 ${SPECTRAL_PROFILER_CURSOR_INFO}    data:testid:spectral-profiler-info-0
 
