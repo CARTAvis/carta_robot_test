@@ -177,7 +177,7 @@ ${SPECTRAL_LINE_QUERY_LOADING_ICON}    data:testid:spectral-line-query-loading-i
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    data:testid:x-profiler-info
 ${SPATIAL_PROFILER_CURSOR_INFO_Y}    data:testid:y-profiler-info
-${SPATIAL_PROFILER_PLOT}    css:[data-testid="spatial-profiler-0-content"] [data-testid="profiler-plot"]
+${SPATIAL_PROFILER_PLOT}    data:testid:spatial-profiler-0-plot
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-0-header-settings-button
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler-0-floating-settings-0-header-close-button
 
