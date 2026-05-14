@@ -347,9 +347,9 @@ GUI Initialization
     Element Attribute Value Should Be    data:testid:annotation-shortcut-dropdown    disabled    true
     # region list widget
     Click Element    id:RegionListWidgetButton
-    Element Should Contain    data:testid:region-list-0-header-title    Region List
-    Element Should Contain    data:testid:region-list-0-content    No file loaded
-    Click Element    data:testid:region-list-0-header-close-button
+    Element Should Contain    data:testid:region-list-1-header-title    Region List
+    Element Should Contain    data:testid:region-list-1-content    No file loaded
+    Click Element    data:testid:region-list-1-header-close-button
     # log widget
     Click Element    id:LogWidgetButton
     Element Should Contain    data:testid:log-0-header-title    Log
@@ -358,12 +358,12 @@ GUI Initialization
     Click Element    data:testid:log-0-header-close-button
     # spatial profiler widget
     Click Element    id:SpatialProfilerButton
-    Element Should Contain    data:testid:spatial-profiler-1-header-title    X Profile: Cursor
-    Click Element    data:testid:spatial-profiler-1-header-settings-button
-    Element Should Contain    data:testid:spatial-profiler-1-floating-settings-0-header-title    X Spatial Profile Settings: Cursor
-    Element Should Contain    data:testid:spatial-profiler-1-floating-settings-0-content    Styling
-    Click Element    data:testid:spatial-profiler-1-floating-settings-0-header-close-button
-    Click Element    data:testid:spatial-profiler-1-header-close-button
+    Element Should Contain    data:testid:spatial-profiler-2-header-title    X Profile: Cursor
+    Click Element    data:testid:spatial-profiler-2-header-settings-button
+    Element Should Contain    data:testid:spatial-profiler-2-floating-settings-0-header-title    X Spatial Profile Settings: Cursor
+    Element Should Contain    data:testid:spatial-profiler-2-floating-settings-0-content    Styling
+    Click Element    data:testid:spatial-profiler-2-floating-settings-0-header-close-button
+    Click Element    data:testid:spatial-profiler-2-header-close-button
     # spectral profiler widget
     Click Element    id:SpectralProfilerButton
     Element Should Contain    data:testid:spectral-profiler-0-header-title    Z Profile
@@ -390,18 +390,18 @@ GUI Initialization
     Click Element    data:testid:histogram-0-header-close-button
     # animator widget
     Click Element    id:AnimatorWidgetButton
-    Element Should Contain    data:testid:animator-0-header-title    Animator
-    Element Should Contain    data:testid:animator-0-content    No file loaded
-    Click Element    data:testid:animator-0-header-close-button
+    Element Should Contain    data:testid:animator-1-header-title    Animator
+    Element Should Contain    data:testid:animator-1-content    No file loaded
+    Click Element    data:testid:animator-1-header-close-button
     # render config widget
     Click Element    id:RenderConfigurationWidgetButton
-    Element Should Contain    data:testid:render-config-0-header-title    Render Configuration
-    Element Should Contain    data:testid:render-config-0-content    No file loaded
-    Click Element    data:testid:render-config-0-header-settings-button
-    Element Should Contain    data:testid:render-config-0-floating-settings-0-header-title    Render Configuration Settings
-    Element Should Contain    data:testid:render-config-0-floating-settings-0-content    Line color (Primary)
-    Click Element    data:testid:render-config-0-floating-settings-0-header-close-button
-    Click Element    data:testid:render-config-0-header-close-button
+    Element Should Contain    data:testid:render-config-1-header-title    Render Configuration
+    Element Should Contain    data:testid:render-config-1-content    No file loaded
+    Click Element    data:testid:render-config-1-header-settings-button
+    Element Should Contain    data:testid:render-config-1-floating-settings-0-header-title    Render Configuration Settings
+    Element Should Contain    data:testid:render-config-1-floating-settings-0-content    Line color (Primary)
+    Click Element    data:testid:render-config-1-floating-settings-0-header-close-button
+    Click Element    data:testid:render-config-1-header-close-button
     # Stokes analysis widget
     Click Element    id:StokesAnalysisWidgetButton
     Element Should Contain    data:testid:stokes-0-header-title    Stokes Analysis
@@ -413,13 +413,13 @@ GUI Initialization
     Click Element    data:testid:stokes-0-header-close-button
     # image list widget
     Click Element    id:ImageListWidgetButton
-    Element Should Contain    data:testid:layer-list-0-header-title    Image List
-    Element Should Contain    data:testid:layer-list-0-content    No file loaded
-    Click Element    data:testid:layer-list-0-header-settings-button
-    Element Should Contain    data:testid:layer-list-0-floating-settings-0-header-title    Image List Settings
-    Element Should Contain    data:testid:layer-list-0-floating-settings-0-content    Matching
-    Click Element    data:testid:layer-list-0-floating-settings-0-header-close-button
-    Click Element    data:testid:layer-list-0-header-close-button
+    Element Should Contain    data:testid:layer-list-1-header-title    Image List
+    Element Should Contain    data:testid:layer-list-1-content    No file loaded
+    Click Element    data:testid:layer-list-1-header-settings-button
+    Element Should Contain    data:testid:layer-list-1-floating-settings-0-header-title    Image List Settings
+    Element Should Contain    data:testid:layer-list-1-floating-settings-0-content    Matching
+    Click Element    data:testid:layer-list-1-floating-settings-0-header-close-button
+    Click Element    data:testid:layer-list-1-header-close-button
     # catalog widget
     Click Element    id:CatalogWidgetButton
     Element Should Contain    data:testid:catalog-overlay-component-0-header-title    Catalog
