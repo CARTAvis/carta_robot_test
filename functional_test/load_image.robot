@@ -356,7 +356,7 @@ Load Images With LEL
 
 
 Load Axes-Swapped Cubes
-    [Setup]    Setup carta_backend And Open Browser To CARTA
+    [Setup]    Setup carta_backend And Open Browser To CARTA    
     Load Initial Image    gaussian_array_large_1032.image
     # enable gridline rendering
     Mouse Over    ${VIEWER_DIV}
@@ -380,6 +380,9 @@ Load Axes-Swapped Cubes
     Capture Element Screenshot    ${VIEWER_DIV}    check_1032_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Mouse Over    ${VIEWER_DIV}
     Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:44:48, 10:09:26); Image: (273, 252); Value: -2.84779e-4 Jy/pixel ; Frequency (LSRK): 1419.9000 MHz; Velocity: 106.7445 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check source locations
@@ -401,6 +404,9 @@ Load Axes-Swapped Cubes
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0022093053485489067
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_0213_${key}.png
     # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Mouse Over    ${VIEWER_DIV}
     Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (228.0, 43.2); Image: (370, 342); Value:  2.16926e-5 Jy/pixel ; Frequency (LSRK): 1419.9000 MHz; Velocity: 106.7445 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
@@ -425,7 +431,10 @@ Load Axes-Swapped Cubes
     Capture Element Screenshot    ${VIEWER_DIV}    check_1230_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:39, 1.420309E+09); Image: (273, 4); Value: -3.69371e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:39, 1.420309); Image: (273, 4); Value: -3.69371e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_1230_${key}.png        83,69,676,407
@@ -448,7 +457,10 @@ Load Axes-Swapped Cubes
     Capture Element Screenshot    ${VIEWER_DIV}    check_3021_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 10:09:26.7); Image: (4, 252); Value: 5.08979e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348, 10:09:26.7); Image: (4, 252); Value: 5.08979e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_3021_${key}.png        76,50,682,383
@@ -471,6 +483,9 @@ Load Axes-Swapped Cubes
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0023210009619462207
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_2031_${key}.png
     # check cursor info
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Mouse Over    ${VIEWER_DIV}
     Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (15:11:25.2, 1.420309); Image: (371, 4); Value: -3.73602e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
@@ -495,7 +510,10 @@ Load Axes-Swapped Cubes
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_3102_${key}.png
     # check cursor info
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348E+09, 43.1531); Image: (4, 342); Value: 7.85461e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Mouse Over    ${VIEWER_DIV}
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348, 43.1531); Image: (4, 342); Value: 7.85461e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_g_3102_${key}.png        76,86,682,361
