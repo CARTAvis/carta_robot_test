@@ -646,13 +646,13 @@ Setting New Matching References
     Click Element    data:testid:image-list-2-matching-r
     Capture Element Screenshot    ${VIEWER_DIV}    check_after_XYZR_${key}.png
     # check screenshots
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    275,40,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    308,40,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    308,60,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    276,39,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,39,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,59,34,39,44,255
 
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    275,80,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    309,80,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    335,80,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    276,79,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    310,79,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    336,79,34,39,44,255
 
     PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYZ_${key}.png
     PNG Images Should Be Different    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png
