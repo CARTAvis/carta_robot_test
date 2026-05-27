@@ -573,3 +573,144 @@ Matching Vector And Contour From Secondary To Reference
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    292,258,671,258
     Remove File    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Quick Matching All With XYZR Buttons
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Append Image    HD163296_CO_2_1_subimage.fits
+    Append Image    S255_CH3CN_subcube.fits
+    # Trigger spatial matching
+    Click Element    data:testid:image-list-0-matching-xy
+    Page Should Contain    Could not enable spatial matching of S255_CH3CN_subcube.fits to reference image HD163296_CO_2_1.mom0.fits. No valid transform was found.
+    # Reset zoom for the spatial reference image
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_XY_${key}.png
+    # Trigger raster matching
+    Click Element    data:testid:image-list-0-matching-r
+    # set 99.9% clip to the 1st image
+    Click Element    data:testid:clip-button-99.9
+    # set to log scale
+    Click Element    //*[contains(text(), "Linear")]
+    Click Element    //*[contains(text(), "Log")]
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_XYR_${key}.png
+    # Apply a new rest frequency to the 3nd image
+    Click Element   data:testid:layer-list-0-header-settings-button
+    Click Element   id:bp6-tab-title_layerListSettingsTabs_1
+    Clear Input Field  id:numericInput-6
+    Input Text    id:numericInput-6    349.4268499    Clear=True
+    Click Element    id:numericInput-5  
+    Click Element    data:testid:layer-list-0-floating-settings-0-header-close-button
+    # Trigger spectral matching
+    Click Element    data:testid:image-list-1-matching-z
+    # Relocate animator widget
+    Drag And Drop    //*[contains(text(), "Animator")]    //*[contains(text(), "Y Profile: Cursor")]
+    Click Element    ${ANIMATOR_IMAGE_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
+    # Click channel slider to set a new channel as active
+    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[3]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div[1]/div[1]
+    # set 1st image as active
+    Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_XYZR_${key}.png
+    # check screenshots
+    PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYR_${key}.png
+    PNG Images Should Be Different    check_after_XYR_${key}.png    check_after_XYZR_${key}.png
+    Remove Files    check_after_XY_${key}.png    check_after_XYR_${key}.png    check_after_XYZR_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+Setting New Matching References
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Append Image    HD163296_CO_2_1_subimage.fits
+    Append Image    S255_CH3CN_subcube.fits
+
+    # get a screenshot before setting new referneces 
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    data:testid:layer-list-0-content    check_before_setting_new_ref_${key}.png
+    # set the 3rd image as XYZR references
+    Open Context Menu    data:testid:image-list-2-matching-xy
+    Click Element    //*[contains(text(), "Set as all references")]
+    Capture Element Screenshot    data:testid:layer-list-0-content    check_after_setting_new_ref_${key}.png
+    # trigger XYZR matching
+    Click Element    data:testid:image-list-2-matching-xy
+    Page Should Contain    Could not enable spatial matching of HD163296_CO_2_1.mom0.fits to reference image S255_CH3CN_subcube.fits. No valid transform was found.
+    Page Should Contain    Could not enable spatial matching of HD163296_CO_2_1_subimage.fits to reference image S255_CH3CN_subcube.fits. No valid transform was found.
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_XY_${key}.png
+    Click Element    data:testid:image-list-2-matching-z
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_XYZ_${key}.png
+    Click Element    data:testid:image-list-2-matching-r
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_XYZR_${key}.png
+    # check screenshots
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    275,40,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    308,40,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    308,60,34,39,44,255
+
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    275,80,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    309,80,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    335,80,34,39,44,255
+
+    PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYZ_${key}.png
+    PNG Images Should Be Different    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png
+    Remove Files    check_after_XY_${key}.png    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png    check_before_setting_new_ref_${key}.png    check_after_setting_new_ref_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Quick Unmatching All With XYZR Buttons
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1_subimage.fits
+    Append Image    HD163296_13CO_2-1_subimage.fits
+    Append Image    HD163296_C18O_2-1_subimage.fits
+    # Trigger XYZR matching
+    Click Element    data:testid:image-list-0-matching-xy
+    Click Element    data:testid:image-list-0-matching-z
+    Click Element    data:testid:image-list-0-matching-r
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
+    Sleep    1
+    # set new references
+    Open Context Menu    data:testid:image-list-2-matching-xy
+    Click Element    //*[contains(text(), "Set as all references")]
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_matching_${key}.png
+    # Trigger XYZR unmatching
+    Click Element    data:testid:image-list-2-matching-xy
+    Click Element    data:testid:image-list-2-matching-z
+    Click Element    data:testid:image-list-2-matching-r
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_unmatching_${key}.png
+    # configure zoom level, channel, and raster config of the 3rd image
+    Click Element    ${VIEWER_01_ZOOM_TO_FIT_BUTTON}
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_unmatching_set_zoom_${key}.png
+    Click Element    data:testid:clip-button-90
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_unmatching_set_clip_${key}.png
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    ${ANIMATOR_FIRST_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_after_unmatching_set_channel_${key}.png
+
+    # check screenshots
+    Set Selenium Speed    0
+    PNG Images Should Be Identical    check_after_matching_${key}.png    check_after_unmatching_${key}.png
+
+    PNG Images Should Be Different    check_after_unmatching_${key}.png    check_after_unmatching_set_zoom_${key}.png
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    124,73,23,190,207,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    674,100,140,86,75,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    102,355,214,39,40,255
+
+    PNG Images Should Be Different    check_after_unmatching_${key}.png    check_after_unmatching_set_clip_${key}.png
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_clip_${key}.png    124,73,23,190,207,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_clip_${key}.png    674,100,140,86,75,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_clip_${key}.png    165,386,31,119,180,255
+
+    PNG Images Should Be Different    check_after_unmatching_${key}.png    check_after_unmatching_set_channel_${key}.png
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_channel_${key}.png    124,73,23,190,207,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_channel_${key}.png    674,100,140,86,75,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_channel_${key}.png    128,381,31,119,180,255
+
+    Remove Files    check_after_matching_${key}.png    check_after_unmatching_${key}.png    check_after_unmatching_set_zoom_${key}.png    check_after_unmatching_set_clip_${key}.png    check_after_unmatching_set_channel_${key}.png
+
+    [Teardown]    Kill carta_backend And Close Browser
