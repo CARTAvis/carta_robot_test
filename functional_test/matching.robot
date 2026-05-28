@@ -651,12 +651,17 @@ Setting New Matching References
     PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    276,39,34,39,44,255
     PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,39,34,39,44,255
     PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,59,34,39,44,255
-
     PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    276,79,34,39,44,255
     PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    310,79,34,39,44,255
     PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    336,79,34,39,44,255
+    ELSE
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    276,38,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,38,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,58,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    276,78,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    310,78,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    336,78,34,39,44,255
     END
-
 
     PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYZ_${key}.png
     PNG Images Should Be Different    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png
