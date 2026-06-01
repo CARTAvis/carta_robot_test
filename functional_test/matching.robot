@@ -600,9 +600,9 @@ Quick Matching All With XYZR Buttons
     # Apply a new rest frequency to the 3nd image
     Click Element   data:testid:layer-list-0-header-settings-button
     Click Element   id:bp6-tab-title_layerListSettingsTabs_1
-    Clear Input Field  id:numericInput-6
-    Input Text    id:numericInput-6    349.4268499    Clear=True
-    Click Element    id:numericInput-5  
+    Clear Input Field  id:numericInput-5
+    Input Text    id:numericInput-5    349.4268499    Clear=True
+    Click Element    id:numericInput-4  
     Click Element    data:testid:layer-list-0-floating-settings-0-header-close-button
     # Trigger spectral matching
     Click Element    data:testid:image-list-1-matching-z
@@ -612,7 +612,7 @@ Quick Matching All With XYZR Buttons
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
     # Click channel slider to set a new channel as active
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[3]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div[1]/div[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div[1]
     # set 1st image as active
     Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Mouse Out    ${VIEWER_DIV}
