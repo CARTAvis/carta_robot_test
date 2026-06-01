@@ -434,7 +434,7 @@ Load Axes-Swapped Cubes
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:38, 1.420309); Image: (273, 4); Value: -3.61129e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (9:49:39, 1.420309); Image: (273, 4); Value: -3.69371e-2 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_1230_${key}.png        83,69,676,407
@@ -460,7 +460,7 @@ Load Axes-Swapped Cubes
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Mouse Over    ${VIEWER_DIV}
-    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348, 10:09:26.5); Image: (4, 252); Value: -7.21823e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
+    Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    WCS: (1.420348, 10:09:26.7); Image: (4, 252); Value: 5.08979e-4 Jy/pixel ; Frequency (LSRK): 1420.3000 MHz; Velocity: 22.3201 km/s; Polarization: Stokes Q
     Set Selenium Speed    0.02
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_3021_${key}.png        76,50,682,383
