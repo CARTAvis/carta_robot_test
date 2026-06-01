@@ -481,7 +481,7 @@ GUI Initialization
     [Teardown]    Kill carta_backend And Close Browser
 
 
-Coordinate Grid Rendering
+Standard Coordinate Grid And Orthogonal Offset Grid Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    model.fits
     Append Image    model_imregrid_galactic.fits
@@ -933,4 +933,113 @@ Tile Rendering with Different MIP
     PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,189,334
     PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,568,334
     Remove Files    tile_mip_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Polar Offset Coordinate Grid Rendering 
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    gaussian_equal_distance.fits
+    Click Element    data:testid:grid-button
+    # make grid line thicker
+    Click Element    data:testid:image-view-header-settings-button
+    Click Element    //*[normalize-space(text())='Grids']
+    Input Text    id:numericInput-13    3    clear=True
+    Click Element    //*[normalize-space(text())='Grids']
+    Click Element    data:testid:image-view-floating-settings-0-header-close-button
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "Offset")]
+    Click Element    //*[contains(text(), "Pole")]
+    # change FOV and the origin of the offset grid
+    Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Clear Input Field    id:numericInput-29
+    Input Text    id:numericInput-29    14:40:00    clear=True
+    Clear Input Field    id:numericInput-30
+    Input Text    id:numericInput-30    -30:00:00    clear=True
+    Clear Input Field    id:numericInput-31
+    Input Text    id:numericInput-31    30deg    clear=True
+    Clear Input Field    id:numericInput-33
+    Input Text    id:numericInput-33    14:40:00    clear=True    
+    Clear Input Field    id:numericInput-34
+    Input Text    id:numericInput-34    -30:00:00    clear=True   
+    Click Element    id:numericInput-29
+    Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
+    # change to tab10 colormap
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
+
+    # take screenshot and perform pixel checks
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_wcs_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "FK5")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_fk5_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "FK4")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_fk4_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "GAL")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_gal_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "ECL")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_ecl_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "ICRS")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_icrs_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "IMG")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_img_${key}.png
+
+    Click Element    data:testid:overlay-coordinate-button
+    Click Element    //*[contains(text(), "Offset")]
+    Click Element    //*[contains(text(), "WCS")]
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    grid_polar_offset_disabled_${key}.png
+
+    # verify screenshots
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    380,217,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    394,113,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    346,133,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    308,176,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    289,230,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    296,281,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    325,316,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    370,324,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    417,304,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    456,261,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    474,207,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    467,156,33,93,176,255
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    438,122,33,93,176,255
+    OCR Test    grid_polar_offset_wcs_${key}.png    300 445 456 468 "Offset colatitude (deg)"
+    OCR Test    grid_polar_offset_wcs_${key}.png    1 142 24 290 "Offset longitude (deg)" --rotation 90
+
+    PNG Images Should Be Identical    grid_polar_offset_wcs_${key}.png    grid_polar_offset_fk5_${key}.png
+    PNG Images Should Be Different    grid_polar_offset_wcs_${key}.png    grid_polar_offset_fk4_${key}.png
+    PNG Images Should Be Different    grid_polar_offset_wcs_${key}.png    grid_polar_offset_gal_${key}.png
+    PNG Images Should Be Different    grid_polar_offset_wcs_${key}.png    grid_polar_offset_ecl_${key}.png
+    PNG Images Should Be Identical    grid_polar_offset_wcs_${key}.png    grid_polar_offset_icrs_${key}.png
+    PNG Images Should Be Different    grid_polar_offset_wcs_${key}.png    grid_polar_offset_img_${key}.png
+    OCR Test    grid_polar_offset_img_${key}.png    290 448 466 468 "X offset coordinate (pixel)"
+    OCR Test    grid_polar_offset_img_${key}.png    1 128 24 306 "Y offset coordinate (pixel)" --rotation 90
+    PNG Images Should Be Different    grid_polar_offset_wcs_${key}.png    grid_polar_offset_disabled_${key}.png
+
+    # check source positions
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_disabled_${key}.png    378,214,23,190,207,255 
+    PNG Pixel XY Should Match RGBA    grid_polar_offset_disabled_${key}.png    438,122,23,190,207,255    
+
+    Remove Files    grid_polar_offset_wcs_${key}.png    grid_polar_offset_fk5_${key}.png    grid_polar_offset_fk4_${key}.png    grid_polar_offset_gal_${key}.png    grid_polar_offset_ecl_${key}.png    grid_polar_offset_icrs_${key}.png    grid_polar_offset_img_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
