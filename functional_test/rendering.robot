@@ -141,7 +141,7 @@ Catalog Image Overlay Rendering
     Click Element    ${CATALOG_WIDGET_RENDERING_COLUMN_Y_DROPDOWN}
     Click Element    //a[contains(., "DEC_d")]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
-    Click Element    //*[contains(text(), "Size")]
+    Click Element    //a[contains(., "Size")]
     Click Element    data:testid:catalog-settings-shape-dropdown
     Click Element    data:testid:catalog-settings-shape-circle-filled
     Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
@@ -493,7 +493,7 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-14    3    clear=True
+    Input Text    id:numericInput-13    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
@@ -534,27 +534,17 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
 
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Double Click Element    id:numericInput-30
-    Press Keys    None    DELETE
-    Input Text     id:numericInput-30    70.0    clear=True
-    Double Click Element    id:numericInput-31
-    Press Keys    None    DELETE
-    Press Keys    None    BACKSPACE
-    Input Text     id:numericInput-31    0.0    clear=True
-    Double Click Element    id:numericInput-32
-    Press Keys    None    DELETE
-    Double Click Element    id:numericInput-32
-    Press Keys    None    DELETE
-    Press Keys    None    BACKSPACE   
-    Input Text     id:numericInput-32    10deg    clear=True
-    Double Click Element    id:numericInput-34
-    Press Keys    None    DELETE
-    Input Text     id:numericInput-34    70.0    clear=True    
-    Double Click Element    id:numericInput-35
-    Press Keys    None    DELETE
-    Press Keys    None    BACKSPACE
-    Input Text     id:numericInput-35    0.0    clear=True   
-    Double Click Element    id:numericInput-30
+    Clear Input Field    id:numericInput-29
+    Input Text     id:numericInput-29    70.0    clear=True
+    Clear Input Field    id:numericInput-30
+    Input Text     id:numericInput-30    0.0    clear=True
+    Clear Input Field    id:numericInput-31
+    Input Text     id:numericInput-31    10deg    clear=True
+    Clear Input Field    id:numericInput-33
+    Input Text     id:numericInput-33    70.0    clear=True
+    Clear Input Field    id:numericInput-34
+    Input Text     id:numericInput-34    0.0    clear=True   
+    Double Click Element    id:numericInput-29
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
 
     Mouse Out    ${VIEWER_DIV}
@@ -786,49 +776,49 @@ Layer Management With Multicolor Image
     
     # TODO: create testid of layer control buttons
     # hide then show R of image 0
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image0_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[1]
 
     # hide then show C of image 0
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image0_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[2]/div/span[2]
 
     # hide then show R of image 1
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image1_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[1]
 
     # hide then show V of image 1
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image1_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[7]/div/span[2]
 
     # hide then show R of image 2
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image2_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[1]
 
     # hide then show C of image 2
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image2_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[12]/div/span[2]
 
     # hide then show R of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_R_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[1]
 
     # hide then show C of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_C_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[2]
 
     # hide then show V of image 3 (multicolor image)
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
     Capture Element Screenshot    ${VIEWER_DIV}    check_hide_V_image3_${key}.png
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[17]/div/span[3]
 
     Set Selenium Speed    0
     # full
@@ -922,11 +912,11 @@ Tile Rendering with Different MIP
     Click Element    ${VIEWER_11_MATCH_BUTTON}
     Click Element    //*[contains(text(), "Spatial only")]
     # enable raster config matching
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
     Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]/a
     Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[5]/div[2]/div[1]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[18]/div/span[2]/a
+    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[18]/div/span[2]/a
     # set image zoom level to 1:1
     Mouse Over    ${VIEWER_11_CANVAS}
     Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
@@ -954,7 +944,7 @@ Polar Offset Coordinate Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-14    3    clear=True
+    Input Text    id:numericInput-13    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Click Element    data:testid:overlay-coordinate-button
@@ -962,17 +952,17 @@ Polar Offset Coordinate Grid Rendering
     Click Element    //*[contains(text(), "Pole")]
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
+    Clear Input Field    id:numericInput-29
+    Input Text    id:numericInput-29    14:40:00    clear=True
     Clear Input Field    id:numericInput-30
-    Input Text    id:numericInput-30    14:40:00    clear=True
+    Input Text    id:numericInput-30    -30:00:00    clear=True
     Clear Input Field    id:numericInput-31
-    Input Text    id:numericInput-31    -30:00:00    clear=True
-    Clear Input Field    id:numericInput-32
-    Input Text    id:numericInput-32    30deg    clear=True
+    Input Text    id:numericInput-31    30deg    clear=True
+    Clear Input Field    id:numericInput-33
+    Input Text    id:numericInput-33    14:40:00    clear=True    
     Clear Input Field    id:numericInput-34
-    Input Text    id:numericInput-34    14:40:00    clear=True    
-    Clear Input Field    id:numericInput-35
-    Input Text    id:numericInput-35    -30:00:00    clear=True   
-    Click Element    id:numericInput-30
+    Input Text    id:numericInput-34    -30:00:00    clear=True   
+    Click Element    id:numericInput-29
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
     # change to tab10 colormap
     Click Element    ${COLORMAP_DROPDOWN}

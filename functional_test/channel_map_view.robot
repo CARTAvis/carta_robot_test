@@ -7,19 +7,19 @@ Channel Map View - Layout
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
     # enable channel map view mode
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[1]/div[1]/div[1]/ul[2]/li[1]
+    Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-4"]    5    clear=True
-    Input Text    //*[@id="numericInput-5"]    4    clear=True
+    Input Text    //*[@id="numericInput-3"]    5    clear=True
+    Input Text    //*[@id="numericInput-4"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-3"]    20    clear=True
+    Input Text    //*[@id="numericInput-2"]    20    clear=True
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
+    Click Element    data:testid:channel-map-control-0-header-close-button
 
     # adjust FOV
     Mouse Over    ${VIEWER_DIV}
@@ -30,7 +30,7 @@ Channel Map View - Layout
 
     # adjust AST layout: channel border width
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Click Element    //*[contains(text(), "Border")]
+    Click Element    id:bp6-tab-title_imageViewSettingsTabs_Border
     Repeat Keyword    2    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Border"]/div/div/div/div[4]/div/div/div[2]/button[1]
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}
 
@@ -39,7 +39,7 @@ Channel Map View - Layout
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
 
     # disable channel map view mode
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[1]/div[1]/div[1]/ul[2]/li[1]
+    Click Element    data:testid:image-view-header-channel-map-button
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    check2_${key}.png
 
@@ -74,19 +74,19 @@ Channel Map View - Layout
 Channel Map View - raster coloring
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[1]/div[1]/div[1]/ul[2]/li[1]
+    Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-4"]    5    clear=True
-    Input Text    //*[@id="numericInput-5"]    4    clear=True
+    Input Text    //*[@id="numericInput-3"]    5    clear=True
+    Input Text    //*[@id="numericInput-4"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-3"]    20    clear=True
+    Input Text    //*[@id="numericInput-2"]    20    clear=True
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
+    Click Element    data:testid:channel-map-control-0-header-close-button
 
     # adjust FOV
     Mouse Over    ${VIEWER_DIV}
@@ -99,8 +99,8 @@ Channel Map View - raster coloring
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
-    PNG Pixel XY Should Match RGBA    check_${key}.png    120,72,31,119,180,255
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png   120,72,630,394
+    PNG Pixel XY Should Match RGBA    check_${key}.png    121,73,31,119,180,255
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png   121,73,631,394
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -108,19 +108,19 @@ Channel Map View - raster coloring
 Channel Map View - active channel switching
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[1]/div[1]/div[1]/ul[2]/li[1]
+    Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-4"]    5    clear=True
-    Input Text    //*[@id="numericInput-5"]    4    clear=True
+    Input Text    //*[@id="numericInput-3"]    5    clear=True
+    Input Text    //*[@id="numericInput-4"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-3"]    20    clear=True
+    Input Text    //*[@id="numericInput-2"]    20    clear=True
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
+    Click Element    data:testid:channel-map-control-0-header-close-button
 
     # adjust FOV
     Mouse Over    ${VIEWER_DIV}
@@ -146,7 +146,7 @@ Channel Map View - active channel switching
     Mouse Over    ${VIEWER_DIV}
     Click Element    id:SpectralProfilerButton
     # use the spectral profile plot to switch to a new active channel
-    Click Element    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
+    Click Element    data:testid:spectral-profiler-0-plot
     Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
     Sleep    5
     # close spectral profiler
@@ -166,10 +166,10 @@ Channel Map View - active channel switching
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png   313,218,313,323
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png   313,218,447,323
     # check raster pixel coloring due to the default per-channel raster rendering config
-    PNG Pixel XY Should Match RGBA    check_${key}.png    262,192,255,127,14,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    263,192,255,127,14,255
 
     # check raster pixel coloring due to the default per-channel raster rendering config
-    PNG Pixel XY Should Match RGBA    check2_${key}.png    652,276,44,160,44,255
+    PNG Pixel XY Should Match RGBA    check2_${key}.png    655,277,44,160,44,255
     # check active channel highlight box
     PNG Pixel XY Should Match RGBA    check2_${key}.png    42,4,255,0,0,255
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png   42,4,176,4
@@ -184,20 +184,20 @@ Channel Map View - spectral labels
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
     # enable channel map view mode
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[1]/div[1]/div[1]/ul[2]/li[1]
+    Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[contains(text(), "jet")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-4"]    5    clear=True
-    Input Text    //*[@id="numericInput-5"]    4    clear=True
+    Input Text    //*[@id="numericInput-3"]    5    clear=True
+    Input Text    //*[@id="numericInput-4"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-3"]    20    clear=True
+    Input Text    //*[@id="numericInput-2"]    20    clear=True
     Sleep    5
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
+    Click Element    data:testid:channel-map-control-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     ${key}=    Generate Random String    8
@@ -210,7 +210,7 @@ Channel Map View - spectral labels
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div/div/div[2]/div[7]/div/div/label
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div/div/div[2]/div[8]/div/div/label
     # close control widget
-    Click Element    //*[@id="root"]/div/div[17]/div/div/div[1]/div[4]
+    Click Element    data:testid:channel-map-control-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Sleep    1
     Capture Element Screenshot    ${VIEWER_DIV}    after_${key}.png    

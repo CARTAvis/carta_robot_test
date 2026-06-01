@@ -242,7 +242,7 @@ Catalog Rendering As Image Overlay With Column Mapping
 
     # set up size mapping
     # click the size button to launch the settings dialog
-    Click Element    //*[contains(text(), "Size")]
+    Click Element    data:testid:catalog-size-button
     # click the shape dropdown menu to see its context
     Click Element    data:testid:catalog-settings-shape-dropdown
     # select the line segment shape
@@ -285,7 +285,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    233,216,331,225
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    215,142,383,218
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    236,352,299,68
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    237,352,299,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,114,112,338
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    64,69,459,382
 
@@ -539,6 +539,7 @@ Load And Manage Two Catalog Files
     Click Element    ${CATALOG_WIDGET_CLOSE_BUTTON}
     # check for the non-ideal state of the catalog widget 
     Element Should Contain    data:testid:catalog-overlay-component-0-content    No catalog file loaded
+    
     [Teardown]    Kill carta_backend And Close Browser
 
 

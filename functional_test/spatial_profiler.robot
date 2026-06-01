@@ -80,7 +80,7 @@ Line Spatial Profile Fixed Angular Width
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,385,17
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    111,104,477,16
     Mouse Over    ${SPATIAL_PROFILER_PLOT}
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Offset: -3.3 deg, 2.6148e-4)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Offset: -3.4 deg, -1.78843e-4)
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -134,6 +134,6 @@ Polyline Spatial Profile Fixed Angular Width
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,398,16
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    124,17,475,17
     Mouse Over    ${SPATIAL_PROFILER_PLOT}
-    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Distance: 1.63e+1 deg, -7.7284e-5)
+    Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Distance: 1.62e+1 deg, 3.59332e-4)
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

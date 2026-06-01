@@ -75,7 +75,7 @@ ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:image-view-floating-settin
 ${CLIP_BUTTON_90}    data:testid:clip-button-90
 ${COLORMAP_DROPDOWN}    data:testid:colormap-dropdown
 
-${MULTIPANEL_VIEW_SWITCH}    data:testid:image-view-multipanel-view-switch
+${MULTIPANEL_VIEW_SWITCH}    data:testid:image-view-header-multipanel-view-switch
 
 ${ANIMATOR_FIRST_BUTTON}    data:testid:animator-first-button
 ${ANIMATOR_PREVIOUS_BUTTON}    data:testid:animator-previous-button
@@ -91,10 +91,10 @@ ${ANIMATOR_SPINBOX_DOWN}    data:testid:animator-control-input-decrement-button
 ${ANIMATOR_PLAYBACK_MODE_BUTTON}    data:testid:animator-playback-mode-button
 ${ANIMATOR_RANGE_SLIDER_HANDLE_LEFT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-start"]
 ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}    css:[data-testid="animator-range-slider"] [class*="-slider-handle"][class*="-end"]
-${ANIMATOR_IMAGE_RADIO_BUTTON}           //*[@data-testid="animator-0-content"]//*[contains(text(), "Image")]
-${ANIMATOR_CHANNEL_RADIO_BUTTON}           //*[@data-testid="animator-0-content"]//*[contains(text(), "Channel")]
-${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@data-testid="animator-0-content"]//*[contains(text(), "Polarization")]
-
+${ANIMATOR_IMAGE_RADIO_BUTTON}    //*[@class="animator-sliders"]//*[contains(text(), "Image")]
+${ANIMATOR_CHANNEL_RADIO_BUTTON}    //*[@class="animator-sliders"]//*[contains(text(), "Channel")]
+${ANIMATOR_POLARIZATION_RADIO_BUTTON}    //*[@data-testid="animator-polarization-slider"]//*[contains(text(), "Polarization")]
+                                         
 
 ${X_SPATIAL_PROFILER_TAB}    data:testid:spatial-profiler-0-header-title
 ${X_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-0-header-close-button
@@ -102,7 +102,7 @@ ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}    data:testid:spatial-profiler-1-header-clos
 ${IMAGE_LIST_CLOSE_BUTTON}    data:testid:layer-list-0-header-close-button
 ${ANIMATOR_CLOSE_BUTTON}     data:testid:animator-0-header-close-button
 ${REGION_LIST_CLOSE_BUTTON}     data:testid:region-list-0-header-close-button
-${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div/div/div[2]/div
+${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    //*[@id="root"]/div/div[16]/div/div[4]/div/div[2]
 ${CATALOG_WIDGET_DOCK_BUTTON}    data:testid:catalog-overlay-component-0-header-dock-button
 ${CATALOG_WIDGET_TITLE}    css:[data-testid="catalog-overlay-component-0-header-title"] span
 ${CATALOG_WIDGET_SYSTEM_DROPDOWN_ACTIVE_CONTEXT}    data:testid:catalog-system-dropdown
@@ -149,7 +149,7 @@ ${STATISTICS_WIDGET_TABLE}    data:testid:statistics-table
 
 ${SPECTRAL_PROFILER_SETTINGS_BUTTON}     data:testid:spectral-profiler-0-header-settings-button
 ${SPECTRAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}     data:testid:spectral-profiler-0-floating-settings-0-header-close-button
-${SPECTRAL_PROFILER_PLOT}    css:[data-testid="spectral-profiler-0-content"] [data-testid="profiler-plot"]
+${SPECTRAL_PROFILER_PLOT}    data:testid:spectral-profiler-0-plot
 ${SPECTRAL_PROFILER_CLOSE_BUTTON}    data:testid:spectral-profiler-0-header-close-button
 ${SPECTRAL_PROFILER_CURSOR_INFO}    data:testid:spectral-profiler-info-0
 
@@ -178,7 +178,7 @@ ${SPECTRAL_LINE_QUERY_LOADING_ICON}    data:testid:spectral-line-query-loading-i
 
 ${SPATIAL_PROFILER_CURSOR_INFO}    data:testid:x-profiler-info
 ${SPATIAL_PROFILER_CURSOR_INFO_Y}    data:testid:y-profiler-info
-${SPATIAL_PROFILER_PLOT}    css:[data-testid="spatial-profiler-0-content"] [data-testid="profiler-plot"]
+${SPATIAL_PROFILER_PLOT}    data:testid:spatial-profiler-0-plot
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_BUTTON}    data:testid:spatial-profiler-0-header-settings-button
 ${SPATIAL_PROFILER_SETTINGS_DIALOG_CLOSE_BUTTON}    data:testid:spatial-profiler-0-floating-settings-0-header-close-button
 
@@ -248,10 +248,10 @@ ${IMAGE_LIST_FOURTH_MATCHING_XY}    data:testid:image-list-3-matching-xy
 ${HISTOGRAM_PLOT_CANVAS}    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div/div[1]/div/canvas
 ${HISTOGRAM_PLOT_CURSOR_INFO}    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[3]/div
 ${HISTOGRAM_AUTO_BOUND_TOGGLE}    //*[@id="bp6-tab-panel_histogramSettingTabs_1"]/div/div[1]/div
-${HISTOGRAM_MANUAL_BOUND_MIN_INPUT}    //*[@id="numericInput-9"]
-${HISTOGRAM_MANUAL_BOUND_MAX_INPUT}    //*[@id="numericInput-10"]
+${HISTOGRAM_MANUAL_BOUND_MIN_INPUT}    //*[@id="numericInput-8"]
+${HISTOGRAM_MANUAL_BOUND_MAX_INPUT}    //*[@id="numericInput-9"]
 ${HISTOGRAM_AUTO_BINS_TOGGLE}    //*[@id="bp6-tab-panel_histogramSettingTabs_1"]/div/div[4]/div
-${HISTOGRAM_MANUAL_MAX_BINS_INPUT}    //*[@id="numericInput-11"]
+${HISTOGRAM_MANUAL_MAX_BINS_INPUT}    //*[@id="numericInput-10"]
 ${HISTOGRAM_MANUAL_BINS_SLIDER}    //*[@id="bp6-tab-panel_histogramSettingTabs_1"]/div/div[5]/div[1]/div
 ${HISTOGRAM_SETTINGS_DIALOG_CLOSE_BUTTON}    //*[@id="root"]/div/div[17]/div[2]/div/div[1]/div[3]
 
@@ -535,5 +535,5 @@ Clear Input Field
     [Arguments]    ${INPUT_FIELD}
     Set Focus To Element    ${INPUT_FIELD}
     Set Selenium Speed    0.001
-    Repeat Keyword    20    Press Keys    ${INPUT_FIELD}    BACKSPACE
+    Repeat Keyword    30    Press Keys    ${INPUT_FIELD}    BACKSPACE
     Set Selenium Speed    ${DELAY}

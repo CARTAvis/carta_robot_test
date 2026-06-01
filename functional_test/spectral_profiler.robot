@@ -75,11 +75,11 @@ Spectral Profile Visualization From Multiple Regions
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,90,585,78
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,110,553,95
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,140,615,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,141,615,152
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,160,520,97
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,90,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,110,673,32
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    390,140,673,32
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    389,141,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    357,160,673,32
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
@@ -127,11 +127,11 @@ Spectral Profile Visualization From Multiple Statistics
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,16,521,17
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,21,521,30
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,63,521,48
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,153,521,163
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    489,154,521,163
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,16,674,23
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,21,674,23
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,63,674,23
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,153,674,23
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    489,154,674,23
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
@@ -308,20 +308,20 @@ Single Spectral Profile Smoothing
 
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    390,39,518,16
-    PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    390,73,553,60
+    PNG Two Pixels Should Have Matched RGBA    check_boxcar_${key}.png    390,74,553,61
     PNG Two Pixels Should Not Have Matched RGBA    check_boxcar_${key}.png    390,39,390,73
     PNG Two Pixels Should Have Matched RGBA    check_gaussian_${key}.png    390,39,518,16
     PNG Two Pixels Should Have Matched RGBA    check_gaussian_${key}.png    325,110,617,99
     PNG Two Pixels Should Not Have Matched RGBA    check_gaussian_${key}.png    390,39,325,110
     PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    390,39,518,16
-    PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    325,116,617,105
+    PNG Two Pixels Should Have Matched RGBA    check_hanning_${key}.png    325,116,617,106
     PNG Two Pixels Should Not Have Matched RGBA    check_hanning_${key}.png    390,39,325,116
     PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    390,39,518,16
-    PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    293,117,486,60
+    PNG Two Pixels Should Have Matched RGBA    check_binning_${key}.png    293,117,486,61
     PNG Two Pixels Should Not Have Matched RGBA    check_binning_${key}.png    390,39,293,117
     PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    390,39,518,16
-    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    325,107,617,97
-    PNG Two Pixels Should Not Have Matched RGBA    check_Savitzky-Golay_${key}.png    390,39,325,107
+    PNG Two Pixels Should Have Matched RGBA    check_Savitzky-Golay_${key}.png    325,108,617,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_Savitzky-Golay_${key}.png    390,39,325,108
     PNG Two Pixels Should Have Matched RGBA    check_decimation_${key}.png    357,50,585,53
     PNG Two Pixels Should Have Matched RGBA    check_decimation_${key}.png    440,39,569,16
     PNG Two Pixels Should Not Have Matched RGBA    check_decimation_${key}.png    357,50,440,39
@@ -501,7 +501,7 @@ Spectral Profile Fitting Guess Then Fit
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    536,16,581,16
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    581,16,737,23
     # chech residual dots
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    737,23,202,146
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    737,23,202,147
     Set Selenium Speed    ${DELAY}
     Click Element    ${PROFILE_FITTING_BUTTON}    # profile fitting button
     Scroll Element Into View    ${PROFILE_FITTING_RESET_BUTTON}

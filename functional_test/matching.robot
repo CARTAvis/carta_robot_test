@@ -459,7 +459,7 @@ Match Catalog Image Overlay Spatially
     Click Element    //a[contains(., "DEC_d")]
     # render catalog overlay by clicking the Plot button
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
-    Click Element    //*[contains(text(), "Size")]
+    Click Element    data:testid:catalog-size-button
     # change mark shape to filled circle
     Click Element    data:testid:catalog-settings-shape-dropdown
     Click Element    data:testid:catalog-settings-shape-circle-filled
@@ -600,9 +600,9 @@ Quick Matching All With XYZR Buttons
     # Apply a new rest frequency to the 3nd image
     Click Element   data:testid:layer-list-0-header-settings-button
     Click Element   id:bp6-tab-title_layerListSettingsTabs_1
-    Clear Input Field  id:numericInput-6
-    Input Text    id:numericInput-6    349.4268499    Clear=True
-    Click Element    id:numericInput-5  
+    Clear Input Field  id:numericInput-5
+    Input Text    id:numericInput-5    349.4268499    Clear=True
+    Click Element    id:numericInput-4  
     Click Element    data:testid:layer-list-0-floating-settings-0-header-close-button
     # Trigger spectral matching
     Click Element    data:testid:image-list-1-matching-z
@@ -612,7 +612,7 @@ Quick Matching All With XYZR Buttons
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
     # Click channel slider to set a new channel as active
-    Click Element    //*[@id="root"]/div/div[16]/div/div/div[3]/div[3]/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div[1]/div[1]
+    Click Element    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div[1]
     # set 1st image as active
     Click Element    ${VIEWER_00_ZOOM_TO_FIT_BUTTON}
     Mouse Out    ${VIEWER_DIV}
@@ -648,19 +648,19 @@ Setting New Matching References
     # check screenshots
     ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    276,39,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,39,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    309,59,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    276,79,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    310,79,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    336,79,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    274,39,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    307,39,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    307,59,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    274,79,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    308,79,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    334,79,34,39,44,255
     ELSE
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    275,40,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    306,41,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    306,60,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    275,80,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    308,80,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    334,80,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    273,40,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    304,41,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    304,60,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    273,80,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    306,80,34,39,44,255
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    332,80,34,39,44,255
     END
 
     PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYZ_${key}.png
