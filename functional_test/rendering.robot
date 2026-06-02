@@ -474,7 +474,7 @@ GUI Initialization
     Double Click Element    ${VIEWER_DIV}
     Press Keys    None    DELETE
     Element Should Contain    data:testid:region-dialog    No region selected
-    Element Should Contain    data:testid:region-dialog    Region not supported
+    Element Should Contain    data:testid:region-dialog    Select a region using the list or image view
     Click Element    data:testid:region-dialog-header-close-button
     # catalog histogram and scatter plot widgets
     #   refer to catalog_widget.robot to save testing time
