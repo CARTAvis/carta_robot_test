@@ -200,3 +200,56 @@ Popout Image Viewer - animator
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Popout Image Viewer - region analytics
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    Load Initial Image    S255_CH3CN_subcube.fits
+    # create a region using the region button in the main window
+    Click Element    data:testid:rectangle-region-shortcut-button
+    Switch Window    NEW
+    Drag And Drop By Offset    data:testid:image-view-content   100    100
+    Switch Window    MAIN
+    ${key}=    Generate Random String    8
+    # check region spectral profile
+    Click Element    id:SpectralProfilerButton
+    Capture Element Screenshot    data:testid:spectral-profiler-0-plot    spectral_profile_before_${key}.png
+    Click Element    data:testid:spectral-profiler-0-header-close-button
+    # check region statistics
+    Click Element    id:StatisticsWidgetButton
+    Wait Until Page Does Not Contain    No stats data
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    1.961540546663e+1 Jy/beam
+    Click Element    data:testid:stats-0-header-close-button
+    # check region histogram
+    Click Element    id:HistogramWidgetButton
+    Capture Element Screenshot    data:testid:histogram-0-plot    histogram_before_${key}.png
+    Click Element    data:testid:histogram-0-header-close-button
+
+    # switch to the popout viewer and modify the region
+    Switch Window    NEW
+    Click Element    data:testid:image-view-content
+    Drag And Drop By Offset    data:testid:image-view-content   150    150
+
+    # switch back to the main window and check if the region analytics are updated
+    Switch Window    MAIN
+
+    # check region spectral profile
+    Click Element    id:SpectralProfilerButton
+    Capture Element Screenshot    data:testid:spectral-profiler-0-plot    spectral_profile_after_${key}.png
+    Click Element    data:testid:spectral-profiler-0-header-close-button
+    # check region statistics
+    Click Element    id:StatisticsWidgetButton
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    6.430363412844e-1 Jy/beam
+    Click Element    data:testid:stats-0-header-close-button
+    # check region histogram
+    Click Element    id:HistogramWidgetButton
+    Capture Element Screenshot    data:testid:histogram-0-plot    histogram_after_${key}.png
+    Click Element    data:testid:histogram-0-header-close-button
+
+    # verify the screenshots
+    PNG Images Should Be Different    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png
+    PNG Images Should Be Different    histogram_before_${key}.png    histogram_after_${key}.png
+
+    Remove Files    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png    histogram_before_${key}.png    histogram_after_${key}.png  
+    [Teardown]    Kill carta_backend And Close Browser
+
