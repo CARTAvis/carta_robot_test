@@ -246,10 +246,30 @@ Popout Image Viewer - region analytics
     Capture Element Screenshot    data:testid:histogram-0-plot    histogram_after_${key}.png
     Click Element    data:testid:histogram-0-header-close-button
 
+    # remove rectangel region
+    Click Element    //*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region 1")]
+    Press Keys    None    DELETE
+
+    # spatial profiler
+    Switch Window    NEW
+    Mouse Over    data:testid:image-view-content
+    Double Click Element    data:testid:toolbar-region-creating-button
+    Click Element    //*[normalize-space(text())='Line']
+    Drag And Drop By Offset    data:testid:image-view-content   100    100
+    Switch Window    MAIN
+    Capture Element Screenshot    data:testid:spatial-profiler-0-plot    spatial_profile_before_${key}.png
+    Switch Window    NEW
+    Click Element    data:testid:image-view-content
+    Drag And Drop By Offset    data:testid:image-view-content   -100    100
+    Switch Window    MAIN
+    Capture Element Screenshot    data:testid:spatial-profiler-0-plot    spatial_profile_after_${key}.png
+
     # verify the screenshots
     PNG Images Should Be Different    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png
     PNG Images Should Be Different    histogram_before_${key}.png    histogram_after_${key}.png
+    PNG Images Should Be Different    spatial_profile_before_${key}.png    spatial_profile_after_${key}.png
 
-    Remove Files    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png    histogram_before_${key}.png    histogram_after_${key}.png  
+    Remove Files    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png    histogram_before_${key}.png    histogram_after_${key}.png    spatial_profile_before_${key}.png    spatial_profile_after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
