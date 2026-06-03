@@ -22,24 +22,25 @@ test_suites = {
     3103: "region.robot",                # 05:08
     3104: "catalog_widget.robot",        # 04:02
     3105: "image_fitting.robot",         # 03:43
-    3106: "matching.robot",              # 04:04
-    3107: "moment_generator.robot",      # 03:51
-    3108: "pv_generator.robot",          # 03:36
-    3109: "spectral_profiler.robot",     # 03:01
-    3110: "animator.robot",              # 02:19
-    3111: "annotation.robot",            # 02:05
-    3112: "check_file_info.robot",       # 01:36
-    3113: "spectral_line_query.robot",   # 01:22
-    3114: "channel_map_view.robot",      # 01:25
-    3115: "spatial_profiler.robot",      # 01:15
-    3116: "statistics_widget.robot",     # 01:14
-    3117: "image_viewer.robot",          # ??:??
-    3118: "file_browser.robot",          # ??:??
-    3119: "histogram_widget.robot",      # ??:??
-    3120: "cube_histogram.robot",        # 00:57
-    3121: "cursor_info.robot",           # 00:19
-    3122: "popout_image_viewer.robot",     # 00:18
-    3123: "WebGL_test.robot",            # 00:16
+    3106: "popout_image_viewer.robot",     # ??:??
+    3107: "matching.robot",              # 04:04
+    3108: "moment_generator.robot",      # 03:51
+    3109: "pv_generator.robot",          # 03:36
+    3110: "spectral_profiler.robot",     # 03:01
+    3111: "animator.robot",              # 02:19
+    3112: "annotation.robot",            # 02:05
+    3113: "check_file_info.robot",       # 01:36
+    3114: "spectral_line_query.robot",   # 01:22
+    3115: "channel_map_view.robot",      # 01:25
+    3116: "spatial_profiler.robot",      # 01:15
+    3117: "statistics_widget.robot",     # 01:14
+    3118: "image_viewer.robot",          # ??:??
+    3119: "file_browser.robot",          # ??:??
+    3120: "histogram_widget.robot",      # ??:??
+    3121: "cube_histogram.robot",        # 00:57
+    3122: "cursor_info.robot",           # 00:19
+    3123: "popout_image_viewer.robot",     # ??:??
+    3124: "WebGL_test.robot",            # 00:16
     }
 
 
