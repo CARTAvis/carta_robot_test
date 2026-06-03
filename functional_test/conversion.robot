@@ -255,15 +255,15 @@ Region Dialog WCS Conversion from FK5 J2000
     Should Be Equal As Strings    ${image_coord}    Image: (213.968 px, 197.628 px)
     # switch to IMAGE
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select
-    Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7]    
-    Element Should Be Disabled    //*[@id="numericInput-4"]
-    Element Should Be Disabled    //*[@id="numericInput-5"]
+    Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7] 
+    Element Should Be Disabled    //*[@id="numericInput-2"]
+    Element Should Be Disabled    //*[@id="numericInput-3"]
     ${image_coord} =    Get Text   //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[3]/div/span[3]    
     Should Be Equal As Strings    ${image_coord}    Image: (213.968 px, 197.628 px)
     # switch to IMAGE input options
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
-    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value
-    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-7"]    value    
+    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-4"]    value
+    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value    
     Should Be Equal As Strings    ${x_coord}    213.968085106383
     Should Be Equal As Strings    ${y_coord}    197.62765957446808
     [Teardown]    Kill carta_backend And Close Browser
@@ -332,14 +332,14 @@ Region Dialog WCS Conversion from Galactic
     # switch to IMAGE
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7]
-    Element Should Be Disabled    //*[@id="numericInput-4"]
-    Element Should Be Disabled    //*[@id="numericInput-5"]
+    Element Should Be Disabled    //*[@id="numericInput-2"]
+    Element Should Be Disabled    //*[@id="numericInput-3"]
     ${image_coord} =    Get Text   //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[3]/div/span[3]    
     Should Be Equal As Strings    ${image_coord}    Image: (1763.628 px, 1470.323 px)
     # switch to IMAGE input options
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
-    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value
-    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-7"]    value    
+    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-4"]    value
+    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value    
     Should Be Equal As Strings    ${x_coord}    1763.6276595744675
     Should Be Equal As Strings    ${y_coord}    1470.322695035461
     [Teardown]    Kill carta_backend And Close Browser
@@ -408,14 +408,14 @@ Region Dialog WCS Conversion from FK4 B1950
     # switch to IMAGE
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7]
-    Element Should Be Disabled    //*[@id="numericInput-4"]
-    Element Should Be Disabled    //*[@id="numericInput-5"]
+    Element Should Be Disabled    //*[@id="numericInput-2"]
+    Element Should Be Disabled    //*[@id="numericInput-3"]
     ${image_coord} =    Get Text   //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[3]/div/span[3]    
     Should Be Equal As Strings    ${image_coord}    Image: (2487.727 px, 2298.148 px)
     # switch to IMAGE input options
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
-    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value
-    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-7"]    value    
+    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-4"]    value
+    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value    
     Should Be Equal As Strings    ${x_coord}    2487.72695035461
     Should Be Equal As Strings    ${y_coord}    2298.147754137116
     [Teardown]    Kill carta_backend And Close Browser
@@ -485,14 +485,14 @@ Region Dialog WCS Conversion from ICRS
     # switch to IMAGE
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7]
-    Element Should Be Disabled    //*[@id="numericInput-4"]
-    Element Should Be Disabled    //*[@id="numericInput-5"]
+    Element Should Be Disabled    //*[@id="numericInput-2"]
+    Element Should Be Disabled    //*[@id="numericInput-3"]
     ${image_coord} =    Get Text   //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[3]/div/span[3]    
     Should Be Equal As Strings    ${image_coord}    Image: (316.663 px, 366.403 px)
     # switch to IMAGE input options
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[1]/label[1]
-    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value
-    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-7"]    value    
+    ${x_coord} =    Get Element Attribute    //*[@id="numericInput-4"]    value
+    ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value    
     Should Be Equal As Strings    ${x_coord}    316.6631205673759
     Should Be Equal As Strings    ${y_coord}    366.403073286052
     [Teardown]    Kill carta_backend And Close Browser
