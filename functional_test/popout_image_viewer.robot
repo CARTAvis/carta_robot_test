@@ -14,7 +14,7 @@ Popout And Restore Image Viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
     Set Window Size    800    800
-    Sleep    2
+    Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    popout_image_viewer_${key}.png
     Switch Window    MAIN
@@ -24,7 +24,7 @@ Popout And Restore Image Viewer
     # need to use JS to close the popout window so that the viewer can be restored to the main window
     Execute JavaScript	window.close()
     Switch Window    MAIN
-    Sleep    2
+    Sleep    1
     Capture Page Screenshot    main_browser_restored_${key}.png
     # verify screenshots
     PNG Pixel XY Should Match RGBA    popout_image_viewer_${key}.png    460,360,23,190,207,255
@@ -48,12 +48,12 @@ Popout Image Viewer - layout
     # enable popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
-    Sleep    2
+    Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    popout_image_viewer_layout_multipanel_view_${key}.png
     # switch to single panel view
     Click Element    data:testid:image-view-header-multipanel-view-switch
-    Sleep    2
+    Sleep    1
     Capture Page Screenshot    popout_image_viewer_layout_single_panel_view_${key}.png
     # enable channel map view
     Click Element    data:testid:image-view-header-channel-map-button
@@ -68,7 +68,7 @@ Popout Image Viewer - layout
     # switch back to multi-panel view
     Click Element    data:testid:image-view-header-multipanel-view-switch
     Click Element    data:testid:image-view-header-multipanel-view-switch
-    Sleep    2
+    Sleep    1
     Capture Page Screenshot    popout_image_viewer_layout_multipanel_view_2_${key}.png
     # zoom and pan in the popout viewer
     Click Element    id:image-panel-0-0
@@ -121,7 +121,7 @@ Popout Image Viewer - rendering modes
 
     # switch to the popout viewer and capture screenshots
     Switch Window    NEW
-    Sleep    2
+    Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    check_${key}.png
     # raster
@@ -157,7 +157,7 @@ Popout Image Viewer - multicolor blending
     Click Element    //*[contains(text(), "Multi-Color Blending")]
     # switch to the popout viewer and capture screenshots
     Switch Window    NEW
-    Sleep    2
+    Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    check_${key}.png
 
@@ -166,7 +166,7 @@ Popout Image Viewer - multicolor blending
     Click Element    //*[normalize-space(text())='Apply color set']
     Click Element    //*[normalize-space(text())='CMY']
     Switch Window    NEW
-    Sleep    2
+    Sleep    1
     Capture Page Screenshot    check2_${key}.png
     
     PNG Pixel XY Should Match RGBA    check_${key}.png    575,255,255,0,0,255
@@ -182,7 +182,7 @@ Popout Image Viewer - animator
     Click Element    data:testid:image-view-header-popout-button
     Load Initial Image    M17_SWex.fits
     Switch Window    NEW
-    Sleep    2
+    Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    initial_${key}.png
     Switch Window    MAIN
@@ -192,7 +192,7 @@ Popout Image Viewer - animator
     Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Switch Window    NEW
-    Sleep    2
+    Sleep    1
     Capture Page Screenshot    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
 
