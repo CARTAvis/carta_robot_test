@@ -1645,3 +1645,25 @@ Dynamic Region Dialog For Multiple Regions
 
     [Teardown]    Kill carta_backend And Close Browser
 
+Region Control Point Keyboard Interaction
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
+    Click Element    ${VIEWER_DIV}
+    # Select bottom-left control point
+    Click Element At Coordinates    ${VIEWER_DIV}    -17    14
+    # resize
+    Repeat Keyword    5    Press Keys    None    ARROW_LEFT
+    Repeat Keyword    5    Press Keys    None    ARROW_DOWN
+    # select rotation control point
+    Click Element At Coordinates    ${VIEWER_DIV}    -27    -30
+    # rotate
+    Repeat Keyword    10    Press Keys    None    ARROW_LEFT
+    Capture Element Screenshot    ${VIEWER_DIV}    check.png
+
+    # verify screenshot
+    PNG Pixel XY Should Match RGBA    check.png    343,205,0,124,187,255
+    PNG Pixel XY Should Match RGBA    check.png    320,306,255,255,255,255
+    
+    Remove Files    check.png
+    [Teardown]    Kill carta_backend And Close Browser
