@@ -68,7 +68,7 @@ Popout Image Viewer - layout
     # switch back to multi-panel view
     Click Element    data:testid:image-view-header-multipanel-view-switch
     Click Element    data:testid:image-view-header-multipanel-view-switch
-    Sleep    1
+    Sleep    2
     Capture Page Screenshot    popout_image_viewer_layout_multipanel_view_2_${key}.png
     # zoom and pan in the popout viewer
     Click Element    id:image-panel-0-0
