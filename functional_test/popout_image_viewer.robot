@@ -88,3 +88,50 @@ Popout Image Viewer - layout
     Remove Files    popout_image_viewer_layout_multipanel_view_${key}.png    popout_image_viewer_layout_single_panel_view_${key}.png    popout_image_viewer_layout_channel_map_view_${key}.png    popout_image_viewer_layout_multipanel_view_2_${key}.png    popout_image_viewer_layout_multipanel_view_2_zoom_pan_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
+
+Popout Image Viewer - rendering modes
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    # raster rendering mode
+    Load Initial Image   dice_one.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[contains(text(), "tab10")]
+    # contour rendering mode
+    Click Element    data:testid:contour-dialog-button
+    Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
+    Click Element    //*[contains(text(), "Styling")]
+    Input Text    data:testid:contour-thickness-input    5
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}
+    # vector rendering mode
+    Click Element    data:testid:vector-dialog-button
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    5
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+    # catalog rendering
+    Click Element    data:testid:online-data-query-dialog-button
+    Click Element    //a[contains(., "Query")]
+    Wait Until Page Does Not Contain    Online Data Query    timeout=30 
+    Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
+    Click Element    data:testid:catalog-size-button
+    Click Element    data:testid:catalog-settings-shape-dropdown
+    Click Element    data:testid:catalog-settings-shape-circle-filled
+
+    # switch to the popout viewer and capture screenshots
+    Switch Window    NEW
+    Sleep    2
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    check_${key}.png
+    # raster
+    PNG Pixel XY Should Match RGBA    check_${key}.png    386,208,23,190,207,255
+    # contour
+    PNG Pixel XY Should Match RGBA    check_${key}.png    418,210,35,133,81,255
+    # vector
+    PNG Pixel XY Should Match RGBA    check_${key}.png    370,210,188,189,34,255
+    # catalog
+    PNG Pixel XY Should Match RGBA    check_${key}.png    171,378,0,163,150,255
+
+    Remove Files    check_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
