@@ -1427,4 +1427,136 @@ Loading Regions on Active Reference Image
     [Teardown]    Kill carta_backend And Close Browser
 
 
-# add a test to have two image matched and load a region file when the 2nd image is active
+
+
+Manipulating Multiple Regions
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Append Image    HD163296_CO_2_1.mom1.fits
+    Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
+    # create two regions on the 2nd image
+    Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
+    Drag And Drop By Offset    ${VIEWER_10_CANVAS}    -50    -50
+    Click Element    ${LINE_REGION_SHORTCUT_BUTTON}
+    Drag And Drop By Offset    ${VIEWER_10_CANVAS}    -80    120
+    # multi-select the two regions
+    Click Element    //*[contains(text(), "Region List")]
+    Click Element    //*[contains(text(), "Region 1")]    SHIFT
+    # take a screenshot of the multi-selected regions
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_multi-selected_regions_${key}.png
+    # enable region config dialog
+    Double Click Element    ${VIEWER_10_CANVAS}
+    # Check the content in the region config dialog
+    Element Should Contain    data:testid:region-dialog    Editing 2 Regions (HD163296_CO_2_1.mom1.fits)
+    Element Should Contain    data:testid:region-dialog    Color
+    Element Should Contain    data:testid:region-dialog    Line width (px)
+    Element Should Contain    data:testid:region-dialog    Dash length (px)
+    # set different color, line width, and dash length for the two regions
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[3]/div/div[2]/div/div/div/div[1]/div/span/button
+    Clear Element Text    //*[@id="rc-editable-input-1"]
+    Input Text    //*[@id="rc-editable-input-1"]    00FF16    Clear=True
+    Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[3]/div/div[2]/div/div/div/div[1]/div/span/button     
+    Input Text    data:testid:region-dialog-line-width-input    4    
+    Input Text    //input[@placeholder="Dash length"]    4
+    Click Element    data:testid:region-dialog-header-close-button
+    # take a screenshot after changing the config
+    Capture Element Screenshot    ${VIEWER_DIV}    check_multi-selected_regions_config_changed_${key}.png
+    # enable region config dialog again
+    Double Click Element    ${VIEWER_10_CANVAS}
+    # lock region
+    Click Element    data:testid:region-dialog-lock-button
+    Click Element    data:testid:region-dialog-header-close-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_multi-selected_regions_locked_${key}.png
+    # unlock region
+    Click Element    //*[contains(text(), "Region 2")]
+    Click Element    //*[contains(text(), "Region 1")]    SHIFT
+    Double Click Element    //*[contains(text(), "Region 1")]
+    Click Element    data:testid:region-dialog-lock-button
+    # semi-hide region
+    Click Element    data:testid:region-dialog-visibility-button
+    Click Element    data:testid:region-dialog-header-close-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_multi-selected_regions_semi_hidden_${key}.png
+    # unhide region
+    Double Click Element    ${VIEWER_10_CANVAS}
+    Repeat Keyword    2    Click Element    data:testid:region-dialog-visibility-button
+    # export region 
+    Click Element    data:testid:region-dialog-export-button
+    Element Should Contain    data:testid:file-browser-dialog    Selected 2 / 2 elements.
+    Click Element    data:testid:file-browser-dialog-header-close-button
+    Click Element    data:testid:region-dialog-header-close-button
+    # copy and paste region
+    Click Element    ${VIEWER_10_CANVAS}
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Press Keys    None    COMMAND+c
+    Press Keys    None    COMMAND+v
+    ELSE
+    Press Keys    None    CONTROL+c
+    Press Keys    None    CONTROL+v
+    END
+    # take a screenshot after copying and pasting the regions
+    Capture Element Screenshot    ${VIEWER_DIV}    check_multi-selected_regions_copied_pasted_${key}.png
+
+    # verify props of the copied and moved regions
+    Verify Region List Table Cell Content    4    5    Region 3
+    Verify Region List Table Cell Content    4    6    Rectangle
+    Verify Region List Table Cell Content    4    7    17:56:21.2134006686
+    Verify Region List Table Cell Content    4    7    -21:57:23.3813974917
+    Verify Region List Table Cell Content    4    8    0.0
+    
+    Verify Region List Table Cell Content    5    5    Region 4
+    Verify Region List Table Cell Content    5    6    Line
+    Verify Region List Table Cell Content    5    7    17:56:21.3602197126
+    Verify Region List Table Cell Content    5    7    -21:57:21.6792695287
+    Verify Region List Table Cell Content    5    8    326.3
+
+    # move region by keyboard
+    Click Element    ${VIEWER_10_CANVAS}    
+    Repeat Keyword    5    Press Keys    None    ARROW_RIGHT
+    Mouse Out    ${VIEWER_DIV}
+    # take a screenshot after moving the regions
+    Capture Element Screenshot    ${VIEWER_DIV}    check_multi-selected_region_moved_${key}.png
+    # verify props of the moved region
+    Verify Region List Table Cell Content    3    5    Region 2
+    Verify Region List Table Cell Content    3    6    Line
+    Verify Region List Table Cell Content    3    7    17:56:21.1032865442
+    Verify Region List Table Cell Content    3    7    -21:57:22.3601157729
+    Verify Region List Table Cell Content    3    8    326.3
+        
+    # delete region
+    Press Keys    None    DELETE
+    # take a screenshot after delete a region
+    Capture Element Screenshot    ${VIEWER_DIV}    check_delete_a_region_${key}.png
+    # verify the regions are deleted
+    Page Should Contain    Region 1
+    Page Should Not Contain    Region 2
+    Page Should Contain    Region 3
+    Page Should Contain    Region 4
+
+    # verify screenshots
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    check_multi-selected_regions_${key}.png    138,267,255,255,255,255
+    PNG Pixel XY Should Match RGBA    check_multi-selected_regions_${key}.png    109,337,181,181,181,255
+    PNG Two Pixels Should Have Matched RGBA    check_multi-selected_regions_${key}.png    138,267,517,266
+    PNG Two Pixels Should Have Matched RGBA    check_multi-selected_regions_${key}.png    109,337,488,337
+
+    PNG Images Should Be Different    check_multi-selected_regions_${key}.png    check_multi-selected_regions_config_changed_${key}.png
+    PNG Images Should Be Different    check_multi-selected_regions_config_changed_${key}.png    check_multi-selected_regions_locked_${key}.png
+    PNG Images Should Be Different    check_multi-selected_regions_config_changed_${key}.png    check_multi-selected_regions_semi_hidden_${key}.png
+    
+    PNG Pixel XY Should Match RGBA    check_multi-selected_regions_copied_pasted_${key}.png    537,286,181,181,181,255
+    PNG Pixel XY Should Match RGBA    check_multi-selected_regions_copied_pasted_${key}.png    467,323,255,255,255,255
+
+    PNG Pixel XY Should Match RGBA    check_multi-selected_region_moved_${key}.png    537,336,255,255,255,255
+
+    PNG Pixel XY Should Match RGBA    check_delete_a_region_${key}.png    537,336,19,124,189,255
+    PNG Pixel XY Should Match RGBA    check_delete_a_region_${key}.png    537,286,255,255,255,255
+
+    Remove Files    check_multi-selected_regions_${key}.png    check_multi-selected_regions_config_changed_${key}.png    check_multi-selected_regions_locked_${key}.png    check_multi-selected_regions_semi_hidden_${key}.png    check_multi-selected_regions_copied_pasted_${key}.png    check_multi-selected_region_moved_${key}.png_moved_${key}.png    check_delete_a_region_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+
+
