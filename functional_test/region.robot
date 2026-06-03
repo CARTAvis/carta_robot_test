@@ -1556,7 +1556,92 @@ Manipulating Multiple Regions
     Remove Files    check_multi-selected_regions_${key}.png    check_multi-selected_regions_config_changed_${key}.png    check_multi-selected_regions_locked_${key}.png    check_multi-selected_regions_semi_hidden_${key}.png    check_multi-selected_regions_copied_pasted_${key}.png    check_multi-selected_region_moved_${key}.png_moved_${key}.png    check_delete_a_region_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
+Dynamic Region Dialog For Multiple Regions
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    # create annotations
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-vector
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-vector
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-text
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-text
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown        
+    Click Element    data:testid:annotation-shortcut-dropdown-compass
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-compass
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown        
+    Click Element    data:testid:annotation-shortcut-dropdown-ruler
+    Click Element    ${VIEWER_DIV}
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-ruler
+    Click Element    ${VIEWER_DIV}        
 
+    # activate region list widget
+    Click Element    //*[contains(text(), "Region List")]
 
+    # Check vector common parameters
+    Click Element    //*[contains(text(), "Annotation 1")]
+    Click Element    //*[contains(text(), "Annotation 2")]    modifier=SHIFT
+    Double Click Element    //*[contains(text(), "Annotation 2")]
+    # relocate the region dialog
+    Drag And Drop By Offset    id:title-bp-dialog-12    -300    0
 
+    Element Should Contain    data:testid:region-dialog    Color
+    Element Should Contain    data:testid:region-dialog    Line width (px)
+    Element Should Contain    data:testid:region-dialog    Dash length (px)
+    Element Should Contain    data:testid:region-dialog    Arrowhead length (px)
+    Element Should Contain    data:testid:region-dialog    Arrowhead width (px)
+
+    # Check text common parameters
+    Click Element    //*[contains(text(), "Annotation 3")]
+    Click Element    //*[contains(text(), "Annotation 4")]    modifier=SHIFT
+    Element Should Contain    data:testid:region-dialog    Color
+    Element Should Contain    data:testid:region-dialog    Font size (px)
+    Element Should Contain    data:testid:region-dialog    Font
+    Element Should Contain    data:testid:region-dialog    Font style
+    Element Should Contain    data:testid:region-dialog    Text alignment
+
+    # Check compass common parameters
+    Click Element    //*[contains(text(), "Annotation 5")]
+    Click Element    //*[contains(text(), "Annotation 6")]    modifier=SHIFT
+    Element Should Contain    data:testid:region-dialog    North label offset
+    Element Should Contain    data:testid:region-dialog    East label offset
+    Element Should Contain    data:testid:region-dialog    Show arrowhead
+
+    # Check ruler common parameters
+    Click Element    //*[contains(text(), "Annotation 7")]
+    Click Element    //*[contains(text(), "Annotation 8")]    modifier=SHIFT
+    Element Should Contain    data:testid:region-dialog    Number of decimals
+    Element Should Contain    data:testid:region-dialog    Show auxiliary lines
+    Element Should Contain    data:testid:region-dialog    Show auxiliary labels
+
+    # check vector and text common parameters
+    Click Element    //*[contains(text(), "Annotation 2")]
+    Click Element    //*[contains(text(), "Annotation 3")]    modifier=SHIFT
+    Element Should Contain    data:testid:region-dialog    Color
+    Element Should Not Contain    data:testid:region-dialog    Arrowhead length (px)
+
+    # check text and compass common parameters
+    Click Element    //*[contains(text(), "Annotation 4")]
+    Click Element    //*[contains(text(), "Annotation 5")]    modifier=SHIFT
+    Element Should Contain    data:testid:region-dialog    Color
+    Element Should Contain    data:testid:region-dialog    Font size (px)
+    Element Should Not Contain    data:testid:region-dialog    North label offset
+
+    # check compass and ruler common parameters
+    Click Element    //*[contains(text(), "Annotation 6")]
+    Click Element    //*[contains(text(), "Annotation 7")]    modifier=SHIFT
+    Element Should Contain    data:testid:region-dialog    Font style
+    Element Should Not Contain    data:testid:region-dialog    Number of decimals
+
+    [Teardown]    Kill carta_backend And Close Browser
 
