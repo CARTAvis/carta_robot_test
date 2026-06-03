@@ -22,9 +22,9 @@ test_suites = {
     3103: "region.robot",                # 05:08
     3104: "catalog_widget.robot",        # 04:02
     3105: "image_fitting.robot",         # 03:43
-    3106: "popout_image_viewer.robot",     # ??:??
-    3107: "matching.robot",              # 04:04
-    3108: "moment_generator.robot",      # 03:51
+    3106: "matching.robot",              # 04:04
+    3107: "moment_generator.robot",      # 03:51
+    3108: "popout_image_viewer.robot",     # ??:??
     3109: "pv_generator.robot",          # 03:36
     3110: "spectral_profiler.robot",     # 03:01
     3111: "animator.robot",              # 02:19
