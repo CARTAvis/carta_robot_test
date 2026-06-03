@@ -174,3 +174,29 @@ Popout Image Viewer - multicolor blending
 
     Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Popout Image Viewer - animator
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    Load Initial Image    M17_SWex.fits
+    Switch Window    NEW
+    Sleep    2
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    initial_${key}.png
+    Switch Window    MAIN
+    Click Element    //*[contains(text(), "Animator")]
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=10
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Switch Window    NEW
+    Sleep    2
+    Capture Page Screenshot    final_${key}.png
+    PNG Images Should Be Different    initial_${key}.png    final_${key}.png
+
+    Remove Files    initial_${key}.png    final_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
