@@ -135,3 +135,42 @@ Popout Image Viewer - rendering modes
 
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Popout Image Viewer - multicolor blending
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    Load Initial Image    disk_0.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Red'] 
+    Append Image    disk_1.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Green'] 
+    Append Image    disk_2.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='Blue'] 
+    Click Element    data:testid:image-list-0-matching-xy
+    # enable multi-color blending
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Multi-Color Blending")]
+    # switch to the popout viewer and capture screenshots
+    Switch Window    NEW
+    Sleep    2
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    check_${key}.png
+
+    # change color theme
+    Switch Window    MAIN
+    Click Element    //*[normalize-space(text())='Apply color set']
+    Click Element    //*[normalize-space(text())='CMY']
+    Switch Window    NEW
+    Sleep    2
+    Capture Page Screenshot    check2_${key}.png
+    
+    PNG Pixel XY Should Match RGBA    check_${key}.png    575,255,255,0,0,255
+    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
+
+    Remove Files    check_${key}.png    check2_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
