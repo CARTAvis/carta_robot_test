@@ -42,6 +42,7 @@ test_suites = {
     3123: "WebGL_test.robot",            # 00:16
     }
 
+RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
 
 def test_runner(port):
     test_suite_name = test_suites[port][:-6]
@@ -70,6 +71,21 @@ if __name__ == '__main__':
         if 'fail="0"' not in suite_summary:
             rerun_suites.append(suite_summary.split()[2])
 
+    # counting failed test percentage
+    total_tests = 0
+    total_failed = 0
+    for suite_summary in summary:
+        tmp = suite_summary.split()
+        tmp_failed = int(tmp[0].split('"')[1])
+        tmp_passed = int(tmp[1].split('"')[1])
+        total_tests = total_tests + tmp_failed + tmp_passed
+        total_failed = total_failed + tmp_failed
+
+    test_failed_percentage = total_failed / total_tests * 100.0
+    print(f"\nTotal tests: {total_tests}, Failed tests: {total_failed}, Failed percentage: {test_failed_percentage:.2f}%")
+
+
+
     # combine test reports
     output_list = ""
     for value in test_suites.values():
@@ -80,7 +96,7 @@ if __name__ == '__main__':
     print(f"\nElapsed time for parallel run: {(t_middle - t_start) / 60.0} mins...")
 
     # rerun failed tests
-    if len(rerun_suites) != 0:
+    if len(rerun_suites) != 0 and test_failed_percentage < RERUN_THRESHOLD:  # only rerun when there are failed tests and the failed percentage is less than 5% to save time
         output_list = ""
         for test_suite_name in rerun_suites:
             print("\nRerun failed tests in %s..."%test_suite_name)
@@ -88,6 +104,8 @@ if __name__ == '__main__':
             output_list = output_list + "output_parallel_run_%s_rerun.xml "%test_suite_name
         os.system("rebot --outputdir . --output output_rerun.xml -l log_rerun.html -r report_rerun.html %s"%output_list)
         os.system("open report_rerun.html")
+    elif test_failed_percentage >= RERUN_THRESHOLD:
+        print(f"\nFailed percentage is higher than {RERUN_THRESHOLD}%, skip rerun to save time.")
 
     t_end = time.time()
     print(f"\nTotal elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")
