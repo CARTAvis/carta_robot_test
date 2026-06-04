@@ -273,3 +273,73 @@ Popout Image Viewer - region analytics
     Remove Files    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png    histogram_before_${key}.png    histogram_after_${key}.png    spatial_profile_before_${key}.png    spatial_profile_after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
+
+
+Popout Image Viewer - interactive PV
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    Load Initial Image    S255_CH3CN_subcube.fits
+    Click Element    data:testid:line-region-shortcut-button
+    Switch Window    NEW
+    Drag And Drop By Offset    data:testid:image-view-content   100    -100
+
+    # enable interactive PV
+    Switch Window    MAIN
+    Click Element    id:PVGeneratorButton
+    Click Element    ${PV_GENERATOR_PV_CUT_REGION_DROPDOWN}
+    Click Element    //*[@data-testid="pv-generator-pv-cut-region-dropdown"]/option[contains(text(), "Region 1")]
+    Click Element    //a[contains(., "Start preview")]
+    Sleep    1
+    # capture a screenshot of the interactive PV image
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    before_${key}.png
+
+    # update PV cut
+    Switch Window    NEW
+    Drag And Drop By Offset    data:testid:image-view-content   50    50
+
+    # switch back to the main window and check if the interactive PV is updated
+    Switch Window    MAIN
+    Sleep    1
+    Click Element    data:testid:pv-generator-0-pv-preview-0-content
+    Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    after_${key}.png
+
+    # verify the screenshots
+    PNG Images Should Be Different    before_${key}.png    after_${key}.png
+    
+    Remove Files    before_${key}.png    after_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Popout Image Viewer - image fitting
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    Load Initial Image    dice_one.fits
+    # capture a screenshot of the original image
+    Switch Window    NEW
+    Sleep    1
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    original_${key}.png
+
+
+    # enable image fitting dialog and trigger fitting
+    Switch Window    MAIN
+    Click Element    data:testid:fitting-dialog-button
+    Click Element    data:testid:image-fitting-fit-button
+    Sleep    1
+    Element Should Contain    data:testid:image-fitting-result-tab    Component #1:
+
+    # switch to the popout viewer and capture a screenshot of the fitted image
+    Switch Window    NEW
+    Sleep    1
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    fitted_${key}.png
+
+    # verify the screenshots
+    PNG Images Should Be Different    original_${key}.png    fitted_${key}.png
+
+    Remove Files    original_${key}.png    fitted_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
