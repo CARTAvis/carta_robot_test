@@ -310,3 +310,36 @@ Popout Image Viewer - interactive PV
     
     Remove Files    before_${key}.png    after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Popout Image Viewer - image fitting
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # enable popout image viewer
+    Click Element    data:testid:image-view-header-popout-button
+    Load Initial Image    dice_one.fits
+    # capture a screenshot of the original image
+    Switch Window    NEW
+    Sleep    1
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    original_${key}.png
+
+
+    # enable image fitting dialog and trigger fitting
+    Switch Window    MAIN
+    Click Element    data:testid:fitting-dialog-button
+    Click Element    data:testid:image-fitting-fit-button
+    Sleep    1
+    Element Should Contain    data:testid:image-fitting-result-tab    Component #1:
+
+    # switch to the popout viewer and capture a screenshot of the fitted image
+    Switch Window    NEW
+    Sleep    1
+    ${key}=    Generate Random String    8
+    Capture Page Screenshot    fitted_${key}.png
+
+    # verify the screenshots
+    PNG Images Should Be Different    original_${key}.png    fitted_${key}.png
+
+    Remove Files    original_${key}.png    fitted_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
