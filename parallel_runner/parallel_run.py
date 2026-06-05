@@ -24,23 +24,25 @@ test_suites = {
     3105: "image_fitting.robot",         # 03:43
     3106: "matching.robot",              # 04:04
     3107: "moment_generator.robot",      # 03:51
-    3108: "pv_generator.robot",          # 03:36
-    3109: "spectral_profiler.robot",     # 03:01
-    3110: "animator.robot",              # 02:19
-    3111: "annotation.robot",            # 02:05
-    3112: "check_file_info.robot",       # 01:36
-    3113: "spectral_line_query.robot",   # 01:22
-    3114: "channel_map_view.robot",      # 01:25
-    3115: "spatial_profiler.robot",      # 01:15
-    3116: "statistics_widget.robot",     # 01:14
-    3117: "image_viewer.robot",          # ??:??
-    3118: "file_browser.robot",          # ??:??
-    3119: "histogram_widget.robot",      # ??:??
-    3120: "cube_histogram.robot",        # 00:57
-    3121: "cursor_info.robot",           # 00:19
-    3122: "WebGL_test.robot",            # 00:16
+    3108: "popout_image_viewer.robot",     # ??:??
+    3109: "pv_generator.robot",          # 03:36
+    3110: "spectral_profiler.robot",     # 03:01
+    3111: "animator.robot",              # 02:19
+    3112: "annotation.robot",            # 02:05
+    3113: "check_file_info.robot",       # 01:36
+    3114: "spectral_line_query.robot",   # 01:22
+    3115: "channel_map_view.robot",      # 01:25
+    3116: "spatial_profiler.robot",      # 01:15
+    3117: "statistics_widget.robot",     # 01:14
+    3118: "image_viewer.robot",          # ??:??
+    3119: "file_browser.robot",          # ??:??
+    3120: "histogram_widget.robot",      # ??:??
+    3121: "cube_histogram.robot",        # 00:57
+    3122: "cursor_info.robot",           # 00:19
+    3123: "WebGL_test.robot",            # 00:16
     }
 
+RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
 
 def test_runner(port):
     test_suite_name = test_suites[port][:-6]
@@ -69,6 +71,21 @@ if __name__ == '__main__':
         if 'fail="0"' not in suite_summary:
             rerun_suites.append(suite_summary.split()[2])
 
+    # counting failed test percentage
+    total_tests = 0
+    total_failed = 0
+    for suite_summary in summary:
+        tmp = suite_summary.split()
+        tmp_failed = int(tmp[0].split('"')[1])
+        tmp_passed = int(tmp[1].split('"')[1])
+        total_tests = total_tests + tmp_failed + tmp_passed
+        total_failed = total_failed + tmp_failed
+
+    test_failed_percentage = total_failed / total_tests * 100.0
+    print(f"\nTotal tests: {total_tests}, Failed tests: {total_failed}, Failed percentage: {test_failed_percentage:.2f}%")
+
+
+
     # combine test reports
     output_list = ""
     for value in test_suites.values():
@@ -79,7 +96,7 @@ if __name__ == '__main__':
     print(f"\nElapsed time for parallel run: {(t_middle - t_start) / 60.0} mins...")
 
     # rerun failed tests
-    if len(rerun_suites) != 0:
+    if len(rerun_suites) != 0 and test_failed_percentage < RERUN_THRESHOLD:  # only rerun when there are failed tests and the failed percentage is less than 5% to save time
         output_list = ""
         for test_suite_name in rerun_suites:
             print("\nRerun failed tests in %s..."%test_suite_name)
@@ -87,6 +104,8 @@ if __name__ == '__main__':
             output_list = output_list + "output_parallel_run_%s_rerun.xml "%test_suite_name
         os.system("rebot --outputdir . --output output_rerun.xml -l log_rerun.html -r report_rerun.html %s"%output_list)
         os.system("open report_rerun.html")
+    elif test_failed_percentage >= RERUN_THRESHOLD:
+        print(f"\nFailed percentage is higher than {RERUN_THRESHOLD}%, skip rerun to save time.")
 
     t_end = time.time()
     print(f"\nTotal elapsed time: {(t_end - t_start) / 60.0} mins. Check report.html (and report_rerun.html) to see the test results.")

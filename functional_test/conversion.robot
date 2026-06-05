@@ -255,7 +255,7 @@ Region Dialog WCS Conversion from FK5 J2000
     Should Be Equal As Strings    ${image_coord}    Image: (213.968 px, 197.628 px)
     # switch to IMAGE
     Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select
-    Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7]    
+    Click Element    //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[2]/div/div/div[2]/select/option[7] 
     Element Should Be Disabled    //*[@id="numericInput-2"]
     Element Should Be Disabled    //*[@id="numericInput-3"]
     ${image_coord} =    Get Text   //*[@id="bp6-tab-panel_regionDialogTabs_0"]/div/div[3]/div/span[3]    
