@@ -315,7 +315,7 @@ Setup carta_backend And Open Browser To CARTA
     Run Keyword If    'CARTA Usage Data' in '''${PAGE_SOURCE}'''    Click Element    data:testid:telemetry-opt-out-button
     # reset viewer to multi-panel mode
     ${VIEWER_MODE}=    Get Element Attribute    ${MULTIPANEL_VIEW_SWITCH}    title
-    IF    '${VIEWER_MODE}' != 'switch to single panel'
+    IF    '${VIEWER_MODE}' != 'Switch to single panel'
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
     
