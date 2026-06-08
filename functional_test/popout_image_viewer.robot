@@ -127,6 +127,7 @@ Popout Image Viewer - rendering modes
     # enable popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
+    ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
     Set Window Size    800    800
     ELSE
