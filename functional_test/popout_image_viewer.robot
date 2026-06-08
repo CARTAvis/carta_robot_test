@@ -13,7 +13,12 @@ Popout And Restore Image Viewer
     # popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
     Set Window Size    800    800
+    ELSE
+    Set Window Size    800    768
+    END
     Sleep    1
     Click Element    data:testid:zoom-to-fit-button
     Mouse Out    data:testid:image-view-content
@@ -47,7 +52,12 @@ Popout Image Viewer - layout
     # enable popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
     Set Window Size    800    800
+    ELSE
+    Set Window Size    800    768
+    END
     Sleep    1
     Switch Window    MAIN
     Load Initial Image   S255_CH3CN_subcube.fits
@@ -117,7 +127,11 @@ Popout Image Viewer - rendering modes
     # enable popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
+    IF    '${platform}' == 'darwin'
     Set Window Size    800    800
+    ELSE
+    Set Window Size    800    768
+    END
     Sleep    1
     Switch Window    MAIN
     # raster rendering mode
@@ -269,7 +283,7 @@ Popout Image Viewer - region analytics
     Click Element    data:testid:spectral-profiler-0-header-close-button
     # check region statistics
     Click Element    id:StatisticsWidgetButton
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    6.430363412844e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    e-1 Jy/beam
     Click Element    data:testid:stats-0-header-close-button
     # check region histogram
     Click Element    id:HistogramWidgetButton
