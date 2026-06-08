@@ -1024,8 +1024,8 @@ Polar Offset Coordinate Grid Rendering
     PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    474,207,33,93,176,255
     PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    467,156,33,93,176,255
     PNG Pixel XY Should Match RGBA    grid_polar_offset_wcs_${key}.png    438,122,33,93,176,255
-    OCR Test    grid_polar_offset_wcs_${key}.png    300 445 456 468 "Offset colatitude (deg)"
-    OCR Test    grid_polar_offset_wcs_${key}.png    1 142 24 290 "Offset longitude (deg)" --rotation 90
+    OCR Test    grid_polar_offset_wcs_${key}.png    300 445 465 468 "Offset colatitude (deg)"
+    OCR Test    grid_polar_offset_wcs_${key}.png    1 142 24 300 "Offset longitude (deg)" --rotation 90
 
     PNG Images Should Be Identical    grid_polar_offset_wcs_${key}.png    grid_polar_offset_fk5_${key}.png
     PNG Images Should Be Different    grid_polar_offset_wcs_${key}.png    grid_polar_offset_fk4_${key}.png
