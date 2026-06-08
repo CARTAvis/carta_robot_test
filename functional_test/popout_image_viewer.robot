@@ -15,6 +15,9 @@ Popout And Restore Image Viewer
     Switch Window    NEW
     Set Window Size    800    800
     Sleep    1
+    Click Element    data:testid:zoom-to-fit-button
+    Mouse Out    data:testid:image-view-content
+    Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    popout_image_viewer_${key}.png
     Switch Window    MAIN
@@ -25,11 +28,14 @@ Popout And Restore Image Viewer
     Execute JavaScript	window.close()
     Switch Window    MAIN
     Sleep    1
+    Click Element    data:testid:zoom-to-fit-button
+    Mouse Out    data:testid:image-view-content
+    Sleep    1
     Capture Page Screenshot    main_browser_restored_${key}.png
     # verify screenshots
-    PNG Pixel XY Should Match RGBA    popout_image_viewer_${key}.png    460,360,23,190,207,255
+    PNG Pixel XY Should Match RGBA    popout_image_viewer_${key}.png    488,370,23,190,207,255
     PNG Pixel XY Should Match RGBA    main_browser_${key}.png    720,340,19,124,189,255
-    PNG Pixel XY Should Match RGBA    main_browser_restored_${key}.png    446,315,23,190,207,255
+    PNG Pixel XY Should Match RGBA    main_browser_restored_${key}.png    446,313,23,190,207,255
     PNG Images Should Be Different    main_browser_${key}.png    main_browser_restored_${key}.png
     
     Remove Files    popout_image_viewer_${key}.png    main_browser_${key}.png    main_browser_restored_${key}.png
