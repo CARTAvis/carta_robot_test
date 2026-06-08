@@ -75,11 +75,11 @@ Spectral Profile Visualization From Multiple Regions
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,90,585,78
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,110,553,95
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    389,141,615,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,142,615,152
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,160,520,97
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,90,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,110,673,32
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    389,141,673,32
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    390,142,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    357,160,673,32
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
