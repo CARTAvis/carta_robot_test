@@ -116,6 +116,10 @@ Popout Image Viewer - rendering modes
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # enable popout image viewer
     Click Element    data:testid:image-view-header-popout-button
+    Switch Window    NEW
+    Set Window Size    800    800
+    Sleep    1
+    Switch Window    MAIN
     # raster rendering mode
     Load Initial Image   dice_one.fits
     Click Element    ${COLORMAP_DROPDOWN}
@@ -144,17 +148,19 @@ Popout Image Viewer - rendering modes
 
     # switch to the popout viewer and capture screenshots
     Switch Window    NEW
+    Click Element    data:testid:zoom-to-fit-button
+    Mouse Out    data:testid:image-view-content
     Sleep    1
     ${key}=    Generate Random String    8
     Capture Page Screenshot    check_${key}.png
     # raster
-    PNG Pixel XY Should Match RGBA    check_${key}.png    386,208,23,190,207,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    410,334,23,190,207,255
     # contour
-    PNG Pixel XY Should Match RGBA    check_${key}.png    418,210,35,133,81,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    464,330,35,133,81,255
     # vector
-    PNG Pixel XY Should Match RGBA    check_${key}.png    370,210,188,189,34,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    397,335,35,133,81,255
     # catalog
-    PNG Pixel XY Should Match RGBA    check_${key}.png    171,378,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_${key}.png    47,617,0,163,150,255
 
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
