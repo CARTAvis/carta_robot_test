@@ -16,30 +16,30 @@ custom_robot_flags = tmp[1]
 
 # having longer runs run first
 test_suites = {
-    3100: "rendering.robot",             # 05:40
-    3101: "load_image.robot",            # 05:14
-    3102: "conversion.robot",            # ??:??
-    3103: "region.robot",                # 05:08
-    3104: "catalog_widget.robot",        # 04:02
-    3105: "image_fitting.robot",         # 03:43
-    3106: "matching.robot",              # 04:04
-    3107: "moment_generator.robot",      # 03:51
-    3108: "popout_image_viewer.robot",     # ??:??
-    3109: "pv_generator.robot",          # 03:36
-    3110: "spectral_profiler.robot",     # 03:01
-    3111: "animator.robot",              # 02:19
-    3112: "annotation.robot",            # 02:05
-    3113: "check_file_info.robot",       # 01:36
-    3114: "spectral_line_query.robot",   # 01:22
-    3115: "channel_map_view.robot",      # 01:25
-    3116: "spatial_profiler.robot",      # 01:15
-    3117: "statistics_widget.robot",     # 01:14
-    3118: "image_viewer.robot",          # ??:??
-    3119: "file_browser.robot",          # ??:??
-    3120: "histogram_widget.robot",      # ??:??
-    3121: "cube_histogram.robot",        # 00:57
-    3122: "cursor_info.robot",           # 00:19
-    3123: "WebGL_test.robot",            # 00:16
+    3200: "rendering.robot",             # 05:40
+    3201: "load_image.robot",            # 05:14
+    3202: "conversion.robot",            # ??:??
+    3203: "region.robot",                # 05:08
+    3204: "catalog_widget.robot",        # 04:02
+    3205: "image_fitting.robot",         # 03:43
+    3206: "matching.robot",              # 04:04
+    3207: "moment_generator.robot",      # 03:51
+    3208: "popout_image_viewer.robot",   # ??:??
+    3209: "pv_generator.robot",          # 03:36
+    3210: "spectral_profiler.robot",     # 03:01
+    3211: "animator.robot",              # 02:19
+    3212: "annotation.robot",            # 02:05
+    3213: "check_file_info.robot",       # 01:36
+    3214: "spectral_line_query.robot",   # 01:22
+    3215: "channel_map_view.robot",      # 01:25
+    3216: "spatial_profiler.robot",      # 01:15
+    3217: "statistics_widget.robot",     # 01:14
+    3218: "image_viewer.robot",          # ??:??
+    3219: "file_browser.robot",          # ??:??
+    3220: "histogram_widget.robot",      # ??:??
+    3221: "cube_histogram.robot",        # 00:57
+    3222: "cursor_info.robot",           # 00:19
+    3223: "WebGL_test.robot",            # 00:16
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
@@ -62,7 +62,7 @@ if __name__ == '__main__':
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        summary = p.map(test_runner, range(3100, 3100+len(test_suites), 1))
+        summary = p.map(test_runner, range(3200, 3200+len(test_suites), 1))
     
     # show summary in terminal and collect failed suites to rerun
     rerun_suites = []
