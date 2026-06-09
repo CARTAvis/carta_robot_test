@@ -534,6 +534,7 @@ OCR Test
 Clear Input Field
     [Arguments]    ${INPUT_FIELD}
     Set Focus To Element    ${INPUT_FIELD}
-    Set Selenium Speed    0.001
-    Repeat Keyword    30    Press Keys    ${INPUT_FIELD}    BACKSPACE
-    Set Selenium Speed    ${DELAY}
+    FOR    ${i}    IN RANGE    6
+        Double Click Element    ${INPUT_FIELD}    
+        Press Keys    None    DELETE
+    END
