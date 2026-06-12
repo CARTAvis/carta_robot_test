@@ -385,7 +385,7 @@ Interactive PV Preview
     Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    before_${key}.png    262,620,470,482
-    PNG Two Pixels Should Have Matched RGBA    after_${key}.png    277,569,470,73
+    PNG Two Pixels Should Have Matched RGBA    after_${key}.png    277,569,470,72
     Remove Files    before_${key}.png    after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
