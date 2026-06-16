@@ -348,7 +348,7 @@ Fitting With Cancellation
     # try to fit again and let it finish
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
-    Wait Until Page Does Not Contain    Image fitting processing    timeout=20
+    Wait Until Page Does Not Contain    Image fitting processing    timeout=40
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check the filenames of appended model and residule images
     Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_1_image

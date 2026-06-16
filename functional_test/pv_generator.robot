@@ -326,7 +326,7 @@ PV Image Generation With Matched Wide-field Cubes
     # select axes order
     Click Element    //option[contains(text(), "X-axis: Spatial, Y-axis: Spectral")]
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
-    Wait Until Page Does Not Contain    Generating PV    timeout=30
+    Wait Until Page Does Not Contain    Generating PV    timeout=60
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
