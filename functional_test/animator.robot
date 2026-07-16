@@ -324,6 +324,8 @@ Polarization Slider And Computed Components
 
 Animation Playback With Image Set
     [Setup]    Setup carta_backend And Open Browser To CARTA
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
     Input Text    ${FILE_FILTER}    m16_f
     Wait Until Element Contains    ${FILE_LIST}   m16_f0090w.fits
     Click Element    //*[contains(text(), "m16_f0090w.fits")]
