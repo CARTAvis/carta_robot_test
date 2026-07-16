@@ -363,7 +363,7 @@ Animation Playback With Image Set
     
     # trigger playback forward
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    1.5
+    Sleep    1.3
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    7
 
