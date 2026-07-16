@@ -253,3 +253,75 @@ Polarization Slider And Computed Components
 
     Remove Files    check_Stokes_I_${key}.png    check_Stokes_Q_${key}.png    check_Stokes_U_${key}.png    check_Stokes_V_${key}.png    check_Ptotal_${key}.png    check_Plinear_${key}.png    check_PFtotal_${key}.png    check_PFlinear_${key}.png    check_Pangle_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Animation Playback With Image Set
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    m16_f
+    Wait Until Element Contains    ${FILE_LIST}   m16_f0090w.fits
+    Click Element    //*[contains(text(), "m16_f0090w.fits")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[contains(text(), "m16_f0187n.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "m16_f0200w.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "m16_f0335m.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "m16_f0444w.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "m16_f0770w.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "m16_f1130w.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "m16_f1500w.fits")]    modifier=COMMAND
+    ELSE
+    Click Element    //*[contains(text(), "m16_f0187n.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "m16_f0200w.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "m16_f0335m.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "m16_f0444w.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "m16_f0770w.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "m16_f1130w.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "m16_f1500w.fits")]    modifier=CTRL
+    END
+    # click the "load as hypercube" button
+    Click Element    //a[contains(., "Load selected")]
+
+    
+    Click Element    //*[contains(text(), "Animator")]
+    # reduce target fps from 5 to 2
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    # set step from 1 to 2
+    Click Element    //*[contains(text(), "Frame rate")]
+    Click Element    //*[contains(text(), "Step")]
+    Click Element    ${ANIMATOR_SPINBOX_UP}
+    
+    # trigger playback forward
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1.5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    7
+
+    # trigger playback backward
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Play backwards")]
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    1
+
+    # trigger playback bouncing
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Bouncing")]
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    5
+
+    # trigger playback blink
+    Click Element    data:testid:animator-playback-mode-button
+    # for some reason the following won't work so a workaround is used
+    #Click Element    //*[contains(text(), "Blink")]
+    Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    3
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    0
+
+    [Teardown]    Kill carta_backend And Close Browser
