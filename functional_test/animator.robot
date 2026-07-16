@@ -3,6 +3,73 @@ Documentation     Test animator functions
 Resource          ../resource.robot
 
 *** Test Cases ***
+Animation Playback With Channels
+    # when this test is stable on CI, we can remove the other animation playback tests and just use this one
+    # to remove: Animation Playback, Animation Playback Backwards, Animation Playback Bouncing, Animation Playback Blink
+    
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    M17_SWex.fits
+
+    Click Element    //*[contains(text(), "Animator")]
+    
+    # reduce target fps from 5 to 2
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    # set step from 1 to 2
+    Click Element    //*[contains(text(), "Frame rate")]
+    Click Element    //*[contains(text(), "Step")]
+    Click Element    ${ANIMATOR_SPINBOX_UP}
+
+    # trigger playback forward
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1.5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
+    PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
+    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    6
+
+    # trigger playback backward
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Play backwards")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
+    PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
+    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    12
+
+    # trigger playback bouncing
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Bouncing")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
+    PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
+    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    18
+
+    # trigger playback blink
+    Click Element    data:testid:animator-playback-mode-button
+    # for some reason the following won't work so a workaround is used
+    #Click Element    //*[contains(text(), "Blink")]
+    Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    2.5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
+    PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
+    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    24
+
+    Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+
 Animation Playback
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
