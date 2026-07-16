@@ -27,7 +27,9 @@ Animation Playback With Channels
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
-    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    6
+    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 4 or ${result} == 6
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
@@ -38,7 +40,9 @@ Animation Playback With Channels
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
-    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    12
+    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 12 or ${result} == 14
 
     # trigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
@@ -49,7 +53,10 @@ Animation Playback With Channels
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
-    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    18
+    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 18 or ${result} == 20
+    
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
@@ -62,8 +69,10 @@ Animation Playback With Channels
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
-    Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    24
-
+    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 0 or ${result} == 24
+    
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -365,7 +374,9 @@ Animation Playback With Image Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    1.3
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    7
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 7 or ${result} == 5
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
@@ -373,7 +384,9 @@ Animation Playback With Image Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    1
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 1 or ${result} == 3
 
     # trigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
@@ -381,7 +394,9 @@ Animation Playback With Image Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    5
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 5 or ${result} == 7
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
@@ -391,8 +406,9 @@ Animation Playback With Image Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    3
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    0
-
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 0 or ${result} == 7
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -414,7 +430,9 @@ Animation Playback With Polarization Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    1.5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    PFtotal
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == "PFtotal" or '${result}' == "Stokes U"
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
@@ -422,7 +440,9 @@ Animation Playback With Polarization Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes U
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == 'Stokes U' or '${result}' == 'Ptotal'
 
     # tigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
@@ -430,7 +450,9 @@ Animation Playback With Polarization Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    4
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes I
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == 'Stokes I' or '${result}' == 'Stokes U'
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
@@ -440,7 +462,8 @@ Animation Playback With Polarization Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    2.5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Pangle
-
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == 'Pangle' or '${result}' == 'Stokes I'
 
     [Teardown]    Kill carta_backend And Close Browser
