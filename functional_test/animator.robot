@@ -325,3 +325,53 @@ Animation Playback With Image Set
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    0
 
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Animation Playback With Polarization Set
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
+    
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}    
+
+    # reduce target fps from 5 to 2
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    # set step from 1 to 2
+    Click Element    //*[contains(text(), "Frame rate")]
+    Click Element    //*[contains(text(), "Step")]
+    Click Element    ${ANIMATOR_SPINBOX_UP}
+
+    # trigger playback forward
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1.5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    PFtotal
+
+    # trigger playback backward
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Play backwards")]
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    1
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes U
+
+    # tigger playback bouncing
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Bouncing")]
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    4
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes I
+
+    # trigger playback blink
+    Click Element    data:testid:animator-playback-mode-button
+    # for some reason the following won't work so a workaround is used
+    #Click Element    //*[contains(text(), "Blink")]
+    Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep    2.5
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Pangle
+
+
+    [Teardown]    Kill carta_backend And Close Browser
