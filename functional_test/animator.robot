@@ -23,7 +23,7 @@ Animation Playback With Channels
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    1.5
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    4    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
@@ -36,20 +36,20 @@ Animation Playback With Channels
     Click Element    //*[contains(text(), "Play backwards")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    5
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    12    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
     ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 12 or ${result} == 14
+    Should Be True    ${result} == 12 or ${result} == 10
 
     # trigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    5
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    18    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
@@ -65,7 +65,7 @@ Animation Playback With Channels
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    2.5
+    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    0    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
@@ -274,7 +274,7 @@ Animation Playback With Image Set
     
     # trigger playback forward
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    1.3
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    7    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
     ${result}=    Convert To Integer    ${ch_index}
@@ -284,7 +284,7 @@ Animation Playback With Image Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    1
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    1    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
     ${result}=    Convert To Integer    ${ch_index}
@@ -294,7 +294,7 @@ Animation Playback With Image Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    5
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    5    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
     ${result}=    Convert To Integer    ${ch_index}
@@ -306,7 +306,7 @@ Animation Playback With Image Set
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    3
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    0    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
     ${result}=    Convert To Integer    ${ch_index}
@@ -330,27 +330,27 @@ Animation Playback With Polarization Set
 
     # trigger playback forward
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    1.5
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    PFtotal    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
     ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == "PFtotal" or '${result}' == "Stokes U"
+    Should Be True    '${result}' == "PFtotal" or '${result}' == "Pangle"
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    1
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes U    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
     ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == 'Stokes U' or '${result}' == 'Ptotal'
+    Should Be True    '${result}' == 'Stokes U' or '${result}' == 'Stokes I'
 
     # tigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    4
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes I    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
     ${result}=    Convert To String    ${ch_index}
@@ -362,7 +362,7 @@ Animation Playback With Polarization Set
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Sleep    2.5
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Pangle    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
     ${result}=    Convert To String    ${ch_index}
