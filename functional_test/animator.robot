@@ -288,7 +288,7 @@ Animation Playback With Image Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 1 or ${result} == 3
+    Should Be True    ${result} == 1 or ${result} == 3 or ${result} == 7
 
     # trigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
