@@ -301,17 +301,17 @@ Setup carta_backend And Open Browser To CARTA
     ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
         IF    '${BROWSER}' == 'headlesschrome'
-        Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
-        Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
+            Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
+            Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
         END
         IF    '${BROWSER}' == 'chrome'
-        Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security")
-        Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
+            Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security")
+            Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
         END
     ELSE
         IF    '${BROWSER}' == 'headlesschrome'
-        Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--use-angle=swiftshader");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
-        Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
+            Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--use-angle=swiftshader");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1")
+            Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
         END
         IF    '${BROWSER}' == 'chrome'
             Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security")
