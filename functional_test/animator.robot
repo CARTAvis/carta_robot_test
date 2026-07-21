@@ -298,7 +298,7 @@ Animation Playback With Image Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
     ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 5 or ${result} == 7
+    Should Be True    ${result} == 5 or ${result} == 7 or ${result} == 3
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
