@@ -493,7 +493,7 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-13    3    clear=True
+    Input Text    id:numericInput-14    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
@@ -534,17 +534,17 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
 
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Clear Input Field    id:numericInput-29
-    Input Text     id:numericInput-29    70.0    clear=True
     Clear Input Field    id:numericInput-30
-    Input Text     id:numericInput-30    0.0    clear=True
+    Input Text     id:numericInput-30    70.0    clear=True
     Clear Input Field    id:numericInput-31
-    Input Text     id:numericInput-31    10deg    clear=True
-    Clear Input Field    id:numericInput-33
-    Input Text     id:numericInput-33    70.0    clear=True
+    Input Text     id:numericInput-31    0.0    clear=True
+    Clear Input Field    id:numericInput-32
+    Input Text     id:numericInput-32    10deg    clear=True
     Clear Input Field    id:numericInput-34
-    Input Text     id:numericInput-34    0.0    clear=True   
-    Double Click Element    id:numericInput-29
+    Input Text     id:numericInput-34    70.0    clear=True
+    Clear Input Field    id:numericInput-35
+    Input Text     id:numericInput-35    0.0    clear=True   
+    Double Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
 
     Mouse Out    ${VIEWER_DIV}
@@ -944,7 +944,7 @@ Polar Offset Coordinate Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-13    3    clear=True
+    Input Text    id:numericInput-14    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Click Element    data:testid:overlay-coordinate-button
@@ -952,17 +952,17 @@ Polar Offset Coordinate Grid Rendering
     Click Element    //*[contains(text(), "Pole")]
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Clear Input Field    id:numericInput-29
-    Input Text    id:numericInput-29    14:40:00    clear=True
     Clear Input Field    id:numericInput-30
-    Input Text    id:numericInput-30    -30:00:00    clear=True
+    Input Text    id:numericInput-30    14:40:00    clear=True
     Clear Input Field    id:numericInput-31
-    Input Text    id:numericInput-31    30deg    clear=True
-    Clear Input Field    id:numericInput-33
-    Input Text    id:numericInput-33    14:40:00    clear=True    
+    Input Text    id:numericInput-31    -30:00:00    clear=True
+    Clear Input Field    id:numericInput-32
+    Input Text    id:numericInput-32    30deg    clear=True
     Clear Input Field    id:numericInput-34
-    Input Text    id:numericInput-34    -30:00:00    clear=True   
-    Click Element    id:numericInput-29
+    Input Text    id:numericInput-34    14:40:00    clear=True    
+    Clear Input Field    id:numericInput-35
+    Input Text    id:numericInput-35    -30:00:00    clear=True   
+    Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
     # change to tab10 colormap
     Click Element    ${COLORMAP_DROPDOWN}
