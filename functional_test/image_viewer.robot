@@ -7,9 +7,11 @@ Image Viewer Settings - Pan and Zoom
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    spire500_ext.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]   
     Append Image    pacs160_js.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]   
     # enable spatial matching
     Mouse Over    ${VIEWER_10_CANVAS}

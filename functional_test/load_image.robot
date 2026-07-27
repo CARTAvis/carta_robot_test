@@ -347,6 +347,7 @@ Load Images With LEL
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    "dice_one.fits"+"dice_four.fits"
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -621,6 +622,7 @@ Load Image Via HiPS2FITS Service
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51_151_MHz.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # launch online data query dialog and switch to hips2fits service
     Click Element    data:testid:online-data-query-dialog-button
@@ -632,13 +634,14 @@ Load Image Via HiPS2FITS Service
     # search by source name
     Input Text    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[1]/div/div/div[3]/div/div/input    M51
     # set output image properties
-    Input Text    //*[@id="numericInput-6"]    500
     Input Text    //*[@id="numericInput-7"]    500
-    Input Text    //*[@id="numericInput-8"]    0.2
+    Input Text    //*[@id="numericInput-8"]    500
+    Input Text    //*[@id="numericInput-9"]    0.2
     # apply query
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # try another query
     # launch online data query dialog and switch to hips2fits service
@@ -646,8 +649,8 @@ Load Image Via HiPS2FITS Service
     Click Element    id:bp6-tab-title_onlineQueryDialogTabs_1
     # query by center coordinate in ICRS reference frame
     Click Element    //*[normalize-space(text())='Query by center']
-    Input Text    //*[@id="numericInput-18"]    202.4977
-    Input Text    //*[@id="numericInput-19"]    47.2667
+    Input Text    //*[@id="numericInput-19"]    202.4977
+    Input Text    //*[@id="numericInput-20"]    47.2667
     # set output image in galactic coordinate
     Click Element    //*[normalize-space(text())='Galactic']
     # set output image projection as SIN
@@ -655,11 +658,12 @@ Load Image Via HiPS2FITS Service
     Click Element    //*[normalize-space(text())='SIN - orthographic/synthesis']
     Click Element    //*[normalize-space(text())='Projection']
     # set output image to have a rotation of 45 deg
-    Input Text    //*[@id="numericInput-17"]    45    clear=True
+    Input Text    //*[@id="numericInput-18"]    45    clear=True
     # apply query
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable spatial matching
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}

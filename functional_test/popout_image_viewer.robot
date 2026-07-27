@@ -9,6 +9,7 @@ Popout And Restore Image Viewer
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   S255_CH3CN_subcube.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # popout image viewer
     Click Element    data:testid:image-view-header-popout-button
@@ -62,9 +63,11 @@ Popout Image Viewer - layout
     Switch Window    MAIN
     Load Initial Image   S255_CH3CN_subcube.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]    
     Append Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     
     # apply zoom to fit
@@ -138,6 +141,7 @@ Popout Image Viewer - rendering modes
     # raster rendering mode
     Load Initial Image   dice_one.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # contour rendering mode
     Click Element    data:testid:contour-dialog-button

@@ -681,6 +681,7 @@ Quick Unmatching All With XYZR Buttons
     Click Element    data:testid:image-list-0-matching-z
     Click Element    data:testid:image-list-0-matching-r
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     Sleep    1
     # set new references

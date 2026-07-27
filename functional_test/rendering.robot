@@ -7,6 +7,7 @@ Raster Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     #Sleep    0.5
     ${key}=    Generate Random String    8
@@ -966,6 +967,7 @@ Polar Offset Coordinate Grid Rendering
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
     # change to tab10 colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
 
     # take screenshot and perform pixel checks

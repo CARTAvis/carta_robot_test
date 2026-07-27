@@ -10,6 +10,7 @@ Channel Map View - Layout
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
@@ -77,6 +78,7 @@ Channel Map View - raster coloring
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
@@ -111,6 +113,7 @@ Channel Map View - active channel switching
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton

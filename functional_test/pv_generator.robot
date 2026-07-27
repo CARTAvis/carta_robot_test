@@ -32,6 +32,7 @@ Narrow-field PV Image Generation
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     Element Should Contain    ${VIEWER_TAB_TITLE}    S255_CH3CN_subcube_pv.fits
     Click Element    ${FILE_HEADER_DIALOG_BUTTON}
@@ -87,6 +88,7 @@ Wide-field PV Image Generation
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     #Sleep    0.5
     ${key}=    Generate Random String    8
@@ -139,6 +141,7 @@ PV Image Generation Cancellation And Rerequest
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     #Sleep    0.5
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
@@ -188,6 +191,7 @@ PV Image Generation Repeat
     Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
     Wait Until Page Contains Element    //*[contains(text(), "tab10")]
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     ${key}=    Generate Random String    8
     # this sleep is required to let the viewer size popup in the viewer go away
@@ -315,6 +319,7 @@ PV Image Generation With Matched Wide-field Cubes
     Mouse Over    css:#image-panel-0-1 .region-stage
     Click Element    css:#image-panel-0-1 [data-testid="zoom-to-fit-button"]
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     Click Element    id:PVGeneratorButton
     # use the image dropdown to select Gaussian_array_wide.fits
@@ -330,6 +335,7 @@ PV Image Generation With Matched Wide-field Cubes
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Sleep    1
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     Mouse Out    ${VIEWER_DIV}
     #Sleep    0.5
@@ -374,6 +380,7 @@ Interactive PV Preview
     Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${X_SPATIAL_PROFILER_TAB}
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
@@ -429,6 +436,7 @@ Interactive PV Preview With Customization
     Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${X_SPATIAL_PROFILER_TAB}
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
@@ -442,6 +450,7 @@ Interactive PV Preview With Customization
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # make pv preview widget active
     Click Element    data:testid:pv-generator-0-pv-preview-0-header-title

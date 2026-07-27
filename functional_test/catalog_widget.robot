@@ -261,6 +261,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     Click Element    //a[contains(., "ANG_DIST")]
     # click the color map dropdown menu to select the tab10 color map
     Click Element    css:[data-testid="catalog-settings-color-tab"] [data-testid="colormap-dropdown"]
+    Mouse Over    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]  
 
     # set up orientation mapping
