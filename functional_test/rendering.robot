@@ -32,6 +32,7 @@ Contour Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "nipy_spectral")]
     Click Element    //*[contains(text(), "nipy_spectral")]
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
@@ -646,12 +647,15 @@ Multicolor Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    disk_0.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Red']
     Click Element    //*[normalize-space(text())='Red'] 
     Append Image    disk_1.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Green']
     Click Element    //*[normalize-space(text())='Green'] 
     Append Image    disk_2.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Blue']
     Click Element    //*[normalize-space(text())='Blue'] 
     # enable spatial matching and adjust zoom level
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
@@ -678,6 +682,7 @@ Multicolor Rendering
     # Append a new image
     Append Image    disk_1.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Green']
     Click Element    //*[normalize-space(text())='Green'] 
     Click Element    ${IMAGE_LIST_FOURTH_MATCHING_XY}
 
@@ -923,6 +928,7 @@ Tile Rendering with Different MIP
     Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='tab10']
     Click Element    //*[normalize-space(text())='tab10']
     # take screenshot and perform pixel checks
     Mouse Out    ${VIEWER_DIV}

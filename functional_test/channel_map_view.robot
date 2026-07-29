@@ -190,6 +190,7 @@ Channel Map View - spectral labels
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "jet")]
     Click Element    //*[contains(text(), "jet")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton

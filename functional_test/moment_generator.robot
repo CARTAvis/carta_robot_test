@@ -485,6 +485,7 @@ Generate Moment Images With A Custom Rest Frequency
     Click Element    ${VIEWER_01_CANVAS} 
     # apply jet color for velocity image rendering
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "jet")]
     Click Element    //*[contains(text(), "jet")]
     # check the new clip min and max
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    3.5962982066050144

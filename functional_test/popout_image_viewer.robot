@@ -93,8 +93,8 @@ Popout Image Viewer - layout
     Switch Window    MAIN
     # enable channel map view widget
     Click Element    id:ChannelMapControlButton
-    Input Text    //*[@id="numericInput-3"]    3    clear=True
     Input Text    //*[@id="numericInput-4"]    3    clear=True
+    Input Text    //*[@id="numericInput-5"]    3    clear=True
     Sleep    1
     Switch Window    NEW
     Click Element    data:testid:zoom-to-fit-button
@@ -192,12 +192,15 @@ Popout Image Viewer - multicolor blending
     Click Element    data:testid:image-view-header-popout-button
     Load Initial Image    disk_0.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "Red")]
     Click Element    //*[normalize-space(text())='Red'] 
     Append Image    disk_1.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "Green")]
     Click Element    //*[normalize-space(text())='Green'] 
     Append Image    disk_2.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "Blue")]
     Click Element    //*[normalize-space(text())='Blue'] 
     Click Element    data:testid:image-list-0-matching-xy
     # enable multi-color blending
