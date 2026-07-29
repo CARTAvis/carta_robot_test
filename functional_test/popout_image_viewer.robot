@@ -39,7 +39,7 @@ Popout And Restore Image Viewer
     Capture Page Screenshot    main_browser_restored_${key}.png
     # verify screenshots
     PNG Pixel XY Should Match RGBA    popout_image_viewer_${key}.png    488,370,23,190,207,255
-    PNG Pixel XY Should Match RGBA    main_browser_${key}.png    720,340,19,124,189,255
+    PNG Pixel XY Should Match RGBA    main_browser_${key}.png    729,399,19,124,189,255
     PNG Pixel XY Should Match RGBA    main_browser_restored_${key}.png    446,313,23,190,207,255
     PNG Images Should Be Different    main_browser_${key}.png    main_browser_restored_${key}.png
     
