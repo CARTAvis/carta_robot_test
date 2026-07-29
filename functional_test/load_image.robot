@@ -347,7 +347,7 @@ Load Images With LEL
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    "dice_one.fits"+"dice_four.fits"
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -622,7 +622,7 @@ Load Image Via HiPS2FITS Service
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51_151_MHz.fits
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # launch online data query dialog and switch to hips2fits service
     Click Element    data:testid:online-data-query-dialog-button
@@ -641,7 +641,7 @@ Load Image Via HiPS2FITS Service
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # try another query
     # launch online data query dialog and switch to hips2fits service
@@ -663,7 +663,7 @@ Load Image Via HiPS2FITS Service
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable spatial matching
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}

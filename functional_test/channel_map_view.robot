@@ -10,15 +10,15 @@ Channel Map View - Layout
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-3"]    5    clear=True
-    Input Text    //*[@id="numericInput-4"]    4    clear=True
+    Input Text    //*[@id="numericInput-4"]    5    clear=True
+    Input Text    //*[@id="numericInput-5"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-2"]    20    clear=True
+    Input Text    //*[@id="numericInput-3"]    20    clear=True
     # close control widget
     Click Element    data:testid:channel-map-control-0-header-close-button
 
@@ -78,15 +78,15 @@ Channel Map View - raster coloring
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-3"]    5    clear=True
-    Input Text    //*[@id="numericInput-4"]    4    clear=True
+    Input Text    //*[@id="numericInput-4"]    5    clear=True
+    Input Text    //*[@id="numericInput-5"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-2"]    20    clear=True
+    Input Text    //*[@id="numericInput-3"]    20    clear=True
     # close control widget
     Click Element    data:testid:channel-map-control-0-header-close-button
 
@@ -113,15 +113,15 @@ Channel Map View - active channel switching
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-3"]    5    clear=True
-    Input Text    //*[@id="numericInput-4"]    4    clear=True
+    Input Text    //*[@id="numericInput-4"]    5    clear=True
+    Input Text    //*[@id="numericInput-5"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-2"]    20    clear=True
+    Input Text    //*[@id="numericInput-3"]    20    clear=True
     # close control widget
     Click Element    data:testid:channel-map-control-0-header-close-button
 
@@ -194,10 +194,10 @@ Channel Map View - spectral labels
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
-    Input Text    //*[@id="numericInput-3"]    5    clear=True
-    Input Text    //*[@id="numericInput-4"]    4    clear=True
+    Input Text    //*[@id="numericInput-4"]    5    clear=True
+    Input Text    //*[@id="numericInput-5"]    4    clear=True
     # configure starting channel
-    Input Text    //*[@id="numericInput-2"]    20    clear=True
+    Input Text    //*[@id="numericInput-3"]    20    clear=True
     Sleep    5
     # close control widget
     Click Element    data:testid:channel-map-control-0-header-close-button

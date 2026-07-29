@@ -166,7 +166,7 @@ Polarization Slider And Computed Components
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
     # change to tab10 colormap
     Click Element    ${COLORMAP_DROPDOWN}
-    Mouse Over    //*[contains(text(), "tab10")]
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # use animator and the polarization slider to switch to different components
     Click Element    //*[contains(text(), "Animator")]
