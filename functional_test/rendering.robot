@@ -7,6 +7,7 @@ Raster Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     #Sleep    0.5
     ${key}=    Generate Random String    8
@@ -31,6 +32,7 @@ Contour Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "nipy_spectral")]
     Click Element    //*[contains(text(), "nipy_spectral")]
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
@@ -493,7 +495,7 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-13    3    clear=True
+    Input Text    id:numericInput-14    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
@@ -534,17 +536,17 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
 
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Clear Input Field    id:numericInput-29
-    Input Text     id:numericInput-29    70.0    clear=True
     Clear Input Field    id:numericInput-30
-    Input Text     id:numericInput-30    0.0    clear=True
+    Input Text     id:numericInput-30    70.0    clear=True
     Clear Input Field    id:numericInput-31
-    Input Text     id:numericInput-31    10deg    clear=True
-    Clear Input Field    id:numericInput-33
-    Input Text     id:numericInput-33    70.0    clear=True
+    Input Text     id:numericInput-31    0.0    clear=True
+    Clear Input Field    id:numericInput-32
+    Input Text     id:numericInput-32    10deg    clear=True
     Clear Input Field    id:numericInput-34
-    Input Text     id:numericInput-34    0.0    clear=True   
-    Double Click Element    id:numericInput-29
+    Input Text     id:numericInput-34    70.0    clear=True
+    Clear Input Field    id:numericInput-35
+    Input Text     id:numericInput-35    0.0    clear=True   
+    Double Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
 
     Mouse Out    ${VIEWER_DIV}
@@ -645,12 +647,15 @@ Multicolor Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    disk_0.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Red']
     Click Element    //*[normalize-space(text())='Red'] 
     Append Image    disk_1.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Green']
     Click Element    //*[normalize-space(text())='Green'] 
     Append Image    disk_2.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Blue']
     Click Element    //*[normalize-space(text())='Blue'] 
     # enable spatial matching and adjust zoom level
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
@@ -677,6 +682,7 @@ Multicolor Rendering
     # Append a new image
     Append Image    disk_1.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='Green']
     Click Element    //*[normalize-space(text())='Green'] 
     Click Element    ${IMAGE_LIST_FOURTH_MATCHING_XY}
 
@@ -924,6 +930,7 @@ Tile Rendering with Different MIP
     Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
     # change colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[normalize-space(text())='tab10']
     Click Element    //*[normalize-space(text())='tab10']
     # take screenshot and perform pixel checks
     Mouse Out    ${VIEWER_DIV}
@@ -946,7 +953,7 @@ Polar Offset Coordinate Grid Rendering
     # make grid line thicker
     Click Element    data:testid:image-view-header-settings-button
     Click Element    //*[normalize-space(text())='Grids']
-    Input Text    id:numericInput-13    3    clear=True
+    Input Text    id:numericInput-14    3    clear=True
     Click Element    //*[normalize-space(text())='Grids']
     Click Element    data:testid:image-view-floating-settings-0-header-close-button
     Click Element    data:testid:overlay-coordinate-button
@@ -954,20 +961,21 @@ Polar Offset Coordinate Grid Rendering
     Click Element    //*[contains(text(), "Pole")]
     # change FOV and the origin of the offset grid
     Click Element    ${VIEWER_SETTINGS_DIALOG}
-    Clear Input Field    id:numericInput-29
-    Input Text    id:numericInput-29    14:40:00    clear=True
     Clear Input Field    id:numericInput-30
-    Input Text    id:numericInput-30    -30:00:00    clear=True
+    Input Text    id:numericInput-30    14:40:00    clear=True
     Clear Input Field    id:numericInput-31
-    Input Text    id:numericInput-31    30deg    clear=True
-    Clear Input Field    id:numericInput-33
-    Input Text    id:numericInput-33    14:40:00    clear=True    
+    Input Text    id:numericInput-31    -30:00:00    clear=True
+    Clear Input Field    id:numericInput-32
+    Input Text    id:numericInput-32    30deg    clear=True
     Clear Input Field    id:numericInput-34
-    Input Text    id:numericInput-34    -30:00:00    clear=True   
-    Click Element    id:numericInput-29
+    Input Text    id:numericInput-34    14:40:00    clear=True    
+    Clear Input Field    id:numericInput-35
+    Input Text    id:numericInput-35    -30:00:00    clear=True   
+    Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
     # change to tab10 colormap
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
 
     # take screenshot and perform pixel checks

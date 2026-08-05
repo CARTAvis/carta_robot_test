@@ -9,6 +9,7 @@ Popout And Restore Image Viewer
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   S255_CH3CN_subcube.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # popout image viewer
     Click Element    data:testid:image-view-header-popout-button
@@ -38,7 +39,7 @@ Popout And Restore Image Viewer
     Capture Page Screenshot    main_browser_restored_${key}.png
     # verify screenshots
     PNG Pixel XY Should Match RGBA    popout_image_viewer_${key}.png    488,370,23,190,207,255
-    PNG Pixel XY Should Match RGBA    main_browser_${key}.png    720,340,19,124,189,255
+    PNG Pixel XY Should Match RGBA    main_browser_${key}.png    729,399,19,124,189,255
     PNG Pixel XY Should Match RGBA    main_browser_restored_${key}.png    446,313,23,190,207,255
     PNG Images Should Be Different    main_browser_${key}.png    main_browser_restored_${key}.png
     
@@ -62,9 +63,11 @@ Popout Image Viewer - layout
     Switch Window    MAIN
     Load Initial Image   S255_CH3CN_subcube.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]    
     Append Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     
     # apply zoom to fit
@@ -90,8 +93,8 @@ Popout Image Viewer - layout
     Switch Window    MAIN
     # enable channel map view widget
     Click Element    id:ChannelMapControlButton
-    Input Text    //*[@id="numericInput-3"]    3    clear=True
     Input Text    //*[@id="numericInput-4"]    3    clear=True
+    Input Text    //*[@id="numericInput-5"]    3    clear=True
     Sleep    1
     Switch Window    NEW
     Click Element    data:testid:zoom-to-fit-button
@@ -138,6 +141,7 @@ Popout Image Viewer - rendering modes
     # raster rendering mode
     Load Initial Image   dice_one.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
     Click Element    //*[contains(text(), "tab10")]
     # contour rendering mode
     Click Element    data:testid:contour-dialog-button
@@ -188,12 +192,15 @@ Popout Image Viewer - multicolor blending
     Click Element    data:testid:image-view-header-popout-button
     Load Initial Image    disk_0.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "Red")]
     Click Element    //*[normalize-space(text())='Red'] 
     Append Image    disk_1.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "Green")]
     Click Element    //*[normalize-space(text())='Green'] 
     Append Image    disk_2.fits
     Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "Blue")]
     Click Element    //*[normalize-space(text())='Blue'] 
     Click Element    data:testid:image-list-0-matching-xy
     # enable multi-color blending
