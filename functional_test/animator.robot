@@ -275,9 +275,9 @@ Animation Playback With Image Set
     
     # trigger playback forward
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    7    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    7    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result} == 7 or ${result} == 1 or ${result} == 3
 
@@ -285,9 +285,9 @@ Animation Playback With Image Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    1    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    1    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result} == 1 or ${result} == 3 or ${result} == 7
 
@@ -295,9 +295,9 @@ Animation Playback With Image Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    5    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    5    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result} == 5 or ${result} == 7 or ${result} == 3
 
@@ -307,9 +307,9 @@ Animation Playback With Image Set
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    0    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    0    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/span    
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result} == 0 or ${result} == 7
     [Teardown]    Kill carta_backend And Close Browser
@@ -331,9 +331,9 @@ Animation Playback With Polarization Set
 
     # trigger playback forward
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    PFtotal    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    PFtotal    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
     ${result}=    Convert To String    ${ch_index}
     Should Be True    '${result}' == "PFtotal" or '${result}' == "Pangle"
 
@@ -341,9 +341,9 @@ Animation Playback With Polarization Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes U    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Stokes U    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
     ${result}=    Convert To String    ${ch_index}
     Should Be True    '${result}' == 'Stokes U' or '${result}' == 'Stokes I'
 
@@ -351,9 +351,9 @@ Animation Playback With Polarization Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Stokes I    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Stokes I    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
     ${result}=    Convert To String    ${ch_index}
     Should Be True    '${result}' == 'Stokes I' or '${result}' == 'Stokes U'
 
@@ -363,9 +363,9 @@ Animation Playback With Polarization Set
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span    Pangle    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Pangle    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/span   
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
     ${result}=    Convert To String    ${ch_index}
     Should Be True    '${result}' == 'Pangle' or '${result}' == 'Stokes I'
 
