@@ -474,12 +474,12 @@ Load Axes-Swapped Cubes
     Element Text Should Be   css:[data-testid="animator-slider"] label    GLAT
     # switch to a different GLAT
     Click Element    ${ANIMATOR_SLIDER}
+    Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Wait Until Element Contains    ${VIEWER_CURSOR_INFO_BAR}    Stokes Q
     # check the new clip min and max
-    Capture Page Screenshot    test.png
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.04236642293471964
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.0023210009619462207
     Capture Element Screenshot    ${VIEWER_DIV}    check_g_2031_${key}.png
@@ -501,6 +501,7 @@ Load Axes-Swapped Cubes
     Element Text Should Be   css:[data-testid="animator-slider"] label    GLON
     # switch to a different GLON
     Click Element    ${ANIMATOR_SLIDER}
+    Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     # switch to a different Stokes (Q)
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
     Click Element    ${ANIMATOR_NEXT_BUTTON}
