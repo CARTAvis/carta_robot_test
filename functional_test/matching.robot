@@ -648,25 +648,44 @@ Setting New Matching References
     # check screenshots
     ${platform}=    Evaluate    sys.platform    sys
     IF    '${platform}' == 'darwin'
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    274,39,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    307,39,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    307,59,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    274,79,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    308,79,34,39,44,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    334,79,34,39,44,255
-    ELSE
+    # XY 
     PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    274,40,28,33,39,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    305,40,28,33,39,255
-    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    305,60,28,33,39,255
+    # R
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    364,40,28,33,39,255
+    # Z
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    304,60,28,33,39,255
+    # T
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    334,80,28,33,39,255
+    # XY
     PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    274,80,28,33,39,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    307,80,28,33,39,255
-    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    333,80,28,33,39,255
+    # Z
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    304,80,28,33,39,255
+    # T
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    334,80,28,33,39,255
+    # R
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    364,80,28,33,39,255
+    ELSE
+    # XY 
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    274,40,28,33,39,255
+    # R
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    364,40,28,33,39,255
+    # Z
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    304,60,28,33,39,255
+    # T
+    PNG Pixel XY Should Match RGBA    check_before_setting_new_ref_${key}.png    334,80,28,33,39,255
+    # XY
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    274,80,28,33,39,255
+    # Z
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    304,80,28,33,39,255
+    # T
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    334,80,28,33,39,255
+    # R
+    PNG Pixel XY Should Match RGBA    check_after_setting_new_ref_${key}.png    364,80,28,33,39,255
     END
 
     PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYZ_${key}.png
     PNG Images Should Be Different    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png
 
-    
     Remove Files    check_after_XY_${key}.png    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png    check_before_setting_new_ref_${key}.png    check_after_setting_new_ref_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
