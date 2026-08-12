@@ -910,21 +910,9 @@ Tile Rendering with Different MIP
     Append Image    downsampled_4x4.fits
     Append Image    downsampled_8x8.fits
     # match all the images spatially
-    Mouse Over    ${VIEWER_10_CANVAS}
-    Click Element    ${VIEWER_10_MATCH_BUTTON}
-    Click Element    //*[contains(text(), "Spatial only")]
-    Mouse Over    ${VIEWER_01_CANVAS}
-    Click Element    ${VIEWER_01_MATCH_BUTTON}
-    Click Element    //*[contains(text(), "Spatial only")]
-    Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    ${VIEWER_11_MATCH_BUTTON}
-    Click Element    //*[contains(text(), "Spatial only")]
-    # enable raster config matching
-    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[8]/div/span[2]/a
-    Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[13]/div/span[2]/a
-    Mouse Over    ${VIEWER_11_CANVAS}
-    Click Element    //*[@id="root"]/div/div[16]/div/div[9]/div/div/div/div[1]/div[5]/div/div[2]/div[2]/div/div/div/div[18]/div/span[2]/a
+    Click Element    data:testid:image-list-0-matching-xy
+    # enable raster config matching for all images using the shortcut
+    Click Element    data:testid:image-list-0-matching-r
     # set image zoom level to 1:1
     Mouse Over    ${VIEWER_11_CANVAS}
     Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
