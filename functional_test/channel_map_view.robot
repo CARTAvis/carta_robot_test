@@ -223,3 +223,30 @@ Channel Map View - spectral labels
     PNG Images Should Be Different    before_${key}.png    after_${key}.png 
     Remove Files    before_${key}.png    after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Channel Map View - HDF5 MIPMAPS Cache
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    4d_image_cube_20000_20000_2_2.hdf5
+    # change to tab10 colormap
+    Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
+    Click Element    //*[contains(text(), "tab10")]
+    # enable channel map view mode
+    Click Element    data:testid:image-view-header-channel-map-button
+    # get a screenshot of Stokes I channel 0 and 1
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_StokesI_${key}.png
+    # switch to Stokes Q channel 0 and 1
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_StokesQ_${key}.png
+
+    # check screenshot
+    PNG Pixel XY Should Match RGBA    check_StokesI_${key}.png    549,110,23,190,207,255 
+    PNG Pixel XY Should Match RGBA    check_StokesQ_${key}.png    549,105,127,127,127,255
+
+    Remove Files   check_StokesI_${key}.png    check_StokesQ_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
