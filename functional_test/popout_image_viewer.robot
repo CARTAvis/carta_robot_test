@@ -270,7 +270,7 @@ Popout Image Viewer - region analytics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     # just to check if the table is updated
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    e+1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    e+1 Jy/beam
     Click Element    data:testid:stats-0-header-close-button
     # check region histogram
     Click Element    id:HistogramWidgetButton
@@ -291,7 +291,7 @@ Popout Image Viewer - region analytics
     Click Element    data:testid:spectral-profiler-0-header-close-button
     # check region statistics
     Click Element    id:StatisticsWidgetButton
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    e-1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    e-1 Jy/beam
     Click Element    data:testid:stats-0-header-close-button
     # check region histogram
     Click Element    id:HistogramWidgetButton
