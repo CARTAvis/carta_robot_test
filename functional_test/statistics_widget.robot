@@ -424,4 +424,24 @@ Compressed FITS gz statistics
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Per-plane Beam Statistics
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    small_perplanebeam.fits
+    Click Element    id:StatisticsWidgetButton
+    Wait Until Page Does Not Contain    No stats data
+    #Sleep    0.5
+    # ch 0 beam stats
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    5.115267667643e+0 beam(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    6.401858302296e-10 sr
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    4.476794077630e+1 pixel(s)        
+    # ch 10 beam stats
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    4.794406793021e+0 beam(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    6.830296259850e-10 sr
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    4.776399039259e+1 pixel(s)        
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
 # todo: add export text file test
