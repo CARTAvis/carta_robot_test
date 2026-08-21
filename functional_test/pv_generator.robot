@@ -441,6 +441,12 @@ Interactive PV Preview With Customization
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    before_${key}.png
+    # zoom the pv preview image
+    Mouse Over    data:testid:pv-generator-0-pv-preview-0-content
+    Click Element    data:testid:pv-zoom-axis-button
+    Click Element    //*[contains(text(), "X Axis")]
+    # this is a workaround for zooming in due to testid conflict between the main viewer and the pv preview viewer
+    Click Element At Coordinates    data:testid:pv-zoom-axis-button    16    0
     # moving pv cut
     Drag And Drop By Offset    ${VIEWER_DIV}    -20    20
     Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    after_${key}.png
@@ -459,7 +465,7 @@ Interactive PV Preview With Customization
     Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     PNG Two Pixels Should Have Matched RGBA    before_${key}.png   246,356,470,212
-    PNG Two Pixels Should Have Matched RGBA    after_${key}.png    237,349,470,212
+    PNG Two Pixels Should Have Matched RGBA    after_${key}.png    185,155,475,582
     PNG Two Pixels Should Have Matched RGBA    final_${key}.png    624,257,1091,365
     PNG Two Pixels Should Have Matched RGBA    final_${key}.png    542,286,970,409
     Remove Files    before_${key}.png    after_${key}.png    final_${key}.png
@@ -524,7 +530,7 @@ Zooming PV Image Independently
     Mouse Out    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
-    
+
     # check screenshot
     # raster
     PNG Pixel XY Should Match RGBA    check_${key}.png    500,315,227,119,194,255
