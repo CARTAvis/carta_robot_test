@@ -348,7 +348,87 @@ Polarization Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    12    2    2.312266640365e-2 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    13    2    3.931302178691e-3 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    14    2    2.405592046061e-1 (Jy/beam)^2
-    
+    Set Selenium Speed    ${DELAY}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Page Does Not Contain    No stats data
+    #Sleep    0.5
+    # computed component: Ptotal
+    Set Selenium Speed    0
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    8.823748966869e+1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    3.211520268571e+0 Jy 
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    5.668968176594e-3 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    3.792677257306e-3 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    1.008910694509e-4 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.763405628502e-2 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    2.763405628502e-2 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    6.820606777622e-3 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    7.240943346245e-1 (Jy/beam)^2 
+    Set Selenium Speed    ${DELAY}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Page Does Not Contain    No stats data
+    #Sleep    0.5
+    # computed component: Plinear
+    Set Selenium Speed    0
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    6.959042694918e+1 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    2.532835730991e+0 Jy 
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    4.470955795000e-3 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    3.328183576391e-3 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    1.216378950630e-5 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.427288144827e-2 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    2.427288144827e-2 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.573646920168e-3 Jy/beam
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    4.835351299552e-1 (Jy/beam)^2 
+    Set Selenium Speed    ${DELAY}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Page Does Not Contain    No stats data
+    #Sleep    0.5
+    # computed component: PFtotal
+    Set Selenium Speed    0
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    -9.803507982735e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN 
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    -6.298431084314e+1 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    6.567556427141e+3 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -6.482380625000e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.890890625000e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    -6.482380625000e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    6.567647471271e+3 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    6.713806058217e+11 (%)^2 
+    Set Selenium Speed    ${DELAY}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Page Does Not Contain    No stats data
+    #Sleep    0.5
+    # computed component: PFlinear
+    Set Selenium Speed    0
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    -9.453708281121e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN 
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    -6.073696293685e+1 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    6.442443830338e+3 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -6.428163125000e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    2.838785937500e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    -6.428163125000e+5 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    6.442523179689e+3 %
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    6.460425230928e+11 (%)^2
+    Set Selenium Speed    ${DELAY}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Wait Until Page Does Not Contain    No stats data
+    #Sleep    0.5
+    # computed component: Pangle
+    Set Selenium Speed    0
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    2    2    1.556500000000e+4 pixel(s)
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    3.204385152139e+3 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    NaN 
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    2.058711951262e-1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    5.203797236507e+1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -8.999253082275e+1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.999803161621e+1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    8.999803161621e+1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.203670794649e+1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    4.214720232889e+7 (degree)^2
+
     Set Selenium Speed    ${DELAY}
     # use the polarization dropdown menu to select Stokes I
     Click Element    css:[data-testid="stats-0-content"] [data-testid="polarization-dropdown"]
