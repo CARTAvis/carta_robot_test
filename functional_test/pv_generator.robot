@@ -466,5 +466,84 @@ Interactive PV Preview With Customization
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Zooming PV Image Independently
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    carta_pv.fits
+    Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "tab10")]
+    Click Element    //*[contains(text(), "tab10")]
+
+    # enable contour rendering
+    Click Element    data:testid:contour-dialog-button
+    Input Text    css:[data-testid="contour-config-level-input-form"] input    0.3
+    Click Element    //*[contains(text(), "Styling")]
+    Input Text    data:testid:contour-thickness-input    5
+    Click Element    ${CONTOUR_CONFIG_DIALOG_APPLY_BUTTON}
+    Click Element    ${CONTOUR_CONFIG_DIALOG_CLOSE_BUTTON}    
+
+    # enable vector overlay rendering
+    Click Element    ${VECTOR_FIELD_RENDERING_DIALOG_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_THRESHOLD_TOGGLE}
+    Press Keys    ${VECTOR_FIELD_RENDERING_THRESHOLD_INPUT}    0.3
+    Click Element    ${VECTOR_FIELD_RENDERING_STYLING_TAB}
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_THICKNESS_INPUT}    5
+    Input Text    ${VECTOR_FIELD_RENDERING_LINE_LENGTH_MAX_INPUT}    50
+    Press Keys    data:testid:vector-field-rotation-offset-input    ARROW_LEFT+4
+    Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
+    Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
+
+    # add a text annotation to the pv image
+    Click Element    data:testid:annotation-shortcut-dropdown
+    Click Element    data:testid:annotation-shortcut-dropdown-text
+    Click Element    ${VIEWER_DIV}
+
+    # add a region to the pv image
+    Click Element    ${RECTANGLE_REGION_SHORTCUT_BUTTON}
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    Click Element    //*[contains(text(), "Image")]
+    Press Keys    //input[@placeholder="Width"]    DELETE
+    Input Text    //input[@placeholder="Width"]    25
+    Press Keys    //input[@placeholder="Height"]    DELETE
+    Input Text    //input[@placeholder="Height"]    25
+    Click Element    //*[contains(text(), "Styling")]
+    Press Keys    data:testid:region-dialog-line-width-input    DELETE
+    Input Text    data:testid:region-dialog-line-width-input    3
+    Click Element    data:testid:region-dialog-header-close-button
+
+    # changing zoom level of the pv image
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    data:testid:pv-zoom-axis-button
+    Click Element    //*[contains(text(), "X Axis")]
+    Repeat Keyword    2    Click Element    data:testid:zoom-in-button
+    Click Element    data:testid:pv-zoom-axis-button
+    Click Element    //*[contains(text(), "Y Axis")]
+    Click Element    data:testid:zoom-in-button
+
+    # capture screenshot of the image viewer
+    Mouse Out    ${VIEWER_DIV}
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+    
+    # check screenshot
+    # raster
+    PNG Pixel XY Should Match RGBA    check_${key}.png    500,315,227,119,194,255
+    # contour
+    PNG Pixel XY Should Match RGBA    check_${key}.png    528,326,35,133,81,255
+    # vector
+    PNG Pixel XY Should Match RGBA    check_${key}.png    320,313,35,133,81,255
+    # region control point
+    PNG Pixel XY Should Match RGBA    check_${key}.png    204,210,255,255,255,255
+    # region border
+    PNG Pixel XY Should Match RGBA    check_${key}.png    210,209,46,230,214,255
+    # text annotation
+    PNG Pixel XY Should Match RGBA    check_${key}.png    465,253,255,186,1,255
+    
+    Remove Files    check_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+
 # validate pv cut and check the state of the generate button
 # pv cut on None and NaN
