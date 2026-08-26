@@ -552,6 +552,11 @@ Fetch VizieR Catalog And Visualize
     # switch to VizieR catalog
     Click Element    //button[contains(., "SIMBAD")]
     Click Element    //*[contains(text(), "VizieR")]
+    # reset mirror site list to default order
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    Click Element    data:testid:catalog-query-use-mirror-url-0-button
+    Click Element    data:testid:catalog-query-mirror-select-button
     # set up keyword for query
     Input Text    data:testid:catalog-query-keyword-input    SDSS
     # make query
@@ -611,6 +616,11 @@ Fetch SIMBAD Catalog And Visualize
     Capture Element Screenshot    ${VIEWER_DIV}    image_before_${key}.png
     # enable catalog query dialog
     Click Element    data:testid:online-data-query-dialog-button
+    # reset mirror site list to default order
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    Click Element    data:testid:catalog-query-use-mirror-url-0-button
+    Click Element    data:testid:catalog-query-mirror-select-button
     # set search radius
     Click Element    //button[contains(., "Set to viewer")]
     Element Attribute Value Should Be    data:testid:catalog-query-search-radius-input    value    0.8045196532714395
@@ -652,4 +662,71 @@ Fetch SIMBAD Catalog And Visualize
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,574,54
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,584,100
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+SIMBAD and VizieR Mirror Sites
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51_151_MHz.fits
+    # enable catalog query dialog
+    Click Element    data:testid:online-data-query-dialog-button
+    # check SIMBAD mirror sites
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    simbad.u-strasbg.fr
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-1-button    simbad.cfa.harvard.edu
+    # switch to VizieR and check mirror sites
+    Click Element    //button[contains(., "SIMBAD")]
+    Click Element    //*[contains(text(), "VizieR")]
+    Click Element    data:testid:catalog-query-mirror-select-button
+    # reset list to default order
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    Mouse Out    data:testid:catalog-query-reset-mirrors-button
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.cds.unistra.fr
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-1-button    vizier.nao.ac.jp
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-2-button    vizier.iucaa.in    
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-3-button    vizier.inasan.ru
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-4-button    vizier.china-vo.org
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-5-button    vizier.cfa.harvard.edu
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.idia.ac.za
+    # disable vizier.inasan.ru (a workaround is applied due to an unknown issue, something blocks the toggle)
+    Click Element At Coordinates    data:testid:catalog-query-use-mirror-url-3-button    -100    0
+
+    # perform speed test
+    Click Element    data:testid:catalog-query-test-mirror-speed-button
+    Sleep    2
+    # cancel the speed test
+    Click Element    data:testid:catalog-query-test-mirror-speed-button
+    # perform speed test again
+    Click Element    data:testid:catalog-query-test-mirror-speed-button
+    Wait Until Page Contains    Test speed    timeout=30
+    # check the fastest mirror site (vizier.nao.ac.jp in our test environment)
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.nao.ac.jp
+    # check the last mirror site which is disabled (vizier.inasan.ru in our test environment)
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
+    # load catalog from the fastest mirror site
+    Click Element    data:testid:catalog-query-mirror-select-button
+    # set up keyword for query
+    Input Text    data:testid:catalog-query-keyword-input    SDSS
+    # make query
+    Click Element    //a[contains(., "Query")]
+    Wait Until Element Does Not Contain    data:testid:catalog-query-info    Querying VizieR    timeout=60
+    # select a catalog
+    Click Element    //input[@placeholder="Please select catalog tables"]
+    # 4. Sloan Digital Sky Surveys (SDSS), Release 16 (DR16) (Ahumada+, 2020) * output of the SDSS photometric catalog
+    Click Element    //a[contains(., "V/154/sdss16")]
+    # retrive 
+    Click Element   //a[contains(., "Load selected")]
+    Wait Until Page Does Not Contain    Online Catalog Query    timeout=60
+    Wait Until Page Contains Element    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    timeout=30
+    # close the catalog widget
+    Click Element    data:testid:catalog-overlay-component-0-header-close-button    
+    # load a new image
+    Load Image    m51_151_MHz.fits
+    # check the mirror site list order to see if it is persistent
+    Click Element    data:testid:online-data-query-dialog-button
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.nao.ac.jp
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
+    # reset list to default order
+    Click Element    data:testid:catalog-query-reset-mirrors-button
     [Teardown]    Kill carta_backend And Close Browser
