@@ -653,3 +653,52 @@ Fetch SIMBAD Catalog And Visualize
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,584,100
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+SIMBAD and VizieR Mirror Sites
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    m51_151_MHz.fits
+    # enable catalog query dialog
+    Click Element    data:testid:online-data-query-dialog-button
+    # check SIMBAD mirror sites
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    simbad.u-strasbg.fr
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-1-button    simbad.cfa.harvard.edu
+    # switch to VizieR and check mirror sites
+    Click Element    //button[contains(., "SIMBAD")]
+    Click Element    //*[contains(text(), "VizieR")]
+    Click Element    data:testid:catalog-query-mirror-select-button
+    # reset list to default order
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    Mouse Out    data:testid:catalog-query-reset-mirrors-button
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.cds.unistra.fr
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-1-button    vizier.nao.ac.jp
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-2-button    vizier.iucaa.in    
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-3-button    vizier.inasan.ru
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-4-button    vizier.china-vo.org
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-5-button    vizier.cfa.harvard.edu
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.idia.ac.za
+    # disable vizier.inasan.ru (a workaround is applied due to an unknown issue, something blocks the toggle)
+    Click Element At Coordinates    data:testid:catalog-query-use-mirror-url-3-button    -100    0
+
+    # perform speed test
+    Click Element    data:testid:catalog-query-test-mirror-speed-button
+    Sleep    2
+    # cancel the speed test
+    Click Element    data:testid:catalog-query-test-mirror-speed-button
+    # perform speed test again
+    Click Element    data:testid:catalog-query-test-mirror-speed-button
+    Wait Until Page Contains    Test speed    timeout=30
+    # check the fastest mirror site (vizier.nao.ac.jp in our test environment)
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.nao.ac.jp
+    # check the last mirror site which is disabled (vizier.inasan.ru in our test environment)
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
+    # load a new image
+    Load Image    m51_151_MHz.fits
+    # check the mirror site list order to see if it is persistent
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.nao.ac.jp
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
+    # reset list to default order
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    [Teardown]    Kill carta_backend And Close Browser
