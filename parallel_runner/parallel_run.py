@@ -20,29 +20,31 @@ test_suites = {
     3201: "rendering_non_WebGL2.robot",  # 05:40
     3202: "load_image_basic.robot",      # ??:??
     3203: "load_image_advanced.robot",   # ??:??
-    3204: "conversion.robot",            # ??:??
-    3205: "region_ds9.robot",            # 05:08
-    3206: "region_casa.robot",           # 05:08
-    3207: "region_carta.robot",          # 05:08
-    3208: "catalog_widget.robot",        # 04:02
-    3209: "image_fitting.robot",         # 03:43
-    3210: "matching.robot",              # 04:04
-    3211: "moment_generator.robot",      # 03:51
-    3212: "popout_image_viewer.robot",   # ??:??
-    3213: "pv_generator.robot",          # 03:36
-    3214: "spectral_profiler.robot",     # 03:01
-    3215: "animator.robot",              # 02:19
-    3216: "annotation.robot",            # 02:05
-    3217: "check_file_info.robot",       # 01:36
-    3218: "spectral_line_query.robot",   # 01:22
-    3219: "channel_map_view.robot",      # 01:25
-    3220: "spatial_profiler.robot",      # 01:15
-    3221: "statistics_widget.robot",     # 01:14
-    3222: "image_viewer.robot",          # ??:??
-    3223: "file_browser.robot",          # ??:??
-    3224: "histogram_widget.robot",      # ??:??
-    3225: "cube_histogram.robot",        # 00:57
-    3226: "cursor_info.robot",           # 00:19
+    3204: "conversion_spatial.robot",    # ??:??
+    3205: "conversion_spectral.robot",   # ??:??
+    3206: "conversion_intensity.robot",  # ??:??
+    3207: "region_ds9.robot",            # 05:08
+    3208: "region_casa.robot",           # 05:08
+    3209: "region_carta.robot",          # 05:08
+    3210: "catalog_widget.robot",        # 04:02
+    3211: "image_fitting.robot",         # 03:43
+    3212: "matching.robot",              # 04:04
+    3213: "moment_generator.robot",      # 03:51
+    3214: "popout_image_viewer.robot",   # ??:??
+    3215: "pv_generator.robot",          # 03:36
+    3216: "spectral_profiler.robot",     # 03:01
+    3217: "animator.robot",              # 02:19
+    3218: "annotation.robot",            # 02:05
+    3219: "check_file_info.robot",       # 01:36
+    3220: "spectral_line_query.robot",   # 01:22
+    3221: "channel_map_view.robot",      # 01:25
+    3222: "spatial_profiler.robot",      # 01:15
+    3223: "statistics_widget.robot",     # 01:14
+    3224: "image_viewer.robot",          # ??:??
+    3225: "file_browser.robot",          # ??:??
+    3226: "histogram_widget.robot",      # ??:??
+    3227: "cube_histogram.robot",        # 00:57
+    3228: "cursor_info.robot",           # 00:19
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
