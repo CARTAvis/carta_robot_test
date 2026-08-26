@@ -601,7 +601,7 @@ Fetch VizieR Catalog And Visualize
     Set Selenium Speed    0
     PNG Two Pixels Should Have Matched RGBA    image_${key}.png    375,245,232,213
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    366,184,591,150
-    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    279,227,655,76
+    PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    242,98,655,72
     Remove Files    image_${key}.png    scatter_${key}.png    histogram_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
