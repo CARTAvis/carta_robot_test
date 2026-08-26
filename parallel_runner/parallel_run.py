@@ -21,26 +21,28 @@ test_suites = {
     3202: "load_image_basic.robot",      # ??:??
     3203: "load_image_advanced.robot",   # ??:??
     3204: "conversion.robot",            # ??:??
-    3205: "region.robot",                # 05:08
-    3206: "catalog_widget.robot",        # 04:02
-    3207: "image_fitting.robot",         # 03:43
-    3208: "matching.robot",              # 04:04
-    3209: "moment_generator.robot",      # 03:51
-    3210: "popout_image_viewer.robot",   # ??:??
-    3211: "pv_generator.robot",          # 03:36
-    3212: "spectral_profiler.robot",     # 03:01
-    3213: "animator.robot",              # 02:19
-    3214: "annotation.robot",            # 02:05
-    3215: "check_file_info.robot",       # 01:36
-    3216: "spectral_line_query.robot",   # 01:22
-    3217: "channel_map_view.robot",      # 01:25
-    3218: "spatial_profiler.robot",      # 01:15
-    3219: "statistics_widget.robot",     # 01:14
-    3220: "image_viewer.robot",          # ??:??
-    3221: "file_browser.robot",          # ??:??
-    3222: "histogram_widget.robot",      # ??:??
-    3223: "cube_histogram.robot",        # 00:57
-    3224: "cursor_info.robot",           # 00:19
+    3205: "region_ds9.robot",            # 05:08
+    3206: "region_casa.robot",           # 05:08
+    3207: "region_carta.robot",          # 05:08
+    3208: "catalog_widget.robot",        # 04:02
+    3209: "image_fitting.robot",         # 03:43
+    3210: "matching.robot",              # 04:04
+    3211: "moment_generator.robot",      # 03:51
+    3212: "popout_image_viewer.robot",   # ??:??
+    3213: "pv_generator.robot",          # 03:36
+    3214: "spectral_profiler.robot",     # 03:01
+    3215: "animator.robot",              # 02:19
+    3216: "annotation.robot",            # 02:05
+    3217: "check_file_info.robot",       # 01:36
+    3218: "spectral_line_query.robot",   # 01:22
+    3219: "channel_map_view.robot",      # 01:25
+    3220: "spatial_profiler.robot",      # 01:15
+    3221: "statistics_widget.robot",     # 01:14
+    3222: "image_viewer.robot",          # ??:??
+    3223: "file_browser.robot",          # ??:??
+    3224: "histogram_widget.robot",      # ??:??
+    3225: "cube_histogram.robot",        # 00:57
+    3226: "cursor_info.robot",           # 00:19
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
