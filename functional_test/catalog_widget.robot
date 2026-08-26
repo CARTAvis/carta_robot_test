@@ -555,6 +555,7 @@ Fetch VizieR Catalog And Visualize
     # reset mirror site list to default order
     Click Element    data:testid:catalog-query-mirror-select-button
     Click Element    data:testid:catalog-query-reset-mirrors-button
+    Mouse Out    data:testid:catalog-query-reset-mirrors-button
     Click Element    data:testid:catalog-query-use-mirror-url-0-button
     Click Element    data:testid:catalog-query-mirror-select-button
     # set up keyword for query
@@ -619,6 +620,7 @@ Fetch SIMBAD Catalog And Visualize
     # reset mirror site list to default order
     Click Element    data:testid:catalog-query-mirror-select-button
     Click Element    data:testid:catalog-query-reset-mirrors-button
+    Mouse Out    data:testid:catalog-query-reset-mirrors-button
     Click Element    data:testid:catalog-query-use-mirror-url-0-button
     Click Element    data:testid:catalog-query-mirror-select-button
     # set search radius
