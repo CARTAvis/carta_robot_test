@@ -429,7 +429,10 @@ Polarization Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    -8.999253082275e+1 degree
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    8    2    8.999803161621e+1 degree
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    9    2    8.999803161621e+1 degree
-    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.203670794649e+1 degree
+    # workaround for rounding error on mac mini m1 CI
+    #Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.203670794649e+1 degree
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    5.2036707946
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    10    2    e+1 degree
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    4.214720232889e+7 (degree)^2
 
     Set Selenium Speed    ${DELAY}

@@ -405,4 +405,3 @@ Linked Catalog Visualization
 
     Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
-
