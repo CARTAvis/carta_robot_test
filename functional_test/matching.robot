@@ -743,8 +743,8 @@ Quick Unmatching All With XYZR Buttons
     PNG Pixel XY Should Match RGBA    check_after_unmatching_set_channel_${key}.png    128,381,31,119,180,255
 
     Remove Files    check_after_matching_${key}.png    check_after_unmatching_${key}.png    check_after_unmatching_set_zoom_${key}.png    check_after_unmatching_set_clip_${key}.png    check_after_unmatching_set_channel_${key}.png
-
     [Teardown]    Kill carta_backend And Close Browser
+
 
 Match Images Using DATEOBS to Form a Time Series
     [Setup]    Setup carta_backend And Open Browser To CARTA
