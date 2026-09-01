@@ -9,9 +9,7 @@ Channel Map View - Layout
     # enable channel map view mode
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
@@ -77,9 +75,7 @@ Channel Map View - raster coloring
     Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
@@ -112,9 +108,7 @@ Channel Map View - active channel switching
     Load Initial Image    S255_CH3CN_subcube.fits
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout
@@ -189,9 +183,7 @@ Channel Map View - spectral labels
     # enable channel map view mode
     Click Element    data:testid:image-view-header-channel-map-button
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "jet")]
-    Click Element    //*[contains(text(), "jet")]
+    Change Raster Colormap    jet
     # enable channel map view control widget
     Click Element    id:ChannelMapControlButton
     # configure channel map layout

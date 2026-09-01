@@ -104,9 +104,7 @@ Load Images With LEL
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Element Should Contain    ${VIEWER_TAB_TITLE}    "dice_one.fits"+"dice_four.fits"
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    380,217,274,110
@@ -212,9 +210,7 @@ Load Multiple Images As A Multi-color-blended Image
 Load Image Via HiPS2FITS Service
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51_151_MHz.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # launch online data query dialog and switch to hips2fits service
     Click Element    data:testid:online-data-query-dialog-button
     Click Element    id:bp6-tab-title_onlineQueryDialogTabs_1
@@ -231,9 +227,7 @@ Load Image Via HiPS2FITS Service
     # apply query
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # try another query
     # launch online data query dialog and switch to hips2fits service
     Click Element    data:testid:online-data-query-dialog-button
@@ -253,9 +247,7 @@ Load Image Via HiPS2FITS Service
     # apply query
     Click Element    //*[@id="bp6-tab-panel_onlineQueryDialogTabs_1"]/div/div[2]/a[2]/span
     Wait Until Page Does Not Contain    Online Data Query    timeout=60
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # enable spatial matching
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     Mouse Over    ${VIEWER_DIV}

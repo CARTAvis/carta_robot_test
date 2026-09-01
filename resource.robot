@@ -439,6 +439,14 @@ Verify Region List Table Cell Content
 
 
 
+Change Raster Colormap
+    [Arguments]    ${COLORMAP_NAME}
+    Click Element    ${COLORMAP_DROPDOWN}
+    Scroll Element Into View    //*[contains(text(), "${COLORMAP_NAME}")]
+    Sleep    0.1
+    Click Element    //*[contains(text(), "${COLORMAP_NAME}")]
+
+
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
     Wait For Process    handle=carta    timeout=3

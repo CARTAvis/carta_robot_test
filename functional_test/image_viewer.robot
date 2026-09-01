@@ -6,13 +6,9 @@ Resource          ../resource.robot
 Image Viewer Settings - Pan and Zoom
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    spire500_ext.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]   
+    Change Raster Colormap    tab10
     Append Image    pacs160_js.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]   
+    Change Raster Colormap    tab10
     # enable spatial matching
     Mouse Over    ${VIEWER_10_CANVAS}
     Click Element    css:#image-panel-1-0 [data-testid="match-button"]

@@ -699,9 +699,7 @@ Quick Unmatching All With XYZR Buttons
     Click Element    data:testid:image-list-0-matching-xy
     Click Element    data:testid:image-list-0-matching-z
     Click Element    data:testid:image-list-0-matching-r
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Sleep    1
     # set new references
     Open Context Menu    data:testid:image-list-2-matching-xy

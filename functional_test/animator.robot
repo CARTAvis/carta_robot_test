@@ -164,10 +164,7 @@ Polarization Slider And Computed Components
     # zoom in
     Mouse Over    ${VIEWER_DIV}
     Click Element    ${VIEWER_00_ZOOM_IN_BUTTON}
-    # change to tab10 colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # use animator and the polarization slider to switch to different components
     Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
