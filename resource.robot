@@ -442,9 +442,6 @@ Verify Region List Table Cell Content
 Change Raster Colormap
     [Arguments]    ${COLORMAP_NAME}
     Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())='${COLORMAP_NAME}']
-    Sleep    1
-    Mouse Over    //*[normalize-space(text())='${COLORMAP_NAME}']
     Click Element    //*[normalize-space(text())='${COLORMAP_NAME}']
 
 
