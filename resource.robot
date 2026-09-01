@@ -442,9 +442,9 @@ Verify Region List Table Cell Content
 Change Raster Colormap
     [Arguments]    ${COLORMAP_NAME}
     Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())="${COLORMAP_NAME}"]
+    Scroll Element Into View    //*[normalize-space(text())='${COLORMAP_NAME}']
     Sleep    0.1
-    Click Element    //*[normalize-space(text())="${COLORMAP_NAME}")]
+    Click Element    //*[normalize-space(text())='${COLORMAP_NAME}']
 
 
 Run carta_backend
