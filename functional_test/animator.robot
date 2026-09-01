@@ -370,3 +370,90 @@ Animation Playback With Polarization Set
     Should Be True    '${result}' == 'Pangle' or '${result}' == 'Stokes I'
 
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Animation Playback With Time Series
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    variable
+    Wait Until Element Contains    ${FILE_LIST}   variable_source_03.fits
+    Sleep    0.5
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='variable_source_03.fits']    
+    Click Element    //*[contains(text(), "variable_source_07.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_01.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_02.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_05.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_06.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_09.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_04.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_10.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_08.fits")]    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='variable_source_03.fits']    
+    Click Element    //*[contains(text(), "variable_source_07.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_01.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_02.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_05.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_06.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_09.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_04.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_10.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_08.fits")]    modifier=CTRL
+    END
+    Sleep    0.5
+    Click Element    //a[contains(., "Load as time series")]
+    Wait Until Page Contains Element    //*[normalize-space(text())='Time series']
+
+    # reduce target fps from 5 to 2
+    Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    # set step from 1 to 2
+    Click Element    //*[contains(text(), "Frame rate")]
+    Click Element    //*[contains(text(), "Step")]
+    Click Element    ${ANIMATOR_SPINBOX_UP}
+    
+    # trigger playback forward
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_07.fits    timeout=10
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
+    ${result}=    Convert To Integer    ${ch_index}
+    Should Be True    ${result} == 1 or ${result} == 6
+
+    # trigger playback backward
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Play backwards")]
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_03.fits    timeout=10
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span   
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == '0' or '${result}' == '2'
+
+    # tigger playback bouncing
+    Click Element    data:testid:animator-playback-mode-button
+    Click Element    //*[contains(text(), "Bouncing")]
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_05.fits    timeout=10
+    Sleep    0.1
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_05.fits    timeout=10
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span   
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == '4' or '${result}' == '0'
+
+    # trigger playback blink
+    Click Element    data:testid:animator-playback-mode-button
+    # for some reason the following won't work so a workaround is used
+    #Click Element    //*[contains(text(), "Blink")]
+    Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_10.fits    timeout=10
+    Sleep    2
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_10.fits    timeout=10
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
+    ${result}=    Convert To String    ${ch_index}
+    Should Be True    '${result}' == '8' or '${result}' == '2'
+
+    [Teardown]    Kill carta_backend And Close Browser
