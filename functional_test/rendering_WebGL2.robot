@@ -6,9 +6,7 @@ Resource          ../resource.robot
 Raster Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    pixel_shader_test.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -31,9 +29,7 @@ Raster Image Rendering
 Contour Image Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_gaussian.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "nipy_spectral")]
-    Click Element    //*[contains(text(), "nipy_spectral")]
+    Change Raster Colormap    nipy_spectral
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
     Click Element    //*[contains(text(), "Styling")]
@@ -267,17 +263,11 @@ Vector Field Rendering With A Stokes Line Cube
 Multicolor Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    disk_0.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())='Red']
-    Click Element    //*[normalize-space(text())='Red'] 
+    Change Raster Colormap    Red
     Append Image    disk_1.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())='Green']
-    Click Element    //*[normalize-space(text())='Green'] 
+    Change Raster Colormap    Green
     Append Image    disk_2.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())='Blue']
-    Click Element    //*[normalize-space(text())='Blue'] 
+    Change Raster Colormap    Blue
     # enable spatial matching and adjust zoom level
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     Mouse Over    ${VIEWER_DIV}
@@ -302,9 +292,7 @@ Multicolor Rendering
 
     # Append a new image
     Append Image    disk_1.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())='Green']
-    Click Element    //*[normalize-space(text())='Green'] 
+    Change Raster Colormap    Green
     Click Element    ${IMAGE_LIST_FOURTH_MATCHING_XY}
 
     # join the new image into the blending image
@@ -526,9 +514,7 @@ Tile Rendering with Different MIP
     Mouse Over    ${VIEWER_11_CANVAS}
     Click Element    //*[@id="image-panel-1-1"]/div[8]/span[7]/a
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[normalize-space(text())='tab10']
-    Click Element    //*[normalize-space(text())='tab10']
+    Change Raster Colormap    tab10
     # take screenshot and perform pixel checks
     Mouse Out    ${VIEWER_DIV}
     ${key}=    Generate Random String    8

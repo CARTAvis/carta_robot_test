@@ -699,9 +699,7 @@ Quick Unmatching All With XYZR Buttons
     Click Element    data:testid:image-list-0-matching-xy
     Click Element    data:testid:image-list-0-matching-z
     Click Element    data:testid:image-list-0-matching-r
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Sleep    1
     # set new references
     Open Context Menu    data:testid:image-list-2-matching-xy
@@ -743,5 +741,49 @@ Quick Unmatching All With XYZR Buttons
     PNG Pixel XY Should Match RGBA    check_after_unmatching_set_channel_${key}.png    128,381,31,119,180,255
 
     Remove Files    check_after_matching_${key}.png    check_after_unmatching_${key}.png    check_after_unmatching_set_zoom_${key}.png    check_after_unmatching_set_clip_${key}.png    check_after_unmatching_set_channel_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+Match Images Using DATEOBS to Form a Time Series
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    variable_source_09.fits
+    Append Image    variable_source_04.fits
+    Append Image    variable_source_10.fits
+    Append Image    variable_source_08.fits
+
+    # trigger DATEOBS matching for all images
+    Click Element    data:testid:image-list-3-matching-t
+
+    # switch to the animator widget
+    Click Element    //*[contains(text(), "Animator")]
+    # verify time series is formed with the correct order
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]    01-01 16:00
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]    01-02 13:20
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]    01-02 18:40
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[4]    01-03 00:00
+
+    # switch to the image list to disable DATEOBS matching for the 1st image (image id=1)
+    Click Element    //*[contains(text(), "Image List")]
+    Click Element    data:testid:image-list-1-matching-t
+
+    # switch back to the animator widget
+    Click Element    //*[contains(text(), "Animator")]
+    # verify time series is formed with the correct order
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]    01-02 13:20
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]    01-02 18:40
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]    01-03 00:00
+
+    # switch back to the image list and unmatch all images using DATEOBS
+    Click Element    //*[contains(text(), "Image List")]
+    Repeat Keyword    2    Click Element    data:testid:image-list-3-matching-t
+
+    # switch back to the animator widget
+    Click Element    //*[contains(text(), "Animator")]
+    Element Should Not Contain    data:testid:animator-0-content    Time series
+
+    # form a time series via the file menu
+    Click Element    //*[contains(text(), "File")]
+    Click Element    //*[contains(text(), "Form Time Series")]
+    Element Should Contain    data:testid:animator-0-content    Time series
 
     [Teardown]    Kill carta_backend And Close Browser

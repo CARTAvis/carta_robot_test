@@ -8,9 +8,7 @@ Resource          ../resource.robot
 Popout And Restore Image Viewer
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   S255_CH3CN_subcube.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Switch Window    NEW
@@ -62,14 +60,9 @@ Popout Image Viewer - layout
     Sleep    1
     Switch Window    MAIN
     Load Initial Image   S255_CH3CN_subcube.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]    
+    Change Raster Colormap    tab10
     Append Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
-    
+    Change Raster Colormap    tab10    
     # apply zoom to fit
     Switch Window    NEW
     Mouse Over    id:image-panel-0-0
@@ -140,9 +133,7 @@ Popout Image Viewer - rendering modes
     Switch Window    MAIN
     # raster rendering mode
     Load Initial Image   dice_one.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # contour rendering mode
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    0.6
@@ -191,17 +182,11 @@ Popout Image Viewer - multicolor blending
     # enable popout image viewer
     Click Element    data:testid:image-view-header-popout-button
     Load Initial Image    disk_0.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "Red")]
-    Click Element    //*[normalize-space(text())='Red'] 
+    Change Raster Colormap    Red
     Append Image    disk_1.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "Green")]
-    Click Element    //*[normalize-space(text())='Green'] 
+    Change Raster Colormap    Green
     Append Image    disk_2.fits
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "Blue")]
-    Click Element    //*[normalize-space(text())='Blue'] 
+    Change Raster Colormap    Blue
     Click Element    data:testid:image-list-0-matching-xy
     # enable multi-color blending
     Click Element    //*[contains(text(), "File")]

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Test conversions such as wcs and intensity units
+Documentation     Test conversions of spectral conventions
 Resource          ../resource.robot
 
 *** Test Cases ***

@@ -16,36 +16,37 @@ custom_robot_flags = tmp[1]
 
 # having longer runs run first
 test_suites = {
-    3200: "rendering_WebGL2.robot",      # 05:40
-    3201: "rendering_non_WebGL2.robot",  # 05:40
-    3202: "load_image_basic.robot",      # ??:??
-    3203: "load_image_advanced.robot",   # ??:??
-    3204: "conversion_spatial.robot",    # ??:??
-    3205: "conversion_spectral.robot",   # ??:??
-    3206: "conversion_intensity.robot",  # ??:??
-    3207: "region_ds9.robot",            # 05:08
-    3208: "region_casa.robot",           # 05:08
-    3209: "region_carta.robot",          # 05:08
-    3210: "load_catalog.robot",          # 04:02
-    3211: "catalog_widget.robot",        # 04:02
-    3212: "image_fitting.robot",         # 03:43
-    3213: "matching.robot",              # 04:04
-    3214: "moment_generator.robot",      # 03:51
-    3215: "popout_image_viewer.robot",   # ??:??
-    3216: "pv_generator.robot",          # 03:36
-    3217: "spectral_profiler.robot",     # 03:01
-    3218: "animator.robot",              # 02:19
-    3219: "annotation.robot",            # 02:05
-    3220: "check_file_info.robot",       # 01:36
+    3200: "matching.robot",              # 04:04
+    3201: "rendering_WebGL2.robot",      # 05:40
+    3202: "moment_generator.robot",      # 03:51
+    3203: "rendering_non_WebGL2.robot",  # 05:40
+    3204: "image_fitting.robot",         # 03:43
+    3205: "pv_generator.robot",          # 03:36
+    3206: "load_image_basic.robot",      # ??:??
+    3207: "region_carta.robot",          # 05:08
+    3208: "spectral_profiler.robot",     # 03:01
+    3209: "popout_image_viewer.robot",   # ??:??
+    3210: "animator.robot",              # 02:19
+    3211: "load_catalog.robot",          # 04:02
+    3212: "conversion_spatial.robot",    # ??:??
+    3213: "catalog_widget.robot",        # 04:02
+    3214: "load_image_advanced.robot",   # ??:??
+    3215: "annotation.robot",            # 02:05
+    3216: "region_ds9.robot",            # 05:08
+    3217: "conversion_spectral.robot",   # ??:??
+    3218: "check_file_info.robot",       # 01:36
+    3219: "statistics_widget.robot",     # 01:14
+    3220: "channel_map_view.robot",      # 01:25
     3221: "spectral_line_query.robot",   # 01:22
-    3222: "channel_map_view.robot",      # 01:25
-    3223: "spatial_profiler.robot",      # 01:15
-    3224: "statistics_widget.robot",     # 01:14
-    3225: "image_viewer.robot",          # ??:??
-    3226: "file_browser.robot",          # ??:??
-    3227: "histogram_widget.robot",      # ??:??
-    3228: "cube_histogram.robot",        # 00:57
-    3229: "cursor_info.robot",           # 00:19
+    3222: "spatial_profiler.robot",      # 01:15
+    3223: "region_casa.robot",           # 05:08
+    3224: "conversion_intensity.robot",  # ??:??
+    3225: "file_browser.robot",          # ??:??
+    3226: "histogram_widget.robot",      # ??:??
+    3227: "cube_histogram.robot",        # 00:57
+    3228: "image_viewer.robot",          # ??:??
+    3229: "conversion_time.robot",       # ??:??
+    3230: "cursor_info.robot",           # 00:19
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time

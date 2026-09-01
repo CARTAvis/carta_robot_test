@@ -424,9 +424,7 @@ Polar Offset Coordinate Grid Rendering
     Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
     # change to tab10 colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
 
     # take screenshot and perform pixel checks
     Mouse Out    ${VIEWER_DIV}

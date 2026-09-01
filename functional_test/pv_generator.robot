@@ -31,9 +31,7 @@ Narrow-field PV Image Generation
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Element Should Contain    ${VIEWER_TAB_TITLE}    S255_CH3CN_subcube_pv.fits
     Click Element    ${FILE_HEADER_DIALOG_BUTTON}
     # go to the file info tab and check context
@@ -87,9 +85,7 @@ Wide-field PV Image Generation
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     #Sleep    0.5
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -140,9 +136,7 @@ PV Image Generation Cancellation And Rerequest
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     #Sleep    0.5
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element At Coordinates    ${VIEWER_DIV}    200    0
@@ -189,10 +183,7 @@ PV Image Generation Repeat
     Wait Until Page Does Not Contain    Generating PV    timeout=5
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Sleep    1
-    Click Element    ${COLORMAP_DROPDOWN}
-    Wait Until Page Contains Element    //*[contains(text(), "tab10")]
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     ${key}=    Generate Random String    8
     # this sleep is required to let the viewer size popup in the viewer go away
     Sleep    0.8
@@ -318,9 +309,7 @@ PV Image Generation With Matched Wide-field Cubes
     # mouse over the generated pv image panel and click the zoom-to-fit button
     Mouse Over    css:#image-panel-0-1 .region-stage
     Click Element    css:#image-panel-0-1 [data-testid="zoom-to-fit-button"]
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Click Element    id:PVGeneratorButton
     # use the image dropdown to select Gaussian_array_wide.fits
     Click Element    data:testid:pv-generator-image-dropdown
@@ -334,9 +323,7 @@ PV Image Generation With Matched Wide-field Cubes
     Wait Until Page Does Not Contain    Generating PV    timeout=60
     Click Element    ${PV_GENERATOR_CLOSE_BUTTON}
     Sleep    1
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Mouse Out    ${VIEWER_DIV}
     #Sleep    0.5
     ${key}=    Generate Random String    8
@@ -379,9 +366,7 @@ Interactive PV Preview
     # relocate preview widget
     Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${X_SPATIAL_PROFILER_TAB}
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    before_${key}.png
@@ -435,9 +420,7 @@ Interactive PV Preview With Customization
     Sleep    0.1
     Drag And Drop    data:testid:pv-generator-0-pv-preview-0-header-dock-button    ${X_SPATIAL_PROFILER_TAB}
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     Click Element    ${VIEWER_DIV}
     ${key}=    Generate Random String    8
     Capture Element Screenshot    data:testid:pv-generator-0-pv-preview-0-content    before_${key}.png
@@ -449,9 +432,7 @@ Interactive PV Preview With Customization
     Click Element    ${PV_GENERATOR_GENERATE_BUTTON}
     Wait Until Page Does Not Contain    Generating PV    timeout=30
     # change colormap
-    Click Element    ${COLORMAP_DROPDOWN}
-    Scroll Element Into View    //*[contains(text(), "tab10")]
-    Click Element    //*[contains(text(), "tab10")]
+    Change Raster Colormap    tab10
     # make pv preview widget active
     Click Element    data:testid:pv-generator-0-pv-preview-0-header-title
     Capture Page Screenshot    final_${key}.png
