@@ -271,3 +271,121 @@ Load Image Via HiPS2FITS Service
     PNG Two Pixels Should Have Matched RGBA    check_hips2fits_${key}.png    190,99,191,334
     Remove File    check_hips2fits_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Images as a Time-Series Dataset
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    variable
+    Wait Until Element Contains    ${FILE_LIST}   variable_source_03.fits
+    Sleep    0.5
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='variable_source_03.fits']    
+    Click Element    //*[contains(text(), "variable_source_07.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_01.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_02.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_05.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_06.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_09.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_04.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_10.fits")]    modifier=COMMAND
+    Click Element    //*[contains(text(), "variable_source_08.fits")]    modifier=COMMAND
+    ELSE
+    Click Element    //*[normalize-space(text())='variable_source_03.fits']    
+    Click Element    //*[contains(text(), "variable_source_07.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_01.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_02.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_05.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_06.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_09.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_04.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_10.fits")]    modifier=CTRL
+    Click Element    //*[contains(text(), "variable_source_08.fits")]    modifier=CTRL
+    END
+    Sleep    0.5
+    Click Element    //a[contains(., "Load as time series")]
+    Wait Until Page Contains Element    //*[normalize-space(text())='Time series']
+    
+    # check time series slider labels in the animator widget
+    Set Selenium Speed    0
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]    01-01 00:00
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[2]    01-01 05:20
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[3]    01-01 10:40
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[4]    01-01 16:00
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[5]    01-01 21:20
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[6]    01-02 02:40
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[7]    01-02 08:00
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[8]    01-02 13:20
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[9]    01-02 18:40
+    Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[10]    01-03 00:00
+    Set Selenium Speed    ${DELAY}
+
+    # check the image order in the image list widget
+    Click Element    //*[normalize-space(text())='Image List']
+    Set Selenium Speed    0
+    Element Should Contain    data:testid:image-list-0-image-name    variable_source_03.fits
+    Element Should Contain    data:testid:image-list-1-image-name    variable_source_07.fits
+    Element Should Contain    data:testid:image-list-2-image-name    variable_source_01.fits
+    Element Should Contain    data:testid:image-list-3-image-name    variable_source_02.fits
+    Element Should Contain    data:testid:image-list-4-image-name    variable_source_05.fits
+    Element Should Contain    data:testid:image-list-5-image-name    variable_source_06.fits
+    Element Should Contain    data:testid:image-list-6-image-name    variable_source_09.fits
+    Element Should Contain    data:testid:image-list-7-image-name    variable_source_04.fits
+    Element Should Contain    data:testid:image-list-8-image-name    variable_source_10.fits
+    Element Should Contain    data:testid:image-list-9-image-name    variable_source_08.fits
+    Set Selenium Speed    ${DELAY}
+
+    # take a screenshot of the image list widget to verify the matching state
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    data:testid:layer-list-0-content    check_timeseries_${key}.png
+    Set Selenium Speed    0
+    IF    '${platform}' == 'darwin'
+    # XY reference box
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    274,40,28,33,39,255
+    # XY from image id 0 to 7, 8 and 9 are not in the view due to long list
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,45,255,255,255,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,65,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,85,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,105,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,125,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,145,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,165,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,185,189,218,203,255
+    # T reference box
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    334,80,28,33,39,255    
+    # T from image id 0 to 7, 8 and 9 are not in the view due to long list
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,45,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,65,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,85,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,105,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,125,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,145,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,165,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,185,189,218,203,255    
+    ELSE
+    # XY reference box
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    274,40,28,33,39,255
+    # XY from image id 0 to 7, 8 and 9 are not in the view due to long list
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,45,255,255,255,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,65,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,85,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,105,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,125,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,145,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,165,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    278,185,189,218,203,255
+    # T reference box
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    334,80,28,33,39,255    
+    # T from image id 0 to 7, 8 and 9 are not in the view due to long list
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,45,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,65,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,85,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,105,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,125,189,218,203,255    
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,145,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,165,189,218,203,255
+    PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,185,189,218,203,255    
+    END
+    Remove Files    check_timeseries_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
