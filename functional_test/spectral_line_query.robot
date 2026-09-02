@@ -202,3 +202,45 @@ Line ID Overlay On Spectral Profiler
     
     Remove Files    check_${key}.png    check2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Line ID Overlay On Spectral Profiler with Rest Frame Conversion
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    CO_6_5_z20_cube.fits
+    Mouse Over    ${VIEWER_DIV}
+    # enable the spectral profiler widget
+    Click Element    id:SpectralProfilerButton
+    # enable the settings dialog
+    Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
+    # enable rest frame conversion x-axis
+    Click Element    //*[contains(text(), "X-axis")]
+    # enable rest frame conversion y-axis
+    Click Element    //*[contains(text(), "Y-axis")]
+    # set z to 20
+    Press Keys    data:testid:spectral-profiler-redshift-input    DELETE
+    Input Text    data:testid:spectral-profiler-redshift-input    20
+    Click Element    //*[contains(text(), "Redshift (z)")]
+    Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+    # search for CO 6-5 from Splatalogue
+    Click Element    id:SpectralLineQueryWidgetButton
+    Wait Until Page Contains    Intensity limit    timeout=10
+    Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    691473.07    True
+    Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    691473.08    True
+    Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
+    Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 line(s).    
+    Element Should Be Disabled    data:testid:spectral-line-query-frequency-shift-input
+    # select the two entries
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[1]/div[2]/div[3]/div[2]/div/div[1]/div[6]/div/div[1]/div[2]/div/div/div[1]/div[2]/div[1]/div[2]/label/span
+    # enable line labelling
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/div[2]/span/a
+    # close the spectral line query widget
+    Click Element    data:testid:spectral-line-query-0-header-close-button
+    # take another screenshot of the spectral plot
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    data:testid:spectral-profiler-0-plot    with_label_${key}.png
+    PNG Pixel XY Should Match RGBA    with_label_${key}.png    463,167,28,110,66,255
+    Remove Files    with_label_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
