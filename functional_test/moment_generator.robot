@@ -451,12 +451,12 @@ Generate Moment Images With A Custom Rest Frequency
     Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
     # apply a new custom rest frequency for NH2CHO at 349.4795473 GHz
-    Double Click Element    id:numericInput-11
-    Input Text    id:numericInput-11    349.4795473    clear=False
+    Double Click Element    id:numericInput-12
+    Input Text    id:numericInput-12    349.4795473    clear=False
     # use the coordinate dropdown to select radio velocity as the reference 
     Click Element    css:[data-testid="moment-generator-tab"] [data-testid="spectral-profiler-coordinate-dropdown"]
     Click Element    //*[@data-testid="moment-generator-tab"]//option[contains(text(), "Radio velocity (km/s)")]
-    # set velocity range from 15 to 25
+    # set velocity range from 0 to 15
     Press Keys    data:testid:moment-generator-spectral-range-from-input    DELETE
     Input Text    data:testid:moment-generator-spectral-range-from-input    0
     Press Keys    data:testid:moment-generator-spectral-range-to-input    DELETE
@@ -464,7 +464,7 @@ Generate Moment Images With A Custom Rest Frequency
     # set mask mode to include
     Click Element    data:testid:moment-generator-mask-dropdown
     Click Element    //option[contains(text(), "Include")]
-    # set mask range from value to 0.03
+    # set mask range from value to 0.05
     Press Keys    data:testid:moment-generator-mask-range-from-input    DELETE
     Input Text    data:testid:moment-generator-mask-range-from-input    0.05
     # select moment 0, 1, and 2
