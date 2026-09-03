@@ -313,6 +313,9 @@ Rest Frame Conversion - High-z Multi-CO Cube
     Click Element    //*[contains(text(), "X-axis")]
     # enable rest frame conversion y-axis
     Click Element    //*[contains(text(), "Y-axis")]
+    # switch to redshift mode
+    Click Element    data:testid:spectral-profiler-shift-mode-dropdown
+    Click Element    //*[normalize-space(text())='Redshift (z)']
     # set z to 20
     Press Keys    data:testid:spectral-profiler-redshift-input    DELETE
     Input Text    data:testid:spectral-profiler-redshift-input    20
@@ -384,6 +387,9 @@ Rest Frame Conversion - Matching High-z CO Cubes
     Click Element    //*[contains(text(), "X-axis")]
     # enable rest frame conversion y-axis
     Click Element    //*[contains(text(), "Y-axis")]
+    # switch to redshift mode
+    Click Element    data:testid:spectral-profiler-shift-mode-dropdown
+    Click Element    //*[normalize-space(text())='Redshift (z)']
     # set z to 20
     Press Keys    data:testid:spectral-profiler-redshift-input    DELETE
     Input Text    data:testid:spectral-profiler-redshift-input    20
