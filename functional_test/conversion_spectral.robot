@@ -274,8 +274,8 @@ Rest Frame Conversion - Insufficient Header
     # enable the settings dialog
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # check that the rest frame conversion is disabled, as the header contains velocity info only without frequency info
-    Element Should Be Disabled    data:testid:spectral-profiler-x-axis-rest-frame-switch
-    Element Should Be Disabled    data:testid:spectral-profiler-y-axis-rest-frame-switch
+    Element Should Be Disabled    data:testid:spectral-profiler-x-axis-rest-frame-toggle
+    Element Should Be Disabled    data:testid:spectral-profiler-x-axis-rest-frame-toggle
     [Teardown]    Kill carta_backend And Close Browser
 
 
