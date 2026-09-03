@@ -534,6 +534,9 @@ Generate Moment Images With Rest Frame Conversion
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # enable rest frame conversion x-axis
     Click Element    //*[contains(text(), "X-axis")]
+    # switch to redshift mode
+    Click Element    data:testid:spectral-profiler-shift-mode-dropdown
+    Click Element    //*[normalize-space(text())='Redshift (z)']
     # set z to 20
     Press Keys    data:testid:spectral-profiler-redshift-input    DELETE
     Input Text    data:testid:spectral-profiler-redshift-input    20
@@ -562,6 +565,7 @@ Generate Moment Images With Rest Frame Conversion
     Wait Until Page Contains    NumPixels
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    4.652928665093e+4 Jy/beam.km/s
     Click Element    data:testid:image-list-1-image-name
+    Wait Until Page Contains    NumPixels
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    4.652928665093e+4 Jy/beam.km/s
     [Teardown]    Kill carta_backend And Close Browser
 
