@@ -523,7 +523,40 @@ Spectral Profile Fitting Guess Then Fit
 
 
 
-
+Spectral Profile Fitting with Rest Frame Conversion
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    CO_6_5_z20_cube.fits
+    Mouse Over    ${VIEWER_DIV}
+    # enable the spectral profiler widget
+    Click Element    id:SpectralProfilerButton
+    # enable the settings dialog
+    Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
+    # enable rest frame conversion x-axis
+    Click Element    //*[contains(text(), "X-axis")]
+    # enable rest frame conversion y-axis
+    Click Element    //*[contains(text(), "Y-axis")]
+    # switch to redshift mode
+    Click Element    data:testid:spectral-profiler-shift-mode-dropdown
+    Click Element    //*[normalize-space(text())='Redshift (z)']
+    # set z to 20
+    Press Keys    data:testid:spectral-profiler-redshift-input    DELETE
+    Input Text    data:testid:spectral-profiler-redshift-input    20
+    Click Element    //*[contains(text(), "Redshift (z)")]
+    Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+    # trigger profile fitting
+    # click the profile fitting button
+    Click Element    ${PROFILE_FITTING_BUTTON}
+    # click the auto detect button    
+    Click Element    ${PROFILE_FITTING_AUTO_DETECT_BUTTON}
+    # make the fit button visible and click it to trigger profile fitting
+    Scroll Element Into View    ${PROFILE_FITTING_FIT_BUTTON}
+    Click Element    ${PROFILE_FITTING_FIT_BUTTON}
+    Set Selenium Speed    0
+    Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Center = 691.462729 (GHz (rest frame))
+    Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Amplitude = 1.327226 (Jy/beam (rest frame))
+    Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    FWHM = 0.654178 (GHz (rest frame))
+    Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Integral = 0.924215 (Jy/beam (rest frame) * GHz (rest frame))
+    [Teardown]    Kill carta_backend And Close Browser
 
 
 

@@ -456,7 +456,7 @@ Generate Moment Images With A Custom Rest Frequency
     # use the coordinate dropdown to select radio velocity as the reference 
     Click Element    css:[data-testid="moment-generator-tab"] [data-testid="spectral-profiler-coordinate-dropdown"]
     Click Element    //*[@data-testid="moment-generator-tab"]//option[contains(text(), "Radio velocity (km/s)")]
-    # set velocity range from 15 to 25
+    # set velocity range from 0 to 15
     Press Keys    data:testid:moment-generator-spectral-range-from-input    DELETE
     Input Text    data:testid:moment-generator-spectral-range-from-input    0
     Press Keys    data:testid:moment-generator-spectral-range-to-input    DELETE
@@ -464,7 +464,7 @@ Generate Moment Images With A Custom Rest Frequency
     # set mask mode to include
     Click Element    data:testid:moment-generator-mask-dropdown
     Click Element    //option[contains(text(), "Include")]
-    # set mask range from value to 0.03
+    # set mask range from value to 0.05
     Press Keys    data:testid:moment-generator-mask-range-from-input    DELETE
     Input Text    data:testid:moment-generator-mask-range-from-input    0.05
     # select moment 0, 1, and 2
@@ -496,6 +496,80 @@ Generate Moment Images With A Custom Rest Frequency
     PNG Pixel XY Should Match RGBA    moment1_${key}.png    220,345,134,255,112,255
     Remove Files    moment1_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Generate Moment Images With Rest Frame Conversion
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    CO_6_5_z20_cube.fits
+    # enable the spectral profiler widget
+    Click Element    id:SpectralProfilerButton
+    # switch to radio velocity km/s convention
+    Click Element    data:testid:spectral-profiler-0-header-settings-button
+    Click Element    data:testid:spectral-profiler-coordinate-dropdown
+    Click Element    //*[contains(text(), "Radio velocity (km/s)")]    
+    # enable moment map generator
+    Click Element    data:testid:moment-generator-button
+    # define a velocity range for making a moment 0
+    Press Keys    data:testid:moment-generator-spectral-range-from-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-from-input    285504
+    Press Keys    data:testid:moment-generator-spectral-range-to-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-to-input    285528.8
+    # trigger moment 0 generation
+    Click Element    data:testid:moment-generator-generate-button
+    Wait Until Page Does Not Contain    Generating Moments    timeout=5
+    # close spectral profiler settings dialog and widget
+    Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+    Click Element    data:testid:spectral-profiler-0-header-close-button
+
+    # switch active image back to the cube
+    Click Element    data:testid:image-list-0-image-name
+
+    # enable the spectral profiler widget and its settings dialog and apply rest frame conversion
+    Click Element    id:SpectralProfilerButton
+    Click Element    data:testid:spectral-profiler-0-header-settings-button
+
+    # apply rest frame conversion
+    Click Element    //*[normalize-space(text())='Conversion']
+    Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
+    # enable rest frame conversion x-axis
+    Click Element    //*[contains(text(), "X-axis")]
+    # switch to redshift mode
+    Click Element    data:testid:spectral-profiler-shift-mode-dropdown
+    Click Element    //*[normalize-space(text())='Redshift (z)']
+    # set z to 20
+    Press Keys    data:testid:spectral-profiler-redshift-input    DELETE
+    Input Text    data:testid:spectral-profiler-redshift-input    20
+    Click Element    //*[contains(text(), "Redshift (z)")]
+    # switch to moments tab
+    Click Element    //*[normalize-space(text())='Moments']
+    # define a velocity range for making a moment 0
+    Press Keys    data:testid:moment-generator-spectral-range-from-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-from-input    -246.2
+    Press Keys    data:testid:moment-generator-spectral-range-to-input    DELETE
+    Input Text    data:testid:moment-generator-spectral-range-to-input    254.7
+    # keep previous moment 0
+    Click Element    //*[contains(text(), "Keep previous moment image(s)")]
+    # move the dialog up in order to show the generate button in the view
+    Drag And Drop By Offset    data:testid:spectral-profiler-0-floating-settings-0-header-title    0    50
+    
+    
+    # trigger moment 0 generation
+    Click Element    data:testid:moment-generator-generate-button
+    Wait Until Page Does Not Contain    Generating Moments    timeout=5
+    # close spectral profiler settings dialog and widget
+    Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button
+    Click Element    data:testid:spectral-profiler-0-header-close-button    
+    # compare two moment 0 images to ensure they are identical via region statistics
+    Click Element    id:StatisticsWidgetButton
+    Wait Until Page Contains    NumPixels
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    4.652928665093e+4 Jy/beam.km/s
+    Click Element    data:testid:image-list-1-image-name
+    Wait Until Page Contains    NumPixels
+    Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    4.652928665093e+4 Jy/beam.km/s
+    [Teardown]    Kill carta_backend And Close Browser
+
+
 
 
 # TODO: load two images and create a moment image from each
