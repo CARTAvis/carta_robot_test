@@ -45,8 +45,9 @@ test_suites = {
     3226: "histogram_widget.robot",      # ??:??
     3227: "cube_histogram.robot",        # 00:57
     3228: "image_viewer.robot",          # ??:??
-    3229: "conversion_time.robot",       # ??:??
-    3230: "cursor_info.robot",           # 00:19
+    3229: "workspace.robot",
+    3230: "conversion_time.robot",       # ??:??
+    3231: "cursor_info.robot",           # 00:19
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
