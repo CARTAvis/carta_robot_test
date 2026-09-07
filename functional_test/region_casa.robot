@@ -166,8 +166,8 @@ Import Image Coordinate CASA Region Made Manually
     Verify Region List Table Cell Content    10    6    Text - Ann
     Verify Region List Table Cell Content    10    7    17:56:20.7783967837
     Verify Region List Table Cell Content    10    7    -21:57:23.0581056880
-    #Verify Region List Table Cell Content    10    8    3.9648452759"
-    Verify Region List Table Cell Content    10    8    1.0212765957"
+    Verify Region List Table Cell Content    10    8    3.5014648438"
+    Verify Region List Table Cell Content    10    8    1.0000000000"
     Verify Region List Table Cell Content    10    9    0.0
 
     Verify Region List Table Cell Content    11    5    Region 10

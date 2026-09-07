@@ -75,8 +75,8 @@ Import World Coordinate ds9 Region Made In ds9
     Verify Region List Table Cell Content    9    6    Text - Ann
     Verify Region List Table Cell Content    9    7    17:56:21.0261599764
     Verify Region List Table Cell Content    9    7    -21:57:25.9106398420
-    #Verify Region List Table Cell Content    9    8    1.1337982178"
-    Verify Region List Table Cell Content    9    8    0.5106382979"
+    Verify Region List Table Cell Content    9    8    1.1115722656"
+    Verify Region List Table Cell Content    9    8    0.5000000000"
     Verify Region List Table Cell Content    9    9    0.0
 
     Verify Region List Table Cell Content    10    5    Region 9
@@ -252,8 +252,8 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     Verify Region List Table Cell Content    9    6    Text - Ann
     Verify Region List Table Cell Content    9    7    17:56:21.0261599764
     Verify Region List Table Cell Content    9    7    -21:57:25.9106398420
-    #Verify Region List Table Cell Content    9    8    1.1337982178"
-    Verify Region List Table Cell Content    9    8    0.5106382979"
+    Verify Region List Table Cell Content    9    8    1.1115722656"
+    Verify Region List Table Cell Content    9    8    0.5000000000"
     Verify Region List Table Cell Content    9    9    0.0
 
     Verify Region List Table Cell Content    10    5    Region 9
@@ -430,8 +430,8 @@ Import Image Coordinate ds9 Region Made In ds9
     Verify Region List Table Cell Content    9    6    Text - Ann
     Verify Region List Table Cell Content    9    7    17:56:21.0261599764
     Verify Region List Table Cell Content    9    7    -21:57:25.9106398420
-    #Verify Region List Table Cell Content    9    8    1.1337982178"
-    Verify Region List Table Cell Content    9    8    0.5106382979"
+    Verify Region List Table Cell Content    9    8    1.1115722656"
+    Verify Region List Table Cell Content    9    8    0.5000000000"
     Verify Region List Table Cell Content    9    9    0.0
 
     Verify Region List Table Cell Content    10    5    Region 9
