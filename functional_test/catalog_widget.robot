@@ -405,3 +405,70 @@ Linked Catalog Visualization
 
     Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Catalog Rendering As Image Overlay With Angular Size Mapping
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    fake_image.fits
+    Change Raster Colormap    tab10
+    Load Catalog File    fake_catalog.fits
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
+    Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
+    # enable catalog image overlay
+    Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
+    # configure angular size mapping
+    Click Element    data:testid:catalog-size-button
+    # switch to ellipse marker
+    Click Element    data:testid:catalog-settings-shape-dropdown
+    Click Element    data:testid:catalog-settings-shape-ellipse-lined
+    # switch to angular size mode
+    Click Element    //a[contains(., "Angular size")]
+    Click Element    data:testid:catalog-settings-major-size-column-dropdown
+    Click Element    //a[contains(., "major_axis")]
+    Click Element    //*[@id="bp6-tab-panel_catalogSettings_3"]/div/div[2]/div/div/button
+    Click Element    //a[contains(., "minor_axis")]
+    # size unit to degree
+    Click Element    //*[@id="bp6-tab-panel_catalogSettings_3"]/div/div[3]/div/div/button
+    Click Element    //a[contains(., "deg")]
+    # click the thickness spinbox to increase the thickness of the ellipse shape
+    Repeat Keyword    8    Click Element    data:testid:catalog-settings-thickness-input-increment-button
+    # set up orientation mapping
+    # click the orientation tab
+    Click Element    data:testid:catalog-settings-orientation-tab-title
+    # click the column dropdown menu to set up orientation mapping with respect to the ANG_DIST column
+    Click Element    data:testid:catalog-settings-orientation-column-dropdown
+    Click Element    //a[contains(., "pa")]
+    # close the settings dialog
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+
+    # center soutce "FAKE-J003"
+    Click Element    //*[contains(text(), "FAKE-J003")]
+    # zoom in the image view
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    3    Click Element    data:testid:zoom-in-button
+    # disable source highlight
+    Click Element    //*[contains(text(), "FAKE-J003")]
+
+    # take a screenshot
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_diameter_${key}.png
+
+    # switch to radius mode
+    Click Element    data:testid:catalog-size-button
+    Click Element    data:testid:catalog-settings-axis-type-radius-button
+    # close the settings dialog
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    # take a screenshot        
+    Capture Element Screenshot    ${VIEWER_DIV}    check_radius_${key}.png
+
+    # check screenshots
+    PNG Pixel XY Should Match RGBA    check_diameter_${key}.png    261,197,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_radius_${key}.png    245,171,0,163,150,255
+    Remove Files    check_diameter_${key}.png    check_radius_${key}.png
+
+    [Teardown]    Kill carta_backend And Close Browser
