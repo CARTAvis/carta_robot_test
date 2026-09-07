@@ -46,7 +46,7 @@ test_suites = {
     3227: "cube_histogram.robot",        # 00:57
     3228: "image_viewer.robot",          # ??:??
     3229: "workspace.robot",
-    3230: "stokes_widget.robot",
+    3230: "stokes_analysis.robot",
     3231: "conversion_time.robot",       # ??:??
     3232: "cursor_info.robot",           # 00:19
     }
