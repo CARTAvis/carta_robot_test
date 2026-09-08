@@ -4,14 +4,9 @@ Resource          ../resource.robot
 
 *** Test Cases ***
 Animation Playback With Channels
-    # when this test is stable on CI, we can remove the other animation playback tests and just use this one
-    # to remove: Animation Playback, Animation Playback Backwards, Animation Playback Bouncing, Animation Playback Blink
-    
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
-
     Click Element    //*[contains(text(), "Animator")]
-    
     # reduce target fps from 5 to 2
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
     # set step from 1 to 2
@@ -22,41 +17,34 @@ Animation Playback With Channels
     # trigger playback forward
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    4    timeout=10
+    Wait Until Element Contains    data:testid:animator-slider-info    86.7504 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
-    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 4 or ${result} == 6
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    12    timeout=10
+    Wait Until Element Contains    data:testid:animator-slider-info    86.7485 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
-    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 12 or ${result} == 10
 
     # trigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    18    timeout=10
+    Wait Until Element Contains    data:testid:animator-slider-info    86.7470 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
-    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 18 or ${result} == 20
-    
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
@@ -64,18 +52,15 @@ Animation Playback With Channels
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    0    timeout=10
+    Wait Until Element Contains    data:testid:animator-slider-info    86.7514 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
-    ${ch_index}=    Get Text    ${ANIMATOR_SLIDER_HANDLE}    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 0 or ${result} == 24
-    
+
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
-
 
 
 Channel Navigation
@@ -123,6 +108,7 @@ Animation Playback Channel Range
     ${range_to_index}=    Get Text    ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}
     ${range_from_index_int}=    Convert To Integer    ${range_from_index}
     ${range_to_index_int}=    Convert To Integer    ${range_to_index}
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
@@ -145,6 +131,7 @@ Animation Playback Channel Step
     Click Element    //*[contains(text(), "Frame rate")]
     Click Element    //*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    2
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
@@ -260,8 +247,6 @@ Animation Playback With Image Set
     END
     # click the "load as hypercube" button
     Click Element    //a[contains(., "Load selected")]
-
-    
     Click Element    //*[contains(text(), "Animator")]
     # reduce target fps from 5 to 2
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
@@ -270,45 +255,56 @@ Animation Playback With Image Set
     Click Element    //*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
     
+    # switch to single-panel mode
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Sleep    0.1
+
     # trigger playback forward
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    7    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f1500w.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 7 or ${result} == 1 or ${result} == 3
+    Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
+    PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    1    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f0187n.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 1 or ${result} == 3 or ${result} == 7
+    Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
+    PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
     # trigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    5    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f0770w.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 5 or ${result} == 7 or ${result} == 3
+    Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
+    PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
     # for some reason the following won't work so a workaround is used
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    0    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f0090w.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 0 or ${result} == 7
+    Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
+    PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
+
+    Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -326,46 +322,56 @@ Animation Playback With Polarization Set
     Click Element    //*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
 
+    # switch to single-panel mode
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Sleep    0.1
+
     # trigger playback forward
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png    
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    PFtotal    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == "PFtotal" or '${result}' == "Pangle"
+    Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
+    PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Stokes U    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == 'Stokes U' or '${result}' == 'Stokes I'
+    Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
+    PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
     # tigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Stokes I    timeout=10
+    Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Ptotal    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == 'Stokes I' or '${result}' == 'Stokes U'
+    Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
+    PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png    
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
     # for some reason the following won't work so a workaround is used
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Pangle    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span   
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == 'Pangle' or '${result}' == 'Stokes I'
+    Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
+    PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png    
 
+    Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -409,48 +415,59 @@ Animation Playback With Time Series
     Click Element    //*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
     
+    # switch to single-panel mode
+    Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Sleep    0.1
+
     # trigger playback forward
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png    
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_07.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
-    ${result}=    Convert To Integer    ${ch_index}
-    Should Be True    ${result} == 1 or ${result} == 6
+    Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
+    PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
     # trigger playback backward
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_03.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span   
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == '0' or '${result}' == '2'
+    Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
+    PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
     # tigger playback bouncing
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_05.fits    timeout=10
     Sleep    0.1
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_05.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span   
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == '4' or '${result}' == '0'
+    Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
+    PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
+
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
     # for some reason the following won't work so a workaround is used
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_10.fits    timeout=10
     Sleep    2
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_10.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
-    ${ch_index}=    Get Text    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[1]/div/span    
-    ${result}=    Convert To String    ${ch_index}
-    Should Be True    '${result}' == '8' or '${result}' == '2'
+    Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
+    PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
+    Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
