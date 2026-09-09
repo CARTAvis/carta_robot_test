@@ -17,10 +17,12 @@ Animation Playback With Channels
     # trigger playback forward
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    data:testid:animator-slider-info    86.7504 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
@@ -28,10 +30,12 @@ Animation Playback With Channels
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    data:testid:animator-slider-info    86.7485 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
@@ -39,10 +43,12 @@ Animation Playback With Channels
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    data:testid:animator-slider-info    86.7470 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
 
@@ -52,10 +58,12 @@ Animation Playback With Channels
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    data:testid:animator-slider-info    86.7514 GHz    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
@@ -108,10 +116,12 @@ Animation Playback Channel Range
     ${range_to_index}=    Get Text    ${ANIMATOR_RANGE_SLIDER_HANDLE_RIGHT}
     ${range_from_index_int}=    Convert To Integer    ${range_from_index}
     ${range_to_index_int}=    Convert To Integer    ${range_to_index}
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    5
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
@@ -131,10 +141,12 @@ Animation Playback Channel Step
     Click Element    //*[contains(text(), "Frame rate")]
     Click Element    //*[contains(text(), "Step")]
     Click Element    ${ANIMATOR_SPINBOX_UP}
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Sleep    2
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_${key}.png
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
     Wait Until Page Contains Element    ${ANIMATOR_SLIDER_HANDLE}
@@ -264,10 +276,12 @@ Animation Playback With Image Set
     # trigger playback forward
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f1500w.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
@@ -275,10 +289,12 @@ Animation Playback With Image Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f0187n.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
@@ -286,10 +302,12 @@ Animation Playback With Image Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f0770w.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
 
@@ -299,10 +317,12 @@ Animation Playback With Image Set
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div/div[2]    m16_f0090w.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
@@ -332,11 +352,13 @@ Animation Playback With Polarization Set
 
     # trigger playback forward
     ${key}=    Generate Random String    8
-    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png    
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Set Selenium Speed    0    
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    PFtotal    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
@@ -344,10 +366,12 @@ Animation Playback With Polarization Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Stokes U    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
@@ -355,10 +379,12 @@ Animation Playback With Polarization Set
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Ptotal    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png    
 
@@ -368,10 +394,12 @@ Animation Playback With Polarization Set
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[3]/div[1]/div/span    Pangle    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png    
 
@@ -427,11 +455,13 @@ Animation Playback With Time Series
 
     # trigger playback forward
     ${key}=    Generate Random String    8
-    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png    
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_forward_${key}.png
+    Set Selenium Speed    0    
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_07.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_forward_${key}.png
     PNG Images Should Be Different    initial_forward_${key}.png    final_forward_${key}.png
 
@@ -439,10 +469,12 @@ Animation Playback With Time Series
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Play backwards")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_backward_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_03.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_backward_${key}.png
     PNG Images Should Be Different    initial_backward_${key}.png    final_backward_${key}.png
 
@@ -450,12 +482,14 @@ Animation Playback With Time Series
     Click Element    data:testid:animator-playback-mode-button
     Click Element    //*[contains(text(), "Bouncing")]
     Capture Element Screenshot    ${VIEWER_DIV}    initial_bouncing_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_05.fits    timeout=10
     Sleep    0.1
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_05.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
     PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
 
@@ -466,12 +500,14 @@ Animation Playback With Time Series
     #Click Element    //*[contains(text(), "Blink")]
     Click Element At Coordinates    ${ANIMATOR_PLAYBACK_MODE_BUTTON}    0    -50
     Capture Element Screenshot    ${VIEWER_DIV}    initial_blink_${key}.png
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_10.fits    timeout=10
     Sleep    2
     Wait Until Element Contains    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[1]/div[2]    variable_source_10.fits    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 

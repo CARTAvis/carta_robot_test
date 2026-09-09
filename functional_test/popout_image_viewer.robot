@@ -224,10 +224,12 @@ Popout Image Viewer - animator
     Switch Window    MAIN
     Click Element    //*[contains(text(), "Animator")]
     Repeat Keyword    3    Click Element    ${ANIMATOR_SPINBOX_DOWN}
+    Set Selenium Speed    0
     Wait Until CPU Usage Is Below    threshold=80    timeout=30    check_interval=1
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Wait Until Element Contains    ${ANIMATOR_SLIDER_HANDLE}    5    timeout=10
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Set Selenium Speed    ${DELAY}
     Switch Window    NEW
     Sleep    1
     Capture Page Screenshot    final_${key}.png
