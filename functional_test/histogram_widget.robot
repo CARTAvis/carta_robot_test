@@ -105,8 +105,36 @@ Manual Selection of Displayed Histogram
     Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: -0.00003 Jy/beam, 143 Counts   
     [Teardown]    Kill carta_backend And Close Browser
 
+
 Histogram rendering styling
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Pass Execution    To be implemented
-    Remove Files    check_${key}.png
+    Load Initial Image    S255_CH3CN_subcube.fits
+    # enable histogram widget and its settings dialog
+    Click Element    id:HistogramWidgetButton
+    Sleep    0.2
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div/div[1]/div/canvas    check_before_${key}.png
+    Click Element    data:testid:histogram-0-header-settings-button
+
+    # set styling 
+    Click Element    //*[normalize-space(text())='Styling']
+    # make line thicker
+    Repeat Keyword    4    Click Element    data:testid:profiler-settings-line-width-input-increment-button
+    # disable log mode
+    Click Element    //*[@id="bp6-tab-panel_histogramSettingTabs_0"]/div/div[4]/div/label
+    # enable mean/rms highlight
+    Click Element    //*[@id="bp6-tab-panel_histogramSettingTabs_0"]/div/div[5]/div/label
+
+    # close the settings dialog
+    Click Element    data:testid:histogram-0-floating-settings-0-header-close-button
+
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div/div[1]/div/canvas    check_after_${key}.png
+
+    PNG Images Should Be Different    check_before_${key}.png    check_after_${key}.png
+    # check line
+    PNG Pixel XY Should Match RGBA    check_after_${key}.png    337,99,33,93,176,255
+    # check mean/rms marker, disabled due to a bug
+    # PNG Pixel XY Should Match RGBA    check_after_${key}.png    278,100,33,93,176,255
+ 
+    Remove Files    check_before_${key}.png    check_after_${key}.png 
     [Teardown]    Kill carta_backend And Close Browser
