@@ -257,6 +257,8 @@ Animation Playback With Image Set
     
     # switch to single-panel mode
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    data:testid:zoom-to-fit-button
     Sleep    0.1
 
     # trigger playback forward
@@ -324,6 +326,8 @@ Animation Playback With Polarization Set
 
     # switch to single-panel mode
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    data:testid:zoom-to-fit-button
     Sleep    0.1
 
     # trigger playback forward
@@ -417,6 +421,8 @@ Animation Playback With Time Series
     
     # switch to single-panel mode
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    data:testid:zoom-to-fit-button
     Sleep    0.1
 
     # trigger playback forward
