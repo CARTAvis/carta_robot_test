@@ -4,7 +4,7 @@ Resource          ../resource.robot
 
 
 *** Test Cases ***
-File Path Diplay and Edit Test
+File Path Display and Edit Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
     # check current file path display
     Click Element    ${FILE_BROWSER_EDIT_PATH_BUTTON}
