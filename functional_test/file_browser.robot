@@ -76,19 +76,77 @@ Filter Mode Test
 
 Dynamic Loading Button Rendering
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Sleep    5
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
+    Input Text    ${FILE_FILTER}    m16
+    Wait Until Element Contains    ${FILE_LIST}    m16_f0200w.fits    timeout=5s
+
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']
+    Page Should Contain Element    //*[normalize-space(text())='Load']
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']    modifier=COMMAND
+    Page Should Contain Element    //*[normalize-space(text())='Load selected']
+    Page Should Contain Element    //*[normalize-space(text())='Load as hypercube']
+    Page Should Contain Element    //*[normalize-space(text())='Load as time series']
+    Page Should Contain Element    //*[normalize-space(text())='Load with RGB blending']
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=COMMAND
+    Page Should Contain Element    //*[normalize-space(text())='Load selected']
+    Page Should Contain Element    //*[normalize-space(text())='Load as hypercube']
+    Page Should Contain Element    //*[normalize-space(text())='Load as time series']
+    Page Should Contain Element    //*[normalize-space(text())='Load with RGB blending']    
+    Click Element    //*[normalize-space(text())='m16_f0444w.fits']    modifier=COMMAND
+    Page Should Contain Element    //*[normalize-space(text())='Load selected']
+    Page Should Contain Element    //*[normalize-space(text())='Load as hypercube']
+    Page Should Contain Element    //*[normalize-space(text())='Load as time series']
+    Page Should Contain Element    //*[normalize-space(text())='Load with multi-color blending']
+    Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=COMMAND
+    Page Should Not Contain Element    //*[normalize-space(text())='Load as hypercube']
+    ELSE
+    Click Element    //*[normalize-space(text())='m16_f1500w.fits']
+    Page Should Contain Element    //*[normalize-space(text())='Load']
+    Click Element    //*[normalize-space(text())='m16_f1130w.fits']    modifier=CTRL
+    Page Should Contain Element    //*[normalize-space(text())='Load selected']
+    Page Should Contain Element    //*[normalize-space(text())='Load as hypercube']
+    Page Should Contain Element    //*[normalize-space(text())='Load as time series']
+    Page Should Contain Element    //*[normalize-space(text())='Load with RGB blending']
+    Click Element    //*[normalize-space(text())='m16_f0770w.fits']    modifier=CTRL
+    Page Should Contain Element    //*[normalize-space(text())='Load selected']
+    Page Should Contain Element    //*[normalize-space(text())='Load as hypercube']
+    Page Should Contain Element    //*[normalize-space(text())='Load as time series']
+    Page Should Contain Element    //*[normalize-space(text())='Load with RGB blending']
+    Click Element    //*[normalize-space(text())='m16_f0444w.fits']    modifier=CTRL
+    Page Should Contain Element    //*[normalize-space(text())='Load selected']
+    Page Should Contain Element    //*[normalize-space(text())='Load as hypercube']
+    Page Should Contain Element    //*[normalize-space(text())='Load as time series']
+    Page Should Contain Element    //*[normalize-space(text())='Load with multi-color blending']
+    Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=CTRL
+    Page Should Not Contain Element    //*[normalize-space(text())='Load as hypercube']
+    END
     [Teardown]    Kill carta_backend And Close Browser
 
 
 File List Generation Mode Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Sleep    5
+    Pass Execution    To be implemented...
     [Teardown]    Kill carta_backend And Close Browser
 
 
 File Header Search Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Sleep    5
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
+    Input Text    ${FILE_FILTER}    S255
+    Wait Until Element Contains    ${FILE_LIST}    S255_CH3CN_subcube.fits    timeout=5s
+
+    Click Element    //*[normalize-space(text())='S255_CH3CN_subcube.fits']
+    Wait Until Element Contains    data:testid:header-entry-0    Name
+    Click Element    id:bp6-tab-title_file-info-tabs_image-header
+    Mouse Over    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[2]
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[3]/span/button
+    Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[3]/div/div[2]/div/div/div/input    CTYPE
+
+    Element Should Contain    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[3]/div/div[2]/div/div/div/span[2]/div/span    1 of 4
     [Teardown]    Kill carta_backend And Close Browser
 
 Compose LEL With Keyboard and Mouse Test
