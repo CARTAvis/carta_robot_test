@@ -172,3 +172,216 @@ Zooming PV Image Independently
     
     Remove Files    check_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Image Viewer Settings - Customization for Publication
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Change Raster Colormap    tab10
+    Append Image    HD163296_CO_2_1.mom1.fits
+    # Match images
+    Click Element    data:testid:image-list-0-matching-xy
+    # enable settings dialog
+    Click Element    data:testid:image-view-header-settings-button
+
+    ## configure title
+    Click Element    //*[normalize-space(text())='Title']
+    # enable title
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[1]/div/label
+    # enable custom text
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[3]/div/label
+    Input Text    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[4]/div/div/div/div/input    HD163296 CO 2-1 Moment1
+    # enable custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[5]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Title"]/div/div/div/div[6]/div/div/div/div/button
+    Click Element    //*[@id="listbox-10"]/li[4]/a
+
+    ## configure ticks
+    Click Element    //*[normalize-space(text())='Ticks']
+    # disable draw on all edges
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[1]/div/label
+    # enable custom density
+    Click Element   //*[@id="bp6-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[2]/div/label
+    Input Text    //*[@id="numericInput-30"]    5
+    Input Text    //*[@id="numericInput-31"]    5
+    # enable custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[4]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Ticks"]/div/div/div/div[5]/div/div/div/div/button
+    Click Element    //*[@id="listbox-11"]/li[4]/a
+    # set custom width
+    Input Text    //*[@id="numericInput-11"]    5
+    # set minor and major lengths
+    Input Text    //*[@id="numericInput-12"]    4
+    Input Text    //*[@id="numericInput-13"]    8
+    
+    ## configure grids
+    Click Element    //*[normalize-space(text())='Grids']
+    # enable WCS grid
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Grids"]/div/div/div/div[1]/div/label
+    # enable custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Grids"]/div/div/div/div[2]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Grids"]/div/div/div/div[3]/div/div/div/div/button
+    Click Element    //*[@id="listbox-12"]/li[3]/a
+    # set custom width
+    Input Text    //*[@id="numericInput-14"]    5
+    # skip custom gap and pixel grid tests
+
+    ## configure border
+    Click Element    //*[normalize-space(text())='Border']
+    # set custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Border"]/div/div/div/div[2]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Border"]/div/div/div/div[3]/div/div/div/div/button
+    Click Element    //*[@id="listbox-13"]/li[5]/a
+    # set custom width
+    Input Text    //*[@id="numericInput-15"]    5
+
+    ## configure numbers
+    Click Element    //*[normalize-space(text())='Numbers']
+    # set custom size
+    Input Text    //*[@id="numericInput-17"]    18
+    # set custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Numbers"]/div/div/div/div[3]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Numbers"]/div/div/div/div[4]/div/div/div/div/button
+    Click Element    //*[@id="listbox-14"]/li[4]/a
+    # set custom format - change RA to degrees, keep Dec as dms
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Numbers"]/div/div/div/div[5]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Numbers"]/div/div/div/div[6]/div/div[1]/div/div
+    Click Element    //*[normalize-space(text())='Degrees']
+    # set custom precision
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Numbers"]/div/div/div/div[7]/div/label
+    Scroll Element Into View    //*[normalize-space(text())='Precision']
+    Input Text    //*[@id="numericInput-32"]    4
+
+    ## configure labels
+    Click Element    //*[normalize-space(text())='Labels']
+    # set custom font size
+    Input Text    //*[@id="numericInput-18"]    18
+    # skip show/hide ra/dec reference toggle test
+    # set custom text
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Labels"]/div/div/div/div[4]/div/label
+    Input Text    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Labels"]/div/div/div/div[5]/div/div[1]/div/div/input    ABCDE
+    Input Text    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Labels"]/div/div/div/div[5]/div/div[2]/div/div/input    XYZ
+    # set custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Labels"]/div/div/div/div[6]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Labels"]/div/div/div/div[7]/div/div/div/div/button
+    Click Element    //*[@id="listbox-15"]/li[4]/a
+
+    ## configure colorbar
+    Click Element    //*[normalize-space(text())='Colorbar']
+    # set position to top
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[3]/div/div
+    Click Element    //*[normalize-space(text())='Top']
+    # set width
+    Input Text    //*[@id="numericInput-19"]    20
+    # set offset
+    Input Text    //*[@id="numericInput-20"]    10
+    # set tick density
+    Input Text    //*[@id="numericInput-21"]    2
+    # set custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[7]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[8]/div/div/div/div/button
+    Click Element    //*[@id="listbox-16"]/li[4]/a
+    # set custom label
+    Scroll Element Into View    //*[normalize-space(text())='Label font']
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[9]/div/label
+    Input Text    //*[@id="numericInput-22"]    18
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[12]/div/label
+    Input Text    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[13]/div/div/div/div/input    Velocity
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[14]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[15]/div/div/div/div/button
+    Click Element    //*[@id="listbox-17"]/li[2]/a
+
+    ## configure colorbar numbers
+    Scroll Element Into View    //*[normalize-space(text())='Numbers custom precision']
+    # set size
+    Input Text    //*[@id="numericInput-23"]    18
+    # set custom precision
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[19]/div/label
+    Input Text    //*[@id="numericInput-33"]    1
+    # set custom color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[21]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[22]/div/div/div/div/button
+    Click Element    //*[@id="listbox-18"]/li[3]/a
+
+    ## configure colorbar ticks
+    Scroll Element Into View    //*[normalize-space(text())='Ticks custom color']
+    # set length
+    Input Text    //*[@id="numericInput-24"]    10
+    # set width
+    Input Text    //*[@id="numericInput-25"]    5
+    # set color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[26]/div/label
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[27]/div/div/div/div/button
+    Click Element    //*[@id="listbox-19"]/li[8]/a
+
+    ## configure colorbar border
+    Scroll Element Into View    //*[normalize-space(text())='Border custom color']
+    # set width
+    Input Text    //*[@id="numericInput-26"]    5
+    # set color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[30]/div/label
+    Scroll Element Into View    //*[normalize-space(text())='Border color']
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Colorbar"]/div/div/div/div[31]/div/div/div/div/button
+    Click Element    //*[@id="listbox-20"]/li[8]/a
+
+
+    ## configure beam
+    Click Element    //*[normalize-space(text())='Beam']
+    # set color
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[3]/div/div/button
+    Click Element    //*[@id="listbox-9"]/li[4]/a
+    # set beam type
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[4]/div/div
+    Click Element    //*[normalize-space(text())='Solid']
+    # set width
+    Input Text    //*[@id="numericInput-27"]    3
+    # set position x y
+    Input Text    //*[@id="numericInput-28"]    10
+    Input Text    //*[@id="numericInput-29"]    10
+
+    # close settings dialog
+    Click Element    data:testid:image-view-floating-settings-0-header-close-button
+
+    # take screenshot
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
+
+    # verify screenshot context
+    Set Selenium Speed    0
+    # title in red
+    OCR Test    check_${key}.png    465 2 720 25 "HD163296 CO 2-1 Moment1"
+    PNG Pixel XY Should Match RGBA    check_${key}.png    482,13,172,47,51,255
+    # ticks major in red
+    PNG Pixel XY Should Match RGBA    check_${key}.png    357,396,172,47,51,255
+    # ticks minor in red
+    PNG Pixel XY Should Match RGBA    check_${key}.png    360,408,172,47,51,255
+    # hidden ticks at top
+    PNG Pixel XY Should Match RGBA    check_${key}.png    360,113,31,119,180,255
+    # grids in green
+    PNG Pixel XY Should Match RGBA    check_${key}.png    94,374,28,110,66,255
+    # border in purple
+    PNG Pixel XY Should Match RGBA    check_${key}.png    51,109,124,50,124,255
+    # numbers in red
+    OCR Test    check_${key}.png    398 424 480 443 "269.0910"
+    OCR Test    check_${key}.png    407 269 426 400 --rotation 90 -- '-21.57.26.0000'    # special treatment due to the negative sign in -21
+    PNG Pixel XY Should Match RGBA    check_${key}.png    435,438,172,47,51,255
+    # labels in red
+    OCR Test    check_${key}.png    178 446 247 466 "ABCDE"
+    OCR Test    check_${key}.png    384 242 403 286 --rotation 90 -- 'XYZ'
+    PNG Pixel XY Should Match RGBA    check_${key}.png    221,456,172,47,51,255
+    # colorbar
+    OCR Test    check_${key}.png    558 33 626 55 "Velocity"
+    OCR Test    check_${key}.png    539 56 571 75 "5.0"
+    PNG Pixel XY Should Match RGBA    check_${key}.png    555,71,28,110,66,255    # number in green
+    PNG Pixel XY Should Match RGBA    check_${key}.png    347,80,115,128,145,255    # border in grey
+    PNG Pixel XY Should Match RGBA    check_${key}.png    347,88,115,128,145,255    # ticks in grey
+    # beam
+    PNG Pixel XY Should Match RGBA    check_${key}.png    457,394,255,255,255,255    # cross in white
+    PNG Pixel XY Should Match RGBA    check_${key}.png    462,391,172,47,51,255    # solid beam in red
+
+    # TODO: should also save as a workspace and restore it to test if the image view is correctly restored, skip for now due to a bug
+
+    Remove Files    check_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
