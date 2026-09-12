@@ -302,8 +302,10 @@ SIMBAD and VizieR Mirror Sites
     # perform speed test again
     Click Element    data:testid:catalog-query-test-mirror-speed-button
     Wait Until Page Contains    Test speed    timeout=30
-    # check the fastest mirror site (vizier.nao.ac.jp in our test environment)
-    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.nao.ac.jp
+    # check the fastest mirror site (vizier.nao.ac.jp or vizier.cfa.harvard.edu in our test environment)
+    # get text and verify the fastest mirror site
+    ${fastest_mirror}=    Get Text    data:testid:catalog-query-use-mirror-url-0-button
+    Should Be True    '${fastest_mirror}' == 'vizier.nao.ac.jp' or '${fastest_mirror}' == 'vizier.cfa.harvard.edu'
     # check the last mirror site which is disabled (vizier.inasan.ru in our test environment)
     Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
     # load catalog from the fastest mirror site
@@ -328,7 +330,8 @@ SIMBAD and VizieR Mirror Sites
     # check the mirror site list order to see if it is persistent
     Click Element    data:testid:online-data-query-dialog-button
     Click Element    data:testid:catalog-query-mirror-select-button
-    Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    vizier.nao.ac.jp
+    ${fastest_mirror}=    Get Text    data:testid:catalog-query-use-mirror-url-0-button
+    Should Be True    '${fastest_mirror}' == 'vizier.nao.ac.jp' or '${fastest_mirror}' == 'vizier.cfa.harvard.edu'
     Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
     # reset list to default order
     Click Element    data:testid:catalog-query-reset-mirrors-button

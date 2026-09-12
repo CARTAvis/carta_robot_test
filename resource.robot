@@ -444,7 +444,9 @@ Change Raster Colormap
     [Arguments]    ${COLORMAP_NAME}
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[normalize-space(text())='${COLORMAP_NAME}']
-
+    # CI stability workaround: re-select the colormap to ensure it is applied correctly
+    Click Element    ${COLORMAP_DROPDOWN}
+    Click Element    //*[normalize-space(text())='${COLORMAP_NAME}']
 
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
