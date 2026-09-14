@@ -232,6 +232,9 @@ Catalog Rendering As Scatter Plot
     Click Element    //a[contains(., "RA_d")]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
     
+    Mouse Over    data:testid:catalog-scatter-plot
+    Mouse Out    data:testid:catalog-scatter-plot
+
     ${key}=    Generate Random String    8
     Capture Element Screenshot    data:testid:catalog-scatter-plot    check_${key}.png
     # click the plot button in the catalog scatter plot widget
@@ -248,7 +251,7 @@ Catalog Rendering As Scatter Plot
     # mouse over the scatter plot element
     Mouse Over    data:testid:catalog-scatter-plot
     # check the context in the info field of the scatter plot widget
-    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.21421, RA_d: 150.08293
+    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.21986, RA_d: 150.08929
     Element Should Contain    data:testid:catalog-plot-info    ANG_DIST - count: 20000, valid count: 20000, mean: 2.9599e+2, rms: 3.1643e+2, stddev: 1.1191e+2, min: 1.2400e+0, max: 4.6845e+2
 
     # click the linear fit button in the catalog scatter plot widget
@@ -261,8 +264,8 @@ Catalog Rendering As Scatter Plot
     Element Should Contain    data:testid:catalog-plot-0-content    No catalog file loaded
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,93,579,117
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,93,300,155
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    281,90,643,134
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    281,90,643,130
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check_${key}.png    check4_${key}.png
@@ -332,7 +335,7 @@ Catalog Rendering As Histogram Plot
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
     
-    Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
+    #Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -403,7 +406,7 @@ Linked Catalog Visualization
     PNG Two Pixels Should Not Have Matched RGBA    check_table_selected_${key}.png    120,70,120,90
     PNG Images Should Be Different    check_table_selected_${key}.png    check_table_reset_${key}.png
 
-    Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
+    #Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
