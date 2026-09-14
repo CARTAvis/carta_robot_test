@@ -491,3 +491,79 @@ Catalog Rendering As Image Overlay With Angular Size Mapping
     Remove Files    check_diameter_${key}.png    check_radius_${key}.png    check_full_fov_${key}.png
 
     [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Catalog Rendering As Image Overlay With Custom Size
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    fake_image.fits
+    Change Raster Colormap    greys
+    Load Catalog File    fake_catalog.fits
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
+    Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
+    # enable catalog image overlay
+    Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
+    # configure angular size mapping
+    Click Element    data:testid:catalog-size-button
+    # increase rendering thickness
+    Repeat Keyword    6    Click Element    data:testid:catalog-settings-thickness-input-increment-button
+    
+    # size in screen pixel
+    Input Text    data:testid:catalog-settings-size-input    20
+    # close the settings dialog
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    # take a screenshot of the catalog overlay with custom size
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_screen_pixel_${key}.png
+
+    # size in image pixel
+    Click Element    data:testid:catalog-size-button
+    Input Text    data:testid:catalog-settings-size-input    50
+    Click Element   //*[@id="bp6-tab-panel_catalogSettings_3"]/div/div[1]/div/div/div/div/div
+    Click Element    //*[normalize-space(text())='image px']
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_image_pixel_${key}.png
+
+    # size in arcsecond (skip milliarcsecond test)
+    Click Element    data:testid:catalog-size-button
+    Click Element   //*[@id="bp6-tab-panel_catalogSettings_3"]/div/div[1]/div/div/div/div/div
+    Click Element    //*[@id="listbox-32"]/li[4]
+    Input Text    data:testid:catalog-settings-size-input    90
+    Click Element    //*[normalize-space(text())='Thickness']
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_arcsecond_${key}.png
+
+    # size in arcminute
+    Click Element    data:testid:catalog-size-button
+    Click Element   //*[@id="bp6-tab-panel_catalogSettings_3"]/div/div[1]/div/div/div/div/div
+    Click Element    //*[@id="listbox-41"]/li[5]/a
+    Input Text    data:testid:catalog-settings-size-input    2
+    Click Element    //*[normalize-space(text())='Thickness']
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_arcminute_${key}.png
+
+    # size in degree
+    Click Element    data:testid:catalog-size-button
+    Click Element   //*[@id="bp6-tab-panel_catalogSettings_3"]/div/div[1]/div/div/div/div/div
+    Click Element    //*[@id="listbox-50"]/li[6]
+    Input Text    data:testid:catalog-settings-size-input    0.05
+    Click Element    //*[normalize-space(text())='Thickness']
+    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_degree_${key}.png
+
+    # verify screenshots
+    Set Selenium Speed    0
+    PNG Pixel XY Should Match RGBA    check_screen_pixel_${key}.png    260,71,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_image_pixel_${key}.png    260,61,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_arcsecond_${key}.png    260,57,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_arcminute_${key}.png    260,49,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_degree_${key}.png    260,32,0,163,150,255
+
+    Remove Files    check_screen_pixel_${key}.png    check_image_pixel_${key}.png    check_arcsecond_${key}.png    check_arcminute_${key}.png    check_degree_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
