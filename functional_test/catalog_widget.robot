@@ -410,7 +410,7 @@ Linked Catalog Visualization
 Catalog Rendering As Image Overlay With Angular Size Mapping
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    fake_image.fits
-    Change Raster Colormap    tab10
+    Change Raster Colormap    greys
     Load Catalog File    fake_catalog.fits
     # dock the catalog widget and close widgets to create more space
     Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
@@ -419,6 +419,9 @@ Catalog Rendering As Image Overlay With Angular Size Mapping
     Click Element    ${ANIMATOR_CLOSE_BUTTON}
     Click Element    ${REGION_LIST_CLOSE_BUTTON}
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
+    # set up a filter
+    Input Text     data:testid:filterable-table-filter-input-2    <150.15
+    Click Element    data:testid:catalog-filter-button
     # enable catalog image overlay
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
     # configure angular size mapping
@@ -443,6 +446,13 @@ Catalog Rendering As Image Overlay With Angular Size Mapping
     # click the column dropdown menu to set up orientation mapping with respect to the ANG_DIST column
     Click Element    data:testid:catalog-settings-orientation-column-dropdown
     Click Element    //a[contains(., "pa")]
+    # configure color mapping using the dec column
+    Click Element    data:testid:catalog-settings-color-tab-title
+    Click Element    data:testid:catalog-settings-color-column-dropdown
+    Click Element    //*[@id="listbox-19"]/li[3]
+    Click Element    //*[@id="bp6-tab-panel_catalogSettings_2"]/div/div[4]/div/div[3]/div/div/button
+    Click Element    //*[normalize-space(text())='tab10']
+    
     # close the settings dialog
     Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
 
@@ -466,9 +476,18 @@ Catalog Rendering As Image Overlay With Angular Size Mapping
     # take a screenshot        
     Capture Element Screenshot    ${VIEWER_DIV}    check_radius_${key}.png
 
+    # check full FOV
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    data:testid:zoom-out-button
+    Click Element    data:testid:zoom-to-fit-button
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_full_fov_${key}.png
+
     # check screenshots
-    PNG Pixel XY Should Match RGBA    check_diameter_${key}.png    261,197,0,163,150,255
-    PNG Pixel XY Should Match RGBA    check_radius_${key}.png    245,171,0,163,150,255
-    Remove Files    check_diameter_${key}.png    check_radius_${key}.png
+    PNG Pixel XY Should Match RGBA    check_diameter_${key}.png    261,197,227,119,194,255
+    PNG Pixel XY Should Match RGBA    check_radius_${key}.png    245,171,227,119,194,255
+    PNG Pixel XY Should Match RGBA    check_full_fov_${key}.png    260,78,23,190,207,255
+    PNG Pixel XY Should Match RGBA    check_full_fov_${key}.png    367,263,214,39,40,255
+    Remove Files    check_diameter_${key}.png    check_radius_${key}.png    check_full_fov_${key}.png
 
     [Teardown]    Kill carta_backend And Close Browser
