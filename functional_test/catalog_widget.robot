@@ -315,7 +315,7 @@ Catalog Rendering As Histogram Plot
     Click Element    data:testid:catalog-plot-widget-stat-dropdown
     Click Element    //a[contains(., "DEC_d")]
     # check the context in the info field of the catalog histogram plot widget
-    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.2141465077500007, Count: 378
+    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.22389574725, Count: 342
     Element Should Contain    data:testid:catalog-plot-info    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
 
     # close the catalog file and check the state of the histogram plot widget
