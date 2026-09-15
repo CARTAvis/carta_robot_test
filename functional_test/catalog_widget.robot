@@ -301,8 +301,9 @@ Catalog Rendering As Histogram Plot
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check_${key}.png
     # click the plot button in the catalog histogram plot widget
     Click Element    data:testid:catalog-plot-widget-plot-button
-    # click the bins text field and enter 0 to set the bins from 8 to 80
+    # set the bins from 8 to 80
     Input Text    data:testid:catalog-plot-widget-bin-input    0
+    Click Element    //*[normalize-space(text())='Log scale']    
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check2_${key}.png
     # click the x dropdown menu in the catalog histogram plot widget to select DEC_d 
     Click Element    data:testid:catalog-plot-widget-x-dropdown
@@ -324,18 +325,18 @@ Catalog Rendering As Histogram Plot
     Element Should Contain    data:testid:catalog-plot-0-content    No catalog file loaded
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,170,530,68
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,170,115,22
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    172,122,458,25
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    172,122,115,22
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    186,119,665,123
-    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    186,119,115,22
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    288,122,364,58
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    288,122,364,56
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    89,93,232,41
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    89,93,232,39
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    89,69,232,35
+    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    89,69,232,33
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
     
-    #Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
+    Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
