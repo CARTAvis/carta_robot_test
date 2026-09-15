@@ -375,6 +375,7 @@ Linked Catalog Visualization
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check_histogram_${key}.png
     # click the histogram plot element
     Click Element    data:testid:catalog-histogram-plot
+    Sleep    0.2
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check_histogram_selected_${key}.png
     # close the catalog histogram plot widget
     Click Element    data:testid:catalog-plot-1-header-close-button
@@ -384,30 +385,28 @@ Linked Catalog Visualization
 
     #Sleep    1
     # check the context in the catalog table
-    Element Should Contain    data:testid:filterable-table-582-1    73.06999969482422
+    Element Should Contain    data:testid:filterable-table-192-1    41.5099983215332
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected_${key}.png
     Capture Element Screenshot    css:[class*="catalog-overlay-data-container"]    check_table_selected_${key}.png
     
     Click Element    ${CATALOG_WIDGET_RESET_BUTTON}
-    #Sleep    1
-    # on the mac mini, this is not always true. sometimes it is 8.279999732971191, the cell above 9.220000267028809
-    #Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[12]/div    9.220000267028809
+    Element Should Contain    data:testid:filterable-table-0-1    1.2400000095367432
     Capture Element Screenshot    css:[class*="catalog-overlay-data-container"]    check_table_reset_${key}.png
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset_${key}.png
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,21,338,227
-    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,21,342,16
+    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,29,338,241
+    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,29,343,32
     PNG Images Should Be Different    check_histogram_selected_${key}.png    check_histogram_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected_${key}.png    340,16,340,225
-    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected_${key}.png    340,16,350,142
+    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected_${key}.png    338,14,338,230
+    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected_${key}.png    338,14,345,13
     PNG Images Should Be Different    check_scatter_selected_${key}.png    check_scatter_${key}.png
     PNG Images Should Be Different    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check_table_selected_${key}.png    120,70,580,70
-    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected_${key}.png    120,70,120,90
+    PNG Two Pixels Should Have Matched RGBA    check_table_selected_${key}.png    190,70,190,190
+    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected_${key}.png    190,70,190,90
     PNG Images Should Be Different    check_table_selected_${key}.png    check_table_reset_${key}.png
 
-    #Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
+    Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
 
 
