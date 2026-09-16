@@ -60,23 +60,23 @@ Intensity Unit Conversion from Jy/beam
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # switch to different intensity units (region statistic: flux density)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # Jy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e-1)        # Jy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e-1)        # Jy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # mJy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+2)        # mJy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+2)        # mJy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[3]    # uJy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+5)        # uJy
-    Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[4]    # MJy/sr
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e-7)        # MJy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+5)        # uJy as flux density
+    Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[4]    # MJy/sr 
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e-7)        # MJy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[5]    # Jy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e-1)        # Jy                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e-1)        # Jy as flux density               
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[6]    # mJy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+2)        # mJy                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+2)        # mJy as flux density                
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[7]    # uJy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+5)        # uJy                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 4.51e+5)        # uJy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[8]    # K
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 6.24e+1)        # K arcsec^2                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 6.24e+1)        # K arcsec^2 as flux density              
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[9]    # mK
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 6.24e+4)        # mK arcsec^2                    
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 6.24e+4)        # mK arcsec^2 as flux density                    
     # check region statistics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
@@ -141,23 +141,23 @@ Intensity Unit Conversion from K
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # switch to different intensity units (region statistic: flux density)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # K
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.31e-2)        # K arcsec^2
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.31e-2)        # K arcsec^2 as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # mK
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.31e+1)        # mK arcsec^2
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.31e+1)        # mK arcsec^2 as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[3]    # Jy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-5)        # Jy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-5)        # Jy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[4]    # mJy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-2)        # mJy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-2)        # mJy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[5]    # uJy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e+1)        # uJy                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e+1)        # uJy as flux density                
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[6]    # MJy/sr
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-11)        # MJy                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-11)        # MJy as flux density                
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[7]    # Jy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-5)        # Jy                
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-5)        # Jy as flux density                
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[8]    # mJy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-2)        # mJy               
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e-2)        # mJy as flux density               
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[9]    # uJy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e+1)        # uJy                   
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 9.43e+1)        # uJy as flux density                   
     # check region statistics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
@@ -195,7 +195,7 @@ Intensity Unit Conversion from MJy/sr
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Cursor: (100.0023 GHz, 8.87e-2)    
     # switch to different intensity units (statistic: mean)
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}    
-    Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # My/sr
+    Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # MJy/sr
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.87e-2)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # Jy/arcsec^2
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 2.08e-6)    
@@ -209,12 +209,12 @@ Intensity Unit Conversion from MJy/sr
     # enable settings dialog
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # switch to different intensity units (region statistic: flux density)    
-    Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # My/sr
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.27e-13)       # MJy
+    Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # MJy/sr
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.27e-13)       # MJy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # Jy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.27e-7)        # Jy    
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.27e-7)        # Jy as flux density    
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[6]    # Jy/pixel
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.27e-7)        # Jy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 8.27e-7)        # Jy as flux density
     # check region statistics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
@@ -267,11 +267,11 @@ Intensity Unit Conversion from Jy/pixel
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # switch to different intensity units (region statistic: flux density)    
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # Jy/pixel
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.98e+1)       # Jy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.98e+1)       # Jy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[5]    # MJy/sr
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.98e-5)       # MJy   
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.98e-5)       # MJy as flux density   
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[6]    # Jy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.98e+1)       # Jy
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.98e+1)       # Jy as flux density
     # check region statistics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
@@ -320,7 +320,7 @@ Intensity Unit Conversion from Jy/arcsec2
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # switch to different intensity units (region statistic: flux density)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # Jy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.57e-4)       # Jy        
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -1.57e-4)       # Jy as flux density
     # check region statistics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
@@ -376,13 +376,13 @@ Intensity Unit Conversion from Jy/beam with Per-Plane-Beam
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     # switch to different intensity units (region statistic: flux density)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[1]    # Jy/beam
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 1.32e-2)
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 1.32e-2)        # Jy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[4]    # MJy/sr
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 1.32e-8)    
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 1.32e-8)        # MJy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[5]    # Jy/arcsec^2
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 1.32e-2)
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 1.32e-2)        # Jy as flux density
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[8]    # K
-    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 2.22e+0)
+    Wait Until Element Contains    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (90.7361654 GHz, 2.22e+0)        # K arcsec^2 as flux density
     # check region statistics
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
