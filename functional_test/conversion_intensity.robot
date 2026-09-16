@@ -89,7 +89,7 @@ Intensity Unit Conversion from My/sr
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # Jy/arcsec^2
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.58e-5)    
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[6]    # Jy/pixel
-    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.76e-2)
+    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, 1.42e-8)
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -109,9 +109,9 @@ Intensity Unit Conversion from Jy/pixel
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[2]    # Jy/pixel
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -8.26e-1)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[5]    # MJy/sr
-    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -3.16e+1)    
+    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -3.90e+7)    
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[3]/div/div/select/option[6]    # Jy/arcsec^2
-    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -7.43e-4)
+    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (100.0023 GHz, -9.18e+2)
     [Teardown]    Kill carta_backend And Close Browser
 
 Intensity Unit Conversion from Jy/arcsec2
