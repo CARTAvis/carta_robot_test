@@ -319,7 +319,7 @@ Setup carta_backend And Open Browser To CARTA
             Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
         END
     END
-    Sleep    1
+    #Sleep    1
     Go To    ${LOGIN URL}
     Title Should Be    ${TITLE}
     Wait Until Page Contains    No file selected.
