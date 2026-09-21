@@ -558,4 +558,9 @@ Webglreport Test
     Wait Until Page Contains    WebGL
     Page Should Contain    This browser supports WebGL 2
     Capture Page Screenshot    WebGL2.png
+    # check screenshots for WebGL support
+    PNG Pixel XY Should Match RGBA    WebGL1.png    400,150,0,169,0,255
+    PNG Pixel XY Should Match RGBA    WebGL2.png    400,150,0,169,0,255
+
+    Remove Files    WebGL1.png    WebGL2.png
     Close Browser
