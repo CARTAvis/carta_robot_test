@@ -107,6 +107,8 @@ Generate All Moment Images
     Mouse Over    ${VIEWER_DIV}
     Click Element    id:SpectralProfilerButton
     Click Element    ${MOMENT_GENERATOR_BUTTON}
+    # move the dialog up a bit     
+    Drag And Drop By Offset    data:testid:spectral-profiler-0-floating-settings-0-header-title    0    -100
     # set mask mode to include
     Click Element    data:testid:moment-generator-mask-dropdown
     Click Element    //option[contains(text(), "Include")]
