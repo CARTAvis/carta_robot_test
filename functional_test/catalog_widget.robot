@@ -298,8 +298,9 @@ Catalog Rendering As Histogram Plot
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check_${key}.png
     # click the plot button in the catalog histogram plot widget
     Click Element    data:testid:catalog-plot-widget-plot-button
-    # click the bins text field and enter 0 to set the bins from 8 to 80
-    Input Text    data:testid:catalog-plot-widget-bin-input    0
+    # set the bins from 8 to 80
+    Clear Input Field    data:testid:catalog-plot-widget-bin-input
+    Input Text    data:testid:catalog-plot-widget-bin-input    80
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check2_${key}.png
     # click the x dropdown menu in the catalog histogram plot widget to select DEC_d 
     Click Element    data:testid:catalog-plot-widget-x-dropdown
