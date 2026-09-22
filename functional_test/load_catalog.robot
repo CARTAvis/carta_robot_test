@@ -361,40 +361,24 @@ Load Catalogs With Various Spatial Column Formats
 
     # render the catalog overlay and take a screenshot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_00_baseline_decimal_deg_${key}.png
     Click Element    data:testid:catalog-close-button
     PNG Images Should Be Different    check_no_overlay_${key}.png    check_00_baseline_decimal_deg_${key}.png
     Remove Files    check_00_baseline_decimal_deg_${key}.png
 
-    # load 01_sexagesimal_colon_units.vot and check overlay
+    # 01_sexagesimal_colon_units.vot
     Load Catalog File    01_sexagesimal_colon_units.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_01_sexagesimal_colon_units_${key}.png
     Click Element    data:testid:catalog-close-button
     PNG Images Should Be Different    check_no_overlay_${key}.png    check_01_sexagesimal_colon_units_${key}.png
     Remove Files    check_01_sexagesimal_colon_units_${key}.png
 
-    # testing
     # 02_sexagesimal_colon_nounits.vot
     Load Catalog File    02_sexagesimal_colon_nounits.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_02_sexagesimal_colon_nounits_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -404,11 +388,6 @@ Load Catalogs With Various Spatial Column Formats
     # 03_sexagesimal_letters.vot
     Load Catalog File    03_sexagesimal_letters.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_03_sexagesimal_letters_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -417,11 +396,6 @@ Load Catalogs With Various Spatial Column Formats
     # 04_sexagesimal_space.vot
     Load Catalog File    04_sexagesimal_space.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_04_sexagesimal_space_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -430,11 +404,6 @@ Load Catalogs With Various Spatial Column Formats
     # 05_compact_hhmmss.vot
     Load Catalog File    05_compact_hhmmss.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_05_compact_hhmmss_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -443,11 +412,6 @@ Load Catalogs With Various Spatial Column Formats
     # 06_decimal_hours.vot
     Load Catalog File    06_decimal_hours.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_06_decimal_hours_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -456,11 +420,6 @@ Load Catalogs With Various Spatial Column Formats
     # 07_radians.vot
     Load Catalog File    07_radians.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_07_radians_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -469,11 +428,6 @@ Load Catalogs With Various Spatial Column Formats
     # 08_unicode_dms.vot
     Load Catalog File    08_unicode_dms.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_08_unicode_dms_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -482,11 +436,6 @@ Load Catalogs With Various Spatial Column Formats
     # 09_casa_dot_dec.vot
     Load Catalog File    09_casa_dot_dec.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_09_casa_dot_dec_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -495,11 +444,6 @@ Load Catalogs With Various Spatial Column Formats
     # 10_numeric_hours.vot
     Load Catalog File    10_numeric_hours.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_10_numeric_hours_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -508,11 +452,6 @@ Load Catalogs With Various Spatial Column Formats
     # 11_numeric_radians.vot
     Load Catalog File    11_numeric_radians.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_11_numeric_radians_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -521,11 +460,6 @@ Load Catalogs With Various Spatial Column Formats
     # 12_unicode_minus.vot
     Load Catalog File    12_unicode_minus.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_12_unicode_minus_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -534,11 +468,6 @@ Load Catalogs With Various Spatial Column Formats
     # 20_FAIL_compact_no_units.vot
     Load Catalog File    20_FAIL_compact_no_units.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_20_FAIL_compact_no_units_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -547,11 +476,6 @@ Load Catalogs With Various Spatial Column Formats
     # 21_PARTIAL_out_of_range_lat.vot
     Load Catalog File    21_PARTIAL_out_of_range_lat.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_21_PARTIAL_out_of_range_lat_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -560,11 +484,6 @@ Load Catalogs With Various Spatial Column Formats
     # 22_PARTIAL_unparseable_rows.vot
     Load Catalog File    22_PARTIAL_unparseable_rows.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_22_PARTIAL_unparseable_rows_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -573,11 +492,6 @@ Load Catalogs With Various Spatial Column Formats
     # 30_coords_past_display_cut.vot
     Load Catalog File    30_coords_past_display_cut.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_30_coords_past_display_cut_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -586,11 +500,6 @@ Load Catalogs With Various Spatial Column Formats
     # 31_coords_past_display_cut_string_nounits.vot
     Load Catalog File    31_coords_past_display_cut_string_nounits.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_31_coords_past_display_cut_string_nounits_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -599,11 +508,6 @@ Load Catalogs With Various Spatial Column Formats
     # 32_decoy_error_columns.vot
     Load Catalog File    32_decoy_error_columns.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_32_decoy_error_columns_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -612,11 +516,6 @@ Load Catalogs With Various Spatial Column Formats
     # 33_swapped_names.vot
     Load Catalog File    33_swapped_names.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_33_swapped_names_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -625,11 +524,6 @@ Load Catalogs With Various Spatial Column Formats
     # 34_no_coordinate_names.vot
     Load Catalog File    34_no_coordinate_names.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_34_no_coordinate_names_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -638,11 +532,6 @@ Load Catalogs With Various Spatial Column Formats
     # 35_system_priority_icrs.vot
     Load Catalog File    35_system_priority_icrs.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_35_system_priority_icrs_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -651,11 +540,6 @@ Load Catalogs With Various Spatial Column Formats
     # 36_system_priority_fk4.vot
     Load Catalog File    36_system_priority_fk4.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_36_system_priority_fk4_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -664,11 +548,6 @@ Load Catalogs With Various Spatial Column Formats
     # 40_galactic_decimal.vot
     Load Catalog File    40_galactic_decimal.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_40_galactic_decimal_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -677,11 +556,6 @@ Load Catalogs With Various Spatial Column Formats
     # 41_galactic_sexagesimal.vot
     Load Catalog File    41_galactic_sexagesimal.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_41_galactic_sexagesimal_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -690,11 +564,6 @@ Load Catalogs With Various Spatial Column Formats
     # 42_ecliptic_decimal.vot
     Load Catalog File    42_ecliptic_decimal.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_42_ecliptic_decimal_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -703,11 +572,6 @@ Load Catalogs With Various Spatial Column Formats
     # 43_ecliptic_sexagesimal.vot
     Load Catalog File    43_ecliptic_sexagesimal.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_43_ecliptic_sexagesimal_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -716,11 +580,6 @@ Load Catalogs With Various Spatial Column Formats
     # 44_ecliptic_fk4.vot
     Load Catalog File    44_ecliptic_fk4.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_44_ecliptic_fk4_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -729,11 +588,6 @@ Load Catalogs With Various Spatial Column Formats
     # 45_fk4_b1900.vot
     Load Catalog File    45_fk4_b1900.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_45_fk4_b1900_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -742,11 +596,6 @@ Load Catalogs With Various Spatial Column Formats
     # 50_pixel0_numeric.vot
     Load Catalog File    50_pixel0_numeric.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_50_pixel0_numeric_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -755,11 +604,6 @@ Load Catalogs With Various Spatial Column Formats
     # 51_pixel0_string_nounits.vot
     Load Catalog File    51_pixel0_string_nounits.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_51_pixel0_string_nounits_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -768,11 +612,6 @@ Load Catalogs With Various Spatial Column Formats
     # 52_pixel1_numeric.vot
     Load Catalog File    52_pixel1_numeric.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_52_pixel1_numeric_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -781,11 +620,6 @@ Load Catalogs With Various Spatial Column Formats
     # 53_pixel0_angular_decoy.vot
     Load Catalog File    53_pixel0_angular_decoy.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_53_pixel0_angular_decoy_${key}.png
     Click Element    data:testid:catalog-close-button
@@ -794,11 +628,6 @@ Load Catalogs With Various Spatial Column Formats
     # 60_stream_late_string_format.vot
     Load Catalog File    60_stream_late_string_format.vot
     Click Element    data:testid:catalog-plot-button
-    Click Element    data:testid:catalog-size-button
-    Click Element    data:testid:catalog-settings-shape-dropdown
-    Click Element    data:testid:catalog-settings-shape-circle-filled
-    Input Text    //input[@placeholder="Size"]    50
-    Click Element    data:testid:catalog-overlay-component-0-floating-settings-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_60_stream_late_string_format_${key}.png
     Click Element    data:testid:catalog-close-button
