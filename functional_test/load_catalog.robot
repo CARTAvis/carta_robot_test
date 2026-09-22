@@ -336,3 +336,57 @@ SIMBAD and VizieR Mirror Sites
     # reset list to default order
     Click Element    data:testid:catalog-query-reset-mirrors-button
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Load Catalogs With Sexagesimal Coordinates
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    fake_image.fits
+    Load Catalog File    fake_catalog.fits
+    # dock the catalog widget and close widgets to create more space
+    Drag And Drop    ${CATALOG_WIDGET_DOCK_BUTTON}    ${X_SPATIAL_PROFILER_TAB}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${IMAGE_LIST_CLOSE_BUTTON}
+    Click Element    ${ANIMATOR_CLOSE_BUTTON}
+    Click Element    ${REGION_LIST_CLOSE_BUTTON}
+    Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
+    Sleep    1
+    # render catalog overlay
+    Click Element    data:testid:catalog-plot-button
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    check_overlay_${key}.png
+    # close the catalog
+    Click Element    data:testid:catalog-close-button
+
+    # load catalog with sexagesimal coordinates with hmsdms format, and render it
+    Load Catalog File    fake_catalog_sexagesimal_hms.fits
+    Click Element    data:testid:catalog-plot-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_overlay_sexagesimal_hms_${key}.png
+    Click Element    data:testid:catalog-close-button
+
+    # load catalog with sexagesimal coordinates with colon format, and render it
+    Load Catalog File    fake_catalog_sexagesimal_colon.fits
+    Click Element    data:testid:catalog-plot-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_overlay_sexagesimal_colon_${key}.png
+    Click Element    data:testid:catalog-close-button
+
+    # load catalog with sexagesimal coordinates with space format, and render it
+    Load Catalog File    fake_catalog_sexagesimal_space.fits
+    Click Element    data:testid:catalog-plot-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_overlay_sexagesimal_space_${key}.png
+    Click Element    data:testid:catalog-close-button
+
+    # load catalog with sexagesimal coordinates with casa format, and render it
+    Load Catalog File    fake_catalog_sexagesimal_casa.fits
+    Click Element    data:testid:catalog-plot-button
+    Capture Element Screenshot    ${VIEWER_DIV}    check_overlay_sexagesimal_casa_${key}.png
+    Click Element    data:testid:catalog-close-button
+
+    # check screenshots
+    PNG Images Should Be Identical    check_overlay_${key}.png    check_overlay_sexagesimal_hms_${key}.png
+    PNG Images Should Be Identical    check_overlay_${key}.png    check_overlay_sexagesimal_colon_${key}.png
+    PNG Images Should Be Identical    check_overlay_${key}.png    check_overlay_sexagesimal_space_${key}.png
+    PNG Images Should Be Identical    check_overlay_${key}.png    check_overlay_sexagesimal_casa_${key}.png
+
+
+    Remove Files    check_overlay_${key}.png    check_overlay_sexagesimal_hms_${key}.png    check_overlay_sexagesimal_colon_${key}.png    check_overlay_sexagesimal_space_${key}.png    check_overlay_sexagesimal_casa_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
