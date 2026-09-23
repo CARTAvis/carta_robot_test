@@ -73,6 +73,11 @@ Export as TSV or TEXT
     Mouse Over    data:testid:spectral-profiler-0-plot
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div[1]/div/div[2]/span[2]/a
     Sleep    1
+    ## disable smoothing to reset the profile
+    Click Element    data:testid:smoothing-button
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //*[contains(text(), "None")]
+    Click Element    data:testid:spectral-profiler-0-floating-settings-0-header-close-button    
     Click Element    data:testid:spectral-profiler-0-header-close-button
     # verify the exported file exists in the download folder named as M17_SWex.fits-Z-profile-Region_1-Statistic_Mean-Coordinate_Current-smoothed-2026-09-23-15-46-33.tsv
     Set Selenium Speed    0
