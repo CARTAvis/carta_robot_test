@@ -6,7 +6,7 @@ Library    DateTime
 
 
 *** Test Cases ***
-Export as TSV or TEXT
+Export as TSV or TXT
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
     # create an ellipse region
