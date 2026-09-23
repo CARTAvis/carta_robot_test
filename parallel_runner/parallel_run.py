@@ -48,7 +48,8 @@ test_suites = {
     3229: "workspace.robot",
     3230: "stokes_analysis.robot",
     3231: "conversion_time.robot",       
-    3232: "cursor_info.robot",           
+    3232: "cursor_info.robot",
+    3233: "export_test.robot"           
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
