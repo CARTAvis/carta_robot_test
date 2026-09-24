@@ -471,6 +471,15 @@ Should Be Close
 # Minor FWHM:      10.0 → relative tolerance 1%
 # Position angle:  30.0 → absolute tolerance 0.1 degree
 
+
+Get System Information
+    ${os}=          Evaluate    platform.system()    modules=platform
+    ${hostname}=    Evaluate    socket.gethostname()    modules=socket
+    Log    OS: ${os}
+    Log    Hostname: ${hostname}
+    RETURN    ${os}    ${hostname}
+
+
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
     Wait For Process    handle=carta    timeout=3
