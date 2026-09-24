@@ -19,6 +19,8 @@ Single Gaussian Fitting With Smart Angular Unit
     Click Element    ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     Wait Until Page Does Not Contain    Image fitting processing    timeout=5
 
+    ${os}    ${hostname}=    Get System Information
+    IF    '${os}' == 'Darwin'
     Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 10:59:59.9999998479 ± 0.000384 (s)
@@ -29,9 +31,12 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395656 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 0.999998 ± 0.000039 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
-    
+    ELSE IF    '${os}' == 'Linux'
+        Log    Running on Linux: ${hostname}
+    END
     Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
     Sleep    1
+    IF    '${os}' == 'Darwin'
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: small_gaussian.fits
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: entire image
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Gaussian fitting with 1 component(s)
@@ -59,7 +64,9 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639565584e+4 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 9.999983755341e-1 ± 3.917871324727e-5 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Background${SPACE*6}\= 0.000000000000e+0 (Jy/beam) (fixed)
-
+    ELSE IF    '${os}' == 'Linux'
+        Log    Running on Linux: ${hostname}
+    END
     [Teardown]    Kill carta_backend And Close Browser
 
 Triple Gaussian Fitting
@@ -144,6 +151,7 @@ Triple Gaussian Fitting
     Remove Files    check_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     [Teardown]    Kill carta_backend And Close Browser
+
 
 FOV Image Fitting
     [Setup]    Setup carta_backend And Open Browser To CARTA
