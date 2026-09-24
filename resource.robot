@@ -479,6 +479,16 @@ Get System Information
     Log    Hostname: ${hostname}
     RETURN    ${os}    ${hostname}
 
+# example usage of Get System Information
+#    ${os}    ${hostname}=    Get System Information
+#    IF    '${os}' == 'Darwin'
+#        Log    Running on macOS: ${hostname}
+#    ELSE IF    '${os}' == 'Linux'
+#        Log    Running on Linux: ${hostname}
+#    END
+
+
+
 
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
