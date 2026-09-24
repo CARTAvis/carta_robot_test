@@ -318,7 +318,7 @@ Setup carta_backend And Open Browser To CARTA
         END
     ELSE
         IF    '${BROWSER}' == 'headlesschrome'
-            Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--use-angle=swiftshader");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1");add_experimental_option("prefs", ${prefs})
+            Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--use-angle=swiftshader");add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_argument("--force-device-scale-factor=1");add_experimental_option("prefs", ${prefs});add_argument("--enable-unsafe-swiftshader")
             Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
         END
         IF    '${BROWSER}' == 'chrome'
