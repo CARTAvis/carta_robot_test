@@ -455,6 +455,22 @@ Change Raster Colormap
     Click Element    ${COLORMAP_DROPDOWN}
     Click Element    //*[normalize-space(text())='${COLORMAP_NAME}']
 
+
+Should Be Close
+    [Arguments]    ${actual}    ${expected}    ${rtol}=0.0    ${atol}=0.0
+    ${diff}=       Evaluate    abs(float($actual) - float($expected))
+    ${allowed}=    Evaluate    float($atol) + float($rtol) * abs(float($expected))
+    Should Be True    ${diff} <= ${allowed}
+    ...    Actual=${actual}, Expected=${expected}, Difference=${diff}, Allowed=${allowed}
+
+# 2D gaussian fitting example, using relative and absolute tolerances
+# Amplitude:      100.0 → relative tolerance 1%
+# X center:       320.0 → absolute tolerance 0.1 pixel
+# Y center:       400.0 → absolute tolerance 0.1 pixel
+# Major FWHM:      20.0 → relative tolerance 1%
+# Minor FWHM:      10.0 → relative tolerance 1%
+# Position angle:  30.0 → absolute tolerance 0.1 degree
+
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
     Wait For Process    handle=carta    timeout=3

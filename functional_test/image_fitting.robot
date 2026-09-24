@@ -26,9 +26,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 ± 0.000023 (Jy/beam)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 9.999992 ± 0.000226 (arcmin)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 9.999992 ± 0.000226 (arcmin)
-    # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395656 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.3
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.196734 ± 35726.395656 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 0.999998 ± 0.000039 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     
@@ -47,8 +45,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    initial cost${SPACE*9}\= 4.889196918743e+00
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final cost${SPACE*11}\= 4.131108282857e-12
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    residual variance${SPACE*4}\= 6.673842137087e-15
-    # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final cond(J)${SPACE*8}\= inf
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    final cond(J)${SPACE*8}\= inf
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Center X${SPACE*8}\= 10:59:59.9999998479 ± 3.842305688285e-4 (s)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 1.200000001456e+1 ± 4.802881229828e-5 (px)
@@ -59,9 +56,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 4.999995164301e+0 ± 1.130992041368e-4 (px)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    FWHM Minor Axis \= 9.999992418445e+0 ± 2.261984613479e-4 (arcmin)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    ${SPACE*16}\= 4.999995292557e+0 ± 1.130992099391e-4 (px)
-    # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639565584e+4 (deg)
-    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    P.A.${SPACE*12}\= -1.967343050949e-1 ± 3.572639565584e+4 (deg)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 9.999983755341e-1 ± 3.917871324727e-5 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Background${SPACE*6}\= 0.000000000000e+0 (Jy/beam) (fixed)
 
@@ -176,22 +171,22 @@ FOV Image Fitting
     Wait Until Page Does Not Contain    Image fitting processing    timeout=2
     Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.7677241853 ± 0.001515 (s)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:02.9895992722 ± 0.026720 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 6.891616 ± 0.072396 (Jy/pixel)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 5.989647 ± 0.062921 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 5.094565 ± 0.053518 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.034082 ± 2.617999 (deg)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 1489.271418 ± 15.644633 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.7677241853 ± 0.001515 (s)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:02.9895992722 ± 0.026720 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 6.891616 ± 0.072396 (Jy/pixel)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 5.989647 ± 0.062921 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 5.094565 ± 0.053518 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= -0.034082 ± 2.617999 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 1489.271418 ± 15.644633 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #2:
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.3846146426 ± 0.001168 (s)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:06.0332033809 ± 0.022890 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 9.865010 ± 0.087321 (Jy/pixel)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 7.071185 ± 0.062591 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 2.966246 ± 0.026256 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 34.054985 ± 0.365113 (deg)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 1465.350023 ± 12.970626 (Jy)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/pixel) (fixed)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 0:00:00.3846146426 ± 0.001168 (s)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 30:00:06.0332033809 ± 0.022890 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 9.865010 ± 0.087321 (Jy/pixel)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 7.071185 ± 0.062591 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 2.966246 ± 0.026256 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 34.054985 ± 0.365113 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 1465.350023 ± 12.970626 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/pixel) (fixed)
     Click Element    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB_TITLE}
     Sleep    1
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Image: double.miriad
@@ -280,12 +275,8 @@ Generation Of Model And Residual Images After Fitting
     Click Element    ${CURSOR_INFO_WIDGET_BUTTON}
     # check pixel values of the three images in the cursor info widget
     Element Should Contain    data:testid:simple-table-0-1    1.95008e+1
-    # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-1-1    1.20961e+1
-    Element Should Contain    data:testid:simple-table-1-1    1.2
-    # CI workaround
-    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.26406
-    Run Keyword And Warn On Failure    Element Should Contain    data:testid:simple-table-2-1    7.2
+    Element Should Contain    data:testid:simple-table-1-1    1.20961e+1
+    Element Should Contain    data:testid:simple-table-2-1    7.26406
     Click Element    ${CURSOR_INFO_WIDGET_CLOSE_BUTTON}
     # with a model image only
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
@@ -395,13 +386,13 @@ Fitting With One Gaussian Having Fixed Parameters
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
     Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3674122687 ± 0.001029 (s)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0124248555 ± 0.015488 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3674122687 ± 0.001029 (s)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0124248555 ± 0.015488 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.613421 ± 0.034892 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.661957 ± 0.037875 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 46.079536 ± 30.412366 (deg)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 24.878172 ± 1.475226 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.613421 ± 0.034892 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.661957 ± 0.037875 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 46.079536 ± 30.412366 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 24.878172 ± 1.475226 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     Set Selenium Speed    ${DELAY}
     # with center free, amplitude free, FWHM locked, and PA free
@@ -483,11 +474,11 @@ Fitting With One Gaussian Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3777367749 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.1574465497 (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.291762 ± 0.067100 (Jy/beam)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.717603 ± 0.021873 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.371680 ± 0.010453 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.291762 ± 0.067100 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.717603 ± 0.021873 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.371680 ± 0.010453 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 37.450058 ± 1.161857 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 37.450058 ± 1.161857 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     Set Selenium Speed    ${DELAY}
     # with center free, amplitude locked, FWHM locked, and PA free
@@ -518,13 +509,13 @@ Fitting With One Gaussian Having Fixed Parameters
     Wait Until Page Does Not Contain    Image fitting processing    timeout=10
     Set Selenium Speed    0
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3674273224 ± 0.001027 (s)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0038317164 ± 0.015398 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3674273224 ± 0.001027 (s)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.0038317164 ± 0.015398 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.000000 (Jy/beam) (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.568339 ± 0.033812 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.641322 ± 0.038552 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.568339 ± 0.033812 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.641322 ± 0.038552 (arcsec)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 45.000000 (deg) (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 22.331266 ± 1.393965 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 22.331266 ± 1.393965 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     Set Selenium Speed    ${DELAY}
     # with center free, amplitude free, FWHM locked, and PA locked
@@ -651,19 +642,19 @@ Fitting With Multiple Gaussians Having Fixed Parameters
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #1:
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3987650670 (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.7574425865 (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.428114 ± 0.079495 (Jy/beam)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.402444 ± 0.021579 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.872463 ± 0.050416 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 0.017295 ± 2.743556 (deg)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 30.721695 ± 1.788036 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 1.428114 ± 0.079495 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.402444 ± 0.021579 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.872463 ± 0.050416 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 0.017295 ± 2.743556 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 30.721695 ± 1.788036 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Component #2:
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3136120678 ± 0.000750 (s)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.7551247569 ± 0.008897 (arcsec)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.068573 ± 0.072591 (Jy/beam)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center X${SPACE*8}\= 6:12:54.3136120678 ± 0.000750 (s)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Center Y${SPACE*8}\= 17:59:14.7551247569 ± 0.008897 (arcsec)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Amplitude${SPACE*7}\= 2.068573 ± 0.072591 (Jy/beam)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Major Axis \= 0.600000 (arcsec) (fixed)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    FWHM Minor Axis \= 0.750000 (arcsec) (fixed)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 5.556748 ± 6.368759 (deg)
-    Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 57.031307 ± 2.072691 (Jy)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 5.556748 ± 6.368759 (deg)
+    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 57.031307 ± 2.072691 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
     [Teardown]    Kill carta_backend And Close Browser
 
