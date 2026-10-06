@@ -133,8 +133,8 @@ Histogram rendering styling
     PNG Images Should Be Different    check_before_${key}.png    check_after_${key}.png
     # check line
     PNG Pixel XY Should Match RGBA    check_after_${key}.png    337,99,33,93,176,255
-    # check mean/rms marker, disabled due to a bug
-    # PNG Pixel XY Should Match RGBA    check_after_${key}.png    278,100,33,93,176,255
+    # check mean/rms marker
+    PNG Pixel XY Should Match RGBA    check_after_${key}.png    300,30,203,220,212,255
  
     Remove Files    check_before_${key}.png    check_after_${key}.png 
     [Teardown]    Kill carta_backend And Close Browser
