@@ -126,7 +126,7 @@ Export as TSV or TXT
     @{lines}=       Split To Lines    ${content}
     Should Be Equal    ${lines}[0]    \# image: M17_SWex.fits
     # bug below
-    #Should Be Equal    ${lines}[1]    \# statistic: mean
+    Should Be Equal    ${lines}[1]    \# statistic: Mean
     Should Be Equal    ${lines}[2]    \# ellipse[[320.000000pix, 400.000000pix], [100.000000pix, 50.000000pix], 30.000000deg]
     Should Be Equal    ${lines}[3]    \# ellipse(wcs:ICRS)[[18:20:21.0000000240, -16:12:10.0000000440], [40.0000000000", 20.0000000000"], 30.000000deg]
     Should Be Equal    ${lines}[5]    ${SPACE * 1}Gaussian function fitting with 1 component(s)
