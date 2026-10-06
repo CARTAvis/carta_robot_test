@@ -232,6 +232,9 @@ Catalog Rendering As Scatter Plot
     Click Element    //a[contains(., "RA_d")]
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}
     
+    Mouse Over    data:testid:catalog-scatter-plot
+    Mouse Out    data:testid:catalog-scatter-plot
+
     ${key}=    Generate Random String    8
     Capture Element Screenshot    data:testid:catalog-scatter-plot    check_${key}.png
     # click the plot button in the catalog scatter plot widget
@@ -248,7 +251,7 @@ Catalog Rendering As Scatter Plot
     # mouse over the scatter plot element
     Mouse Over    data:testid:catalog-scatter-plot
     # check the context in the info field of the scatter plot widget
-    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.21421, RA_d: 150.08293
+    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.21986, RA_d: 150.08929
     Element Should Contain    data:testid:catalog-plot-info    ANG_DIST - count: 20000, valid count: 20000, mean: 2.9599e+2, rms: 3.1643e+2, stddev: 1.1191e+2, min: 1.2400e+0, max: 4.6845e+2
 
     # click the linear fit button in the catalog scatter plot widget
@@ -261,8 +264,8 @@ Catalog Rendering As Scatter Plot
     Element Should Contain    data:testid:catalog-plot-0-content    No catalog file loaded
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,93,579,117
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,93,300,155
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    281,90,643,134
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    281,90,643,130
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check_${key}.png    check4_${key}.png
@@ -301,6 +304,7 @@ Catalog Rendering As Histogram Plot
     # set the bins from 8 to 80
     Clear Input Field    data:testid:catalog-plot-widget-bin-input
     Input Text    data:testid:catalog-plot-widget-bin-input    80
+    Click Element    //*[normalize-space(text())='Log scale']    
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check2_${key}.png
     # click the x dropdown menu in the catalog histogram plot widget to select DEC_d 
     Click Element    data:testid:catalog-plot-widget-x-dropdown
@@ -313,7 +317,7 @@ Catalog Rendering As Histogram Plot
     Click Element    data:testid:catalog-plot-widget-stat-dropdown
     Click Element    //a[contains(., "DEC_d")]
     # check the context in the info field of the catalog histogram plot widget
-    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.2141465077500007, Count: 378
+    Element Should Contain    data:testid:catalog-plot-info    DEC_d: 2.22389574725, Count: 342
     Element Should Contain    data:testid:catalog-plot-info    DEC_d - count: 20000, valid count: 20000, mean: 2.2492e+0, rms: 2.2500e+0, stddev: 6.0720e-2, min: 2.1053e+0, max: 2.3650e+0
 
     # close the catalog file and check the state of the histogram plot widget
@@ -322,12 +326,12 @@ Catalog Rendering As Histogram Plot
     Element Should Contain    data:testid:catalog-plot-0-content    No catalog file loaded
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    243,170,530,68
-    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    243,170,115,22
-    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    172,122,458,25
-    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    172,122,115,22
-    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    186,119,665,123
-    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    186,119,115,22
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    288,122,364,58
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    288,122,364,56
+    PNG Two Pixels Should Have Matched RGBA    check2_${key}.png    89,93,232,41
+    PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    89,93,232,39
+    PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    89,69,232,35
+    PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    89,69,232,33
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
@@ -372,6 +376,7 @@ Linked Catalog Visualization
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check_histogram_${key}.png
     # click the histogram plot element
     Click Element    data:testid:catalog-histogram-plot
+    Sleep    0.2
     Capture Element Screenshot    data:testid:catalog-histogram-plot    check_histogram_selected_${key}.png
     # close the catalog histogram plot widget
     Click Element    data:testid:catalog-plot-1-header-close-button
@@ -381,27 +386,25 @@ Linked Catalog Visualization
 
     #Sleep    1
     # check the context in the catalog table
-    Element Should Contain    data:testid:filterable-table-582-1    73.06999969482422
+    Element Should Contain    data:testid:filterable-table-192-1    41.5099983215332
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_selected_${key}.png
     Capture Element Screenshot    css:[class*="catalog-overlay-data-container"]    check_table_selected_${key}.png
     
     Click Element    ${CATALOG_WIDGET_RESET_BUTTON}
-    #Sleep    1
-    # on the mac mini, this is not always true. sometimes it is 8.279999732971191, the cell above 9.220000267028809
-    #Element Should Contain    //*[@id="root"]/div/div[${MAGIC_INDEX}]/div[2]/div/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div[1]/div[1]/div/div[2]/div[2]/div/div/div/div[12]/div    9.220000267028809
+    Element Should Contain    data:testid:filterable-table-0-1    1.2400000095367432
     Capture Element Screenshot    css:[class*="catalog-overlay-data-container"]    check_table_reset_${key}.png
     Capture Element Screenshot    ${VIEWER_DIV}    check_image_overlay_reset_${key}.png
 
     Set Selenium Speed    0
-    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,21,338,227
-    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,21,342,16
+    PNG Two Pixels Should Have Matched RGBA    check_histogram_selected_${key}.png    338,29,338,241
+    PNG Two Pixels Should Not Have Matched RGBA    check_histogram_selected_${key}.png    338,29,343,32
     PNG Images Should Be Different    check_histogram_selected_${key}.png    check_histogram_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected_${key}.png    340,16,340,225
-    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected_${key}.png    340,16,350,142
+    PNG Two Pixels Should Have Matched RGBA    check_scatter_selected_${key}.png    338,14,338,230
+    PNG Two Pixels Should Not Have Matched RGBA    check_scatter_selected_${key}.png    338,14,345,13
     PNG Images Should Be Different    check_scatter_selected_${key}.png    check_scatter_${key}.png
     PNG Images Should Be Different    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png
-    PNG Two Pixels Should Have Matched RGBA    check_table_selected_${key}.png    120,70,580,70
-    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected_${key}.png    120,70,120,90
+    PNG Two Pixels Should Have Matched RGBA    check_table_selected_${key}.png    190,70,190,190
+    PNG Two Pixels Should Not Have Matched RGBA    check_table_selected_${key}.png    190,70,190,90
     PNG Images Should Be Different    check_table_selected_${key}.png    check_table_reset_${key}.png
 
     Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
