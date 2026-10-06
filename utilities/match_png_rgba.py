@@ -39,13 +39,14 @@ else:
             print(f"Pixel at ({ref_x2+i}, {ref_y2+j}): {pix[ref_x2+i, ref_y2+j]}")
 
 if debug:
-    plt.subplot(321)
+    plt.figure(figsize=(16, 8))
+    ax_r = plt.subplot(321)
     plt.title("R channel")
     plt.imshow(im.getchannel('R'), cmap='Reds_r', interpolation=None)
-    plt.subplot(323)
+    plt.subplot(323, sharex=ax_r, sharey=ax_r)
     plt.title("G channel")
     plt.imshow(im.getchannel('G'), cmap='Greens_r', interpolation=None)
-    plt.subplot(325)
+    plt.subplot(325, sharex=ax_r, sharey=ax_r)
     plt.title("B channel")
     plt.imshow(im.getchannel('B'), cmap='Blues_r', interpolation=None)
     #plt.subplot(224)
@@ -53,14 +54,29 @@ if debug:
     #plt.imshow(im.getchannel('A'), cmap='gray', interpolation=None)
     
     plt.subplot(222)
-    plt.xlim(ref_x1-2.5, ref_x1+2.5)
-    plt.ylim(ref_y1-2.5, ref_y1+2.5)
+    plt.xlim(ref_x1-11.5, ref_x1+11.5)
+    plt.ylim(ref_y1-11.5, ref_y1+11.5)
     plt.title(f"{ref_x1}, {ref_y1} - {pix[ref_x1, ref_y1]}")
     plt.imshow(im.getchannel('R'), cmap='jet', interpolation=None)
+    plt.gca().add_patch(plt.Rectangle((ref_x1-0.5, ref_y1-0.5), 1, 1, edgecolor='white', facecolor='none', linewidth=2))
     
     plt.subplot(224)
-    plt.xlim(ref_x2-2.5, ref_x2+2.5)
-    plt.ylim(ref_y2-2.5, ref_y2+2.5)
+    plt.xlim(ref_x2-11.5, ref_x2+11.5)
+    plt.ylim(ref_y2-11.5, ref_y2+11.5)
     plt.title(f"{ref_x2}, {ref_y2} - {pix[ref_x2, ref_y2]}")
     plt.imshow(im.getchannel('R'), cmap='jet', interpolation=None)
+    plt.gca().add_patch(plt.Rectangle((ref_x2-0.5, ref_y2-0.5), 1, 1, edgecolor='white', facecolor='none', linewidth=2))
+
+    rgba_pix = im.convert('RGBA').load()
+
+    def on_click(event):
+        if not event.dblclick or event.inaxes is None:
+            return
+        x = int(round(event.xdata))
+        y = int(round(event.ydata))
+        if 0 <= x < im.size[0] and 0 <= y < im.size[1]:
+            r, g, b, a = rgba_pix[x, y]
+            print(f"{x},{y},{r},{g},{b},{a}")
+
+    plt.gcf().canvas.mpl_connect('button_press_event', on_click)
     plt.show()

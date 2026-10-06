@@ -526,3 +526,41 @@ Tile Rendering with Different MIP
     PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,568,334
     Remove Files    tile_mip_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Webglreport Test
+    Set Selenium Speed    ${DELAY}
+    ${platform}=    Evaluate    sys.platform    sys
+    IF    '${platform}' == 'darwin'
+    IF    '${BROWSER}' == 'headlesschrome'
+    Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--force-color-profile=srgb")
+    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
+    END
+    IF    '${BROWSER}' == 'chrome'
+    Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb")
+    Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
+    END
+    ELSE
+    IF    '${BROWSER}' == 'headlesschrome'
+    Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--use-gl=angle");add_argument("--use-angle=swiftshader");add_argument("--force-color-profile=srgb")
+    Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
+    END
+    IF    '${BROWSER}' == 'chrome'
+    Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb")
+    Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
+    END
+    END
+    Go To    https://webglreport.com/?v\=1
+    Wait Until Page Contains    WebGL
+    Page Should Contain    This browser supports WebGL 1
+    Capture Page Screenshot    WebGL1.png
+    Go To    https://webglreport.com/?v\=2
+    Wait Until Page Contains    WebGL
+    Page Should Contain    This browser supports WebGL 2
+    Capture Page Screenshot    WebGL2.png
+    # check screenshots for WebGL support
+    PNG Pixel XY Should Match RGBA    WebGL1.png    400,150,0,169,0,255
+    PNG Pixel XY Should Match RGBA    WebGL2.png    400,150,0,169,0,255
+
+    Remove Files    WebGL1.png    WebGL2.png
+    Close Browser
