@@ -193,7 +193,7 @@ Spectral Axis Conversion from WAVE
     # switch channel by click
     Click Element    ${SPECTRAL_PROFILER_PLOT}
     # check default spectral unit (frequency)
-    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Cursor: (0.007032 mm, 9.86e+1)
+    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Cursor: (7.032 um, 9.86e+1)
     # switch to different spectral units
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[1]
@@ -221,7 +221,7 @@ Spectral Axis Conversion from AWAV
     # switch channel by click
     Click Element    ${SPECTRAL_PROFILER_PLOT}
     # check default spectral unit (frequency)
-    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Cursor: (0.000480592 mm, 1.06e+3)
+    Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Cursor: (480.592 nm, 1.06e+3)
     # switch to different spectral units
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[1]
@@ -468,3 +468,21 @@ Rest Frame Conversion - Local Universe CO Cube
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Spectral Conversion With CTYPE Having Suffix
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    # the test image has CTYPE3 = WAVE-LOG
+    Load Initial Image    manga-7443-12703-LOGCUBE.fits
+    Mouse Over    ${VIEWER_DIV}
+    # enable spectral profiler widget
+    Click Element    id:SpectralProfilerButton
+    # enable settings dialog
+    Click Element    data:testid:spectral-profiler-0-header-settings-button
+    # check conversion options
+    Click Element    data:testid:spectral-profiler-coordinate-dropdown
+    Element Should Contain    data:testid:spectral-profiler-coordinate-dropdown    Frequency (GHz)
+    Element Should Contain    data:testid:spectral-profiler-coordinate-dropdown    Vacuum wavelength (Angstrom) (Native WCS)
+    Element Should Contain    data:testid:spectral-profiler-coordinate-dropdown    Air wavelength (Angstrom)
+    Element Should Contain    data:testid:spectral-profiler-coordinate-dropdown    Channel
+    Element Should Contain    data:testid:spectral-profiler-settings-intensity-unit-dropdown    1E-17 erg/s/cm^2/Ang/spaxel
+
+    [Teardown]    Kill carta_backend And Close Browser
