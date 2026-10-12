@@ -115,9 +115,9 @@ Export as TSV or TXT
     Mouse Over    data:testid:profile-fitting-result
     Click Element    css:.bp6-button.fitting-result-hover-button
     Sleep    1
-    # verify the exported file exists in the download folder named as Profile_Fitting_Result_Log-2026-09-23-20-59-08.txt
+    # verify the exported file exists in the download folder named as M17_SWex.fits-Profile_Fitting_Result_Log-2026-10-12-15-13-33
     Set Selenium Speed    0
-    ${wildcard_filename}=    Set Variable    Profile_Fitting_Result_Log-${year}-${month}-${day}-*-*-*.txt
+    ${wildcard_filename}=    Set Variable    M17_SWex.fits-Profile_Fitting_Result_Log-${year}-${month}-${day}-*-*-*.txt
     ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
     File Should Exist    ${pattern}
     @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
@@ -250,9 +250,9 @@ Export as TSV or TXT
     Mouse Over    data:testid:image-fitting-result-tab
     Click Element    //*[@id="bp6-tab-panel_fittingResultTabs_0"]/pre/div[2]/span[2]/a
     Sleep    1
-    # verify the exported file exists in the download folder named as dice_one.fits-2026-09-23-21-35-34-2D_Fitting_Result.txt
+    # verify the exported file exists in the download folder named as dice_one.fits-2D_Fitting_Result-2026-10-12-15-15-43
     Set Selenium Speed    0
-    ${wildcard_filename}=    Set Variable    dice_one.fits-${year}-${month}-${day}-*-*-*-2D_Fitting_Result.txt
+    ${wildcard_filename}=    Set Variable    dice_one.fits-2D_Fitting_Result-${year}-${month}-${day}-*-*-*.txt
     ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
     File Should Exist    ${pattern}
     @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
@@ -269,9 +269,9 @@ Export as TSV or TXT
     Mouse Over    css:.log-text
     Click Element    //*[@id="bp6-tab-panel_fittingResultTabs_1"]/pre/div[2]/span[2]/a
     Sleep    1
-    # verify the exported file exists in the download folder named as dice_one.fits-2026-09-23-21-41-18-2D_Fitting_Full_Log.txt
+    # verify the exported file exists in the download folder named as dice_one.fits-2D_Fitting_Full_Log-2026-10-12-15-19-32
     Set Selenium Speed    0
-    ${wildcard_filename}=    Set Variable    dice_one.fits-${year}-${month}-${day}-*-*-*-2D_Fitting_Full_Log.txt
+    ${wildcard_filename}=    Set Variable    dice_one.fits-2D_Fitting_Full_Log-${year}-${month}-${day}-*-*-*.txt
     ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
     File Should Exist    ${pattern}
     @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
