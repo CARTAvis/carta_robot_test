@@ -207,9 +207,10 @@ Export as TSV or TXT
     Should Be Equal    ${lines}[1]    \# xLabel: Value (Jy/beam)
     Should Be Equal    ${lines}[2]    \# yLabel: Count
     Should Be Equal    ${lines}[3]    \# ellipse[[320.000000pix, 400.000000pix], [100.000000pix, 50.000000pix], 30.000000deg]
+    Should Be Equal    ${lines}[4]    \# ellipse(wcs:ICRS)[[18:20:21.0000000240, -16:12:10.0000000440], [40.0000000000", 20.0000000000"], 30.000000deg]
     # missing wcs region info due to a bug
-    Should Be Equal    ${lines}[4]    \# x\ty
-    Should Be Equal    ${lines}[5]    -0.053129252046346664\t3.0000000000e+0
+    Should Be Equal    ${lines}[5]    \# x\ty
+    Should Be Equal    ${lines}[6]    -0.053129252046346664\t3.0000000000e+0
     Should Be Equal    ${lines}[-1]    0.18891862127929926\t1.0000000000e+0
     Remove Files    ${filepath}
     Set Selenium Speed    ${DELAY}
