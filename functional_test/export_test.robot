@@ -54,7 +54,7 @@ Export as TSV or TXT
     ${filepath}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[0]
     ${content}=     Get File    ${filepath}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# Z-profile-Region_1-Statistic_Mean-Coordinate_Current M17_SWex.fits
+    Should Be Equal    ${lines}[0]    \# M17_SWex.fits Z-profile-Region_1-Statistic_Mean-Coordinate_Current
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: Value (Jy/beam)
     Should Be Equal    ${lines}[3]    \# ellipse[[320.000000pix, 400.000000pix], [100.000000pix, 50.000000pix], 30.000000deg]\t
@@ -91,7 +91,7 @@ Export as TSV or TXT
     ${filepath_1}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[1]
     ${content}=     Get File    ${filepath_1}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# Z-profile-Region_1-Statistic_Mean-Coordinate_Current-smoothed M17_SWex.fits
+    Should Be Equal    ${lines}[0]    \# M17_SWex.fits Z-profile-Region_1-Statistic_Mean-Coordinate_Current-smoothed
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: Value (Jy/beam)
     Should Be Equal    ${lines}[3]    \# ellipse[[320.000000pix, 400.000000pix], [100.000000pix, 50.000000pix], 30.000000deg]\t
@@ -148,7 +148,7 @@ Export as TSV or TXT
     ${filepath}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[0]
     ${content}=     Get File    ${filepath}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# Z-profile-Region_1-Statistic_Mean-Coordinate_Current M17_SWex.fits
+    Should Be Equal    ${lines}[0]    \# M17_SWex.fits Z-profile-Region_1-Statistic_Mean-Coordinate_Current
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: Value (Jy/beam)
     Should Be Equal    ${lines}[3]    \# ellipse[[320.000000pix, 400.000000pix], [100.000000pix, 50.000000pix], 30.000000deg]\t
@@ -321,25 +321,23 @@ Export as TSV or TXT
     ${filepath_1}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[1]
     ${content}=     Get File    ${filepath_0}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# q image_IQU.fits
+    Should Be Equal    ${lines}[0]    \# image_IQU.fits Q profile
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: Value (Jy/pixel)
     Should Be Equal    ${lines}[3]    \# Point (pixel) [5.000000pix, 5.000000pix]
     Should Be Equal    ${lines}[4]    \# Point (wcs:FK5) [0:00:00.0000000000, 30:00:00.0000000000]
-    Should Be Equal    ${lines}[5]    \# Qz\t
-    Should Be Equal    ${lines}[6]    \# x\ty
-    Should Be Equal    ${lines}[7]    115.27120000000001\t7.5465911627e-1
+    Should Be Equal    ${lines}[5]    \# x\ty
+    Should Be Equal    ${lines}[6]    115.27120000000001\t7.5465911627e-1
     Should Be Equal    ${lines}[-1]    115.13316330262583\t6.4677184820e-1
     ${content}=     Get File    ${filepath_1}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# u image_IQU.fits
+    Should Be Equal    ${lines}[0]    \# image_IQU.fits U profile
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: Value (Jy/pixel)
     Should Be Equal    ${lines}[3]    \# Point (pixel) [5.000000pix, 5.000000pix]
     Should Be Equal    ${lines}[4]    \# Point (wcs:FK5) [0:00:00.0000000000, 30:00:00.0000000000]
-    Should Be Equal    ${lines}[5]    \# Uz\t
-    Should Be Equal    ${lines}[6]    \# x\ty
-    Should Be Equal    ${lines}[7]    115.27120000000001\t6.1499863863e-1
+    Should Be Equal    ${lines}[5]    \# x\ty
+    Should Be Equal    ${lines}[6]    115.27120000000001\t6.1499863863e-1
     Should Be Equal    ${lines}[-1]    115.13316330262583\t7.8242826462e-1
     Remove Files    ${filepath_0}
     Remove Files    ${filepath_1}
@@ -348,16 +346,16 @@ Export as TSV or TXT
     Mouse Over    css:.profile-plot-pi
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div[2]/div/div[2]/span[2]/a
     Sleep    1
-    # verify the exported file exists in the download folder named as image_IQU.fits-piLine-2026-09-23-22-07-51.tsv
+    # verify the exported file exists in the download folder named as image_IQU.fits-PI-profile-2026-10-19-13-34-35.tsv
     Set Selenium Speed    0
-    ${wildcard_filename}=    Set Variable    image_IQU.fits-piLine-${year}-${month}-${day}-*-*-*.tsv
+    ${wildcard_filename}=    Set Variable    image_IQU.fits-PI-profile-${year}-${month}-${day}-*-*-*.tsv
     ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
     File Should Exist    ${pattern}
     @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
     ${filepath}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[0]
     ${content}=     Get File    ${filepath}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# image_IQU.fits piLine
+    Should Be Equal    ${lines}[0]    \# image_IQU.fits PI profile
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: PI (Jy/pixel)
     Should Be Equal    ${lines}[3]    \# Point (pixel) [5.000000pix, 5.000000pix]
@@ -371,16 +369,16 @@ Export as TSV or TXT
     Mouse Over    css:.profile-plot-pa
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[2]/div[3]/div/div[2]/span[2]/a
     Sleep    1
-    # verify the exported file exists in the download folder named as image_IQU.fits-paLine-2026-09-23-22-11-25.tsv
+    # verify the exported file exists in the download folder named as image_IQU.fits-PA-profile-2026-10-19-13-42-28.tsv
     Set Selenium Speed    0
-    ${wildcard_filename}=    Set Variable    image_IQU.fits-paLine-${year}-${month}-${day}-*-*-*.tsv
+    ${wildcard_filename}=    Set Variable    image_IQU.fits-PA-profile-${year}-${month}-${day}-*-*-*.tsv
     ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
     File Should Exist    ${pattern}
     @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
     ${filepath}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[0]
     ${content}=     Get File    ${filepath}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# image_IQU.fits paLine
+    Should Be Equal    ${lines}[0]    \# image_IQU.fits PA profile
     Should Be Equal    ${lines}[1]    \# xLabel: [LSRK] Frequency (GHz)
     Should Be Equal    ${lines}[2]    \# yLabel: PA (Degrees)
     Should Be Equal    ${lines}[3]    \# Point (pixel) [5.000000pix, 5.000000pix]
@@ -394,16 +392,16 @@ Export as TSV or TXT
     Mouse Over    css:.profile-plot-qvsu
     Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[3]/div/div[2]/span[2]/a
     Sleep    1
-    # verify the exported file exists in the download folder named as image_IQU.fits-quScatter-2026-09-23-22-16-26.tsv
+    # verify the exported file exists in the download folder named as image_IQU.fits-QU-scatter-2026-10-19-13-44-23.tsv
     Set Selenium Speed    0
-    ${wildcard_filename}=    Set Variable    image_IQU.fits-quScatter-${year}-${month}-${day}-*-*-*.tsv
+    ${wildcard_filename}=    Set Variable    image_IQU.fits-QU-scatter-${year}-${month}-${day}-*-*-*.tsv
     ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
     File Should Exist    ${pattern}
     @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
     ${filepath}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[0]
     ${content}=     Get File    ${filepath}
     @{lines}=       Split To Lines    ${content}
-    Should Be Equal    ${lines}[0]    \# image_IQU.fits quScatter
+    Should Be Equal    ${lines}[0]    \# image_IQU.fits Q vs U scatter
     Should Be Equal    ${lines}[1]    \# xLabel: Stokes Q (Jy/pixel)
     Should Be Equal    ${lines}[2]    \# yLabel: Stokes U (Jy/pixel)
     Should Be Equal    ${lines}[3]    \# Point (pixel) [5.000000pix, 5.000000pix]
