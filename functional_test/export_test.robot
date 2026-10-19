@@ -411,7 +411,31 @@ Export as TSV or TXT
     Should Be Equal    ${lines}[-1]    6.4677184820e-1\t7.8242826462e-1
     Remove Files    ${filepath}
     Set Selenium Speed    ${DELAY}        
-
+    # test when fractional mode is enabled, use qu scatter plot as an example, not testing other plots
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[1]/div/div[3]/div/label
+    # qu scatter plot
+    Mouse Over    css:.profile-plot-qvsu
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[3]/div/div[2]/span[2]/a
+    Sleep    1
+    # verify the exported file exists in the download folder named as image_IQU.fits-fractional-QU-scatter-2026-10-19-13-44-23.tsv
+    Set Selenium Speed    0
+    ${wildcard_filename}=    Set Variable    image_IQU.fits-fractional-QU-scatter-${year}-${month}-${day}-*-*-*.tsv
+    ${pattern}=    Set Variable    ${DOWNLOAD_FOLDER}/${wildcard_filename}
+    File Should Exist    ${pattern}
+    @{files}=    List Files In Directory    ${DOWNLOAD_FOLDER}    pattern=${wildcard_filename}
+    ${filepath}=    Join Path    ${DOWNLOAD_FOLDER}    ${files}[0]
+    ${content}=     Get File    ${filepath}
+    @{lines}=       Split To Lines    ${content}
+    Should Be Equal    ${lines}[0]    \# image_IQU.fits Q/I vs U/I scatter
+    Should Be Equal    ${lines}[1]    \# xLabel: Q/I (%)
+    Should Be Equal    ${lines}[2]    \# yLabel: U/I (%)
+    Should Be Equal    ${lines}[3]    \# Point (pixel) [5.000000pix, 5.000000pix]
+    Should Be Equal    ${lines}[4]    \# Point (wcs:FK5) [0:00:00.0000000000, 30:00:00.0000000000]
+    Should Be Equal    ${lines}[5]    \# x\ty
+    Should Be Equal    ${lines}[6]    7.5229828336e+0\t6.1307471166e+0
+    Should Be Equal    ${lines}[-1]    6.4169526522e+0\t7.7628689959e+0
+    Remove Files    ${filepath}
+    Set Selenium Speed    ${DELAY}            
 
     [Teardown]    Kill carta_backend And Close Browser
 
