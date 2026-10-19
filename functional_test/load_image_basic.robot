@@ -416,7 +416,7 @@ Load FITS Image With Empty Header Key
     # the test image has an empty header key resulting AST not functioning properly
     # a fix has been applied so AST grid should render correctly now
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    G044.5+0.0IFx_Mosaic.fits
+    Load Initial Image    G044.5+0.0IFx_Mosaic_crop.fits
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     Set Selenium Speed    0
