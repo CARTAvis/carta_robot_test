@@ -212,6 +212,6 @@ Channel Map View - spectral labels
     Capture Element Screenshot    ${VIEWER_DIV}    after_${key}.png    
 
     Set Selenium Speed    0
-    PNG Images Should Be Different    before_${key}.png    after_${key}.png 
+    PNG Images Should Be Different    before_${key}.png    after_${key}.png
     Remove Files    before_${key}.png    after_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

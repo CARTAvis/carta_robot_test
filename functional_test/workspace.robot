@@ -239,6 +239,8 @@ Workspace - Catalog
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Open Workspace']    
     Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div[1]/div[5]/div/div[2]/div/div/div    tmp
+    # prevent unexpected hovering on the horizontal scrollbar in the catalog table
+    Drag And Drop By Offset    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[1]    0    -100
     Click Element    //*[normalize-space(text())='tmp']
     Click Element    //*[normalize-space(text())='Open']
     Wait Until Page Does Not Contain    Loading workspace...    timeout=30
@@ -247,8 +249,8 @@ Workspace - Catalog
     # take a screenshot of the restored viewer
     Capture Page Screenshot    workspace_catalog_restored_${key}.png
 
-    # check screenshots
-    PNG Images Should Be Identical    workspace_catalog_saved_${key}.png    workspace_catalog_restored_${key}.png
+    # check screenshots, using 98.87 as the match rate due to anti-aliasing
+    PNG Images Should Be Identical    workspace_catalog_saved_${key}.png    workspace_catalog_restored_${key}.png    98.87
 
-    Remove Files    workspace_catalog_saved_${key}.png    workspace_catalog_restored_${key}.png
+    #Remove Files    workspace_catalog_saved_${key}.png    workspace_catalog_restored_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

@@ -386,7 +386,7 @@ Animation Playback With Polarization Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_bouncing_${key}.png
-    PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png    
+    PNG Images Should Be Different    initial_bouncing_${key}.png    final_bouncing_${key}.png
 
     # trigger playback blink
     Click Element    data:testid:animator-playback-mode-button
@@ -401,7 +401,7 @@ Animation Playback With Polarization Set
     Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
     Set Selenium Speed    ${DELAY}
     Capture Element Screenshot    ${VIEWER_DIV}    final_blink_${key}.png
-    PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png    
+    PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

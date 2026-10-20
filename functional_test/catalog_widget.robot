@@ -333,7 +333,6 @@ Catalog Rendering As Histogram Plot
     PNG Two Pixels Should Have Matched RGBA    check3_${key}.png    89,69,232,35
     PNG Two Pixels Should Not Have Matched RGBA    check3_${key}.png    89,69,232,33
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
-    PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Different    check_${key}.png    check3_${key}.png
     PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
     
