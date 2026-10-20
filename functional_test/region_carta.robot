@@ -355,7 +355,6 @@ Manipulating Multiple Regions
     Element Should Contain    data:testid:region-dialog    Dash length (px)
     # set different color, line width, and dash length for the two regions
     Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[3]/div/div[2]/div/div/div/div[1]/div/span/button
-    #Sleep    120
     Clear Element Text    //*[starts-with(@id, 'w-color-editable-input-')]
     Input Text    //*[starts-with(@id, 'w-color-editable-input-')]    00FF16    Clear=True
     Click Element    //*[@id="root"]/div/div[2]/div/div[1]/div[3]/div/div[2]/div/div/div/div[1]/div/span/button     

@@ -303,7 +303,6 @@ Multicolor Rendering
     Capture Element Screenshot    ${VIEWER_DIV}    check_rgb_add_layer_${key}.png
 
     # change alpha value
-    #Sleep    90
     # set the red channel alpha from 1.0 to 0.5
     Repeat Keyword    5    Click Element    //*[@id="root"]/div/div[16]/div/div[6]/div/div/div/div[2]/div/div/span[1]/div/div[2]/button[2]
     Mouse Out    ${VIEWER_DIV}

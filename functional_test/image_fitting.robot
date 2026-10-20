@@ -124,7 +124,7 @@ Triple Gaussian Fitting
     Press Keys    //input[@placeholder="Dash length"]    DELETE
     Input Text    //input[@placeholder="Dash length"]    0
     Click Element    data:testid:region-dialog-header-close-button
-    Sleep    10
+    #Sleep    10
     Click Element At Coordinates    ${VIEWER_DIV}    0    100
     Mouse Out    ${VIEWER_DIV}
     Sleep    0.2
