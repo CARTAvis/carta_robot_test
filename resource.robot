@@ -278,7 +278,7 @@ ${IMAGE_COMPARATOR_COMMAND}   /usr/local/bin/convert __REFERENCE__ __TEST__ -met
 
 
 # image rgba comparsion
-${IMAGE_RGBA_COMPARATOR_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/match_png.py __REFERENCE__ __TEST__
+${IMAGE_RGBA_COMPARATOR_COMMAND}   ${PYTHON3_EXECUTABLE} utilities/match_png.py __REFERENCE__ __TEST__ __MATCH_RATE__
 
 
 # image pixel rgba check
@@ -497,8 +497,9 @@ Compare Images To Be Different
    Should be True   ${RESULT}
 
 PNG Images Should Be Different
-   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Match_Rate}=99.0
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${TEMP}=         Replace String     ${TEMP}    __MATCH_RATE__     ${Match_Rate}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
    Log              Executing: ${COMMAND}
    ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
@@ -507,8 +508,9 @@ PNG Images Should Be Different
    Should Contain   ${OUTPUT}    different
 
 PNG Images Should Be Identical
-   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Match_Rate}=99.0
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${TEMP}=         Replace String     ${TEMP}    __MATCH_RATE__     ${Match_Rate}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
    Log              Executing: ${COMMAND}
    ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}

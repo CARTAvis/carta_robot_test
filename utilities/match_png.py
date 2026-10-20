@@ -3,11 +3,11 @@ from PIL import Image
 import sys
 import numpy as np
 
-threshold = 99.0
-
+# take three command line arguments: image1, image2, and threshold (optional, default 99.0)
 
 image1 = sys.argv[1]
 image2 = sys.argv[2]
+threshold = float(sys.argv[3]) if len(sys.argv) > 3 else 99.0
 
 im1 = Image.open(image1) # Can be many different formats.
 pix1 = im1.load()
