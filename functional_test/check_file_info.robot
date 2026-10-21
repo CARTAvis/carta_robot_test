@@ -440,3 +440,23 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
     [Teardown]    Kill carta_backend And Close Browser
+
+
+File Info of FITS Header Scientific Notation Parsing
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Input Text    ${FILE_FILTER}    dice_one_cdelt_5.0e-05.fits
+    Wait Until Element Contains    ${FILE_LIST}   dice_one_cdelt_5.0e-05.fits
+    Sleep    0.2
+    Click Element    //*[contains(text(), "dice_one_cdelt_5.0e-05.fits")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Set Selenium Speed    0
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.18", 0.18"
+    
+    Input Text    ${FILE_FILTER}    dice_one_cdelt_5e-05.fits
+    Wait Until Element Contains    ${FILE_LIST}   dice_one_cdelt_5e-05.fits
+    Sleep    0.2
+    Click Element    //*[contains(text(), "dice_one_cdelt_5e-05.fits")]
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Set Selenium Speed    0
+    Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.18", 0.18"        
+    [Teardown]    Kill carta_backend And Close Browser
