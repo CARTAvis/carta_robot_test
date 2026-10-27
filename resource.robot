@@ -313,7 +313,6 @@ Setup carta_backend And Open Browser To CARTA
         END
         IF    '${BROWSER}' == 'chrome'
             Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_experimental_option("prefs", ${prefs})
-            Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
             Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
         END
     ELSE
@@ -341,6 +340,7 @@ Setup carta_backend And Open Browser To CARTA
     
 
 Kill carta_backend And Close Browser
+    Set Selenium Speed    0
     IF    '${PACKAGE_TESTING}' == 'False'
     Close Browser
     Terminate carta_backend
