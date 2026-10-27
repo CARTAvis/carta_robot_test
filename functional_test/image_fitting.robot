@@ -343,7 +343,7 @@ Fitting With Cancellation
     Click Element    //*[contains(text(), "Cancel")]
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check entries in the image list widget
-    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_1_image
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits
     Page Should Not Contain Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
     # try to fit again and let it finish
     Click Element    ${IMAGE_FITTING_DIALOG_BUTTON}
@@ -351,7 +351,7 @@ Fitting With Cancellation
     Wait Until Page Does Not Contain    Image fitting processing    timeout=40
     Click Element    ${IMAGE_FITTING_DIALOG_CLOSE_BUTTON}
     # check the filenames of appended model and residule images
-    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_1_image
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits
     Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    spire500_ext_model.fits
     Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    spire500_ext_residual.fits
     [Teardown]    Kill carta_backend And Close Browser

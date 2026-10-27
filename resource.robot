@@ -365,11 +365,12 @@ Load Initial Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
-    Sleep    0.2
-    Click Element    ${IMAGE_TO_LOAD_XPATH}
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
+    #Sleep    0.2
+    #Click Element    ${IMAGE_TO_LOAD_XPATH}
+    #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    #Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    #Click Element    ${LOAD_BUTTON}
+    Double Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
@@ -382,11 +383,12 @@ Load Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
-    Sleep    0.2
-    Click Element    ${IMAGE_TO_LOAD_XPATH}
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
+    #Sleep    0.2
+    #Click Element    ${IMAGE_TO_LOAD_XPATH}
+    #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    #Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    #Click Element    ${LOAD_BUTTON}
+    Double Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
@@ -399,11 +401,12 @@ Append Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
-    Sleep    0.2
-    Click Element    ${IMAGE_TO_APPEND_XPATH}
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
-    Click Element    ${APPEND_BUTTON}
+    #Sleep    0.2
+    #Click Element    ${IMAGE_TO_APPEND_XPATH}
+    #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    #Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
+    #Click Element    ${APPEND_BUTTON}
+    Double Click Element    ${IMAGE_TO_APPEND_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
