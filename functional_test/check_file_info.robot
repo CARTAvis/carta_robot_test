@@ -449,7 +449,6 @@ File Info of FITS Header Scientific Notation Parsing
     Sleep    0.2
     Click Element    //*[contains(text(), "dice_one_cdelt_5.0e-05.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.18", 0.18"
     
     Input Text    ${FILE_FILTER}    dice_one_cdelt_5e-05.fits
@@ -457,6 +456,5 @@ File Info of FITS Header Scientific Notation Parsing
     Sleep    0.2
     Click Element    //*[contains(text(), "dice_one_cdelt_5e-05.fits")]
     Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Set Selenium Speed    0
     Element Should Contain    ${FILE_INFO_TEXT}    Pixel increment \= -0.18", 0.18"        
     [Teardown]    Kill carta_backend And Close Browser
