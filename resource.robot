@@ -300,7 +300,6 @@ Setup carta_backend And Open Browser To CARTA
     ELSE
     Log To Console    Package testing mode. carta_backend should be started manually.
     END
-    #Set Selenium Speed    ${DELAY}
     &{prefs}=    Create Dictionary
     ...    download.default_directory=${DOWNLOAD_FOLDER}
     ...    download.prompt_for_download=${False}
@@ -459,7 +458,6 @@ Change Raster Colormap
 
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
-    Wait For Process    handle=carta    timeout=3
     Process Should Be Running    handle=carta
 
 Terminate carta_backend
