@@ -294,12 +294,13 @@ ${IMAGE_OCR_TEST_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/ocr.py __REFERENCE_
 
 *** Keywords ***
 Setup carta_backend And Open Browser To CARTA
+    Set Selenium Speed    0
     IF    '${PACKAGE_TESTING}' == 'False'
     Run carta_backend
     ELSE
     Log To Console    Package testing mode. carta_backend should be started manually.
     END
-    Set Selenium Speed    ${DELAY}
+    #Set Selenium Speed    ${DELAY}
     &{prefs}=    Create Dictionary
     ...    download.default_directory=${DOWNLOAD_FOLDER}
     ...    download.prompt_for_download=${False}
@@ -337,6 +338,7 @@ Setup carta_backend And Open Browser To CARTA
     IF    '${VIEWER_MODE}' != 'Switch to single panel'
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
+    Set Selenium Speed    ${DELAY}
     
 
 Kill carta_backend And Close Browser
