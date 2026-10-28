@@ -21,7 +21,7 @@ ${DOWNLOAD_FOLDER}    /Users/kswang/Downloads
 ${SNAPSHOT_FOLDER}    ./snapshot
 ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /opt/miniconda3/bin/python
-${N_OMP_THREADS}    4
+${N_OMP_THREADS}    8
 ${PACKAGE_TESTING}    False
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser --enable_scripting
@@ -29,7 +29,7 @@ ${SERVER}         localhost:${CARTA_PORT}
 ${BROWSER}        headlesschrome
 ${CHROMEDRIVER_PATH}    '/usr/local/bin/chromedriver'
 #${BROWSER}        chrome
-${DELAY}          0.1
+${DELAY}          0.2
 ${LOGIN URL}      http://${SERVER}
 ${TITLE}          CARTA
 ${WINDOW_SIZE_X}    1280
