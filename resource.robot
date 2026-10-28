@@ -365,7 +365,7 @@ Load Initial Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
-    #Sleep    0.2
+    Sleep    0.1
     #Click Element    ${IMAGE_TO_LOAD_XPATH}
     #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     #Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -383,7 +383,7 @@ Load Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
-    #Sleep    0.2
+    Sleep    0.1
     #Click Element    ${IMAGE_TO_LOAD_XPATH}
     #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     #Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
@@ -401,7 +401,7 @@ Append Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
-    #Sleep    0.2
+    Sleep    0.1
     #Click Element    ${IMAGE_TO_APPEND_XPATH}
     #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
     #Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
