@@ -40,16 +40,16 @@ test_suites = {
     3221: "spectral_line_query.robot",     
     3222: "check_file_info.robot", 
     3223: "channel_map_view.robot",                   
-    3224: "region_casa.robot",             
-    3225: "spatial_profiler.robot",          
-    3226: "histogram_widget.robot",      
-    3227: "cube_histogram.robot",
-    3228: "file_browser.robot",        
-    3229: "workspace.robot",
-    3230: "stokes_analysis.robot",
-    3231: "conversion_time.robot",       
-    3232: "cursor_info.robot",
-    3233: "export_test.robot"           
+    3224: "region_casa.robot",
+    3225: "export_test.robot",             
+    3226: "spatial_profiler.robot",          
+    3227: "histogram_widget.robot",      
+    3228: "cube_histogram.robot",
+    3229: "file_browser.robot",        
+    3230: "workspace.robot",
+    3231: "stokes_analysis.robot",
+    3232: "conversion_time.robot",       
+    3233: "cursor_info.robot",           
     }
 
 RERUN_THRESHOLD = 5.0  # only rerun when the failed percentage is less than 5% to save time
