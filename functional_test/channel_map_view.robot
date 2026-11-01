@@ -191,7 +191,6 @@ Channel Map View - spectral labels
     Input Text    //*[@id="numericInput-5"]    4    clear=True
     # configure starting channel
     Input Text    //*[@id="numericInput-3"]    20    clear=True
-    Sleep    5
     # close control widget
     Click Element    data:testid:channel-map-control-0-header-close-button
     Mouse Out    ${VIEWER_DIV}
@@ -214,4 +213,65 @@ Channel Map View - spectral labels
     Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png 
     Remove Files    before_${key}.png    after_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
+Channel Map View - Beam
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    small_perplanebeam.fits
+    Click Element    data:testid:image-view-header-channel-map-button
+    # enable channel map view control widget
+    Click Element    id:ChannelMapControlButton
+    # configure channel map layout
+    Input Text    //*[@id="numericInput-4"]    4    clear=True
+    Input Text    //*[@id="numericInput-5"]    3    clear=True    
+    # close control widget
+    Click Element    data:testid:channel-map-control-0-header-close-button
+    # set beam style
+    Click Element    data:testid:image-view-header-settings-button
+    Click Element    id:bp6-tab-title_imageViewSettingsTabs_Beam
+    # set solid beam style
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[5]/div/div/select
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[5]/div/div/select/option[2]
+    # close settings widget
+    Click Element    data:testid:image-view-floating-settings-0-header-close-button
+
+    # capture screenshot
+    ${key}=    Generate Random String    8
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_per_plane_beam_${key}.png
+    PNG Pixel XY Should Match RGBA    check_per_plane_beam_${key}.png    455,27,115,128,145,255
+    PNG Pixel XY Should Match RGBA    check_per_plane_beam_${key}.png    458,310,115,128,145,255
+
+    # append a single beam cube
+    Append Image    S255_CH3CN_subcube.fits
+    # set beam style
+    Click Element    data:testid:image-view-header-settings-button
+    Click Element    id:bp6-tab-title_imageViewSettingsTabs_Beam
+    # set solid beam style
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[5]/div/div/select
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[5]/div/div/select/option[2]
+    # close settings widget
+    Click Element    data:testid:image-view-floating-settings-0-header-close-button
+
+    # capture screenshot
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_single_beam_${key}.png
+    PNG Pixel XY Should Match RGBA    check_single_beam_${key}.png    53,410,115,128,145,255
+
+    # switch to all panel plotting mode
+    Click Element    data:testid:image-view-header-settings-button
+    Click Element    id:bp6-tab-title_imageViewSettingsTabs_Beam
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[3]/div/div/select
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[3]/div/div/select/option[2]
+    Click Element    data:testid:image-view-floating-settings-0-header-close-button
+    
+    # capture screenshot
+    Mouse Out    ${VIEWER_DIV}
+    Capture Element Screenshot    ${VIEWER_DIV}    check_single_beam_all_panel_${key}.png
+    PNG Pixel XY Should Match RGBA    check_single_beam_all_panel_${key}.png    53,410,115,128,145,255    
+    PNG Pixel XY Should Match RGBA    check_single_beam_all_panel_${key}.png    562,125,115,128,145,255    
+
+    Remove Files    check_per_plane_beam_${key}.png    check_single_beam_${key}.png    check_single_beam_all_panel_${key}.png
     [Teardown]    Kill carta_backend And Close Browser

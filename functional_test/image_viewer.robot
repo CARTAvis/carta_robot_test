@@ -328,10 +328,10 @@ Image Viewer Settings - Customization for Publication
     ## configure beam
     Click Element    //*[normalize-space(text())='Beam']
     # set color
-    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[3]/div/div/button
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[4]/div/div/button
     Click Element    //*[@id="listbox-9"]/li[4]/a
     # set beam type
-    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[4]/div/div
+    Click Element    //*[@id="bp6-tab-panel_imageViewSettingsTabs_Beam"]/div/div/div/div[5]/div/div
     Click Element    //*[normalize-space(text())='Solid']
     # set width
     Input Text    //*[@id="numericInput-27"]    3
