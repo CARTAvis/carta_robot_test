@@ -67,12 +67,17 @@ def test_runner(port):
     test_result = tmp3[2] + "    " + tmp3[1] + "\t" + test_suite_name
     return test_result
 
+def rerun_runner(port):
+    test_suite_name = test_suites[port][:-6]
+    print("\nRerun failed tests in %s..."%test_suite_name)
+    os.system("time robot --variable CARTA_PORT:%d --variable SNAPSHOT_FOLDER:../snapshot --rerunfailed output_parallel_run_%s.xml --report report_parallel_run_%s_rerun.html --log log_parallel_run_%s_rerun.html --output output_parallel_run_%s_rerun.xml %s ../functional_test/%s"%(port, test_suite_name, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suites[port]))
+
 if __name__ == '__main__':
     t_start = time.time()
     os.system("rm -rf run_* *.png *.xml *.html")
     os.system("cp -r ../utilities .")
     with Pool(n_process) as p:
-        summary = p.map(test_runner, range(3200, 3200+len(test_suites), 1))
+        summary = p.map(test_runner, range(3200, 3200+len(test_suites), 1), chunksize=1)
     
     # show summary in terminal and collect failed suites to rerun
     rerun_suites = []
@@ -107,10 +112,13 @@ if __name__ == '__main__':
 
     # rerun failed tests
     if len(rerun_suites) != 0 and test_failed_percentage < RERUN_THRESHOLD:  # only rerun when there are failed tests and the failed percentage is less than 5% to save time
+        # rerun each failed suite in parallel on its original port
+        rerun_ports = [port for port, value in test_suites.items() if value[:-6] in rerun_suites]
+        with Pool(min(n_process, len(rerun_ports))) as p:
+            p.map(rerun_runner, rerun_ports, chunksize=1)
+
         output_list = ""
         for test_suite_name in rerun_suites:
-            print("\nRerun failed tests in %s..."%test_suite_name)
-            os.system("time robot --variable CARTA_PORT:3200 --variable SNAPSHOT_FOLDER:../snapshot --rerunfailed output_parallel_run_%s.xml --report report_parallel_run_%s_rerun.html --log log_parallel_run_%s_rerun.html --output output_parallel_run_%s_rerun.xml %s ../functional_test/%s.robot"%(test_suite_name, test_suite_name, test_suite_name, test_suite_name, custom_robot_flags, test_suite_name))
             output_list = output_list + "output_parallel_run_%s_rerun.xml "%test_suite_name
         os.system("rebot --outputdir . --output output_rerun.xml -l log_rerun.html -r report_rerun.html %s"%output_list)
         os.system("open report_rerun.html")
