@@ -1,2 +1,2 @@
-4
+2
 --variable DELAY:0.1 --variable N_OMP_THREADS:4 --variable PYTHON3_EXECUTABLE:/opt/miniconda3/bin/python --variable CARTA_BACKEND_EXECUTABLE:/Users/kswang/.jenkins/workspace/aarm64_e2e_build_carta_backend/build/carta_backend --variable /Users/kswang/.jenkins/workspace/aarm64_e2e_build_carta_frontend/build --variable INITIAL_IMAGE_FOLDER:/Users/kswang/set_QA_e2e_v2
