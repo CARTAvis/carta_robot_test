@@ -207,6 +207,12 @@ Workspace - Catalog
 
     # fetch sources from SIMBAD
     Click Element    data:testid:online-data-query-dialog-button
+    # reset mirror site list to default order
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    Mouse Out    data:testid:catalog-query-reset-mirrors-button
+    Click Element    data:testid:catalog-query-use-mirror-url-0-button
+    Click Element    data:testid:catalog-query-mirror-select-button
     # limit to <=100 sources
     Press Keys    data:testid:catalog-query-max-objects-input    DELETE
     Click Element    data:testid:catalog-query-query-button
