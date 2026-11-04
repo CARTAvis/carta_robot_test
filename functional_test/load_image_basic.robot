@@ -425,4 +425,27 @@ Load FITS Image With Empty Header Key
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Load FITS Image With Multiple HDUs
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
+    Click Element    //*[normalize-space(text())='Fuzzy search']
+    ${IMAGE_TO_LOAD}=    Set Variable    spire500_ext.fits
+    ${IMAGE_TO_LOAD_XPATH}=    Replace String    //*[contains(text(), "__FILE_NAME__")]    __FILE_NAME__    ${IMAGE_TO_LOAD}
+    Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
+    Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
+    Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
+    Click Element    ${IMAGE_TO_LOAD_XPATH}
+    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    Click Element    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[1]/div[2]/div[2]/div/div/select/option[2]
+    Click Element    ${LOAD_BUTTON}
+    Wait Until Page Does Not Contain    File Browser    timeout=20
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits.HDU_6_error
 
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    ${VIEWER_DIV}    initial_${key}.png
+    Click Element    ${CLIP_BUTTON_90}
+    Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
+    PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
+    Remove Files    initial_${key}.png    rerendered_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser

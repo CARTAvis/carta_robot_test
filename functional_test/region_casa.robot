@@ -100,7 +100,7 @@ Import Image Coordinate CASA Region Made Manually
     Drag And Drop By Offset    ${DEFAULT_LAYOUT_MIDDLE_VERTICAL_LAYOUT_RESIZER}    -200    0
 
     Set Selenium Speed    0
-    Verify Region List Table Cell Content    2    5    Region 1
+    Verify Region List Table Cell Content    2    5    custom region name
     Verify Region List Table Cell Content    2    6    Rectangle
     Verify Region List Table Cell Content    2    7    17:56:21.8114504359
     Verify Region List Table Cell Content    2    7    -21:57:14.2106005304

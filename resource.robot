@@ -21,7 +21,7 @@ ${DOWNLOAD_FOLDER}    /Users/kswang/Downloads
 ${SNAPSHOT_FOLDER}    ./snapshot
 ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /opt/miniconda3/bin/python
-${N_OMP_THREADS}    8
+${N_OMP_THREADS}    4
 ${PACKAGE_TESTING}    False
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser --enable_scripting
@@ -294,12 +294,12 @@ ${IMAGE_OCR_TEST_COMMAND}    ${PYTHON3_EXECUTABLE} utilities/ocr.py __REFERENCE_
 
 *** Keywords ***
 Setup carta_backend And Open Browser To CARTA
+    Set Selenium Speed    0
     IF    '${PACKAGE_TESTING}' == 'False'
     Run carta_backend
     ELSE
     Log To Console    Package testing mode. carta_backend should be started manually.
     END
-    Set Selenium Speed    ${DELAY}
     &{prefs}=    Create Dictionary
     ...    download.default_directory=${DOWNLOAD_FOLDER}
     ...    download.prompt_for_download=${False}
@@ -313,7 +313,6 @@ Setup carta_backend And Open Browser To CARTA
         END
         IF    '${BROWSER}' == 'chrome'
             Open Browser    browser=${BROWSER}    service=executable_path=${CHROMEDRIVER_PATH}    options=add_argument("--force-color-profile=srgb");add_argument("--disable-web-security");add_experimental_option("prefs", ${prefs})
-            Set Window Size    ${WINDOW_SIZE_X}    ${WINDOW_SIZE_Y}
             Set Window Size    ${WINDOW_SIZE_X}    ${${WINDOW_SIZE_Y}+${WINDOW_SIZE_dY}}
         END
     ELSE
@@ -338,9 +337,11 @@ Setup carta_backend And Open Browser To CARTA
     IF    '${VIEWER_MODE}' != 'Switch to single panel'
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
+    Set Selenium Speed    ${DELAY}
     
 
 Kill carta_backend And Close Browser
+    Set Selenium Speed    0
     IF    '${PACKAGE_TESTING}' == 'False'
     Close Browser
     Terminate carta_backend
@@ -364,11 +365,12 @@ Load Initial Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
-    Sleep    0.2
-    Click Element    ${IMAGE_TO_LOAD_XPATH}
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
+    Sleep    0.1
+    #Click Element    ${IMAGE_TO_LOAD_XPATH}
+    #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    #Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    #Click Element    ${LOAD_BUTTON}
+    Double Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
@@ -381,11 +383,12 @@ Load Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_LOAD}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_LOAD}
     Wait Until Page Contains Element    ${IMAGE_TO_LOAD_XPATH}
-    Sleep    0.2
-    Click Element    ${IMAGE_TO_LOAD_XPATH}
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
-    Click Element    ${LOAD_BUTTON}
+    Sleep    0.1
+    #Click Element    ${IMAGE_TO_LOAD_XPATH}
+    #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    #Wait Until Element Is Enabled    ${LOAD_BUTTON}    timeout=2
+    #Click Element    ${LOAD_BUTTON}
+    Double Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
@@ -398,11 +401,12 @@ Append Image
     Input Text    ${FILE_FILTER}    ${IMAGE_TO_APPEND}
     Wait Until Element Contains    ${FILE_LIST}   ${IMAGE_TO_APPEND}
     Wait Until Page Contains Element    ${IMAGE_TO_APPEND_XPATH}
-    Sleep    0.2
-    Click Element    ${IMAGE_TO_APPEND_XPATH}
-    Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
-    Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
-    Click Element    ${APPEND_BUTTON}
+    Sleep    0.1
+    #Click Element    ${IMAGE_TO_APPEND_XPATH}
+    #Wait Until Element Contains    ${FILE_INFO_TEXT}    Name
+    #Wait Until Element Is Enabled    ${APPEND_BUTTON}    timeout=2
+    #Click Element    ${APPEND_BUTTON}
+    Double Click Element    ${IMAGE_TO_APPEND_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
 
@@ -457,7 +461,6 @@ Change Raster Colormap
 
 Run carta_backend
     Start Process    ${CARTA_PROCESS}    shell=yes    alias=carta
-    Wait For Process    handle=carta    timeout=3
     Process Should Be Running    handle=carta
 
 Terminate carta_backend
