@@ -204,7 +204,7 @@ Polarization Computed Component Histogram Caching
     Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/canvas    histogram_2_${key}.png
 
     # screenshots should be the same
-    PNG Pixel XY Should Match RGBA    histogram_1_${key}.png    515,75,140,170,212,255
-    PNG Pixel XY Should Match RGBA    histogram_2_${key}.png    515,75,140,170,212,255
+    PNG Pixel XY Should Match RGBA    histogram_1_${key}.png    582,95,140,170,212,255
+    PNG Pixel XY Should Match RGBA    histogram_2_${key}.png    582,95,140,170,212,255
     Remove Files    histogram_1_${key}.png    histogram_2_${key}.png
     [Teardown]    Kill carta_backend And Close Browser
