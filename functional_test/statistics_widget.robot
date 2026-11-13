@@ -529,5 +529,60 @@ Per-plane Beam Statistics
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Polarization Computed Component Statistics Caching
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
+    # create an ellipse region
+    Click Element    data:testid:ellipse-region-shortcut-button
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    # switch to image Cooridnate and set a new center position and size for the region
+    Click Element    //*[contains(text(), "Image")]
+    Press Keys    //input[@placeholder="Semi-major"]    DELETE
+    Input Text    //input[@placeholder="Semi-major"]    250
+    Press Keys    //input[@placeholder="Semi-minor"]    DELETE
+    Input Text    //input[@placeholder="Semi-minor"]    250
+    # click the image Cooridnate radio button again to apply changes
+    Click Element    //*[contains(text(), "Image")]
+    # close the region config dialog
+    Click Element    data:testid:region-dialog-header-close-button
 
-# todo: add export text file test
+    # enable the statistics widget
+    Click Element    id:StatisticsWidgetButton
+    Wait Until Page Does Not Contain    No stats data
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div[2]/div/div/select
+    # select image as region
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div[1]/div[2]/div/div/select/option[2]
+
+    # enable the 2nd statistics widget
+    Click Element    id:StatisticsWidgetButton
+    Wait Until Page Does Not Contain    No stats data
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[1]/div[2]/div/div/select
+    # select region 1 as region
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[1]/div[2]/div/div/select/option[3]
+
+    # activate animator widget into view
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    # switch to Stokes V
+    Repeat Keyword    3 times    Click Element    ${ANIMATOR_NEXT_BUTTON}
+
+    # trigger channel animation for 3 seconds
+    Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep   3
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    # switch to channel 0
+    Click Element    ${ANIMATOR_FIRST_BUTTON}
+    # switch to polarization Ptotal
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # switch to channel 3
+    Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
+    Repeat Keyword    3 times    Click Element    ${ANIMATOR_NEXT_BUTTON}
+
+    # check the statistics widget for updated values
+    ${value_image}=    Get Value    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]
+    ${value_region}=    Get Value    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]
+    Should Be Equal As Strings    ${value_image}    ${value_region}
+    [Teardown]    Kill carta_backend And Close Browser
