@@ -582,7 +582,6 @@ Polarization Computed Component Statistics Caching
     Repeat Keyword    3 times    Click Element    ${ANIMATOR_NEXT_BUTTON}
 
     # check the statistics widget for updated values
-    ${value_image}=    Get Value    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]
-    ${value_region}=    Get Value    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]
-    Should Be Equal As Strings    ${value_image}    ${value_region}
+    Element Should Contain    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
+    Element Should Contain    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
     [Teardown]    Kill carta_backend And Close Browser
