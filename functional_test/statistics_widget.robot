@@ -580,7 +580,7 @@ Polarization Computed Component Statistics Caching
     # switch to channel 3
     Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
     Repeat Keyword    3 times    Click Element    ${ANIMATOR_NEXT_BUTTON}
-
+    Sleep    1
     # check the statistics widget for updated values
     Element Should Contain    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
     Element Should Contain    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
