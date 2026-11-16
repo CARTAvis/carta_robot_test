@@ -279,6 +279,7 @@ SIMBAD and VizieR Mirror Sites
     Click Element    data:testid:catalog-query-mirror-select-button
     Element Should Contain    data:testid:catalog-query-use-mirror-url-0-button    simbad.u-strasbg.fr
     Element Should Contain    data:testid:catalog-query-use-mirror-url-1-button    simbad.cfa.harvard.edu
+    Element Should Contain    data:testid:catalog-query-use-mirror-url-2-button    simbad.idia.ac.za
     # switch to VizieR and check mirror sites
     Click Element    //button[contains(., "SIMBAD")]
     Click Element    //*[contains(text(), "VizieR")]
