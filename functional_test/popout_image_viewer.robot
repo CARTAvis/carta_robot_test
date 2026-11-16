@@ -149,6 +149,13 @@ Popout Image Viewer - rendering modes
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
     # catalog rendering
     Click Element    data:testid:online-data-query-dialog-button
+    # reset mirror site list to default order
+    Click Element    data:testid:catalog-query-mirror-select-button
+    Click Element    data:testid:catalog-query-reset-mirrors-button
+    Mouse Out    data:testid:catalog-query-reset-mirrors-button
+    # use harvard mirror
+    Click Element    data:testid:catalog-query-use-mirror-url-1-button
+    Click Element    data:testid:catalog-query-mirror-select-button
     Click Element    //a[contains(., "Query")]
     Wait Until Page Does Not Contain    Online Data Query    timeout=30 
     Click Element    ${CATALOG_WIDGET_PLOT_BUTTON}

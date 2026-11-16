@@ -157,7 +157,8 @@ Fetch VizieR Catalog And Visualize
     Click Element    data:testid:catalog-query-mirror-select-button
     Click Element    data:testid:catalog-query-reset-mirrors-button
     Mouse Out    data:testid:catalog-query-reset-mirrors-button
-    Click Element    data:testid:catalog-query-use-mirror-url-0-button
+    # use harvard mirror
+    Click Element    data:testid:catalog-query-use-mirror-url-5-button
     Click Element    data:testid:catalog-query-mirror-select-button
     # set up keyword for query
     Input Text    data:testid:catalog-query-keyword-input    SDSS
@@ -222,7 +223,8 @@ Fetch SIMBAD Catalog And Visualize
     Click Element    data:testid:catalog-query-mirror-select-button
     Click Element    data:testid:catalog-query-reset-mirrors-button
     Mouse Out    data:testid:catalog-query-reset-mirrors-button
-    Click Element    data:testid:catalog-query-use-mirror-url-0-button
+    # use harvard mirror
+    Click Element    data:testid:catalog-query-use-mirror-url-1-button
     Click Element    data:testid:catalog-query-mirror-select-button
     # set search radius
     Click Element    //button[contains(., "Set to viewer")]
