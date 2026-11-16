@@ -138,3 +138,73 @@ Histogram rendering styling
  
     Remove Files    check_before_${key}.png    check_after_${key}.png 
     [Teardown]    Kill carta_backend And Close Browser
+
+
+Polarization Computed Component Histogram Caching
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
+    # create an ellipse region
+    Click Element    data:testid:ellipse-region-shortcut-button
+    Click Element    ${VIEWER_DIV}
+    Double Click Element    ${VIEWER_DIV}
+    # switch to image Cooridnate and set a new center position and size for the region
+    Click Element    //*[contains(text(), "Image")]
+    Press Keys    //input[@placeholder="Semi-major"]    DELETE
+    Input Text    //input[@placeholder="Semi-major"]    250
+    Press Keys    //input[@placeholder="Semi-minor"]    DELETE
+    Input Text    //input[@placeholder="Semi-minor"]    250
+    # click the image Cooridnate radio button again to apply changes
+    Click Element    //*[contains(text(), "Image")]
+    # close the region config dialog
+    Click Element    data:testid:region-dialog-header-close-button
+
+    # enable the histogram widget
+    Click Element    id:HistogramWidgetButton
+    Wait Until Page Does Not Contain    No file loaded
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[1]/div[2]/div/div/select
+    # select image as region
+    Click Element    //*[@id="root"]/div/div[17]/div/div/div[2]/div/div/div[1]/div[2]/div/div/select/option[2]
+
+
+    # enable the 2nd histogram widget
+    Click Element    id:HistogramWidgetButton
+    Wait Until Page Does Not Contain    No file loaded
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/div/select
+    # select region 1 as region
+    Click Element    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div/div[1]/div[2]/div/div/select/option[3]
+   
+    # reposition the 2nd histogram widget
+    Drag And Drop By Offset    data:testid:histogram-1-header-title    0    250
+
+ 
+    # activate animator widget into view
+    Click Element    //*[contains(text(), "Animator")]
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    # switch to Stokes V
+    Repeat Keyword    3 times    Click Element    ${ANIMATOR_NEXT_BUTTON}
+
+    # trigger channel animation for 3 seconds
+    Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    Sleep   3
+    Click Element    ${ANIMATOR_PLAY_STOP_BUTTON}
+    # switch to channel 0
+    Click Element    ${ANIMATOR_FIRST_BUTTON}
+    # switch to polarization Ptotal
+    Click Element    ${ANIMATOR_POLARIZATION_RADIO_BUTTON}
+    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    # switch to channel 3
+    Click Element    ${ANIMATOR_CHANNEL_RADIO_BUTTON}
+    Repeat Keyword    3 times    Click Element    ${ANIMATOR_NEXT_BUTTON}
+    Sleep    1
+    
+    # take screenshot of the 1st histogram widget
+    ${key}=    Generate Random String    8
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div/div[2]/div/div[1]/div/canvas    histogram_1_${key}.png
+    Capture Element Screenshot    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div/div[2]/div/div[1]/div/canvas    histogram_2_${key}.png
+
+    # screenshots should be the same
+    PNG Pixel XY Should Match RGBA    histogram_1_${key}.png    582,95,140,170,212,255
+    PNG Pixel XY Should Match RGBA    histogram_2_${key}.png    582,95,140,170,212,255
+    Remove Files    histogram_1_${key}.png    histogram_2_${key}.png
+    [Teardown]    Kill carta_backend And Close Browser
