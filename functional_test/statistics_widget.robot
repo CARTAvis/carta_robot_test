@@ -6,6 +6,7 @@ Resource          ../resource.robot
 Region Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    M17_SWex.fits
+    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
@@ -146,6 +147,7 @@ Region Statistics
 Image Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Mouse Over    ${VIEWER_DIV}
     Append Image    HD163296_CO_2_1.mom1.fits
     Append Image    image_Jy_per_pixel.fits
     Append Image    image_K.fits
@@ -266,13 +268,14 @@ Image Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    12    2    -3.389632701874e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    13    2    1.016112952303e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    14    2    4.229060738407e+3 (MJy/sr)^2
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.9843
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Polarization Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
+    Mouse Over    ${VIEWER_DIV}
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
@@ -464,6 +467,7 @@ Polarization Statistics
 Compressed FITS fz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.fz
+    Mouse Over    ${VIEWER_DIV}
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    1.0
@@ -491,6 +495,7 @@ Compressed FITS fz statistics
 Compressed FITS gz statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    tu2310418.fits.gz
+    Mouse Over    ${VIEWER_DIV}
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
@@ -518,6 +523,7 @@ Compressed FITS gz statistics
 Per-plane Beam Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    small_perplanebeam.fits
+    Mouse Over    ${VIEWER_DIV}
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     #Sleep    0.5
@@ -538,6 +544,7 @@ Per-plane Beam Statistics
 Polarization Computed Component Statistics Caching
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    IRCp10216_sci.spw0.cube.IQUV.manual.pbcor.fits
+    Mouse Over    ${VIEWER_DIV}
     # create an ellipse region
     Click Element    data:testid:ellipse-region-shortcut-button
     Click Element    ${VIEWER_DIV}
@@ -590,5 +597,5 @@ Polarization Computed Component Statistics Caching
     # check the statistics widget for updated values
     Element Should Contain    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
     Element Should Contain    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.9566
     [Teardown]    Kill carta_backend And Close Browser

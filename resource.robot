@@ -345,15 +345,18 @@ Test Workspace Snapshot
     [Arguments]    ${tolerance}=99.99
     # test workspace snapshot if enabled
     IF    '${TEST_WORKSPACE_SNAPSHOT}' == 'True'
-    # save the current workspace with a unique name
+    Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
     ${key_workspace}=    Generate Random String    8
+    Capture Page Screenshot    workspace_before_${key_workspace}.png
+    # save the current workspace with a unique name
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Save Workspace']
     Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
+    Sleep    1
     Click Element    //*[normalize-space(text())='Save']
+    Sleep    1
     Wait Until Page Contains    Workspace saved    timeout=10
     Wait Until Page Does Not Contain    Workspace saved
-    Capture Page Screenshot    workspace_before_${key_workspace}.png
     # configure layout to default
     Click Element    //*[normalize-space(text())='View']
     Click Element    //*[normalize-space(text())='Layout']
@@ -365,17 +368,20 @@ Test Workspace Snapshot
     Click Element    //*[normalize-space(text())='Open Workspace']    
     Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
     Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
-    Wait Until Page Contains Element    //*[normalize-space(text())='Open']
+    Sleep    1
     Click Element    //*[normalize-space(text())='Open']
     Wait Until Page Does Not Contain    Loading workspace...    timeout=180
     Wait Until Page Does Not Contain    Opening workspace    timeout=180
-    Wait Until Page Does Not Contain    Workspace loaded    timeout=5
+    Wait Until Page Contains    Workspace loaded    timeout=5
+    Wait Until Page Does Not Contain    Workspace loaded    timeout=10
     Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
     Capture Page Screenshot    workspace_after_${key_workspace}.png
     # remove saved workspace
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Open Workspace']
     Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
+    Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
+    Sleep    1
     Click Element    //*[normalize-space(text())='Delete']
     Wait Until Page Contains    Delete the workspace
     Click Element    //*[normalize-space(text())='OK']
