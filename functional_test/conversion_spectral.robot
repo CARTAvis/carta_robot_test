@@ -74,6 +74,7 @@ Spectral Axis Conversion from FREQ
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (73567102503354.563 Angstrom^2, 1.29e-1)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[29]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 112, 1.29e-1)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -148,6 +149,7 @@ Spectral Axis Conversion from VRAD
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (683072822404391.625 Angstrom^2, -1.18e-2)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[29]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 31, -1.18e-2)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -180,6 +182,7 @@ Spectral Axis Conversion from VOPT
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (6.830725 mm^2, -1.18e-2)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[29]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 31, -1.18e-2)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -208,6 +211,7 @@ Spectral Axis Conversion from WAVE
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (49.4206 um^2, 9.86e+1)      
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[25]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 627, 9.86e+1)    
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -236,6 +240,7 @@ Spectral Axis Conversion from AWAV
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (0.230969 um^2, 1.06e+3)      
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[25]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 45, 1.06e+3)    
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -260,6 +265,7 @@ Spectral Reference Frame Conversion
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (349.40944 GHz, 1.29e-1)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[2]/div/div/select/option[4]    # TOPOCENT     
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (349.404532 GHz, 1.29e-1)   
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -276,6 +282,7 @@ Rest Frame Conversion - Insufficient Header
     # check that the rest frame conversion is disabled, as the header contains velocity info only without frequency info
     Element Should Be Disabled    data:testid:spectral-profiler-x-axis-rest-frame-toggle
     Element Should Be Disabled    data:testid:spectral-profiler-x-axis-rest-frame-toggle
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -340,6 +347,7 @@ Rest Frame Conversion - High-z Multi-CO Cube
     Click Element    //*[contains(text(), "Frequency (GHz)")]
     # check that the x-axis and y-axis are now in observed frame
     Element Should Contain    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (32.92432 GHz, 2.91e+1)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -397,6 +405,7 @@ Rest Frame Conversion - Matching High-z CO Cubes
     # check that the x-axis and y-axis are converted to rest frame
     Element Should Contain    data:testid:spectral-profiler-info-0    Data: (-18.509 km/s (rest frame), 1.45e+0), CO_6_5_z20_cube.fits, Region 1, Statistic Mean, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-1    Data: (-32.690 km/s (rest frame), 1.17e+0), CO_5_4_z20_cube.fits, Region 1, Statistic Mean, Coordinate Current   
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -465,6 +474,7 @@ Rest Frame Conversion - Local Universe CO Cube
     Press Keys    data:testid:spectral-profiler-radial-velocity-input    DELETE
     Input Text    data:testid:spectral-profiler-radial-velocity-input    -500
     Element Should Contain    data:testid:spectral-profiler-effective-redshift    -0.0016664319801497074       
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -485,4 +495,5 @@ Spectral Conversion With CTYPE Having Suffix
     Element Should Contain    data:testid:spectral-profiler-coordinate-dropdown    Channel
     Element Should Contain    data:testid:spectral-profiler-settings-intensity-unit-dropdown    1E-17 erg/s/cm^2/Ang/spaxel
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

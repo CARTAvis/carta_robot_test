@@ -56,6 +56,7 @@ Region selecting, centering, locking, and deleting
     Remove Files    check_polygon_selected_from_viewer_${key}.png    check_polyline_selected_from_list_${key}.png    check_polygon_center_fov_${key}.png
     Remove Files    check_polygon_center_fov_selected_${key}.png    check_polygon_center_fov_selected_locked_${key}.png
     Remove Files    check_polygon_center_fov_selected_locked_tried_delete_${key}.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -195,6 +196,7 @@ Creating Regions And Export As Region Files
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -265,6 +267,7 @@ Shared Region And Region Inheritance
     Verify Region List Table Cell Content    2    5    Region 5
     Verify Region List Table Cell Content    3    5    Region 6
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -287,6 +290,7 @@ Loading 4000 Regions From A File
     Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, 200000)
 
     Page Should Contain    Region 4000
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -305,6 +309,7 @@ Loading Regions on Active Matched Image
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    139,149,518,149
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    163,120,542,120
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -325,6 +330,7 @@ Loading Regions on Active Reference Image
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    139,149,518,149
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    163,120,542,120
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -455,6 +461,7 @@ Manipulating Multiple Regions
     PNG Pixel XY Should Match RGBA    check_delete_a_region_${key}.png    537,286,255,255,255,255
 
     Remove Files    check_multi-selected_regions_${key}.png    check_multi-selected_regions_config_changed_${key}.png    check_multi-selected_regions_locked_${key}.png    check_multi-selected_regions_semi_hidden_${key}.png    check_multi-selected_regions_copied_pasted_${key}.png    check_multi-selected_region_moved_${key}.png_moved_${key}.png    check_delete_a_region_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Dynamic Region Dialog For Multiple Regions
@@ -544,6 +551,7 @@ Dynamic Region Dialog For Multiple Regions
     Element Should Contain    data:testid:region-dialog    Font style
     Element Should Not Contain    data:testid:region-dialog    Number of decimals
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Region Control Point Keyboard Interaction

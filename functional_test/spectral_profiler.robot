@@ -44,6 +44,7 @@ Region Spectral Profile
     PNG Images Should Be Different    ellipse_profile_${key}.png    rectangle_profile_${key}.png
     PNG Images Should Be Different    point_profile_${key}.png    rectangle_profile_${key}.png
     Remove Files    polygon_profile_${key}.png    ellipse_profile_${key}.png    point_profile_${key}.png    rectangle_profile_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -88,6 +89,7 @@ Spectral Profile Visualization From Multiple Regions
     Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-3    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -139,6 +141,7 @@ Spectral Profile Visualization From Multiple Statistics
     Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (86.748221 GHz, 6.34e-2), M17_SWex.fits, Region 4, Statistic StdDev, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-3    Cursor: (86.748221 GHz, -6.15e-2), M17_SWex.fits, Region 4, Statistic Min, Coordinate Current
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -187,6 +190,7 @@ Spectral Profile Visualization From Multiple Images
     Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-9.151 km/s, 2.37e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -237,6 +241,7 @@ Single Spectral Profile Intensity Unit Conversion
     Click Element    //*[contains(text(), "mK")]
     # check cursor info
     Element Should Contain    data:testid:spectral-profiler-info-0    Data: (86.748221 GHz, -5.77e+2)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -328,6 +333,7 @@ Single Spectral Profile Smoothing
     PNG Two Pixels Should Have Matched RGBA    check_original_${key}.png    390,39,518,16
     PNG Two Pixels Should Not Have Matched RGBA    check_original_${key}.png    390,39,673,45
     Remove Files    check_boxcar_${key}.png    check_gaussian_${key}.png    check_hanning_${key}.png    check_binning_${key}.png    check_Savitzky-Golay_${key}.png    check_decimation_${key}.png    check_original_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -379,6 +385,7 @@ Multiple Spectral Profiles Smoothing
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    372,16,463,28
     PNG Two Pixels Should Not Have Matched RGBA    check2_${key}.png    424,47,463,28
     Remove Files    check_${key}.png    check2_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -519,6 +526,7 @@ Spectral Profile Fitting Guess Then Fit
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check4_${key}.png
     PNG Images Should Be Identical    check_${key}.png    check4_${key}.png
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png    check4_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -556,6 +564,7 @@ Spectral Profile Fitting with Rest Frame Conversion
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Amplitude = 1.327226 (Jy/beam (rest frame))
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    FWHM = 0.654178 (GHz (rest frame))
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Integral = 0.924215 (Jy/beam (rest frame) * GHz (rest frame))
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

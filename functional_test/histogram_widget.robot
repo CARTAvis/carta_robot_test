@@ -48,6 +48,7 @@ Region Histogram Generation
     Mouse Over    ${HISTOGRAM_PLOT_CANVAS}
     Sleep    0.2
     Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: 1.27003 Jy/beam.km/s, 13 Counts
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -76,6 +77,7 @@ Custom Parameters for Histogram Generation
     Mouse Over    ${HISTOGRAM_PLOT_CANVAS}
     Sleep    0.2
     Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: 0.07480 Jy/beam.km/s, 73 Counts
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Manual Selection of Displayed Histogram
@@ -103,6 +105,7 @@ Manual Selection of Displayed Histogram
     Mouse Over    ${HISTOGRAM_PLOT_CANVAS}
     Sleep    0.2
     Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: -0.00003 Jy/beam, 143 Counts   
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -137,6 +140,7 @@ Histogram rendering styling
     PNG Pixel XY Should Match RGBA    check_after_${key}.png    300,30,203,220,212,255
  
     Remove Files    check_before_${key}.png    check_after_${key}.png 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -207,4 +211,5 @@ Polarization Computed Component Histogram Caching
     PNG Pixel XY Should Match RGBA    histogram_1_${key}.png    582,95,140,170,212,255
     PNG Pixel XY Should Match RGBA    histogram_2_${key}.png    582,95,140,170,212,255
     Remove Files    histogram_1_${key}.png    histogram_2_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

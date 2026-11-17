@@ -67,6 +67,7 @@ Query Splatalogue
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).       
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -107,6 +108,7 @@ Line Table Filtering And Shifting
     #Sleep    0.5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -128,6 +130,7 @@ Line Table Column Configuration
     Click Element    css:[data-testid="catalog-header-table-switch-2"] + span
     # verify Chemical Name column is displayed again
     Element Should Contain    data:testid:filterable-table-header-2    Chemical Name
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -201,6 +204,7 @@ Line ID Overlay On Spectral Profiler
     #PNG Pixel XY Should Match RGBA    check2_${key}.png    588,15,245,248,250,255    
     
     Remove Files    check_${key}.png    check2_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -245,5 +249,6 @@ Line ID Overlay On Spectral Profiler with Rest Frame Conversion
     Capture Element Screenshot    data:testid:spectral-profiler-0-plot    with_label_${key}.png
     PNG Pixel XY Should Match RGBA    with_label_${key}.png    463,167,28,110,66,255
     Remove Files    with_label_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 

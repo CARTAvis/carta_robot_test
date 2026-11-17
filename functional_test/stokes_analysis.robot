@@ -76,6 +76,7 @@ QU Linked Visualization
     PNG Pixel XY Should Match RGBA    check_default_${key}.png    391,476,232,0,0,255
 
     Remove Files    check_zoomQUprofile_${key}.png    check_zoomQUscatter_${key}.png    check_zoomQUscatter_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -158,6 +159,7 @@ QU Linked Visualization with Smoothing Applied
     PNG Pixel XY Should Match RGBA    check_default_smoothed_${key}.png    361,442,145,0,0,255
 
     Remove Files    check_zoomQUprofile_smoothed_${key}.png    check_zoomQUscatter_smoothed_${key}.png    check_zoomQUscatter_smoothed_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

@@ -65,6 +65,7 @@ Single Gaussian Fitting With Smart Angular Unit
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Integrated flux \= 9.999983755341e-1 ± 3.917871324727e-5 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Background${SPACE*6}\= 0.000000000000e+0 (Jy/beam) (fixed)
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Triple Gaussian Fitting
@@ -148,6 +149,7 @@ Triple Gaussian Fitting
     PNG Pixel XY Should Match RGBA    check_${key}.png    467,229,46,230,214,255
     Remove Files    check_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 FOV Image Fitting
@@ -198,6 +200,7 @@ FOV Image Fitting
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: field of view
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox[[511.500000pix, 511.500000pix], [203.650118pix, 128.000000pix], 0.000000deg]
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox(wcs:FK5)[[0:00:00.0153959990, 29:59:59.7999999385], [81.4600472813", 51.2000000000"], 0.000000deg]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -252,6 +255,7 @@ FOV Matched Image Fitting
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    Region: field of view
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox[[255.500000pix, 255.500000pix], [77.124482pix, 110.964816pix], 13.442261deg]
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FULL_LOG_TAB}    rotbox(wcs:GALACTIC)[[109.8581469935deg, -31.5624932445deg], [61.6995858783", 88.7718531514"], 13.442261deg]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -316,6 +320,7 @@ Generation Of Model And Residual Images After Fitting
     Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    cluster_00512.fits
     Page Should Not Contain Element    ${IMAGE_LIST_SECOND_IMAGE_NAME}
     Page Should Not Contain Element    ${IMAGE_LIST_THIRD_IMAGE_NAME}
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -354,6 +359,7 @@ Fitting With Cancellation
     Element Should Contain    ${IMAGE_LIST_FIRST_IMAGE_NAME}    spire500_ext.fits
     Element Should Contain    ${IMAGE_LIST_SECOND_IMAGE_NAME}    spire500_ext_model.fits
     Element Should Contain    ${IMAGE_LIST_THIRD_IMAGE_NAME}    spire500_ext_residual.fits
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Fitting With One Gaussian Having Fixed Parameters
@@ -619,6 +625,7 @@ Fitting With One Gaussian Having Fixed Parameters
     Mouse Over   ${IMAGE_FITTING_DIALOG_FIT_BUTTON}
     #Sleep    1
     Page Should Not Contain    Clear existing fitting results and fit the current channel of the image
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -665,6 +672,7 @@ Fitting With Multiple Gaussians Having Fixed Parameters
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    P.A.${SPACE*12}\= 5.556748 ± 6.368759 (deg)
     Run Keyword And Warn On Failure    Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Integrated flux \= 57.031307 ± 2.072691 (Jy)
     Element Should Contain    ${IMAGE_FITTING_DIALOG_FITTING_RESULT_TAB}    Background${SPACE*6}\= 0.000000 (Jy/beam) (fixed)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

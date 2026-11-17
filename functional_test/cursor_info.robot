@@ -74,6 +74,7 @@ Cursor Info For Matched And Unmatched Images
     Element Should Contain    data:testid:simple-table-2-5    LSRK 230.5121 GHz\n33.7063 km/s
     Element Should Contain    data:testid:simple-table-2-6    0
     Element Should Contain    data:testid:simple-table-2-7    Stokes I
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

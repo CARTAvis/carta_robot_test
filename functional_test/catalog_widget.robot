@@ -69,6 +69,7 @@ Catalog Filtering And Sorting
     Element Should Contain    data:testid:filterable-table-0-2    [RRS2014] COS12Rea
     Element Should Contain    data:testid:filterable-table-0-3    SN
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -119,6 +120,7 @@ Catalog Column Show And Hide
     Element Should Contain    data:testid:filterable-table-0-1    1.2400000095367432
     Element Should Contain    data:testid:filterable-table-0-2    ZFOURGE COSMOS  5366
     Element Should Contain    data:testid:filterable-table-0-3    Galaxy    
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -208,6 +210,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
 
     Remove Files    check_${key}.png    check2_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -274,6 +277,7 @@ Catalog Rendering As Scatter Plot
     PNG Images Should Be Different    check3_${key}.png    check4_${key}.png
     
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png    check4_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -337,6 +341,7 @@ Catalog Rendering As Histogram Plot
     PNG Images Should Be Different    check2_${key}.png    check3_${key}.png
     
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -407,6 +412,7 @@ Linked Catalog Visualization
     PNG Images Should Be Different    check_table_selected_${key}.png    check_table_reset_${key}.png
 
     Remove Files    check_scatter_${key}.png    check_scatter_selected_${key}.png    check_histogram_${key}.png    check_histogram_selected_${key}.png    check_image_overlay_selected_${key}.png    check_image_overlay_reset_${key}.png    check_table_selected_${key}.png    check_table_reset_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -493,6 +499,7 @@ Catalog Rendering As Image Overlay With Angular Size Mapping
     PNG Pixel XY Should Match RGBA    check_full_fov_${key}.png    367,263,214,39,40,255
     Remove Files    check_diameter_${key}.png    check_radius_${key}.png    check_full_fov_${key}.png
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -568,5 +575,6 @@ Catalog Rendering As Image Overlay With Custom Size
     PNG Pixel XY Should Match RGBA    check_degree_${key}.png    260,32,0,163,150,255
 
     Remove Files    check_screen_pixel_${key}.png    check_image_pixel_${key}.png    check_arcsecond_${key}.png    check_arcminute_${key}.png    check_degree_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 

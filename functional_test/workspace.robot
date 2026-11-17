@@ -49,9 +49,10 @@ Workspace Image Viewer - Save and Reload
     Capture Element Screenshot    ${VIEWER_DIV}    original_${key}.png
 
     # save as a workspace
+    ${key_workspace}=    Generate Random String    8
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Save Workspace']
-    Input Text    //input[@placeholder="Enter workspace name"]    tmp
+    Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
     Click Element    //*[normalize-space(text())='Save']
 
     # load a new image
@@ -60,8 +61,8 @@ Workspace Image Viewer - Save and Reload
     # restore workspace
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Open Workspace']    
-    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div[1]/div[5]/div/div[2]/div/div/div    tmp
-    Click Element    //*[normalize-space(text())='tmp']
+    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
+    Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
     Click Element    //*[normalize-space(text())='Open']
     Sleep    2
     # take a screenshot of the restored viewer
@@ -106,9 +107,10 @@ Workspace - Multicolor Blending
     Capture Element Screenshot    ${VIEWER_DIV}    original_${key}.png
 
     # save as a workspace
+    ${key_workspace}=    Generate Random String    8
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Save Workspace']
-    Input Text    //input[@placeholder="Enter workspace name"]    tmp
+    Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
     Click Element    //*[normalize-space(text())='Save']
 
     # load a new image
@@ -117,8 +119,8 @@ Workspace - Multicolor Blending
     # restore workspace
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Open Workspace']    
-    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div[1]/div[5]/div/div[2]/div/div/div    tmp
-    Click Element    //*[normalize-space(text())='tmp']
+    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
+    Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
     Click Element    //*[normalize-space(text())='Open']
     Sleep    2
     # take a screenshot of the restored viewer
@@ -211,7 +213,7 @@ Workspace - Catalog
     Click Element    data:testid:catalog-query-mirror-select-button
     Click Element    data:testid:catalog-query-reset-mirrors-button
     Mouse Out    data:testid:catalog-query-reset-mirrors-button
-    Click Element    data:testid:catalog-query-use-mirror-url-0-button
+    Click Element    data:testid:catalog-query-use-mirror-url-1-button
     Click Element    data:testid:catalog-query-mirror-select-button
     # limit to <=100 sources
     Press Keys    data:testid:catalog-query-max-objects-input    DELETE
@@ -230,9 +232,10 @@ Workspace - Catalog
     Capture Page Screenshot    workspace_catalog_saved_${key}.png
 
     # save as a workspace
+    ${key_workspace}=    Generate Random String    8
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Save Workspace']
-    Input Text    //input[@placeholder="Enter workspace name"]    tmp
+    Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
     Click Element    //*[normalize-space(text())='Save']
 
     # load an image and reset to default layout
@@ -244,12 +247,14 @@ Workspace - Catalog
     # restore workspace
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Open Workspace']    
-    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div[1]/div[5]/div/div[2]/div/div/div    tmp
+    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
     # prevent unexpected hovering on the horizontal scrollbar in the catalog table
     Drag And Drop By Offset    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[1]    0    -100
-    Click Element    //*[normalize-space(text())='tmp']
+    Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
+    Wait Until Page Contains Element    //*[normalize-space(text())='Open']
     Click Element    //*[normalize-space(text())='Open']
-    Wait Until Page Does Not Contain    Loading workspace...    timeout=30
+    Wait Until Page Does Not Contain    Loading workspace...    timeout=180
+    Wait Until Page Does Not Contain    Opening workspace    timeout=180
     Wait Until Page Does Not Contain    Workspace loaded    timeout=5
     Sleep    2
     # take a screenshot of the restored viewer

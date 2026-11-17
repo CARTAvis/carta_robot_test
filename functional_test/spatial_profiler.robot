@@ -29,6 +29,7 @@ Cursor Spatial Profile
     ## move cursor on the spatial profile plot
     Mouse Over    ${SPATIAL_PROFILER_PLOT}
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor    
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -55,6 +56,7 @@ Line Spatial Profile Fixed Pixel Width
     Mouse Over    ${SPATIAL_PROFILER_PLOT}
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Offset: -5.00159e-1 deg, 4.58767e-2)
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -82,6 +84,7 @@ Line Spatial Profile Fixed Angular Width
     Mouse Over    ${SPATIAL_PROFILER_PLOT}
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Offset: -3.4 deg, -1.78843e-4)
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -110,6 +113,7 @@ Polyline Spatial Profile Fixed Pixel Width
     #Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Distance: 2.71726 deg, 1.28723e-2)
     Element Should Contain    ${SPATIAL_PROFILER_CURSOR_INFO}    Cursor: (Distance: 2.71699 deg, 1.28723e-2)
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

@@ -20,6 +20,7 @@ Generate A Moment Image From FITS Cube
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
     PNG Two Pixels Should Not Have Matched RGBA    test_${key}.png    150,158,542,158
     Remove Files    test_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Generate A Moment Image From CASA Cube
@@ -39,6 +40,7 @@ Generate A Moment Image From CASA Cube
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
     PNG Two Pixels Should Not Have Matched RGBA    test_${key}.png    150,158,542,158
     Remove Files    test_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Generate A Moment Image From MIRIAD Cube
@@ -58,6 +60,7 @@ Generate A Moment Image From MIRIAD Cube
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
     PNG Two Pixels Should Not Have Matched RGBA    test_${key}.png    150,158,542,158
     Remove Files    test_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Generate A Moment Image From HDF5 Cube
@@ -77,6 +80,7 @@ Generate A Moment Image From HDF5 Cube
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    529,160,542,158
     PNG Two Pixels Should Not Have Matched RGBA    test_${key}.png    150,158,542,158
     Remove Files    test_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -97,6 +101,7 @@ Generate A Moment Image From Cube With PerPlaneBeam
     PNG Two Pixels Should Have Matched RGBA    test_${key}.png    198,208,577,208
     PNG Two Pixels Should Not Have Matched RGBA    test_${key}.png    180,263,595,208
     Remove Files    test_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -208,6 +213,7 @@ Generate All Moment Images
     Set Selenium Speed    ${DELAY}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Remove Files    moment_*_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -246,6 +252,7 @@ Generate A Moment Image With Custom Parameters
     # verify file info context
     Element Should Contain    ${FILE_INFO_TEXT}    M17_SWex.fits.moment.integrated
     Element Should Contain    ${FILE_INFO_TEXT}    [116, 128, 1, 1]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -272,6 +279,7 @@ Generate Moment Images From Unmatched Cubes
     Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.hdf5.moment.integrated
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -305,6 +313,7 @@ Generate Moment Images From Matched Cubes
     Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.hdf5.moment.integrated
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -373,6 +382,7 @@ Generate A Moment Image With A Region Mask FITS
     PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,200,102
     Remove Files    moment_rectangle_mask_${key}.png    moment_ellipse_mask_${key}.png    moment_polygon_mask_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -441,6 +451,7 @@ Generate A Moment Image With A Region Mask HDF5
     PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,200,102
     Remove Files    moment_rectangle_mask_${key}.png    moment_ellipse_mask_${key}.png    moment_polygon_mask_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -497,6 +508,7 @@ Generate Moment Images With A Custom Rest Frequency
     Set Selenium Speed    0
     PNG Pixel XY Should Match RGBA    moment1_${key}.png    220,345,134,255,112,255
     Remove Files    moment1_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -569,6 +581,7 @@ Generate Moment Images With Rest Frame Conversion
     Click Element    data:testid:image-list-1-image-name
     Wait Until Page Contains    NumPixels
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    6    2    4.652928665093e+4 Jy/beam.km/s
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

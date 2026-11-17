@@ -27,6 +27,7 @@ Request Cube Histogram
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -2.521146852663114
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    6.420911069399297            
     Remove Files    per-cube_histogram_${key}.png    per-channel_histogram_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -54,6 +55,7 @@ Request Stokes Cube Histogram
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -2.521146852663114
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    6.420911069399297            
     Remove Files    per-cube_histogram_${key}.png    per-channel_histogram_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -80,6 +82,7 @@ Request HDF5 Cube Histogram
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -0.055519239840650936
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    0.12933487483421768          
     Remove Files    per-cube_histogram_${key}.png    per-channel_histogram_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -100,6 +103,7 @@ Cancel Cube Histogram Request And Rerequest
     Wait Until Page Does Not Contain    Calculating cube histogram    timeout=10
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MIN_CUBE}    value    -2.521146852663114
     Element Attribute Value Should Be    ${RENDER_CONFIG_CLIP_MAX_CUBE}    value    6.420911069399297            
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

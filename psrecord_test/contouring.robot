@@ -23,6 +23,7 @@ Contouring With Gaussian Smooth FITS With Psrecord
     Sleep    0.5
     Terminate psrecord
     Sleep    1
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Contouring With Block Smooth FITS With Psrecord
@@ -47,6 +48,7 @@ Contouring With Block Smooth FITS With Psrecord
     Sleep    0.5
     Terminate psrecord
     Sleep    1
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

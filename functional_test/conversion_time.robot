@@ -90,4 +90,5 @@ Time conversion
     Input Text    data:testid:animator-relative-reference-mjd    65000
     Element Should Contain    //*[@id="root"]/div/div[16]/div/div[10]/div/div/div/div/div[2]/div[2]/div[1]/div/div[2]/div[1]    -95000.000000000 h
 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

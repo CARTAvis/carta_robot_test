@@ -47,6 +47,7 @@ WCS Conversion from FK5 J2000
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value
     Should Be Equal As Strings    ${x_coord}    17:56:21.2813601233
     Should Be Equal As Strings    ${y_coord}    -21:57:22.4054064313
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -94,6 +95,7 @@ WCS Conversion from Galactic
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value
     Should Be Equal As Strings    ${x_coord}    22:00:03.0025187998
     Should Be Equal As Strings    ${y_coord}    29:59:14.0290612027
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -141,6 +143,7 @@ WCS Conversion from FK4 B1950
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value
     Should Be Equal As Strings    ${x_coord}    10:00:00.0323854281
     Should Be Equal As Strings    ${y_coord}    9:59:59.5165800984
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -190,6 +193,7 @@ WCS Conversion from ICRS
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-5"]    value
     Should Be Equal As Strings    ${x_coord}    18:20:21.0138848648
     Should Be Equal As Strings    ${y_coord}    -16:12:10.2000000158
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -266,6 +270,7 @@ Region Dialog WCS Conversion from FK5 J2000
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value    
     Should Be Equal As Strings    ${x_coord}    213.968085106383
     Should Be Equal As Strings    ${y_coord}    197.62765957446808
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -342,6 +347,7 @@ Region Dialog WCS Conversion from Galactic
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value    
     Should Be Equal As Strings    ${x_coord}    1763.6276595744675
     Should Be Equal As Strings    ${y_coord}    1470.322695035461
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -418,6 +424,7 @@ Region Dialog WCS Conversion from FK4 B1950
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value    
     Should Be Equal As Strings    ${x_coord}    2487.72695035461
     Should Be Equal As Strings    ${y_coord}    2298.147754137116
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -495,6 +502,7 @@ Region Dialog WCS Conversion from ICRS
     ${y_coord} =    Get Element Attribute    //*[@id="numericInput-6"]    value    
     Should Be Equal As Strings    ${x_coord}    316.6631205673759
     Should Be Equal As Strings    ${y_coord}    366.403073286052
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 WCS Sexagesimal to Degree
@@ -513,6 +521,7 @@ WCS Sexagesimal to Degree
     Mouse Over    ${VIEWER_DIV}
     # check text in cursor info bar
     Element Text Should Be    ${VIEWER_CURSOR_INFO_BAR}    WCS: (269.08870, -21.95647); Image: (214, 198); Value: 1.35843 Jy/beam.km/s ; Polarization: Stokes I
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -532,4 +541,5 @@ WCS Degree to Sexagesimal
     Mouse Over    ${VIEWER_DIV}
     # check text in cursor info bar
     Element Text Should Be    ${VIEWER_CURSOR_INFO_BAR}    WCS: (5:37:37, -21:55:19); Image: (1764, 1470); Value: 0.0 Jy/beam
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

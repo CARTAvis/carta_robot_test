@@ -54,6 +54,7 @@ Narrow-field PV Image Generation
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    604,248,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    573,69,729,25
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -100,6 +101,7 @@ Wide-field PV Image Generation
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -151,6 +153,7 @@ PV Image Generation Cancellation And Rerequest
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25    
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -203,6 +206,7 @@ PV Image Generation Repeat
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Identical    check_${key}.png    check3_${key}.png
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -270,6 +274,7 @@ PV Image Generation With Matched Cubes
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex_pv.fits
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
     
 
@@ -336,6 +341,7 @@ PV Image Generation With Matched Wide-field Cubes
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    281,400,660,400
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    327,400,706,400
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -379,6 +385,7 @@ Interactive PV Preview
     PNG Two Pixels Should Have Matched RGBA    before_${key}.png    262,620,470,482
     PNG Two Pixels Should Have Matched RGBA    after_${key}.png    277,569,470,72
     Remove Files    before_${key}.png    after_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -450,6 +457,7 @@ Interactive PV Preview With Customization
     PNG Two Pixels Should Have Matched RGBA    final_${key}.png    624,257,1091,365
     PNG Two Pixels Should Have Matched RGBA    final_${key}.png    542,286,970,409
     Remove Files    before_${key}.png    after_${key}.png    final_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

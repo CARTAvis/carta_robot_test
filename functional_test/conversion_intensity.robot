@@ -81,6 +81,7 @@ Intensity Unit Conversion from Jy/beam
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    4.505524855548e-1 Jy
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -162,6 +163,7 @@ Intensity Unit Conversion from K
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    1.306214382631e-2 K*arcsec^2                        
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -219,6 +221,7 @@ Intensity Unit Conversion from MJy/sr
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    8.273431717313e-13 MJy       
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -276,6 +279,7 @@ Intensity Unit Conversion from Jy/pixel
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    -1.983184228744e+1 Jy        
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -325,6 +329,7 @@ Intensity Unit Conversion from Jy/arcsec2
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    -1.574543138500e-4 Jy            
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -387,4 +392,5 @@ Intensity Unit Conversion from Jy/beam with Per-Plane-Beam
     Click Element    id:StatisticsWidgetButton
     Wait Until Page Does Not Contain    No stats data
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    7    2    1.319290442279e-2 Jy                     
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

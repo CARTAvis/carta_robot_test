@@ -54,6 +54,7 @@ Load Catalog File In VOTable Format
     
     # check the context in the filtering info field
     Element Should Contain    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    Showing 1 to 50 of total 100000 entries
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -104,6 +105,7 @@ Load Catalog File In FITS Format
     
     # check the context in the filtering info field
     Element Should Contain    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    Showing 1 to 50 of total 100000 entries
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -142,6 +144,7 @@ Load And Manage Two Catalog Files
     # check for the non-ideal state of the catalog widget 
     Element Should Contain    data:testid:catalog-overlay-component-0-content    No catalog file loaded
     
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -205,6 +208,7 @@ Fetch VizieR Catalog And Visualize
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    366,184,591,150
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    242,98,655,72
     Remove Files    image_${key}.png    scatter_${key}.png    histogram_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -267,6 +271,7 @@ Fetch SIMBAD Catalog And Visualize
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,574,54
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,584,100
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -337,6 +342,7 @@ SIMBAD and VizieR Mirror Sites
     Element Should Contain    data:testid:catalog-query-use-mirror-url-6-button    vizier.inasan.ru
     # reset list to default order
     Click Element    data:testid:catalog-query-reset-mirrors-button
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -637,5 +643,6 @@ Load Catalogs With Various Spatial Column Formats
     Remove Files    check_60_stream_late_string_format_${key}.png
 
     Remove Files    check_no_overlay_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 

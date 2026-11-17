@@ -27,4 +27,5 @@ Load-Append-Close FITS Image With Psrecord
     Sleep    0.5
     Terminate psrecord
     Sleep    1
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

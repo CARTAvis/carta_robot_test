@@ -204,6 +204,7 @@ Import World Coordinate CASA Annotation Made In CARTA
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,507,298
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,555,298
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -408,6 +409,7 @@ Import Image Coordinate CASA Annotation Made In CARTA
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,507,298
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,555,299
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -612,6 +614,7 @@ Import World Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,513,296
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -816,6 +819,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,513,296
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -931,4 +935,5 @@ Creating Annotations And Export As Region Files
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

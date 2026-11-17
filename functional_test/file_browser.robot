@@ -34,6 +34,7 @@ File Path Display and Edit Test
     Should Be Equal    ${file_path}    /
 
     # missing test for the refresh button
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -71,6 +72,7 @@ Filter Mode Test
     # reset filter
     Click Element    ${FILE_BROWSER_FILTER_MODE_BUTTON}
     Click Element    //*[normalize-space(text())='Fuzzy search']
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -123,12 +125,14 @@ Dynamic Loading Button Rendering
     Click Element    //*[normalize-space(text())='m16_f0335m.fits']    modifier=CTRL
     Page Should Not Contain Element    //*[normalize-space(text())='Load as hypercube']
     END
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
 File List Generation Mode Test
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Pass Execution    To be implemented...
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -147,6 +151,7 @@ File Header Search Test
     Input Text    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[3]/div/div[2]/div/div/div/input    CTYPE
 
     Element Should Contain    //*[@id="root"]/div/div[7]/div/div[1]/div[3]/div/div[3]/div[1]/div[2]/div/div[3]/div/div[2]/div/div/div/span[2]/div/span    1 of 4
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Compose LEL With Keyboard and Mouse Test

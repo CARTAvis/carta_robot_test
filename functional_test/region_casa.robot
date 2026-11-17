@@ -83,6 +83,7 @@ Import World Coordinate CASA Region Made In CASAViewer
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,295,443,315
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    385,295,490,371
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -227,6 +228,7 @@ Import Image Coordinate CASA Region Made Manually
     # region 10: point
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    455,92,515,343
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -312,6 +314,7 @@ Import World Coordinate CASA Region Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -397,5 +400,6 @@ Import Image Coordinate CASA Region Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 

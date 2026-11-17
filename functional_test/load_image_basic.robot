@@ -13,6 +13,7 @@ Load FITS image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -25,6 +26,7 @@ Load CASA image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -37,6 +39,7 @@ Load HDF5 image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -49,6 +52,7 @@ Load MIRIAD image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -61,6 +65,7 @@ Load FITS gz image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -73,6 +78,7 @@ Load FITS fz image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -85,6 +91,7 @@ Load FITS pv image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -97,6 +104,7 @@ Load CASA pv image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -109,6 +117,7 @@ Load CASA uv image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -122,6 +131,7 @@ Load CASA boolean image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -143,6 +153,7 @@ Load CASA complex image as amplitude
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -164,6 +175,7 @@ Load CASA complex image as phase
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -185,6 +197,7 @@ Load CASA complex image as real
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -206,6 +219,7 @@ Load CASA complex image as imaginary
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -219,6 +233,7 @@ Load CASA integer image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -231,6 +246,7 @@ Load CASA componentlist image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -243,6 +259,7 @@ Load CASA concatenated image
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -409,6 +426,7 @@ Load Axes-Swapped Cubes
     # check grid line locations
     PNG Two Pixels Should Have Matched RGBA    check_g_3102_${key}.png        76,86,682,361
     Remove Files    check_1032_${key}.png    check_g_0213_${key}.png    check_1230_${key}.png    check_3021_${key}.png    check_g_2031_${key}.png    check_g_3102_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -422,6 +440,7 @@ Load FITS Image With Empty Header Key
     Set Selenium Speed    0
     OCR Test    check_${key}.png    315 447 442 466 "Galactic longitude"
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -448,4 +467,5 @@ Load FITS Image With Multiple HDUs
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

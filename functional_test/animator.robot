@@ -68,6 +68,7 @@ Animation Playback With Channels
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -100,6 +101,7 @@ Channel Navigation
     Element Should Contain    ${ANIMATOR_SLIDER_HANDLE}    12
     Element Should Contain    ${VIEWER_CURSOR_INFO_BAR}    Frequency (LSRK): 86.7485 GHz; Velocity: 20.1280 km/s
     Element Should Contain    ${ANIMATOR_SLIDER_INFO}    LSRK\n86.7485 GHz\n20.1280 km/s
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -129,6 +131,7 @@ Animation Playback Channel Range
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result} >= ${range_from_index_int} and ${result} <= ${range_to_index_int}
     Remove Files    initial_${key}.png    final_${key}.png 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -154,6 +157,7 @@ Animation Playback Channel Step
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result}%2 == 0
     Remove Files    initial_${key}.png    final_${key}.png 
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -227,6 +231,7 @@ Polarization Slider And Computed Components
     PNG Two Pixels Should Not Have Matched RGBA    check_Pangle_${key}.png    384,220,374,172    
 
     Remove Files    check_Stokes_I_${key}.png    check_Stokes_Q_${key}.png    check_Stokes_U_${key}.png    check_Stokes_V_${key}.png    check_Ptotal_${key}.png    check_Plinear_${key}.png    check_PFtotal_${key}.png    check_PFlinear_${key}.png    check_Pangle_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -327,6 +332,7 @@ Animation Playback With Image Set
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -404,6 +410,7 @@ Animation Playback With Polarization Set
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -512,4 +519,5 @@ Animation Playback With Time Series
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

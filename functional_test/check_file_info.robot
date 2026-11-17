@@ -33,6 +33,7 @@ File Info Of A Regular FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [86.7514, 86.7455] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [10.0000, 30.2560] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 File Info Of A Regular CASA Image
@@ -64,6 +65,7 @@ File Info Of A Regular CASA Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [86.7514, 86.7455] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [10.0000, 30.2560] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 File Info Of A Regular HDF5 Image
@@ -98,6 +100,7 @@ File Info Of A Regular HDF5 Image
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
     Scroll Element Into View    data:testid:header-entry-21
     Element Should Contain    ${FILE_INFO_TEXT}    Has mipmaps \= T
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 File Info Of A Regular MIRIAD Image
@@ -129,6 +132,7 @@ File Info Of A Regular MIRIAD Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [86.7514, 86.7455] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [10.0000, 30.2560] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -159,6 +163,7 @@ File Info Of A CASA Complex Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.0000, 1.9000] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [88671.0087, -101338.2957] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -187,6 +192,7 @@ File Info Of A CASA PV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [230.5121, 230.5729] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [33.7063, -45.3419] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -216,6 +222,7 @@ File Info Of A FITS PV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [230.5121, 230.5729] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [33.7063, -45.3419] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -240,6 +247,7 @@ File Info Of A fz FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= FK5, J2000
     Element Should Contain    ${FILE_INFO_TEXT}    RA range \= [13:28:01.829, 13:31:45.864]
     Element Should Contain    ${FILE_INFO_TEXT}    DEC range \= [+46.50.31.993, +47.31.53.392]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -265,6 +273,7 @@ File Info Of A gz FITS Image
     Element Should Contain    ${FILE_INFO_TEXT}    Celestial frame \= FK5, J2000
     Element Should Contain    ${FILE_INFO_TEXT}    RA range \= [13:28:01.829, 13:31:45.864]
     Element Should Contain    ${FILE_INFO_TEXT}    DEC range \= [+46.50.31.993, +47.31.53.392]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -290,6 +299,7 @@ File Info Of A CASA UV Image
     Element Should Contain    ${FILE_INFO_TEXT}    Median area beam \= 2.92354" X 1.76939", -17.8188 deg
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [36.3937, 36.3942] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [-11.6115, -15.7309] (km/s)
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -323,6 +333,7 @@ File Info Of A Stokes Image
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [344.0913, 345.9626] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [789.6327, -836.4766] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -439,6 +450,7 @@ File Info Of Swapped-Axes Cubes
     Element Should Contain    ${FILE_INFO_TEXT}    Frequency range \= [1.4199, 1.4208] (GHz)
     Element Should Contain    ${FILE_INFO_TEXT}    Velocity range \= [106.7445, -83.2105] (km/s)
     Element Should Contain    ${FILE_INFO_TEXT}    Stokes coverage \= [I, Q, U, V]
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

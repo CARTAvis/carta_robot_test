@@ -59,6 +59,7 @@ Image Viewer Settings - Pan and Zoom
     OCR Test    test1_${key}.png    403 105 429 145 "0.0" --rotation 90
     OCR Test    test1_${key}.png    465 444 683 469 "Offset coordinate (arcmin)"    # workaround due to OCR accuracy issue
     Remove Files    test0_${key}.png    test1_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -96,6 +97,7 @@ Image Viewer Settings - Spatial-Spectral Conversion
     OCR Test    check_frequency_${key}.png    3 85 25 350 "[LSRK] Frequency (GHz) (rest frame)" --rotation 90
     OCR Test    check_frequency_${key}.png    23 198 40 239 "691.5" --rotation 90
     Remove Files    check_velocity_${key}.png    check_frequency_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -171,6 +173,7 @@ Zooming PV Image Independently
     PNG Pixel XY Should Match RGBA    check_${key}.png    465,253,255,186,1,255
     
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -382,6 +385,7 @@ Image Viewer Settings - Customization for Publication
     # TODO: should also save as a workspace and restore it to test if the image view is correctly restored, skip for now due to a bug
 
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

@@ -73,6 +73,7 @@ Region Canvas Rendering
     PNG Pixel XY Should Match RGBA    check2_${key}.png    395,248,46,230,214,255
     PNG Pixel XY Should Match RGBA    check2_${key}.png    364,248,46,230,214,255    
     Remove Files    check_${key}.png    check2_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 GUI Initialization
@@ -220,6 +221,7 @@ GUI Initialization
     Click Element    data:testid:region-dialog-header-close-button
     # catalog histogram and scatter plot widgets
     #   refer to catalog_widget.robot to save testing time
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -381,6 +383,7 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
 
     Remove Files    grid_wcs_${key}.png    grid_fk5_${key}.png    grid_fk4_${key}.png    grid_ecl_${key}.png    grid_gal_${key}.png    grid_icrs_${key}.png    grid_wcs_2_${key}.png    grid_img_${key}.png
     Remove Files    grid_wcs_offset_${key}.png    grid_fk5_offset_${key}.png    grid_fk4_offset_${key}.png    grid_ecl_offset_${key}.png    grid_gal_offset_${key}.png    grid_icrs_offset_${key}.png    grid_img_offset_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -393,6 +396,7 @@ AST Rendering XY Labels
     OCR Test    check_${key}.png    296 447 461 467 "Right ascension (ICRS)"
     OCR Test    check_${key}.png    2 148 21 279 "Declination (ICRS)" --rotation 90
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

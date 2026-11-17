@@ -139,6 +139,7 @@ Region Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    12    2    -8.249375037849e-3 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    13    2    2.377338187395e-3 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    14    2    1.587572883201e-2 (Jy/beam)^2    
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -265,6 +266,7 @@ Image Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    12    2    -3.389632701874e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    13    2    1.016112952303e+0 MJy/sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    14    2    4.229060738407e+3 (MJy/sr)^2
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -455,6 +457,7 @@ Polarization Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    12    2    1.110765337944e+0 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    13    2    5.370073400759e-2 Jy/beam
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    14    2    4.488586188493e+1 (Jy/beam)^2
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -481,6 +484,7 @@ Compressed FITS fz statistics
     # dirty workaround for CI numberic error
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.20399427123
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+8 (counts/s)^2
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -507,6 +511,7 @@ Compressed FITS gz statistics
     # dirty workaround for CI numberic error
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    1.20399427123
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    11    2    e+8 (counts/s)^2
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -526,6 +531,7 @@ Per-plane Beam Statistics
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    3    2    4.794406793021e+0 beam(s)
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    4    2    6.830296259850e-10 sr
     Table Cell Should Contain    ${STATISTICS_WIDGET_TABLE}    5    2    4.776399039259e+1 pixel(s)        
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -584,4 +590,5 @@ Polarization Computed Component Statistics Caching
     # check the statistics widget for updated values
     Element Should Contain    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
     Element Should Contain    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

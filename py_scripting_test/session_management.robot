@@ -20,6 +20,7 @@ Interact With An Existing Session
     ${result}=    test_session_management.interact_session    ${session_id} 
     @{image_dimension_list}=    Create List    ${1}    ${250}    ${273}    ${324}
     Should Be Equal   ${result}    ${image_dimension_list}
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Start And Create A Session Directly With CARTA-PYTHON

@@ -178,6 +178,7 @@ Import World Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -355,6 +356,7 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -533,6 +535,7 @@ Import Image Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -619,6 +622,7 @@ Import World Coordinate ds9 Region Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -703,5 +707,6 @@ Import Image Coordinate ds9 Region Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 

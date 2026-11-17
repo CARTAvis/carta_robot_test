@@ -23,6 +23,7 @@ ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /opt/miniconda3/bin/python
 ${N_OMP_THREADS}    4
 ${PACKAGE_TESTING}    False
+${TEST_WORKSPACE_SNAPSHOT}    True
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser --enable_scripting
 ${SERVER}         localhost:${CARTA_PORT}
@@ -338,6 +339,52 @@ Setup carta_backend And Open Browser To CARTA
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     END
     Set Selenium Speed    ${DELAY}
+    
+
+Test Workspace Snapshot
+    [Arguments]    ${tolerance}=99.99
+    # test workspace snapshot if enabled
+    IF    '${TEST_WORKSPACE_SNAPSHOT}' == 'True'
+    # save the current workspace with a unique name
+    ${key_workspace}=    Generate Random String    8
+    Click Element    //*[normalize-space(text())='File']
+    Click Element    //*[normalize-space(text())='Save Workspace']
+    Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
+    Click Element    //*[normalize-space(text())='Save']
+    Wait Until Page Contains    Workspace saved    timeout=10
+    Wait Until Page Does Not Contain    Workspace saved
+    Capture Page Screenshot    workspace_before_${key_workspace}.png
+    # configure layout to default
+    Click Element    //*[normalize-space(text())='View']
+    Click Element    //*[normalize-space(text())='Layout']
+    Mouse Over    //*[normalize-space(text())='Default']
+    Click Element    //*[normalize-space(text())='Apply']
+    Click Element    data:testid:layout-dialog-header-close-button
+    # restore workspace
+    Click Element    //*[normalize-space(text())='File']
+    Click Element    //*[normalize-space(text())='Open Workspace']    
+    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
+    Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
+    Wait Until Page Contains Element    //*[normalize-space(text())='Open']
+    Click Element    //*[normalize-space(text())='Open']
+    Wait Until Page Does Not Contain    Loading workspace...    timeout=180
+    Wait Until Page Does Not Contain    Opening workspace    timeout=180
+    Wait Until Page Does Not Contain    Workspace loaded    timeout=5
+    Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
+    Capture Page Screenshot    workspace_after_${key_workspace}.png
+    # remove saved workspace
+    Click Element    //*[normalize-space(text())='File']
+    Click Element    //*[normalize-space(text())='Open Workspace']
+    Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
+    Click Element    //*[normalize-space(text())='Delete']
+    Wait Until Page Contains    Delete the workspace
+    Click Element    //*[normalize-space(text())='OK']
+    PNG Images Should Be Identical    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png    ${tolerance}
+    #Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png
+    ELSE
+    Log    Workspace snapshot test is disabled.
+    Log To Console    Workspace snapshot test is disabled.
+    END
     
 
 Kill carta_backend And Close Browser

@@ -24,6 +24,7 @@ Raster Image Rendering
     PNG Pixel XY Should Match RGBA    check_${key}.png    626,212,23,190,207,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    688,212,19,124,189,255
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Contour Image Rendering
@@ -54,6 +55,7 @@ Contour Image Rendering
     PNG Pixel XY Should Match RGBA    check_${key}.png    396,205,35,133,81,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    392,200,35,133,81,255
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -83,6 +85,7 @@ Catalog Image Overlay Rendering
     PNG Pixel XY Should Match RGBA    check_${key}.png    657,197,0,163,150,255
     PNG Pixel XY Should Match RGBA    check_${key}.png    691,234,0,163,150,255
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -186,6 +189,7 @@ Vector Field Rendering With A Stokes Continuum Cube
 
     Remove Files    check_computed_PI_PA_${key}.png    check_computed_PI_PA_with_threshold_${key}.png    check_computed_PI_PA_with_threshold_with_debiasing_${key}.png    
     Remove Files    check_computed_PA_with_threshold_with_debiasing_${key}.png    check_computed_PI_with_threshold_with_debiasing_${key}.png    check_cleared_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -210,6 +214,7 @@ Vector Field Rendering With A POLI Image
     PNG Two Pixels Should Not Have Matched RGBA    check_pixel_as_PI_with_threshold_${key}.png    383,221,383,198
 
     Remove files    check_pixel_as_PI_with_threshold_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -235,6 +240,7 @@ Vector Field Rendering With A POLA Image
     PNG Two Pixels Should Not Have Matched RGBA    check_pixel_as_PA_with_threshold_${key}.png    417,232,328,229
 
     Remove files    check_pixel_as_PA_with_threshold_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -256,6 +262,7 @@ Vector Field Rendering With A Stokes Line Cube
     Capture Element Screenshot    ${VIEWER_DIV}    check_channel_5_${key}.png
     PNG Images Should Be Different    check_channel_0_${key}.png    check_channel_5_${key}.png
     Remove files    check_channel_0_${key}.png    check_channel_5_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -332,6 +339,7 @@ Multicolor Rendering
     PNG Pixel XY Should Match RGBA    check_rgb_reduce_alpha_${key}.png    191,342,128,255,255,255    # reduced White
 
     Remove files    check_rgb_${key}.png    check_rgb_remove_layer_${key}.png    check_rgb_add_layer_${key}.png    check_rgb_reduce_alpha_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -496,6 +504,7 @@ Layer Management With Multicolor Image
     Remove Files    check_hide_R_image1_${key}.png    check_hide_V_image1_${key}.png
     Remove Files    check_hide_R_image2_${key}.png    check_hide_C_image2_${key}.png
     Remove Files    check_hide_R_image3_${key}.png    check_hide_C_image3_${key}.png    check_hide_V_image3_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -524,6 +533,7 @@ Tile Rendering with Different MIP
     PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,189,334
     PNG Two Pixels Should Have Matched RGBA    tile_mip_${key}.png    189,99,568,334
     Remove Files    tile_mip_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 

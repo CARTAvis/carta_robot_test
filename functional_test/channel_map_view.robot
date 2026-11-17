@@ -68,6 +68,7 @@ Channel Map View - Layout
 
 
     #Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 Channel Map View - raster coloring
@@ -100,6 +101,7 @@ Channel Map View - raster coloring
     PNG Pixel XY Should Match RGBA    check_${key}.png    121,73,31,119,180,255
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png   121,73,631,394
     Remove Files    check_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -174,6 +176,7 @@ Channel Map View - active channel switching
     PNG Two Pixels Should Have Matched RGBA    check2_${key}.png   42,4,176,109
 
     Remove Files    check_${key}.png    check2_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -213,6 +216,7 @@ Channel Map View - spectral labels
     Set Selenium Speed    0
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     Remove Files    before_${key}.png    after_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -274,4 +278,5 @@ Channel Map View - Beam
     PNG Pixel XY Should Match RGBA    check_single_beam_all_panel_${key}.png    562,125,115,128,145,255    
 
     Remove Files    check_per_plane_beam_${key}.png    check_single_beam_${key}.png    check_single_beam_all_panel_${key}.png
+    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
