@@ -24,7 +24,7 @@ Channel Map View - Layout
     Mouse Over    ${VIEWER_DIV}
     Click Element    data:testid:zoom-to-fit-button
     Mouse Out    ${VIEWER_DIV}
-    Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Sleep    1
 
     # adjust AST layout: channel border width
@@ -91,7 +91,7 @@ Channel Map View - raster coloring
     Mouse Over    ${VIEWER_DIV}
     Click Element    data:testid:zoom-to-fit-button
     Mouse Out    ${VIEWER_DIV}
-    Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Sleep    1
 
     # Verify channel map view raster pixel coloring
@@ -127,7 +127,7 @@ Channel Map View - active channel switching
     # change an active channel
     Click Element    ${VIEWER_DIV}
     Mouse Out    ${VIEWER_DIV}
-    Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Sleep    1
 
     # check animator active channel index
@@ -146,7 +146,7 @@ Channel Map View - active channel switching
     Click Element    id:SpectralProfilerButton
     # use the spectral profile plot to switch to a new active channel
     Click Element    data:testid:spectral-profiler-0-plot
-    Wait Until Page Does Not Contain    ${PROGRESS_CLOUD}
+    Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
     Sleep    5
     # close spectral profiler
     Click Element    data:testid:spectral-profiler-0-header-close-button

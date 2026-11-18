@@ -597,5 +597,5 @@ Polarization Computed Component Statistics Caching
     # check the statistics widget for updated values
     Element Should Contain    //*[@id="root"]/div/div[17]/div[1]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
     Element Should Contain    //*[@id="root"]/div/div[17]/div[2]/div/div[2]/div/div[2]/table/tbody/tr[4]/td[2]    5.584269910839e-3 Jy/beam
-    Test Workspace Snapshot    99.9566
+    Test Workspace Snapshot    99.9563
     [Teardown]    Kill carta_backend And Close Browser

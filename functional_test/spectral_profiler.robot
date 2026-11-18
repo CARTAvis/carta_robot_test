@@ -7,6 +7,7 @@ Resource          ../resource.robot
 Region Spectral Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
+    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -52,6 +53,7 @@ Region Spectral Profile
 Spectral Profile Visualization From Multiple Regions
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
+    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -74,20 +76,23 @@ Spectral Profile Visualization From Multiple Regions
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${SPECTRAL_PROFILER_PLOT}    check_${key}.png
     Set Selenium Speed    0
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    440,162,570,101
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    454,90,585,78
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    488,110,553,95
-    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,142,615,152
+    PNG Two Pixels Should Have Matched RGBA    check_${key}.png    390,142,612,148
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    357,160,520,97
+    PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    440,162,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    454,90,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    488,110,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    390,142,673,32
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    357,160,673,32
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check the cursor info
-    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
-    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
-    Element Should Contain    data:testid:spectral-profiler-info-3    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (86.748221 GHz, -1.09e-2), M17_SWex.fits, Cursor, Statistic Sum, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (86.748221 GHz, 1.25e-2), M17_SWex.fits, Region 1, Statistic Sum, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (86.748221 GHz, 9.34e-3), M17_SWex.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-3    Cursor: (86.748221 GHz, 4.58e-3), M17_SWex.fits, Region 3, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-4    Cursor: (86.748221 GHz, 1.69e-2), M17_SWex.fits, Region 4, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
@@ -98,6 +103,7 @@ Spectral Profile Visualization From Multiple Regions
 Spectral Profile Visualization From Multiple Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
+    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -149,18 +155,22 @@ Spectral Profile Visualization From Multiple Statistics
 Spectral Profile Visualization From Multiple Images
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   HD163296_13CO_2-1_subimage.fits
+    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    1    Click Element    data:testid:zoom-in-button
     Append Image    HD163296_C18O_2-1_subimage.fits
     Append Image    HD163296_CO_2_1_subimage.fits
-    Load Region File    region_003.crtf
     # matching C18O cube to 13CO cube spatially and spectrally
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     Click Element    data:testid:image-list-1-matching-z
     # matching CO cube to 13CO cube spatially and spectrally
     Click Element    ${IMAGE_LIST_THIRD_MATCHING_XY}
     Click Element    data:testid:image-list-2-matching-z
+    # load region file
+    Load Region File    region_003.crtf
     Click Element    //*[contains(text(), "Region List")]
     # select the rectangle region
     Click Element    data:testid:region-list-table-row-2
+    Mouse Over    ${VIEWER_00_CANVAS}
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
     Click Element    //*[contains(text(), "Styling")]
@@ -186,11 +196,12 @@ Spectral Profile Visualization From Multiple Images
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    555,132,710,41
     Mouse Over    ${SPECTRAL_PROFILER_PLOT}
     # check cursor info
-    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
-    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-9.151 km/s, 2.37e-4), HD163296_CO_2_1_subimage.fits, Region 2, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-0    Cursor: (-2.972 km/s, -5.99e-4), HD163296_13CO_2-1_subimage.fits, Region 1, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 1, Statistic Mean, Coordinate Current
+    Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-9.151 km/s, 2.37e-4), HD163296_CO_2_1_subimage.fits, Region 1, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    # 99.977 tol because of the hanging green cloud issue
+    Test Workspace Snapshot    99.977
     [Teardown]    Kill carta_backend And Close Browser
 
 

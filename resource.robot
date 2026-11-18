@@ -348,6 +348,8 @@ Test Workspace Snapshot
     Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
     ${key_workspace}=    Generate Random String    8
     Capture Page Screenshot    workspace_before_${key_workspace}.png
+    # get source
+    #${PAGE_SOURCE_BEFORE}=    Get Source
     # save the current workspace with a unique name
     Click Element    //*[normalize-space(text())='File']
     Click Element    //*[normalize-space(text())='Save Workspace']
@@ -375,6 +377,8 @@ Test Workspace Snapshot
     Wait Until Page Contains    Workspace loaded    timeout=5
     Wait Until Page Does Not Contain    Workspace loaded    timeout=10
     Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
+    #Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    #${PAGE_SOURCE_AFTER}=    Get Source
     Capture Page Screenshot    workspace_after_${key_workspace}.png
     # remove saved workspace
     Click Element    //*[normalize-space(text())='File']
@@ -386,6 +390,7 @@ Test Workspace Snapshot
     Wait Until Page Contains    Delete the workspace
     Click Element    //*[normalize-space(text())='OK']
     PNG Images Should Be Identical    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png    ${tolerance}
+    #Should Be Equal As Strings    ${PAGE_SOURCE_BEFORE}    ${PAGE_SOURCE_AFTER}
     #Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png
     ELSE
     Log    Workspace snapshot test is disabled.
