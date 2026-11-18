@@ -259,6 +259,7 @@ Single Spectral Profile Intensity Unit Conversion
 Single Spectral Profile Smoothing
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
+    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -353,6 +354,7 @@ Multiple Spectral Profiles Smoothing
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   HD163296_13CO_2-1_subimage.fits
     Append Image    HD163296_C18O_2-1_subimage.fits
+    Mouse Over    ${VIEWER_10_CANVAS}
     # match C18O cube to 13CO cube spatially and spectrally via the image list widget
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     Click Element    data:testid:image-list-1-matching-z
@@ -403,6 +405,9 @@ Multiple Spectral Profiles Smoothing
 Spectral Profile Fitting Guess Then Fit
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
+    # workaround to avoid inconsistent displayed world coordinates in the spatial profiler after workspace restoration
+    Mouse Over    ${VIEWER_DIV}
+    Click Element    data:testid:zoom-out-button
     # enter the point region creation mode via the region shortcut button
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     # create a point region at the center of the image view
