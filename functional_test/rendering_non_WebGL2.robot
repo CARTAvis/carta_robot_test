@@ -291,6 +291,7 @@ Standard Coordinate Grid And Orthogonal Offset Grid Rendering
     Double Click Element    id:numericInput-30
     Click Element    ${VIEWER_SETTINGS_DIALOG_CLOSE_BUTTON} 
 
+    Mouse Over    ${VIEWER_10_CANVAS}
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    grid_gal_offset_${key}.png
     Click Element    ${VIEWER_10_WCS_BUTTON}

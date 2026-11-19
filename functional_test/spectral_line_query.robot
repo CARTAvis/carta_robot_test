@@ -7,14 +7,14 @@ Resource          ../resource.robot
 Query Splatalogue
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     Click Element    id:SpectralLineQueryWidgetButton
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to GHz
     Click Element    //*[@data-testid="spectral-line-query-unit-dropdown"]/option[contains(text(), "GHz")]
@@ -22,7 +22,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349.500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to cm
     Click Element    //*[@data-testid="spectral-line-query-unit-dropdown"]/option[contains(text(), "cm")]
@@ -30,7 +30,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.08577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     # set unit to mm
     Click Element    //*[@data-testid="spectral-line-query-unit-dropdown"]/option[contains(text(), "mm")]
@@ -38,7 +38,7 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    0.8577752732474964    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_MODE_DROPDOWN}
     # set query mode from FROM-TO to CENTER-WIDTH
     Click Element    //*[@data-testid="spectral-line-query-mode-dropdown"]/option[contains(text(), "Center")]
@@ -46,47 +46,47 @@ Query Splatalogue
     Input Text    ${SPECTRAL_LINE_QUERY_WIDTH_INPUT}    0.00015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    //*[@data-testid="spectral-line-query-unit-dropdown"]/option[contains(text(), "cm")]
     Input Text    ${SPECTRAL_LINE_QUERY_CENTER_INPUT}    0.08579348616287572    True
     Input Text    ${SPECTRAL_LINE_QUERY_WIDTH_INPUT}    0.000015958838126084451    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    //*[@data-testid="spectral-line-query-unit-dropdown"]/option[contains(text(), "MHz")]
     Input Text    ${SPECTRAL_LINE_QUERY_CENTER_INPUT}    349435    True
     Input Text    ${SPECTRAL_LINE_QUERY_WIDTH_INPUT}    65    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).        
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).        
     Click Element    ${SPECTRAL_LINE_QUERY_UNIT_DROPDOWN}
     Click Element    //*[@data-testid="spectral-line-query-unit-dropdown"]/option[contains(text(), "GHz")]
     Input Text    ${SPECTRAL_LINE_QUERY_CENTER_INPUT}    349.435    True
     Input Text    ${SPECTRAL_LINE_QUERY_WIDTH_INPUT}    0.065    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).       
-    Test Workspace Snapshot    99.928
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).       
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Line Table Filtering And Shifting
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     Click Element    id:SpectralLineQueryWidgetButton
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     # apply a filter to the Species field
     Input Text    data:testid:filterable-table-filter-input-1    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     #Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 435 line(s). Applied 1 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 436 line(s). Applied 1 filter(s).
     # set a velocity to compute shifted frequencies
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
@@ -105,24 +105,24 @@ Line Table Filtering And Shifting
     Input Text    data:testid:filterable-table-filter-input-3    349420..349423
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     #Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 435 line(s). Applied 2 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 436 line(s). Applied 2 filter(s).
     #Sleep    0.5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
-    Test Workspace Snapshot    
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Line Table Column Configuration
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     Click Element    id:SpectralLineQueryWidgetButton
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     # hide Chemical Name column
     Click Element    css:[data-testid="catalog-header-table-switch-2"] + span
     # verify Chemical Name column is hidden so the column becomes Shifted Frequency
@@ -139,6 +139,7 @@ Line Table Column Configuration
 Line ID Overlay On Spectral Profiler
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     # create a point region at the view center
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
     Click Element    ${VIEWER_DIV}
@@ -159,12 +160,12 @@ Line ID Overlay On Spectral Profiler
     Input Text    ${SPECTRAL_LINE_QUERY_TO_INPUT}    349500    True
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
     # apply a filter to the Species field
     Input Text    data:testid:filterable-table-filter-input-1    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     #Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 435 line(s). Applied 1 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 436 line(s). Applied 1 filter(s).
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4.5    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # select all filtered lines in the table
@@ -250,6 +251,6 @@ Line ID Overlay On Spectral Profiler with Rest Frame Conversion
     Capture Element Screenshot    data:testid:spectral-profiler-0-plot    with_label_${key}.png
     PNG Pixel XY Should Match RGBA    with_label_${key}.png    463,167,28,110,66,255
     Remove Files    with_label_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.749
     [Teardown]    Kill carta_backend And Close Browser
 
