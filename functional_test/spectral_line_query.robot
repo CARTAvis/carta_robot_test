@@ -84,7 +84,7 @@ Line Table Filtering And Shifting
     Input Text    data:testid:filterable-table-filter-input-1    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     #Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 435 line(s). Applied 1 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 436 line(s). Applied 1 filter(s).
     # set a velocity to compute shifted frequencies
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
@@ -103,7 +103,7 @@ Line Table Filtering And Shifting
     Input Text    data:testid:filterable-table-filter-input-3    349420..349423
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     #Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 435 line(s). Applied 2 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 2 filtered line(s) of total 436 line(s). Applied 2 filter(s).
     #Sleep    0.5
     Click Element    ${SPECTRAL_LINE_QUERY_RESET_BUTTON}
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 436 line(s).
@@ -160,7 +160,7 @@ Line ID Overlay On Spectral Profiler
     Input Text    data:testid:filterable-table-filter-input-1    CH3CN v \= 0
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     #Sleep    0.5
-    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 435 line(s). Applied 1 filter(s).
+    Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 9 filtered line(s) of total 436 line(s). Applied 1 filter(s).
     Input Text    ${SPECTRAL_LINE_QUERY_FREQUENCY_SHIFT_INPUT}    4.5    True
     Click Element    ${SPECTRAL_LINE_QUERY_FILTER_BUTTON}
     # select all filtered lines in the table
