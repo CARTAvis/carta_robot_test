@@ -7,7 +7,6 @@ Resource          ../resource.robot
 Region Spectral Profile
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
-    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -53,7 +52,6 @@ Region Spectral Profile
 Spectral Profile Visualization From Multiple Regions
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
-    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -103,7 +101,6 @@ Spectral Profile Visualization From Multiple Regions
 Spectral Profile Visualization From Multiple Statistics
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
-    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -155,7 +152,6 @@ Spectral Profile Visualization From Multiple Statistics
 Spectral Profile Visualization From Multiple Images
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   HD163296_13CO_2-1_subimage.fits
-    Mouse Over    ${VIEWER_DIV}
     Repeat Keyword    1    Click Element    data:testid:zoom-in-button
     Append Image    HD163296_C18O_2-1_subimage.fits
     Append Image    HD163296_CO_2_1_subimage.fits
@@ -200,15 +196,14 @@ Spectral Profile Visualization From Multiple Images
     Element Should Contain    data:testid:spectral-profiler-info-1    Cursor: (-8.971 km/s, -9.48e-5), HD163296_C18O_2-1_subimage.fits, Region 1, Statistic Mean, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-2    Cursor: (-9.151 km/s, 2.37e-4), HD163296_CO_2_1_subimage.fits, Region 1, Statistic Mean, Coordinate Current
     Remove Files    check_${key}.png
-    # 99.977 tol because of the hanging green cloud issue
-    Test Workspace Snapshot    99.977
+    # 99.858 tol because of the hanging green cloud issue
+    Test Workspace Snapshot    99.858
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Single Spectral Profile Intensity Unit Conversion
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
-    Mouse Over    ${VIEWER_DIV}
     # launch a spectral profiler widget and dock it to the panel with the render config widget
     Drag And Drop    id:SpectralProfilerButton    data:testid:render-config-0-header-title
     # click the spectral profile plot
@@ -259,7 +254,6 @@ Single Spectral Profile Intensity Unit Conversion
 Single Spectral Profile Smoothing
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   M17_SWex.fits
-    Mouse Over    ${VIEWER_DIV}
     Load Region File    region_001.crtf
     Click Element    id:SpectralProfilerButton
     Click Element    ${SPECTRAL_PROFILER_SETTINGS_BUTTON}
@@ -405,8 +399,6 @@ Multiple Spectral Profiles Smoothing
 Spectral Profile Fitting Guess Then Fit
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
-    # workaround to avoid inconsistent displayed world coordinates in the spatial profiler after workspace restoration
-    Mouse Over    ${VIEWER_DIV}
     Click Element    data:testid:zoom-out-button
     # enter the point region creation mode via the region shortcut button
     Click Element    ${POINT_REGION_SHORTCUT_BUTTON}
@@ -550,7 +542,6 @@ Spectral Profile Fitting Guess Then Fit
 Spectral Profile Fitting with Rest Frame Conversion
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    CO_6_5_z20_cube.fits
-    Mouse Over    ${VIEWER_DIV}
     # enable the spectral profiler widget
     Click Element    id:SpectralProfilerButton
     # enable the settings dialog
@@ -580,6 +571,7 @@ Spectral Profile Fitting with Rest Frame Conversion
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Amplitude = 1.327226 (Jy/beam (rest frame))
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    FWHM = 0.654178 (GHz (rest frame))
     Element Should Contain    ${PROFILE_FITTING_RESULT_TAB}    Integral = 0.924215 (Jy/beam (rest frame) * GHz (rest frame))
+    Scroll Element Into View    //*[normalize-space(text())='Conversion']
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 

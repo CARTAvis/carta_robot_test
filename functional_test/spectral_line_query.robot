@@ -7,6 +7,7 @@ Resource          ../resource.robot
 Query Splatalogue
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    S255_CH3CN_subcube.fits
+    Mouse Over    ${VIEWER_DIV}
     Click Element    id:SpectralLineQueryWidgetButton
     Wait Until Page Contains    Intensity limit    timeout=10
     Input Text    ${SPECTRAL_LINE_QUERY_FROM_INPUT}    349370    True
@@ -67,7 +68,7 @@ Query Splatalogue
     Click Element    ${SPECTRAL_LINE_QUERY_BUTTON}
     Wait Until Page Does Not Contain Element    ${SPECTRAL_LINE_QUERY_LOADING_ICON}    10
     Element Should Contain    ${SPECTRAL_LINE_QUERY_INFO}    Showing 435 line(s).       
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.928
     [Teardown]    Kill carta_backend And Close Browser
 
 

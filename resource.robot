@@ -431,6 +431,7 @@ Load Initial Image
     Double Click Element    ${IMAGE_TO_LOAD_XPATH}
     Wait Until Page Does Not Contain    File Browser    timeout=20
     Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    Mouse Over    ${VIEWER_DIV}
 
 
 Load Image 
