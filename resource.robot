@@ -386,7 +386,8 @@ Test Workspace Snapshot
     Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
     Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
     Sleep    1
-    Click Element    //*[normalize-space(text())='Delete']
+    #Click Element    //*[normalize-space(text())='Delete']
+    Click Element    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[3]/div/a[1]
     Wait Until Page Contains    Delete the workspace
     Click Element    //*[normalize-space(text())='OK']
     PNG Images Should Be Identical    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png    ${tolerance}

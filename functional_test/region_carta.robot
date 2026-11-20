@@ -56,7 +56,7 @@ Region selecting, centering, locking, and deleting
     Remove Files    check_polygon_selected_from_viewer_${key}.png    check_polyline_selected_from_list_${key}.png    check_polygon_center_fov_${key}.png
     Remove Files    check_polygon_center_fov_selected_${key}.png    check_polygon_center_fov_selected_locked_${key}.png
     Remove Files    check_polygon_center_fov_selected_locked_tried_delete_${key}.png    check_polygon_center_fov_selected_locked_tried_delete_unlocked_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.848
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -177,6 +177,8 @@ Creating Regions And Export As Region Files
     Input Text    //input[@placeholder="Enter file name"]    e2e_check_region_world.reg
     Click Element    //*[contains(text(), "Export regions")]
 
+    Wait Until Page Does Not Contain    Exported regions for    timeout=10
+
     # compare generated regions files with snapshot region files
     Set Selenium Speed    0
     ${test_world_crtf} =    Get File    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf
@@ -196,7 +198,7 @@ Creating Regions And Export As Region Files
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_region_world.reg
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.853
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -267,7 +269,7 @@ Shared Region And Region Inheritance
     Verify Region List Table Cell Content    2    5    Region 5
     Verify Region List Table Cell Content    3    5    Region 6
 
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.9887
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -290,7 +292,8 @@ Loading 4000 Regions From A File
     Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, 200000)
 
     Page Should Contain    Region 4000
-    Test Workspace Snapshot    
+    Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, -200000)
+    Test Workspace Snapshot    99.853
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -298,6 +301,7 @@ Loading Regions on Active Matched Image
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    m51cm3i_8_small.fits
     Append Image    m51_151_MHz.fits
+    Mouse Over    ${VIEWER_10_CANVAS}
     # match m51_151_MHz.fits to m51cm3i_8_small.fits by clicking the XY button in the image list
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     Load Region File    region_004.crtf
@@ -321,6 +325,7 @@ Loading Regions on Active Reference Image
     Click Element    ${IMAGE_LIST_SECOND_MATCHING_XY}
     # set m51cm3i_8_small.fits as active by clicking it in the image list
     Click Element    ${IMAGE_LIST_FIRST_IMAGE_NAME}
+    Mouse Over    ${VIEWER_00_CANVAS}
     Load Region File    region_004.crtf
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -467,6 +472,9 @@ Manipulating Multiple Regions
 Dynamic Region Dialog For Multiple Regions
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Click Element    //*[contains(text(), "Region List")]
+    Click Element    ${X_SPATIAL_PROFILER_CLOSE_BUTTON}
+    Click Element    ${Y_SPATIAL_PROFILER_CLOSE_BUTTON}
     # create annotations
     Click Element    data:testid:annotation-shortcut-dropdown
     Click Element    data:testid:annotation-shortcut-dropdown-vector
@@ -501,7 +509,7 @@ Dynamic Region Dialog For Multiple Regions
     Click Element    //*[contains(text(), "Annotation 2")]    modifier=SHIFT
     Double Click Element    //*[contains(text(), "Annotation 2")]
     # relocate the region dialog
-    Drag And Drop By Offset    id:title-bp-dialog-12    -300    0
+    Drag And Drop By Offset    id:title-bp-dialog-14    -320    0
 
     Element Should Contain    data:testid:region-dialog    Color
     Element Should Contain    data:testid:region-dialog    Line width (px)
@@ -554,6 +562,8 @@ Dynamic Region Dialog For Multiple Regions
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
+
+
 Region Control Point Keyboard Interaction
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HD163296_CO_2_1.mom0.fits
@@ -575,4 +585,7 @@ Region Control Point Keyboard Interaction
     PNG Pixel XY Should Match RGBA    check.png    320,306,255,255,255,255
     
     Remove Files    check.png
+
+    Press Keys    None    ESC
+    Test Workspace Snapshot
     [Teardown]    Kill carta_backend And Close Browser

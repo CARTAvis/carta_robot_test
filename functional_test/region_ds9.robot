@@ -6,7 +6,8 @@ Resource          ../resource.robot
 *** Test Cases ***
 Import World Coordinate ds9 Region Made In ds9
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_region_generated_with_ds9.reg
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -178,13 +179,14 @@ Import World Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.850
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Import World Coordinate ds9 Region Made In ds9 Without Header
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_region_generated_with_ds9_no_header.reg
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -356,14 +358,15 @@ Import World Coordinate ds9 Region Made In ds9 Without Header
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.855
     [Teardown]    Kill carta_backend And Close Browser
 
 
 
 Import Image Coordinate ds9 Region Made In ds9
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_region_generated_with_ds9_pix.reg
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -535,7 +538,7 @@ Import Image Coordinate ds9 Region Made In ds9
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,537,68
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    538,67,492,68
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.855
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -622,7 +625,7 @@ Import World Coordinate ds9 Region Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.853
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -707,6 +710,6 @@ Import Image Coordinate ds9 Region Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    358,218,511,180
 
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.848
     [Teardown]    Kill carta_backend And Close Browser
 
