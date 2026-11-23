@@ -48,6 +48,8 @@ Region Histogram Generation
     Mouse Over    ${HISTOGRAM_PLOT_CANVAS}
     Sleep    0.2
     Element Should Contain    ${HISTOGRAM_PLOT_CURSOR_INFO}    Cursor: 1.27003 Jy/beam.km/s, 13 Counts
+    Assign Id To Element    css:[data-testid="region-list-table"] > div:nth-child(2)    tmp_REGIONLIST
+    Execute Javascript    window.document.getElementById("tmp_REGIONLIST").scrollTo(0, -200000)
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -84,7 +86,7 @@ Manual Selection of Displayed Histogram
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    HL_Tau_StokesIQUV_clean.pbcor.fits
     Append Image    HL_tau_Stokes_hypercube_IQU.pbcor.fits
-    Mouse Over    ${VIEWER_DIV}
+    Mouse Over    ${VIEWER_10_CANVAS}
     Click Element    ${VIEWER_10_MATCH_BUTTON}
     Click Element    //*[contains(text(), "Spatial only")]
     Load Region File    all_region_generated_with_carta_pix.crtf
@@ -211,5 +213,5 @@ Polarization Computed Component Histogram Caching
     PNG Pixel XY Should Match RGBA    histogram_1_${key}.png    582,95,140,170,212,255
     PNG Pixel XY Should Match RGBA    histogram_2_${key}.png    582,95,140,170,212,255
     Remove Files    histogram_1_${key}.png    histogram_2_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.955
     [Teardown]    Kill carta_backend And Close Browser

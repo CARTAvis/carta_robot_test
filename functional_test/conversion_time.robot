@@ -10,6 +10,7 @@ Time conversion
     Append Image    variable_source_10.fits
     Append Image    variable_source_08.fits
     Click Element    data:testid:image-list-3-matching-t
+    Mouse Over    ${VIEWER_11_CANVAS}
 
     # switch to the animator widget and enable its settings dialog
     Click Element    //*[normalize-space(text())='Animator']

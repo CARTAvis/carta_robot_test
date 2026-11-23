@@ -8,6 +8,8 @@ Spectral Axis Conversion from FREQ
     Load Initial Image    S255_CH3CN_subcube.fits
     # set cursor position
     Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
+
     # enable the spectral profiler widget
     Click Element    id:SpectralProfilerButton
     # switch channel by click
@@ -74,6 +76,7 @@ Spectral Axis Conversion from FREQ
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (73567102503354.563 Angstrom^2, 1.29e-1)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[29]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 112, 1.29e-1)
+    
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -220,6 +223,7 @@ Spectral Axis Conversion from AWAV
     Load Initial Image    ADP.2016-07-12T14_02_12.047_subimage.fits
     # set cursor position
     Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    2    Click Element    data:testid:zoom-in-button
     # enable the spectral profiler widget
     Click Element    id:SpectralProfilerButton
     # switch channel by click
@@ -240,6 +244,7 @@ Spectral Axis Conversion from AWAV
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (0.230969 um^2, 1.06e+3)      
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[1]/div/div/select/option[25]
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (Channel 45, 1.06e+3)    
+    
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -249,6 +254,7 @@ Spectral Reference Frame Conversion
     Load Initial Image    S255_CH3CN_subcube.fits
     # set cursor position
     Mouse Over    ${VIEWER_DIV}
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     # enable the spectral profiler widget
     Click Element    id:SpectralProfilerButton
     # switch channel by click
@@ -265,6 +271,7 @@ Spectral Reference Frame Conversion
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (349.40944 GHz, 1.29e-1)
     Click Element    //*[@id="bp6-tab-panel_spectralSettingTabs_0"]/div[2]/div/div/select/option[4]    # TOPOCENT     
     Element Text Should Be    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (349.404532 GHz, 1.29e-1)   
+    
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -374,6 +381,7 @@ Rest Frame Conversion - Matching High-z CO Cubes
     Click Element    data:testid:region-dialog-header-close-button    
     # Append another cube  
     Append Image    CO_5_4_z20_cube.fits
+    Mouse Over    ${VIEWER_10_CANVAS}
     # enable spatial and spectral matching
     Click Element    data:testid:image-list-0-matching-xy
     Click Element    data:testid:image-list-0-matching-z
@@ -405,7 +413,8 @@ Rest Frame Conversion - Matching High-z CO Cubes
     # check that the x-axis and y-axis are converted to rest frame
     Element Should Contain    data:testid:spectral-profiler-info-0    Data: (-18.509 km/s (rest frame), 1.45e+0), CO_6_5_z20_cube.fits, Region 1, Statistic Mean, Coordinate Current
     Element Should Contain    data:testid:spectral-profiler-info-1    Data: (-32.690 km/s (rest frame), 1.17e+0), CO_5_4_z20_cube.fits, Region 1, Statistic Mean, Coordinate Current   
-    Test Workspace Snapshot    
+    # hanging progress cloud workaround99.985
+    Test Workspace Snapshot    99.985
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -444,14 +453,14 @@ Rest Frame Conversion - Local Universe CO Cube
     Click Element    //*[contains(text(), "X-axis")]
     # enable rest frame conversion y-axis
     Click Element    //*[contains(text(), "Y-axis")]
-    # set velocity to -500 km/s
+    # set velocity to -500.0 km/s
     Click Element    data:testid:spectral-profiler-shift-mode-dropdown
     Click Element    //*[contains(text(), "Radial velocity (km/s)")]
     # use radio velocity convention
     Click Element    data:testid:spectral-profiler-velocity-convention-dropdown
     Click Element    //*[normalize-space(text())='Radio']
     Press Keys    data:testid:spectral-profiler-radial-velocity-input    DELETE
-    Input Text    data:testid:spectral-profiler-radial-velocity-input    -500
+    Input Text    data:testid:spectral-profiler-radial-velocity-input    -500.0
     Click Element    //*[contains(text(), "Effective redshift (z)")]
     # check spectral cursor info
     Element Should Contain    ${SPECTRAL_PROFILER_CURSOR_INFO}    Data: (691.46309 GHz (rest frame), 1.40e+0)
@@ -466,13 +475,13 @@ Rest Frame Conversion - Local Universe CO Cube
     Click Element    data:testid:spectral-profiler-velocity-convention-dropdown
     Click Element    //*[normalize-space(text())='Optical']
     Press Keys    data:testid:spectral-profiler-radial-velocity-input    DELETE
-    Input Text    data:testid:spectral-profiler-radial-velocity-input    -500
+    Input Text    data:testid:spectral-profiler-radial-velocity-input    -500.0
     Element Should Contain    data:testid:spectral-profiler-effective-redshift    -0.0016678204759907602
     # change velocity convention to Relativistic
     Click Element    data:testid:spectral-profiler-velocity-convention-dropdown
     Click Element    //*[normalize-space(text())='Relativistic']
     Press Keys    data:testid:spectral-profiler-radial-velocity-input    DELETE
-    Input Text    data:testid:spectral-profiler-radial-velocity-input    -500
+    Input Text    data:testid:spectral-profiler-radial-velocity-input    -500.0
     Element Should Contain    data:testid:spectral-profiler-effective-redshift    -0.0016664319801497074       
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

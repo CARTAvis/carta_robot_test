@@ -437,7 +437,6 @@ Export as TSV or TXT
     Remove Files    ${filepath}
     Set Selenium Speed    ${DELAY}            
 
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 # TODO: add test for image viewer PNG export
