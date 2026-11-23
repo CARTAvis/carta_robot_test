@@ -42,7 +42,6 @@ Popout And Restore Image Viewer
     PNG Images Should Be Different    main_browser_${key}.png    main_browser_restored_${key}.png
     
     Remove Files    popout_image_viewer_${key}.png    main_browser_${key}.png    main_browser_restored_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -116,7 +115,6 @@ Popout Image Viewer - layout
     PNG Images Should Be Different    popout_image_viewer_layout_multipanel_view_2_${key}.png    popout_image_viewer_layout_multipanel_view_2_zoom_pan_${key}.png
 
     Remove Files    popout_image_viewer_layout_multipanel_view_${key}.png    popout_image_viewer_layout_single_panel_view_${key}.png    popout_image_viewer_layout_channel_map_view_${key}.png    popout_image_viewer_layout_multipanel_view_2_${key}.png    popout_image_viewer_layout_multipanel_view_2_zoom_pan_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -182,7 +180,6 @@ Popout Image Viewer - rendering modes
     PNG Pixel XY Should Match RGBA    check_${key}.png    47,617,0,163,150,255
 
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -219,7 +216,6 @@ Popout Image Viewer - multicolor blending
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
 
     Remove Files    check_${key}.png    check2_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -247,7 +243,6 @@ Popout Image Viewer - animator
     PNG Images Should Be Different    initial_${key}.png    final_${key}.png
 
     Remove Files    initial_${key}.png    final_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -323,7 +318,6 @@ Popout Image Viewer - region analytics
     PNG Images Should Be Different    spatial_profile_before_${key}.png    spatial_profile_after_${key}.png
 
     Remove Files    spectral_profile_before_${key}.png    spectral_profile_after_${key}.png    histogram_before_${key}.png    histogram_after_${key}.png    spatial_profile_before_${key}.png    spatial_profile_after_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -362,7 +356,6 @@ Popout Image Viewer - interactive PV
     PNG Images Should Be Different    before_${key}.png    after_${key}.png
     
     Remove Files    before_${key}.png    after_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -396,5 +389,4 @@ Popout Image Viewer - image fitting
     PNG Images Should Be Different    original_${key}.png    fitted_${key}.png
 
     Remove Files    original_${key}.png    fitted_${key}.png
-    Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser

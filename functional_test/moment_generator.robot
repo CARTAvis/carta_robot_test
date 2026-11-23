@@ -213,6 +213,7 @@ Generate All Moment Images
     Set Selenium Speed    ${DELAY}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Remove Files    moment_*_${key}.png
+    Sleep    1
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -279,6 +280,7 @@ Generate Moment Images From Unmatched Cubes
     Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.hdf5.moment.integrated
+    Mouse Over    ${VIEWER_01_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -313,6 +315,7 @@ Generate Moment Images From Matched Cubes
     Click Element    //*[contains(text(), "Animator")]
     Click Element    ${ANIMATOR_PREVIOUS_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex.hdf5.moment.integrated
+    Mouse Over    ${VIEWER_01_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -382,6 +385,8 @@ Generate A Moment Image With A Region Mask FITS
     PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,200,102
     Remove Files    moment_rectangle_mask_${key}.png    moment_ellipse_mask_${key}.png    moment_polygon_mask_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Sleep    1
+    Mouse Over    ${VIEWER_10_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -451,6 +456,8 @@ Generate A Moment Image With A Region Mask HDF5
     PNG Two Pixels Should Not Have Matched RGBA    moment_polygon_mask_${key}.png    451,102,200,102
     Remove Files    moment_rectangle_mask_${key}.png    moment_ellipse_mask_${key}.png    moment_polygon_mask_${key}.png
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
+    Sleep    1
+    Mouse Over    ${VIEWER_10_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -516,6 +523,7 @@ Generate Moment Images With A Custom Rest Frequency
 Generate Moment Images With Rest Frame Conversion
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image    CO_6_5_z20_cube.fits
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     # enable the spectral profiler widget
     Click Element    id:SpectralProfilerButton
     # switch to radio velocity km/s convention

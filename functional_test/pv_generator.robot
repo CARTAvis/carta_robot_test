@@ -153,6 +153,8 @@ PV Image Generation Cancellation And Rerequest
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    687,215,729,25
     PNG Two Pixels Should Not Have Matched RGBA    check_${key}.png    463,215,729,25    
     Remove Files    check_${key}.png
+    # close error toast
+    Click Element At Coordinates    //*[contains(text(), "PV image generator cancelled.")]    155    0
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -206,6 +208,7 @@ PV Image Generation Repeat
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
     PNG Images Should Be Identical    check_${key}.png    check3_${key}.png
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
+    Mouse Over    ${VIEWER_10_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -274,6 +277,7 @@ PV Image Generation With Matched Cubes
     Click Element    ${ANIMATOR_NEXT_BUTTON}
     Element Should Contain    ${VIEWER_TAB_TITLE}    M17_SWex_pv.fits
     Remove Files    check_${key}.png
+    Mouse Over    ${VIEWER_11_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
     
@@ -341,6 +345,7 @@ PV Image Generation With Matched Wide-field Cubes
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    281,400,660,400
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    327,400,706,400
     Remove Files    check_${key}.png
+    Mouse Over    ${VIEWER_11_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -448,6 +453,7 @@ Interactive PV Preview With Customization
     Change Raster Colormap    tab10
     # make pv preview widget active
     Click Element    data:testid:pv-generator-0-pv-preview-0-header-title
+    Mouse Over    ${VIEWER_10_CANVAS}
     Capture Page Screenshot    final_${key}.png
     # checking rendered images
     Set Selenium Speed    0
