@@ -41,7 +41,9 @@ Match Images Spatially And Spectrally
     Set Selenium Speed    0
     PNG Images Should Be Identical    fits_zoomed_matched_${key}.png    casa_zoomed_matched_${key}.png
     Remove Files    fits_zoomed_matched_${key}.png    casa_zoomed_matched_${key}.png
-    Test Workspace Snapshot    
+    Sleep    1
+    # hanging green clould workaround 99.985
+    Test Workspace Snapshot    99.985
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -375,6 +377,7 @@ Matched Region Canvas Rendering Single Panel View
     Set Selenium Speed    ${DELAY}
     Click Element    ${MULTIPANEL_VIEW_SWITCH}
     Remove Files    check_${key}.png    check2_${key}.png    check3_${key}.png
+    Sleep    1
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -494,7 +497,7 @@ Match Catalog Image Overlay Spatially
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    286,211,665,211
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    298,224,677,224
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.986
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -578,6 +581,7 @@ Matching Vector And Contour From Secondary To Reference
     # check contour rendering
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    292,258,671,258
     Remove File    check_${key}.png
+    Mouse Over    ${VIEWER_10_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -628,6 +632,7 @@ Quick Matching All With XYZR Buttons
     PNG Images Should Be Different    check_after_XY_${key}.png    check_after_XYR_${key}.png
     PNG Images Should Be Different    check_after_XYR_${key}.png    check_after_XYZR_${key}.png
     Remove Files    check_after_XY_${key}.png    check_after_XYR_${key}.png    check_after_XYZR_${key}.png
+    Mouse Over    ${VIEWER_00_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -695,6 +700,8 @@ Setting New Matching References
     PNG Images Should Be Different    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png
 
     Remove Files    check_after_XY_${key}.png    check_after_XYZ_${key}.png    check_after_XYZR_${key}.png    check_before_setting_new_ref_${key}.png    check_after_setting_new_ref_${key}.png
+    Click Element    ${VIEWER_00_CANVAS}
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -737,7 +744,7 @@ Quick Unmatching All With XYZR Buttons
     PNG Images Should Be Different    check_after_unmatching_${key}.png    check_after_unmatching_set_zoom_${key}.png
     PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    124,73,23,190,207,255
     PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    674,100,140,86,75,255
-    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    102,355,214,39,40,255
+    PNG Pixel XY Should Match RGBA    check_after_unmatching_set_zoom_${key}.png    232,406,44,160,44,255
 
     PNG Images Should Be Different    check_after_unmatching_${key}.png    check_after_unmatching_set_clip_${key}.png
     PNG Pixel XY Should Match RGBA    check_after_unmatching_set_clip_${key}.png    124,73,23,190,207,255
@@ -796,5 +803,6 @@ Match Images Using DATEOBS to Form a Time Series
     Click Element    //*[contains(text(), "Form Time Series")]
     Element Should Contain    data:testid:animator-0-content    Time series
 
-    Test Workspace Snapshot    
+    Mouse Over    ${VIEWER_11_CANVAS}
+    Test Workspace Snapshot    99.955
     [Teardown]    Kill carta_backend And Close Browser

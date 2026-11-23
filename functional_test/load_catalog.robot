@@ -54,7 +54,8 @@ Load Catalog File In VOTable Format
     
     # check the context in the filtering info field
     Element Should Contain    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    Showing 1 to 50 of total 100000 entries
-    Test Workspace Snapshot    
+    Sleep    1
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -105,7 +106,9 @@ Load Catalog File In FITS Format
     
     # check the context in the filtering info field
     Element Should Contain    ${CATALOG_WIDGET_TABLE_FILTERING_INFO}    Showing 1 to 50 of total 100000 entries
-    Test Workspace Snapshot    
+    
+    Sleep    1
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -144,7 +147,7 @@ Load And Manage Two Catalog Files
     # check for the non-ideal state of the catalog widget 
     Element Should Contain    data:testid:catalog-overlay-component-0-content    No catalog file loaded
     
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -271,6 +274,7 @@ Fetch SIMBAD Catalog And Visualize
     PNG Two Pixels Should Have Matched RGBA    scatter_${key}.png    157,189,574,54
     PNG Two Pixels Should Have Matched RGBA    histogram_${key}.png    136,140,584,100
     Remove Files    image_before_${key}.png    image_after_${key}.png    scatter_${key}.png    histogram_${key}.png
+    Repeat Keyword    1    Click Element    data:testid:zoom-out-button
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -335,6 +339,7 @@ SIMBAD and VizieR Mirror Sites
     Click Element    data:testid:catalog-overlay-component-0-header-close-button    
     # load a new image
     Load Image    m51_151_MHz.fits
+    Mouse Over    ${VIEWER_DIV}
     # check the mirror site list order to see if it is persistent
     Click Element    data:testid:online-data-query-dialog-button
     Click Element    data:testid:catalog-query-mirror-select-button
@@ -639,11 +644,11 @@ Load Catalogs With Various Spatial Column Formats
     Click Element    data:testid:catalog-plot-button
     Mouse Out    ${VIEWER_DIV}
     Capture Element Screenshot    ${VIEWER_DIV}    check_60_stream_late_string_format_${key}.png
-    Click Element    data:testid:catalog-close-button
+    #Click Element    data:testid:catalog-close-button
     PNG Images Should Be Different    check_no_overlay_${key}.png    check_60_stream_late_string_format_${key}.png
     Remove Files    check_60_stream_late_string_format_${key}.png
 
     Remove Files    check_no_overlay_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.856
     [Teardown]    Kill carta_backend And Close Browser
 

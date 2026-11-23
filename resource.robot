@@ -372,8 +372,8 @@ Test Workspace Snapshot
     Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
     Sleep    1
     Click Element    //*[normalize-space(text())='Open']
-    Wait Until Page Does Not Contain    Loading workspace...    timeout=180
-    Wait Until Page Does Not Contain    Opening workspace    timeout=180
+    Wait Until Page Does Not Contain    Loading workspace...    timeout=60
+    Wait Until Page Does Not Contain    Opening workspace    timeout=60
     Wait Until Page Contains    Workspace loaded    timeout=5
     Wait Until Page Does Not Contain    Workspace loaded    timeout=10
     Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0

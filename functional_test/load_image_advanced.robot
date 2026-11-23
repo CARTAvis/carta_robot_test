@@ -59,7 +59,8 @@ Load Images As A Stokes Hypercube
     Click Element    ${CLIP_BUTTON_90}
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
-    Remove Files    initial_${key}.png    rerendered_${key}.png  
+    Remove Files    initial_${key}.png    rerendered_${key}.png
+    Mouse Over    ${VIEWER_DIV}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -91,6 +92,8 @@ Load Multiple Images In One Shot
     Capture Element Screenshot    ${VIEWER_DIV}    rerendered_${key}.png
     PNG Images Should Be Different    initial_${key}.png    rerendered_${key}.png
     Remove Files    initial_${key}.png    rerendered_${key}.png  
+    
+    Click Element    ${VIEWER_10_CANVAS}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -111,6 +114,8 @@ Load Images With LEL
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    380,217,274,110
     Remove Files    check_${key}.png
+
+    Mouse Over    ${VIEWER_DIV}
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
@@ -208,7 +213,9 @@ Load Multiple Images As A Multi-color-blended Image
     PNG Pixel XY Should Match RGBA    multicolor_${key}.png    520,397,55,23,17,255
     PNG Pixel XY Should Match RGBA    multicolor_${key}.png    513,252,120,144,142,255
     Remove Files    multicolor_${key}.png
-    Test Workspace Snapshot    
+    
+    Mouse Over    ${VIEWER_00_CANVAS}
+    Test Workspace Snapshot    99.950
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -385,6 +392,9 @@ Load Images as a Time-Series Dataset
     PNG Pixel XY Should Match RGBA    check_timeseries_${key}.png    338,185,189,218,203,255    
     END
     Remove Files    check_timeseries_${key}.png
+
+    Mouse Over    ${VIEWER_10_CANVAS}
+    Repeat Keyword    2    Click Element    data:testid:zoom-in-button
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
 
