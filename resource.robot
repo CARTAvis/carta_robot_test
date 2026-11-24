@@ -569,3 +569,54 @@ Clear Input Field
         Double Click Element    ${INPUT_FIELD}    
         Press Keys    None    DELETE
     END
+
+Test Workspace Snapshot
+    [Arguments]    ${tolerance}=99.99
+    Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
+    ${key_workspace}=    Generate Random String    8
+    Capture Page Screenshot    workspace_before_${key_workspace}.png
+    # get source
+    #${PAGE_SOURCE_BEFORE}=    Get Source
+    # save the current workspace with a unique name
+    Click Element    //*[normalize-space(text())='File']
+    Click Element    //*[normalize-space(text())='Save Workspace']
+    Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
+    Sleep    1
+    Click Element    //*[normalize-space(text())='Save']
+    Sleep    1
+    Wait Until Page Contains    Workspace saved    timeout=10
+    Wait Until Page Does Not Contain    Workspace saved
+    # configure layout to default
+    Click Element    //*[normalize-space(text())='View']
+    Click Element    //*[normalize-space(text())='Layout']
+    Mouse Over    //*[normalize-space(text())='Default']
+    Click Element    //*[normalize-space(text())='Apply']
+    Click Element    data:testid:layout-dialog-header-close-button
+    # restore workspace
+    Click Element    //*[normalize-space(text())='File']
+    Click Element    //*[normalize-space(text())='Open Workspace']    
+    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
+    Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
+    Sleep    1
+    Click Element    //*[normalize-space(text())='Open']
+    Wait Until Page Does Not Contain    Loading workspace...    timeout=60
+    Wait Until Page Does Not Contain    Opening workspace    timeout=60
+    Wait Until Page Contains    Workspace loaded    timeout=5
+    Wait Until Page Does Not Contain    Workspace loaded    timeout=10
+    Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
+    #Wait Until Element Is Not Visible    ${PROGRESS_CLOUD}    timeout=10
+    #${PAGE_SOURCE_AFTER}=    Get Source
+    Capture Page Screenshot    workspace_after_${key_workspace}.png
+    # remove saved workspace
+    Click Element    //*[normalize-space(text())='File']
+    Click Element    //*[normalize-space(text())='Open Workspace']
+    Input Text    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[2]/input    tmp_${key_workspace}
+    Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
+    Sleep    1
+    #Click Element    //*[normalize-space(text())='Delete']
+    Click Element    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[3]/div/a[1]
+    Wait Until Page Contains    Delete the workspace
+    Click Element    //*[normalize-space(text())='OK']
+    PNG Images Should Be Identical    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png    ${tolerance}
+    #Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png
+    
