@@ -69,7 +69,7 @@ Catalog Filtering And Sorting
     Element Should Contain    data:testid:filterable-table-0-2    [RRS2014] COS12Rea
     Element Should Contain    data:testid:filterable-table-0-3    SN
 
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -120,7 +120,7 @@ Catalog Column Show And Hide
     Element Should Contain    data:testid:filterable-table-0-1    1.2400000095367432
     Element Should Contain    data:testid:filterable-table-0-2    ZFOURGE COSMOS  5366
     Element Should Contain    data:testid:filterable-table-0-3    Galaxy    
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -210,7 +210,7 @@ Catalog Rendering As Image Overlay With Column Mapping
     PNG Images Should Be Different    check_${key}.png    check2_${key}.png
 
     Remove Files    check_${key}.png    check2_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -572,9 +572,9 @@ Catalog Rendering As Image Overlay With Custom Size
     PNG Pixel XY Should Match RGBA    check_image_pixel_${key}.png    260,61,0,163,150,255
     PNG Pixel XY Should Match RGBA    check_arcsecond_${key}.png    260,57,0,163,150,255
     PNG Pixel XY Should Match RGBA    check_arcminute_${key}.png    260,49,0,163,150,255
-    PNG Pixel XY Should Match RGBA    check_degree_${key}.png    260,32,0,163,150,255
+    PNG Pixel XY Should Match RGBA    check_degree_${key}.png    260,32,57,129,134,255    # as covered by the cursor info bar
 
     Remove Files    check_screen_pixel_${key}.png    check_image_pixel_${key}.png    check_arcsecond_${key}.png    check_arcminute_${key}.png    check_degree_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.851
     [Teardown]    Kill carta_backend And Close Browser
 

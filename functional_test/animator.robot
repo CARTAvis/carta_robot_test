@@ -68,7 +68,7 @@ Animation Playback With Channels
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.970
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -131,7 +131,7 @@ Animation Playback Channel Range
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result} >= ${range_from_index_int} and ${result} <= ${range_to_index_int}
     Remove Files    initial_${key}.png    final_${key}.png 
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.956
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -157,7 +157,7 @@ Animation Playback Channel Step
     ${result}=    Convert To Integer    ${ch_index}
     Should Be True    ${result}%2 == 0
     Remove Files    initial_${key}.png    final_${key}.png 
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.975
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -332,7 +332,9 @@ Animation Playback With Image Set
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
-    Test Workspace Snapshot    
+    
+    Mouse Over    ${VIEWER_DIV}
+    Test Workspace Snapshot    99.975
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -410,7 +412,7 @@ Animation Playback With Polarization Set
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.975
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -519,5 +521,5 @@ Animation Playback With Time Series
     PNG Images Should Be Different    initial_blink_${key}.png    final_blink_${key}.png
 
     Remove Files    initial_forward_${key}.png    final_forward_${key}.png    initial_backward_${key}.png    final_backward_${key}.png    initial_bouncing_${key}.png    final_bouncing_${key}.png    initial_blink_${key}.png    final_blink_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.975
     [Teardown]    Kill carta_backend And Close Browser

@@ -5,7 +5,8 @@ Resource          ../resource.robot
 *** Test Cases ***
 Import World Coordinate CASA Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_annotation_generated_with_carta.crtf
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -204,13 +205,14 @@ Import World Coordinate CASA Annotation Made In CARTA
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,507,298
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,555,298
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.855
     [Teardown]    Kill carta_backend And Close Browser
 
 
 Import Image Coordinate CASA Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_annotation_generated_with_carta_pix.crtf
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -409,14 +411,15 @@ Import Image Coordinate CASA Annotation Made In CARTA
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,507,298
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,555,299
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.855
     [Teardown]    Kill carta_backend And Close Browser
 
 
 
 Import World Coordinate ds9 Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_annotation_generated_with_carta.reg
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -614,14 +617,15 @@ Import World Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,513,296
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.855
     [Teardown]    Kill carta_backend And Close Browser
 
 
 
 Import Image Coordinate ds9 Annotation Made In CARTA
     [Setup]    Setup carta_backend And Open Browser To CARTA
-    Load Initial Image    HD163296_CO_2_1.mom0.fits
+    Load Initial Image    HD163296_CO_2_1.mom1.fits
+    Click Element At Coordinates    ${VIEWER_DIV}    150    0
     Load Region File    all_annotation_generated_with_carta_pix.reg
     ${key}=    Generate Random String    8
     Capture Element Screenshot    ${VIEWER_DIV}    check_${key}.png
@@ -819,7 +823,7 @@ Import Image Coordinate ds9 Annotation Made In CARTA
     PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,558,330
     #PNG Two Pixels Should Have Matched RGBA    check_${key}.png    558,250,513,296
     Remove Files    check_${key}.png
-    Test Workspace Snapshot    
+    Test Workspace Snapshot    99.843
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -935,5 +939,7 @@ Creating Annotations And Export As Region Files
     Should Be Equal As Strings    ${test_world_ds9}    ${snapshot_world_ds9}
 
     Remove Files    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.crtf    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_pixel.reg    ${INITIAL_IMAGE_FOLDER}/e2e_check_annotation_world.reg
+    
+    Wait Until Page Does Not Contain    Exported regions for    timeout=10
     Test Workspace Snapshot    
     [Teardown]    Kill carta_backend And Close Browser
