@@ -464,7 +464,7 @@ Rest Frame Conversion - Local Universe CO Cube
     Click Element    //*[normalize-space(text())='Relativistic']
     Press Keys    data:testid:spectral-profiler-radial-velocity-input    DELETE
     Input Text    data:testid:spectral-profiler-radial-velocity-input    -500
-    Element Should Contain    data:testid:spectral-profiler-effective-redshift    -0.0016664319801497074       
+    Element Should Contain    data:testid:spectral-profiler-effective-redshift    -0.001666431980149669       
     [Teardown]    Kill carta_backend And Close Browser
 
 

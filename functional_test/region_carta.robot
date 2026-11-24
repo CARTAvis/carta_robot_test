@@ -495,7 +495,7 @@ Dynamic Region Dialog For Multiple Regions
     Click Element    //*[contains(text(), "Annotation 2")]    modifier=SHIFT
     Double Click Element    //*[contains(text(), "Annotation 2")]
     # relocate the region dialog
-    Drag And Drop By Offset    id:title-bp-dialog-12    -300    0
+    Drag And Drop By Offset    id:title-bp-dialog-14    -300    0
 
     Element Should Contain    data:testid:region-dialog    Color
     Element Should Contain    data:testid:region-dialog    Line width (px)

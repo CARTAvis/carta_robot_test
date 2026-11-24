@@ -4,7 +4,7 @@ Resource          ../resource.robot
 
 
 *** Test Cases ***
-Workspace Image Viewer - Save and Reload
+Workspace - Image Viewer
     [Setup]    Setup carta_backend And Open Browser To CARTA
     Load Initial Image   spire500_ext.fits
     # create a region
@@ -28,6 +28,7 @@ Workspace Image Viewer - Save and Reload
 
     # match them
     Click Element    data:testid:image-list-0-matching-xy
+    Mouse Over    ${VIEWER_10_CANVAS}
     # generate contours
     Click Element    data:testid:contour-dialog-button
     Input Text    css:[data-testid="contour-config-level-input-form"] input    10
@@ -44,33 +45,7 @@ Workspace Image Viewer - Save and Reload
     Click Element    ${VECTOR_FIELD_RENDERING_APPLY_BUTTON}
     Click Element    ${VECTOR_FIELD_RENDERING_CLOSE_BUTTON}
 
-    # take a screenshot of the viewer
-    ${key}=    Generate Random String    8
-    Capture Element Screenshot    ${VIEWER_DIV}    original_${key}.png
-
-    # save as a workspace
-    Click Element    //*[normalize-space(text())='File']
-    Click Element    //*[normalize-space(text())='Save Workspace']
-    Input Text    //input[@placeholder="Enter workspace name"]    tmp
-    Click Element    //*[normalize-space(text())='Save']
-
-    # load a new image
-    Load Image    m51_151_MHz.fits
-
-    # restore workspace
-    Click Element    //*[normalize-space(text())='File']
-    Click Element    //*[normalize-space(text())='Open Workspace']    
-    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div[1]/div[5]/div/div[2]/div/div/div    tmp
-    Click Element    //*[normalize-space(text())='tmp']
-    Click Element    //*[normalize-space(text())='Open']
-    Sleep    2
-    # take a screenshot of the restored viewer
-    Capture Element Screenshot    ${VIEWER_DIV}    restored_${key}.png
-
-    # check screenshots
-    PNG Images Should Be Identical    original_${key}.png    restored_${key}.png
-
-    Remove Files    original_${key}.png    restored_${key}.png
+    Test Workspace Snapshot
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -101,33 +76,8 @@ Workspace - Multicolor Blending
     # change green channel opacity to 0.5
     Repeat Keyword    5    Click Element    //*[@id="root"]/div/div[16]/div/div[6]/div/div/div/div[3]/div/div/span[1]/div/div[2]/button[2]
 
-    # take a screenshot of the viewer
-    ${key}=    Generate Random String    8
-    Capture Element Screenshot    ${VIEWER_DIV}    original_${key}.png
-
-    # save as a workspace
-    Click Element    //*[normalize-space(text())='File']
-    Click Element    //*[normalize-space(text())='Save Workspace']
-    Input Text    //input[@placeholder="Enter workspace name"]    tmp
-    Click Element    //*[normalize-space(text())='Save']
-
-    # load a new image
-    Load Image    m51_151_MHz.fits
-
-    # restore workspace
-    Click Element    //*[normalize-space(text())='File']
-    Click Element    //*[normalize-space(text())='Open Workspace']    
-    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div/div[1]/div[5]/div/div[2]/div/div/div    tmp
-    Click Element    //*[normalize-space(text())='tmp']
-    Click Element    //*[normalize-space(text())='Open']
-    Sleep    2
-    # take a screenshot of the restored viewer
-    Capture Element Screenshot    ${VIEWER_DIV}    restored_${key}.png
-
-    # check screenshots
-    PNG Images Should Be Identical    original_${key}.png    restored_${key}.png
-
-    #Remove Files    original_${key}.png    restored_${key}.png
+    Mouse Over    ${VIEWER_11_CANVAS}
+    Test Workspace Snapshot
     [Teardown]    Kill carta_backend And Close Browser
 
 
@@ -226,41 +176,7 @@ Workspace - Catalog
     Click Element    //*[@id="listbox-7"]/li[1]/a
     Sleep    2
 
-    # capture a screenshot of the current workspace
-    ${key}=    Generate Random String    8
-    Capture Page Screenshot    workspace_catalog_saved_${key}.png
-
-    # save as a workspace
-    ${key_workspace}=    Generate Random String    8
-    Click Element    //*[normalize-space(text())='File']
-    Click Element    //*[normalize-space(text())='Save Workspace']
-    Input Text    //input[@placeholder="Enter workspace name"]    tmp_${key_workspace}
-    Click Element    //*[normalize-space(text())='Save']
-
-    # load an image and reset to default layout
-    Load Image    M17_SWex.fits
-    Click Element    data:testid:catalog-plot-1-header-close-button
-    Click Element    data:testid:catalog-overlay-component-0-header-close-button
-    Click Element    data:testid:catalog-plot-0-header-close-button
-
-    # restore workspace
-    Click Element    //*[normalize-space(text())='File']
-    Click Element    //*[normalize-space(text())='Open Workspace']    
-    Wait Until Element Contains    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[2]/div[1]/div[1]/div[2]    tmp_${key_workspace}
-    # prevent unexpected hovering on the horizontal scrollbar in the catalog table
-    Drag And Drop By Offset    //*[@id="root"]/div/div[10]/div/div[1]/div[3]/div/div[1]    0    -100
-    Click Element    //*[normalize-space(text())='tmp_${key_workspace}']
-    Wait Until Page Contains Element    //*[normalize-space(text())='Open']
-    Click Element    //*[normalize-space(text())='Open']
-    Wait Until Page Does Not Contain    Loading workspace...    timeout=180
-    Wait Until Page Does Not Contain    Opening workspace    timeout=180
-    Wait Until Page Does Not Contain    Workspace loaded    timeout=5
-    Sleep    2
-    # take a screenshot of the restored viewer
-    Capture Page Screenshot    workspace_catalog_restored_${key}.png
-
-    # check screenshots, using 98.87 as the match rate due to anti-aliasing
-    PNG Images Should Be Identical    workspace_catalog_saved_${key}.png    workspace_catalog_restored_${key}.png    98.885
-
-    #Remove Files    workspace_catalog_saved_${key}.png    workspace_catalog_restored_${key}.png
+    Test Workspace Snapshot
     [Teardown]    Kill carta_backend And Close Browser
+
+
