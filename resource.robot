@@ -500,8 +500,9 @@ Compare Images To Be Different
    Should be True   ${RESULT}
 
 PNG Images Should Be Different
-   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Match_Rate}=99.0
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${TEMP}=         Replace String     ${TEMP}    __MATCH_RATE__     ${Match_Rate}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
    Log              Executing: ${COMMAND}
    ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
@@ -510,8 +511,9 @@ PNG Images Should Be Different
    Should Contain   ${OUTPUT}    different
 
 PNG Images Should Be Identical
-   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}
+   [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Match_Rate}=99.0
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
+   ${TEMP}=         Replace String     ${TEMP}    __MATCH_RATE__     ${Match_Rate}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
    Log              Executing: ${COMMAND}
    ${RC}            ${OUTPUT}=     Run And Return Rc And Output      ${COMMAND}
@@ -570,6 +572,7 @@ Clear Input Field
         Press Keys    None    DELETE
     END
 
+
 Test Workspace Snapshot
     [Arguments]    ${tolerance}=99.99
     Click Element At Coordinates    data:testid:online-data-query-dialog-button    30    0
@@ -618,5 +621,4 @@ Test Workspace Snapshot
     Wait Until Page Contains    Delete the workspace
     Click Element    //*[normalize-space(text())='OK']
     PNG Images Should Be Identical    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png    ${tolerance}
-    #Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png
-    
+    Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png
