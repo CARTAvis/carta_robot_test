@@ -176,7 +176,7 @@ Workspace - Catalog
     Click Element    //*[@id="listbox-7"]/li[1]/a
     Sleep    2
 
-    Test Workspace Snapshot
+    Test Workspace Snapshot    98.885    # due to anti-aliasing error
     [Teardown]    Kill carta_backend And Close Browser
 
 
