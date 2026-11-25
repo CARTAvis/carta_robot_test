@@ -661,4 +661,4 @@ Test Workspace Snapshot
     Wait Until Page Contains    Delete the workspace
     Click Element    //*[normalize-space(text())='OK']
     PNG Images Should Be Identical    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png    ${tolerance}
-    Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png
+    #Remove Files    workspace_before_${key_workspace}.png    workspace_after_${key_workspace}.png

@@ -180,3 +180,27 @@ Workspace - Catalog
     [Teardown]    Kill carta_backend And Close Browser
 
 
+Workspace - Stokes QU Visualization
+    [Setup]    Setup carta_backend And Open Browser To CARTA
+    Load Initial Image   image_IQU.fits
+    Mouse Over    ${VIEWER_DIV}
+    # enable Stokes analysis widget
+    Click Element    id:StokesAnalysisWidgetButton
+    # make the line plot with thicker line
+    Click Element    data:testid:stokes-0-header-settings-button
+    Click Element    //*[contains(text(), "Line Plot Styling")]
+    Repeat Keyword    4    Click Element    data:testid:profiler-settings-line-width-input-increment-button
+    # apply binning smoothing 
+    Click Element    //*[contains(text(), "Smoothing")]
+    Click Element    data:testid:smoothing-settings-method-dropdown
+    Click Element    //*[contains(text(), "Binning")]
+    Repeat Keyword    2    Click Element    data:testid:smoothing-settings-binning-width-input-increment-button
+    Click Element    data:testid:stokes-0-floating-settings-0-header-close-button
+    # box-zoom the QU plot
+    Drag And Drop By Offset    data:testid:profiler-plot    100    50
+
+    Test Workspace Snapshot
+    [Teardown]    Kill carta_backend And Close Browser
+
+
+
