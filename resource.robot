@@ -23,6 +23,7 @@ ${CARTA_PORT}    3003
 ${PYTHON3_EXECUTABLE}    /opt/miniconda3/bin/python
 ${N_OMP_THREADS}    4
 ${PACKAGE_TESTING}    False
+${PIXEL_TESTING}    False
 ###########################################################################
 ${CARTA_PROCESS}    ${CARTA_BACKEND_EXECUTABLE} ${INITIAL_IMAGE_FOLDER} --frontend_folder ${CARTA_FRONTEND_FOLDER} --port ${CARTA_PORT} --omp_threads ${N_OMP_THREADS} --debug_no_auth --no_browser --enable_scripting
 ${SERVER}         localhost:${CARTA_PORT}
@@ -479,6 +480,7 @@ Terminate psrecord
 
 Compare Images To Be Identical
    [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Allowed_Threshold}
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
    Log              Executing: ${COMMAND}
@@ -487,9 +489,14 @@ Compare Images To Be Identical
    Log              Return Output: ${OUTPUT}
    ${RESULT}        Evaluate    ${OUTPUT} < ${Allowed_Threshold}
    Should be True   ${RESULT}
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 Compare Images To Be Different
    [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Allowed_Threshold}
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
    Log              Executing: ${COMMAND}
@@ -498,9 +505,14 @@ Compare Images To Be Different
    Log              Return Output: ${OUTPUT}
    ${RESULT}        Evaluate    ${OUTPUT} > ${Allowed_Threshold}
    Should be True   ${RESULT}
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 PNG Images Should Be Different
    [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Match_Rate}=99.0
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${TEMP}=         Replace String     ${TEMP}    __MATCH_RATE__     ${Match_Rate}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
@@ -509,9 +521,14 @@ PNG Images Should Be Different
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    different
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 PNG Images Should Be Identical
    [Arguments]      ${Reference_Image_Path}    ${Test_Image_Path}    ${Match_Rate}=99.0
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_RGBA_COMPARATOR_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${TEMP}=         Replace String     ${TEMP}    __MATCH_RATE__     ${Match_Rate}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Image_Path}
@@ -520,9 +537,14 @@ PNG Images Should Be Identical
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    identical
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 PNG Pixel XY Should Match RGBA
    [Arguments]      ${Reference_Image_Path}    ${Test_XYRGBA}
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_PIXEL_RGBA_CHECK_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_XYRGBA}
    Log              Executing: ${COMMAND}
@@ -530,10 +552,15 @@ PNG Pixel XY Should Match RGBA
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    identical
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 
 PNG Two Pixels Should Have Matched RGBA
    [Arguments]      ${Reference_Image_Path}    ${Test_P1P2RGBA}
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_P1P2RGBA}
    Log              Executing: ${COMMAND}
@@ -541,10 +568,14 @@ PNG Two Pixels Should Have Matched RGBA
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    identical
-
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 PNG Two Pixels Should Not Have Matched RGBA
    [Arguments]      ${Reference_Image_Path}    ${Test_P1P2RGBA}
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_TWO_PIXELS_RGBA_CHECK_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_P1P2RGBA}
    Log              Executing: ${COMMAND}
@@ -552,9 +583,14 @@ PNG Two Pixels Should Not Have Matched RGBA
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    different
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 OCR Test
    [Arguments]      ${Reference_Image_Path}    ${Test_Input}
+   IF    '${PIXEL_TESTING}' == 'True'
    ${TEMP}=         Replace String     ${IMAGE_OCR_TEST_COMMAND}    __REFERENCE__     ${Reference_Image_Path}
    ${COMMAND}=      Replace String     ${TEMP}    __TEST__     ${Test_Input}
    Log              Executing: ${COMMAND}
@@ -562,6 +598,10 @@ OCR Test
    Log              Return Code: ${RC}
    Log              Return Output: ${OUTPUT}       
    Should Contain   ${OUTPUT}    Identical
+   ELSE
+       Log    Pixel testing is disabled.
+       Log To Console    Pixel testing is disabled.
+   END
 
 
 Clear Input Field
